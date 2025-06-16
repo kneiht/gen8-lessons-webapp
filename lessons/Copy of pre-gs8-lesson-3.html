@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS8: Động từ (Verb)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/assets/js/instructions.js"></script>
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.408);
+            overflow-y: auto;
+        }
+
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        /* Table styles */
+        .verb-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 0rem 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .verb-table th {
+            background-color: #4f46e5;
+            color: white;
+            font-weight: bold;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid #4338ca;
+        }
+
+        .verb-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid #e5e7eb;
+            background-color: white;
+        }
+
+        .verb-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .verb-table tr:nth-child(even) td {
+            background-color: #f9fafb;
+        }
+
+        .verb-table tr:hover td {
+            background-color: #f3f4f6;
+        }
+
+        .verb-table th:first-child,
+        .verb-table td:first-child {
+            font-weight: 600;
+            color: #4f46e5;
+        }
+
+        .verb-chip {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #e0e7ff;
+            color: #4f46e5;
+            border-radius: 9999px;
+            font-weight: 600;
+            margin: 0.25rem;
+            transition: all 0.2s;
+        }
+
+        .verb-chip:hover {
+            background-color: #4f46e5;
+            color: white;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-blue-50 bg-[url('/assets/bg/bg-3.jpg')]
+        bg-cover bg-center min-h-screen flex items-center justify-center p-2">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4  z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>               
+            <div class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-700">Nội dung bài học</h2>
+                    <button onclick="toggleOutline()" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose prose-lg max-w-none">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4">Động Từ Cơ Bản</h3>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(0)">
+                        <h4 class="text-lg font-bold text-indigo-500">1. Giới thiệu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Mục tiêu bài học:
+                                <ul class="list-disc pl-6 mt-2">
+                                    <li>Hiểu khái niệm động từ và vai trò trong câu</li>
+                                    <li>Nắm được động từ "to be" và cách sử dụng</li>
+                                    <li>Biết cách chia động từ thường cơ bản</li>
+                                    <li>Xác định đúng vị trí động từ trong câu</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(1)">
+                        <h4 class="text-lg font-bold text-indigo-500">2. Động từ là gì?</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Định nghĩa động từ: chỉ hành động hoặc trạng thái</li>
+                            <li>Ví dụ: run, eat, play, be, feel...</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(2)">
+                        <h4 class="text-lg font-bold text-indigo-500">3. Bài tập nhận biết động từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Tìm và click vào động từ trong câu</li>
+                            <li>Ghi nhớ vị trí động từ trong câu</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(3)">
+                        <h4 class="text-lg font-bold text-indigo-500">4. Động từ "to be" là gì?</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Động từ đặc biệt: chỉ trạng thái, sự tồn tại, làm động từ phụ</li>
+                            <li>Không tuân theo quy tắc thông thường</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(4)">
+                        <h4 class="text-lg font-bold text-indigo-500">5. Các dạng của "to be"</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Bảng chia động từ "to be" theo chủ ngữ và thì</li>
+                            <li>Mẹo ghi nhớ các dạng</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(5)">
+                        <h4 class="text-lg font-bold text-indigo-500">6. Bài tập "to be" (1)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Điền dạng đúng của "to be" (am/is)</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(6)">
+                        <h4 class="text-lg font-bold text-indigo-500">7. Bài tập "to be" (2)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Điền dạng đúng của "to be" (are)</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(7)">
+                        <h4 class="text-lg font-bold text-indigo-500">8. Bài tập "to be" (quá khứ 1)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Điền dạng đúng của "to be" (was/were)</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(8)">
+                        <h4 class="text-lg font-bold text-indigo-500">9. Bài tập "to be" (quá khứ 2)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Điền dạng đúng của "to be" (was/were)</li>
+                            <li>Mẹo ghi nhớ chia thì quá khứ</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(9)">
+                        <h4 class="text-lg font-bold text-indigo-500">10. Động từ thường là gì?</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Động từ không phải "to be"</li>
+                            <li>Chia theo quy tắc hoặc bất quy tắc</li>
+                            <li>Ví dụ: play, go, eat...</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(10)">
+                        <h4 class="text-lg font-bold text-indigo-500">11. Cách chia động từ thường</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Bảng các dạng: nguyên mẫu, hiện tại, quá khứ, phân từ, -ing, modal</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(11)">
+                        <h4 class="text-lg font-bold text-indigo-500">12. Bài tập động từ thường (1)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chia động từ trong ngoặc ở hiện tại đơn</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(12)">
+                        <h4 class="text-lg font-bold text-indigo-500">13. Bài tập động từ thường (2)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chia động từ trong ngoặc ở quá khứ đơn</li>
+                            <li>Lưu ý động từ bất quy tắc</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(13)">
+                        <h4 class="text-lg font-bold text-indigo-500">14. Vị trí động từ trong câu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Công thức vị trí động từ thường và "to be"</li>
+                            <li>Ví dụ minh họa</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(14)">
+                        <h4 class="text-lg font-bold text-indigo-500">15. Bài tập vị trí động từ (1)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Gạch chân động từ trong câu</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(15)">
+                        <h4 class="text-lg font-bold text-indigo-500">16. Bài tập vị trí động từ (2)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Gạch chân động từ trong câu</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(16)">
+                        <h4 class="text-lg font-bold text-indigo-500">17. Bài tập vị trí động từ (3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Tìm và viết lại cụm động từ</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(17)">
+                        <h4 class="text-lg font-bold text-indigo-500">18. Bài tập vị trí động từ (4)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Tìm và viết lại cụm động từ</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(18)">
+                        <h4 class="text-lg font-bold text-indigo-500">19. Bài tập đảo từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Sắp xếp các từ thành câu hoàn chỉnh</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(19)">
+                        <h4 class="text-lg font-bold text-indigo-500">20. Tổng kết</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Tóm tắt kiến thức động từ</li>
+                            <li>Chuẩn bị cho bài học tiếp theo</li>
+                        </ul>
+                    </div>
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(20)">
+                        <h4 class="text-lg font-bold text-indigo-500">21. Bài tập tổng hợp</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Ôn tập tất cả kiến thức đã học</li>
+                            <li>Luyện tập với các dạng bài tập khác nhau</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+
+            <!-- Slide 0: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">GRAMMAR FOR PRE-GRADE 8</h1>
+                    <div class="bg-yellow-400 text-2xl md:text-4xl font-bold px-6 py-3 rounded-full mb-5 shadow-lg floating">
+                        ĐỘNG TỪ CƠ BẢN
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-3 flex justify-center">
+                            <img src="/assets/images/grammar.jpg" alt="Grammar Learning" class="object-cover h-52 floating">
+                        </div>
+                        <div class="bg-gradient-to-r from-indigo-100 to-green-200 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu khái niệm động từ và vai trò trong câu</li>
+                                <li>Nắm được động từ "to be" và cách sử dụng</li>
+                                <li>Biết cách chia động từ thường cơ bản</li>
+                                <li>Xác định đúng vị trí động từ trong câu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="my-3 opacity-0">---</div>
+                </div>
+            </div>
+
+            <!-- Slide 1: What is a verb? -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h1 class="text-4xl font-bold text-indigo-700 mb-6 w-full text-left">Động từ là gì? 🧐</h1>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6 max-w-2xl text-2xl flex flex-col items-center">
+                        <div class="flex items-center mb-4">
+                            <span class="star-icon text-3xl mr-2">★</span>
+                            <p>Động từ là từ chỉ <span class="highlight">hành động</span> hoặc <span class="highlight">trạng thái</span> của chủ ngữ</p>
+                            <span class="star-icon text-3xl ml-2">★</span>
+                        </div>
+                        
+                        <div class="text-center text-xl text-gray-700">
+                            <p class="mb-4">🔹 <span class="font-bold">Hành động</span>: run, eat, play, swim...</p>
+                            <p>🔹 <span class="font-bold">Trạng thái</span>: be, feel, seem, appear...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-100 p-6 rounded-xl max-w-2xl text-2xl">
+                        <p class="font-bold text-blue-800 mb-2">Ví dụ minh họa:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-3 rounded-lg">
+                                <p>I <span class="text-red-500 font-bold">play</span> football.</p>
+                                <p class="text-gray-600">(Tôi chơi đá bóng)</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <p>She <span class="text-red-500 font-bold">feels</span> happy.</p>
+                                <p class="text-gray-600">(Cô ấy cảm thấy vui)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Verb identification exercise -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập nhận biết động từ 🌟</h2>
+                    <p class="text-2xl mb-3">Hãy tìm và click vào động từ trong các câu sau:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4 hover:bg-gray-100 p-2 rounded cursor-pointer" onclick="highlightVerb(this)">My cat <span>sleeps</span> on the sofa.</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4 hover:bg-gray-100 p-2 rounded cursor-pointer" onclick="highlightVerb(this)">We <span>study</span> English every day.</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4 hover:bg-gray-100 p-2 rounded cursor-pointer" onclick="highlightVerb(this)">The flowers <span>are</span> beautiful.</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4 hover:bg-gray-100 p-2 rounded cursor-pointer" onclick="highlightVerb(this)">He <span>drinks</span> milk in the morning.</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3 bg-indigo-100 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 text-xl">💡 Nhớ:</p>
+                        <p class="text-lg">Động từ thường đứng sau chủ ngữ và diễn tả hành động/trạng thái!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: What is "to be" verb -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h1 class="text-4xl font-bold text-indigo-700 mb-6 w-full text-left">Động từ "to be" là gì? 🤔</h1>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6 max-w-2xl text-2xl">
+                        <p>"To be" là động từ <span class="highlight">đặc biệt nhất</span> trong tiếng Anh, dùng để:</p>
+                        
+                        <ul class="list-disc pl-6 mt-4 text-xl">
+                            <li>Chỉ <span class="text-blue-600 font-bold">trạng thái, tính chất</span> (I am happy)</li>
+                            <li>Chỉ <span class="text-purple-600 font-bold">sự tồn tại</span> (There is a cat)</li>
+                            <li>Làm <span class="text-green-600 font-bold">động từ phụ</span> trong các thì (She is reading)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-yellow-100 p-4 rounded-xl max-w-2xl">
+                        <p class="font-bold text-yellow-800 text-xl mb-2">Vì sao cần học "to be"?</p>
+                        <p class="text-lg">Vì nó <span class="font-bold">không tuân theo quy tắc thông thường</span> và <span class="font-bold">có nhiều dạng biến đổi</span> tùy theo chủ ngữ và thì!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Forms of "to be" verb -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Các dạng của động từ "to be" 🔤</h2>
+                    
+                    <div class="w-full mb-3">
+                        <table class="verb-table text-xl">
+                            <tr>
+                                <th>Chủ ngữ</th>
+                                <th>Hiện tại</th>
+                                <th>Quá khứ</th>
+                                <th>Hoàn thành</th>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                                <td>am</td>
+                                <td>was</td>
+                                <td>been</td>
+                            </tr>
+                            <tr>
+                                <td>You/We/They</td>
+                                <td>are</td>
+                                <td>were</td>
+                                <td>been</td>
+                            </tr>
+                            <tr>
+                                <td>He/She/It</td>
+                                <td>is</td>
+                                <td>was</td>
+                                <td>been</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="bg-purple-100 p-4 rounded-lg">
+                        <p class="font-bold text-purple-800 text-xl">💡 Mẹo nhớ:</p>
+                        <div class="text-lg">
+                            <p>1. <span class="font-bold">"I am"</span> - Ngắn gọn và duy nhất</p>
+                            <p>2. <span class="font-bold">"You/We/They are"</span> - Số nhiều dùng "are"</p>
+                            <p>3. <span class="font-bold">"He/She/It is"</span> - Số ít dùng "is"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: "To be" exercise 1 (Part 1) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập "to be" (Câu 1) ✍️</h2>
+                    <p class="text-2xl mb-3">Điền dạng đúng của động từ "to be" vào chỗ trống:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">I <input type="text" class="exercise-input" data-answer="am"> a student.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">She <input type="text" class="exercise-input" data-answer="is"> very kind.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: "To be" exercise 1 (Part 2) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập "to be" (Câu 1 - tiếp) ✍️</h2>
+                    <p class="text-2xl mb-3">Điền dạng đúng của động từ "to be" vào chỗ trống:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">They <input type="text" class="exercise-input" data-answer="are"> my friends.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">We <input type="text" class="exercise-input" data-answer="are"> happy today.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: "To be" exercise 2 (Part 1) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập "to be" (Câu 2) 🏆</h2>
+                    <p class="text-2xl mb-3">Điền dạng đúng của động từ "to be" (quá khứ) vào chỗ trống:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">He <input type="text" class="exercise-input" data-answer="was"> sick yesterday.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">We <input type="text" class="exercise-input" data-answer="were"> at home last night.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: "To be" exercise 2 (Part 2) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập "to be" (Câu 2 - tiếp) 🏆</h2>
+                    <p class="text-2xl mb-3">Điền dạng đúng của động từ "to be" (quá khứ) vào chỗ trống:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">It <input type="text" class="exercise-input" data-answer="was"> rainy last week.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">You <input type="text" class="exercise-input" data-answer="were"> late for class.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3 bg-green-100 p-4 rounded-lg">
+                        <p class="font-bold text-green-800 text-xl">💡 Nhắc nhở:</p>
+                        <p class="text-lg">Quá khứ: I/he/she/it dùng "was", you/we/they dùng "were"</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Slide 7: Regular verbs -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h1 class="text-4xl font-bold text-indigo-700 mb-6 w-full text-left">Động từ thường là gì? 🏃</h1>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6 max-w-2xl text-2xl">
+                        <p>Động từ thường là những động từ <span class="highlight">không phải "to be"</span>, dùng để:</p>
+                        
+                        <ul class="list-disc pl-6 mt-4 text-xl">
+                            <li>Diễn tả <span class="text-red-600 font-bold">hành động cụ thể</span> (eat, run, talk)</li>
+                            <li>Diễn tả <span class="text-blue-600 font-bold">hoạt động hàng ngày</span> (brush, wash, sleep)</li>
+                            <li>Có thể <span class="text-green-600 font-bold">chia theo quy tắc</span> hoặc <span class="text-purple-600 font-bold">bất quy tắc</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
+                        <div class="bg-blue-100 p-4 rounded-lg">
+                            <p class="font-bold text-blue-800">Động từ có quy tắc</p>
+                            <p class="text-lg">play → played<br>work → worked</p>
+                        </div>
+                        <div class="bg-purple-100 p-4 rounded-lg">
+                            <p class="font-bold text-purple-800">Động từ bất quy tắc</p>
+                            <p class="text-lg">go → went<br>eat → ate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Changing regular verbs -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cách chia động từ thường 📝</h2>
+                    
+                    <div class="w-full mb-3">
+                        <table class="verb-table text-xl">
+                            <tr>
+                                <th>Dạng</th>
+                                <th>Quy tắc</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                            <tr>
+                                <td>Nguyên mẫu</td>
+                                <td>to + V</td>
+                                <td>to play, to eat</td>
+                            </tr>
+                            <tr>
+                                <td>Hiện tại đơn</td>
+                                <td>V/Vs/es (tùy chủ ngữ)</td>
+                                <td>play/plays, eat/eats</td>
+                            </tr>
+                            <tr>
+                                <td>Quá khứ đơn</td>
+                                <td>V + ed (quy tắc)<br>hoặc bất quy tắc</td>
+                                <td>played, ate</td>
+                            </tr>
+                            <tr>
+                                <td>Quá khứ phân từ</td>
+                                <td>V + ed (quy tắc)<br>hoặc bất quy tắc</td>
+                                <td>played, eaten</td>
+                            </tr>
+                            <tr>
+                                <td>Dạng -ing</td>
+                                <td>V + ing</td>
+                                <td>playing, eating</td>
+                            </tr>
+                            <tr>
+                                <td>Với modal verbs</td>
+                                <td>modal + V (nguyên mẫu)</td>
+                                <td>can play, must eat</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Regular verb exercise 1 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập động từ thường (Câu 1) ✏️</h2>
+                    <p class="text-2xl mb-3">Chia động từ trong ngoặc ở dạng phù hợp:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">She <input type="text" class="exercise-input" data-answer="plays"> (play) tennis every Sunday.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">They <input type="text" class="exercise-input" data-answer="go"> (go) to school by bus.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">He <input type="text" class="exercise-input" data-answer="washes"> (wash) his face every morning.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Regular verb exercise 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập động từ thường (Câu 2) 📚</h2>
+                    <p class="text-2xl mb-3">Chia động từ trong ngoặc ở thì quá khứ đơn:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Yesterday, I <input type="text" class="exercise-input" data-answer="watched"> (watch) a movie.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">She <input type="text" class="exercise-input" data-answer="ate"> (eat) pizza for dinner.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">We <input type="text" class="exercise-input" data-answer="studied"> (study) English last night.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3 bg-red-100 p-4 rounded-lg">
+                        <p class="font-bold text-red-800 text-xl">💡 Lưu ý:</p>
+                        <p class="text-lg">Động từ bất quy tắc phải học thuộc (eat→ate, go→went, see→saw...)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Verb position in sentence -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h1 class="text-4xl font-bold text-indigo-700 mb-6 w-full text-left">Vị trí động từ trong câu 🏘️</h1>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6 max-w-2xl text-2xl w-full">
+                        <p class="font-bold mb-4">Động từ thường:</p>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <p><span class="highlight">Chủ ngữ</span> + <span class="text-red-500 font-bold">Động từ</span> + Tân ngữ/Bổ ngữ</p>
+                            <p class="text-gray-600 text-xl">(I play football)</p>
+                        </div>
+                        
+                        <p class="font-bold mb-4">Động từ "to be":</p>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <p><span class="highlight">Chủ ngữ</span> + <span class="text-blue-500 font-bold">To be</span> + Danh từ/Tính từ</p>
+                            <p class="text-gray-600 text-xl">(She is happy)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Verb position exercise 1 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập vị trí động từ (Câu 1) 🔍</h2>
+                    <p class="text-2xl mb-3">Gạch chân động từ trong các câu sau:</p>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="exercise-item p-4 border-b">
+                                <p class="text-2xl mb-4">My brother reads books every day.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="reads" placeholder="Gõ động từ">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-item p-4">
+                                <p class="text-2xl mb-4">The cat is sleeping on the chair.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="is sleeping" placeholder="Gõ động từ">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Verb position exercise 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập vị trí động từ (Câu 2) 🔍</h2>
+                    <p class="text-2xl mb-3">Gạch chân động từ trong các câu sau:</p>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="exercise-item p-4 border-b">
+                                <p class="text-2xl mb-4">We were happy yesterday.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="were" placeholder="Gõ động từ">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-item p-4">
+                                <p class="text-2xl mb-4">They are playing football now.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="are playing" placeholder="Gõ động từ">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Verb position exercise 3 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập vị trí động từ (Câu 3) 🧩</h2>
+                    <p class="text-2xl mb-3">Tìm và viết lại các cụm động từ sau:</p>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="exercise-item p-4 border-b">
+                                <p class="text-2xl mb-4">She has been waiting for an hour.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="has been waiting" placeholder="Gõ cụm động từ" style="width: 60%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-item p-4">
+                                <p class="text-2xl mb-4">They will go to the zoo tomorrow.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="will go" placeholder="Gõ cụm động từ" style="width: 60%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Verb position exercise 4 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập vị trí động từ (Câu 4) 🧩</h2>
+                    <p class="text-2xl mb-3">Tìm và viết lại các cụm động từ sau:</p>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="exercise-item p-4 border-b">
+                                <p class="text-2xl mb-4">I don't like coffee.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="don't like" placeholder="Gõ cụm động từ" style="width: 60%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-item p-4">
+                                <p class="text-2xl mb-4">He is going to study abroad.</p>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="is going to study" placeholder="Gõ cụm động từ" style="width: 60%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Word order exercise 1 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập đảo từ (Câu 1) 🔀</h2>
+                    <p class="text-2xl mb-3">Sắp xếp các từ sau thành câu hoàn chỉnh:</p>
+                    
+                    <div class="bg-white rounded-xl shadow-md">
+                        <div class="grid grid-cols-1 gap-1">
+                            <div class="exercise-item p-4 border-b">
+                                <p class="text-xl mb-2">Từ cho sẵn:</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="verb-chip">school</span>
+                                    <span class="verb-chip">go</span>
+                                    <span class="verb-chip">to</span>
+                                    <span class="verb-chip">I</span>
+                                    <span class="verb-chip">every day</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="I go to school every day" placeholder="Viết câu hoàn chỉnh" style="width: 70%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-item p-4">
+                                <p class="text-xl mb-2">Từ cho sẵn:</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="verb-chip">happy</span>
+                                    <span class="verb-chip">very</span>
+                                    <span class="verb-chip">is</span>
+                                    <span class="verb-chip">she</span>
+                                    <span class="verb-chip">today</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="She is very happy today" placeholder="Viết câu hoàn chỉnh" style="width: 70%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Word order exercise 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập đảo từ (Câu 2) 🔄</h2>
+                    <p class="text-2xl mb-3">Sắp xếp các từ sau thành câu hoàn chỉnh:</p>
+                    
+                    <div class="bg-white rounded-xl shadow-md">
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="exercise-item p-4 border-b">
+                                <p class="text-xl mb-2">Từ cho sẵn:</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="verb-chip">TV</span>
+                                    <span class="verb-chip">watches</span>
+                                    <span class="verb-chip">My father</span>
+                                    <span class="verb-chip">news</span>
+                                    <span class="verb-chip">the</span>
+                                    <span class="verb-chip">every night</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="My father watches the TV news every night" placeholder="Viết câu hoàn chỉnh" style="width: 80%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="exercise-item p-4">
+                                <p class="text-xl mb-2">Từ cho sẵn:</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="verb-chip">park</span>
+                                    <span class="verb-chip">were</span>
+                                    <span class="verb-chip">children</span>
+                                    <span class="verb-chip">the</span>
+                                    <span class="verb-chip">playing</span>
+                                    <span class="verb-chip">in</span>
+                                    <span class="verb-chip">the</span>
+                                    <span class="verb-chip">yesterday</span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <input type="text" class="exercise-input" data-answer="The children were playing in the park yesterday" placeholder="Viết câu hoàn chỉnh" style="width: 80%;">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden text-xl"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Slide 19: Summary -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h1 class="text-4xl font-bold text-indigo-700 mb-6 w-full text-left">Tổng kết bài học 🎓</h1>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6 max-w-2xl w-full">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-indigo-800">1. Động từ là gì?</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Từ chỉ hành động hoặc trạng thái của chủ ngữ</li>
+                                    <li>Có 2 loại chính: động từ "to be" và động từ thường</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-green-800">2. Động từ "to be"</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Dạng hiện tại: am/is/are</li>
+                                    <li>Dạng quá khứ: was/were</li>
+                                    <li>Dạng hoàn thành: been</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-yellow-800">3. Động từ thường</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Chia theo quy tắc (thêm -ed) hoặc bất quy tắc</li>
+                                    <li>Chia theo chủ ngữ và thì</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-purple-800">4. Vị trí động từ</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Đứng sau chủ ngữ trong câu khẳng định</li>
+                                    <li>Thường là từ hoặc cụm từ ở giữa câu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Highlight verb when clicked
+        function highlightVerb(element) {
+            const verbSpan = element.querySelector('span');
+            if (verbSpan.style.fontWeight === 'bold') {
+                verbSpan.style.fontWeight = 'normal';
+                verbSpan.style.color = 'inherit';
+                element.style.backgroundColor = 'white';
+            } else {
+                const answerDiv = element.closest('.exercise-item').querySelector('.answer');
+                answerDiv.innerHTML = '<p class="correct">✓ Đúng! "' + verbSpan.textContent + '" là động từ!</p>';
+                answerDiv.classList.remove('hidden');
+                verbSpan.style.fontWeight = 'bold';
+                verbSpan.style.color = '#4f46e5';
+                element.style.backgroundColor = '#ecfdf5';
+            }
+        }
+
+        // Exercise functions
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer || (correctAnswer === '' && userAnswer === '') || (correctAnswer === '' && userAnswer === '(không)')) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${input.previousSibling?.textContent || ''} <span class="font-bold">${correctAnswer || '(không)'}</span></p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: ${input.previousSibling?.textContent || ''} <span class="font-bold">${correctAnswer || '(không)'}</span> (Bạn điền: ${userAnswer || 'trống'})</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            if (button.textContent.includes('Kiểm tra')) {
+                button.textContent = 'Làm lại';
+                button.onclick = function() {
+                    resetExercise(button);
+                };
+            } else {
+                checkInput(button);
+            }
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset inputs
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            button.onclick = function() {
+                checkInput(button);
+            };
+
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
+        }
+    </script>
+</body>
+</html>
