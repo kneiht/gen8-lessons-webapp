@@ -49,7 +49,7 @@ def check_drive_changes(source_path, destination_folder):
                 break
         
         print("✅ Không có thay đổi nào")
-        return False
+        return True
             
     except subprocess.CalledProcessError as e:
         print(f"❌ Lỗi khi kiểm tra thay đổi: {e}")
@@ -217,12 +217,22 @@ def run_periodic_sync(source_path, destination_folder, interval=300, max_retries
             print(f"⏳ Thử lại sau {interval} giây...")
             time.sleep(interval)
 
+def run_one(source_path, destination_folder):
+    """
+    """
+    # Chuyển đổi đường dẫn tương đối thành tuyệt đối
+    destination_folder = os.path.abspath(os.path.join(CURRENT_DIR, destination_folder))
+    
+    print(f"🔄 Bắt đầu đồng bộ")
+    print(f"📂 Nguồn: {source_path}")
+    print(f"📂 Đích: {destination_folder}")
+    print(f"\n⏰ {get_date_time()} - Bắt đầu kiểm tra đồng bộ...")
+    sync_new_files(source_path, destination_folder)
+
 # Ví dụ sử dụng:
 if __name__ == "__main__":
     # Chạy đồng bộ mỗi 5 phút với cơ chế retry
-    run_periodic_sync(
+    run_one(
         "PROJECTS/GEN8-LESSONS",
         "lessons",
-        interval=300,  # 5 phút
-        max_retries=3  # Số lần thử lại tối đa
     )
