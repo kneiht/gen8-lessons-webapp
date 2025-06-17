@@ -42,7 +42,7 @@ def check_drive_changes(source_path, destination_folder):
             if line.startswith('Transferred:'):
                 # Lấy số lượng file đã transfer (số đầu tiên sau dấu /)
                 transfer_count = line.split('/')[0].split(':')[1].strip().split(' ')[0]
-                if int(transfer_count) != 0:
+                if transfer_count != "0":
                     print("📝 Phát hiện thay đổi:")
                     print(output)
                     return True
