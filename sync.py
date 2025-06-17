@@ -5,6 +5,7 @@ import pytz
 import requests
 import json
 import time
+from pathlib import Path
 
 # Lấy đường dẫn tuyệt đối của thư mục hiện tại
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -217,22 +218,91 @@ def run_periodic_sync(source_path, destination_folder, interval=300, max_retries
             print(f"⏳ Thử lại sau {interval} giây...")
             time.sleep(interval)
 
-def run_one(source_path, destination_folder):
-    """
-    """
-    # Chuyển đổi đường dẫn tương đối thành tuyệt đối
-    destination_folder = os.path.abspath(os.path.join(CURRENT_DIR, destination_folder))
+def collect_lesson_info(lessons_dir):
+    lessons_info = {
+        'categories': {},
+        'lessons': {}
+    }
     
-    print(f"🔄 Bắt đầu đồng bộ")
-    print(f"📂 Nguồn: {source_path}")
-    print(f"📂 Đích: {destination_folder}")
-    print(f"\n⏰ {get_date_time()} - Bắt đầu kiểm tra đồng bộ...")
-    sync_new_files(source_path, destination_folder)
+    # Walk through the lessons directory
+    for root, dirs, files in os.walk(lessons_dir):
+        # Skip if no index.html found
+        if 'index.html' not in files:
+            continue
+            
+        # Get relative path from lessons directory
+        rel_path = os.path.relpath(root, lessons_dir)
+        
+        # Skip the root lessons directory itself
+        if rel_path == '.':
+            continue
+            
+        # Split path into category and lesson
+        parts = rel_path.split(os.sep)
+        if len(parts) > 1:
+            category = parts[0]
+            lesson_path = os.sep.join(parts[1:])
+            
+            # Add category if not exists
+            if category not in lessons_info['categories']:
+                lessons_info['categories'][category] = {
+                    'name': category.replace('-', ' ').replace('_', ' ').title(),
+                    'icon': get_category_icon(category)
+                }
+            
+            # Add lesson under category
+            lessons_info['lessons'][rel_path] = {
+                'path': rel_path,
+                'title': lesson_path.replace('-', ' ').replace('_', ' ').title(),
+                'category': category
+            }
+        else:
+            # Lesson without category
+            lessons_info['lessons'][rel_path] = {
+                'path': rel_path,
+                'title': rel_path.replace('-', ' ').replace('_', ' ').title(),
+                'category': None
+            }
+    
+    return lessons_info
+
+def get_category_icon(category):
+    """Get appropriate icon for category based on its name"""
+    category_lower = category.lower()
+    icons = {
+        'worksheets': 'fa-file-lines',
+        'exercises': 'fa-dumbbell',
+        'projects': 'fa-code',
+        'resources': 'fa-book',
+        'tutorials': 'fa-graduation-cap',
+        'examples': 'fa-lightbulb',
+        'slides': 'fa-chalkboard',
+        'homework': 'fa-house',
+        'quizzes': 'fa-question-circle',
+        'assignments': 'fa-tasks'
+    }
+    return icons.get(category_lower, 'fa-folder')
+
+def main():
+    # Get the directory where the script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Path to lessons directory
+    lessons_dir = os.path.join(script_dir, 'lessons')
+    
+    # Create lessons directory if it doesn't exist
+    os.makedirs(lessons_dir, exist_ok=True)
+    
+    # Collect lesson information
+    lessons_info = collect_lesson_info(lessons_dir)
+    
+    # Write to JSON file
+    output_file = os.path.join(script_dir, 'files_info.json')
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(lessons_info, f, ensure_ascii=False, indent=2)
+    
+    print(f"Updated {output_file} with {len(lessons_info)} lessons")
 
 # Ví dụ sử dụng:
 if __name__ == "__main__":
-    # Chạy đồng bộ mỗi 5 phút với cơ chế retry
-    run_one(
-        "PROJECTS/GEN8-LESSONS",
-        "lessons",
-    )
+    main()

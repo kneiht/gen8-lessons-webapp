@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu - GEN8 Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <a href="/" class="flex items-center">
+                        <img src="assets/logo.png" alt="GEN8 Logo" class="h-10">
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-6 md:flex md:space-x-4">
+                        <a href="roadmap.html" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                            Lộ trình
+                        </a>
+                        <a href="documents.html" class="bg-gray-100 text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                            Tài liệu
+                        </a>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button type="button" class="text-gray-700 hover:text-blue-600 focus:outline-none" id="mobile-menu-button">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="roadmap.html" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">
+                    Lộ trình
+                </a>
+                <a href="documents.html" class="bg-gray-100 text-blue-600 block px-3 py-2 rounded-md text-base font-medium">
+                    Tài liệu
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <!-- Search Box -->
+            <div class="max-w-2xl mx-auto mb-8">
+                <div class="flex gap-4">
+                    <div class="flex-1">
+                        <input type="text" id="searchInput" 
+                               class="w-full rounded-full px-6 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                               placeholder="Tìm kiếm tài liệu...">
+                    </div>
+                    <div class="w-48">
+                        <select id="categoryFilter" 
+                                class="w-full rounded-full px-6 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Tất cả danh mục</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents List -->
+            <div id="documentsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </main>
+
+    <script>
+        let allDocuments = [];
+        let allCategories = {};
+
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const icons = {
+                'pdf': 'fa-file-pdf',
+                'doc': 'fa-file-word',
+                'docx': 'fa-file-word',
+                'xls': 'fa-file-excel',
+                'xlsx': 'fa-file-excel',
+                'ppt': 'fa-file-powerpoint',
+                'pptx': 'fa-file-powerpoint',
+                'txt': 'fa-file-alt',
+                'html': 'fa-file-code',
+                'css': 'fa-file-code',
+                'js': 'fa-file-code',
+                'json': 'fa-file-code',
+                'md': 'fa-file-alt'
+            };
+            return icons[ext] || 'fa-file';
+        }
+
+        function createCategoryCard(category) {
+            return `
+                <a href="#${category.name}" 
+                   class="block bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+                   onclick="filterByCategory('${category.name}')">
+                    <i class="fas ${category.icon} text-4xl text-blue-600 mb-4"></i>
+                    <div class="text-lg font-semibold text-gray-900">${category.name}</div>
+                </a>
+            `;
+        }
+
+        function createDocumentCard(lesson) {
+            // Lấy icon của danh mục
+            let iconHtml = '';
+            if (lesson.category && allCategories[lesson.category]) {
+                const icon = allCategories[lesson.category].icon;
+                iconHtml = `<i class=\"fas ${icon} text-xl text-blue-600 mr-2\"></i>`;
+            }
+            return `
+                <a href=\"lessons/${lesson.path}/\" 
+                   class=\"block bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200\">
+                    <div class=\"flex items-center text-xl font-semibold text-gray-900 mb-2\">${iconHtml}${lesson.title}</div>
+                    <div class=\"text-sm text-gray-500 mb-4\">${lesson.path}</div>
+                    <div class=\"text-sm text-gray-600 line-clamp-3 first-slide-content\" data-path=\"${lesson.path}/index.html\">
+                        <div class=\"animate-pulse\">
+                            <div class=\"h-4 bg-gray-200 rounded w-3/4 mb-2\"></div>
+                            <div class=\"h-4 bg-gray-200 rounded w-1/2\"></div>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+
+        function filterDocuments(searchTerm, category = '') {
+            const searchLower = searchTerm.toLowerCase();
+            const filtered = allDocuments.filter(lesson => {
+                const matchesSearch = lesson.title.toLowerCase().includes(searchLower) ||
+                                    lesson.path.toLowerCase().includes(searchLower);
+                const matchesCategory = !category || lesson.category === category;
+                return matchesSearch && matchesCategory;
+            });
+
+            const container = document.getElementById('documentsList');
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full">
+                        <div class="text-center py-12">
+                            <i class="fas fa-search text-5xl text-gray-400 mb-4"></i>
+                            <h3 class="text-xl font-medium text-gray-900 mb-2">Không tìm thấy tài liệu</h3>
+                            <p class="text-gray-500">Vui lòng thử từ khóa khác</p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = filtered.map(lesson => 
+                    createDocumentCard(lesson)
+                ).join('');
+                // Sau khi render xong, load lại nội dung slide đầu tiên cho từng card
+                const slideContents = document.querySelectorAll('.first-slide-content');
+                slideContents.forEach(async (element) => {
+                    const path = element.dataset.path;
+                    const content = await loadFirstSlide(path);
+                    if (content) {
+                        element.innerHTML = content;
+                    } else {
+                        element.innerHTML = '<span class="text-gray-400">Không thể tải nội dung</span>';
+                    }
+                });
+            }
+        }
+
+        function filterByCategory(category) {
+            const searchInput = document.getElementById('searchInput');
+            const categoryFilter = document.getElementById('categoryFilter');
+            categoryFilter.value = category;
+            filterDocuments(searchInput.value, category);
+        }
+
+        async function loadFirstSlide(path) {
+            try {
+                const response = await fetch(`lessons/${path}`);
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                
+                // Tìm slide đầu tiên
+                const firstSlide = doc.querySelector('.slide');
+                if (firstSlide) {
+                    // Lấy nội dung text từ slide đầu tiên
+                    const content = firstSlide.textContent.trim();
+                    return content;
+                }
+                return null;
+            } catch (error) {
+                console.error(`Error loading first slide for ${path}:`, error);
+                return null;
+            }
+        }
+
+        async function loadDocuments() {
+            try {
+                const response = await fetch('files_info.json');
+                const data = await response.json();
+                
+                // Store categories and lessons
+                allCategories = data.categories;
+                allDocuments = Object.values(data.lessons);
+
+                // Populate category filter
+                const categoryFilter = document.getElementById('categoryFilter');
+                Object.entries(allCategories).forEach(([key, category]) => {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = category.name;
+                    categoryFilter.appendChild(option);
+                });
+
+
+
+                // Initial display of lessons
+                filterDocuments('');
+
+                // Load first slide content for each document
+                const slideContents = document.querySelectorAll('.first-slide-content');
+                slideContents.forEach(async (element) => {
+                    const path = element.dataset.path;
+                    const content = await loadFirstSlide(path);
+                    if (content) {
+                        element.innerHTML = content;
+                    } else {
+                        element.innerHTML = '<span class="text-gray-400">Không thể tải nội dung</span>';
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading documents:', error);
+                document.getElementById('documentsList').innerHTML = `
+                    <div class="col-span-full">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+                            <p class="text-red-600">Không thể tải danh sách tài liệu. Vui lòng thử lại sau.</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+
+        function handleSearch() {
+            filterDocuments(searchInput.value, categoryFilter.value);
+        }
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+        categoryFilter.addEventListener('change', handleSearch);
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Load documents when page loads
+        document.addEventListener('DOMContentLoaded', loadDocuments);
+    </script>
+</body>
+</html> 

@@ -1,0 +1,44 @@
+{
+  "categories": {
+    "worksheets": {
+      "name": "Worksheets",
+      "icon": "fa-file-lines"
+    },
+    "slides": {
+      "name": "Slides",
+      "icon": "fa-chalkboard"
+    }
+  },
+  "lessons": {
+    "worksheets/demo": {
+      "path": "worksheets/demo",
+      "title": "Demo",
+      "category": "worksheets"
+    },
+    "worksheets/demo 2": {
+      "path": "worksheets/demo 2",
+      "title": "Demo 2",
+      "category": "worksheets"
+    },
+    "worksheets/demo 3": {
+      "path": "worksheets/demo 3",
+      "title": "Demo 3",
+      "category": "worksheets"
+    },
+    "slides/demo": {
+      "path": "slides/demo",
+      "title": "Demo",
+      "category": "slides"
+    },
+    "slides/demo 2": {
+      "path": "slides/demo 2",
+      "title": "Demo 2",
+      "category": "slides"
+    },
+    "slides/demo 3": {
+      "path": "slides/demo 3",
+      "title": "Demo 3",
+      "category": "slides"
+    }
+  }
+}
