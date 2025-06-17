@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tài liệu - GEN8 Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
     <!-- Navbar -->
-    <nav class="bg-white shadow-sm">
+    <nav class="bg-white shadow-sm fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between h-12">
                 <div class="flex">
                     <a href="/" class="flex items-center">
                         <img src="assets/logo.png" alt="GEN8 Logo" class="h-10">
@@ -20,16 +19,18 @@
                 <div class="flex items-center">
                     <div class="hidden md:ml-6 md:flex md:space-x-4">
                         <a href="roadmap.html" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                            <img src="https://example.com/icons/road.png" alt="Lộ trình" class="h-4 w-4 mr-2 inline-block">
                             Lộ trình
                         </a>
                         <a href="documents.html" class="bg-gray-100 text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                            <img src="https://example.com/icons/book.png" alt="Tài liệu" class="h-4 w-4 mr-2 inline-block">
                             Tài liệu
                         </a>
                     </div>
                     <!-- Mobile menu button -->
                     <div class="md:hidden flex items-center">
                         <button type="button" class="text-gray-700 hover:text-blue-600 focus:outline-none" id="mobile-menu-button">
-                            <i class="fas fa-bars text-xl"></i>
+                            <img src="https://example.com/icons/bars.png" alt="Menu" class="h-6 w-6 inline-block">
                         </button>
                     </div>
                 </div>
@@ -39,9 +40,11 @@
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="roadmap.html" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">
+                    <img src="https://example.com/icons/road.png" alt="Lộ trình" class="h-4 w-4 mr-2 inline-block">
                     Lộ trình
                 </a>
                 <a href="documents.html" class="bg-gray-100 text-blue-600 block px-3 py-2 rounded-md text-base font-medium">
+                    <img src="https://example.com/icons/book.png" alt="Tài liệu" class="h-4 w-4 mr-2 inline-block">
                     Tài liệu
                 </a>
             </div>
@@ -49,8 +52,9 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-grow">
+    <main class="flex-grow mt-20">
         <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            
             <!-- Search Box -->
             <div class="max-w-2xl mx-auto mb-8">
                 <div class="flex gap-4">
@@ -68,6 +72,7 @@
                 </div>
             </div>
 
+
             <!-- Documents List -->
             <div id="documentsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
@@ -77,32 +82,12 @@
         let allDocuments = [];
         let allCategories = {};
 
-        function getFileIcon(filename) {
-            const ext = filename.split('.').pop().toLowerCase();
-            const icons = {
-                'pdf': 'fa-file-pdf',
-                'doc': 'fa-file-word',
-                'docx': 'fa-file-word',
-                'xls': 'fa-file-excel',
-                'xlsx': 'fa-file-excel',
-                'ppt': 'fa-file-powerpoint',
-                'pptx': 'fa-file-powerpoint',
-                'txt': 'fa-file-alt',
-                'html': 'fa-file-code',
-                'css': 'fa-file-code',
-                'js': 'fa-file-code',
-                'json': 'fa-file-code',
-                'md': 'fa-file-alt'
-            };
-            return icons[ext] || 'fa-file';
-        }
-
         function createCategoryCard(category) {
             return `
                 <a href="#${category.name}" 
                    class="block bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
                    onclick="filterByCategory('${category.name}')">
-                    <i class="fas ${category.icon} text-4xl text-blue-600 mb-4"></i>
+                    <img src="${category.icon}" alt="${category.name} icon" class="w-10 h-10 text-blue-600 mb-4 mx-auto">
                     <div class="text-lg font-semibold text-gray-900">${category.name}</div>
                 </a>
             `;
@@ -112,20 +97,16 @@
             // Lấy icon của danh mục
             let iconHtml = '';
             if (lesson.category && allCategories[lesson.category]) {
-                const icon = allCategories[lesson.category].icon;
-                iconHtml = `<i class=\"fas ${icon} text-xl text-blue-600 mr-2\"></i>`;
+                const iconUrl = allCategories[lesson.category].icon;
+                iconHtml = `<img src="${iconUrl}" alt="${lesson.category} icon" class="w-5 h-5 mr-2 inline-block">`;
             }
             return `
-                <a href=\"lessons/${lesson.path}/\" 
-                   class=\"block bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200\">
-                    <div class=\"flex items-center text-xl font-semibold text-gray-900 mb-2\">${iconHtml}${lesson.title}</div>
-                    <div class=\"text-sm text-gray-500 mb-4\">${lesson.path}</div>
-                    <div class=\"text-sm text-gray-600 line-clamp-3 first-slide-content\" data-path=\"${lesson.path}/index.html\">
-                        <div class=\"animate-pulse\">
-                            <div class=\"h-4 bg-gray-200 rounded w-3/4 mb-2\"></div>
-                            <div class=\"h-4 bg-gray-200 rounded w-1/2\"></div>
-                        </div>
-                    </div>
+                <a href="lessons/${lesson.path}/" 
+                   class="block bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                    <div class="flex items-center text-xl font-semibold text-gray-900 mb-2">${iconHtml}${lesson.title}</div>
+                    <div class="text-sm text-gray-500 mb-4">${lesson.path}</div>
+                    <div class="text-sm text-gray-700 line-clamp-3">${lesson.description}</div>
+                    <div class="text-xs text-gray-500 mt-2">Tác giả: ${lesson.author}</div>
                 </a>
             `;
         }
@@ -134,7 +115,9 @@
             const searchLower = searchTerm.toLowerCase();
             const filtered = allDocuments.filter(lesson => {
                 const matchesSearch = lesson.title.toLowerCase().includes(searchLower) ||
-                                    lesson.path.toLowerCase().includes(searchLower);
+                                    lesson.path.toLowerCase().includes(searchLower) ||
+                                    lesson.description.toLowerCase().includes(searchLower) ||
+                                    lesson.author.toLowerCase().includes(searchLower);
                 const matchesCategory = !category || lesson.category === category;
                 return matchesSearch && matchesCategory;
             });
@@ -144,7 +127,7 @@
                 container.innerHTML = `
                     <div class="col-span-full">
                         <div class="text-center py-12">
-                            <i class="fas fa-search text-5xl text-gray-400 mb-4"></i>
+                            <img src="https://example.com/icons/search-large.png" alt="Không tìm thấy" class="w-16 h-16 mx-auto text-gray-400 mb-4">
                             <h3 class="text-xl font-medium text-gray-900 mb-2">Không tìm thấy tài liệu</h3>
                             <p class="text-gray-500">Vui lòng thử từ khóa khác</p>
                         </div>
@@ -154,17 +137,6 @@
                 container.innerHTML = filtered.map(lesson => 
                     createDocumentCard(lesson)
                 ).join('');
-                // Sau khi render xong, load lại nội dung slide đầu tiên cho từng card
-                const slideContents = document.querySelectorAll('.first-slide-content');
-                slideContents.forEach(async (element) => {
-                    const path = element.dataset.path;
-                    const content = await loadFirstSlide(path);
-                    if (content) {
-                        element.innerHTML = content;
-                    } else {
-                        element.innerHTML = '<span class="text-gray-400">Không thể tải nội dung</span>';
-                    }
-                });
             }
         }
 
@@ -173,27 +145,6 @@
             const categoryFilter = document.getElementById('categoryFilter');
             categoryFilter.value = category;
             filterDocuments(searchInput.value, category);
-        }
-
-        async function loadFirstSlide(path) {
-            try {
-                const response = await fetch(`lessons/${path}`);
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                
-                // Tìm slide đầu tiên
-                const firstSlide = doc.querySelector('.slide');
-                if (firstSlide) {
-                    // Lấy nội dung text từ slide đầu tiên
-                    const content = firstSlide.textContent.trim();
-                    return content;
-                }
-                return null;
-            } catch (error) {
-                console.error(`Error loading first slide for ${path}:`, error);
-                return null;
-            }
         }
 
         async function loadDocuments() {
@@ -214,22 +165,9 @@
                     categoryFilter.appendChild(option);
                 });
 
-
-
                 // Initial display of lessons
                 filterDocuments('');
 
-                // Load first slide content for each document
-                const slideContents = document.querySelectorAll('.first-slide-content');
-                slideContents.forEach(async (element) => {
-                    const path = element.dataset.path;
-                    const content = await loadFirstSlide(path);
-                    if (content) {
-                        element.innerHTML = content;
-                    } else {
-                        element.innerHTML = '<span class="text-gray-400">Không thể tải nội dung</span>';
-                    }
-                });
             } catch (error) {
                 console.error('Error loading documents:', error);
                 document.getElementById('documentsList').innerHTML = `

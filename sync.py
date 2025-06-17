@@ -6,6 +6,7 @@ import requests
 import json
 import time
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 # Lấy đường dẫn tuyệt đối của thư mục hiện tại
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -170,6 +171,86 @@ def sync_new_files(source_path, destination_folder):
         print(sync_result.stderr)
         return None
 
+def get_category_icon(category):
+    """Get appropriate icon for category based on its name"""
+    category_lower = category.lower()
+    # Placeholder URLs. You will need to replace these with actual Flaticon image URLs.
+    # Example: "https://cdn-icons-png.flaticon.com/512/1046/1046648.png"
+    icons = {
+        'worksheets': 'https://cdn-icons-png.flaticon.com/512/2991/2991108.png',
+        'tests': 'https://cdn-icons-png.flaticon.com/512/9913/9913544.png',
+        'slides': 'https://cdn-icons-png.flaticon.com/512/11473/11473512.png',
+    }
+    return icons.get(category_lower, 'https://example.com/icons/folder.png')
+
+def collect_lesson_info(lessons_dir):
+    lessons_info = {
+        'categories': {},
+        'lessons': {}
+    }
+    
+    for root, dirs, files in os.walk(lessons_dir):
+        if 'index.html' not in files:
+            continue
+            
+        rel_path = os.path.relpath(root, lessons_dir)
+        if rel_path == '.':
+            continue
+            
+        parts = rel_path.split(os.sep)
+        category_key = parts[0] if len(parts) > 1 else None
+        lesson_display_name = os.sep.join(parts[1:]) if len(parts) > 1 else rel_path
+
+        # Default values from folder name if info.txt not found or incomplete
+        default_title = lesson_display_name.replace('-', ' ').replace('_', ' ').title()
+        default_author = "Gen8"
+        default_description = "Không có mô tả."
+
+        # Read info.txt if exists
+        info_txt_path = os.path.join(root, 'info.txt')
+        if os.path.exists(info_txt_path):
+            try:
+                with open(info_txt_path, 'r', encoding='utf-8') as f:
+                    info_content = f.read()
+                    info_dict = {}
+                    for line in info_content.splitlines():
+                        if ':' in line:
+                            key, value = line.split(':', 1)
+                            info_dict[key.strip().lower()] = value.strip()
+                    
+                    # Override defaults with values from info.txt
+                    lesson_title = info_dict.get('title', default_title)
+                    lesson_author = info_dict.get('author', default_author)
+                    lesson_description = info_dict.get('description', default_description)
+
+            except Exception as e:
+                print(f"Error reading info.txt from {info_txt_path}: {e}")
+                lesson_title = default_title
+                lesson_author = default_author
+                lesson_description = default_description
+        else:
+            lesson_title = default_title
+            lesson_author = default_author
+            lesson_description = default_description
+
+        # Add category if not exists
+        if category_key and category_key not in lessons_info['categories']:
+            lessons_info['categories'][category_key] = {
+                'name': category_key.replace('-', ' ').replace('_', ' ').title(),
+                'icon': get_category_icon(category_key)
+            }
+        
+        # Add lesson details
+        lessons_info['lessons'][rel_path] = {
+            'path': rel_path,
+            'title': lesson_title,
+            'author': lesson_author,
+            'description': lesson_description,
+            'category': category_key
+        }
+    
+    return lessons_info
+
 def run_periodic_sync(source_path, destination_folder, interval=300, max_retries=3):
     """
     Chạy đồng bộ định kỳ với cơ chế kiểm tra quota.
@@ -218,91 +299,38 @@ def run_periodic_sync(source_path, destination_folder, interval=300, max_retries
             print(f"⏳ Thử lại sau {interval} giây...")
             time.sleep(interval)
 
-def collect_lesson_info(lessons_dir):
-    lessons_info = {
-        'categories': {},
-        'lessons': {}
-    }
+def run_one(source_path, destination_folder):
+    """
+    """
+    # Chuyển đổi đường dẫn tương đối thành tuyệt đối
+    destination_folder = os.path.abspath(os.path.join(CURRENT_DIR, destination_folder))
     
-    # Walk through the lessons directory
-    for root, dirs, files in os.walk(lessons_dir):
-        # Skip if no index.html found
-        if 'index.html' not in files:
-            continue
-            
-        # Get relative path from lessons directory
-        rel_path = os.path.relpath(root, lessons_dir)
-        
-        # Skip the root lessons directory itself
-        if rel_path == '.':
-            continue
-            
-        # Split path into category and lesson
-        parts = rel_path.split(os.sep)
-        if len(parts) > 1:
-            category = parts[0]
-            lesson_path = os.sep.join(parts[1:])
-            
-            # Add category if not exists
-            if category not in lessons_info['categories']:
-                lessons_info['categories'][category] = {
-                    'name': category.replace('-', ' ').replace('_', ' ').title(),
-                    'icon': get_category_icon(category)
-                }
-            
-            # Add lesson under category
-            lessons_info['lessons'][rel_path] = {
-                'path': rel_path,
-                'title': lesson_path.replace('-', ' ').replace('_', ' ').title(),
-                'category': category
-            }
-        else:
-            # Lesson without category
-            lessons_info['lessons'][rel_path] = {
-                'path': rel_path,
-                'title': rel_path.replace('-', ' ').replace('_', ' ').title(),
-                'category': None
-            }
-    
-    return lessons_info
-
-def get_category_icon(category):
-    """Get appropriate icon for category based on its name"""
-    category_lower = category.lower()
-    icons = {
-        'worksheets': 'fa-file-lines',
-        'exercises': 'fa-dumbbell',
-        'projects': 'fa-code',
-        'resources': 'fa-book',
-        'tutorials': 'fa-graduation-cap',
-        'examples': 'fa-lightbulb',
-        'slides': 'fa-chalkboard',
-        'homework': 'fa-house',
-        'quizzes': 'fa-question-circle',
-        'assignments': 'fa-tasks'
-    }
-    return icons.get(category_lower, 'fa-folder')
+    print(f"🔄 Bắt đầu đồng bộ")
+    print(f"📂 Nguồn: {source_path}")
+    print(f"📂 Đích: {destination_folder}")
+    print(f"\n⏰ {get_date_time()} - Bắt đầu kiểm tra đồng bộ...")
+    sync_new_files(source_path, destination_folder)
 
 def main():
-    # Get the directory where the script is located
+    result = run_one(
+        "PROJECTS/GEN8-LESSONS",
+        "lessons",
+    )
+    if not result:
+        return
+        
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Path to lessons directory
     lessons_dir = os.path.join(script_dir, 'lessons')
-    
-    # Create lessons directory if it doesn't exist
     os.makedirs(lessons_dir, exist_ok=True)
     
-    # Collect lesson information
+
     lessons_info = collect_lesson_info(lessons_dir)
     
-    # Write to JSON file
     output_file = os.path.join(script_dir, 'files_info.json')
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(lessons_info, f, ensure_ascii=False, indent=2)
     
-    print(f"Updated {output_file} with {len(lessons_info)} lessons")
+    print(f"Updated {output_file} with {len(lessons_info['lessons'])} lessons and {len(lessons_info['categories'])} categories")
 
-# Ví dụ sử dụng:
 if __name__ == "__main__":
     main()
