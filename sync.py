@@ -312,13 +312,13 @@ def run_one(source_path, destination_folder):
     sync_new_files(source_path, destination_folder)
 
 def main():
-    result = run_one(
-        "PROJECTS/GEN8-LESSONS",
-        "lessons",
-    )
-    if not result:
-        return
-        
+    # result = run_one(
+    #     "PROJECTS/GEN8-LESSONS",
+    #     "lessons",
+    # )
+    # if not result:
+    #     return
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
     lessons_dir = os.path.join(script_dir, 'lessons')
     os.makedirs(lessons_dir, exist_ok=True)

@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS6 - Danh Từ - Part 2 - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            /* text-2xl */
+            font-weight: 700;
+            color: #2563eb;
+            /* text-blue-600 */
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            /* text-xl */
+            font-weight: 700;
+            color: #1f2937;
+            /* text-gray-800 */
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            /* text-gray-800 */
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Custom styles for irregular nouns */
+        .noun-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .noun-icon {
+            background-color: #e0f2fe;
+            color: #0ea5e9;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .noun-transition {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+                /* text-lg */
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+                /* text-sm */
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Danh Từ (Nouns) - Phần 2: Bất quy tắc & Đếm được/Không đếm được</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Mục tiêu bài học</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Hiểu danh từ bất quy tắc</li>
+                            <li class="mb-1">Phân biệt danh từ đếm được và không đếm được</li>
+                            <li>Mẹo nhận biết danh từ đếm được và không đếm được</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Danh từ bất quy tắc: Đặc điểm</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Không theo quy tắc thêm -s/-es</li>
+                            <li class="mb-1">Thay đổi nguyên âm, toàn bộ từ, hoặc giữ nguyên</li>
+                            <li>Cần học thuộc vì không có quy tắc chung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Irregular Nouns Examples -->
+                <div class="info-card bg-blue-50 mb-4">
+                    <h4 class="subsection-title mb-3">3. Danh từ bất quy tắc: Ví dụ</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-male"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">man</div>
+                                <div class="noun-transition">
+                                    → men
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">woman</div>
+                                <div class="noun-transition">
+                                    → women
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">child</div>
+                                <div class="noun-transition">
+                                    → children
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-mouse"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">mouse</div>
+                                <div class="noun-transition">
+                                    → mice
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-foot"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">foot</div>
+                                <div class="noun-transition">
+                                    → feet
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">person</div>
+                                <div class="noun-transition">
+                                    → people
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-tooth"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">tooth</div>
+                                <div class="noun-transition">
+                                    → teeth
+                                </div>
+                            </div>
+                        </div>
+                        <div class="noun-card">
+                            <div class="noun-icon">
+                                <i class="fas fa-sheep"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">sheep</div>
+                                <div class="noun-transition">
+                                    → sheep
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Countable vs Uncountable Nouns -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Danh từ đếm được: Đặc điểm</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Có thể đếm bằng số (1, 2, 3...)</li>
+                            <li class="mb-1">Có dạng số ít và số nhiều</li>
+                            <li>Thường dùng với "a/an", "many", "a few"</li>
+                        </ul>
+                        <div class="mt-2">
+                            <p class="font-medium">Ví dụ:</p>
+                            <ul class="list-disc pl-5">
+                                <li class="italic">a book → books</li>
+                                <li class="italic">an apple → apples</li>
+                                <li class="italic">one cat → two cats</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Danh từ không đếm được: Đặc điểm</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Không thể đếm trực tiếp bằng số</li>
+                            <li class="mb-1">Không có dạng số nhiều</li>
+                            <li>Thường dùng với "some", "much", "a little"</li>
+                        </ul>
+                        <div class="mt-2">
+                            <p class="font-medium">Ví dụ:</p>
+                            <ul class="list-disc pl-5">
+                                <li class="italic">water</li>
+                                <li class="italic">rice</li>
+                                <li class="italic">sugar</li>
+                                <li class="italic">air</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips -->
+                <div class="info-card bg-green-50 mb-4">
+                    <h4 class="subsection-title">6. Mẹo nhận biết danh từ đếm được/không đếm được</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-medium text-gray-800">Danh từ đếm được:</p>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">Có thể đếm riêng lẻ (one, two, three)</li>
+                                <li class="mb-1">Dùng với "a/an", "many", "few"</li>
+                                <li>Hỏi: "Can you count one, two, three...?" → Yes</li>
+                            </ul>
+                            <p class="mt-2 font-medium italic">Ví dụ: a book, three cats</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">Danh từ không đếm được:</p>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">Không thể đếm riêng lẻ</li>
+                                <li class="mb-1">Dùng với "some", "much", "little"</li>
+                                <li>Hỏi: "Can you count one, two, three...?" → No</li>
+                            </ul>
+                            <p class="mt-2 font-medium italic">Ví dụ: some water, much sugar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">between <span class="vocab-type">(pre)</span> /bɪˈtwiːn/</p>
+                        <p class="vocab-meaning">ở giữa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">chest of drawers <span class="vocab-type">(n)</span> /ˌtʃest əv ˈdrɔːz/</p>
+                        <p class="vocab-meaning">tủ có ngăn kéo</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cooker <span class="vocab-type">(n)</span> /ˈkʊkə/</p>
+                        <p class="vocab-meaning">bếp</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">country house <span class="vocab-type">(n)</span> /ˌkʌntri ˈhaʊs/</p>
+                        <p class="vocab-meaning">nhà ở vùng quê</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">crazy <span class="vocab-type">(adj)</span> /ˈkreɪzi/</p>
+                        <p class="vocab-meaning">kì lạ, lạ thường</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cupboard <span class="vocab-type">(n)</span> /ˈkʌbəd/</p>
+                        <p class="vocab-meaning">tủ đựng bát đĩa / quần áo</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">department store <span class="vocab-type">(n)</span> /dɪˈpɑːtmənt stɔː/</p>
+                        <p class="vocab-meaning">cửa hàng bách hoá</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dishwasher <span class="vocab-type">(n)</span> /ˈdɪʃwɒʃə/</p>
+                        <p class="vocab-meaning">máy rửa bát</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">flat <span class="vocab-type">(n)</span> /flæt/</p>
+                        <p class="vocab-meaning">căn hộ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">furniture <span class="vocab-type">(n)</span> /ˈfɜːnɪtʃə/</p>
+                        <p class="vocab-meaning">đồ đạc trong nhà</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">hall <span class="vocab-type">(n)</span> /hɔːl/</p>
+                        <p class="vocab-meaning">sảnh</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">in front of <span class="vocab-type">(pre)</span> /ɪn frʌnt əv/</p>
+                        <p class="vocab-meaning">ở đằng trước, phía trước</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">next to <span class="vocab-type">(pre)</span> /ˈnekst tə/</p>
+                        <p class="vocab-meaning">bên cạnh</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">shelf <span class="vocab-type">(n)</span> /ʃelf/</p>
+                        <p class="vocab-meaning">kệ, giá</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">sink <span class="vocab-type">(n)</span> /sɪŋk/</p>
+                        <p class="vocab-meaning">bồn rửa bát</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">strange <span class="vocab-type">(adj)</span> /streɪndʒ/</p>
+                        <p class="vocab-meaning">kì lạ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">town house <span class="vocab-type">(n)</span> /ˈtaʊn haʊs/</p>
+                        <p class="vocab-meaning">nhà phố</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">wardrobe <span class="vocab-type">(n)</span> /ˈwɔːdrəʊb/</p>
+                        <p class="vocab-meaning">tủ đựng quần áo</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <!-- Exercise 1: Irregular Nouns -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Danh từ bất quy tắc</h4>
+                            <p class="exercise-instruction">👉 Viết dạng số nhiều của các danh từ bất quy tắc sau:</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">foot</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="feet"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">person</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="people"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">sheep</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="sheep"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">mouse</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="mice"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">child</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="children"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">tooth</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="teeth"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">woman</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="women"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">ox</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="oxen"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2: Countable Nouns -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 2: Danh từ đếm được</h4>
+                            <p class="exercise-instruction">👉 Chọn đáp án đúng:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">I have two
+                                        ________.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="cats"
+                                                data-answer="cats" onclick="checkAnswer(this)">
+                                            <span>cats</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="water"
+                                                data-answer="cats" onclick="checkAnswer(this)">
+                                            <span>water</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She bought three
+                                        ________.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="books"
+                                                data-answer="books" onclick="checkAnswer(this)">
+                                            <span>books</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="rice"
+                                                data-answer="books" onclick="checkAnswer(this)">
+                                            <span>rice</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">There is a
+                                        ________ between the two windows.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="shelf"
+                                                data-answer="shelf" onclick="checkAnswer(this)">
+                                            <span>shelf</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="water"
+                                                data-answer="shelf" onclick="checkAnswer(this)">
+                                            <span>water</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We need a new
+                                        ________ for the kitchen.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="cooker"
+                                                data-answer="cooker" onclick="checkAnswer(this)">
+                                            <span>cooker</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="furniture"
+                                                data-answer="cooker" onclick="checkAnswer(this)">
+                                            <span>furniture</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The ________ in
+                                        the bedroom is full of clothes.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="wardrobe"
+                                                data-answer="wardrobe" onclick="checkAnswer(this)">
+                                            <span>wardrobe</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="rice"
+                                                data-answer="wardrobe" onclick="checkAnswer(this)">
+                                            <span>rice</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">My mother bought three ________ at the market.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="fish" 
+                                                data-answer="fish" onclick="checkAnswer(this)">
+                                            <span>fish</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="sugar"
+                                                data-answer="fish" onclick="checkAnswer(this)">
+                                            <span>sugar</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">There are two ________ on my desk.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="pencils"
+                                                data-answer="pencils" onclick="checkAnswer(this)">
+                                            <span>pencils</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="milk"
+                                                data-answer="pencils" onclick="checkAnswer(this)">
+                                            <span>milk</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">I need some ________ to make this cake.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="flour"
+                                                data-answer="flour" onclick="checkAnswer(this)">
+                                            <span>flour</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="plates"
+                                                data-answer="flour" onclick="checkAnswer(this)">
+                                            <span>plates</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 3: Uncountable Nouns -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 3: Danh từ không đếm được</h4>
+                            <p class="exercise-instruction">👉 Chọn đáp án đúng:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">I need some
+                                        ________.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="water"
+                                                data-answer="water" onclick="checkAnswer(this)">
+                                            <span>water</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="books"
+                                                data-answer="water" onclick="checkAnswer(this)">
+                                            <span>books</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">There is some
+                                        ________ in the kitchen.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="rice"
+                                                data-answer="rice" onclick="checkAnswer(this)">
+                                            <span>rice</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="cups"
+                                                data-answer="rice" onclick="checkAnswer(this)">
+                                            <span>cups</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We bought new
+                                        ________ for the living room.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="furniture"
+                                                data-answer="furniture" onclick="checkAnswer(this)">
+                                            <span>furniture</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="chairs"
+                                                data-answer="furniture" onclick="checkAnswer(this)">
+                                            <span>chairs</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">There isn't much
+                                        ________ in the bottle.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="sugar"
+                                                data-answer="sugar" onclick="checkAnswer(this)">
+                                            <span>sugar</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="cookies"
+                                                data-answer="sugar" onclick="checkAnswer(this)">
+                                            <span>cookies</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Would you like a
+                                        little ________ in your tea?</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="honey"
+                                                data-answer="honey" onclick="checkAnswer(this)">
+                                            <span>honey</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="biscuits"
+                                                data-answer="honey" onclick="checkAnswer(this)">
+                                            <span>biscuits</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The students need to buy new ________ for art class.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q11" class="radio-input" value="equipment" 
+                                                data-answer="equipment" onclick="checkAnswer(this)">
+                                            <span>equipment</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q11" class="radio-input" value="supplies"
+                                                data-answer="equipment" onclick="checkAnswer(this)">
+                                            <span>supplies</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <!-- Exercise 4: Classification -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 4: Phân loại danh từ</h4>
+                            <p class="exercise-instruction">👉 Kéo thả các danh từ vào đúng mục (đếm được, không đếm
+                                được, bất quy tắc):</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                <div class="border-2 border-dashed border-blue-500 p-2 rounded-lg min-h-20"
+                                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <h5 class="font-bold text-center mb-2">Danh từ đếm được</h5>
+                                    <div id="countable-items" class="min-h-16"></div>
+                                </div>
+                                <div class="border-2 border-dashed border-green-500 p-2 rounded-lg min-h-20"
+                                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <h5 class="font-bold text-center mb-2">Danh từ không đếm được</h5>
+                                    <div id="uncountable-items" class="min-h-16"></div>
+                                </div>
+                                <div class="border-2 border-dashed border-purple-500 p-2 rounded-lg min-h-20"
+                                    ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    <h5 class="font-bold text-center mb-2">Danh từ bất quy tắc</h5>
+                                    <div id="irregular-items" class="min-h-16"></div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-3 sm:grid-cols-6 gap-2" id="word-bank">
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="water" data-category="uncountable">water</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="child" data-category="irregular">child</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="book" data-category="countable">book</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="rice" data-category="uncountable">rice</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="foot" data-category="irregular">foot</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="chair" data-category="countable">chair</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="furniture" data-category="uncountable">furniture
+                                </div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="sugar" data-category="uncountable">sugar</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="woman" data-category="irregular">woman</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="cup" data-category="countable">cup</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="air" data-category="uncountable">air</div>
+                                <div class="bg-gray-100 p-2 rounded text-center cursor-move" draggable="true"
+                                    ondragstart="drag(event)" id="sheep" data-category="irregular">sheep</div>
+                            </div>
+
+                            <button onclick="checkClassification()"
+                                class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg block print:hidden">
+                                Kiểm tra kết quả
+                            </button>
+                            <div id="classification-feedback" class="mt-2 hidden"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 5: Correct the mistakes -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 5: Sửa lỗi sai trong các câu sau (viết cả câu)</h4>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">I saw three childs in the park.</span>
+                                    <input type="text" class="answer-input flex-1"
+                                        data-answer="I saw three children in the park." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">She needs some advices for her problem.</span>
+                                    <input type="text" class="answer-input flex-1"
+                                        data-answer="She needs some advice for her problem." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">There are five mouses in the kitchen.</span>
+                                    <input type="text" class="answer-input flex-1"
+                                        data-answer="There are five mice in the kitchen." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">We need many furnitures for our new
+                                        flat.</span>
+                                    <input type="text" class="answer-input flex-1"
+                                        data-answer="We need much furniture for our new flat." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">The womans are waiting for the bus.</span>
+                                    <input type="text" class="answer-input flex-1"
+                                        data-answer="The women are waiting for the bus." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 6: Write sentences -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 6: Đặt câu hoàn chỉnh sử dụng các từ đã cho</h4>
+                            <p class="exercise-instruction">👉 Sử dụng các từ sau để đặt câu có nghĩa (chú ý số ít/số
+                                nhiều):</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">wardrobe / clothes:</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">department store / next to:</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">country house / furniture:</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">sink / between / cooker:</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">children / playground:</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            console.log(userAnswer, correctAnswer);
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+
+        // Drag and drop functions for classification exercise
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const draggedElement = document.getElementById(data);
+            const targetContainer = ev.currentTarget.querySelector('div');
+            
+            // Remove from any previous container
+            if (draggedElement.parentNode && draggedElement.parentNode.id !== "word-bank") {
+                draggedElement.parentNode.removeChild(draggedElement);
+            }
+            
+            // Add to new container
+            targetContainer.appendChild(draggedElement);
+        }
+
+        function checkClassification() {
+            const countableContainer = document.getElementById('countable-items');
+            const uncountableContainer = document.getElementById('uncountable-items');
+            const irregularContainer = document.getElementById('irregular-items');
+            const feedbackDiv = document.getElementById('classification-feedback');
+            
+            let correctCount = 0;
+            let incorrectItems = [];
+            
+            // Check countable nouns
+            const countableItems = countableContainer.querySelectorAll('div');
+            countableItems.forEach(item => {
+                if (item.dataset.category === 'countable') {
+                    item.classList.add('bg-green-100');
+                    correctCount++;
+                } else {
+                    item.classList.add('bg-red-100');
+                    incorrectItems.push(item.textContent);
+                }
+            });
+            
+            // Check uncountable nouns
+            const uncountableItems = uncountableContainer.querySelectorAll('div');
+            uncountableItems.forEach(item => {
+                if (item.dataset.category === 'uncountable') {
+                    item.classList.add('bg-green-100');
+                    correctCount++;
+                } else {
+                    item.classList.add('bg-red-100');
+                    incorrectItems.push(item.textContent);
+                }
+            });
+            
+            // Check irregular nouns
+            const irregularItems = irregularContainer.querySelectorAll('div');
+            irregularItems.forEach(item => {
+                if (item.dataset.category === 'irregular') {
+                    item.classList.add('bg-green-100');
+                    correctCount++;
+                } else {
+                    item.classList.add('bg-red-100');
+                    incorrectItems.push(item.textContent);
+                }
+            });
+            
+            // Show feedback
+            feedbackDiv.classList.remove('hidden');
+            if (incorrectItems.length === 0) {
+                feedbackDiv.innerHTML = `
+                    <div class="bg-green-100 text-green-800 p-2 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i> Chính xác! Bạn đã phân loại đúng tất cả các từ.
+                    </div>
+                `;
+            } else {
+                feedbackDiv.innerHTML = `
+                    <div class="bg-red-100 text-red-800 p-2 rounded-lg">
+                        <i class="fas fa-exclamation-circle mr-2"></i> Bạn đã phân loại đúng ${correctCount}/12 từ.
+                        ${incorrectItems.length > 0 ? `Các từ chưa đúng: ${incorrectItems.join(', ')}` : ''}
+                    </div>
+                `;
+            }
+        }
+
+        // Reset page on print
+        window.addEventListener('afterprint', function() {
+            location.reload();
+        });
+    </script>
+</body>
+
+</html>

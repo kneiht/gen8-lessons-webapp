@@ -4,231 +4,227 @@
       "name": "Worksheets",
       "icon": "https://cdn-icons-png.flaticon.com/512/2991/2991108.png"
     },
-    "tests": {
-      "name": "Tests",
-      "icon": "https://cdn-icons-png.flaticon.com/512/9913/9913544.png"
-    },
     "slides": {
       "name": "Slides",
       "icon": "https://cdn-icons-png.flaticon.com/512/11473/11473512.png"
     }
   },
   "lessons": {
-    "worksheets/pre-gs8-possessive": {
-      "path": "worksheets/pre-gs8-possessive",
-      "title": "Pre Gs8 Possessive",
+    "worksheets/pre-gs7-worksheets-3": {
+      "path": "worksheets/pre-gs7-worksheets-3",
+      "title": "Pre Gs7 Worksheets 3",
       "author": "Gen8",
-      "description": "",
+      "description": "Lượng từ (Quantifiers) - Worksheets",
       "category": "worksheets"
     },
-    "worksheets/pre-gs7-nouns": {
-      "path": "worksheets/pre-gs7-nouns",
-      "title": "Pre Gs7 Nouns",
+    "worksheets/pre-gs7-worksheets-4": {
+      "path": "worksheets/pre-gs7-worksheets-4",
+      "title": "Pre GS7 Worksheets 4",
       "author": "Gen8",
-      "description": "",
+      "description": "Đại Từ Nhân Xưng - Personal Pronouns",
       "category": "worksheets"
     },
-    "worksheets/pre-gs8-nouns-and-articles": {
-      "path": "worksheets/pre-gs8-nouns-and-articles",
-      "title": "Pre Gs8 Nouns And Articles",
+    "worksheets/pre-gs8-worksheets-1": {
+      "path": "worksheets/pre-gs8-worksheets-1",
+      "title": "Pre GS8 Worksheets 1",
       "author": "Gen8",
-      "description": "",
+      "description": "Danh Từ và Mạo Từ (Nouns & Articles) – Ôn Tập",
       "category": "worksheets"
     },
-    "worksheets/pre-gs7-articles": {
-      "path": "worksheets/pre-gs7-articles",
-      "title": "Pre Gs7 Articles",
+    "worksheets/pre-gs7-worksheets-2": {
+      "path": "worksheets/pre-gs7-worksheets-2",
+      "title": "Pre Gs7 Worksheets 2",
       "author": "Gen8",
-      "description": "",
+      "description": "Mạo từ - Articles (a, an, the)",
       "category": "worksheets"
     },
-    "worksheets/pre-gs9-past-and-past-continuous": {
-      "path": "worksheets/pre-gs9-past-and-past-continuous",
-      "title": "Pre Gs9 Past And Past Continuous",
+    "worksheets/pre-gs6-worksheets-4": {
+      "path": "worksheets/pre-gs6-worksheets-4",
+      "title": "Pre GS6 Worksheets 4",
       "author": "Gen8",
-      "description": "",
+      "description": "Some and Any",
       "category": "worksheets"
     },
-    "worksheets/pre-gs6-nouns-part-2": {
-      "path": "worksheets/pre-gs6-nouns-part-2",
-      "title": "Pre Gs6 Nouns Part 2",
+    "worksheets/pre-gs9-worksheets-1": {
+      "path": "worksheets/pre-gs9-worksheets-1",
+      "title": "Pre GS9 Worksheets 1",
       "author": "Gen8",
-      "description": "",
+      "description": "Thì Hiện Tại Đơn và Hiện Tại Tiếp Diễn",
       "category": "worksheets"
     },
-    "worksheets/pre-gs9-simple-perfect": {
-      "path": "worksheets/pre-gs9-simple-perfect",
-      "title": "Pre Gs9 Simple Perfect",
+    "worksheets/pre-gs6-worksheets-3": {
+      "path": "worksheets/pre-gs6-worksheets-3",
+      "title": "Pre GS6 Worksheets 3",
       "author": "Gen8",
-      "description": "",
+      "description": "Mạo từ (Articles) a/an/the",
       "category": "worksheets"
     },
-    "worksheets/pre-gs7-quantifiers": {
-      "path": "worksheets/pre-gs7-quantifiers",
-      "title": "Pre Gs7 Quantifiers",
+    "worksheets/pre-gs6-worksheets-2": {
+      "path": "worksheets/pre-gs6-worksheets-2",
+      "title": "Pre GS6 Worksheets 2",
       "author": "Gen8",
-      "description": "",
+      "description": "Danh Từ (Nouns) - Phần 2: Bất quy tắc & Đếm được/Không đếm được",
       "category": "worksheets"
     },
-    "worksheets/pre-gs9-present-simple-and-continuous": {
-      "path": "worksheets/pre-gs9-present-simple-and-continuous",
-      "title": "Pre Gs9 Present Simple And Continuous",
+    "worksheets/pre-gs6-worksheets-5": {
+      "path": "worksheets/pre-gs6-worksheets-5",
+      "title": "Pre GS6 Worksheets 5",
       "author": "Gen8",
-      "description": "",
+      "description": "Personal Pronouns (Đại Từ Nhân Xưng) - Lesson 1",
       "category": "worksheets"
     },
-    "worksheets/pre-gs6-articles-a-an-the": {
-      "path": "worksheets/pre-gs6-articles-a-an-the",
-      "title": "Pre Gs6 Articles A An The",
-      "author": "Gen8",
-      "description": "",
-      "category": "worksheets"
-    },
-    "worksheets/pre-gs6-some-any": {
-      "path": "worksheets/pre-gs6-some-any",
-      "title": "Pre Gs6 Some Any",
-      "author": "Gen8",
-      "description": "",
-      "category": "worksheets"
-    },
-    "worksheets/pre-gs7-pronouns": {
-      "path": "worksheets/pre-gs7-pronouns",
-      "title": "Pre Gs7 Pronouns",
-      "author": "Gen8",
-      "description": "",
-      "category": "worksheets"
-    },
-    "worksheets/pre-gs6-pronouns": {
-      "path": "worksheets/pre-gs6-pronouns",
-      "title": "Pre Gs6 Pronouns",
-      "author": "Gen8",
-      "description": "",
-      "category": "worksheets"
-    },
-    "worksheets/pre-gs6-nouns-part-1": {
-      "path": "worksheets/pre-gs6-nouns-part-1",
-      "title": "Pre Gs6 Nouns Part 1",
-      "author": "Gen8",
-      "description": "",
-      "category": "worksheets"
-    },
-    "tests/pre-gs6-test-1": {
-      "path": "tests/pre-gs6-test-1",
-      "title": "Pre Gs6 Test 1",
+    "worksheets/pre-gs8-worksheets-2": {
+      "path": "worksheets/pre-gs8-worksheets-2",
+      "title": "Pre GS8 Worksheets 2",
       "author": "Gen8",
       "description": "Không có mô tả.",
-      "category": "tests"
+      "category": "worksheets"
     },
-    "slides/pre-gs7-nouns": {
-      "path": "slides/pre-gs7-nouns",
-      "title": "Pre Gs7 Nouns",
+    "worksheets/pre-gs7-worksheets-1": {
+      "path": "worksheets/pre-gs7-worksheets-1",
+      "title": "Pre Gs7 Worksheets 1",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 7 DANH TỪ Mục tiêu bài học: Hiểu khái niệm danh từ Phân loại danh từ Cách dùng danh từ trong câu Cách tạo danh từ số nhiều",
+      "description": "Danh từ (Nouns) - Worksheet",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs9-worksheets-2": {
+      "path": "worksheets/pre-gs9-worksheets-2",
+      "title": "Pre GS9 Worksheets 2",
+      "author": "Gen8",
+      "description": "Present Perfect Tense - Worksheets",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs9-worksheets-3": {
+      "path": "worksheets/pre-gs9-worksheets-3",
+      "title": "Pre GS9 Worksheets 3",
+      "author": "Gen8",
+      "description": "Quá Khứ Đơn & Quá Khứ Tiếp Diễn",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-worksheets-1": {
+      "path": "worksheets/pre-gs6-worksheets-1",
+      "title": "Pre GS6 Worksheets 1",
+      "author": "Gen8",
+      "description": "Danh từ (Nouns) - Part 1",
+      "category": "worksheets"
+    },
+    "slides/pre-gs9-lesson-4": {
+      "path": "slides/pre-gs9-lesson-4",
+      "title": "Pre GS9 Lesson 4",
+      "author": "Gen8",
+      "description": "GRAMMAR FOR PRE-GRADE 9",
       "category": "slides"
     },
-    "slides/pre-gs8-nouns-and-articles": {
-      "path": "slides/pre-gs8-nouns-and-articles",
-      "title": "Pre Gs8 Nouns And Articles",
+    "slides/pre-gs8-lesson-4": {
+      "path": "slides/pre-gs8-lesson-4",
+      "title": "Pre GS8 Lesson 4",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 8 DANH TỪ VÀ MẠO TỪ Mục tiêu bài học: Ôn tập danh từ đếm được và không đếm được Cách dùng mạo từ a/an/the Mạo từ rỗng (zero article) Ôn lại dạng số nhiều và danh từ bất quy tắc",
+      "description": "GRAMMAR FOR GRADE 8",
       "category": "slides"
     },
-    "slides/pre-gs9-wish-2": {
-      "path": "slides/pre-gs9-wish-2",
-      "title": "Pre Gs9 Wish 2",
+    "slides/pre-gs8-lesson-3": {
+      "path": "slides/pre-gs8-lesson-3",
+      "title": "Pre GS8 Lesson 3",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 9 WISH + PAST SIMPLE (WISH LOẠI 2) Mục tiêu bài học: Hiểu cách dùng \"wish + past simple\" Biết cách thể hiện ước muốn hiện tại Phân biệt với các cấu trúc tương tự",
+      "description": "GRAMMAR FOR PRE-GRADE 8",
       "category": "slides"
     },
-    "slides/pre-gs9-past-and-past-continuous": {
-      "path": "slides/pre-gs9-past-and-past-continuous",
-      "title": "Pre Gs9 Past And Past Continuous",
+    "slides/pre-gs9-lesson-3": {
+      "path": "slides/pre-gs9-lesson-3",
+      "title": "Pre GS9 Lesson 3",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 9 QUÁ KHỨ ĐƠN & QUÁ KHỨ TIẾP DIỄN Mục tiêu bài học: Hiểu cách sử dụng của 2 thì quá khứ Nhận biết dấu hiệu của mỗi thì Thành thạo cấu trúc câu mỗi thì Phân biệt được 2 thì với nhau",
+      "description": "GRAMMAR FOR PRE-GRADE 9",
       "category": "slides"
     },
-    "slides/pre-gs6-nouns-part-2": {
-      "path": "slides/pre-gs6-nouns-part-2",
-      "title": "Pre Gs6 Nouns Part 2",
+    "slides/pre-gs8-lesson-2": {
+      "path": "slides/pre-gs8-lesson-2",
+      "title": "Pre GS8 Lesson 2",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 6 DANH TỪ - PHẦN 2 Mục tiêu bài học: Hiểu danh từ bất quy tắc Phân biệt danh từ đếm được và không đếm được Mẹo nhận biết danh từ đếm được và không đếm được ---",
+      "description": "GRAMMAR FOR PRE-GRADE 8",
       "category": "slides"
     },
-    "slides/pre-gs6-personal-pronouns": {
-      "path": "slides/pre-gs6-personal-pronouns",
-      "title": "Pre Gs6 Personal Pronouns",
+    "slides/pre-gs9-lesson-2": {
+      "path": "slides/pre-gs9-lesson-2",
+      "title": "Pre GS9 Lesson 2",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE GRADE-6 PERSONAL PRONOUNS Mục tiêu bài học: Hiểu khái niệm đại từ nhân xưng Phân biệt đại từ chủ ngữ và tân ngữ Nắm vị trí trong câu Làm bài tập ứng dụng",
+      "description": "GRAMMAR FOR PRE-GRADE 9",
       "category": "slides"
     },
-    "slides/pre-gs7-quantifiers": {
-      "path": "slides/pre-gs7-quantifiers",
-      "title": "Pre Gs7 Quantifiers",
+    "slides/pre-gs6-lesson-1": {
+      "path": "slides/pre-gs6-lesson-1",
+      "title": "Pre Gs6 Lesson 1",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 7 LƯỢNG TỪ (QUANTIFIERS) Mục tiêu bài học: Hiểu cách sử dụng some, many, much, a lot of, lots of Phân biệt lượng từ cho danh từ đếm được/không đếm được Áp dụng đúng vị trí lượng từ trong câu",
+      "description": "GRAMMAR FOR PRE-GRADE 6",
       "category": "slides"
     },
-    "slides/pre-gs8-possesive": {
-      "path": "slides/pre-gs8-possesive",
-      "title": "Pre Gs8 Possesive",
+    "slides/pre-gs7-lesson-1": {
+      "path": "slides/pre-gs7-lesson-1",
+      "title": "Pre GS7 Lesson 1",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 8 ĐẠI TỪ VÀ TÍNH TỪ SỞ HỮU Mục tiêu bài học: Hiểu và sử dụng tính từ sở hữu (my, your, his, her...) Hiểu và sử dụng sở hữu cách ('s) Phân biệt đại từ nhân xưng, đại từ sở hữu (mine, yours...) Mẹo ghi nhớ và tránh nhầm lẫn",
+      "description": "GRAMMAR FOR PRE-GRADE 7",
       "category": "slides"
     },
-    "slides/pre-gs9-present-simple-and-continuous": {
-      "path": "slides/pre-gs9-present-simple-and-continuous",
-      "title": "Pre Gs9 Present Simple And Continuous",
+    "slides/pre-gs8-lesson-1": {
+      "path": "slides/pre-gs8-lesson-1",
+      "title": "Pre GS8 Lesson 1",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 9 THÌ HIỆN TẠI ĐƠN VÀ HIỆN TẠI TIẾP DIỄN Mục tiêu bài học: Hiểu rõ cách sử dụng của hai thì Nắm được cấu trúc câu khẳng định, phủ định, nghi vấn Phân biệt được khi nào dùng thì nào",
+      "description": "GRAMMAR FOR PRE-GRADE 8",
       "category": "slides"
     },
-    "slides/pre-gs6-articles-a-an-the": {
-      "path": "slides/pre-gs6-articles-a-an-the",
-      "title": "Pre Gs6 Articles A An The",
+    "slides/pre-gs9-lesson-1": {
+      "path": "slides/pre-gs9-lesson-1",
+      "title": "Pre GS9 Lesson 1",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 6 MẠO TỪ A/AN/THE Mục tiêu bài học: Hiểu khái niệm và vai trò của mạo từ trong câu Nắm vững cách sử dụng mạo từ a/an và the Phân biệt được danh từ cụ thể và không cụ thể ---",
+      "description": "GRAMMAR FOR PRE-GRADE 9",
       "category": "slides"
     },
-    "slides/pre-gs6-some-any": {
-      "path": "slides/pre-gs6-some-any",
-      "title": "Pre Gs6 Some Any",
+    "slides/pre-gs7-lesson-4": {
+      "path": "slides/pre-gs7-lesson-4",
+      "title": "Pre GS7 Lesson 4",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 6 SOME / ANY Mục tiêu bài học: Hiểu cách dùng some/any Phân biệt some/any trong các tình huống Nắm các trường hợp ngoại lệ",
+      "description": "GRAMMAR FOR PRE-GRADE 7",
       "category": "slides"
     },
-    "slides/pre-gs7-pronouns": {
-      "path": "slides/pre-gs7-pronouns",
-      "title": "Pre Gs7 Pronouns",
+    "slides/pre-gs6-lesson-4": {
+      "path": "slides/pre-gs6-lesson-4",
+      "title": "Pre GS6 Lesson 4",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 7 ĐẠI TỪ NHÂN XƯNG (PERSONAL PRONOUNS) Mục tiêu bài học: Hiểu khái niệm đại từ nhân xưng Phân biệt đại từ chủ ngữ và tân ngữ Biết cách sử dụng đại từ nhân xưng Thực hành qua các bài tập ứng dụng \"Đại từ - cách gọi người, vật mà không cần nhắc tên\"",
+      "description": "GRAMMAR FOR PRE-GRADE 6",
       "category": "slides"
     },
-    "slides/pre-gs9-present-perfect": {
-      "path": "slides/pre-gs9-present-perfect",
-      "title": "Pre Gs9 Present Perfect",
+    "slides/pre-gs6-lesson-3": {
+      "path": "slides/pre-gs6-lesson-3",
+      "title": "Pre GS6 Lesson 3",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 9 THÌ HIỆN TẠI HOÀN THÀNH Mục tiêu bài học: Hiểu sự khác biệt về thời gian với thì quá khứ đơn Nắm được 3 cách sử dụng chính Nhận biết dấu hiệu của thì hiện tại hoàn thành Thành thạo cấu trúc câu khẳng định, phủ định, nghi vấn",
+      "description": "GRAMMAR FOR PRE-GRADE 6",
       "category": "slides"
     },
-    "slides/pre-gs8-verbs": {
-      "path": "slides/pre-gs8-verbs",
-      "title": "Pre Gs8 Verbs",
+    "slides/pre-gs7-lesson-3": {
+      "path": "slides/pre-gs7-lesson-3",
+      "title": "Pre GS7 Lesson 3",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 8 ĐỘNG TỪ CƠ BẢN Mục tiêu bài học: Hiểu khái niệm động từ và vai trò trong câu Nắm được động từ \"to be\" và cách sử dụng Biết cách chia động từ thường cơ bản Xác định đúng vị trí động từ trong câu ---",
+      "description": "GRAMMAR FOR PRE-GRADE 7",
       "category": "slides"
     },
-    "slides/pre-gs6-nouns-part-1": {
-      "path": "slides/pre-gs6-nouns-part-1",
-      "title": "Pre Gs6 Nouns Part 1",
+    "slides/pre-gs6-lesson-2": {
+      "path": "slides/pre-gs6-lesson-2",
+      "title": "Pre Gs6 Lesson 2",
       "author": "Gen8",
-      "description": "GRAMMAR FOR PRE-GRADE 6 DANH TỪ Mục tiêu bài học: Hiểu khái niệm danh từ Phân loại danh từ Cách dùng danh từ trong câu Cách tạo danh từ số nhiều",
+      "description": "GRAMMAR FOR PRE-GRADE 6",
       "category": "slides"
     },
-    "slides/pre-gs8-simple-sentences": {
-      "path": "slides/pre-gs8-simple-sentences",
-      "title": "Pre Gs8 Simple Sentences",
+    "slides/pre-gs7-lesson-2": {
+      "path": "slides/pre-gs7-lesson-2",
+      "title": "Pre GS7 Lesson 2",
       "author": "Gen8",
-      "description": "GRAMMAR FOR GRADE 8 CÂU ĐƠN (SIMPLE SENTENCES) Mục tiêu bài học: Hiểu cấu trúc S-V-O trong câu đơn Nhận diện được các thành phần câu Biết cách hình thành câu khẳng định, phủ định và câu hỏi",
+      "description": "GRAMMAR FOR PRE-GRADE 7",
+      "category": "slides"
+    },
+    "slides/pre-gs6-lesson-5": {
+      "path": "slides/pre-gs6-lesson-5",
+      "title": "Pre GS6 Lesson 5",
+      "author": "Gen8",
+      "description": "GRAMMAR FOR PRE GRADE-6",
       "category": "slides"
     }
   }

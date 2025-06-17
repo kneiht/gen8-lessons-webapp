@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS9: Present Perfect Tense</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .print-only {
+                display: block !important;
+            }
+            
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .highlight {
+                background-color: #fef08a !important;
+            }
+            
+            .correct {
+                color: #16a34a !important;
+            }
+            
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+        
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+        
+        .correct {
+            color: #16a34a;
+        }
+        
+        .incorrect {
+            color: #dc2626;
+        }
+        
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+        
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+        
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+        
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+        
+        .vocab-type {
+            color: #6b7280;
+        }
+        
+        .vocab-meaning {
+            color: #374151;
+        }
+        
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+        
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+        
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+            
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+        
+        .text-gray-800 {
+            color: #1f2937;
+        }
+        
+        .text-gray-500 {
+            color: #6b7280;
+        }
+        
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+        
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        
+        .p-2 {
+            padding: 0.5rem;
+        }
+        
+        .p-4 {
+            padding: 1rem;
+        }
+        
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 0.875rem;
+            }
+            
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Timeline for present perfect */
+        .timeline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 50px;
+            margin: 20px 0;
+        }
+        
+        .timeline-line {
+            height: 4px;
+            background: #3b82f6;
+            width: 100%;
+            position: relative;
+            border-radius: 2px;
+        }
+        
+        .timeline-point {
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+        }
+        
+        .past-point {
+            left: 30%;
+        }
+        
+        .present-point {
+            right: 10%;
+        }
+        
+        .timeline-label {
+            position: absolute;
+            top: 15px;
+            font-size: 0.7rem;
+            color: #6b7280;
+        }
+        
+        .past-label {
+            left: 30%;
+            transform: translateX(-50%);
+        }
+        
+        .present-label {
+            right: 10%;
+            transform: translateX(50%);
+        }
+        
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #eff6ff;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Present Perfect Tense - Worksheets</h1>
+                <button onclick="printWorksheet()" class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date: _______________</p>
+            </div>
+
+            <!-- Key Notes Section -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Khái niệm thì hiện tại hoàn thành</h4>
+                        <p class="text-gray-700 mb-3">Diễn tả hành động xảy ra trong quá khứ nhưng có liên quan hoặc kéo dài đến hiện tại.</p>
+                        <p class="text-gray-700 italic">Ví dụ: I have lived here for 3 years.</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. So sánh với quá khứ đơn</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Hiện tại hoàn thành</th>
+                                <th>Quá khứ đơn</th>
+                            </tr>
+                            <tr>
+                                <td>I have lived here for 3 years. (vẫn sống ở đây)</td>
+                                <td>I lived here for 3 years. (đã chuyển đi)</td>
+                            </tr>
+                            <tr>
+                                <td>She has just arrived. (vừa mới đến)</td>
+                                <td>She arrived yesterday. (thời gian cụ thể)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Cách sử dụng 1: Kéo dài đến hiện tại</h4>
+                        <p class="text-gray-700 mb-2">Hành động bắt đầu trong quá khứ, kéo dài đến hiện tại</p>
+                        <div class="timeline">
+                            <div class="timeline-line">
+                                <div class="timeline-point past-point"></div>
+                                <div class="timeline-point present-point"></div>
+                            </div>
+                            <div class="timeline-label past-label">Past</div>
+                            <div class="timeline-label present-label">Now</div>
+                        </div>
+                        <p class="text-gray-700 italic">Ví dụ: I have lived here for 5 years.</p>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Dấu hiệu nhận biết: Since/For</h4>
+                        <p class="text-gray-700 mb-2">Since: mốc thời gian cụ thể (since 2010, since Monday)</p>
+                        <p class="text-gray-700 mb-2">For: khoảng thời gian (for 3 years, for a long time)</p>
+                        <p class="text-gray-700 italic">
+                            Ví dụ: I have known her since 2015.<br>
+                            They have been married for 20 years.
+                        </p>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Cách sử dụng 2: Hành động vừa mới xảy ra</h4>
+                        <p class="text-gray-700 mb-2">Hành động vừa mới xảy ra gần đây, kết quả còn ảnh hưởng đến hiện tại</p>
+                        <p class="text-gray-700 mb-2">Dấu hiệu: just, already, yet</p>
+                        <p class="text-gray-700 italic">
+                            Ví dụ: I have just finished my homework.<br>
+                            She hasn't replied to my message yet.
+                        </p>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">6. Cách sử dụng 3: Kinh nghiệm, trải nghiệm</h4>
+                        <p class="text-gray-700 mb-2">Diễn tả kinh nghiệm trong cuộc sống, không quan trọng thời gian cụ thể</p>
+                        <p class="text-gray-700 mb-2">Dấu hiệu: ever, never</p>
+                        <p class="text-gray-700 italic">
+                            Ví dụ: I have visited Paris three times.<br>
+                            Have you ever ridden a horse?
+                        </p>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">7. Cấu trúc câu khẳng định</h4>
+                        <p class="text-gray-700 mb-2 font-mono bg-gray-100 p-2 rounded">S + have/has + V3 + (O)</p>
+                        <p class="text-gray-700 italic">I have worked here for 5 years.<br>She has finished her homework.</p>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">8. Cấu trúc câu phủ định</h4>
+                        <p class="text-gray-700 mb-2 font-mono bg-gray-100 p-2 rounded">S + have/has + not + V3 + (O)</p>
+                        <p class="text-gray-700 italic">I haven't seen that movie.<br>She hasn't visited her grandparents this year.</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">9. Cấu trúc câu nghi vấn</h4>
+                        <p class="text-gray-700 mb-2 font-mono bg-gray-100 p-2 rounded">Have/Has + S + V3 + (O)?</p>
+                        <p class="text-gray-700 mb-2 font-mono bg-gray-100 p-2 rounded">Wh- + have/has + S + V3 + (O)?</p>
+                        <p class="text-gray-700 italic">
+                            Have you ever been to Japan?<br>
+                            Where have you put my keys?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary Section -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">bustling <span class="vocab-type">(adj)</span> /ˈbʌslɪŋ/</p>
+                        <p class="vocab-meaning">hối hả, nhộn nhịp, náo nhiệt</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">carry out <span class="vocab-type">(v)</span> /ˈkæri aʊt/</p>
+                        <p class="vocab-meaning">tiến hành (nghiên cứu, nhiệm vụ)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">come down with <span class="vocab-type">(v)</span> /kʌm daʊn wɪð/</p>
+                        <p class="vocab-meaning">bị ốm (vì bệnh gì)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">concrete jungle <span class="vocab-type">(n)</span> /ˌkɒŋkriːt ˈdʒʌŋɡl/</p>
+                        <p class="vocab-meaning">rừng bê tông</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">congested <span class="vocab-type">(adj)</span> /kənˈdʒestɪd/</p>
+                        <p class="vocab-meaning">tắc nghẽn (giao thông)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">downtown <span class="vocab-type">(n)</span> /ˌdaʊnˈtaʊn/</p>
+                        <p class="vocab-meaning">khu trung tâm thành phố</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">hygiene <span class="vocab-type">(n)</span> /ˈhaɪdʒiːn/</p>
+                        <p class="vocab-meaning">vệ sinh</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">itchy <span class="vocab-type">(adj)</span> /ˈɪtʃi/</p>
+                        <p class="vocab-meaning">ngứa, gây ngứa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">metro <span class="vocab-type">(n)</span> /ˈmetrəʊ/</p>
+                        <p class="vocab-meaning">hệ thống tàu điện ngầm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">rush hour <span class="vocab-type">(n)</span> /ˈrʌʃ aʊə/</p>
+                        <p class="vocab-meaning">giờ cao điểm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">underground <span class="vocab-type">(n)</span> /ˌʌndəˈɡraʊnd/</p>
+                        <p class="vocab-meaning">(hệ thống) tàu điện ngầm</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <!-- Exercise 1: Since/For -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Điền since hoặc for vào chỗ trống</h4>
+                            <p class="exercise-instruction">👉 Chọn since (cho mốc thời gian cụ thể) hoặc for (cho khoảng thời gian)</p>
+
+                            <div class="space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">1. I have known her ________ 2015.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="since" data-answer="since" onclick="checkAnswer(this)">
+                                            <span>since</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="for" data-answer="since" onclick="checkAnswer(this)">
+                                            <span>for</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">2. They have been married ________ 20 years.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="since" data-answer="for" onclick="checkAnswer(this)">
+                                            <span>since</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="for" data-answer="for" onclick="checkAnswer(this)">
+                                            <span>for</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">3. She hasn't visited her hometown ________ she moved abroad.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="since" data-answer="since" onclick="checkAnswer(this)">
+                                            <span>since</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="for" data-answer="since" onclick="checkAnswer(this)">
+                                            <span>for</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">4. We've lived in this bustling city ________ last August.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="since" data-answer="since" onclick="checkAnswer(this)">
+                                            <span>since</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="for" data-answer="since" onclick="checkAnswer(this)">
+                                            <span>for</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">5. Traffic has been congested ________ several hours.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="since" data-answer="for" onclick="checkAnswer(this)">
+                                            <span>since</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="for" data-answer="for" onclick="checkAnswer(this)">
+                                            <span>for</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2: Just/Already/Yet -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Điền just, already hoặc yet vào chỗ trống</h4>
+                            <p class="exercise-instruction">👉 Sử dụng just (vừa mới), already (đã...rồi) hoặc yet (chưa, trong câu phủ định)</p>
+
+                            <div class="space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">1. I've ________ received your email.</span>
+                                    <input type="text" class="answer-input w-32" data-answer="just" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">2. She hasn't replied to my message ________.</span>
+                                    <input type="text" class="answer-input w-32" data-answer="yet" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">3. They've ________ left for the airport.</span>
+                                    <input type="text" class="answer-input w-32" data-answer="already" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">4. The construction workers have ________ finished carrying out the repairs.</span>
+                                    <input type="text" class="answer-input w-32" data-answer="just" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">5. Have you visited the new metro station ________?</span>
+                                    <input type="text" class="answer-input w-32" data-answer="yet" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 3: Ever/Never -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 3: Hoàn thành câu với ever hoặc never</h4>
+                            <p class="exercise-instruction">👉 Sử dụng ever (đã từng, trong câu hỏi) hoặc never (chưa bao giờ)</p>
+
+                            <div class="space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">1. Have you ________ ridden a horse?</span>
+                                    <input type="text" class="answer-input w-32" data-answer="ever" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">2. I have ________ eaten sushi.</span>
+                                    <input type="text" class="answer-input w-32" data-answer="never" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">3. Has she ________ met a famous person?</span>
+                                    <input type="text" class="answer-input w-32" data-answer="ever" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">4. We've ________ been to this concrete jungle before.</span>
+                                    <input type="text" class="answer-input w-32" data-answer="never" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">5. Have they ________ come down with this itchy disease?</span>
+                                    <input type="text" class="answer-input w-32" data-answer="ever" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <!-- Exercise 4: Rewrite sentences -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 4: Viết lại câu sử dụng thì hiện tại hoàn thành</h4>
+                            <p class="exercise-instruction">👉 Viết lại các câu sau sử dụng thì hiện tại hoàn thành, có thể thêm các từ gợi ý trong ngoặc</p>
+
+                            <div class="space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">1. They went to Paris three times. (ever)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="They have gone to Paris three times." onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">2. She didn't visit her grandparents this year. (yet)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She hasn't visited her grandparents this year yet." onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">3. Did you ride a camel? (ever)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Have you ever ridden a camel?" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">4. The researchers finished the project recently. (just)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="The researchers have just finished the project." onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">5. Traffic in downtown became worse over the years. (since)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Traffic in downtown has become worse since last year." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 5: Choose the correct tense -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 5: Chọn thì đúng (hiện tại hoàn thành hay quá khứ đơn)</h4>
+                            <p class="exercise-instruction">👉 Chọn thì phù hợp dựa vào ngữ cảnh câu</p>
+
+                            <div class="space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">1. I ________ never been to Japan.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="have" data-answer="have" onclick="checkAnswer(this)">
+                                            <span>have</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="was" data-answer="have" onclick="checkAnswer(this)">
+                                            <span>was</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">2. She ________ to Paris last summer.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="has gone" data-answer="went" onclick="checkAnswer(this)">
+                                            <span>has gone</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="went" data-answer="went" onclick="checkAnswer(this)">
+                                            <span>went</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">3. They ________ each other for 10 years.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="have known" data-answer="have known" onclick="checkAnswer(this)">
+                                            <span>have known</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="knew" data-answer="have known" onclick="checkAnswer(this)">
+                                            <span>knew</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">4. I ________ the new hygiene regulations when we had the inspection last week.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="have followed" data-answer="followed" onclick="checkAnswer(this)">
+                                            <span>have followed</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="followed" data-answer="followed" onclick="checkAnswer(this)">
+                                            <span>followed</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">5. The rush hour traffic ________ worse since they started the new construction project.</span>
+                                    <div class="radio-group w-full sm:w-auto">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="became" data-answer="has become" onclick="checkAnswer(this)">
+                                            <span>became</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="has become" data-answer="has become" onclick="checkAnswer(this)">
+                                            <span>has become</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 6: Make sentences -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 6: Đặt câu hoàn chỉnh sử dụng thì hiện tại hoàn thành</h4>
+                            <p class="exercise-instruction">👉 Sử dụng từ gợi ý và thì hiện tại hoàn thành để đặt câu</p>
+
+                            <div class="space-y-3">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">1. (live / downtown / for 2 years)</span>
+                                    <input type="text" class="answer-input" data-answer="I have lived downtown for 2 years." onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">2. (not try / metro / yet)</span>
+                                    <input type="text" class="answer-input" data-answer="I haven't tried the metro yet." onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">3. (carry out / research / just)</span>
+                                    <input type="text" class="answer-input" data-answer="They have just carried out the research." onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">4. (ever / visit / concrete jungle?)</span>
+                                    <input type="text" class="answer-input" data-answer="Have you ever visited a concrete jungle?" onblur="checkAnswer(this)">
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">5. (come down with / flu / since Monday)</span>
+                                    <input type="text" class="answer-input" data-answer="She has come down with the flu since Monday." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+        
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+        
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+                    
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+            
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS7 - Articles Worksheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            /* text-2xl */
+            font-weight: 700;
+            color: #2563eb;
+            /* text-blue-600 */
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            /* text-xl */
+            font-weight: 700;
+            color: #1f2937;
+            /* text-gray-800 */
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            /* text-gray-800 */
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+                /* text-lg */
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+                /* text-sm */
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Custom styles for this worksheet */
+        .article-tip {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 0.25rem;
+        }
+
+        .example-box {
+            background-color: #f8fafc;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .example-sentence {
+            font-style: italic;
+            color: #334155;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #cbd5e1;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Mạo từ - Articles (a, an, the)</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Khái niệm mạo từ</h4>
+                        <p class="text-gray-700 mb-3">Mạo từ là từ đứng trước danh từ để chỉ danh từ đó xác định hay không xác định</p>
+                        <div class="article-tip">
+                            <i class="fas fa-lightbulb mr-2 text-green-600"></i>Mạo từ giúp người đọc/nghe hiểu rõ hơn về danh từ trong câu
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Phân loại mạo từ</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Không xác định: a/an (dùng khi nói đến sự vật chưa xác định)</li>
+                            <li>Xác định: the (dùng khi nói đến sự vật xác định hoặc đã được nhắc đến trước đó)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Cách dùng 'a' và 'an'</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Dùng 'a' trước danh từ bắt đầu bằng <strong>phụ âm</strong> (a dog, a book)</li>
+                            <li>Dùng 'an' trước danh từ bắt đầu bằng <strong>nguyên âm</strong> (an apple, an hour)</li>
+                        </ul>
+                        <div class="example-box">
+                            <p class="example-sentence">"I saw <span class="font-bold">a</span> university student reading <span class="font-bold">an</span> interesting book."</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Cách dùng 'the'</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Dùng khi danh từ đã xác định (cả người nói và người nghe đều biết)</li>
+                            <li class="mb-1">Dùng khi chỉ duy nhất một thứ (the sun, the moon)</li>
+                            <li>Dùng với danh từ đã được nhắc đến trước đó</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. So sánh a/an vs the</h4>
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>a/an</th>
+                                    <th>the</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Danh từ không xác định</td>
+                                    <td>Danh từ xác định</td>
+                                </tr>
+                                <tr>
+                                    <td>Dùng lần đầu nhắc đến</td>
+                                    <td>Dùng khi đã nhắc đến trước đó</td>
+                                </tr>
+                                <tr>
+                                    <td>I have <strong>a</strong> dog</td>
+                                    <td><strong>The</strong> dog is very cute</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">6. Trường hợp không dùng mạo từ</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Danh từ không đếm được (water, love)</li>
+                            <li class="mb-1">Danh từ chung số nhiều (dogs, cats)</li>
+                            <li class="mb-1">Danh từ riêng (John, Vietnam)</li>
+                            <li>Bữa ăn, phương tiện đi lại, môn thể thao, môn học</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">belong to <span class="vocab-type">(v)</span> /bɪˈlɒŋ tə/</p>
+                        <p class="vocab-meaning">thuộc về</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">benefit <span class="vocab-type">(n)</span> /ˈbenɪfɪt/</p>
+                        <p class="vocab-meaning">lợi ích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">bug <span class="vocab-type">(n)</span> /bʌɡ/</p>
+                        <p class="vocab-meaning">con bọ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cardboard <span class="vocab-type">(n)</span> /ˈkɑːdbɔːd/</p>
+                        <p class="vocab-meaning">bìa các tông</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dollhouse <span class="vocab-type">(n)</span> /ˈdɒlhaʊs/</p>
+                        <p class="vocab-meaning">nhà búp bê</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">gardening <span class="vocab-type">(n)</span> /ˈɡɑːdnɪŋ/</p>
+                        <p class="vocab-meaning">làm vườn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">glue <span class="vocab-type">(n)</span> /ɡluː/</p>
+                        <p class="vocab-meaning">keo dán / hồ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">horse riding <span class="vocab-type">(n)</span> /ˈhɔːs raɪdɪŋ/</p>
+                        <p class="vocab-meaning">cưỡi ngựa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">insect <span class="vocab-type">(n)</span> /ˈɪnsekt/</p>
+                        <p class="vocab-meaning">côn trùng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">jogging <span class="vocab-type">(n)</span> /ˈdʒɒɡɪŋ/</p>
+                        <p class="vocab-meaning">đi / chạy bộ thư giãn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">making models <span class="vocab-type">(n)</span> /ˈmeɪkɪŋ ˈmɒdlz/</p>
+                        <p class="vocab-meaning">làm mô hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">maturity <span class="vocab-type">(n)</span> /məˈtʃʊərəti/</p>
+                        <p class="vocab-meaning">sự trưởng thành</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">patient <span class="vocab-type">(adj)</span> /ˈpeɪʃnt/</p>
+                        <p class="vocab-meaning">kiên nhẫn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">popular <span class="vocab-type">(adj)</span> /ˈpɒpjələ/</p>
+                        <p class="vocab-meaning">được nhiều người ưa thích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">responsibility <span class="vocab-type">(n)</span> /rɪˌspɒnsəˈbɪləti/</p>
+                        <p class="vocab-meaning">sự chịu trách nhiệm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">set <span class="vocab-type">(v)</span> /set/</p>
+                        <p class="vocab-meaning">(mặt trời) lặn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">stress <span class="vocab-type">(n)</span> /stres/</p>
+                        <p class="vocab-meaning">sự căng thẳng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">take on <span class="vocab-type">(v)</span> /teɪk ɒn/</p>
+                        <p class="vocab-meaning">nhận thêm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">unusual <span class="vocab-type">(adj)</span> /ʌnˈjuːʒuəl/</p>
+                        <p class="vocab-meaning">khác thường</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">valuable <span class="vocab-type">(adj)</span> /ˈvæljuəbl/</p>
+                        <p class="vocab-meaning">quý giá</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">yoga <span class="vocab-type">(n)</span> /ˈjəʊɡə/</p>
+                        <p class="vocab-meaning">yoga</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Chọn a hoặc an</h4>
+                            <p class="exercise-instruction">👉 Chọn mạo từ đúng cho các danh từ sau:</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">hour</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="a" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="an" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">university</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="a" data-answer="a" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="an" data-answer="a" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">apple</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="a" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="an" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">insect</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="a" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="an" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">honest person</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="a" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="an" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">useful tool</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="a" data-answer="a" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="an" data-answer="a" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">European country</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="a" data-answer="a" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="an" data-answer="a" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">hourglass</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="a" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>a</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="an" data-answer="an" onclick="checkAnswer(this)">
+                                            <span>an</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Page -->
+            <div class="mb-4">
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Điền a, an hoặc the vào chỗ trống</h4>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">I saw ____ dog in ____ park yesterday.</span>
+                                    <input type="text" class="answer-input" data-answer="a,a" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">She is ____ honest girl and she plays ____ piano very well.</span>
+                                    <input type="text" class="answer-input" data-answer="an,the" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">Please pass me ____ salt on ____ table.</span>
+                                    <input type="text" class="answer-input" data-answer="the,the" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">Yesterday, I saw ____ elephant at ____ zoo.</span>
+                                    <input type="text" class="answer-input" data-answer="an,the" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">Can you pass me ____ salt, please? I put it on ____ table.</span>
+                                    <input type="text" class="answer-input" data-answer="the,the" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">She wants to be ____ doctor when she grows up.</span>
+                                    <input type="text" class="answer-input" data-answer="a" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">____ love is more important than ____ money.</span>
+                                    <input type="text" class="answer-input" data-answer="no article,no article" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span class="text-gray-700">She takes ____ yoga class every morning to reduce ____ stress.</span>
+                                    <input type="text" class="answer-input" data-answer="a,no article" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 3: Sửa lỗi sai trong các câu sau</h4>
+                            <p class="exercise-instruction">👉 Sửa lỗi dùng mạo từ trong các câu dưới đây (viết cả câu đã sửa):</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full gap-2">
+                                    <span class="font-medium text-gray-700">I need a water because I'm thirsty.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="I need some water because I'm thirsty." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full gap-2">
+                                    <span class="font-medium text-gray-700">She plays the tennis every Sunday.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She plays tennis every Sunday." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full gap-2">
+                                    <span class="font-medium text-gray-700">I saw dog in street yesterday.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="I saw a dog in the street yesterday." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full gap-2">
+                                    <span class="font-medium text-gray-700">He enjoys the jogging in the morning.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="He enjoys jogging in the morning." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full gap-2">
+                                    <span class="font-medium text-gray-700">Can you give me an advice?</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Can you give me some advice?" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 4: Điền mạo từ vào đoạn văn</h4>
+                            <p class="exercise-instruction">👉 Điền a, an, the hoặc không điền gì (no article) vào chỗ trống:</p>
+
+                            <div class="space-y-2 mb-4">
+                                <p>Yesterday, I saw <input type="text" class="answer-input inline" data-answer="a" onblur="checkAnswer(this)"> cat in <input type="text" class="answer-input inline" data-answer="the" onblur="checkAnswer(this)"> garden. <input type="text" class="answer-input inline" data-answer="The" onblur="checkAnswer(this)"> cat was playing with <input type="text" class="answer-input inline" data-answer="a" onblur="checkAnswer(this)"> ball of yarn. I gave <input type="text" class="answer-input inline" data-answer="the" onblur="checkAnswer(this)"> cat some milk. Then, I went to <input type="text" class="answer-input inline" data-answer="the" onblur="checkAnswer(this)"> supermarket.</p>
+                                
+                                <p>At <input type="text" class="answer-input inline" data-answer="the" onblur="checkAnswer(this)"> supermarket, I bought <input type="text" class="answer-input inline" data-answer="some" onblur="checkAnswer(this)"> bread and <input type="text" class="answer-input inline" data-answer="a" onblur="checkAnswer(this)"> bottle of milk. On my way home, I met <input type="text" class="answer-input inline" data-answer="an" onblur="checkAnswer(this)"> old friend who teaches <input type="text" class="answer-input inline" data-answer="no article" onblur="checkAnswer(this)"> yoga at <input type="text" class="answer-input inline" data-answer="a" onblur="checkAnswer(this)"> local gym. She gave me <input type="text" class="answer-input inline" data-answer="a" onblur="checkAnswer(this)"> valuable advice about reducing <input type="text" class="answer-input inline" data-answer="no article" onblur="checkAnswer(this)"> stress through <input type="text" class="answer-input inline" data-answer="no article" onblur="checkAnswer(this)"> exercise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 5: Viết câu hoàn chỉnh sử dụng từ gợi ý</h4>
+                            <p class="exercise-instruction">👉 Sử dụng các từ vựng đã học và mạo từ thích hợp để viết câu:</p>
+
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">belong to + dollhouse</span>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">unusual + insect</span>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">responsible + gardening</span>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">valuable + benefit + maturity</span>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-1">patient + horse riding</span>
+                                    <input type="text" class="answer-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="exercise-container bg-blue-50">
+                <h4 class="exercise-title">Tổng kết kiến thức</h4>
+                <p class="text-gray-700 mb-2"><strong>Mẹo nhớ nhanh:</strong></p>
+                <ol class="list-decimal pl-5 mb-4">
+                    <li class="mb-1">"A" trước phụ âm, "An" trước nguyên âm (nhưng chú ý phát âm!)</li>
+                    <li class="mb-1">"The" dùng khi cả người nói và người nghe đều biết</li>
+                    <li class="mb-1">Không dùng mạo từ với danh từ không đếm được hoặc danh từ chung số nhiều</li>
+                </ol>
+                <p class="text-gray-700"><strong>Chuẩn bị cho bài học tiếp theo:</strong> Các trường hợp đặc biệt dùng mạo từ</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle multiple answers (comma separated)
+            const correctAnswers = correctAnswer.includes(',') ? correctAnswer.split(',').map(a => a.trim()) : [correctAnswer];
+            
+            // Special handling for "no article" cases
+            if (correctAnswers.includes("no article")) {
+                correctAnswers.push(""); // Also accept empty string as correct answer
+            }
+
+            console.log(userAnswer, correctAnswers);
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (correctAnswers.includes(radio.value)) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer === radio.value && !correctAnswers.includes(userAnswer)) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (correctAnswers.includes(userAnswer)) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS7 - Lesson 1 - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pre-gs-worksheets.css">
+    <script src="/assets/js/worksheets.js"></script>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Danh từ (Nouns) - Worksheet</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date: _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Khái niệm danh từ</h4>
+                        <p class="text-gray-700 mb-3">Là từ chỉ người, vật, địa điểm, sự việc, trạng thái hoặc ý tưởng trừu tượng.</p>
+                        <p class="text-gray-700 italic">Ví dụ: teacher, pen, school, happiness</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Phân loại danh từ</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Danh từ riêng (Proper nouns): John, London, Apple</li>
+                            <li class="mb-1">Danh từ chung (Common nouns): boy, city, book</li>
+                            <li class="mb-1">Danh từ đếm được: book, apple</li>
+                            <li>Danh từ không đếm được: water, advice</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Vai trò trong câu</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Chủ ngữ: <span class="italic">The cat is sleeping.</span></li>
+                            <li>Tân ngữ: <span class="italic">She reads a book.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Số ít và số nhiều</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Số ít: cat, child</li>
+                            <li class="mb-1">Số nhiều: cats, children</li>
+                            <li>Không đếm được: water, advice</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Quy tắc thêm -s/-es</h4>
+                        <table class="w-full text-left text-gray-700 border-collapse">
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">Thêm -s</td>
+                                    <td class="py-1 px-4 italic">book → books</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">Thêm -es</td>
+                                    <td class="py-1 px-4 italic">bus → buses, tomato → tomatoes</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1 px-4">Đổi y thành i + es</td>
+                                    <td class="py-1 px-4 italic">baby → babies</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">6. Danh từ bất quy tắc</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1 italic">man → men</li>
+                            <li class="mb-1 italic">child → children</li>
+                            <li class="italic">mouse → mice</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">benefit <span class="vocab-type">(n)</span> /ˈbenɪfɪt/</p>
+                        <p class="vocab-meaning">lợi ích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">bug <span class="vocab-type">(n)</span> /bʌɡ/</p>
+                        <p class="vocab-meaning">con bọ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cardboard <span class="vocab-type">(n)</span> /ˈkɑːdbɔːd/</p>
+                        <p class="vocab-meaning">bìa các tông</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dollhouse <span class="vocab-type">(n)</span> /ˈdɒlhaʊs/</p>
+                        <p class="vocab-meaning">nhà búp bê</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">gardening <span class="vocab-type">(n)</span> /ˈɡɑːdnɪŋ/</p>
+                        <p class="vocab-meaning">làm vườn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">glue <span class="vocab-type">(n)</span> /ɡluː/</p>
+                        <p class="vocab-meaning">keo dán / hồ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">horse riding <span class="vocab-type">(n)</span> /ˈhɔːs raɪdɪŋ/</p>
+                        <p class="vocab-meaning">cưỡi ngựa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">insect <span class="vocab-type">(n)</span> /ˈɪnsekt/</p>
+                        <p class="vocab-meaning">côn trùng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">jogging <span class="vocab-type">(n)</span> /ˈdʒɒɡɪŋ/</p>
+                        <p class="vocab-meaning">đi / chạy bộ thư giãn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">making models <span class="vocab-type">(n)</span> /ˈmeɪkɪŋ ˈmɒdlz/</p>
+                        <p class="vocab-meaning">làm mô hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">maturity <span class="vocab-type">(n)</span> /məˈtʃʊərəti/</p>
+                        <p class="vocab-meaning">sự trưởng thành</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">responsibility <span class="vocab-type">(n)</span> /rɪˌspɒnsəˈbɪləti/</p>
+                        <p class="vocab-meaning">sự chịu trách nhiệm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">stress <span class="vocab-type">(n)</span> /stres/</p>
+                        <p class="vocab-meaning">sự căng thẳng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">yoga <span class="vocab-type">(n)</span> /ˈjəʊɡə/</p>
+                        <p class="vocab-meaning">yoga</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Nhận biết danh từ trong câu</h4>
+                            <p class="exercise-instruction">👉 Gạch chân tất cả danh từ trong các câu sau:</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="gardening,activity">
+                                    <p class="text-gray-800">Gardening is a relaxing activity.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="dollhouse,cardboard">
+                                    <p class="text-gray-800">She built a dollhouse using cardboard.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="jogging,stress,life">
+                                    <p class="text-gray-800">Jogging reduces stress in life.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="insect,glue">
+                                    <p class="text-gray-800">The insect landed on the glue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Chọn danh từ chung hoặc danh từ riêng</h4>
+                            <p class="exercise-instruction">👉 Viết lại các câu sau với danh từ phù hợp:</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">She enjoys _______ every morning.</span>
+                                    <input type="text" class="answer-input" data-answer="jogging">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">This _______ belongs to Sarah.</span>
+                                    <input type="text" class="answer-input" data-answer="dollhouse">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 3: Chọn danh từ đếm được hoặc không đếm được</h4>
+                            <p class="exercise-instruction">👉 Chọn danh từ phù hợp để hoàn thành câu:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She needs some _______ for her project.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="glue" data-answer="glue" onclick="checkAnswer(this)">
+                                            <span>glue</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="bug" data-answer="glue" onclick="checkAnswer(this)">
+                                            <span>bug</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Yoga helps improve _______.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="maturity" data-answer="maturity" onclick="checkAnswer(this)">
+                                            <span>maturity</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="insect" data-answer="maturity" onclick="checkAnswer(this)">
+                                            <span>insect</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 4: Viết dạng số nhiều của danh từ</h4>
+                            <p class="exercise-instruction">👉 Viết dạng số nhiều của các danh từ sau:</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
+                                <div class="flex items-center py-1">
+                                    <span class="w-32 font-medium text-gray-700">bug</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="bugs"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">dollhouse</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="dollhouses"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">insect</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="insects"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">benefit</span>
+                                    <span class="mx-2">→</span>
+                                    <input type="text" class="answer-input" data-answer="benefits"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 5: Điền a/an hoặc some</h4>
+                            <p class="exercise-instruction">👉 Điền `a/an` hoặc `some` vào chỗ trống:</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She used _______ glue for the model.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="some"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">He caught _______ insect in the garden.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="an"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">They discussed _______ responsibility.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="some"
+                                        onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 6: Đặt câu với danh từ</h4>
+                            <p class="exercise-instruction">👉 Đặt câu hoàn chỉnh sử dụng danh từ "insect" ở dạng số ít và số nhiều:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">Số ít (insect):</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">Số nhiều (insects):</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 7: Bài tập sáng tạo - Kể chuyện</h4>
+                            <p class="exercise-instruction">👉 Viết một đoạn văn ngắn (3-5 câu) sử dụng ít nhất 3 danh từ đếm được và 2 danh từ không đếm được từ danh sách từ vựng. Gạch chân các danh từ được sử dụng.</p>
+                            <textarea class="answer-input w-full h-40 p-2 border border-gray-200 rounded-lg"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

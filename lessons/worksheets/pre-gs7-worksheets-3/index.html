@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS7 - Quantifiers Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Comparison table styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #eff6ff;
+            font-weight: 600;
+        }
+
+        .countable-column {
+            background-color: #f0fdf4;
+        }
+
+        .uncountable-column {
+            background-color: #fef2f2;
+        }
+
+        .both-column {
+            background-color: #fefce8;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Lượng từ (Quantifiers) - Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Key Notes Section -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Lượng từ là gì?</h4>
+                        <p class="text-gray-700 mb-3">Là những từ chỉ số lượng, dùng để biểu thị mức độ nhiều, ít hoặc
+                            vừa đủ của danh từ trong câu</p>
+                        <p class="text-gray-700 italic">Ví dụ: some water, many books, much time</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Danh từ đếm được</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">many: <span class="italic">There are many insects in the garden</span></li>
+                            <li class="mb-1">a lot of: <span class="italic">She has a lot of dolls</span></li>
+                            <li>some: <span class="italic">Could I have some apples?</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Danh từ không đếm được</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">much: <span class="italic">There isn't much glue left</span></li>
+                            <li class="mb-1">a lot of: <span class="italic">We need a lot of cardboard</span></li>
+                            <li>some: <span class="italic">Would you like some water?</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Dùng cho cả hai loại</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">some: <span class="italic">some books / some patience</span></li>
+                            <li class="mb-1">a lot of: <span class="italic">a lot of friends / a lot of stress</span>
+                            </li>
+                            <li>lots of: <span class="italic">lots of hobbies / lots of yoga</span></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="info-card bg-pink-50 mt-3">
+                    <h4 class="subsection-title">5. Quy tắc sử dụng</h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Loại danh từ</th>
+                                <th>Lượng từ dùng được</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="countable-column">Danh từ đếm được</td>
+                                <td class="countable-column">many, a few, several, some</td>
+                                <td class="countable-column">many insects, a few dolls</td>
+                            </tr>
+                            <tr>
+                                <td class="uncountable-column">Danh từ không đếm được</td>
+                                <td class="uncountable-column">much, a little, some</td>
+                                <td class="uncountable-column">much stress, a little glue</td>
+                            </tr>
+                            <tr>
+                                <td class="both-column">Dùng cho cả hai</td>
+                                <td class="both-column">some, a lot of, lots of</td>
+                                <td class="both-column">some insects (đếm được) / some stress (không đếm được)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Vocabulary Section -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">belong to <span class="vocab-type">(v)</span> /bɪˈlɒŋ tə/</p>
+                        <p class="vocab-meaning">thuộc về</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">benefit <span class="vocab-type">(n)</span> /ˈbenɪfɪt/</p>
+                        <p class="vocab-meaning">lợi ích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">bug <span class="vocab-type">(n)</span> /bʌɡ/</p>
+                        <p class="vocab-meaning">con bọ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cardboard <span class="vocab-type">(n)</span> /ˈkɑːdbɔːd/</p>
+                        <p class="vocab-meaning">bìa các tông</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dollhouse <span class="vocab-type">(n)</span> /ˈdɒlhaʊs/</p>
+                        <p class="vocab-meaning">nhà búp bê</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">gardening <span class="vocab-type">(n)</span> /ˈɡɑːdnɪŋ/</p>
+                        <p class="vocab-meaning">làm vườn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">glue <span class="vocab-type">(n)</span> /ɡluː/</p>
+                        <p class="vocab-meaning">keo dán / hồ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">horse riding <span class="vocab-type">(n)</span> /ˈhɔːs raɪdɪŋ/</p>
+                        <p class="vocab-meaning">cưỡi ngựa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">insect <span class="vocab-type">(n)</span> /ˈɪnsekt/</p>
+                        <p class="vocab-meaning">côn trùng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">jogging <span class="vocab-type">(n)</span> /ˈdʒɒɡɪŋ/</p>
+                        <p class="vocab-meaning">đi / chạy bộ thư giãn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">making models <span class="vocab-type">(n)</span> /ˈmeɪkɪŋ ˈmɒdlz/</p>
+                        <p class="vocab-meaning">làm mô hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">maturity <span class="vocab-type">(n)</span> /məˈtʃʊərəti/</p>
+                        <p class="vocab-meaning">sự trưởng thành</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">patient <span class="vocab-type">(adj)</span> /ˈpeɪʃnt/</p>
+                        <p class="vocab-meaning">kiên nhẫn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">popular <span class="vocab-type">(adj)</span> /ˈpɒpjələ/</p>
+                        <p class="vocab-meaning">được nhiều người ưa thích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">responsibility <span class="vocab-type">(n)</span> /rɪˌspɒnsəˈbɪləti/</p>
+                        <p class="vocab-meaning">sự chịu trách nhiệm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">stress <span class="vocab-type">(n)</span> /stres/</p>
+                        <p class="vocab-meaning">sự căng thẳng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">take on <span class="vocab-type">(phr.v)</span> /teɪk ɒn/</p>
+                        <p class="vocab-meaning">nhận thêm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">unusual <span class="vocab-type">(adj)</span> /ʌnˈjuːʒuəl/</p>
+                        <p class="vocab-meaning">khác thường</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">valuable <span class="vocab-type">(adj)</span> /ˈvæljuəbl/</p>
+                        <p class="vocab-meaning">quý giá</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">yoga <span class="vocab-type">(n)</span> /ˈjəʊɡə/</p>
+                        <p class="vocab-meaning">yoga</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <!-- Exercise 1 - Some -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Điền "some" vào chỗ trống</h4>
+                            <p class="exercise-instruction">👉 Chọn đúng vị trí và điền "some" vào các câu sau:</p>
+
+                            <div class="space-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">Would you like __________ ice cream?</span>
+                                    <input type="text" class="answer-input" data-answer="some" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">She gave me __________ useful advice.</span>
+                                    <input type="text" class="answer-input" data-answer="some" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">There are __________ unusual insects in the garden.</span>
+                                    <input type="text" class="answer-input" data-answer="some" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">I need __________ cardboard for my project.</span>
+                                    <input type="text" class="answer-input" data-answer="some" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2 - Many -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Điền "many" vào chỗ trống</h4>
+                            <p class="exercise-instruction">👉 Chọn đúng vị trí và điền "many" vào các câu sau (chỉ dùng với danh từ đếm được):</p>
+
+                            <div class="space-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">How __________ hobbies do you have?</span>
+                                    <input type="text" class="answer-input" data-answer="many" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">There aren't __________ valuable dollhouses in the museum.</span>
+                                    <input type="text" class="answer-input" data-answer="many" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">She has taken on too __________ responsibilities.</span>
+                                    <input type="text" class="answer-input" data-answer="many" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">Do you know how __________ benefits jogging has?</span>
+                                    <input type="text" class="answer-input" data-answer="many" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 3 - Much -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 3: Điền "much" vào chỗ trống</h4>
+                            <p class="exercise-instruction">👉 Chọn đúng vị trí và điền "much" vào các câu sau (chỉ dùng với danh từ không đếm được):</p>
+
+                            <div class="space-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">How __________ glue do we need for this project?</span>
+                                    <input type="text" class="answer-input" data-answer="much" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">There isn't __________ stress in her life.</span>
+                                    <input type="text" class="answer-input" data-answer="much" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">She doesn't have __________ patience when teaching.</span>
+                                    <input type="text" class="answer-input" data-answer="much" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">How __________ maturity does a 15-year-old have?</span>
+                                    <input type="text" class="answer-input" data-answer="much" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 4 - A lot of/lots of -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 4: Chọn "a lot of" hoặc "lots of"</h4>
+                            <p class="exercise-instruction">👉 Điền "a lot of" hoặc "lots of" vào chỗ trống (có thể dùng với cả danh từ đếm được và không đếm được):</p>
+
+                            <div class="space-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">She has __________ popular books in her collection.</span>
+                                    <input type="text" class="answer-input" data-answer="a lot of|lots of" onblur="checkAnswerMulti(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">We need __________ cardboard for making models.</span>
+                                    <input type="text" class="answer-input" data-answer="a lot of|lots of" onblur="checkAnswerMulti(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">There are __________ unusual insects in this forest.</span>
+                                    <input type="text" class="answer-input" data-answer="a lot of|lots of" onblur="checkAnswerMulti(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto text-gray-700">Gardening requires __________ patience.</span>
+                                    <input type="text" class="answer-input" data-answer="a lot of|lots of" onblur="checkAnswerMulti(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <!-- Exercise 5 - Choose the correct quantifier -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 5: Chọn lượng từ đúng</h4>
+                            <p class="exercise-instruction">👉 Chọn lượng từ thích hợp cho mỗi câu:</p>
+
+                            <div class="space-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700">How __________/__________ glue belongs to this classroom? (much/many)</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="much" data-answer="much" onclick="checkAnswer(this)">
+                                            <span>much</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="many" data-answer="much" onclick="checkAnswer(this)">
+                                            <span>many</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700">There aren't __________/__________ insects in winter. (much/many)</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="much" data-answer="many" onclick="checkAnswer(this)">
+                                            <span>much</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="many" data-answer="many" onclick="checkAnswer(this)">
+                                            <span>many</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700">She doesn't have __________/__________ time for yoga. (much/many)</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="much" data-answer="much" onclick="checkAnswer(this)">
+                                            <span>much</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="many" data-answer="much" onclick="checkAnswer(this)">
+                                            <span>many</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700">We need __________/__________ cardboard for our dollhouse. (some/many)</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="some" data-answer="some" onclick="checkAnswer(this)">
+                                            <span>some</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="many" data-answer="some" onclick="checkAnswer(this)">
+                                            <span>many</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700">There are __________/__________ popular activities in our school. (a lot of/much)</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="a lot of" data-answer="a lot of" onclick="checkAnswer(this)">
+                                            <span>a lot of</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="much" data-answer="a lot of" onclick="checkAnswer(this)">
+                                            <span>much</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 6 - Rearrange the words -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 6: Sắp xếp từ thành câu hoàn chỉnh</h4>
+                            <p class="exercise-instruction">👉 Sắp xếp lại các từ sau thành câu hoàn chỉnh (sử dụng lượng từ thích hợp):</p>
+
+                            <div class="space-y-2">
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <p class="text-gray-700 mb-2">1. time / she / much / doesn't / horse riding / have / for</p>
+                                    <input type="text" class="answer-input w-full" data-answer="She doesn't have much time for horse riding." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <p class="text-gray-700 mb-2">2. benefits / yoga / many / has / for / health / your</p>
+                                    <input type="text" class="answer-input w-full" data-answer="Yoga has many benefits for your health." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <p class="text-gray-700 mb-2">3. insects / garden / some / interesting / in / there / are / the</p>
+                                    <input type="text" class="answer-input w-full" data-answer="There are some interesting insects in the garden." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <p class="text-gray-700 mb-2">4. take on / shouldn't / responsibilities / many / you</p>
+                                    <input type="text" class="answer-input w-full" data-answer="You shouldn't take on many responsibilities." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <p class="text-gray-700 mb-2">5. has / valuable / a lot of / dollhouses / she / collection / in her</p>
+                                    <input type="text" class="answer-input w-full" data-answer="She has a lot of valuable dollhouses in her collection." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 7 - Fill in the blanks -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 7: Điền từ thích hợp vào đoạn văn</h4>
+                            <p class="exercise-instruction">👉 Điền lượng từ thích hợp vào chỗ trống (some, any, much, many, a lot of, lots of):</p>
+
+                            <div class="bg-gray-50 p-4 rounded-lg mb-2">
+                                <p class="text-gray-700 mb-2">
+                                    My hobby is making models. It requires (1) <input type="text" class="answer-input" data-answer="a lot of|lots of" onblur="checkAnswerMulti(this)"> patience and 
+                                    (2) <input type="text" class="answer-input" data-answer="some" onblur="checkAnswerMulti(this)"> creativity. I don't have (3) <input type="text" class="answer-input" data-answer="much" onblur="checkAnswerMulti(this)"> 
+                                    time for it, but I have (4) <input type="text" class="answer-input" data-answer="some" onblur="checkAnswerMulti(this)"> nice materials. I often use cardboard 
+                                    and (5) <input type="text" class="answer-input" data-answer="some" onblur="checkAnswerMulti(this)"> glue. I don't have (6) <input type="text" class="answer-input" data-answer="many" onblur="checkAnswerMulti(this)"> 
+                                    expensive tools, but I make (7) <input type="text" class="answer-input" data-answer="a lot of|lots of" onblur="checkAnswerMulti(this)"> beautiful items. 
+                                    How (8) <input type="text" class="answer-input" data-answer="many" onblur="checkAnswerMulti(this)"> hobbies do you have that don't require (9) <input type="text" class="answer-input" data-answer="much" onblur="checkAnswerMulti(this)"> 
+                                    money?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 9 - Writing -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 8: Viết câu sử dụng lượng từ</h4>
+                            <p class="exercise-instruction">👉 Viết câu hoàn chỉnh sử dụng các từ gợi ý và lượng từ thích hợp:</p>
+
+                            <div class="space-y-2 w-full">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full text-gray-700">(gardening / benefits)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full text-gray-700">(horse riding / stress)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full text-gray-700">(yoga / patience)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full text-gray-700">(popular / activities / school)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full text-gray-700">(take on / responsibilities / maturity)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (radio.value === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (radio.checked && radio.value !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to check answers with multiple correct options
+        function checkAnswerMulti(input) {
+            const userAnswer = input.value.toLowerCase().trim().replace(/[.,!?]/g, '');
+            const correctAnswers = input.dataset.answer.split('|');
+
+            if (correctAnswers.includes(userAnswer)) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+    </script>
+</body>
+
+</html>

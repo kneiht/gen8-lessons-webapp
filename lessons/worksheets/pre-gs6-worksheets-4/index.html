@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS6 - Some/any - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Comparative table styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .comparison-table th, 
+        .comparison-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        
+        .example-card.correct {
+            border-left-color: #34d399;
+        }
+        
+        .example-card.incorrect {
+            border-left-color: #f87171;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Some and Any</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Key Notes Section -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title flex items-center">
+                            <i class="fas fa-info-circle mr-2 text-yellow-600"></i>
+                            Định nghĩa
+                        </h4>
+                        <p class="text-gray-700 mb-3"><strong>Some:</strong> "Một ít, một vài"</p>
+                        <p class="text-gray-700"><strong>Any:</strong> "Bất kỳ, một ít, một chút"</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title flex items-center">
+                            <i class="fas fa-check-circle mr-2 text-green-600"></i>
+                            Cách dùng cơ bản của Some
+                        </h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Dùng trong câu khẳng định</li>
+                            <li>Dùng trong lời mời hoặc đề nghị</li>
+                        </ul>
+                        <div class="correct mt-2">
+                            <p class="text-gray-800">I have <strong>some</strong> friends coming over.</p>
+                            <p class="text-gray-600 text-sm">(câu khẳng định)</p>
+                        </div>
+                        <div class="correct mt-1">
+                            <p class="text-gray-800">Would you like <strong>some</strong> coffee?</p>
+                            <p class="text-gray-600 text-sm">(lời mời)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title flex items-center">
+                            <i class="fas fa-exclamation-circle mr-2 text-blue-600"></i>
+                            Cách dùng cơ bản của Any
+                        </h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Dùng trong câu phủ định</li>
+                            <li>Dùng trong câu hỏi</li>
+                        </ul>
+                        <div class="correct mt-2">
+                            <p class="text-gray-800">I don't have <strong>any</strong> money.</p>
+                            <p class="text-gray-600 text-sm">(câu phủ định)</p>
+                        </div>
+                        <div class="correct mt-1">
+                            <p class="text-gray-800">Do you have <strong>any</strong> questions?</p>
+                            <p class="text-gray-600 text-sm">(câu hỏi)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title flex items-center">
+                            <i class="fas fa-lightbulb mr-2 text-purple-600"></i>
+                            Trường hợp đặc biệt với Some
+                        </h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Dùng trong câu hỏi khi đưa ra lời mời</li>
+                            <li class="mb-1">Khi mong đợi câu trả lời là "có"</li>
+                        </ul>
+                        <div class="correct mt-2">
+                            <p class="text-gray-800">Are you waiting for <strong>some</strong> friends?</p>
+                            <p class="text-gray-600 text-sm">(người nói đã dự đoán câu trả lời là có, dùng any vẫn được nhưng nghe không tự nhiên)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comparison Table -->
+                <div class="info-card bg-white mt-4 border border-gray-200 rounded-lg shadow-sm">
+                    <h4 class="subsection-title mb-3">
+                        <i class="fas fa-balance-scale mr-2 text-blue-600"></i>
+                        Bảng so sánh Some và Any
+                    </h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Ngữ cảnh</th>
+                                <th>Some</th>
+                                <th>Any</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Câu khẳng định</td>
+                                <td><i class="fas fa-check text-green-500"></i> I want some water.</td>
+                                <td><i class="fas fa-times text-red-500"></i> I want any water.</td>
+                            </tr>
+                            <tr>
+                                <td>Câu phủ định</td>
+                                <td><i class="fas fa-times text-red-500"></i> I don't have some money.</td>
+                                <td><i class="fas fa-check text-green-500"></i> I don't have any money.</td>
+                            </tr>
+                            <tr>
+                                <td>Câu hỏi thông thường</td>
+                                <td><i class="fas fa-times text-red-500"></i> Do you want some coffee?</td>
+                                <td><i class="fas fa-check text-green-500"></i> Do you want any coffee?</td>
+                            </tr>
+                            <tr>
+                                <td>Lời mời/đề nghị</td>
+                                <td><i class="fas fa-check text-green-500"></i> Would you like some tea?</td>
+                                <td><i class="fas fa-question text-yellow-500"></i> Ít phổ biến hơn</td>
+                            </tr>
+                            <tr>
+                                <td>Với mệnh đề "if"</td>
+                                <td><i class="fas fa-question text-yellow-500"></i> Ít phổ biến hơn</td>
+                                <td><i class="fas fa-check text-green-500"></i> If you need any help, let me know.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Vocabulary Section -->
+            <div class="mb-4 mt-0 print:mt-20">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">art gallery <span class="vocab-type">(n)</span> /ɑːt ˈɡæləri/</p>
+                        <p class="vocab-meaning">phòng trưng bày các tác phẩm nghệ thuật</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">busy <span class="vocab-type">(adj)</span> /ˈbɪzi/</p>
+                        <p class="vocab-meaning">nhộn nhịp, náo nhiệt</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cathedral <span class="vocab-type">(n)</span> /kəˈθiːdrəl/</p>
+                        <p class="vocab-meaning">nhà thờ lớn, thánh đường</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cross <span class="vocab-type">(v)</span> /krɒs/</p>
+                        <p class="vocab-meaning">đi ngang qua, qua, vượt</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dislike <span class="vocab-type">(v)</span> /dɪsˈlaɪk/</p>
+                        <p class="vocab-meaning">không thích, ghét</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">famous <span class="vocab-type">(adj)</span> /ˈfeɪməs/</p>
+                        <p class="vocab-meaning">nổi tiếng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">faraway <span class="vocab-type">(adj)</span> /ˈfɑːəweɪ/</p>
+                        <p class="vocab-meaning">xa xôi, xa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">finally <span class="vocab-type">(adv)</span> /ˈfaɪnəli/</p>
+                        <p class="vocab-meaning">cuối cùng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">narrow <span class="vocab-type">(adj)</span> /ˈnærəʊ/</p>
+                        <p class="vocab-meaning">hẹp, chật hẹp</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">outdoor <span class="vocab-type">(adj)</span> /ˈaʊtdɔː/</p>
+                        <p class="vocab-meaning">ngoài trời</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">railway station <span class="vocab-type">(n)</span> /ˈreɪlweɪ ˈsteɪʃn/</p>
+                        <p class="vocab-meaning">ga tàu hoả</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">sandy <span class="vocab-type">(adj)</span> /ˈsændɪ/</p>
+                        <p class="vocab-meaning">có cát, phủ cát</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">square <span class="vocab-type">(n)</span> /skweə/</p>
+                        <p class="vocab-meaning">quảng trường</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">suburb <span class="vocab-type">(n)</span> /ˈsʌbɜːb/</p>
+                        <p class="vocab-meaning">khu vực ngoại ô</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">turning <span class="vocab-type">(n)</span> /ˈtɜːnɪŋ/</p>
+                        <p class="vocab-meaning">chỗ ngoặt, chỗ rẽ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">workshop <span class="vocab-type">(n)</span> /ˈwɜːkʃɒp/</p>
+                        <p class="vocab-meaning">phân xưởng (sản xuất, sửa chữa)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Part 3: Basic Exercises (Bài tập cơ bản)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 1: Choose some or any</h4>
+                            <p class="exercise-instruction">👉 Complete the sentences with some or any.</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. I need ___ apples to make a pie.</span>
+                                    <div class="flex gap-4 ml-4">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="some"
+                                                data-answer="some" onclick="checkAnswer(this)">
+                                            <span>some</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="any"
+                                                data-answer="some" onclick="checkAnswer(this)">
+                                            <span>any</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. There aren't ___ shops open at this hour.</span>
+                                    <div class="flex gap-4 ml-4">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="some"
+                                                data-answer="any" onclick="checkAnswer(this)">
+                                            <span>some</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="any"
+                                                data-answer="any" onclick="checkAnswer(this)">
+                                            <span>any</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. Would you like ___ tea?</span>
+                                    <div class="flex gap-4 ml-4">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="some"
+                                                data-answer="some" onclick="checkAnswer(this)">
+                                            <span>some</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="any"
+                                                data-answer="some" onclick="checkAnswer(this)">
+                                            <span>any</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. We don't have ___ milk left.</span>
+                                    <div class="flex gap-4 ml-4">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="some"
+                                                data-answer="any" onclick="checkAnswer(this)">
+                                            <span>some</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="any"
+                                                data-answer="any" onclick="checkAnswer(this)">
+                                            <span>any</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. She bought ___ beautiful paintings at the art gallery.</span>
+                                    <div class="flex gap-4 ml-4">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="some"
+                                                data-answer="some" onclick="checkAnswer(this)">
+                                            <span>some</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="any"
+                                                data-answer="some" onclick="checkAnswer(this)">
+                                            <span>any</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container print:mt-20">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 2: Complete with some or any + words from vocabulary</h4>
+                            <p class="exercise-instruction">👉 Complete the sentences with some or any plus the correct form of the vocabulary words.</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700">1. Did you visit _______________ (art gallery) during your trip to London?</span>
+                                    <input type="text" class="answer-input flex-1 ml-2 print:hidden" data-answer="any art galleries" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700">2. There are _______________ (famous) landmarks in this city.</span>
+                                    <input type="text" class="answer-input flex-1 ml-2 print:hidden" data-answer="some famous" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700">3. We didn't see _______________ (cathedral) on our way to the square.</span>
+                                    <input type="text" class="answer-input flex-1 ml-2 print:hidden" data-answer="any cathedrals" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700">4. Would you like to visit _______________ (sandy) beach this weekend?</span>
+                                    <input type="text" class="answer-input flex-1 ml-2 print:hidden" data-answer="some sandy" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700">5. I need _______________ (help) finding the railway station.</span>
+                                    <input type="text" class="answer-input flex-1 ml-2 print:hidden" data-answer="some help" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Part 4: Advanced Exercises (Bài tập nâng cao)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 3: Correct the mistakes</h4>
+                            <p class="exercise-instruction">👉 Each sentence has one mistake with some/any. Find and correct it.</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. I don't have some time to visit the cathedral today.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="I don't have any time to visit the cathedral today." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. Would you like any help finding the art gallery?</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Would you like some help finding the art gallery?" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. She didn't buy any souvenirs at the famous square.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She didn't buy any souvenirs at the famous square." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. Have you got some information about outdoor workshops?</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Have you got any information about outdoor workshops?" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. We visited some faraway suburbs but didn't find any railway station there.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="We visited some faraway suburbs but didn't find any railway station there." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 4: Writing Practice</h4>
+                            <p class="exercise-instruction">👉 Write complete sentences using the prompts and vocabulary words. Use some/any correctly.</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. famous / cathedral / city center</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="" >
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. not / visit / art gallery / last week</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="" >
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. want / outdoor / activity / weekend</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="" >
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. finally / find / narrow / turning / street</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="" >
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. dislike / busy / railway station</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container print:mt-20">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 5: Write a paragraph</h4>
+                            <p class="exercise-instruction">👉 Viết đoạn văn ngắn có dùng some và any</p>
+
+                            <textarea class="w-full p-3 border border-gray-300 rounded-lg mt-2 h-52" placeholder=""></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets 
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    if (radio.value === correctAnswer) {
+                        radio.closest('.radio-label').classList.add('text-green-600', 'font-bold');
+                    } else {
+                        radio.closest('.radio-label').classList.remove('text-green-600', 'font-bold');
+                    }
+                    
+                    if (radio.checked && radio.value !== correctAnswer) {
+                        radio.closest('.radio-label').classList.add('text-red-600', 'font-bold');
+                    } else {
+                        radio.closest('.radio-label').classList.remove('text-red-600', 'font-bold');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+    </script>
+</body>
+</html>

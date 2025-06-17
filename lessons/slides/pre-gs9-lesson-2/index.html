@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS9: Thì Hiện Tại Hoàn Thành</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/assets/js/instructions.js"></script>
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+        
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.4);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+        }
+        
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+        
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+        
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+        
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
+        .time-line {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, #3b82f6, #10b981, #ef4444);
+            position: relative;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .time-marker {
+            position: absolute;
+            top: -20px;
+            width: 120px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px solid #4f46e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transform: translateX(-50%);
+        }
+        
+        .time-label {
+            position: absolute;
+            top: 30px;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        
+        .sentence-structure {
+            background-color: #e0e7ff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .keyword-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            background-color: #ecfdf5;
+            color: #064e3b;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50 bg-[url('/assets/bg/bg-2.jpg')] bg-cover bg-center min-h-screen flex items-center justify-center p-2">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4  z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-700">Nội dung bài học</h2>
+                    <button onclick="toggleOutline()" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose prose-lg max-w-none">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4">Thì Hiện Tại Hoàn Thành</h3>
+                    
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(0)">
+                        <h4 class="text-lg font-bold text-indigo-500">1. Giới thiệu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Mục tiêu bài học:
+                                <ul class="list-disc pl-6 mt-2">
+                                    <li>Hiểu sự khác biệt về thời gian với thì quá khứ đơn</li>
+                                    <li>Nắm được 3 cách sử dụng chính</li>
+                                    <li>Nhận biết dấu hiệu của thì hiện tại hoàn thành</li>
+                                    <li>Thành thạo cấu trúc câu khẳng định, phủ định, nghi vấn</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(1)">
+                        <h4 class="text-lg font-bold text-indigo-500">2. Hiểu về khái niệm thời gian</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>So sánh với quá khứ đơn</li>
+                            <li>Hành động còn liên quan đến hiện tại</li>
+                            <li>Ví dụ: "Tôi đã sống ở đây 3 năm"</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(2)">
+                        <h4 class="text-lg font-bold text-indigo-500">3. Cách sử dụng 1: Kéo dài đến hiện tại</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Hành động bắt đầu trong quá khứ, kéo dài đến hiện tại</li>
+                            <li>Ví dụ: I have lived here for 5 years</li>
+                            <li>Ví dụ: She has worked here since 2010</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(3)">
+                        <h4 class="text-lg font-bold text-indigo-500">4. Dấu hiệu nhận biết: Since/For</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Since: mốc thời gian cụ thể</li>
+                            <li>For: khoảng thời gian</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(4)">
+                        <h4 class="text-lg font-bold text-indigo-500">5. Bài tập 1: Since/For (1/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>I have known her since 2015</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(5)">
+                        <h4 class="text-lg font-bold text-indigo-500">6. Bài tập 1: Since/For (2/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>They have been married for 20 years</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(6)">
+                        <h4 class="text-lg font-bold text-indigo-500">7. Bài tập 1: Since/For (3/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>She hasn't visited her hometown since she moved abroad</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(7)">
+                        <h4 class="text-lg font-bold text-indigo-500">8. Cách sử dụng 2: Hành động vừa mới xảy ra</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Hành động vừa mới xảy ra gần đây</li>
+                            <li>Kết quả còn ảnh hưởng đến hiện tại</li>
+                            <li>Ví dụ: I have just finished my homework</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(8)">
+                        <h4 class="text-lg font-bold text-indigo-500">9. Dấu hiệu nhận biết: Just/Already/Yet</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Just: vừa mới</li>
+                            <li>Already: đã...rồi</li>
+                            <li>Yet: chưa (phủ định)</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(9)">
+                        <h4 class="text-lg font-bold text-indigo-500">10. Bài tập 2: Just/Already/Yet (1/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>I've just received your email</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(10)">
+                        <h4 class="text-lg font-bold text-indigo-500">11. Bài tập 2: Just/Already/Yet (2/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>She hasn't replied to my message yet</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(11)">
+                        <h4 class="text-lg font-bold text-indigo-500">12. Bài tập 2: Just/Already/Yet (3/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>They've already left for the airport</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(12)">
+                        <h4 class="text-lg font-bold text-indigo-500">13. Cách sử dụng 3: Kinh nghiệm, trải nghiệm</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Diễn tả kinh nghiệm trong cuộc sống</li>
+                            <li>Không quan trọng thời gian cụ thể</li>
+                            <li>Ví dụ: I have visited Paris three times</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(13)">
+                        <h4 class="text-lg font-bold text-indigo-500">14. Dấu hiệu nhận biết: Ever/Never</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Ever: đã từng (câu hỏi)</li>
+                            <li>Never: chưa bao giờ (khẳng định phủ định)</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(14)">
+                        <h4 class="text-lg font-bold text-indigo-500">15. Bài tập 3: Ever/Never (1/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Have you ever ridden a horse?</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(15)">
+                        <h4 class="text-lg font-bold text-indigo-500">16. Bài tập 3: Ever/Never (2/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>I have never eaten sushi</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(16)">
+                        <h4 class="text-lg font-bold text-indigo-500">17. Bài tập 3: Ever/Never (3/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Has she ever met a famous person?</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(17)">
+                        <h4 class="text-lg font-bold text-indigo-500">18. Cấu trúc câu khẳng định</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>S + have/has + V3 + (O)</li>
+                            <li>Chủ ngữ và have/has</li>
+                            <li>Động từ V3</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(18)">
+                        <h4 class="text-lg font-bold text-indigo-500">19. Cấu trúc câu phủ định</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>S + have/has + not + V3 + (O)</li>
+                            <li>Dạng viết tắt: haven't/hasn't</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(19)">
+                        <h4 class="text-lg font-bold text-indigo-500">20. Cấu trúc câu nghi vấn</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Yes/No: Have/Has + S + V3 + (O)?</li>
+                            <li>Wh-: Wh- + have/has + S + V3 + (O)?</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(20)">
+                        <h4 class="text-lg font-bold text-indigo-500">21. Bài tập 4: Viết lại câu (1/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>They have gone to Paris three times</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(21)">
+                        <h4 class="text-lg font-bold text-indigo-500">22. Bài tập 4: Viết lại câu (2/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>She hasn't visited her grandparents this year</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(22)">
+                        <h4 class="text-lg font-bold text-indigo-500">23. Bài tập 4: Viết lại câu (3/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Have you ever ridden a camel?</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(23)">
+                        <h4 class="text-lg font-bold text-indigo-500">24. Phân biệt với quá khứ đơn</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Thời gian</li>
+                            <li>Dấu hiệu nhận biết</li>
+                            <li>Ví dụ so sánh</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(24)">
+                        <h4 class="text-lg font-bold text-indigo-500">25. Bài tập 5: Chọn thì đúng (1/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>I have never been to Japan</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(25)">
+                        <h4 class="text-lg font-bold text-indigo-500">26. Bài tập 5: Chọn thì đúng (2/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>She went to Paris last summer</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(26)">
+                        <h4 class="text-lg font-bold text-indigo-500">27. Bài tập 5: Chọn thì đúng (3/3)</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>They have known each other for 10 years</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(27)">
+                        <h4 class="text-lg font-bold text-indigo-500">28. Tổng kết</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>3 cách sử dụng chính</li>
+                            <li>Cấu trúc câu</li>
+                            <li>Phân biệt với quá khứ đơn</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Slide 1: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-3xl font-bold text-indigo-700 mb-8">GRAMMAR FOR PRE-GRADE 9</h1>
+                    <div class="bg-gradient-to-bl from-indigo-100 to-green-200 text-3xl md:text-4xl font-bold px-6 py-3 rounded-full mb-5 shadow-lg floating">
+                        THÌ HIỆN TẠI HOÀN THÀNH
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="/assets/images/grammar.jpg" alt="Present Perfect" class="object-cover h-52 rounded-xl shadow-md floating">
+                        </div>
+                        <div class="bg-gradient-to-r from-indigo-100 to-green-200 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu sự khác biệt về thời gian với thì quá khứ đơn</li>
+                                <li>Nắm được 3 cách sử dụng chính</li>
+                                <li>Nhận biết dấu hiệu của thì hiện tại hoàn thành</li>
+                                <li>Thành thạo cấu trúc câu khẳng định, phủ định, nghi vấn</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Understanding Time Concept -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Hiểu về khái niệm thời gian</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Cùng một câu tiếng Việt nhưng khác nhau về thời gian:</p>
+                            
+                            <div class="flex items-start mb-6 ">
+                                <div class="bg-red-100 p-3 rounded-lg mr-4">
+                                    <p class="font-bold text-red-800">Quá khứ đơn</p>
+                                    <p>"Tôi đã sống ở đây 3 năm"</p>
+                                    <p class="text-sm">(Bây giờ không còn sống ở đây nữa)</p>
+                                </div>
+                                
+                                <div class="bg-green-100 p-3 rounded-lg">
+                                    <p class="font-bold text-green-800">Hiện tại hoàn thành</p>
+                                    <p>"Tôi đã sống ở đây 3 năm"</p>
+                                    <p class="text-sm">(Vẫn đang sống ở đây đến hiện tại)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="time-line">
+                                <div class="time-marker" style="left: 30%;">3 năm</div>
+                                <div class="time-marker" style="left: 70%;">Now</div>
+                            </div>
+                            
+                            <div class="bg-blue-100 p-4 rounded-lg mt-4 border-l-4 border-blue-500">
+                                <p class="font-bold text-blue-800 text-xl">Ghi nhớ:</p>
+                                <p class="text-xl">Hiện tại hoàn thành = Hành động bắt đầu trong quá khứ nhưng <span class="font-bold">vẫn còn liên quan đến hiện tại</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Usage 1 - Duration -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cách sử dụng 1: Kéo dài đến hiện tại</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Diễn tả hành động bắt đầu trong quá khứ, kéo dài đến hiện tại (và có thể tiếp tục)</p>
+                            
+                            <div class="grid grid-cols-1 gap-4 mb-6 text-2xl">
+                                <div class="bg-green-50 p-3 rounded-lg">
+                                    <p class="text-xl font-bold">Ví dụ:</p>
+                                    <p>I <span class="highlight">have lived</span> here for 5 years.</p>
+                                    <p>(Tôi đã sống ở đây được 5 năm rồi → vẫn đang sống)</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-3 rounded-lg">
+                                    <p class="text-xl font-bold">Ví dụ:</p>
+                                    <p>She <span class="highlight">has worked</span> at this company since 2010.</p>
+                                    <p>(Cô ấy đã làm việc tại công ty này từ năm 2010 → vẫn đang làm)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Signal Words (Since/For) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Dấu hiệu nhận biết: Since/For</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-2xl">
+                                <div>
+                                    <p class="text-2xl font-bold text-center mb-3">SINCE</p>
+                                    <p class="text-xl mb-2">➜ Dùng với <span class="font-bold">mốc thời gian cụ thể</span></p>
+                                    <ul class="list-disc pl-5 space-y-2">
+                                        <li>since <span class="keyword-badge text-2xl">2010</span></li>
+                                        <li>since <span class="keyword-badge text-2xl">June</span></li>
+                                        <li>since <span class="keyword-badge text-2xl">last year</span></li>
+                                        <li>since <span class="keyword-badge text-2xl">I was born</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-2xl font-bold text-center mb-3">FOR</p>
+                                    <p class="text-xl mb-2">➜ Dùng với <span class="font-bold">khoảng thời gian</span></p>
+                                    <ul class="list-disc pl-5 space-y-2">
+                                        <li>for <span class="keyword-badge text-2xl">5 years</span></li>
+                                        <li>for <span class="keyword-badge text-2xl">a long time</span></li>
+                                        <li>for <span class="keyword-badge text-2xl">2 months</span></li>
+                                        <li>for <span class="keyword-badge text-2xl">ages</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-yellow-100 p-4 rounded-lg mt-6 border-l-4 border-yellow-500">
+                                <p class="font-bold text-yellow-800 text-xl">Ghi nhớ:</p>
+                                <p class="text-xl"><span class="font-bold">Since</span> = Từ khi (mốc thời gian)</p>
+                                <p class="text-xl"><span class="font-bold">For</span> = Trong khoảng (khoảng thời gian)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Exercise 1 - Since/For (Question 1) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Chọn since hoặc for (1/3)</h2>
+                    <p class="text-2xl mb-8">Chọn từ thích hợp để điền vào chỗ trống:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">I have known her <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="since">
+                                <option value="">Chọn...</option>
+                                <option value="since">since</option>
+                                <option value="for">for</option>
+                            </select> 2015.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-green-100 p-4 rounded-lg">
+                        <p class="font-bold text-green-800 text-xl">Củng cố:</p>
+                        <p class="text-xl">Since + <span class="highlight">mốc thời gian cụ thể</span> (2010, last month, etc.)</p>
+                        <p class="text-xl">For + <span class="highlight">khoảng thời gian</span> (2 years, a long time, etc.)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5.1: Exercise 1 - Since/For (Question 2) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Chọn since hoặc for (2/3)</h2>
+                    <p class="text-2xl mb-8">Chọn từ thích hợp để điền vào chỗ trống:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">They have been married <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="for">
+                                <option value="">Chọn...</option>
+                                <option value="since">since</option>
+                                <option value="for">for</option>
+                            </select> 20 years.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-green-100 p-4 rounded-lg">
+                        <p class="font-bold text-green-800 text-xl">Củng cố:</p>
+                        <p class="text-xl">Since + <span class="highlight">mốc thời gian cụ thể</span> (2010, last month, etc.)</p>
+                        <p class="text-xl">For + <span class="highlight">khoảng thời gian</span> (2 years, a long time, etc.)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5.2: Exercise 1 - Since/For (Question 3) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Chọn since hoặc for (3/3)</h2>
+                    <p class="text-2xl mb-8">Chọn từ thích hợp để điền vào chỗ trống:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">She hasn't visited her hometown <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="since">
+                                <option value="">Chọn...</option>
+                                <option value="since">since</option>
+                                <option value="for">for</option>
+                            </select> she moved abroad.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-green-100 p-4 rounded-lg">
+                        <p class="font-bold text-green-800 text-xl">Củng cố:</p>
+                        <p class="text-xl">Since + <span class="highlight">mốc thời gian cụ thể</span> (2010, last month, etc.)</p>
+                        <p class="text-xl">For + <span class="highlight">khoảng thời gian</span> (2 years, a long time, etc.)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Usage 2 - Recent Actions -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cách sử dụng 2: Hành động vừa mới xảy ra</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Diễn tả hành động vừa mới xảy ra gần đây, thường là kết quả của hành động đó còn ảnh hưởng đến hiện tại</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-2xl">
+                                <div class="bg-blue-50 p-3 rounded-lg">
+                                    <p class="text-xl font-bold">Ví dụ:</p>
+                                    <p>I <span class="highlight">have just finished</span> my homework.</p>
+                                    <p>(Tôi vừa mới làm xong bài tập)</p>
+                                </div>
+                                
+                                <div class="bg-pink-50 p-3 rounded-lg">
+                                    <p class="text-xl font-bold">Ví dụ:</p>
+                                    <p>The train <span class="highlight">has already left</span>.</p>
+                                    <p>(Tàu đã rời đi rồi)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-yellow-100 p-4 rounded-lg mt-4 border-l-4 border-yellow-500">
+                                <p class="font-bold text-yellow-800 text-xl">Đặc điểm:</p>
+                                <p class="text-xl">Hành động vừa mới xảy ra, <span class="font-bold">không cần biết khi nào</span>, quan trọng là kết quả ở hiện tại</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Signal Words (Just/Already/Yet) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Dấu hiệu nhận biết: Just/Already/Yet</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 text-2xl">
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">JUST</p>
+                                    <p class="text-xl">Vừa mới</p>
+                                    <div class="bg-green-100 p-2 mt-2 rounded-lg">
+                                        <p>I <span class="highlight">have just</span> seen him.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">ALREADY</p>
+                                    <p class="text-xl">Đã...rồi</p>
+                                    <div class="bg-blue-100 p-2 mt-2 rounded-lg">
+                                        <p>She <span class="highlight">has already</span> finished.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">YET</p>
+                                    <p class="text-xl">Chưa (phủ định)</p>
+                                    <div class="bg-red-100 p-2 mt-2 rounded-lg">
+                                        <p>They <span class="highlight">haven't arrived yet</span>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-purple-100 p-4 rounded-lg mt-6 border-l-4 border-purple-500">
+                                <p class="font-bold text-purple-800 text-xl">Vị trí từ khóa:</p>
+                                <ul class="list-disc pl-5 text-xl space-y-2">
+                                    <li><span class="highlight">Just</span> và <span class="highlight">already</span> đứng giữa have/has và động từ: <span class="font-bold">have just + V3</span></li>
+                                    <li><span class="highlight">Yet</span> đứng cuối câu (thường dùng trong câu phủ định): <span class="font-bold">haven't finished yet</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Exercise 2 - Just/Already/Yet (Question 1) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Điền just/already/yet (1/3)</h2>
+                    <p class="text-2xl mb-8">Điền từ thích hợp vào chỗ trống:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">I've <span class="exercise-input" contenteditable="true" data-answer="just"></span> received your email. Thanks!</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-blue-100 p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 text-xl">Nhắc lại vị trí:</p>
+                        <p class="text-xl"><span class="highlight">just/already</span> → giữa have/has và động từ</p>
+                        <p class="text-xl"><span class="highlight">yet</span> → cuối câu (thường dùng trong câu phủ định)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Exercise 2 - Just/Already/Yet (Question 2) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Điền just/already/yet (2/3)</h2>
+                    <p class="text-2xl mb-8">Điền từ thích hợp vào chỗ trống:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">She hasn't replied to my message <span class="exercise-input" contenteditable="true" data-answer="yet"></span>.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-blue-100 p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 text-xl">Nhắc lại vị trí:</p>
+                        <p class="text-xl"><span class="highlight">just/already</span> → giữa have/has và động từ</p>
+                        <p class="text-xl"><span class="highlight">yet</span> → cuối câu (thường dùng trong câu phủ định)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Exercise 2 - Just/Already/Yet (Question 3) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Điền just/already/yet (3/3)</h2>
+                    <p class="text-2xl mb-8">Điền từ thích hợp vào chỗ trống:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">They've <span class="exercise-input" contenteditable="true" data-answer="already"></span> left for the airport.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-blue-100 p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 text-xl">Nhắc lại vị trí:</p>
+                        <p class="text-xl"><span class="highlight">just/already</span> → giữa have/has và động từ</p>
+                        <p class="text-xl"><span class="highlight">yet</span> → cuối câu (thường dùng trong câu phủ định)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Usage 3 - Experiences -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cách sử dụng 3: Kinh nghiệm, trải nghiệm</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Diễn tả những kinh nghiệm, trải nghiệm trong cuộc sống</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-2xl">
+                                <div class="bg-purple-50 p-3 rounded-lg">
+                                    <p class="text-xl font-bold">Ví dụ:</p>
+                                    <p>I <span class="highlight">have visited</span> Paris three times.</p>
+                                    <p>(Tôi đã từng đến Paris 3 lần)</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-3 rounded-lg">
+                                    <p class="text-xl font-bold">Ví dụ:</p>
+                                    <p>She <span class="highlight">has never eaten</span> sushi.</p>
+                                    <p>(Cô ấy chưa từng ăn sushi bao giờ)</p>
+                                </div>
+                            </div>
+                            <div class="bg-yellow-100 p-4 rounded-lg mt-4 border-l-4 border-yellow-500">
+                                <p class="font-bold text-yellow-800 text-xl">Đặc điểm:</p>
+                                <p class="text-xl">Không quan trọng <span class="font-bold">khi nào</span>, chỉ quan trọng là có/những kinh nghiệm đó hay chưa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Signal Words (Ever/Never) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Dấu hiệu nhận biết: Ever/Never</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-2xl">
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">EVER</p>
+                                    <p class="text-xl">Đã từng (dùng trong câu hỏi)</p>
+                                    <div class="bg-blue-100 p-2 mt-2 rounded-lg">
+                                        <p><span class="highlight">Have</span> you <span class="highlight">ever been</span> to Japan?</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-indigo-600">NEVER</p>
+                                    <p class="text-xl">Chưa bao giờ (câu khẳng định)</p>
+                                    <div class="bg-red-100 p-2 mt-2 rounded-lg">
+                                        <p>I <span class="highlight">have never seen</span> a ghost.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-green-100 p-4 rounded-lg mt-6 border-l-4 border-green-500">
+                                <p class="font-bold text-green-800 text-xl">Chú ý:</p>
+                                <ul class="list-disc pl-5 text-xl space-y-2">
+                                    <li><span class="highlight">Ever</span> = đã từng (dùng trong câu hỏi)</li>
+                                    <li><span class="highlight">Never</span> = chưa bao giờ (khẳng định phủ định)</li>
+                                    <li><span class="highlight">Never</span> là từ phủ định nên không dùng "not" đi kèm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Exercise 3 - Ever/Never (Question 1) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Viết câu với ever/never (1/3)</h2>
+                    <p class="text-2xl mb-8">Hoàn thành câu sau:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">(you / ride / a horse) ?</p>
+                            <p>→ <span class="exercise-input" contenteditable="true" data-answer="Have you ever ridden a horse"></span>?</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-100 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 text-xl">Nhắc lại:</p>
+                        <p class="text-xl">Câu hỏi kinh nghiệm = <span class="highlight">Have/Has + S + ever + V3</span>?</p>
+                        <p class="text-xl">Chưa từng = <span class="highlight">S + have/has + never + V3</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Exercise 3 - Ever/Never (Question 2) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Viết câu với ever/never (2/3)</h2>
+                    <p class="text-2xl mb-8">Hoàn thành câu sau:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">(I / not / eat / sushi)</p>
+                            <p>→ <span class="exercise-input" contenteditable="true" data-answer="I have never eaten sushi"></span>.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-100 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 text-xl">Nhắc lại:</p>
+                        <p class="text-xl">Câu hỏi kinh nghiệm = <span class="highlight">Have/Has + S + ever + V3</span>?</p>
+                        <p class="text-xl">Chưa từng = <span class="highlight">S + have/has + never + V3</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Exercise 3 - Ever/Never (Question 3) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Viết câu với ever/never (3/3)</h2>
+                    <p class="text-2xl mb-8">Hoàn thành câu sau:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">(she / meet / a famous person) ?</p>
+                            <p>→ <span class="exercise-input" contenteditable="true" data-answer="Has she ever met a famous person"></span>?</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-100 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 text-xl">Nhắc lại:</p>
+                        <p class="text-xl">Câu hỏi kinh nghiệm = <span class="highlight">Have/Has + S + ever + V3</span>?</p>
+                        <p class="text-xl">Chưa từng = <span class="highlight">S + have/has + never + V3</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Positive Form -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full text-2xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cấu trúc câu khẳng định</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <div class="sentence-structure text-center mb-4 text-2xl">
+                                <p class="font-bold">S + have/has + V3 + (O)</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <p class="text-xl font-bold mb-2">Chủ ngữ (S):</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>I, you, we, they ➜ <span class="highlight">have</span></li>
+                                        <li>he, she, it ➜ <span class="highlight">has</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-xl font-bold mb-2">Động từ (V3):</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Quy tắc: V + <span class="highlight">ed</span></li>
+                                        <li>Bất quy tắc: Tra bảng động từ cột 3</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-yellow-100 p-4 rounded-lg">
+                                <p class="font-bold text-indigo-800 text-xl">Ví dụ:</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>I <span class="highlight">have finished</span> my work.</li>
+                                    <li>She <span class="highlight">has lived</span> here for 5 years.</li>
+                                    <li>They <span class="highlight">have visited</span> this museum before.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Negative Form -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full text-2xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cấu trúc câu phủ định</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <div class="sentence-structure text-center mb-4 text-2xl">
+                                <p class="font-bold">S + have/has + not + V3 + (O)</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div>
+                                    <p class="text-xl font-bold mb-2">Dạng viết tắt:</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>have not ➜ <span class="highlight">haven't</span></li>
+                                        <li>has not ➜ <span class="highlight">hasn't</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-xl font-bold mb-2">V3 (P2):</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Quy tắc: work ➜ <span class="highlight">worked</span></li>
+                                        <li>Bất quy tắc: go ➜ <span class="highlight">gone</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-100 p-4 rounded-lg">
+                                <p class="font-bold text-indigo-800 text-xl">Ví dụ:</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>I <span class="highlight">haven't seen</span> that movie.</li>
+                                    <li>He <span class="highlight">hasn't finished</span> his homework yet.</li>
+                                    <li>We <span class="highlight">haven't visited</span> Paris.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Question Form -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full text-2xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cấu trúc câu nghi vấn</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <p class="text-xl font-bold mb-2">Câu hỏi Yes/No:</p>
+                                    <div class="sentence-structure text-center mb-2 text-2xl">
+                                        <p class="font-bold">Have/Has + S + V3 + (O) ?</p>
+                                    </div>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li><span class="highlight">Have</span> you met him before?</li>
+                                        <li><span class="highlight">Has</span> she finished her work?</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-xl font-bold mb-2">Câu hỏi Wh-:</p>
+                                    <div class="sentence-structure text-center mb-2">
+                                        <p class="font-bold">Wh- + have/has + S + V3 + (O) ?</p>
+                                    </div>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li><span class="highlight">Where</span> have you been?</li>
+                                        <li><span class="highlight">How long</span> has he lived here?</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-100 p-4 rounded-lg">
+                                <p class="font-bold text-indigo-800 text-xl">Trả lời:</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Yes, S + <span class="highlight">have/has</span>.</li>
+                                    <li>No, S + <span class="highlight">haven't/hasn't</span>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Exercise 4 - Rewrite Sentences (Part 1) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 4: Viết lại câu (Phần 1)</h2>
+                    <p class="text-2xl mb-8">Viết lại câu sau ở thì hiện tại hoàn thành:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">They / go / to Paris / three times</p>
+                            <p>→ <span class="exercise-input" contenteditable="true" data-answer="They have gone to Paris three times"></span>.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-100 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 text-xl">Công thức:</p>
+                        <p class="text-xl">Khẳng định: S + <span class="highlight">have/has</span> + V3</p>
+                        <p class="text-xl">Phủ định: S + <span class="highlight">haven't/hasn't</span> + V3</p>
+                        <p class="text-xl">Câu hỏi: <span class="highlight">Have/Has</span> + S + V3?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Exercise 4 - Rewrite Sentences (Part 2) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 4: Viết lại câu (Phần 2)</h2>
+                    <p class="text-2xl mb-8">Viết lại câu sau ở thì hiện tại hoàn thành:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">She / not / visit / her grandparents / this year</p>
+                            <p>→ <span class="exercise-input" contenteditable="true" data-answer="She hasn't visited her grandparents this year"></span>.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-100 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 text-xl">Công thức:</p>
+                        <p class="text-xl">Khẳng định: S + <span class="highlight">have/has</span> + V3</p>
+                        <p class="text-xl">Phủ định: S + <span class="highlight">haven't/hasn't</span> + V3</p>
+                        <p class="text-xl">Câu hỏi: <span class="highlight">Have/Has</span> + S + V3?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Exercise 4 - Rewrite Sentences (Part 3) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 4: Viết lại câu (Phần 3)</h2>
+                    <p class="text-2xl mb-8">Viết lại câu sau ở thì hiện tại hoàn thành:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">you / ever / ride / a camel ?</p>
+                            <p>→ <span class="exercise-input" contenteditable="true" data-answer="Have you ever ridden a camel"></span>?</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-indigo-100 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 text-xl">Công thức:</p>
+                        <p class="text-xl">Khẳng định: S + <span class="highlight">have/has</span> + V3</p>
+                        <p class="text-xl">Phủ định: S + <span class="highlight">haven't/hasn't</span> + V3</p>
+                        <p class="text-xl">Câu hỏi: <span class="highlight">Have/Has</span> + S + V3?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 16: Difference with Past Simple -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full text-2xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Phân biệt với quá khứ đơn</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-3 rounded-xl shadow-md">
+                            <table class="w-full border-collapse text-2xl">
+                                <thead>
+                                    <tr class="bg-indigo-100">
+                                        <th class="border border-indigo-300 p-2">Tiêu chí</th>
+                                        <th class="border border-indigo-300 p-2">Hiện tại hoàn thành</th>
+                                        <th class="border border-indigo-300 p-2">Quá khứ đơn</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-indigo-300 p-2">Thời gian</td>
+                                        <td class="border border-indigo-300 p-2">Hành động còn liên quan đến hiện tại</td>
+                                        <td class="border border-indigo-300 p-2">Hành động đã kết thúc hoàn toàn trong quá khứ</td>
+                                    </tr>
+                                    <tr class="bg-gray-50">
+                                        <td class="border border-indigo-300 p-2">Dấu hiệu</td>
+                                        <td class="border border-indigo-300 p-2">since, for, just, already, yet, ever, never</td>
+                                        <td class="border border-indigo-300 p-2">yesterday, last week, ago, in 2010</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-indigo-300 p-2">Ví dụ</td>
+                                        <td class="border border-indigo-300 p-2">I <span class="highlight">have lived</span> here for 5 years.</td>
+                                        <td class="border border-indigo-300 p-2">I <span class="highlight">lived</span> here in 2015.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="bg-yellow-100 p-4 rounded-lg mt-6 border-l-4 border-yellow-500">
+                                <p class="font-bold text-yellow-800 text-xl">Mẹo nhớ:</p>
+                                <p class="text-xl"><span class="highlight">Quá khứ đơn</span> = Hành động đã xảy ra và kết thúc trong quá khứ, <span class="font-bold">biết rõ thời gian</span></p>
+                                <p class="text-xl"><span class="highlight">Hiện tại hoàn thành</span> = Hành động còn liên quan đến hiện tại, <span class="font-bold">không biết rõ</span> hoặc <span class="font-bold">không quan trọng</span> thời gian cụ thể</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 17: Exercise 5 - Part 1 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 5: Chọn thì đúng (Phần 1)</h2>
+                    <p class="text-2xl mb-8">Chọn thì hiện tại hoàn thành hoặc quá khứ đơn:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">I <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="have never been">
+                                <option value="">Chọn...</option>
+                                <option value="have never been">have never been</option>
+                                <option value="never was">never was</option>
+                            </select> to Japan.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 18: Exercise 5 - Part 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 5: Chọn thì đúng (Phần 2)</h2>
+                    <p class="text-2xl mb-8">Chọn thì hiện tại hoàn thành hoặc quá khứ đơn:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">She <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="went">
+                                <option value="">Chọn...</option>
+                                <option value="has gone">has gone</option>
+                                <option value="went">went</option>
+                            </select> to Paris last summer.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 19: Exercise 5 - Part 3 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 5: Chọn thì đúng (Phần 3)</h2>
+                    <p class="text-2xl mb-8">Chọn thì hiện tại hoàn thành hoặc quá khứ đơn:</p>
+                    
+                    <div class="flex flex-col items-center justify-start gap-6">
+                        <div class="exercise-item bg-white p-3 rounded-xl shadow-md w-full max-w-2xl">
+                            <p class="text-2xl mb-4">They <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="have known">
+                                <option value="">Chọn...</option>
+                                <option value="have known">have known</option>
+                                <option value="knew">knew</option>
+                            </select> each other for 10 years.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold text-nowrap">Kiểm tra</button>
+                                <div class="answer hidden text-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-pink-100 p-4 rounded-lg">
+                        <p class="font-bold text-pink-800 text-xl">Củng cố:</p>
+                        <p class="text-xl">Hiện tại hoàn thành = <span class="highlight">have/has + V3</span>, liên quan đến hiện tại</p>
+                        <p class="text-xl">Quá khứ đơn = <span class="highlight">V2</span>, hành động đã kết thúc, có thời gian cụ thể</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 18: Summary -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-3xl font-bold text-indigo-700 mb-8">TÓM TẮT BÀI HỌC</h1>
+                    
+                    <div class="max-w-4xl">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="bg-blue-100 p-4 rounded-xl">
+                                <h3 class="font-bold text-blue-800">3 Cách sử dụng</h3>
+                                <ul class="list-disc pl-5 text-left space-y-2 text-lg">
+                                    <li>Hành động kéo dài (for/since)</li>
+                                    <li>Hành động vừa xảy ra (just/already/yet)</li>
+                                    <li>Kinh nghiệm (ever/never)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-100 p-4 rounded-xl">
+                                <h3 class="font-bold text-green-800">Cấu trúc</h3>
+                                <ul class="list-disc pl-5 text-left space-y-2 text-lg">
+                                    <li><span class="highlight">(+)</span> S + have/has + V3</li>
+                                    <li><span class="highlight">(-)</span> S + haven't/hasn't + V3</li>
+                                    <li><span class="highlight">(?)</span> Have/Has + S + V3?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-100 p-4 rounded-xl">
+                                <h3 class="font-bold text-purple-800">Phân biệt</h3>
+                                <ul class="list-disc pl-5 text-left space-y-2 text-lg">
+                                    <li>Quá khứ đơn: đã kết thúc</li>
+                                    <li>Hiện tại hoàn thành: còn liên quan đến hiện tại</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+                
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Exercise functions
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            inputs.forEach(input => {
+                const userAnswer = input.textContent.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${input.previousSibling.textContent} <span class="font-bold">${correctAnswer}</span></p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: ${input.previousSibling.textContent} <span class="font-bold">${correctAnswer}</span> (Bạn điền: ${userAnswer})</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+                
+        function checkSelect(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const select = exerciseItem.querySelector('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const correctAnswer = select.dataset.answer;
+
+            if (select.value === correctAnswer) {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác!</p>';
+                select.classList.add('border-green-500');
+                select.classList.remove('border-indigo-300');
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${correctAnswer}</span></p>`;
+                select.classList.add('border-red-500');
+                select.classList.remove('border-indigo-300');
+            }
+
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const selects = exerciseItem.querySelectorAll('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset inputs
+            inputs.forEach(input => {
+                input.textContent = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset selects
+            selects.forEach(select => {
+                select.value = '';
+                select.classList.remove('border-green-500', 'border-red-500');
+                select.classList.add('border-indigo-300');
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            button.onclick = function() {
+                if (inputs.length > 0) {
+                    checkInput(button);
+                } else if (selects.length > 0) {
+                    checkSelect(button);
+                }
+            };
+
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS6 - Personal Pronouns - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .fill-in-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Pronunciation styles */
+        .pronunciation {
+            color: #6b7280;
+            font-style: italic;
+            font-size: 0.875rem;
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Pronoun table styles */
+        .pronoun-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .pronoun-table th,
+        .pronoun-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.3rem;
+            text-align: left;
+        }
+
+        .pronoun-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+
+        /* Drag and drop styles */
+        .drop-container {
+            border: 2px dashed #cbd5e0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .drop-item {
+            background-color: #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: move;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+
+            .pronunciation {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Personal Pronouns (Đại Từ Nhân Xưng) - Lesson 1</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <i class="fas fa-print mr-2"></i>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức / Key Notes</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Đại từ nhân xưng là gì? / What are personal pronouns?</h4>
+                        <p class="text-gray-700 mb-3">
+                            <span class="font-semibold">Vietnamese:</span> Đại từ nhân xưng là các từ dùng để chỉ người, 
+                            vật hoặc nhóm người thay cho danh từ. Chúng giúp câu văn tự nhiên hơn, tránh lặp lại danh từ.
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-semibold">English:</span> Personal pronouns are words used to replace nouns 
+                            that refer to people, animals, or things. They make sentences more natural by avoiding repetition.
+                        </p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Đại từ chủ ngữ và tân ngữ / Subject & Object Pronouns</h4>
+                        <p class="text-gray-700 mb-3">
+                            <span class="font-semibold">Vietnamese:</span> Đại từ chủ ngữ làm chủ thể hành động, 
+                            đứng đầu câu. Đại từ tân ngữ là đối tượng chịu tác động, đứng sau động từ hoặc giới từ.
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-semibold">English:</span> Subject pronouns perform the action in a sentence. 
+                            Object pronouns receive the action and come after verbs or prepositions.
+                        </p>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">3. Vị trí và cách dùng / Position & Usage</h4>
+                        <p class="text-gray-700 mb-3">
+                            <span class="font-semibold">Vietnamese:</span> Đại từ chủ ngữ đứng trước động từ chính. 
+                            Đại từ tân ngữ đứng sau động từ hoặc giới từ (to, for, with, about, etc.).
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-semibold">English:</span> Subject pronouns come before the main verb. 
+                            Object pronouns come after verbs or prepositions (to, for, with, about, etc.).
+                        </p>
+                        <div class="grid grid-cols-2 gap-2 mt-2">
+                            <div class="border p-2 rounded">
+                                <p class="font-medium">Đúng/Correct:</p>
+                                <p class="italic">She gave <u>him</u> a backpack.</p>
+                                <p class="italic">They are with <u>us</u> in the boat.</p>
+                            </div>
+                            <div class="border p-2 rounded">
+                                <p class="font-medium">Sai/Incorrect:</p>
+                                <p class="italic">She gave <s>he</s> a backpack.</p>
+                                <p class="italic">They are with <s>we</s> in the boat.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">4. Mẹo nhớ khi dùng đại từ / Usage Tips</h4>
+                        <ol class="list-decimal pl-5 text-gray-700">
+                            <li class="mb-1">Dùng đại từ thay cho danh từ đã được nhắc đến trước đó</li>
+                            <li class="mb-1">Dùng đại từ chủ ngữ khi là người/vật thực hiện hành động</li>
+                            <li class="mb-1">Dùng đại từ tân ngữ khi là người/vật nhận hành động</li>
+                            <li class="mb-1">Dùng đại từ tân ngữ sau giới từ</li>
+                        </ol>
+                        <p class="mt-2 text-gray-700">
+                            <span class="font-semibold">Example:</span> <br>
+                            "Tom and I saw an amazing landscape. <u>We</u> took pictures of <u>it</u>."
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div class="info-card bg-blue-50 w-full mt-3">
+                    <h4 class="subsection-title">5. Bảng đại từ nhân xưng / Personal Pronouns Chart</h4>
+                    <table class="pronoun-table w-full">
+                        <thead>
+                            <tr>
+                                <th>Subject<br>(Chủ ngữ)</th>
+                                <th>Object<br>(Tân ngữ)</th>
+                                <th>Examples/Ví dụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I (tôi)</td>
+                                <td>me (tôi)</td>
+                                <td>I love her. / She helps <u>me</u>.</td>
+                            </tr>
+                            <tr>
+                                <td>you (bạn)</td>
+                                <td>you (bạn)</td>
+                                <td>You are amazing. / I'll call <u>you</u>.</td>
+                            </tr>
+                            <tr>
+                                <td>he (anh ấy)</td>
+                                <td>him (anh ấy)</td>
+                                <td>He has a compass. / Give it to <u>him</u>.</td>
+                            </tr>
+                            <tr>
+                                <td>she (cô ấy)</td>
+                                <td>her (cô ấy)</td>
+                                <td>She climbed the mountain. / Tell <u>her</u>.</td>
+                            </tr>
+                            <tr>
+                                <td>it (nó)</td>
+                                <td>it (nó)</td>
+                                <td>It is a beautiful waterfall. / I see <u>it</u>.</td>
+                            </tr>
+                            <tr>
+                                <td>we (chúng tôi)</td>
+                                <td>us (chúng tôi)</td>
+                                <td>We join in the activity. / Come with <u>us</u>.</td>
+                            </tr>
+                            <tr>
+                                <td>they (họ)</td>
+                                <td>them (họ)</td>
+                                <td>They explore the island. / Give <u>them</u> the map.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập / Vocabulary</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">amazing <span class="vocab-type">(adj)</span> <span class="pronunciation">/əˈmeɪzɪŋ/</span></p>
+                        <p class="vocab-meaning">tuyệt vời</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">backpack <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈbækpæk/</span></p>
+                        <p class="vocab-meaning">ba-lô</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">boat <span class="vocab-type">(n)</span> <span class="pronunciation">/bəʊt/</span></p>
+                        <p class="vocab-meaning">con thuyền</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">compass <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈkʌmpəs/</span></p>
+                        <p class="vocab-meaning">la bàn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">desert <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈdezət/</span></p>
+                        <p class="vocab-meaning">sa mạc</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">island <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈaɪlənd/</span></p>
+                        <p class="vocab-meaning">đảo, hòn đảo</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">join in <span class="vocab-type">(v)</span> <span class="pronunciation">/dʒɔɪn ɪn/</span></p>
+                        <p class="vocab-meaning">tham gia</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">landscape <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈlændskeɪp/</span></p>
+                        <p class="vocab-meaning">phong cảnh</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">litter <span class="vocab-type">(v)</span> <span class="pronunciation">/ˈlɪtə/</span></p>
+                        <p class="vocab-meaning">vứt rác (bừa bãi)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">man-made <span class="vocab-type">(adj)</span> <span class="pronunciation">/ˌmæn ˈmeɪd/</span></p>
+                        <p class="vocab-meaning">nhân tạo</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">mount <span class="vocab-type">(n)</span> <span class="pronunciation">/maʊnt/</span></p>
+                        <p class="vocab-meaning">núi, đồi, đỉnh</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">mountain range <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈmaʊntən ˌreɪndʒ/</span></p>
+                        <p class="vocab-meaning">dãy núi</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">natural wonder <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈnætʃrəl ˈwʌndə/</span></p>
+                        <p class="vocab-meaning">kì quan thiên nhiên</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">plaster <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈplɑːstə/</span></p>
+                        <p class="vocab-meaning">băng, gạc y tế</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">rock <span class="vocab-type">(n)</span> <span class="pronunciation">/rɒk/</span></p>
+                        <p class="vocab-meaning">tảng đá, phiến đá</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">show <span class="vocab-type">(n, v)</span> <span class="pronunciation">/ʃəʊ/</span></p>
+                        <p class="vocab-meaning">(sự) trình diễn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">suncream <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈsʌnkriːm/</span></p>
+                        <p class="vocab-meaning">kem chống nắng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">waterfall <span class="vocab-type">(n)</span> <span class="pronunciation">/ˈwɔːtəfɔːl/</span></p>
+                        <p class="vocab-meaning">thác nước</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản / Basic Exercises</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Chọn đại từ đúng / Choose the correct pronoun</h4>
+                            <p class="exercise-instruction">👉 Khoanh tròn đại từ thích hợp trong mỗi câu:</p>
+
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="px-2 flex flex-row">
+                                    <p class="text-gray-800">
+                                        <span class="font-semibold">1.</span> (I / Me) love hiking in the mountain range.
+                                    </p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="I" 
+                                                data-answer="I" onclick="checkAnswer(this)">
+                                            <span>I</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="Me" 
+                                                data-answer="I" onclick="checkAnswer(this)">
+                                            <span>Me</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="px-2 flex flex-row">
+                                    <p class="text-gray-800">
+                                        <span class="font-semibold">2.</span> The natural wonder amazed (we / us) with its beauty.
+                                    </p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="we" 
+                                                data-answer="us" onclick="checkAnswer(this)">
+                                            <span>we</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="us" 
+                                                data-answer="us" onclick="checkAnswer(this)">
+                                            <span>us</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="px-2 flex flex-row">
+                                    <p class="text-gray-800">
+                                        <span class="font-semibold">3.</span> (She / Her) and her brother explored the desert.
+                                    </p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="She" 
+                                                data-answer="She" onclick="checkAnswer(this)">
+                                            <span>She</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="Her" 
+                                                data-answer="She" onclick="checkAnswer(this)">
+                                            <span>Her</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="px-2 flex flex-row">
+                                    <p class="text-gray-800">
+                                        <span class="font-semibold">4.</span> Pass (I / me) the compass, please.
+                                    </p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="I" 
+                                                data-answer="me" onclick="checkAnswer(this)">
+                                            <span>I</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="me" 
+                                                data-answer="me" onclick="checkAnswer(this)">
+                                            <span>me</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="px-2 flex flex-row">
+                                    <p class="text-gray-800">
+                                        <span class="font-semibold">5.</span> The boat took (they / them) to a small island.
+                                    </p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="they" 
+                                                data-answer="them" onclick="checkAnswer(this)">
+                                            <span>they</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="them" 
+                                                data-answer="them" onclick="checkAnswer(this)">
+                                            <span>them</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Điền đại từ thích hợp / Fill in the correct pronoun</h4>
+                            <p class="exercise-instruction">👉 Điền đại từ thích hợp (subject hoặc object) vào chỗ trống:</p>
+
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1">
+                                        <span class="font-semibold">1.</span> Look at that amazing waterfall! <input type="text" class="fill-in-input" 
+                                        data-answer="it" onblur="checkAnswer(this)"> is so beautiful.
+                                    </p>
+                                    
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1">
+                                        <span class="font-semibold">2.</span> My backpack is heavy. Can you help <input type="text" class="fill-in-input" 
+                                        data-answer="me" onblur="checkAnswer(this)"> with it?
+                                    </p>
+                                    
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1">
+                                        <span class="font-semibold">3.</span> Lisa and Mark are lost. We should call <input type="text" class="fill-in-input" 
+                                        data-answer="them" onblur="checkAnswer(this)">.
+                                    </p>
+                                    
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1">
+                                        <span class="font-semibold">4.</span> <input type="text" class="fill-in-input" 
+                                        data-answer="We" onblur="checkAnswer(this)"> found a man-made rock formation in the desert.
+                                    </p>
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1">
+                                        <span class="font-semibold">5.</span> I met a hiker and gave <input type="text" class="fill-in-input" 
+                                        data-answer="her" onblur="checkAnswer(this)"> my extra suncream.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 3: Sửa lỗi đại từ / Correct the pronoun errors</h4>
+                            <p class="exercise-instruction">👉 Tìm và sửa lỗi sai về đại từ trong các câu sau:</p>
+
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="flex flex-row w-full">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">1.</span> Her father took she to see the amazing landscape.
+                                    </p>
+                                    <input type="text" class="answer-input w-full" data-answer="Her father took her to see the amazing landscape." onblur="checkAnswer(this)">
+                                </div>
+                                
+                                <div class="flex flex-row w-full">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">2.</span> Me and my brother joined in the boat tour.
+                                    </p>
+                                    <input type="text" class="answer-input w-full" data-answer="My brother and I joined in the boat tour." onblur="checkAnswer(this)">
+                                </div>
+                                
+                                <div class="flex flex-row w-full">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">3.</span> This compass belongs to we.
+                                    </p>
+                                    <input type="text" class="answer-input w-full" data-answer="This compass belongs to us." onblur="checkAnswer(this)">
+                                </div>
+                                
+                                <div class="flex flex-row w-full">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">4.</span> Him and me want to visit the natural wonder.
+                                    </p>
+                                    <input type="text" class="answer-input w-full" data-answer="He and I want to visit the natural wonder." onblur="checkAnswer(this)">
+                                </div>
+                                
+                                <div class="flex flex-row w-full">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">5.</span> The island was very hot, so them put on suncream.
+                                    </p>
+                                    <input type="text" class="answer-input w-full" data-answer="The island was very hot, so they put on suncream." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao / Advanced Exercises</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 4: Điền đại từ thích hợp dựa vào bối cảnh / Fill pronouns based on context</h4>
+                            <p class="exercise-instruction">
+                                👉 Đọc đoạn văn và điền đại từ thích hợp vào chỗ trống (subject hoặc object):
+                            </p>
+
+                            <div class="border p-4 rounded-lg bg-blue-50">
+                                <p class="mb-2">
+                                    Last summer, my friend Sara and <input type="text" class="fill-in-input" data-answer="I" onblur="checkAnswer(this)"> went on an adventure. 
+                                    <input type="text" class="fill-in-input" data-answer="We" onblur="checkAnswer(this)"> packed our backpacks with a compass, suncream, and other supplies. 
+                                    The boat took <input type="text" class="fill-in-input" data-answer="us" onblur="checkAnswer(this)"> to a remote island. 
+                                    The island had an amazing waterfall that took <input type="text" class="fill-in-input" data-answer="our" onblur="checkAnswer(this)"> breath away.
+                                </p>
+                                <p class="mb-2">
+                                    One day, Sara cut her leg on a rock. <input type="text" class="fill-in-input" data-answer="She" onblur="checkAnswer(this)"> needed a plaster, 
+                                    so <input type="text" class="fill-in-input" data-answer="I" onblur="checkAnswer(this)"> helped <input type="text" class="fill-in-input" data-answer="her" onblur="checkAnswer(this)">.
+                                    Later, we met some other hikers. <input type="text" class="fill-in-input" data-answer="They" onblur="checkAnswer(this)"> were exploring 
+                                    the island too. <input type="text" class="fill-in-input" data-answer="We" onblur="checkAnswer(this)"> showed <input type="text" class="fill-in-input" data-answer="them" onblur="checkAnswer(this)"> 
+                                    the beautiful mountain range we had found.
+                                </p>
+                                <p>
+                                    The trip taught <input type="text" class="fill-in-input" data-answer="me" onblur="checkAnswer(this)"> an important lesson - always respect 
+                                    nature. Never litter, because <input type="text" class="fill-in-input" data-answer="it" onblur="checkAnswer(this)"> harms the environment that 
+                                    gives <input type="text" class="fill-in-input" data-answer="us" onblur="checkAnswer(this)"> so much joy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 5: Viết câu hoàn chỉnh / Write complete sentences</h4>
+                            <p class="exercise-instruction">
+                                👉 Hoàn thành các câu sau sử dụng đại từ và từ vựng đã học:
+                            </p>
+
+                            <div class="grid grid-cols-1 gap-4 w-full">
+                                <div class="flex flex-row w-full">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">1.</span> (amazing + showed + me) 
+                                    </p>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">2.</span> (we + natural wonder + with them) 
+                                    </p>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">3.</span> (her + boat + island)
+                                    </p>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1 text-nowrap">
+                                        <span class="font-semibold">4.</span> (they + mountain range + us)
+                                    </p>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                
+                                <div class="flex flex-row">
+                                    <p class="text-gray-800 mb-1 text-nowrap        ">
+                                        <span class="font-semibold">5.</span> (it + backpack + them)
+                                    </p>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            console.log(userAnswer, correctAnswer);
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer && input.checked) {
+                        console.log('correct');
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Drag and drop functionality for Exercise 5
+        let draggedItem = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.drop-item');
+            const targets = document.querySelectorAll('.drop-target');
+            
+            // Add drag event listeners to draggable items
+            items.forEach(item => {
+                item.addEventListener('dragstart', function(e) {
+                    draggedItem = this;
+                    setTimeout(() => {
+                        this.style.display = 'none';
+                    }, 0);
+                });
+                
+                item.addEventListener('dragend', function() {
+                    this.style.display = 'inline-block';
+                });
+            });
+            
+            // Add drop event listeners to drop targets
+            targets.forEach(target => {
+                target.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                });
+                
+                target.addEventListener('dragenter', function(e) {
+                    e.preventDefault();
+                    this.parentElement.classList.add('bg-blue-50');
+                });
+                
+                target.addEventListener('dragleave', function() {
+                    this.parentElement.classList.remove('bg-blue-50');
+                });
+                
+                target.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.parentElement.classList.remove('bg-blue-50');
+                    
+                    if (draggedItem) {
+                        this.textContent = draggedItem.textContent;
+                        this.dataset.droppedPronoun = draggedItem.dataset.pronoun;
+                        draggedItem = null;
+                    }
+                });
+            });
+        });
+
+        function checkDragDropAnswers() {
+            const targets = document.querySelectorAll('.drop-target');
+            let correctCount = 0;
+            
+            targets.forEach(target => {
+                if (target.textContent.trim() === '') return;
+                
+                if (target.dataset.droppedPronoun === target.parentElement.dataset.answer) {
+                    target.parentElement.classList.remove('bg-red-100');
+                    target.parentElement.classList.add('bg-green-100');
+                    correctCount++;
+                } else {
+                    target.parentElement.classList.remove('bg-green-100');
+                    target.parentElement.classList.add('bg-red-100');
+                }
+            });
+            
+            // Show alert with score
+            alert(`You got ${correctCount} out of ${targets.length} correct!`);
+        }
+    </script>
+</body>
+</html>
