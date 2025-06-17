@@ -1,0 +1,332 @@
+<html lang="vi">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anh Ngữ GEN8 - Lộ trình Pre-GS7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pre-gs-worksheets.css">
+    <style>
+    /* Custom Table Styles */
+    .roadmap-table {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    .roadmap-table thead tr {
+      background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
+    }
+    .roadmap-table th {
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1rem;
+      padding: 18px 16px;
+      border-bottom: 2px solid #e5e7eb;
+      text-align: center;
+    }
+    .roadmap-table td {
+      padding: 16px 16px;
+      font-size: 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+      background: #fff;
+      transition: background 0.2s;
+    }
+    .roadmap-table tbody tr:hover td {
+      background: #f0f9ff;
+      transition: background 0.2s;
+    }
+    .roadmap-table td:first-child, .roadmap-table th:first-child {
+      text-align: center;
+      font-weight: 600;
+      width: 60px;
+    }
+    @media (max-width: 640px) {
+      .roadmap-table th, .roadmap-table td {
+        padding: 10px 6px;
+        font-size: 0.95rem;
+      }
+    }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-12">
+                <div class="flex">
+                    <a href="/" class="flex items-center">
+                        <img src="/assets/logo.png" alt="GEN8 Logo" class="h-10">
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-6 md:flex md:space-x-4">
+                        <a href="/roadmap.html" class="bg-gray-100 text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+                            <img src="https://cdn-icons-png.flaticon.com/512/712/712153.png" alt="Lộ trình" class="h-4 w-4 mr-2 inline-block">
+                            Lộ trình
+                        </a>
+                        <a href="/documents.html" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5832/5832416.png" alt="Tài liệu" class="h-4 w-4 mr-2 inline-block">
+                            Tài liệu
+                        </a>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button type="button" class="text-gray-700 hover:text-blue-600 focus:outline-none" id="mobile-menu-button">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5358/5358649.png" alt="Menu" class="h-6 w-6 inline-block">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/roadmap.html" class="bg-gray-100 text-blue-600 block px-3 py-2 rounded-md text-base font-medium">
+                    <img src="https://cdn-icons-png.flaticon.com/512/712/712153.png" alt="Lộ trình" class="h-4 w-4 mr-2 inline-block">
+                    Lộ trình
+                </a>
+                <a href="/documents.html" class="text-gray-700 hover:text-blue-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5832/5832416.png" alt="Tài liệu" class="h-4 w-4 mr-2 inline-block">
+                    Tài liệu
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow mt-10">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-blue-700 text-center mb-8">LỘ TRÌNH PRE-GS7</h2>
+            <div class="overflow-x-auto shadow-lg rounded-lg">
+                <table class="min-w-full roadmap-table">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Buổi</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nội dung</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">1</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Danh từ (Nouns) - Ôn tập
+- Khái niệm danh từ
+- Danh từ đếm được và không đếm được
+- Số ít và số nhiều (bao gồm dạng bất quy tắc)
+- Vị trí danh từ trong câu</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập từ lớp 6</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">2</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Đại từ nhân xưng
+- Khái niệm
+- Chức năng
+- Chủ ngữ
+- Tân ngữ</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập từ lớp 6</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">3</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Mạo từ (Articles): a/an/the
+- Khái niệm mạo từ
+- Cách sử dụng a/an và the
+- Phân biệt mạo từ xác định và mạo từ không xác 
+định</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Liên hệ với danh từ từ Buổi 1</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">4</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Lượng từ (Quantifiers): some, many, much, a lot 
+of, lots of
+- Cách sử dụng với danh từ đếm được và không đếm 
+được
+- Vị trí trong câu</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Liên hệ với danh từ và mạo từ</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">5</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Sở hữu cách (Possessive)
+- Danh từ sở hữu ('s) - of
+- Tính từ sở hữu: my, your, his, her...
+- Đại từ sở hữu</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Liên hệ với đại từ nhân xưng
+Thành lập cụm tính từ + danh từ</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">6</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập danh từ, đại từ, mạo từ, 
+lượng từ, sở hữu cách</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">7</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Kiểm tra – Sửa đề</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">8</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Tính từ mô tả
+- Khái niệm
+- Chức năng
+- Cụm tính từ mô tả + danh từ
+- Cách nhận biết & vị trí</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Nền tảng cho so sánh</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">9</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Cấu trúc so sánh
+- like, different from
+- (not) as ... as
+- Cách sử dụng trong câu</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Liên hệ tính từ mô tả</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">10</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Động từ (Phần 1)
+- Khái niệm
+- Chức năng
+- Vị trí động từ trong câu
+- Các loại động từ: tobe, động từ thường, động từ
+khiếm khuyết
+- Động từ to be (am/is/are)</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập từ lớp 6
+Liên hệ với đại từ nhân xưng để
+xây dựng câu đơn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">11</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Động từ (Phần 2)
+- Động từ thường (s/es)
+- Động từ khiếm khuyết (can/should/must)</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập từ lớp 6
+Liên hệ với đại từ nhân xưng để
+xây dựng câu đơn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">12</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Giới từ
+- Khái niệm
+- Chức năng trong câu
+- Các loại giới từ
+- Giới từ chỉ thời gian & địa điểm</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập từ lớp 6</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">13</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập sở hữu cách, động từ, tính 
+từ, giới từ</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">14</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Kiểm tra – Sửa đề</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">15</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Thì hiện tại đơn
+- Cách sử dụng
+- Cấu trúc (tobe – động từ thường)
+- Dấu hiệu nhận biết</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">16</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Trạng từ chỉ tần suất
+- Khái niệm
+- Chức năng
+- Cách sử dụng
+- Vị trí so với động từ tobe và động từ thường</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Liên hệ với hiện tại đơn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">17</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Thì hiện tại tiếp diễn
+- Cách sử dụng
+- Cấu trúc câu
+- Dấu hiệu nhận biết</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Phân biệt với hiện tại đơn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">18</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập thì hiện tại đơn và hiện tại 
+tiếp diễn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">19</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Kiểm tra – Sửa đề</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">20</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Thì tương lai đơn
+- Cách sử dụng
+- Cấu trúc câu
+- Dấu hiệu nhận biết</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Phân biệt với hiện tại đơn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">21</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Thì quá khứ đơn (Phần 1)
+- Cách sử dụng
+- Cấu trúc câu (động từ có quy tắc -ed)
+- Dấu hiệu nhận biết</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Phân biệt với hiện tại đơn và 
+tương lai đơn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">22</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Thì quá khứ đơn (Phần 2)
+- Cấu trúc câu (động từ bất quy tắc)
+- Dấu hiệu nhận biết
+- Các trường hợp đặc biệt</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Liên hệ lại bài 19</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">23</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập thí tương lai đơn và quá 
+khứ đơn</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">24</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Kiểm tra – Sửa đề</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap"></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">25</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập tổng hợp</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Ôn tập tất cả các chủ điểm</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-pre-wrap">26</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap">Kiểm tra tổng hợp</td>
+                            <td class="px-6 py-4 whitespace-pre-wrap"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html> 
