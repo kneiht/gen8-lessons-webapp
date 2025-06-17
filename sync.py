@@ -51,7 +51,7 @@ def check_drive_changes(source_path, destination_folder):
                 break
         
         print("✅ Không có thay đổi nào")
-        return True
+        return False
             
     except subprocess.CalledProcessError as e:
         print(f"❌ Lỗi khi kiểm tra thay đổi: {e}")
@@ -158,9 +158,26 @@ def sync_new_files(source_path, destination_folder):
     if sync_result.returncode == 0:
         print(f"✅ Đồng bộ thành công vào thư mục: {destination_folder}")
         
+
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        lessons_dir = os.path.join(script_dir, 'lessons')
+        os.makedirs(lessons_dir, exist_ok=True)
+        
+
+        lessons_info = collect_lesson_info(lessons_dir)
+        
+        output_file = os.path.join(script_dir, 'files_info.json')
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(lessons_info, f, ensure_ascii=False, indent=2)
+        
+        print(f"Updated {output_file} with {len(lessons_info['lessons'])} lessons and {len(lessons_info['categories'])} categories")
+
+
+
+
         # Sau khi đồng bộ thành công, commit và push lên git
         print("\n🔄 Đang cập nhật git repository...")
-        if git_commit_and_push(destination_folder):
+        if git_commit_and_push(CURRENT_DIR):
             print("✅ Quá trình đồng bộ và cập nhật git hoàn tất")
         else:
             print("⚠️ Đồng bộ thành công nhưng cập nhật git thất bại")
@@ -316,21 +333,7 @@ def main():
         "PROJECTS/GEN8-LESSONS",
         "lessons",
     )
-    if not result:
-        return
 
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    lessons_dir = os.path.join(script_dir, 'lessons')
-    os.makedirs(lessons_dir, exist_ok=True)
-    
-
-    lessons_info = collect_lesson_info(lessons_dir)
-    
-    output_file = os.path.join(script_dir, 'files_info.json')
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(lessons_info, f, ensure_ascii=False, indent=2)
-    
-    print(f"Updated {output_file} with {len(lessons_info['lessons'])} lessons and {len(lessons_info['categories'])} categories")
 
 if __name__ == "__main__":
     main()

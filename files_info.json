@@ -4,6 +4,10 @@
       "name": "Worksheets",
       "icon": "https://cdn-icons-png.flaticon.com/512/2991/2991108.png"
     },
+    "tests": {
+      "name": "Tests",
+      "icon": "https://cdn-icons-png.flaticon.com/512/9913/9913544.png"
+    },
     "slides": {
       "name": "Slides",
       "icon": "https://cdn-icons-png.flaticon.com/512/11473/11473512.png"
@@ -107,6 +111,13 @@
       "author": "Gen8",
       "description": "Danh từ (Nouns) - Part 1",
       "category": "worksheets"
+    },
+    "tests/pre-gs6-test-1": {
+      "path": "tests/pre-gs6-test-1",
+      "title": "Pre Gs6 Test",
+      "author": "Gen8",
+      "description": "Bài test Pre GS6 1",
+      "category": "tests"
     },
     "slides/pre-gs9-lesson-4": {
       "path": "slides/pre-gs9-lesson-4",
