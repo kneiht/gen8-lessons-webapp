@@ -22,23 +22,23 @@ def get_date_time():
 def check_drive_changes(source_path, destination_folder):
     """
     Kiểm tra xem có thay đổi nào trong Google Drive không bằng cách kiểm tra số lượng file được transfer.
-    
+
     Args:
         source_path (str): Đường dẫn đến thư mục trên Google Drive
         destination_folder (str): Thư mục đích trên máy local
-    
+
     Returns:
         bool: True nếu có thay đổi, False nếu không
     """
     # Sử dụng rclone với --dry-run để kiểm tra thay đổi
     check_cmd = f"rclone sync gdrive:/{source_path} {destination_folder} --dry-run"
     print("🔍 Đang kiểm tra thay đổi...")
-    
+
     try:
         result = subprocess.run(check_cmd, shell=True, capture_output=True, text=True)
         output = result.stdout + result.stderr
         print(output)
-        
+
         # Tìm dòng chứa thông tin về số lượng file được transfer
         for line in output.split('\n'):
             if line.startswith('Transferred:'):
@@ -49,10 +49,10 @@ def check_drive_changes(source_path, destination_folder):
                     print(output)
                     return True
                 break
-        
+
         print("✅ Không có thay đổi nào")
         return False
-            
+
     except subprocess.CalledProcessError as e:
         print(f"❌ Lỗi khi kiểm tra thay đổi: {e}")
         return False
@@ -82,42 +82,42 @@ def download_from_drive(source_path, destination_folder):
 def git_commit_and_push(directory):
     """
     Commit và push các thay đổi lên git repository.
-    
+
     Args:
         directory (str): Thư mục chứa git repository
     """
     try:
         # Chuyển đến thư mục git
         os.chdir(directory)
-        
+
         # Kiểm tra trạng thái git
         status_cmd = "git status --porcelain"
         status_result = subprocess.run(status_cmd, shell=True, capture_output=True, text=True)
-        
+
         if not status_result.stdout.strip():
             print("📝 Không có thay đổi nào để commit")
             return True
-            
+
         # Thêm tất cả các file đã thay đổi
         add_cmd = "git add ."
         print("📦 Đang thêm các file vào git...")
         subprocess.run(add_cmd, shell=True, check=True)
-        
+
         # Tạo commit message với timestamp
         timestamp = get_date_time()
         commit_msg = f"Auto sync from Google Drive at {timestamp}"
         commit_cmd = f'git commit -m "{commit_msg}"'
         print("💾 Đang commit các thay đổi...")
         subprocess.run(commit_cmd, shell=True, check=True)
-        
+
         # Push lên remote repository
         push_cmd = "git push"
         print("⬆️ Đang push lên remote repository...")
         subprocess.run(push_cmd, shell=True, check=True)
-        
+
         print("✅ Đã push thành công lên git repository")
         return True
-        
+
     except subprocess.CalledProcessError as e:
         print(f"❌ Lỗi khi thực hiện git command: {e}")
         return False
@@ -128,7 +128,7 @@ def git_commit_and_push(directory):
 def sync_new_files(source_path, destination_folder):
     """
     Chỉ tải về những file mới được cập nhật hoặc tạo mới.
-    
+
     Args:
         source_path (str): Đường dẫn đến thư mục trên Google Drive
         destination_folder (str): Thư mục đích trên máy local
@@ -157,19 +157,19 @@ def sync_new_files(source_path, destination_folder):
 
     if sync_result.returncode == 0:
         print(f"✅ Đồng bộ thành công vào thư mục: {destination_folder}")
-        
+
 
         script_dir = os.path.dirname(os.path.abspath(__file__))
         lessons_dir = os.path.join(script_dir, 'lessons')
         os.makedirs(lessons_dir, exist_ok=True)
-        
+
 
         lessons_info = collect_lesson_info(lessons_dir)
-        
+
         output_file = os.path.join(script_dir, 'files_info.json')
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(lessons_info, f, ensure_ascii=False, indent=2)
-        
+
         print(f"Updated {output_file} with {len(lessons_info['lessons'])} lessons and {len(lessons_info['categories'])} categories")
 
 
@@ -181,7 +181,7 @@ def sync_new_files(source_path, destination_folder):
             print("✅ Quá trình đồng bộ và cập nhật git hoàn tất")
         else:
             print("⚠️ Đồng bộ thành công nhưng cập nhật git thất bại")
-            
+
         return destination_folder
     else:
         print("❌ Đồng bộ thất bại:")
@@ -205,15 +205,15 @@ def collect_lesson_info(lessons_dir):
         'categories': {},
         'lessons': {}
     }
-    
+
     for root, dirs, files in os.walk(lessons_dir):
         if 'index.html' not in files:
             continue
-            
+
         rel_path = os.path.relpath(root, lessons_dir)
         if rel_path == '.':
             continue
-            
+
         parts = rel_path.split(os.sep)
         category_key = parts[0] if len(parts) > 1 else None
         lesson_display_name = os.sep.join(parts[1:]) if len(parts) > 1 else rel_path
@@ -234,7 +234,7 @@ def collect_lesson_info(lessons_dir):
                         if ':' in line:
                             key, value = line.split(':', 1)
                             info_dict[key.strip().lower()] = value.strip()
-                    
+
                     # Override defaults with values from info.txt
                     lesson_title = info_dict.get('title', default_title)
                     lesson_author = info_dict.get('author', default_author)
@@ -256,7 +256,7 @@ def collect_lesson_info(lessons_dir):
                 'name': category_key.replace('-', ' ').replace('_', ' ').title(),
                 'icon': get_category_icon(category_key)
             }
-        
+
         # Add lesson details
         lessons_info['lessons'][rel_path] = {
             'path': rel_path,
@@ -265,13 +265,13 @@ def collect_lesson_info(lessons_dir):
             'description': lesson_description,
             'category': category_key
         }
-    
+
     return lessons_info
 
 def run_periodic_sync(source_path, destination_folder, interval=300, max_retries=3):
     """
     Chạy đồng bộ định kỳ với cơ chế kiểm tra quota.
-    
+
     Args:
         source_path (str): Đường dẫn đến thư mục trên Google Drive
         destination_folder (str): Thư mục đích trên máy local
@@ -280,17 +280,17 @@ def run_periodic_sync(source_path, destination_folder, interval=300, max_retries
     """
     # Chuyển đổi đường dẫn tương đối thành tuyệt đối
     destination_folder = os.path.abspath(os.path.join(CURRENT_DIR, destination_folder))
-    
+
     print(f"🔄 Bắt đầu đồng bộ định kỳ mỗi {interval} giây")
     print(f"📂 Nguồn: {source_path}")
     print(f"📂 Đích: {destination_folder}")
-    
+
     retry_count = 0
     while True:
         try:
             print(f"\n⏰ {get_date_time()} - Bắt đầu kiểm tra đồng bộ...")
             result = sync_new_files(source_path, destination_folder)
-            
+
             if result:
                 # Reset retry count on success
                 retry_count = 0
@@ -307,7 +307,7 @@ def run_periodic_sync(source_path, destination_folder, interval=300, max_retries
                 else:
                     print(f"⚠️ Thử lại lần {retry_count}/{max_retries} sau {interval} giây...")
                     time.sleep(interval)
-            
+
         except KeyboardInterrupt:
             print("\n⚠️ Dừng quá trình đồng bộ...")
             break
@@ -321,7 +321,7 @@ def run_one(source_path, destination_folder):
     """
     # Chuyển đổi đường dẫn tương đối thành tuyệt đối
     destination_folder = os.path.abspath(os.path.join(CURRENT_DIR, destination_folder))
-    
+
     print(f"🔄 Bắt đầu đồng bộ")
     print(f"📂 Nguồn: {source_path}")
     print(f"📂 Đích: {destination_folder}")

@@ -231,11 +231,46 @@
       "description": "Danh Từ (Nouns) - Phần 2: Bất quy tắc & Đếm được/Không đếm được",
       "category": "worksheets"
     },
+    "tests/pre-gs6-test-6": {
+      "path": "tests/pre-gs6-test-6",
+      "title": "Pre Gs6 Test 6 - Paper 6",
+      "author": "Gen8",
+      "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-3": {
+      "path": "tests/pre-gs6-test-3",
+      "title": "Pre Gs6 Test 3 - Paper 3",
+      "author": "Gen8",
+      "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-5": {
+      "path": "tests/pre-gs6-test-5",
+      "title": "Pre Gs6 Test 5 - Paper 5",
+      "author": "Gen8",
+      "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-2": {
+      "path": "tests/pre-gs6-test-2",
+      "title": "Pre Gs6 Test 2 - Paper 2",
+      "author": "Gen8",
+      "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1": {
       "path": "tests/pre-gs6-test-1",
-      "title": "Pre Gs6 Test",
+      "title": "Pre Gs6 Test 1 - Paper 1",
       "author": "Gen8",
-      "description": "Bài test Pre GS6 1",
+      "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-4": {
+      "path": "tests/pre-gs6-test-4",
+      "title": "Pre Gs6 Test 4 - Paper 4",
+      "author": "Gen8",
+      "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     }
   }
