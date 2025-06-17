@@ -6,6 +6,9 @@ import requests
 import json
 import time
 
+# Lấy đường dẫn tuyệt đối của thư mục hiện tại
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def get_date_time():
     """ docs """
     tz = pytz.timezone("Asia/Ho_Chi_Minh")
@@ -16,7 +19,7 @@ def get_date_time():
 
 def check_drive_changes(source_path, destination_folder):
     """
-    Kiểm tra xem có thay đổi nào trong Google Drive không bằng cách so sánh timestamp.
+    Kiểm tra xem có thay đổi nào trong Google Drive không bằng cách kiểm tra số lượng file được transfer.
     
     Args:
         source_path (str): Đường dẫn đến thư mục trên Google Drive
@@ -26,20 +29,27 @@ def check_drive_changes(source_path, destination_folder):
         bool: True nếu có thay đổi, False nếu không
     """
     # Sử dụng rclone với --dry-run để kiểm tra thay đổi
-    check_cmd = f"rclone sync gdrive:/{source_path} {destination_folder} --dry-run --itemize-changes"
+    check_cmd = f"rclone sync gdrive:/{source_path} {destination_folder} --dry-run"
     print("🔍 Đang kiểm tra thay đổi...")
     
     try:
         result = subprocess.run(check_cmd, shell=True, capture_output=True, text=True)
+        output = result.stdout + result.stderr
+        print(output)
         
-        # Nếu có output, nghĩa là có thay đổi
-        if result.stdout.strip():
-            print("📝 Phát hiện thay đổi:")
-            print(result.stdout)
-            return True
-        else:
-            print("✅ Không có thay đổi nào")
-            return False
+        # Tìm dòng chứa thông tin về số lượng file được transfer
+        for line in output.split('\n'):
+            if line.startswith('Transferred:'):
+                # Lấy số lượng file đã transfer (số đầu tiên sau dấu /)
+                transfer_count = line.split('/')[0].split(':')[1].strip().split(' ')[0]
+                if int(transfer_count) != 0:
+                    print("📝 Phát hiện thay đổi:")
+                    print(output)
+                    return True
+                break
+        
+        print("✅ Không có thay đổi nào")
+        return False
             
     except subprocess.CalledProcessError as e:
         print(f"❌ Lỗi khi kiểm tra thay đổi: {e}")
@@ -169,6 +179,9 @@ def run_periodic_sync(source_path, destination_folder, interval=300, max_retries
         interval (int): Khoảng thời gian giữa các lần đồng bộ (giây)
         max_retries (int): Số lần thử lại tối đa khi gặp lỗi quota
     """
+    # Chuyển đổi đường dẫn tương đối thành tuyệt đối
+    destination_folder = os.path.abspath(os.path.join(CURRENT_DIR, destination_folder))
+    
     print(f"🔄 Bắt đầu đồng bộ định kỳ mỗi {interval} giây")
     print(f"📂 Nguồn: {source_path}")
     print(f"📂 Đích: {destination_folder}")
