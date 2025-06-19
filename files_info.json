@@ -126,6 +126,13 @@
       "description": "Đại từ nhân xưng, đại từ sở hữu (mine, yours, etc.), tính từ sở hữu (my, your, etc.), sở hữu cách ('s)",
       "category": "slides"
     },
+    "slides/pre-gs7-lesson-5": {
+      "path": "slides/pre-gs7-lesson-5",
+      "title": "Pre Gs7 Worksheets 5",
+      "author": "Hoa Bac",
+      "description": "Sở hữu cách (Possessive)",
+      "category": "slides"
+    },
     "slides/pre-gs9-lesson-1": {
       "path": "slides/pre-gs9-lesson-1",
       "title": "Present Simple and Present Continuous (Hiện tại đơn và Hiện tại tiếp diễn)",
@@ -236,6 +243,13 @@
       "title": "Pre GS9 Worksheets 4",
       "author": "Gen8",
       "description": "Wish + Past Simple (Wish loại 2)",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs7-worksheet-5": {
+      "path": "worksheets/pre-gs7-worksheet-5",
+      "title": "Pre Gs7 Worksheets 5",
+      "author": "Hoa Bac",
+      "description": "Sở hữu cách (Possessive)",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-worksheets-2": {
