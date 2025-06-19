@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish + Past Simple Worksheets</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .print-only {
+                display: block !important;
+            }
+            
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .highlight {
+                background-color: #fef08a !important;
+            }
+            
+            .correct {
+                color: #16a34a !important;
+            }
+            
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+        
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+        
+        .correct {
+            color: #16a34a;
+        }
+        
+        .incorrect {
+            color: #dc2626;
+        }
+        
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+        
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+        
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+        
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+        
+        .vocab-type {
+            color: #6b7280;
+        }
+        
+        .vocab-meaning {
+            color: #374151;
+        }
+        
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+        
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+        
+        /* Image exercise styles */
+        .image-exercise {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+        }
+        
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+            
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+            
+            .grid-4-cols {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+        
+        .text-gray-800 {
+            color: #1f2937;
+        }
+        
+        .text-gray-500 {
+            color: #6b7280;
+        }
+        
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+        
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        
+        .p-2 {
+            padding: 0.5rem;
+        }
+        
+        .p-4 {
+            padding: 1rem;
+        }
+        
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 0.875rem;
+            }
+            
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Wish + Past Simple (Wish loại 2)</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+                
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+            
+            <!-- Introduction Section -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Giới thiệu về "Wish loại 2"</h4>
+                        <p class="text-gray-700 mb-3">Diễn tả điều mong muốn nhưng hiện tại không có</p>
+                        <p class="text-gray-700 italic">Ví dụ: "I wish I had a car" (Tôi ước tôi có một chiếc xe hơi)</p>
+                    </div>
+                    
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Cấu trúc câu với Wish</h4>
+                        <p class="text-gray-700 font-bold mb-1">Subject + wish + Subject + V2/V-ed</p>
+                        <p class="text-gray-700 italic">Ví dụ: "I wish I had more time"</p>
+                        <p class="text-gray-700 italic">Ví dụ: "She wishes she knew the answer"</p>
+                    </div>
+                    
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Khi nào dùng "Wish + Past Simple"?</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Không hài lòng với hiện tại</li>
+                            <li class="mb-1">Muốn thay đổi tình huống</li>
+                            <li>Hy vọng điều không thực tế</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Động từ "to be" đặc biệt</h4>
+                        <p class="text-gray-700 mb-1">Dùng "were" cho tất cả các ngôi</p>
+                        <p class="text-gray-700 italic">Ví dụ: "I wish I were taller"</p>
+                        <p class="text-gray-700 text-sm">(Có thể dùng "was" trong văn nói không chính thức)</p>
+                    </div>
+                    
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Phân biệt: Wish vs Hope</h4>
+                        <p class="text-gray-700 mb-1">Wish: Ước điều khó xảy ra</p>
+                        <p class="text-gray-700 mb-1">Hope: Hy vọng điều có thể xảy ra</p>
+                        <p class="text-gray-700 italic">Ví dụ: "I wish I were taller" vs "I hope I will grow taller"</p>
+                    </div>
+                    
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">6. Phân biệt: Wish vs If only</h4>
+                        <p class="text-gray-700 mb-1">If only = Giá mà...</p>
+                        <p class="text-gray-700 mb-1">Diễn tả ước muốn mạnh hơn</p>
+                        <p class="text-gray-700 italic">Ví dụ: "If only I had more money!"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">ancient <span class="vocab-type">(adj)</span> /ˈeɪnʃənt/</p>
+                        <p class="vocab-meaning">cổ đại, lâu đời</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">anniversary <span class="vocab-type">(n)</span> /ˌænɪˈvɜːsəri/</p>
+                        <p class="vocab-meaning">ngày kỉ niệm, lễ kỉ niệm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">barefoot <span class="vocab-type">(adj, adv)</span> /ˈbeəfʊt/</p>
+                        <p class="vocab-meaning">chân trần</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">castle <span class="vocab-type">(n)</span> /ˈkɑːsl/</p>
+                        <p class="vocab-meaning">lâu đài</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">communal <span class="vocab-type">(adj)</span> /kəˈmjuːnl/</p>
+                        <p class="vocab-meaning">dùng chung, thuộc cộng đồng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">complex <span class="vocab-type">(n)</span> /ˈkɒmpleks/</p>
+                        <p class="vocab-meaning">khu phức hợp, quần thể</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">deep-rooted <span class="vocab-type">(adj)</span> /ˌdiːp ˈruːtɪd/</p>
+                        <p class="vocab-meaning">lâu đời, ăn sâu bén rễ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">fish and chips <span class="vocab-type">(n)</span> /ˌfɪʃ ən ˈtʃɪps/</p>
+                        <p class="vocab-meaning">món cá và khoai tây rán</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Chia động từ</h4>
+                            <p class="exercise-instruction">👉 Chuyển động từ trong ngoặc sang dạng quá khứ đơn:</p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">I wish I (have) ________ more free time.</span>
+                                    <input type="text" class="answer-input" data-answer="had" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">She wishes she (know) ________ the answer.</span>
+                                    <input type="text" class="answer-input" data-answer="knew" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">We wish our school (have) ________ a swimming pool.</span>
+                                    <input type="text" class="answer-input" data-answer="had" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">He wishes he (can) ________ speak French.</span>
+                                    <input type="text" class="answer-input" data-answer="could" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">They wish they (live) ________ near an ancient castle.</span>
+                                    <input type="text" class="answer-input" data-answer="lived" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Sửa lỗi sai</h4>
+                            <p class="exercise-instruction">👉 Tìm và sửa lỗi sai trong các câu sau:</p>
+                            
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">I wish I can visit the ancient castle.</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I could visit the ancient castle." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">She wish she were on vacation.</span>
+                                    <input type="text" class="answer-input" data-answer="She wishes she were on vacation." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">They wishes they had a communal garden.</span>
+                                    <input type="text" class="answer-input" data-answer="They wish they had a communal garden." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">I wish I am taller.</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I were taller." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">He wish he can eat fish and chips everyday.</span>
+                                    <input type="text" class="answer-input" data-answer="He wishes he could eat fish and chips everyday." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 3: Tình huống ảnh</h4>
+                            <p class="exercise-instruction">👉 Viết câu sử dụng "wish + past simple" dựa trên các tình huống sau:</p>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <div class="bg-gray-200 w-full h-32 rounded-lg flex items-center justify-center mb-2">
+                                    <img src="https://plus.unsplash.com/premium_photo-1670002347718-de1091111728?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFpbnklMjBkYXl8ZW58MHx8MHx8fDA%3D" 
+     alt="Rainy day" 
+     class="w-full h-32 object-cover rounded-lg" />
+
+                                    </div>
+                                    <p class="text-gray-700 mb-2">It's raining now.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="I wish it weren't raining." placeholder="Viết câu ước của bạn...">
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <div class="bg-gray-200 w-full h-32 rounded-lg flex items-center justify-center mb-2">
+                                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Fish_and_chips_blackpool.jpg/330px-Fish_and_chips_blackpool.jpg" 
+     alt="People eating fish and chips" 
+     class="w-full h-32 object-cover rounded-lg" />
+                                    </div>
+                                    <p class="text-gray-700 mb-2">You're hungry but don't have money for fish and chips.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="I wish I had money for fish and chips." placeholder="Viết câu ước của bạn...">
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <div class="bg-gray-200 w-full h-32 rounded-lg flex items-center justify-center mb-2">
+                                        <img src="https://images.stockcake.com/public/5/a/4/5a464533-4d78-4e66-9b02-87b25623b56e_large/ancient-castle-ruins-stockcake.jpg" 
+     alt="Ancient castle" 
+     class="w-full h-32 object-cover rounded-lg" />
+                                    </div>
+                                    <p class="text-gray-700 mb-2">You can't visit the ancient castle.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="I wish I could visit the ancient castle." placeholder="Viết câu ước của bạn...">
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg">
+                                    <div class="bg-gray-200 w-full h-32 rounded-lg flex items-center justify-center mb-2">
+                                        <img src="https://travelpro.com/cdn/shop/articles/shutterstock_1181523733_520x500_4a564a75-2359-4add-8913-aa0fc3e3d200_1024x1024.webp?v=1736795789" 
+     alt="Beach vacation" 
+     class="w-full h-32 object-cover rounded-lg" />
+
+                                    </div>
+                                    <p class="text-gray-700 mb-2">You're at work but want to be on vacation.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="I wish I were on vacation." placeholder="Viết câu ước của bạn...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 4: Hoàn thành câu với "wish"</h4>
+                            <p class="exercise-instruction">👉 Hoàn thành các câu sau sử dụng từ gợi ý:</p>
+                            
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">I / not have to work today (wish)</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I didn't have to work today." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">She / can celebrate her anniversary with family (wish)</span>
+                                    <input type="text" class="answer-input" data-answer="She wishes she could celebrate her anniversary with family." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">We / live near a deep-rooted festival (wish)</span>
+                                    <input type="text" class="answer-input" data-answer="We wish we lived near a deep-rooted festival." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">They / have fish and chips for dinner (wish)</span>
+                                    <input type="text" class="answer-input" data-answer="They wish they had fish and chips for dinner." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">He / be barefoot on the beach now (wish)</span>
+                                    <input type="text" class="answer-input" data-answer="He wishes he were barefoot on the beach now." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 5: Phân biệt Wish và Hope</h4>
+                            <p class="exercise-instruction">👉 Chọn "wish" hoặc "hope" để điền vào chỗ trống:</p>
+                            
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700">I _______ I could visit an ancient castle someday.</span>
+                                    <div class="radio-group mt-1">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="wish" data-answer="wish" onclick="checkAnswer(this)">
+                                            <span>wish</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="hope" data-answer="wish" onclick="checkAnswer(this)">
+                                            <span>hope</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700">We _______ to see the deep-rooted traditions soon.</span>
+                                    <div class="radio-group mt-1">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="wish" data-answer="hope" onclick="checkAnswer(this)">
+                                            <span>wish</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="hope" data-answer="hope" onclick="checkAnswer(this)">
+                                            <span>hope</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700">She _______ she were at the communal festival now.</span>
+                                    <div class="radio-group mt-1">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="wish" data-answer="wish" onclick="checkAnswer(this)">
+                                            <span>wish</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="hope" data-answer="wish" onclick="checkAnswer(this)">
+                                            <span>hope</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700">They _______ to observe the anniversary celebration.</span>
+                                    <div class="radio-group mt-1">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="wish" data-answer="hope" onclick="checkAnswer(this)">
+                                            <span>wish</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="hope" data-answer="hope" onclick="checkAnswer(this)">
+                                            <span>hope</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 6: Viết câu ước</h4>
+                            <p class="exercise-instruction">👉 Viết 5 câu sử dụng "wish + past simple" với các tình huống sau:</p>
+                            
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700 sm:mr-2">1. You don't know many deep-rooted traditions.</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I knew many deep-rooted traditions." onblur="checkAnswer(this)" placeholder="Viết câu ước của bạn...">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700 sm:mr-2">2. You can't eat fish and chips now.</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I could eat fish and chips now." onblur="checkAnswer(this)" placeholder="Viết câu ước của bạn...">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700 sm:mr-2">3. You're not at an ancient castle.</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I were at an ancient castle." onblur="checkAnswer(this)" placeholder="Viết câu ước của bạn...">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700 sm:mr-2">4. You're not barefoot on the beach.</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I were barefoot on the beach." onblur="checkAnswer(this)" placeholder="Viết câu ước của bạn...">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="font-medium text-gray-700 sm:mr-2">5. You can't go to a communal festival.</span>
+                                    <input type="text" class="answer-input" data-answer="I wish I could go to a communal festival." onblur="checkAnswer(this)" placeholder="Viết câu ước của bạn...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 7: Sử dụng "If only"</h4>
+                            <p class="exercise-instruction">👉 Viết lại các câu sau sử dụng "If only" thay vì "wish":</p>
+                            
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">I wish I had more money for the anniversary celebration.</span>
+                                    <input type="text" class="answer-input" data-answer="If only I had more money for the anniversary celebration." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">She wishes she could visit the ancient castle.</span>
+                                    <input type="text" class="answer-input" data-answer="If only she could visit the ancient castle." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">We wish we lived near a deep-rooted festival.</span>
+                                    <input type="text" class="answer-input" data-answer="If only we lived near a deep-rooted festival." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">They wish they could eat fish and chips everyday.</span>
+                                    <input type="text" class="answer-input" data-answer="If only they could eat fish and chips everyday." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center">
+                                    <span class="w-full sm:w-auto font-medium text-gray-700 sm:mr-2">He wishes he were barefoot on the beach now.</span>
+                                    <input type="text" class="answer-input" data-answer="If only he were barefoot on the beach now." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+                                <h5 class="font-semibold text-blue-800 mb-2">💡 Lưu ý:</h5>
+                                <p class="text-blue-700 text-sm">"If only" diễn tả ước muốn mạnh hơn "wish" và thường được dùng để thể hiện sự tiếc nuối hoặc mong muốn mãnh liệt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Common functions for worksheets
+        
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+        
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            let userAnswer = '';
+            let correctAnswer = '';
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                userAnswer = input.checked ? input.value : '';
+                correctAnswer = input.dataset.answer;
+                
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+                    
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+            
+            // Handle text inputs
+            userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : '';
+            correctAnswer = input.dataset.answer ? input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '') : '';
+            
+            console.log('User answer:', userAnswer);
+            console.log('Correct answer:', correctAnswer);
+            console.log('Match:', userAnswer === correctAnswer);
+            
+            if (userAnswer === correctAnswer && userAnswer !== '') {
+                input.classList.remove('border-red-500', 'bg-red-100');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+                console.log('Setting green color');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+                console.log('Setting red color');
+            } else {
+                // Reset colors if input is empty
+                input.classList.remove('border-green-500', 'bg-green-100', 'border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+    </script>
+</body>
+</html>
