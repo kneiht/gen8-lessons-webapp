@@ -84,6 +84,13 @@
       "description": "Cách sử dụng để diễn tả ước muốn ở hiện tại, cấu trúc câu và ví dụ thực tế, phân biệt với các cấu trúc tương tự",
       "category": "slides"
     },
+    "slides/pre-gs9-lesson-4/pre-gs6-verbs-part-1": {
+      "path": "slides/pre-gs9-lesson-4/pre-gs6-verbs-part-1",
+      "title": "Pre-GS6: Động từ (Verbs) - Phần 1",
+      "author": "Gen8",
+      "description": "Hiểu khái niệm và chức năng của động từ, nắm vững vị trí động từ trong câu, phân biệt các loại động từ cơ bản, sử dụng thành thạo động từ to be",
+      "category": "slides"
+    },
     "slides/pre-gs8-lesson-1": {
       "path": "slides/pre-gs8-lesson-1",
       "title": "Nouns and Articles (Danh từ và Mạo từ)",
@@ -208,6 +215,13 @@
       "title": "Pre Gs6 Worksheets 3",
       "author": "Gen8",
       "description": "Mạo từ (Articles) a/an/the",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-worksheets-verbs-part-1": {
+      "path": "worksheets/pre-gs6-worksheets-verbs-part-1",
+      "title": "Pre-GS6: Động từ (Verbs) - Phần 1",
+      "author": "Gen8",
+      "description": "Hiểu khái niệm và chức năng của động từ, nắm vững vị trí động từ trong câu, phân biệt các loại động từ cơ bản, sử dụng thành thạo động từ to be",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-worksheets-4": {

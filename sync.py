@@ -37,7 +37,7 @@ def check_drive_changes(source_path, destination_folder):
     try:
         result = subprocess.run(check_cmd, shell=True, capture_output=True, text=True)
         output = result.stdout + result.stderr
-        print(output)
+        # print(output)
 
         # Tìm dòng chứa thông tin về số lượng file được transfer
         for line in output.split('\n'):
