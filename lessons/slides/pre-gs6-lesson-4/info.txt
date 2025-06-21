@@ -1,3 +1,0 @@
-Title: Some / Any
-Author: Gen8
-Description: Hiểu cách dùng some/any, phân biệt some/any trong các tình huống, nắm các trường hợp ngoại lệ

@@ -1,0 +1,4 @@
+Title: Pre GS8 - Simple Sentences (Câu đơn)
+Author: Gen8
+Description: Cấu trúc S-V-O, câu khẳng định, phủ định, câu hỏi Yes/No, nhận diện thành phần câu
+- Cấu trúc S-V-O, câu khẳng định, phủ định, câu hỏi Yes/No, nhận diện thành phần câu
