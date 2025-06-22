@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu về Lập trình</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        function adjustFontSize() {
+            const screenWidth = window.innerWidth;
+            const htmlElement = document.documentElement;
+
+            if (screenWidth <= 768) { // Mobile breakpoint
+                htmlElement.style.fontSize = '20px';
+            } else {
+                // Scale font size based on screen width, with 30px at 1680px width
+                const scaleFactor = screenWidth / 1680;
+                const fontSize = Math.max(20, Math.min(30, 30 * scaleFactor));
+                htmlElement.style.fontSize = `${fontSize}px`;
+            }
+        }
+
+        function showZoomInstructions() {
+            // Check if it's a mobile device
+            if (window.innerWidth <= 768) {
+                return;
+            }
+
+            if (localStorage.getItem('hideZoomInstructions')) {
+                return;
+            }
+
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.95);
+                background: white;
+                padding: 25px;
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                z-index: 1000;
+                max-width: 90%;
+                width: 400px;
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+
+            popup.innerHTML = `
+                <div style="
+                    text-align: center;
+                    margin-bottom: 20px;
+                ">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 15px;">
+                        <path d="M15 3H21V9" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 21H3V15" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 3L14 10" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 21L10 14" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 style="
+                        margin: 0 0 15px 0;
+                        color: #1f2937;
+                        font-size: 25px;
+                        font-weight: 600;
+                    ">Hướng dẫn phóng to/thu nhỏ</h3>
+                </div>
+                <div style="
+                    background: #f3f4f6;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                ">
+                    <p style="
+                        margin: 0;
+                        color: #4b5563;
+                        font-size: 20px;
+                        line-height: 1.6;
+                    ">
+                        Bạn có thể sử dụng tổ hợp phím sau để phóng to/thu nhỏ nội dung cho phù hợp với màn hình của bạn:
+                    </p>
+                    <div style="
+                        margin-top: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    ">
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Windows</span>
+                            <span style="color: #4b5563;">Ctrl + (+/-)</span>
+                        </div>
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Mac</span>
+                            <span style="color: #4b5563;">Command + (+/-)</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="dismissPopup" style="
+                    background: #4f46e5;
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    font-size: 15px;
+                    font-weight: 500;
+                    transition: background-color 0.2s ease;
+                ">Không hiển thị lại</button>
+            `;
+
+            document.body.appendChild(popup);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                popup.style.transform = 'translate(-50%, -50%) scale(1)';
+                popup.style.opacity = '1';
+            });
+
+            // Add hover effect to button
+            const button = document.getElementById('dismissPopup');
+            button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = '#4338ca';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = '#4f46e5';
+            });
+
+            button.addEventListener('click', () => {
+                popup.style.transform = 'translate(-50%, -50%) scale(0.95)';
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    localStorage.setItem('hideZoomInstructions', 'true');
+                    popup.remove();
+                }, 300);
+            });
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            adjustFontSize();
+            showZoomInstructions();
+        });
+
+        // Run when window is resized
+        window.addEventListener('resize', adjustFontSize);
+    </script>
+
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.6);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+            border-radius: 16px;
+        }
+
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .thought-bubble {
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thought-bubble:after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent white;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+
+        .boy {
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .verb-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .verb-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .verb-example {
+            border-left: 4px solid #4f46e5;
+            padding-left: 12px;
+        }
+
+        .outline-content {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .outline-item {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+        }
+
+        .outline-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .outline-slide {
+            display: block;
+            transform: scale(0.3);
+            transform-origin: top left;
+            width: 333.33%; /* 100% / 0.3 */
+            height: 333.33%; /* 100% / 0.3 */
+            pointer-events: none;
+            background-color: white;
+        }
+
+        .slide-preview {
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 0 auto;
+        }
+                
+        .slide-wrapper {
+            width: 1200px;
+            height: 1000px;
+            transform: scale(0.25);
+            transform-origin: top left;
+        }
+
+        .slide-wrapper > .slide {
+            display: block !important;
+            pointer-events: none;
+        }
+
+        .tech-icon {
+            font-size: 2.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .career-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .career-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .learning-step {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .learning-step:before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #4f46e5;
+        }
+
+        .learning-step:first-child:before {
+            top: 1.5rem;
+        }
+
+        .learning-step:last-child:before {
+            bottom: calc(100% - 1.5rem);
+        }
+
+        .learning-step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: #4f46e5;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-[url('https://live.staticflickr.com/4326/35912916822_373b25806d_h.jpg')] min-h-screen flex items-center justify-center p-2">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div id="outlineContent" class="outline-content">
+                <!-- Outline content will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+
+            <!-- Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">KHÓA HỌC LẬP TRÌNH CƠ BẢN</h1>
+                    <div
+                        class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-2xl md:text-4xl font-bold px-6 py-3 rounded-full mb-5 shadow-lg floating">
+                        GIỚI THIỆU VỀ LẬP TRÌNH
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2344&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Programming Concept" class="object-cover h-52 rounded-xl floating">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-indigo-100 to-green-200 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu khái niệm lập trình là gì</li>
+                                <li>Biết các ngôn ngữ lập trình phổ biến</li>
+                                <li>Định hướng nghề nghiệp trong lập trình</li>
+                                <li>Yêu cầu cần có để học lập trình</li>
+                                <li>Phương pháp học hiệu quả</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="my-3 opacity-0">---</div>
+                </div>
+            </div>
+
+            <!-- What is programming? -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">1. Lập trình là gì?</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Lập trình là quá trình <span class="highlight">viết các chỉ dẫn</span> để máy tính có thể hiểu và thực hiện các nhiệm vụ cụ thể.</p>
+                            
+                            <div class="flex justify-center my-6">
+                                <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149365021.jpg" 
+                                    alt="Programming Illustration" class="h-40 rounded-lg">
+                            </div>
+
+                            <div
+                                class="mt-6 bg-gradient-to-r from-blue-100 to-indigo-100 p-4 rounded-lg border-l-4 border-blue-500">
+                                <p class="font-bold text-blue-800 text-xl">Ví dụ đơn giản:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p class="text-xl">Nếu trời mưa thì mang ô</p>
+                                        <p class="text-gray-600">(Đây là logic lập trình)</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p class="text-xl">Tính tổng từ 1 đến 10</p>
+                                        <p class="text-gray-600">(Thuật toán đơn giản)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 bg-yellow-100 p-4 rounded-lg">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Ghi nhớ:</p>
+                                <p class="text-lg">Lập trình giống như dạy máy tính cách giải quyết vấn đề từng bước một.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programming as communication -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lập trình là giao tiếp với máy tính</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Lập trình viên giống như <span class="highlight">người phiên dịch</span> giữa con người và máy tính.</p>
+                            
+                            <div class="flex justify-center my-6">
+                                <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-devops-illustration_23-2149365023.jpg" 
+                                    alt="Programming Communication" class="h-40 rounded-lg">
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                    <p class="font-bold text-red-800 text-xl">1. Ngôn ngữ tự nhiên:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Con người hiểu</li>
+                                        <li>Mơ hồ, không chính xác</li>
+                                        <li>Ví dụ: "Làm cho trang web đẹp hơn"</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p class="font-bold text-blue-800 text-xl">2. Ngôn ngữ lập trình:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Máy tính hiểu</li>
+                                        <li>Chính xác, từng bước</li>
+                                        <li>Ví dụ: "Thay đổi màu nền thành #FFFFFF"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <p class="font-bold text-green-800 text-xl">Câu hỏi:</p>
+                            <p class="text-xl mb-3">Tại sao không thể dùng ngôn ngữ tự nhiên để lập trình?</p>
+                            <button onclick="showAnswer(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Xem đáp án</button>
+                            <div class="answer hidden text-xl mt-2">
+                                <p class="correct">Vì máy tính cần hướng dẫn rõ ràng, chính xác từng bước, không thể hiểu ngôn ngữ mơ hồ như con người.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why learn programming? -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Tại sao nên học lập trình?</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Lập trình không chỉ dành cho lập trình viên chuyên nghiệp!</p>
+                            
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="font-bold text-purple-800 text-xl">1. Phát triển tư duy:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Logic, phân tích vấn đề</li>
+                                        <li>Giải quyết vấn đề từng bước</li>
+                                        <li>Sáng tạo trong giải pháp</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-indigo-50 p-4 rounded-lg">
+                                    <p class="font-bold text-indigo-800 text-xl">2. Cơ hội nghề nghiệp:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Nhu cầu cao, lương tốt</li>
+                                        <li>Có thể làm việc từ xa</li>
+                                        <li>Ứng dụng trong nhiều ngành</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-pink-50 p-4 rounded-lg">
+                                    <p class="font-bold text-pink-800 text-xl">3. Tự động hóa:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Giải quyết công việc nhàm chán</li>
+                                        <li>Tạo công cụ hỗ trợ riêng</li>
+                                        <li>Xử lý dữ liệu tự động</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-100 p-4 rounded-lg">
+                            <p class="font-bold text-yellow-800 text-xl">💡 Ghi nhớ:</p>
+                            <p class="text-lg">Lập trình là kỹ năng quan trọng trong thời đại số, giống như biết đọc biết viết.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular programming languages -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">2. Các ngôn ngữ lập trình phổ biến</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Mỗi ngôn ngữ có mục đích sử dụng khác nhau:</p>
+                            
+                            <div class="flex justify-center my-6 flex-wrap">
+                                <i class="fab fa-html5 tech-icon text-orange-500" title="HTML"></i>
+                                <i class="fab fa-css3-alt tech-icon text-blue-500" title="CSS"></i>
+                                <i class="fab fa-js tech-icon text-yellow-400" title="JavaScript"></i>
+                                <i class="fab fa-python tech-icon text-blue-700" title="Python"></i>
+                                <i class="fab fa-java tech-icon text-red-500" title="Java"></i>
+                                <i class="fab fa-php tech-icon text-purple-500" title="PHP"></i>
+                                <i class="fab fa-swift tech-icon text-orange-600" title="Swift"></i>
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-red-100 p-4 rounded-lg verb-card">
+                                    <p class="font-bold text-red-800 text-xl">1. Web Development</p>
+                                    <p class="text-lg mt-2">HTML, CSS, JavaScript, PHP</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg verb-example">
+                                        <p class="text-xl">Xây dựng <span class="text-red-500 font-bold">website</span></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-100 p-4 rounded-lg verb-card">
+                                    <p class="font-bold text-blue-800 text-xl">2. Mobile Apps</p>
+                                    <p class="text-lg mt-2">Swift (iOS), Kotlin (Android)</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg verb-example">
+                                        <p class="text-xl">Tạo ứng dụng <span class="text-blue-500 font-bold">điện thoại</span></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-green-100 p-4 rounded-lg verb-card">
+                                    <p class="font-bold text-green-800 text-xl">3. Data Science</p>
+                                    <p class="text-lg mt-2">Python, R, SQL</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg verb-example">
+                                        <p class="text-xl">Phân tích <span class="text-green-500 font-bold">dữ liệu</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-100 p-4 rounded-lg">
+                            <p class="font-bold text-purple-800 text-xl">Câu hỏi:</p>
+                            <p class="text-xl mb-3">Ngôn ngữ nào phù hợp nhất cho người mới bắt đầu?</p>
+                            <button onclick="showAnswer(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Xem đáp án</button>
+                            <div class="answer hidden text-xl mt-2">
+                                <p class="correct">Python được khuyến nghị cho người mới vì cú pháp đơn giản, dễ hiểu và ứng dụng rộng rãi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Getting started -->
+            <!-- Slide 1: Lập trình cho học sinh tiểu học -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lộ trình cho học sinh Tiểu học</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Ngôn ngữ đề xuất: <span class="font-bold text-orange-500">Scratch</span></p>
+                            <p class="text-lg mb-4">Scratch là ngôn ngữ lập trình trực quan, giúp trẻ em làm quen với tư duy lập trình qua việc kéo thả các khối lệnh đầy màu sắc.</p>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="font-bold text-blue-800 text-xl">1. Bắt đầu với Scratch</p>
+                                    <p class="text-lg">Làm quen giao diện, tìm hiểu về các nhân vật (sprite) và sân khấu (stage).</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">2. Sáng tạo câu chuyện đầu tiên</p>
+                                    <p class="text-lg">Kéo thả các khối lệnh để làm nhân vật di chuyển, nói chuyện và tương tác.</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <p class="font-bold text-yellow-800 text-xl">3. Làm game đơn giản</p>
+                                    <p class="text-lg">Tạo một trò chơi nhỏ như Mèo đuổi chuột hoặc game đố vui.</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="font-bold text-purple-800 text-xl">4. Chia sẻ sản phẩm</p>
+                                    <p class="text-lg">Học cách chia sẻ dự án của mình với bạn bè và cộng đồng Scratch.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-100 p-4 rounded-lg">
+                            <p class="font-bold text-teal-800 text-xl">💡 Mục tiêu:</p>
+                            <p class="text-lg">Xây dựng tư duy logic, sáng tạo và kỹ năng giải quyết vấn đề từ sớm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Lập trình cho học sinh cấp 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lộ trình cho học sinh Cấp 2</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Ngôn ngữ đề xuất: <span class="font-bold text-blue-600">Python</span></p>
+                            <p class="text-lg mb-4">Python có cú pháp đơn giản, dễ đọc, là bước đệm tuyệt vời để bước vào thế giới lập trình chuyên nghiệp.</p>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="font-bold text-blue-800 text-xl">1. Cài đặt và làm quen</p>
+                                    <p class="text-lg">Học cách cài đặt Python và viết những dòng code đầu tiên.</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">2. Nắm vững kiến thức cơ bản</p>
+                                    <p class="text-lg">Tìm hiểu về biến, kiểu dữ liệu, vòng lặp, câu lệnh điều kiện và hàm.</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <p class="font-bold text-yellow-800 text-xl">3. Xây dựng ứng dụng nhỏ</p>
+                                    <p class="text-lg">Luyện tập bằng cách làm các dự án như máy tính bỏ túi, game đoán số.</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="font-bold text-purple-800 text-xl">4. Khám phá thư viện</p>
+                                    <p class="text-lg">Bắt đầu sử dụng các thư viện như Turtle để vẽ đồ họa, hoặc Pygame để làm game.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-100 p-4 rounded-lg">
+                            <p class="font-bold text-teal-800 text-xl">💡 Mục tiêu:</p>
+                            <p class="text-lg">Viết được các chương trình thực tế, chuẩn bị cho các lĩnh vực AI, khoa học dữ liệu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Lập trình cho người lớn -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lộ trình học Lập trình Web</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Lộ trình cho người muốn đi làm:</p>
+                            <p class="text-lg mb-4">Lập trình web là một trong những ngành hot nhất, cơ hội việc làm rộng mở.</p>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="font-bold text-blue-800 text-xl">1. Frontend - Giao diện người dùng</p>
+                                    <p class="text-lg">Học <span class="font-semibold">HTML</span> cho cấu trúc, <span class="font-semibold">CSS</span> cho giao diện và <span class="font-semibold">JavaScript</span> để tạo tương tác.</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">2. Backend - Logic máy chủ</p>
+                                    <p class="text-lg">Chọn một ngôn ngữ như <span class="font-semibold">JavaScript (Node.js)</span>, <span class="font-semibold">Python (Django)</span>, học về API và cơ sở dữ liệu.</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <p class="font-bold text-yellow-800 text-xl">3. Framework & Công cụ</p>
+                                    <p class="text-lg">Thành thạo các framework như React, Angular (Frontend) hoặc Express, NestJS (Backend) và các công cụ như Git, Docker.</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="font-bold text-purple-800 text-xl">4. Xây dựng Portfolio</p>
+                                    <p class="text-lg">Làm các dự án thực tế, đăng lên GitHub để thể hiện năng lực với nhà tuyển dụng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-100 p-4 rounded-lg">
+                            <p class="font-bold text-teal-800 text-xl">💡 Lời khuyên:</p>
+                            <p class="text-lg">Kiên trì, thực hành liên tục và luôn cập nhật công nghệ mới.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career paths in programming -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">3. Các hướng nghề nghiệp</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Lập trình mở ra nhiều con đường sự nghiệp:</p>
+                            
+                            <div class="flex justify-center my-6">
+                                <img src="https://img.freepik.com/free-vector/hand-drawn-web-developers_23-2148819605.jpg" 
+                                    alt="Career paths" class="h-40 rounded-lg">
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-blue-100 p-4 rounded-lg career-card">
+                                    <p class="font-bold text-blue-800 text-xl">1. Web Developer</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Front-end: Giao diện người dùng</li>
+                                        <li>Back-end: Xử lý dữ liệu phía server</li>
+                                        <li>Full-stack: Cả front-end và back-end</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-green-100 p-4 rounded-lg career-card">
+                                    <p class="font-bold text-green-800 text-xl">2. Mobile Developer</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>iOS Developer (Swift)</li>
+                                        <li>Android Developer (Kotlin)</li>
+                                        <li>Cross-platform (Flutter, React Native)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-purple-100 p-4 rounded-lg career-card">
+                                    <p class="font-bold text-purple-800 text-xl">3. Data Scientist</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Phân tích dữ liệu lớn</li>
+                                        <li>Machine Learning, AI</li>
+                                        <li>Python, R, SQL</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-red-100 p-4 rounded-lg career-card">
+                                    <p class="font-bold text-red-800 text-xl">4. Game Developer</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Unity (C#)</li>
+                                        <li>Unreal Engine (C++)</li>
+                                        <li>Mobile games</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Non-technical careers with programming -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lập trình trong các ngành khác</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Lập trình có ích ngay cả khi bạn không muốn trở thành lập trình viên chuyên nghiệp:</p>
+                            
+                            <div class="flex justify-center my-6">
+                                <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-devops-illustration_23-2149365023.jpg" 
+                                    alt="Non-tech careers" class="h-40 rounded-lg">
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                    <p class="font-bold text-yellow-800 text-xl">1. Kinh doanh & Marketing</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Tự động hóa báo cáo</li>
+                                        <li>Phân tích dữ liệu khách hàng</li>
+                                        <li>Tạo website bán hàng</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500">
+                                    <p class="font-bold text-pink-800 text-xl">2. Khoa học & Nghiên cứu</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Xử lý dữ liệu thí nghiệm</li>
+                                        <li>Mô phỏng các hiện tượng</li>
+                                        <li>Visualization dữ liệu</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                    <p class="font-bold text-green-800 text-xl">3. Giáo dục</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Tạo công cụ giảng dạy</li>
+                                        <li>Phát triển phần mềm học tập</li>
+                                        <li>E-learning platforms</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p class="font-bold text-blue-800 text-xl">4. Nghệ thuật & Sáng tạo</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Nghệ thuật generative</li>
+                                        <li>Thiết kế đồ họa bằng code</li>
+                                        <li>Âm nhạc lập trình</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-100 p-4 rounded-lg">
+                            <p class="font-bold text-teal-800 text-xl">💡 Thực tế:</p>
+                            <p class="text-lg">Biết lập trình giúp bạn nổi bật trong bất kỳ ngành nghề nào.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requirements for learning programming -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">4. Yêu cầu đối với người học lập trình</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Bạn không cần phải là thiên tài để học lập trình!</p>
+                            
+                            <div class="flex justify-center my-6">
+                                <img src="https://img.freepik.com/premium-vector/software-engineer-writing-code-computer-coder-programming-database-programmer-typing-script-solves-problems-algorithm-digital-development-flat-isolated-vector-illustration-white_633472-6162.jpg" 
+                                    alt="Learning requirements" class="h-40 rounded-lg">
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">1. Cần có:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Tư duy logic</li>
+                                        <li>Kiên nhẫn, không ngại lỗi</li>
+                                        <li>Khả năng tự học</li>
+                                        <li>Ham học hỏi cái mới</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-red-50 p-4 rounded-lg">
+                                    <p class="font-bold text-red-800 text-xl">2. Không cần:</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Giỏi toán cao cấp</li>
+                                        <li>Bằng cấp công nghệ</li>
+                                        <li>Máy tính siêu mạnh</li>
+                                        <li>Tuổi tác (học bất kỳ lúc nào)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-100 p-4 rounded-lg">
+                            <p class="font-bold text-purple-800 text-xl">Câu hỏi:</p>
+                            <p class="text-xl mb-3">Tôi có cần giỏi tiếng Anh để học lập trình?</p>
+                            <button onclick="showAnswer(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Xem đáp án</button>
+                            <div class="answer hidden text-xl mt-2">
+                                <p class="correct">Không cần giỏi, nhưng biết tiếng Anh cơ bản sẽ rất hữu ích vì tài liệu và cộng đồng lập trình chủ yếu dùng tiếng Anh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Myths about programming -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Những hiểu lầm về lập trình</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Đừng để những quan niệm sai lầm ngăn cản bạn:</p>
+                            
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                    <p class="font-bold text-yellow-800 text-xl">1. "Cần IQ cao"</p>
+                                    <p class="text-lg mt-2">Lập trình là kỹ năng có thể học được, không đòi hỏi thiên bẩm.</p>
+                                </div>
+                                
+                                <div class="bg-pink-50 p-4 rounded-lg border-l-4 border-pink-500">
+                                    <p class="font-bold text-pink-800 text-xl">2. "Chỉ dành cho nam"</p>
+                                    <p class="text-lg mt-2">Nhiều lập trình viên giỏi nhất thế giới là nữ. Giới tính không quan trọng.</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p class="font-bold text-blue-800 text-xl">3. "Quá trễ để học"</p>
+                                    <p class="text-lg mt-2">Nhiều người thành công bắt đầu học lập trình ở tuổi 30, 40 hoặc hơn.</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                    <p class="font-bold text-green-800 text-xl">4. "Phải học đại học"</p>
+                                    <p class="text-lg mt-2">Nhiều lập trình viên giỏi nhất là tự học. Internet có mọi thứ bạn cần.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-100 p-4 rounded-lg">
+                            <p class="font-bold text-indigo-800 text-xl">💡 Sự thật:</p>
+                            <p class="text-lg">Bất kỳ ai cũng có thể học lập trình nếu có đủ kiên nhẫn và đam mê.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning method - Coaching -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">5. Phương pháp dạy và học</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Hình thức coaching - Học từng bước nhỏ:</p>
+                            
+                            <div class="flex justify-center my-6">
+                                <img src="https://eodvietnam.com.vn/wp-content/uploads/2022/04/coaching-la-gi.jpeg" 
+                                    alt="Coaching method" class="h-40 rounded-lg">
+                            </div>
+
+                            <div class="mt-6 space-y-6">
+                                <div class="learning-step">
+                                    <div class="learning-step-number">1</div>
+                                    <p class="text-xl font-bold text-indigo-700">Video bài giảng ngắn</p>
+                                    <p class="text-lg">Mỗi ngày học một phần kiến thức nhỏ, dễ hiểu qua video</p>
+                                </div>
+                                
+                                <div class="learning-step">
+                                    <div class="learning-step-number">2</div>
+                                    <p class="text-xl font-bold text-indigo-700">Bài tập thực hành</p>
+                                    <p class="text-lg">Làm bài tập ứng dụng ngay kiến thức vừa học</p>
+                                </div>
+                                
+                                <div class="learning-step">
+                                    <div class="learning-step-number">3</div>
+                                    <p class="text-xl font-bold text-indigo-700">Nộp bài và nhận phản hồi</p>
+                                    <p class="text-lg">Giáo viên sửa bài chi tiết, chỉ ra lỗi và cách cải thiện</p>
+                                </div>
+                                
+                                <div class="learning-step">
+                                    <div class="learning-step-number">4</div>
+                                    <p class="text-xl font-bold text-indigo-700">Tiếp tục bài mới</p>
+                                    <p class="text-lg">Học kiến thức mới sau khi đã nắm vững bài cũ</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <p class="font-bold text-green-800 text-xl">💡 Lợi ích:</p>
+                            <p class="text-lg">Phương pháp này đảm bảo bạn hiểu từng bước nhỏ trước khi tiến xa hơn, tránh bị quá tải kiến thức.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why this method works -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Tại sao phương pháp này hiệu quả?</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Khoa học về học tập chứng minh:</p>
+                            
+
+
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p class="font-bold text-blue-800 text-xl">1. Chunking</p>
+                                    <p class="text-lg mt-2">Chia nhỏ kiến thức thành các phần dễ tiêu hóa, giúp não bộ tiếp thu tốt hơn.</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                    <p class="font-bold text-purple-800 text-xl">2. Active Recall</p>
+                                    <p class="text-lg mt-2">Làm bài tập ngay sau khi học giúp củng cố kiến thức tốt hơn 50%.</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                    <p class="font-bold text-green-800 text-xl">3. Spaced Repetition</p>
+                                    <p class="text-lg mt-2">Học từng bước nhỏ nhưng đều đặn mỗi ngày giúp ghi nhớ lâu dài.</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                    <p class="font-bold text-yellow-800 text-xl">4. Immediate Feedback</p>
+                                    <p class="text-lg mt-2">Nhận phản hồi ngay lập tức giúp sửa sai kịp thời, không hình thành thói quen xấu.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-100 p-4 rounded-lg">
+                            <p class="font-bold text-indigo-800 text-xl">💡 Kết quả:</p>
+                            <p class="text-lg">Học viên tiến bộ nhanh hơn 3 lần so với phương pháp truyền thống.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Getting started -->
+            <!-- Slide 1: Lập trình cho học sinh tiểu học -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lộ trình cho học sinh Tiểu học</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Ngôn ngữ đề xuất: <span class="font-bold text-orange-500">Scratch</span></p>
+                            <p class="text-lg mb-4">Scratch là ngôn ngữ lập trình trực quan, giúp trẻ em làm quen với tư duy lập trình qua việc kéo thả các khối lệnh đầy màu sắc.</p>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="font-bold text-blue-800 text-xl">1. Bắt đầu với Scratch</p>
+                                    <p class="text-lg">Làm quen giao diện, tìm hiểu về các nhân vật (sprite) và sân khấu (stage).</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">2. Sáng tạo câu chuyện đầu tiên</p>
+                                    <p class="text-lg">Kéo thả các khối lệnh để làm nhân vật di chuyển, nói chuyện và tương tác.</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <p class="font-bold text-yellow-800 text-xl">3. Làm game đơn giản</p>
+                                    <p class="text-lg">Tạo một trò chơi nhỏ như Mèo đuổi chuột hoặc game đố vui.</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="font-bold text-purple-800 text-xl">4. Chia sẻ sản phẩm</p>
+                                    <p class="text-lg">Học cách chia sẻ dự án của mình với bạn bè và cộng đồng Scratch.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-100 p-4 rounded-lg">
+                            <p class="font-bold text-teal-800 text-xl">💡 Mục tiêu:</p>
+                            <p class="text-lg">Xây dựng tư duy logic, sáng tạo và kỹ năng giải quyết vấn đề từ sớm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Lập trình cho học sinh cấp 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lộ trình cho học sinh Cấp 2</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Ngôn ngữ đề xuất: <span class="font-bold text-blue-600">Python</span></p>
+                            <p class="text-lg mb-4">Python có cú pháp đơn giản, dễ đọc, là bước đệm tuyệt vời để bước vào thế giới lập trình chuyên nghiệp.</p>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="font-bold text-blue-800 text-xl">1. Cài đặt và làm quen</p>
+                                    <p class="text-lg">Học cách cài đặt Python và viết những dòng code đầu tiên.</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">2. Nắm vững kiến thức cơ bản</p>
+                                    <p class="text-lg">Tìm hiểu về biến, kiểu dữ liệu, vòng lặp, câu lệnh điều kiện và hàm.</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <p class="font-bold text-yellow-800 text-xl">3. Xây dựng ứng dụng nhỏ</p>
+                                    <p class="text-lg">Luyện tập bằng cách làm các dự án nhỏ.</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="font-bold text-purple-800 text-xl">4. Khám phá thư viện</p>
+                                    <p class="text-lg">Bắt đầu sử dụng các thư viện như Turtle để vẽ đồ họa, hoặc Pygame để làm game.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-100 p-4 rounded-lg">
+                            <p class="font-bold text-teal-800 text-xl">💡 Mục tiêu:</p>
+                            <p class="text-lg">Viết được các chương trình thực tế, chuẩn bị kiến thức cho các phân ngành lập trình khác nhau.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Lập trình cho người lớn -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Lộ trình học Lập trình Web</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Lộ trình cho người muốn đi làm:</p>
+                            <p class="text-lg mb-4">Lập trình web là một trong những ngành hot nhất, cơ hội việc làm rộng mở.</p>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="font-bold text-blue-800 text-xl">1. Frontend - Giao diện người dùng</p>
+                                    <p class="text-lg">Học <span class="font-semibold">HTML</span> cho cấu trúc, <span class="font-semibold">CSS</span> cho giao diện và <span class="font-semibold">JavaScript</span> để tạo tương tác.</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">2. Backend - Logic máy chủ</p>
+                                    <p class="text-lg">Chọn một ngôn ngữ như <span class="font-semibold">JavaScript (Node.js)</span>, <span class="font-semibold">Python (Django)</span>, học về API và cơ sở dữ liệu.</p>
+                                </div>
+                                
+                                <div class="bg-yellow-50 p-4 rounded-lg">
+                                    <p class="font-bold text-yellow-800 text-xl">3. Framework & Công cụ</p>
+                                    <p class="text-lg">Thành thạo các framework như React, Angular (Frontend) hoặc Express, NestJS (Backend) và các công cụ như Git, Docker.</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-lg">
+                                    <p class="font-bold text-purple-800 text-xl">4. Xây dựng Portfolio</p>
+                                    <p class="text-lg">Làm các dự án thực tế, đăng lên GitHub để thể hiện năng lực với nhà tuyển dụng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-100 p-4 rounded-lg">
+                            <p class="font-bold text-teal-800 text-xl">💡 Lời khuyên:</p>
+                            <p class="text-lg">Kiên trì, thực hành liên tục và luôn cập nhật công nghệ mới.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Tổng kết bài học</h2>
+
+                    <div class="w-full bg-white p-6 rounded-xl shadow-md">
+                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                            <p class="text-xl font-bold text-blue-800 text-center">Kiến thức trọng tâm về lập trình</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-indigo-800">1. Lập trình là gì?</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Là cách giao tiếp với máy tính</li>
+                                    <li>Viết các chỉ dẫn từng bước để giải quyết vấn đề</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-green-800">2. Ngôn ngữ lập trình</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Nhiều ngôn ngữ với mục đích khác nhau</li>
+                                    <li>Python, JavaScript tốt cho người mới</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-yellow-800">3. Hướng nghề nghiệp</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Web, Mobile, Data Science, Game Dev</li>
+                                    <li>Ứng dụng trong mọi ngành nghề</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-purple-800">4. Yêu cầu học</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Tư duy logic, kiên nhẫn, tự học</li>
+                                    <li>Không cần IQ cao hay bằng cấp</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-red-800">5. Phương pháp học</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Học từng bước nhỏ mỗi ngày</li>
+                                    <li>Làm bài tập, nhận phản hồi, tiến bộ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final slide -->
+            <!-- <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">Chúc mừng!</h1>
+                    <div class="text-2xl md:text-3xl text-gray-700 mb-3">
+                        <p class="mb-4">Bạn đã hoàn thành bài học về</p>
+                        <div
+                            class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-4xl font-bold px-6 py-2 rounded-full inline-block">
+                            GIỚI THIỆU VỀ LẬP TRÌNH
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-3">
+                        <img src="https://img.freepik.com/free-vector/hand-drawn-people-with-laptop-illustration_23-2149191291.jpg"
+                            class="h-32 rounded-xl object-cover" alt="Celebration Image">
+                    </div>
+
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl max-w-xl">
+                        <p class="text-xl md:text-2xl font-bold mb-2">Hẹn gặp lại trong bài học đầu tiên về Python!</p>
+                        <p class="text-sm mt-2">Khóa học Lập trình Cơ bản</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            const isHidden = modal.classList.contains('hidden');
+            
+            if (isHidden) {
+                // Generate outline content when opening
+                generateOutline();
+            }
+            
+            modal.classList.toggle('hidden');
+        }
+
+        function generateOutline() {
+            const outlineContent = document.getElementById('outlineContent');
+            outlineContent.innerHTML = '';
+            const slides = document.querySelectorAll('.slide');
+            let outlineHTML = '';
+
+            slides.forEach((slide, index) => {
+                const isActive = index === currentSlide;
+                const slideClone = slide.cloneNode(true);
+                
+                slideClone.classList.remove('active');
+                
+                outlineHTML += `
+                    <div class="outline-item rounded-lg cursor-pointer relative ${isActive ? 'ring-2 ring-indigo-500 bg-indigo-50' : 'bg-white shadow-md'}" 
+                         onclick="goToSlide(${index})">
+                        <div class="slide-number text-xs bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full font-medium mb-2 inline-block absolute bottom-1 right-5 z-10">
+                            Slide ${index + 1}
+                        </div>
+                        <div class="slide-preview">
+                            <div class="slide-wrapper">
+                                ${slideClone.outerHTML}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            outlineContent.innerHTML = outlineHTML;
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+
+            // Update outline if it's open
+            if (!document.getElementById('outlineModal').classList.contains('hidden')) {
+                generateOutline();
+            }
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Exercise functions
+        function showAnswer(button) {
+            const answerDiv = button.nextElementSibling;
+            answerDiv.classList.toggle('hidden');
+            button.textContent = answerDiv.classList.contains('hidden') ? 'Xem đáp án' : 'Ẩn đáp án';
+        }
+
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là "${correctAnswer}" (Bạn điền: "${userAnswer || 'trống'}")</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkEditable(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const editableSpans = exerciseItem.querySelectorAll('[contenteditable="true"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            editableSpans.forEach(span => {
+                const userAnswer = span.textContent.trim().toLowerCase();
+                const correctAnswer = span.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    span.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là "${correctAnswer}" (Bạn điền: "${userAnswer || 'trống'}")</p>`;
+                    span.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkSelect(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const select = exerciseItem.querySelector('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const correctAnswer = select.dataset.answer;
+
+            if (select.value === correctAnswer) {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác!</p>';
+                select.classList.add('border-green-500');
+                select.classList.remove('border-indigo-300');
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${correctAnswer}</span></p>`;
+                select.classList.add('border-red-500');
+                select.classList.remove('border-indigo-300');
+            }
+
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const selects = exerciseItem.querySelectorAll('select');
+            const editableSpans = exerciseItem.querySelectorAll('[contenteditable="true"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset inputs
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset selects
+            selects.forEach(select => {
+                select.value = '';
+                select.classList.remove('border-green-500', 'border-red-500');
+                select.classList.add('border-indigo-300');
+            });
+
+            // Reset editable spans
+            editableSpans.forEach(span => {
+                span.textContent = '';
+                span.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            button.onclick = function () {
+                if (inputs.length > 0) {
+                    checkInput(button);
+                } else if (selects.length > 0) {
+                    checkSelect(button);
+                } else if (editableSpans.length > 0) {
+                    checkEditable(button);
+                }
+            };
+
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
+        }
+    </script>
+</body>
+</html>

@@ -63,6 +63,13 @@
       "description": "Lượng từ some, many, much, a lot of, lots of. Cách sử dụng lượng từ với danh từ đếm được và không đếm được, vị trí trong câu",
       "category": "slides"
     },
+    "slides/programming-introduction": {
+      "path": "slides/programming-introduction",
+      "title": "Giới thiệu về lập trình",
+      "author": "Gen8",
+      "description": "Giới thiệu về lập trình",
+      "category": "slides"
+    },
     "slides/pre-gs8-simple-sentences": {
       "path": "slides/pre-gs8-simple-sentences",
       "title": "Pre GS8 - Simple Sentences (Câu đơn)",
