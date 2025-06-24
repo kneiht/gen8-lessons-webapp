@@ -112,6 +112,13 @@
       "description": "Hiểu khái niệm đại từ nhân xưng, phân biệt đại từ chủ ngữ và tân ngữ, nắm vị trí trong câu, làm bài tập ứng dụng",
       "category": "slides"
     },
+    "slides/pre-gs7-adjective": {
+      "path": "slides/pre-gs7-adjective",
+      "title": "pre-GS7-Adjective",
+      "author": "Hoa Bac",
+      "description": "Tính từ mô tả",
+      "category": "slides"
+    },
     "slides/pre-gs6-nouns-1": {
       "path": "slides/pre-gs6-nouns-1",
       "title": "Pre GS6 - Nouns Part 1 (Danh từ phần 1)",
@@ -266,6 +273,13 @@
       "description": "Review Tense - Simple present",
       "category": "worksheets"
     },
+    "worksheets/pre-gs7-adjective": {
+      "path": "worksheets/pre-gs7-adjective",
+      "title": "pre-GS7-Adjective",
+      "author": "Hoa Bac",
+      "description": "Tính từ mô tả",
+      "category": "worksheets"
+    },
     "worksheets/pre-gs6-nouns-1": {
       "path": "worksheets/pre-gs6-nouns-1",
       "title": "Pre Gs6 - Danh từ (Nouns) - Part 1",
@@ -308,11 +322,32 @@
       "description": "Thì Hiện Tại Đơn và Hiện Tại Tiếp Diễn",
       "category": "worksheets"
     },
+    "tests/gs7-tenses-test-paper-4": {
+      "path": "tests/gs7-tenses-test-paper-4",
+      "title": "GS7 Tenses Test - Paper 4",
+      "author": "Gen8",
+      "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-5": {
       "path": "tests/pre-gs6-test-1-paper-5",
       "title": "Pre Gs6 Test 1 - Paper 5",
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/gs7-tenses-test-paper-2": {
+      "path": "tests/gs7-tenses-test-paper-2",
+      "title": "GS7 Tenses Test - Paper 2",
+      "author": "Gen8",
+      "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
+      "category": "tests"
+    },
+    "tests/gs7-tenses-test-paper-3": {
+      "path": "tests/gs7-tenses-test-paper-3",
+      "title": "GS7 Tenses Test - Paper 2",
+      "author": "Gen8",
+      "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
       "category": "tests"
     },
     "tests/pre-gs7-tsst-1-paper-2": {
@@ -327,6 +362,20 @@
       "title": "Pre Gs7 Test 1 - Paper 3",
       "author": "Gen8",
       "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
+      "category": "tests"
+    },
+    "tests/gs7-tenses-test-paper-5": {
+      "path": "tests/gs7-tenses-test-paper-5",
+      "title": "GS7 Tenses Test - Paper 5",
+      "author": "Gen8",
+      "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
+      "category": "tests"
+    },
+    "tests/gs7-tenses-test-paper-1": {
+      "path": "tests/gs7-tenses-test-paper-1",
+      "title": "GS7 Tenses Test - Paper 1",
+      "author": "Gen8",
+      "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-3": {

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS7 - Grammar Tenses Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .print\:hidden { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="test-paper max-w-2xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8">
+        <div class="header text-center mb-8">
+            <h3 class="text-lg font-bold text-blue-800">ENGLISH GRAMMAR TENSES TEST</h3>
+            <p class="mb-2"><strong>Time:</strong> 45 minutes | <strong>Full name:</strong> <input type="text" class="border-b border-gray-400 outline-none px-2 print:hidden" style="width:220px" /></p>
+        </div>
+        <form id="grammarTest">
+        <!-- Phần 1: Trắc nghiệm -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 1: Trắc nghiệm (2 điểm) - Multiple Choice (2 marks)</div>
+            <p class="mb-4">Chọn đáp án đúng nhất (Choose the best answer):</p>
+            <!-- MCQ Questions -->
+            <div class="space-y-4">
+                <!-- Mixed order -->
+                <div class="question" data-answer="A">
+                    <label>1. She ___ puzzles in her free time.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq1" value="A" class="mr-2">A. solves</label><br>
+                        <label><input type="radio" name="mcq1" value="B" class="mr-2">B. is solving</label><br>
+                        <label><input type="radio" name="mcq1" value="C" class="mr-2">C. solved</label><br>
+                        <label><input type="radio" name="mcq1" value="D" class="mr-2">D. will solve</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="C">
+                    <label>2. Last month, they ___ camping in the mountains.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq2" value="A" class="mr-2">A. go</label><br>
+                        <label><input type="radio" name="mcq2" value="B" class="mr-2">B. are going</label><br>
+                        <label><input type="radio" name="mcq2" value="C" class="mr-2">C. went</label><br>
+                        <label><input type="radio" name="mcq2" value="D" class="mr-2">D. will go</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>3. Look! The chef ___ noodles right now.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq3" value="A" class="mr-2">A. fries</label><br>
+                        <label><input type="radio" name="mcq3" value="B" class="mr-2">B. is frying</label><br>
+                        <label><input type="radio" name="mcq3" value="C" class="mr-2">C. fried</label><br>
+                        <label><input type="radio" name="mcq3" value="D" class="mr-2">D. will fry</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="D">
+                    <label>4. Next year, people ___ more renewable energy.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq4" value="A" class="mr-2">A. use</label><br>
+                        <label><input type="radio" name="mcq4" value="B" class="mr-2">B. are using</label><br>
+                        <label><input type="radio" name="mcq4" value="C" class="mr-2">C. used</label><br>
+                        <label><input type="radio" name="mcq4" value="D" class="mr-2">D. will use</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>5. He always ___ his helmet when cycling.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq5" value="A" class="mr-2">A. wears</label><br>
+                        <label><input type="radio" name="mcq5" value="B" class="mr-2">B. is wearing</label><br>
+                        <label><input type="radio" name="mcq5" value="C" class="mr-2">C. wore</label><br>
+                        <label><input type="radio" name="mcq5" value="D" class="mr-2">D. will wear</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>6. The students ___ for the midterm test now.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq6" value="A" class="mr-2">A. study</label><br>
+                        <label><input type="radio" name="mcq6" value="B" class="mr-2">B. are studying</label><br>
+                        <label><input type="radio" name="mcq6" value="C" class="mr-2">C. studied</label><br>
+                        <label><input type="radio" name="mcq6" value="D" class="mr-2">D. will study</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="C">
+                    <label>7. Yesterday, we ___ old clothes to charity.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq7" value="A" class="mr-2">A. donate</label><br>
+                        <label><input type="radio" name="mcq7" value="B" class="mr-2">B. are donating</label><br>
+                        <label><input type="radio" name="mcq7" value="C" class="mr-2">C. donated</label><br>
+                        <label><input type="radio" name="mcq7" value="D" class="mr-2">D. will donate</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>8. The actor ___ in a horror film last week.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq8" value="A" class="mr-2">A. performed</label><br>
+                        <label><input type="radio" name="mcq8" value="B" class="mr-2">B. performs</label><br>
+                        <label><input type="radio" name="mcq8" value="C" class="mr-2">C. is performing</label><br>
+                        <label><input type="radio" name="mcq8" value="D" class="mr-2">D. will perform</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>9. They ___ in the community garden every Sunday.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq9" value="A" class="mr-2">A. are gardening</label><br>
+                        <label><input type="radio" name="mcq9" value="B" class="mr-2">B. garden</label><br>
+                        <label><input type="radio" name="mcq9" value="C" class="mr-2">C. gardened</label><br>
+                        <label><input type="radio" name="mcq9" value="D" class="mr-2">D. will garden</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="D">
+                    <label>10. In the future, people ___ teleport to work.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq10" value="A" class="mr-2">A. teleport</label><br>
+                        <label><input type="radio" name="mcq10" value="B" class="mr-2">B. are teleporting</label><br>
+                        <label><input type="radio" name="mcq10" value="C" class="mr-2">C. teleported</label><br>
+                        <label><input type="radio" name="mcq10" value="D" class="mr-2">D. will teleport</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="C">
+                    <label>11. My sister ___ classical music on the piano.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq11" value="A" class="mr-2">A. is playing</label><br>
+                        <label><input type="radio" name="mcq11" value="B" class="mr-2">B. played</label><br>
+                        <label><input type="radio" name="mcq11" value="C" class="mr-2">C. plays</label><br>
+                        <label><input type="radio" name="mcq11" value="D" class="mr-2">D. will play</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>12. The festival ___ next weekend.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq12" value="A" class="mr-2">A. will celebrate</label><br>
+                        <label><input type="radio" name="mcq12" value="B" class="mr-2">B. celebrates</label><br>
+                        <label><input type="radio" name="mcq12" value="C" class="mr-2">C. celebrated</label><br>
+                        <label><input type="radio" name="mcq12" value="D" class="mr-2">D. is celebrating</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Phần 2: Điền từ -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 2: Điền từ (2 điểm) - Fill in the blanks (2 marks)</div>
+            <p class="mb-4">Điền từ thích hợp vào chỗ trống (Fill in the blanks with appropriate words):</p>
+            <div class="space-y-4">
+                <div class="question" data-answer="exercises">1. He <input type="text" name="blank1" class="border-b border-gray-400 w-24 px-1"> (exercise) every morning to stay healthy.</div>
+                <div class="question" data-answer="will avoid">2. In the future, people <input type="text" name="blank2" class="border-b border-gray-400 w-24 px-1"> (avoid) traffic jams by using flying cars.</div>
+                <div class="question" data-answer="is knitting">3. My grandmother <input type="text" name="blank3" class="border-b border-gray-400 w-24 px-1"> (knit) a sweater right now.</div>
+                <div class="question" data-answer="recycled">4. Last week, we <input type="text" name="blank4" class="border-b border-gray-400 w-24 px-1"> (recycle) all the plastic bottles.</div>
+                <div class="question" data-answer="cycles">5. She usually <input type="text" name="blank5" class="border-b border-gray-400 w-24 px-1"> (cycle) to school to avoid traffic.</div>
+                <div class="question" data-answer="will protect">6. Solar energy <input type="text" name="blank6" class="border-b border-gray-400 w-24 px-1"> (protect) the environment in the future.</div>
+            </div>
+        </div>
+        <!-- Phần 3: Tìm lỗi sai -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 3: Tìm lỗi sai (2 điểm) - Error Correction (2 marks)</div>
+            <p class="mb-4">Tìm lỗi sai và viết lại câu đúng (Find the error and rewrite the sentence correctly):</p>
+            <div class="space-y-4">
+                <div class="question" data-answer="She solves puzzles in her free time.">1. She is solving puzzles in her free time.<br>
+                    <input type="text" name="err1" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="They will use renewable energy next year.">2. They use renewable energy next year.<br>
+                    <input type="text" name="err2" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="We donated clothes to charity yesterday.">3. We donate clothes to charity yesterday.<br>
+                    <input type="text" name="err3" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="The students are studying for the test now.">4. The students study for the test now.<br>
+                    <input type="text" name="err4" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="People will teleport in the future.">5. People teleport in the future.<br>
+                    <input type="text" name="err5" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="They garden every Sunday.">6. They are gardening every Sunday.<br>
+                    <input type="text" name="err6" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+            </div>
+        </div>
+        <!-- Phần 4: Điền từ vào đoạn văn -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 4: Điền từ vào đoạn văn (2 điểm) - Cloze Test (2 marks)</div>
+            <p class="mb-4">Điền từ thích hợp vào chỗ trống trong đoạn văn sau (Fill in the blanks with appropriate words):</p>
+            <p>
+                Last summer, I <input type="text" name="cloze1" class="border-b border-gray-400 w-20 px-1" data-answer="went"> camping with my family. 
+                We <input type="text" name="cloze2" class="border-b border-gray-400 w-20 px-1" data-answer="saw"> many beautiful landmarks and <input type="text" name="cloze3" class="border-b border-gray-400 w-20 px-1" data-answer="learned"> about different cultures. My father <input type="text" name="cloze4" class="border-b border-gray-400 w-20 px-1" data-answer="brought"> his camera to take photos. We <input type="text" name="cloze5" class="border-b border-gray-400 w-20 px-1" data-answer="enjoyed"> the outdoor activities very much.
+            </p>
+        </div>
+        <!-- Phần 5: Viết câu hoàn chỉnh -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 5: Viết câu hoàn chỉnh (2 điểm) - Sentence Writing (2 marks)</div>
+            <p class="mb-4">Viết câu hoàn chỉnh sử dụng từ/cụm từ gợi ý (Write complete sentences using the given words/phrases):</p>
+            <div class="space-y-4">
+                <div class="question" data-answer="she likes to knit in her free time">1. She / like / knit / free time.<br>
+                    <input type="text" name="sent1" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="the chef is frying noodles now">2. Chef / fry / noodles / now.<br>
+                    <input type="text" name="sent2" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="we went camping last month">3. We / go / camping / last month.<br>
+                    <input type="text" name="sent3" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="people will use wind power in the future">4. People / use / wind power / future.<br>
+                    <input type="text" name="sent4" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-8 print:hidden">
+            <button type="button" onclick="gradeTest()" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 font-semibold">Nộp bài / Submit</button>
+        </div>
+        <div id="result" class="mt-8 text-center text-lg font-bold print:hidden" style="display:none"></div>
+        </form>
+    </div>
+    <script>
+    function gradeTest() {
+        let score = 0;
+        let total = 12 + 6 + 6 + 5 + 4; // MCQ + blank + err + cloze + sent
+        let form = document.forms['grammarTest'];
+        
+        // Reset all highlights
+        // MCQ
+        for(let i=1;i<=12;i++){
+            let radios = form[`mcq${i}`];
+            if (!radios) continue;
+            let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+            radioList.forEach(radio => {
+                radio.parentElement.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+            });
+        }
+        
+        // Inputs
+        let allInputs = form.querySelectorAll('input[type=text], input');
+        allInputs.forEach(input => {
+            input.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+        });
+
+        // MCQ
+        for(let i=1;i<=12;i++){
+            let questionDiv = form.querySelector(`input[name=mcq${i}]`).closest('.question');
+            let correctAnswer = questionDiv.getAttribute('data-answer');
+            let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+            radioList.forEach(radio => {
+                if(radio.checked){
+                    if(radio.value === correctAnswer){
+                        radio.parentElement.classList.add('bg-green-100','border-green-500','border-2');
+                        score++;
+                    } else {
+                        radio.parentElement.classList.add('bg-red-100','border-red-500','border-2');
+                    }
+                }
+            });
+        }
+        
+        // Fill in blank
+        let blankQuestions = form.querySelectorAll('.section:nth-child(2) .question');
+        blankQuestions.forEach((question, index) => {
+            let input = question.querySelector('input');
+            let correctAnswer = question.getAttribute('data-answer');
+            if(input.value.trim().toLowerCase() === correctAnswer.toLowerCase()){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Error correction
+        let errQuestions = form.querySelectorAll('.section:nth-child(3) .question');
+        errQuestions.forEach((question, index) => {
+            let input = question.querySelector('input');
+            let correctAnswers = question.getAttribute('data-answer').split('|');
+            let userAnswer = input.value.trim().toLowerCase();
+            let isCorrect = correctAnswers.some(answer => answer.toLowerCase() === userAnswer);
+            if(isCorrect){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Cloze
+        let clozeInputs = form.querySelectorAll('input[name^="cloze"]');
+        clozeInputs.forEach(input => {
+            let correctAnswer = input.getAttribute('data-answer');
+            if(input.value.trim().toLowerCase() === correctAnswer.toLowerCase()){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Sentence writing
+        let sentQuestions = form.querySelectorAll('.section:nth-child(5) .question');
+        sentQuestions.forEach((question, index) => {
+            let input = question.querySelector('input');
+            let correctAnswers = question.getAttribute('data-answer').split('|');
+            let userAnswer = input.value.trim().toLowerCase();
+            let isCorrect = correctAnswers.some(answer => answer.toLowerCase() === userAnswer);
+            if(isCorrect){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Show result
+        document.getElementById('result').style.display = '';
+        document.getElementById('result').innerHTML = `Điểm của bạn: <span class=\"text-blue-700\">${score} / 33</span>`;
+    }
+    </script>
+</body>
+</html> 
