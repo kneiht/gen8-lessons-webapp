@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Simple Tense Worksheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        .irregular-verb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .verb-card {
+            background-color: #f8fafc;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+            
+            .irregular-verb-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full max-w-4xl mx-auto">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="worksheet-title">Past Simple Tense Worksheet</h1>
+                    <p class="text-gray-600 text-sm">Grammar Practice - Past Simple (Quá khứ đơn)</p>
+                </div>
+                <button onclick="printWorksheet()"
+                    class="no-print bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+                
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date: _______________</p>
+            </div>
+
+            <!-- Grammar Summary -->
+            <div class="mb-6">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Grammar Summary: Past Simple Tense</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Regular Verbs</h4>
+                        <p class="text-gray-600 text-sm mb-2">1. Động từ có quy tắc</p>
+                        <div class="mb-2">
+                            <ul class="list-disc pl-5 mb-2 text-gray-600 text-sm">
+                                <li><b>Cách dùng:</b> Thì quá khứ đơn dùng để nói về hành động hoặc sự việc đã xảy ra và kết thúc trong quá khứ.</li>
+                                <li>Thường dùng với các từ chỉ thời gian như: yesterday (hôm qua), last week (tuần trước), ago (cách đây), in 2000 (vào năm 2000), v.v.</li>
+                            </ul>
+                        </div>
+                        <div class="mb-2">
+                            <p class="font-medium">Positive:</p>
+                            <p>S + V2 (verb ending with -ed or past form)</p>
+                            <p class="italic">Ex: She watched a movie last night.</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="font-medium">Negative:</p>
+                            <p>S + did not (didn't) + V1</p>
+                            <p class="italic">Ex: She didn't watch a movie last night.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Question:</p>
+                            <p>Did + S + V1?</p>
+                            <p class="italic">Ex: Did she watch a movie last night?</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Verb "to be" (was/were)</h4>
+                        <p class="text-gray-600 text-sm mb-2">2. Động từ "to be" (was/were)</p>
+                        <div class="mb-2">
+                            <p class="font-medium">Positive:</p>
+                            <p>I, he, she, it → was</p>
+                            <p>We, you, they → were</p>
+                            <p class="italic">Ex: I was tired. / They were happy.</p>
+                        </div>
+                        <div class="mb-2">
+                            <p class="font-medium">Negative:</p>
+                            <p>S + was/were + not</p>
+                            <p class="italic">Ex: I wasn't tired. / They weren't happy.</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Question:</p>
+                            <p>Was/Were + S ...?</p>
+                            <p class="italic">Ex: Was she at home? / Were you busy?</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Time Expressions</h4>
+                        <p class="text-gray-600 text-sm mb-2">3. Các cụm từ chỉ thời gian</p>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>yesterday</li>
+                            <li>last night/week/month/year</li>
+                            <li>... ago (2 days ago, 3 years ago...)</li>
+                            <li>in + past time (in 2000, in May)</li>
+                            <li>when + ....</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Irregular Verbs</h4>
+                        <p class="text-gray-600 text-sm mb-2">4. Động từ bất quy tắc</p>
+                        <div class="irregular-verb-grid">
+                            <div class="verb-card">cut - cut</div>
+                            <div class="verb-card">draw - drew</div>
+                            <div class="verb-card">buy - bought</div>
+                            <div class="verb-card">come - came</div>
+                            <div class="verb-card">eat - ate</div>
+                            <div class="verb-card">fall - fell</div>
+                            <div class="verb-card">drink - drank</div>
+                            <div class="verb-card">drive - drove</div>
+                            <div class="verb-card">get - got</div>
+                            <div class="verb-card">give - gave</div>
+                            <div class="verb-card">feel - felt</div>
+                            <div class="verb-card">find - found</div>
+                            <div class="verb-card">go - went</div>
+                            <div class="verb-card">make - made</div>
+                            <div class="verb-card">meet - met</div>
+                            <div class="verb-card">lose - lost</div>
+                            <div class="verb-card">read - read</div>
+                            <div class="verb-card">ride - rode</div>
+                            <div class="verb-card">pay - paid</div>
+                            <div class="verb-card">put - put</div>
+                            <div class="verb-card">say - said</div>
+                            <div class="verb-card">see - saw</div>
+                            <div class="verb-card">rise - rose</div>
+                            <div class="verb-card">run - ran</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spelling Rules Section -->
+            <div class="exercise-container">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Spelling Rules for Regular Verbs</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">1. Verbs ending in -y</h4>
+                        <p class="text-gray-600 text-sm mb-2">1. Động từ kết thúc bằng -y</p>
+                        <div class="mb-2">
+                            <p class="font-medium">Rule:</p>
+                            <p>If a verb ends in consonant + y, change y to i and add -ed</p>
+                            <p class="text-gray-600 text-sm mb-2"><b>Quy tắc:</b> Nếu một động từ kết thúc bằng phụ âm + y, đổi y thành i rồi thêm -ed.</p>
+                            <p class="italic">Examples:</p>
+                            <ul class="list-disc pl-5">
+                                <li>study → studied</li>
+                                <li>carry → carried</li>
+                                <li>try → tried</li>
+                            </ul>
+                            <p class="mt-2">Note: If the verb ends in vowel + y, just add -ed</p>
+                            <p class="text-gray-600 text-sm mb-2"><b>Lưu ý:</b> Nếu động từ kết thúc bằng nguyên âm + y, chỉ cần thêm -ed.</p>
+                            <ul class="list-disc pl-5">
+                                <li>play → played</li>
+                                <li>stay → stayed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">2. Doubling Final Consonants</h4>
+                        <p class="text-gray-600 text-sm mb-2">2. Gấp đôi phụ âm cuối</p>
+                        <div class="mb-2">
+                            <p class="text-gray-600 text-sm mb-2"><b>Quy tắc:</b> Khi thêm -ed vào động từ, ta gấp đôi phụ âm cuối nếu:</p>
+                            <ul class="list-disc pl-5 mb-2 text-gray-600 text-sm">
+                                <li>Động từ kết thúc bằng phụ âm-nguyên âm-phụ âm (CVC)</li>
+                                <li>Âm tiết cuối được nhấn trọng âm</li>
+                            </ul>
+                            <p class="font-medium">Examples with stressed syllables:</p>
+                            <ul class="list-disc pl-5">
+                                <li>stop → stopped</li>
+                                <li>plan → planned</li>
+                                <li>prefer → preferred</li>
+                                <li>travel → travelled</li>
+                                <li>occur → occurred</li>
+                            </ul>
+                            <p class="text-gray-600 text-sm mb-2"><b>Lưu ý:</b> Nếu âm tiết cuối không được nhấn trọng âm, ta không gấp đôi phụ âm cuối.</p>
+                            <ul class="list-disc pl-5">
+                                <li>open → opened</li>
+                                <li>visit → visited</li>
+                                <li>happen → happened</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise 1 -->
+            <div class="exercise-container">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Exercise 1: Regular & Irregular Verbs</h3>
+                </div>
+                
+                <p class="exercise-instruction">Classify these verbs into regular (-ed) and irregular verbs:</p>
+                <p class="text-gray-600 text-sm mb-3">Phân loại các động từ sau thành động từ có quy tắc (-ed) và bất quy tắc:</p>
+                
+                <div class="mt-2 text-sm text-gray-500 mb-2 font-bold text-lg text-blue-700">Verbs: play, clean, visit, cook, watch, walk, listen, study, open, paint, go, eat, drink, see, write, run, come, make, have, buy, begin, draw</div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="subsection-title mb-2">Regular Verbs (-ed):</h4>
+                        <div class="border border-gray-200 rounded p-3 min-h-32 h-full">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="play" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="clean" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="visit" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="cook" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="watch" onblur="checkAnswer(this)">
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="subsection-title mb-2">Irregular Verbs:</h4>
+                        <div class="border border-gray-200 rounded p-3 min-h-32 h-full">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="go" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="eat" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="drink" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="see" onblur="checkAnswer(this)">
+                            <input type="text" class="answer-input w-full mb-2" data-answer="write" onblur="checkAnswer(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise 2 -->
+            <div class="exercise-container">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Exercise 2: Fill in the blanks with past simple form</h3>
+                </div>
+                
+                <p class="exercise-instruction">Fill in the blanks with past simple form</p>
+                <p class="text-gray-600 text-sm mb-3">Bài tập 2: Điền dạng quá khứ đơn vào chỗ trống</p>
+                
+                <div class="space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">1. She <span class="text-gray-500">(visit)</span> her grandparents last weekend.</span>
+                        <input type="text" class="answer-input" data-answer="visited" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">2. We <span class="text-gray-500">(not go)</span> to school yesterday.</span>
+                        <input type="text" class="answer-input" data-answer="did not go" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">3. I <span class="text-gray-500">(watch)</span> a movie last night.</span>
+                        <input type="text" class="answer-input" data-answer="watched" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">4. He <span class="text-gray-500">(buy)</span> a new phone two days ago.</span>
+                        <input type="text" class="answer-input" data-answer="bought" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">5. They <span class="text-gray-500">(have)</span> a big party on her birthday last week.</span>
+                        <input type="text" class="answer-input" data-answer="had" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">6. My mom <span class="text-gray-500">(cook)</span> dinner at 6 p.m.</span>
+                        <input type="text" class="answer-input" data-answer="cooked" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">7. He <span class="text-gray-500">(not see)</span> me at the supermarket last night.</span>
+                        <input type="text" class="answer-input" data-answer="did not see" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">8. The children <span class="text-gray-500">(play)</span> in the park yesterday afternoon.</span>
+                        <input type="text" class="answer-input" data-answer="played" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">9. I <span class="text-gray-500">(read)</span> that book last summer.</span>
+                        <input type="text" class="answer-input" data-answer="read" onblur="checkAnswer(this)">
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span class="font-medium">10. We <span class="text-gray-500">(walk)</span> to school because the bus didn't come.</span>
+                        <input type="text" class="answer-input" data-answer="walked" onblur="checkAnswer(this)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise 3 -->
+            <div class="exercise-container">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">5</span>
+                    </div>
+                    <h3 class="section-title">Exercise 3: Multiple Choice Quiz</h3>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="question">
+                        <p class="font-medium">1. She ______ to the park yesterday.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q1" class="radio-input" data-answer="C" onclick="checkMCAnswer(this)"> A. go
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q1" class="radio-input" data-answer="C" onclick="checkMCAnswer(this)"> B. goes
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q1" class="radio-input" data-answer="C" onclick="checkMCAnswer(this)"> C. went
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q1" class="radio-input" data-answer="C" onclick="checkMCAnswer(this)"> D. going
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p class="font-medium">2. They ______ a movie last night.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q2" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. watched
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q2" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. watches
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q2" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. watching
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q2" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. watch
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p class="font-medium">3. I ______ my homework yesterday.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q3" class="radio-input" data-answer="B" onclick="checkMCAnswer(this)"> A. do
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q3" class="radio-input" data-answer="B" onclick="checkMCAnswer(this)"> B. did
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q3" class="radio-input" data-answer="B" onclick="checkMCAnswer(this)"> C. does
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q3" class="radio-input" data-answer="B" onclick="checkMCAnswer(this)"> D. doing
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p class="font-medium">4. We ______ to the museum last Sunday.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q4" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. went
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q4" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. go
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q4" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. going
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q4" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. goes
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p class="font-medium">5. He ______ a new bike two days ago.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q5" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. bought
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q5" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. buys
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q5" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. buying
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q5" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. buy
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p class="font-medium">6. My mom ______ dinner at 6 p.m.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q6" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. cooked
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q6" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. cooks
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q6" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. cooking
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q6" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. cook
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p class="font-medium">7. He ______ me at the supermarket.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q7" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. did not see
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q7" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. not see
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q7" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. not saw
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q7" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. not seeing
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p class="font-medium">8. The children ______ in the park yesterday afternoon.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q8" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. played
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q8" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. plays
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q8" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. playing
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q8" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. play
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p class="font-medium">9. I ______ that book last summer.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q9" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. read
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q9" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. reads
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q9" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. reading
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q9" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. readed
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p class="font-medium">10. We ______ to school because the bus didn't come.</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="q10" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> A. walked
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q10" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> B. walks
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q10" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> C. walking
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="q10" class="radio-input" data-answer="A" onclick="checkMCAnswer(this)"> D. walk
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise 4 -->
+            <div class="exercise-container">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">6</span>
+                    </div>
+                    <h3 class="section-title">Exercise 4: Fill in the blanks in the story</h3>
+                </div>
+                
+                <p class="exercise-instruction">Fill in the blanks with the correct past simple form of the verbs in parentheses.</p>
+                <p class="text-gray-600 text-sm mb-3">Điền vào chỗ trống, chia động từ trong ngoặc ở thì quá khứ đơn.</p>
+                
+                <div class="bg-white p-4 rounded border border-gray-200 flex flex-col gap-2">
+                    <div class="mb-2">Last Sunday, my family (go) <input type="text" class="answer-input" data-answer="went" onblur="checkAnswer(this)"> to the countryside.</div>
+                    <div class="mb-2">We (leave) <input type="text" class="answer-input" data-answer="left" onblur="checkAnswer(this)"> home early in the morning and (drive) <input type="text" class="answer-input" data-answer="drove" onblur="checkAnswer(this)"> for two hours.</div>
+                    <div class="mb-2">When we (arrive) <input type="text" class="answer-input" data-answer="arrived" onblur="checkAnswer(this)">, the weather (be) <input type="text" class="answer-input" data-answer="was" onblur="checkAnswer(this)"> sunny and warm.</div>
+                    <div class="mb-2">My parents (prepare) <input type="text" class="answer-input" data-answer="prepared" onblur="checkAnswer(this)"> lunch while my brother and I (explore) <input type="text" class="answer-input" data-answer="explored" onblur="checkAnswer(this)"> the area.</div>
+                    <div class="mb-2">We (find) <input type="text" class="answer-input" data-answer="found" onblur="checkAnswer(this)"> a small river and (swim) <input type="text" class="answer-input" data-answer="swam" onblur="checkAnswer(this)"> in it for a while.</div>
+                    <div class="mb-2">Then we (eat) <input type="text" class="answer-input" data-answer="ate" onblur="checkAnswer(this)"> together under a big tree.</div>
+                    <div class="mb-2">They (have) <input type="text" class="answer-input" data-answer="had" onblur="checkAnswer(this)"> a big party on her birthday last week.</div>
+                    <div class="mb-2">He (not see) <input type="text" class="answer-input" data-answer="did not see" onblur="checkAnswer(this)"> me at the supermarket last night.</div>
+                </div>
+            </div>
+
+            <!-- Exercise 7: Rewrite in Past Simple Negative -->
+            <div class="exercise-container">
+                <h3 class="section-title">Exercise 7: Rewrite in Past Simple Negative</h3>
+                <p class="italic text-blue-700 text-sm mb-3 ml-2">Bài tập 7: Viết lại câu sau ở thì quá khứ đơn ở dạng phủ định</p>
+                <div class="space-y-3">
+                    <div class="mb-2">
+                        <span class="font-medium">1. I eat breakfast at 7 a.m. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="I did not eat breakfast at 7 a.m." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">2. She goes to school by bike. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="She did not go to school by bike." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">3. They play tennis every Sunday. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="They did not play tennis every Sunday." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">4. We are happy. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="We were not happy." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">5. My father buys a new car. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="My father did not buy a new car." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">6. I see my friends at the park. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="I did not see my friends at the park." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">7. They have a big house. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="They did not have a big house." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">8. We take a bus to school. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="We did not take a bus to school." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">9. She makes a beautiful cake. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="She did not make a beautiful cake." onblur="checkAnswer(this)">
+                    </div>
+                    <div class="mb-2">
+                        <span class="font-medium">10. He speaks English very well. → </span>
+                        <input type="text" class="answer-input w-full" data-answer="He did not speak English very well." onblur="checkAnswer(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            } else {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md', 'border-green-500', 'bg-green-100');
+            }
+        }
+
+        // Function to check multiple choice answers
+        function checkMCAnswer(radio) {
+            const radioGroup = radio.closest('.radio-group');
+            const radios = radioGroup.querySelectorAll('input[type="radio"]');
+            // Remove all previous highlights
+            radios.forEach(r => {
+                r.parentElement.classList.remove('text-green-600', 'font-bold', 'text-red-600', 'bg-red-100', 'bg-green-100');
+            });
+
+            // Find the correct radio
+            let correctRadio = null;
+            radios.forEach(r => {
+                if (r.nextSibling && r.nextSibling.textContent.trim().startsWith(r.dataset.answer + '.')) {
+                    correctRadio = r;
+                }
+                // Fallback: check value if needed
+                if (!correctRadio && r.value === r.dataset.answer) {
+                    correctRadio = r;
+                }
+            });
+
+            // If the selected answer is correct
+            if (radio.dataset.answer === radio.parentElement.textContent.trim().charAt(0)) {
+                radio.parentElement.classList.add('text-green-600', 'font-bold');
+            } else {
+                // Mark the selected (wrong) answer red
+                radio.parentElement.classList.add('text-red-600', 'font-bold');
+                // Mark the correct answer green
+                if (correctRadio) {
+                    correctRadio.parentElement.classList.add('text-green-600', 'font-bold');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

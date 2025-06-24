@@ -72,9 +72,9 @@
     },
     "slides/pre-gs8-simple-sentences": {
       "path": "slides/pre-gs8-simple-sentences",
-      "title": "Pre GS8 - Simple Sentences (Câu đơn)",
+      "title": "Pre GS8 - Review future simple \\'96 \\'d4n T\\uc0\\u7853 p",
       "author": "Gen8",
-      "description": "Cấu trúc S-V-O, câu khẳng định, phủ định, câu hỏi Yes/No, nhận diện thành phần câu",
+      "description": "Không có mô tả.",
       "category": "slides"
     },
     "slides/pre-gs9-past-simple-and-past-continuous": {
@@ -168,6 +168,13 @@
       "description": "Danh Từ và Mạo Từ (Nouns & Articles) – Ôn Tập",
       "category": "worksheets"
     },
+    "worksheets/pre - gs8 - review past simple": {
+      "path": "worksheets/pre - gs8 - review past simple",
+      "title": "Pre   Gs8   Review Past Simple",
+      "author": "Gen8",
+      "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
     "worksheets/pre-gs6-some-any": {
       "path": "worksheets/pre-gs6-some-any",
       "title": "Pre Gs6 - Some and Any",
@@ -187,6 +194,20 @@
       "title": "Pre GS9 - Wish + Past Simple",
       "author": "Gen8",
       "description": "Wish + Past Simple (Wish loại 2)",
+      "category": "worksheets"
+    },
+    "worksheets/pre - gs8 - review verb form": {
+      "path": "worksheets/pre - gs8 - review verb form",
+      "title": "Pre GS8 - Review verb form \\'96 \\'d4n T\\uc0\\u7853 p",
+      "author": "Gen8",
+      "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre - gs8 - review tense ": {
+      "path": "worksheets/pre - gs8 - review tense ",
+      "title": "Pre   Gs8   Review Tense ",
+      "author": "Gen8",
+      "description": "Không có mô tả.",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-quantifiers": {
@@ -229,6 +250,13 @@
       "title": "Pre GS7 - Đại Từ Nhân Xưng - Personal Pronouns",
       "author": "Gen8",
       "description": "Đại Từ Nhân Xưng - Personal Pronouns",
+      "category": "worksheets"
+    },
+    "worksheets/pre - gs8 - review present simple": {
+      "path": "worksheets/pre - gs8 - review present simple",
+      "title": "Pre GS8 Worksheets 1",
+      "author": "ngọc diệp",
+      "description": "Review Tense - Simple present",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-nouns-1": {

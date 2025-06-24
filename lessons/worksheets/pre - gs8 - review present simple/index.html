@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Simple Tense - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Grammar table styles */
+        .grammar-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .grammar-table th, .grammar-table td {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .grammar-table th {
+            background-color: #f3f4f6;
+            font-weight: 600;
+        }
+
+        .grammar-note {
+            background-color: #f8fafc;
+            padding: 0.5rem;
+            border-left: 4px solid #94a3b8;
+            margin: 0.5rem 0;
+            font-style: italic;
+        }
+
+        /* Check answer button styles */
+        .check-answer-btn {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .check-answer-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .check-answer-btn:disabled {
+            background-color: #93c5fd;
+            cursor: not-allowed;
+        }
+
+        /* New styles for correct/incorrect radio buttons */
+        .radio-label.correct {
+            color: #16a34a;
+            font-weight: bold;
+        }
+        .radio-label.incorrect {
+            color: #dc2626;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Thì Hiện Tại Đơn (Present Simple)</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Add check answer button -->
+            <div class="no-print mb-4">
+                <button id="checkAnswersBtn" class="check-answer-btn">
+                    Check Answers
+                </button>
+            </div>
+
+            <!-- Grammar Summary -->
+            <div class="mb-6">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Tóm tắt ngữ pháp (Grammar Summary)</h3>
+                </div>
+
+                <div class="info-card bg-yellow-50 mb-4">
+                    <h4 class="subsection-title">1️⃣ Cấu trúc</h4>
+                    <table class="grammar-table mb-3">
+                        <thead>
+                            <tr>
+                                <th>Loại câu</th>
+                                <th>Công thức</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Khẳng định</td>
+                                <td>I/You/We/They + V-inf<br>He/She/It + V-s/es</td>
+                                <td>She <strong>goes</strong> to school every day.</td>
+                            </tr>
+                            <tr>
+                                <td>Phủ định</td>
+                                <td>I/You/We/They + do not (don't) + V-inf<br>He/She/It + does not (doesn't) + V-inf</td>
+                                <td>They <strong>don't like</strong> coffee.</td>
+                            </tr>
+                            <tr>
+                                <td>Nghi vấn</td>
+                                <td>Do + I/you/we/they + V-inf?<br>Does + he/she/it + V-inf?</td>
+                                <td><strong>Does</strong> he <strong>play</strong> soccer?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-card bg-green-50 mb-4">
+                    <h4 class="subsection-title">2️⃣ Cách dùng</h4>
+                    <div class="mb-2">
+                        <p><strong>✅ Dùng để chỉ thói quen, hành động lặp đi lặp lại</strong></p>
+                        <p class="text-gray-700">Thường đi kèm với: always, often, usually, sometimes, every day, on Mondays,...</p>
+                        <p class="text-gray-700 italic">Ví dụ: I get up at 6 a.m. every day.</p>
+                        <p class="text-gray-700 italic">He usually goes to the gym after work.</p>
+                    </div>
+                    <div class="mb-2">
+                        <p><strong>✅ Dùng để chỉ sự thật hiển nhiên, chân lý, kiến thức chung</strong></p>
+                        <p class="text-gray-700 italic">Ví dụ: The Earth goes around the Sun.</p>
+                        <p class="text-gray-700 italic">Water boils at 100°C.</p>
+                    </div>
+                </div>
+
+                <div class="info-card bg-blue-50 mb-4">
+                    <h4 class="subsection-title">📌 Dấu hiệu nhận biết</h4>
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>Dấu hiệu</th>
+                                <th>Ý nghĩa</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>always, often, usually, sometimes</td>
+                                <td>Thói quen</td>
+                                <td>I always brush my teeth in the morning.</td>
+                            </tr>
+                            <tr>
+                                <td>every day/week/month/year</td>
+                                <td>Thói quen định kỳ</td>
+                                <td>She visits her grandma every Sunday.</td>
+                            </tr>
+                            <tr>
+                                <td>on Mondays / at weekends</td>
+                                <td>Thói quen theo thời gian</td>
+                                <td>We play tennis at weekends.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-card bg-purple-50 mb-4">
+                    <h4 class="subsection-title">📌 Nguyên tắc thêm "s/es"</h4>
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>Trường hợp</th>
+                                <th>Cách thêm</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Động từ thường</td>
+                                <td>+ s</td>
+                                <td>play → plays</td>
+                            </tr>
+                            <tr>
+                                <td>Động từ kết thúc bằng -ch, -sh, -s, -x, -z, -o</td>
+                                <td>+ es</td>
+                                <td>watch → watches</td>
+                            </tr>
+                            <tr>
+                                <td>Động từ tận cùng bằng phụ âm + y</td>
+                                <td>y → i + es</td>
+                                <td>study → studies</td>
+                            </tr>
+                            <tr>
+                                <td>Động từ tận cùng bằng nguyên âm + y</td>
+                                <td>+ s</td>
+                                <td>play → plays</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="grammar-note">
+                        <p><strong>Lưu ý:</strong> Các động từ "have", "go", "do":</p>
+                        <ul class="list-disc pl-5">
+                            <li>have → has</li>
+                            <li>go → goes</li>
+                            <li>do → does</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-card bg-pink-50">
+                    <h4 class="subsection-title">✅ Công thức Thì hiện tại đơn với "to be"</h4>
+                    <table class="grammar-table mb-3">
+                        <thead>
+                            <tr>
+                                <th>Loại câu</th>
+                                <th>Công thức</th>
+                                <th>Ví dụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Khẳng định</td>
+                                <td>I + am<br>He/She/It + is<br>You/We/They + are</td>
+                                <td>She is my teacher.</td>
+                            </tr>
+                            <tr>
+                                <td>Phủ định</td>
+                                <td>I + am not<br>He/She/It + is not (isn't)<br>You/We/They + are not (aren't)</td>
+                                <td>They aren't at home.</td>
+                            </tr>
+                            <tr>
+                                <td>Nghi vấn</td>
+                                <td>Am + I ...?<br>Is + he/she/it ...?<br>Are + you/we/they ...?</td>
+                                <td>Are you ready?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Bài tập (Exercises)</h3>
+                </div>
+
+                <!-- Exercise 1 -->
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Bài 1: Thêm "s" hoặc "es" cho động từ sau</h4>
+                    <p class="exercise-instruction mb-3">👉 Viết dạng đúng của động từ sau ở thì hiện tại đơn (ngôi He/She/It):</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">1.</span>
+                            <span class="w-32 font-medium">play →</span>
+                            <input type="text" class="answer-input" data-answer="plays" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">2.</span>
+                            <span class="w-32 font-medium">go →</span>
+                            <input type="text" class="answer-input" data-answer="goes" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">3.</span>
+                            <span class="w-32 font-medium">watch →</span>
+                            <input type="text" class="answer-input" data-answer="watches" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">4.</span>
+                            <span class="w-32 font-medium">study →</span>
+                            <input type="text" class="answer-input" data-answer="studies" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">5.</span>
+                            <span class="w-32 font-medium">cry →</span>
+                            <input type="text" class="answer-input" data-answer="cries" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">6.</span>
+                            <span class="w-32 font-medium">teach →</span>
+                            <input type="text" class="answer-input" data-answer="teaches" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">7.</span>
+                            <span class="w-32 font-medium">wash →</span>
+                            <input type="text" class="answer-input" data-answer="washes" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">8.</span>
+                            <span class="w-32 font-medium">carry →</span>
+                            <input type="text" class="answer-input" data-answer="carries" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">9.</span>
+                            <span class="w-32 font-medium">pass →</span>
+                            <input type="text" class="answer-input" data-answer="passes" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">10.</span>
+                            <span class="w-32 font-medium">fix →</span>
+                            <input type="text" class="answer-input" data-answer="fixes" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">11.</span>
+                            <span class="w-32 font-medium">do →</span>
+                            <input type="text" class="answer-input" data-answer="does" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">12.</span>
+                            <span class="w-32 font-medium">try →</span>
+                            <input type="text" class="answer-input" data-answer="tries" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">13.</span>
+                            <span class="w-32 font-medium">kiss →</span>
+                            <input type="text" class="answer-input" data-answer="kisses" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">14.</span>
+                            <span class="w-32 font-medium">enjoy →</span>
+                            <input type="text" class="answer-input" data-answer="enjoys" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">15.</span>
+                            <span class="w-32 font-medium">fly →</span>
+                            <input type="text" class="answer-input" data-answer="flies" onblur="checkAnswer(this)">
+                        </div>
+                    </div>
+                    <button class="check-answer-btn mt-4">Check Answers</button>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Bài 2: Chọn đáp án đúng để hoàn thành câu</h4>
+                    <p class="exercise-instruction mb-3">👉 Chọn đáp án đúng nhất cho mỗi câu:</p>
+
+                    <div class="space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="sm:w-64">
+                                <span class="font-medium">1. She always ___ to school by bike.</span>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="q1" class="radio-input" value="go" data-answer="goes" onclick="checkAnswer(this)">
+                                    <span>go</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q1" class="radio-input" value="goes" data-answer="goes" onclick="checkAnswer(this)">
+                                    <span>goes</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q1" class="radio-input" value="going" data-answer="goes" onclick="checkAnswer(this)">
+                                    <span>going</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="sm:w-64">
+                                <span class="font-medium">2. My brother ___ TV every evening.</span>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="q2" class="radio-input" value="watch" data-answer="watches" onclick="checkAnswer(this)">
+                                    <span>watch</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q2" class="radio-input" value="watches" data-answer="watches" onclick="checkAnswer(this)">
+                                    <span>watches</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q2" class="radio-input" value="watchs" data-answer="watches" onclick="checkAnswer(this)">
+                                    <span>watchs</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="sm:w-64">
+                                <span class="font-medium">3. He ___ his homework after dinner.</span>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="q3" class="radio-input" value="does" data-answer="does" onclick="checkAnswer(this)">
+                                    <span>does</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q3" class="radio-input" value="do" data-answer="does" onclick="checkAnswer(this)">
+                                    <span>do</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q3" class="radio-input" value="doing" data-answer="does" onclick="checkAnswer(this)">
+                                    <span>doing</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="sm:w-64">
+                                <span class="font-medium">4. Anna ___ English very well.</span>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="q4" class="radio-input" value="speak" data-answer="speaks" onclick="checkAnswer(this)">
+                                    <span>speak</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q4" class="radio-input" value="speaks" data-answer="speaks" onclick="checkAnswer(this)">
+                                    <span>speaks</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q4" class="radio-input" value="speaking" data-answer="speaks" onclick="checkAnswer(this)">
+                                    <span>speaking</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="sm:w-64">
+                                <span class="font-medium">5. Tom ___ to music on Sundays.</span>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="q5" class="radio-input" value="listens" data-answer="listens" onclick="checkAnswer(this)">
+                                    <span>listens</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q5" class="radio-input" value="listen" data-answer="listens" onclick="checkAnswer(this)">
+                                    <span>listen</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="q5" class="radio-input" value="listening" data-answer="listens" onclick="checkAnswer(this)">
+                                    <span>listening</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-answer-btn mt-4">Check Answers</button>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Bài 3: Chia động từ trong ngoặc ở thì hiện tại đơn</h4>
+                    <p class="exercise-instruction mb-3">👉 Chia động từ trong ngoặc ở dạng đúng của thì hiện tại đơn:</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">1.</span>
+                            <span class="">She <input type="text" class="answer-input" data-answer="plays" onblur="checkAnswer(this)"> (play) the piano very well.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">2.</span>
+                            <span class="">My father <input type="text" class="answer-input" data-answer="goes" onblur="checkAnswer(this)"> (go) to work by car.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">3.</span>
+                            <span class="">They <input type="text" class="answer-input" data-answer="watch" onblur="checkAnswer(this)"> (watch) TV every night.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">4.</span>
+                            <span class="">He <input type="text" class="answer-input" data-answer="studies" onblur="checkAnswer(this)"> (study) English every day.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">5.</span>
+                            <span class="">The baby <input type="text" class="answer-input" data-answer="cries" onblur="checkAnswer(this)"> (cry) when he is hungry.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">6.</span>
+                            <span class="">Anna and Tom <input type="text" class="answer-input" data-answer="like" onblur="checkAnswer(this)"> (like) chocolate.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">7.</span>
+                            <span class="">My sister <input type="text" class="answer-input" data-answer="washes" onblur="checkAnswer(this)"> (wash) the dishes after dinner.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">8.</span>
+                            <span class="">Peter <input type="text" class="answer-input" data-answer="flies" onblur="checkAnswer(this)"> (fly) to London twice a year.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">9.</span>
+                            <span class="">I <input type="text" class="answer-input" data-answer="have" onblur="checkAnswer(this)"> (have) breakfast at 7 a.m.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">10.</span>
+                            <span class="">Linda <input type="text" class="answer-input" data-answer="does" onblur="checkAnswer(this)"> (do) her homework in the evening.</span>
+                        </div>
+                    </div>
+                    <button class="check-answer-btn mt-4">Check Answers</button>
+                </div>
+
+                <!-- Exercise 4 -->
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Bài 4: Chia động từ "Tobe" (am / is / are)</h4>
+                    <p class="exercise-instruction mb-3">👉 Chia động từ tobe (am/is/are) phù hợp với chủ ngữ:</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">1.</span>
+                            <span class="">I <input type="text" class="answer-input" data-answer="am" onblur="checkAnswer(this)"> a student.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">2.</span>
+                            <span class="">She <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)"> my best friend.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">3.</span>
+                            <span class="">They <input type="text" class="answer-input" data-answer="are" onblur="checkAnswer(this)"> at home now.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">4.</span>
+                            <span class="">My father <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)"> a doctor.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">5.</span>
+                            <span class="">We <input type="text" class="answer-input" data-answer="are" onblur="checkAnswer(this)"> in the classroom.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">6.</span>
+                            <span class="">He <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)"> my teacher.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">7.</span>
+                            <span class="">You <input type="text" class="answer-input" data-answer="are" onblur="checkAnswer(this)"> very kind.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">8.</span>
+                            <span class="">The cat <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)"> under the table.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">9.</span>
+                            <span class="">It <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)"> a nice day today.</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">10.</span>
+                            <span class="">My parents <input type="text" class="answer-input" data-answer="are" onblur="checkAnswer(this)"> very busy.</span>
+                        </div>
+                    </div>
+                    <button class="check-answer-btn mt-4">Check Answers</button>
+                </div>
+
+                <!-- Exercise 5 -->
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Bài 5: Điền "Do" hoặc "Does" vào chỗ trống</h4>
+                    <p class="exercise-instruction mb-3">👉 Chọn "Do" hoặc "Does" thích hợp điền vào chỗ trống:</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">1.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="do" onblur="checkAnswer(this)"> you like pizza?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">2.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="does" onblur="checkAnswer(this)"> he play football every Sunday?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">3.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="do" onblur="checkAnswer(this)"> they go to school by bus?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">4.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="does" onblur="checkAnswer(this)"> your father work in an office?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">5.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="does" onblur="checkAnswer(this)"> Anna speak English?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">6.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="do" onblur="checkAnswer(this)"> we have English on Mondays?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">7.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="does" onblur="checkAnswer(this)"> she like cats?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">8.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="do" onblur="checkAnswer(this)"> your parents live here?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">9.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="does" onblur="checkAnswer(this)"> it rain in summer?</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-10 font-medium">10.</span>
+                            <span class=""><input type="text" class="answer-input" data-answer="do" onblur="checkAnswer(this)"> Tom and Mary play badminton?</span>
+                        </div>
+                    </div>
+                    <button class="check-answer-btn mt-4">Check Answers</button>
+                </div>
+
+                <!-- Exercise 6 -->
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Bài 6: Chia động từ trong ngoặc ở thì hiện tại đơn</h4>
+                    <p class="exercise-instruction mb-3">👉 Điền đúng dạng của động từ trong ngoặc vào chỗ trống:</p>
+
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <div>
+                                <p>My name (be) <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)"> Anna. I (live) <input type="text" class="answer-input" data-answer="live" onblur="checkAnswer(this)"> in a small town with my family. Every day, I (get) <input type="text" class="answer-input" data-answer="get" onblur="checkAnswer(this)"> up at 6 a.m. and (have) <input type="text" class="answer-input" data-answer="have" onblur="checkAnswer(this)"> breakfast with my parents. Then, I (go) <input type="text" class="answer-input" data-answer="go" onblur="checkAnswer(this)"> to school by bike. My best friend (be) <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)"> Tom. He (study) <input type="text" class="answer-input" data-answer="studies" onblur="checkAnswer(this)"> in the same class with me. After school, we (play) <input type="text" class="answer-input" data-answer="play" onblur="checkAnswer(this)"> football together. In the evening, I (watch) <input type="text" class="answer-input" data-answer="watch" onblur="checkAnswer(this)"> TV or (read) <input type="text" class="answer-input" data-answer="read" onblur="checkAnswer(this)"> books before going to bed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="check-answer-btn mt-4">Check Answers</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields (for a specific container)
+        function checkAnswersInContainer(container) {
+            const inputs = container.querySelectorAll('input[type="text"]');
+            const radioInputs = container.querySelectorAll('input[type="radio"]');
+            
+            // Check text inputs
+            inputs.forEach(input => {
+                const correctAnswer = input.getAttribute('data-answer');
+                if (correctAnswer) {
+                    // Always show correct answer in green
+                    input.value = correctAnswer;
+                    input.classList.add('correct');
+                    input.classList.remove('incorrect');
+                    input.style.color = '#16a34a';
+                    input.style.fontWeight = 'bold';
+                    input.style.backgroundColor = '#f0fdf4';
+                    input.style.borderColor = '#16a34a';
+                }
+            });
+
+            // Check radio inputs
+            radioInputs.forEach(radio => {
+                const correctAnswer = radio.getAttribute('data-answer');
+                const radioGroup = document.getElementsByName(radio.name);
+                
+                // Reset all radio buttons in the group first
+                radioGroup.forEach(r => {
+                    const label = r.parentElement;
+                    label.classList.remove('correct', 'incorrect');
+                });
+
+                // Show correct answer in green
+                if (radio.value === correctAnswer) {
+                    const label = radio.parentElement;
+                    label.classList.add('correct');
+                    label.style.color = '#16a34a';
+                    label.style.fontWeight = 'bold';
+                }
+            });
+        }
+
+        // Add styles for correct/incorrect inputs
+        const style = document.createElement('style');
+        style.textContent = `
+            .correct {
+                color: #16a34a !important;
+                font-weight: bold !important;
+                background-color: #f0fdf4 !important;
+                border-color: #16a34a !important;
+            }
+            .radio-label.correct {
+                color: #16a34a !important;
+                font-weight: bold !important;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Attach event listeners to all exercise check buttons
+        document.querySelectorAll('.exercise-container .check-answer-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const container = btn.closest('.exercise-container');
+                checkAnswersInContainer(container);
+            });
+        });
+
+        // (Optional) Remove the global check button if present
+        const globalBtn = document.getElementById('checkAnswersBtn');
+        if (globalBtn) globalBtn.style.display = 'none';
+    </script>
+</body>
+
+</html>
