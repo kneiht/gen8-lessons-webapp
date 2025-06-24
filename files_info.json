@@ -301,6 +301,20 @@
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     },
+    "tests/pre-gs7-tsst-1-paper-2": {
+      "path": "tests/pre-gs7-tsst-1-paper-2",
+      "title": "Pre Gs7 Test 1 - Paper 2",
+      "author": "Gen8",
+      "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
+      "category": "tests"
+    },
+    "tests/pre-gs7-tsst-1-paper-3": {
+      "path": "tests/pre-gs7-tsst-1-paper-3",
+      "title": "Pre Gs7 Test 1 - Paper 3",
+      "author": "Gen8",
+      "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-3": {
       "path": "tests/pre-gs6-test-1-paper-3",
       "title": "Pre Gs6 Test 1 - Paper 3",
@@ -315,11 +329,32 @@
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     },
+    "tests/pre-gs7-tsst-1-paper-4": {
+      "path": "tests/pre-gs7-tsst-1-paper-4",
+      "title": "Pre Gs7 Test 1 - Paper 4",
+      "author": "Gen8",
+      "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-1": {
       "path": "tests/pre-gs6-test-1-paper-1",
       "title": "Pre Gs6 Test 1 - Paper 1",
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs7-tsst-1-paper-5": {
+      "path": "tests/pre-gs7-tsst-1-paper-5",
+      "title": "Pre Gs7 Test 1 - Paper 5",
+      "author": "Gen8",
+      "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
+      "category": "tests"
+    },
+    "tests/pre-gs7-tsst-1-paper-1": {
+      "path": "tests/pre-gs7-tsst-1-paper-1",
+      "title": "Pre Gs7 Test 1 - Paper 1",
+      "author": "Gen8",
+      "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-6": {

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Kiểm Tra Ngữ Pháp - Grammar Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .print\:hidden { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="test-paper max-w-2xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8">
+        <div class="header text-center mb-8">
+            <h3 class="text-lg font-bold text-blue-800">PRE GRADE 7 - ENGLISH GRAMMAR TEST 1 - (PAPER 1)</h3>
+            <p class="mb-2"><strong>Time:</strong> 45 minutes | <strong>Full name:</strong> <input type="text" class="border-b border-gray-400 outline-none px-2 print:hidden" style="width:220px" /></p>
+        </div>
+        <form id="grammarTest">
+        <!-- Phần 1: Trắc nghiệm -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 1: Trắc nghiệm (2 điểm) - Multiple Choice (2 marks)</div>
+            <p class="mb-4">Chọn đáp án đúng nhất (Choose the best answer):</p>
+            <!-- MCQ Questions -->
+            <div class="space-y-4">
+                <!-- Danh từ (2 câu) -->
+                <div class="question" data-answer="C">
+                    <label>1. Which of the following is an uncountable noun?</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq1" value="A" class="mr-2">A. car</label><br>
+                        <label><input type="radio" name="mcq1" value="B" class="mr-2">B. house</label><br>
+                        <label><input type="radio" name="mcq1" value="C" class="mr-2">C. furniture</label><br>
+                        <label><input type="radio" name="mcq1" value="D" class="mr-2">D. student</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>2. Choose the correct plural form of "woman":</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq2" value="A" class="mr-2">A. womans</label><br>
+                        <label><input type="radio" name="mcq2" value="B" class="mr-2">B. women</label><br>
+                        <label><input type="radio" name="mcq2" value="C" class="mr-2">C. womens</label><br>
+                        <label><input type="radio" name="mcq2" value="D" class="mr-2">D. womanes</label>
+                    </div>
+                </div>
+                <!-- Đại từ nhân xưng (2 câu) -->
+                <div class="question" data-answer="B">
+                    <label>3. Which pronoun is used as an object in the sentence "The teacher gave ___ a book"?</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq3" value="A" class="mr-2">A. I</label><br>
+                        <label><input type="radio" name="mcq3" value="B" class="mr-2">B. me</label><br>
+                        <label><input type="radio" name="mcq3" value="C" class="mr-2">C. my</label><br>
+                        <label><input type="radio" name="mcq3" value="D" class="mr-2">D. mine</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>4. ___ and I are going to the cinema tonight.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq4" value="A" class="mr-2">A. Him</label><br>
+                        <label><input type="radio" name="mcq4" value="B" class="mr-2">B. He</label><br>
+                        <label><input type="radio" name="mcq4" value="C" class="mr-2">C. His</label><br>
+                        <label><input type="radio" name="mcq4" value="D" class="mr-2">D. Himself</label>
+                    </div>
+                </div>
+                <!-- Mạo từ (2 câu) -->
+                <div class="question" data-answer="C">
+                    <label>5. ___ sun rises in the east every morning.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq5" value="A" class="mr-2">A. A</label><br>
+                        <label><input type="radio" name="mcq5" value="B" class="mr-2">B. An</label><br>
+                        <label><input type="radio" name="mcq5" value="C" class="mr-2">C. The</label><br>
+                        <label><input type="radio" name="mcq5" value="D" class="mr-2">D. Some</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>6. Would you like ___ apple?</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq6" value="A" class="mr-2">A. a</label><br>
+                        <label><input type="radio" name="mcq6" value="B" class="mr-2">B. an</label><br>
+                        <label><input type="radio" name="mcq6" value="C" class="mr-2">C. the</label><br>
+                        <label><input type="radio" name="mcq6" value="D" class="mr-2">D. some</label>
+                    </div>
+                </div>
+                <!-- Lượng từ (2 câu) -->
+                <div class="question" data-answer="B">
+                    <label>7. There are ___ students in my class.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq7" value="A" class="mr-2">A. much</label><br>
+                        <label><input type="radio" name="mcq7" value="B" class="mr-2">B. many</label><br>
+                        <label><input type="radio" name="mcq7" value="C" class="mr-2">C. a lot</label><br>
+                        <label><input type="radio" name="mcq7" value="D" class="mr-2">D. lots</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>8. She doesn't have ___ money.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq8" value="A" class="mr-2">A. some</label><br>
+                        <label><input type="radio" name="mcq8" value="B" class="mr-2">B. much</label><br>
+                        <label><input type="radio" name="mcq8" value="C" class="mr-2">C. many</label><br>
+                        <label><input type="radio" name="mcq8" value="D" class="mr-2">D. a</label>
+                    </div>
+                </div>
+                <!-- Sở hữu cách (2 câu) -->
+                <div class="question" data-answer="A">
+                    <label>9. This is ___ book. It belongs to me.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq9" value="A" class="mr-2">A. my</label><br>
+                        <label><input type="radio" name="mcq9" value="B" class="mr-2">B. mine</label><br>
+                        <label><input type="radio" name="mcq9" value="C" class="mr-2">C. me</label><br>
+                        <label><input type="radio" name="mcq9" value="D" class="mr-2">D. I</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>10. This is ___. It's very expensive.</label>
+                    <div class="ml-4 space-y-1">
+                        <label><input type="radio" name="mcq10" value="A" class="mr-2">A. John's car</label><br>
+                        <label><input type="radio" name="mcq10" value="B" class="mr-2">B. John car</label><br>
+                        <label><input type="radio" name="mcq10" value="C" class="mr-2">C. Johns' car</label><br>
+                        <label><input type="radio" name="mcq10" value="D" class="mr-2">D. car</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Phần 2: Điền từ -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 2: Điền từ (2 điểm) - Fill in the blanks (2 marks)</div>
+            <p class="mb-4">Điền từ thích hợp vào chỗ trống (Fill in the blanks with appropriate words):</p>
+            <div class="space-y-4">
+                <div class="question" data-answer="children">1. There are many <input type="text" name="blank1" class="border-b border-gray-400 w-24 px-1"> (child) playing in the park.</div>
+                <div class="question" data-answer="her">2. Please give this book to <input type="text" name="blank2" class="border-b border-gray-400 w-24 px-1"> (she/her).</div>
+                <div class="question" data-answer="the">3. <input type="text" name="blank3" class="border-b border-gray-400 w-24 px-1"> (A/An/The) moon is full tonight.</div>
+                <div class="question" data-answer="much">4. There is <input type="text" name="blank4" class="border-b border-gray-400 w-24 px-1"> (many/much) bread on the table.</div>
+                <div class="question" data-answer="my">5. This is <input type="text" name="blank5" class="border-b border-gray-400 w-24 px-1"> (my/mine) car.</div>
+            </div>
+        </div>
+        <!-- Phần 3: Tìm lỗi sai -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 3: Tìm lỗi sai (2 điểm) - Error Correction (2 marks)</div>
+            <p class="mb-4">Tìm lỗi sai và viết lại câu đúng (Find the error and rewrite the sentence correctly):</p>
+            <div class="space-y-4">
+                <div class="question" data-answer="There are two men in my family.">1. There are two mans in my family.<br>
+                    <input type="text" name="err1" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="He and I are going to the cinema.|I and he are going to the cinema.">2. Him and I are going to the cinema.<br>
+                    <input type="text" name="err2" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="I saw an elephant at the zoo.">3. I saw elephant at zoo.<br>
+                    <input type="text" name="err3" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="There is much milk in the fridge.">4. There is many milk in the fridge.<br>
+                    <input type="text" name="err4" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="The book is mine.">5. The book is my.<br>
+                    <input type="text" name="err5" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+            </div>
+        </div>
+        <!-- Phần 4: Điền từ vào đoạn văn -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 4: Điền từ vào đoạn văn (2 điểm) - Cloze Test (2 marks)</div>
+            <p class="mb-4">Điền từ thích hợp vào chỗ trống trong đoạn văn sau (Fill in the blanks with appropriate words):</p>
+            <p>
+                Yesterday, I went to <input type="text" name="cloze1" class="border-b border-gray-400 w-20 px-1" data-answer="the"> library to borrow some books. 
+                First, I picked up <input type="text" name="cloze2" class="border-b border-gray-400 w-20 px-1" data-answer="an"> interesting novel and <input type="text" name="cloze3" class="border-b border-gray-400 w-20 px-1" data-answer="a"> dictionary. Then I needed to get <input type="text" name="cloze4" class="border-b border-gray-400 w-20 px-1" data-answer="much"> information about <input type="text" name="cloze5" class="border-b border-gray-400 w-20 px-1" data-answer="the"> history project. The librarian was very helpful and showed me where to find everything.
+            </p>
+        </div>
+        <!-- Phần 5: Viết câu hoàn chỉnh -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 5: Viết câu hoàn chỉnh (2 điểm) - Sentence Writing (2 marks)</div>
+            <p class="mb-4">Viết câu hoàn chỉnh sử dụng từ/cụm từ gợi ý (Write complete sentences using the given words/phrases):</p>
+            <div class="space-y-4">
+                <div class="question" data-answer="she has many friends at school">1. She / have / many / friend / school.<br>
+                    <input type="text" name="sent1" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="please give the book to me">2. Please / give / book / to / I.<br>
+                    <input type="text" name="sent2" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="the sun is shining brightly today">3. Sun / shine / brightly / today.<br>
+                    <input type="text" name="sent3" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="we do not have any sugar in the kitchen|we don't have any sugar in the kitchen">4. We / not have / any / sugar / kitchen.<br>
+                    <input type="text" name="sent4" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+                <div class="question" data-answer="this is jerry's car">5. This / be / Jerry / car.<br>
+                    <input type="text" name="sent5" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-8 print:hidden">
+            <button type="button" onclick="gradeTest()" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 font-semibold">Nộp bài / Submit</button>
+        </div>
+        <div id="result" class="mt-8 text-center text-lg font-bold print:hidden" style="display:none"></div>
+        </form>
+    </div>
+    <script>
+    function gradeTest() {
+        let score = 0;
+        let total = 10 + 5 + 5 + 5 + 5; // MCQ + blank + err + cloze + sent
+        let form = document.forms['grammarTest'];
+        
+        // Reset all highlights
+        // MCQ
+        for(let i=1;i<=10;i++){
+            let radios = form[`mcq${i}`];
+            if (!radios) continue;
+            let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+            radioList.forEach(radio => {
+                radio.parentElement.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+            });
+        }
+        
+        // Inputs
+        let allInputs = form.querySelectorAll('input[type=text], input');
+        allInputs.forEach(input => {
+            input.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+        });
+
+        // MCQ
+        for(let i=1;i<=10;i++){
+            let questionDiv = form.querySelector(`input[name=mcq${i}]`).closest('.question');
+            let correctAnswer = questionDiv.getAttribute('data-answer');
+            let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+            radioList.forEach(radio => {
+                if(radio.checked){
+                    if(radio.value === correctAnswer){
+                        radio.parentElement.classList.add('bg-green-100','border-green-500','border-2');
+                        score++;
+                    } else {
+                        radio.parentElement.classList.add('bg-red-100','border-red-500','border-2');
+                    }
+                }
+            });
+        }
+        
+        // Fill in blank
+        let blankQuestions = form.querySelectorAll('.section:nth-child(2) .question');
+        blankQuestions.forEach((question, index) => {
+            let input = question.querySelector('input');
+            let correctAnswer = question.getAttribute('data-answer');
+            if(input.value.trim().toLowerCase() === correctAnswer.toLowerCase()){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Error correction
+        let errQuestions = form.querySelectorAll('.section:nth-child(3) .question');
+        errQuestions.forEach((question, index) => {
+            let input = question.querySelector('input');
+            let correctAnswers = question.getAttribute('data-answer').split('|');
+            let userAnswer = input.value.trim().toLowerCase();
+            let isCorrect = correctAnswers.some(answer => answer.toLowerCase() === userAnswer);
+            if(isCorrect){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Cloze
+        let clozeInputs = form.querySelectorAll('input[name^="cloze"]');
+        clozeInputs.forEach(input => {
+            let correctAnswer = input.getAttribute('data-answer');
+            if(input.value.trim().toLowerCase() === correctAnswer.toLowerCase()){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Sentence writing
+        let sentQuestions = form.querySelectorAll('.section:nth-child(5) .question');
+        sentQuestions.forEach((question, index) => {
+            let input = question.querySelector('input');
+            let correctAnswers = question.getAttribute('data-answer').split('|');
+            let userAnswer = input.value.trim().toLowerCase();
+            let isCorrect = correctAnswers.some(answer => answer.toLowerCase() === userAnswer);
+            if(isCorrect){
+                input.classList.add('bg-green-100','border-green-500','border-2'); 
+                score++;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        });
+        
+        // Show result
+        document.getElementById('result').style.display = '';
+        document.getElementById('result').innerHTML = `Điểm của bạn: <span class=\"text-blue-700\">${score} / 30</span>`;
+    }
+    </script>
+</body>
+</html>
