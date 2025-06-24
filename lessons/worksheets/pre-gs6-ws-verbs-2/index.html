@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS6 - Verbs - Part 2 - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Verb Forms - Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Part 1: Grammar Summary (Tóm tắt ngữ pháp)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">1. Adding -s/-es (Thêm s/es)</h4>
+                        <p class="text-gray-700 mb-3">For 3rd person singular in present simple tense</p>
+                        <p class="text-gray-700 mb-3">Dùng cho ngôi thứ 3 số ít ở thì hiện tại đơn</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Add -s: watch → watches</li>
+                            <li class="mb-1">Add -es after -s, -sh, -ch, -x, -o: go → goes</li>
+                            <li>Change y to i + es: study → studies</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">2. Adding -ing (Thêm ing)</h4>
+                        <p class="text-gray-700 mb-3">For present continuous and gerunds</p>
+                        <p class="text-gray-700 mb-3">Dùng cho thì hiện tại tiếp diễn và danh động từ</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Add -ing: play → playing</li>
+                            <li class="mb-1">Double consonant + ing: run → running</li>
+                            <li>Remove e + ing: take → taking</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">3. Modal Verbs (Động từ khiếm khuyết)</h4>
+                        <p class="text-gray-700 mb-3">Can (có thể), should (nên), must (phải) + động từ nguyễn mẫu không "to"</p>
+                        <p class="text-gray-700 mb-3">Không chia theo ngôi, không thêm -s/-es/-ing</p>
+                        <p class="text-gray-700 italic">Ví dụ: She can sing. You should study. We must go.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Part 2: Vocabulary (Từ vựng)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">animated film <span class="vocab-type">(n)</span> /ˈænɪmeɪtɪd fɪlm/</p>
+                        <p class="vocab-meaning">phim hoạt hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cartoon <span class="vocab-type">(n)</span> /kɑːˈtuːn/</p>
+                        <p class="vocab-meaning">phim hoạt hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">channel <span class="vocab-type">(n)</span> /ˈtʃænl/</p>
+                        <p class="vocab-meaning">kênh (truyền hình)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">character <span class="vocab-type">(n)</span> /ˈkærəktə/</p>
+                        <p class="vocab-meaning">nhân vật</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">clever <span class="vocab-type">(adj)</span> /ˈklevə/</p>
+                        <p class="vocab-meaning">khôn ngoan, thông minh</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">clip <span class="vocab-type">(n)</span> /klɪp/</p>
+                        <p class="vocab-meaning">đoạn phim ngắn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">comedy <span class="vocab-type">(n)</span> /ˈkɒmədi/</p>
+                        <p class="vocab-meaning">phim hài</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">compete <span class="vocab-type">(v)</span> /kəmˈpiːt/</p>
+                        <p class="vocab-meaning">thi đấu</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cute <span class="vocab-type">(adj)</span> /kjuːt/</p>
+                        <p class="vocab-meaning">xinh xắn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dolphin <span class="vocab-type">(n)</span> /ˈdɒlfɪn/</p>
+                        <p class="vocab-meaning">cá heo</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">educate <span class="vocab-type">(v)</span> /ˈedʒukeɪt/</p>
+                        <p class="vocab-meaning">giáo dục</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">educational <span class="vocab-type">(adj)</span> /ˌedʒuˈkeɪʃənl/</p>
+                        <p class="vocab-meaning">mang tính giáo dục</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">funny <span class="vocab-type">(adj)</span> /ˈfʌni/</p>
+                        <p class="vocab-meaning">buồn cười, ngộ nghĩnh</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">TV guide <span class="vocab-type">(n)</span> /ˌtiːˈviː ɡaɪd/</p>
+                        <p class="vocab-meaning">giới thiệu chương trình TV</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">live <span class="vocab-type">(adj)</span> /laɪv/</p>
+                        <p class="vocab-meaning">(truyền) trực tiếp</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">programme <span class="vocab-type">(n)</span> /ˈprəʊɡræm/</p>
+                        <p class="vocab-meaning">chương trình (truyền hình)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">talent show <span class="vocab-type">(n)</span> /ˈtælənt ʃəʊ/</p>
+                        <p class="vocab-meaning">cuộc thi tài năng trên truyền hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">viewer <span class="vocab-type">(n)</span> /ˈvjuːə/</p>
+                        <p class="vocab-meaning">người xem (TV)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Part 3: Basic Exercises (Bài tập cơ bản)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Exercise 1: Choose the correct verb form</h4>
+                            <p class="exercise-instruction">👉 Select the correct form of the verb in parentheses:</p>
+
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">1. She (watch/watches) cartoons every morning.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="watch" data-answer="watches" onclick="checkAnswer(this)">
+                                            <span>A. watch</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="watches" data-answer="watches" onclick="checkAnswer(this)">
+                                            <span>B. watches</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="watching" data-answer="watches" onclick="checkAnswer(this)">
+                                            <span>C. watching</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="watched" data-answer="watches" onclick="checkAnswer(this)">
+                                            <span>D. watched</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">2. They (compete/competes) in a talent show now.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="compete" data-answer="are competing" onclick="checkAnswer(this)">
+                                            <span>A. compete</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="competes" data-answer="are competing" onclick="checkAnswer(this)">
+                                            <span>B. competes</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="are competing" data-answer="are competing" onclick="checkAnswer(this)">
+                                            <span>C. are competing</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="competed" data-answer="are competing" onclick="checkAnswer(this)">
+                                            <span>D. competed</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">3. My brother can (sing/sings) very well.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="sing" data-answer="sing" onclick="checkAnswer(this)">
+                                            <span>A. sing</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="sings" data-answer="sing" onclick="checkAnswer(this)">
+                                            <span>B. sings</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="singing" data-answer="sing" onclick="checkAnswer(this)">
+                                            <span>C. singing</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="sang" data-answer="sing" onclick="checkAnswer(this)">
+                                            <span>D. sang</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">4. The dolphin (jump/jumps) out of the water.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="jump" data-answer="jumps" onclick="checkAnswer(this)">
+                                            <span>A. jump</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="jumps" data-answer="jumps" onclick="checkAnswer(this)">
+                                            <span>B. jumps</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="jumping" data-answer="jumps" onclick="checkAnswer(this)">
+                                            <span>C. jumping</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="jumped" data-answer="jumps" onclick="checkAnswer(this)">
+                                            <span>D. jumped</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">5. We should (watch/watches) educational programmes.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="watch" data-answer="watch" onclick="checkAnswer(this)">
+                                            <span>A. watch</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="watches" data-answer="watch" onclick="checkAnswer(this)">
+                                            <span>B. watches</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="watching" data-answer="watch" onclick="checkAnswer(this)">
+                                            <span>C. watching</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="watched" data-answer="watch" onclick="checkAnswer(this)">
+                                            <span>D. watched</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">6. You _____ finish your homework before playing games.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="can" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>A. can</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="should" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>B. should</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="must" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>C. must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="will" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>D. will</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">7. She _____ speak three languages fluently.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="can" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>A. can</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="must" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>B. must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="should" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>C. should</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="can" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>D. can</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 2: Fill in the blanks with the correct verb form</h4>
+                            <p class="exercise-instruction">👉 Use the verbs in parentheses in the correct form:</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">1. The clever dolphin ________ tricks for the viewers. (perform)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="performs" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">2. Right now, they ________ a funny cartoon. (watch)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="are watching" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">3. You must ________ the TV guide before choosing a programme. (read)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="read" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">4. She ________ educational clips every day. (study)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="studies" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">5. The characters in this animated film ________ very cute. (look)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="look" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">6. The talent show ________ at 8 PM tonight. (start)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="starts" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">7. We ________ live programmes on this channel. (enjoy)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="enjoy" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">8. The children ________ an animated film right now. (watch)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="are watching" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">9. You should ________ this comedy - it's very funny. (watch)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="watch" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">10. My sister ________ to compete in the talent show. (want)</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="wants" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Part 4: Advanced Exercises (Bài tập nâng cao)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 3: Correct the mistakes</h4>
+                            <p class="exercise-instruction">👉 Each sentence has one mistake with verb forms. Find and correct it:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. She cans swim very well.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She can swim very well." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. The children is watching a comedy now.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="The children are watching a comedy now." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. My father musts work late tonight.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="My father must work late tonight." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. This channel show live programmes.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="This channel shows live programmes." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. You should to watch this educational film.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="You should watch this educational film." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 4: Complete the sentences</h4>
+                            <p class="exercise-instruction">👉 Use the words in brackets to complete the sentences with the correct verb form:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. (dolphin / perform) The ________ tricks for the audience.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="dolphin performs" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. (children / watch) Right now, the ________ an animated film.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="children are watching" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. (we / should / educate) ________ ourselves by watching good programmes.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="We should educate" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. (character / look) The main ________ very funny.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="character looks" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. (they / compete) ________ in a talent show next week.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="They will compete" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 5: Writing Practice</h4>
+                            <p class="exercise-instruction">👉 Write sentences using the given words and the correct verb forms:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. (I / watch / cartoon / every day)</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. (She / can / sing / very well)</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. (We / should / read / TV guide)</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. (The dolphin / perform / now)</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. (This channel / show / educational programmes)</span>
+                                    <input type="text" class="answer-input flex-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">5</span>
+                        </div>
+                        <h3 class="section-title">Part 5: Extra Exercises (Bài tập thêm)</h3>
+                    </div>
+                    <div class="exercise-container w-full">
+                        <div class="flex items-start mb-4 w-full">
+                            <div class="w-full">
+                                <h4 class="exercise-title">Exercise 6: Verb Form Conversion</h4>
+                                <p class="exercise-instruction">👉 Complete the table with the correct verb forms:</p>
+
+                                <div class="overflow-x-auto">
+                                    <table class="w-full border-collapse border border-gray-300">
+                                        <thead>
+                                            <tr class="bg-gray-100">
+                                                <th class="border border-gray-300 px-3 py-0 text-left font-medium">Bare Infinitive</th>
+                                                <th class="border border-gray-300 px-3 py-0 text-left font-medium">3rd Person Singular (-s/-es)</th>
+                                                <th class="border border-gray-300 px-3 py-0 text-left font-medium">-ing Form</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">1. watch</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="watches" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="watching" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">2. play</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="plays" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="playing" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">3. study</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="studies" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="studying" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">4. go</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="goes" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="going" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">5. run</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="runs" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="running" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">6. take</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="takes" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="taking" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">7. write</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="writes" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="writing" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">8. dance</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="dances" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="dancing" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">9. swim</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="swims" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="swimming" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">10. sing</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="sings" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="singing" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">11. read</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="reads" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="reading" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">12. speak</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="speaks" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="speaking" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">13. eat</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="eats" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="eating" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">14. sleep</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="sleeps" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="sleeping" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">15. work</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="works" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="working" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">16. help</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="helps" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="helping" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">17. learn</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="learns" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="learning" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">18. teach</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="teaches" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="teaching" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">19. catch</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="catches" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="catching" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border border-gray-300 px-3 py-0">20. wash</td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="washes" onblur="checkAnswer(this)">
+                                                </td>
+                                                <td class="border border-gray-300 px-3 py-0">
+                                                    <input type="text" class="answer-input w-full" data-answer="washing" onblur="checkAnswer(this)">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            console.log(userAnswer, correctAnswer);
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer && radio.checked) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+    </script>
+</body>
+
+</html>
