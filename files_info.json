@@ -196,20 +196,6 @@
       "description": "Wish + Past Simple (Wish loại 2)",
       "category": "worksheets"
     },
-    "worksheets/pre - gs8 - review verb form": {
-      "path": "worksheets/pre - gs8 - review verb form",
-      "title": "Pre GS8 - Review verb form \\'96 \\'d4n T\\uc0\\u7853 p",
-      "author": "Gen8",
-      "description": "Không có mô tả.",
-      "category": "worksheets"
-    },
-    "worksheets/pre - gs8 - review tense ": {
-      "path": "worksheets/pre - gs8 - review tense ",
-      "title": "Pre   Gs8   Review Tense ",
-      "author": "Gen8",
-      "description": "Không có mô tả.",
-      "category": "worksheets"
-    },
     "worksheets/pre-gs7-quantifiers": {
       "path": "worksheets/pre-gs7-quantifiers",
       "title": "Pre GS7 - Lượng từ (Quantifiers)",
@@ -222,6 +208,20 @@
       "title": "Pre GS9 - Past Simple and Past Continuous",
       "author": "Gen8",
       "description": "Quá Khứ Đơn & Quá Khứ Tiếp Diễn",
+      "category": "worksheets"
+    },
+    "worksheets/pre - gs8 - review tense 1": {
+      "path": "worksheets/pre - gs8 - review tense 1",
+      "title": "Pre   Gs8   Review Tense 1",
+      "author": "Gen8",
+      "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre - gs8 - review - verb form 2": {
+      "path": "worksheets/pre - gs8 - review - verb form 2",
+      "title": "Pre GS8 - Review verb form 2  \\'96 \\'d4n T\\uc0\\u7853 p",
+      "author": "Gen8",
+      "description": "Không có mô tả.",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-articles": {
@@ -243,6 +243,13 @@
       "title": "Pre GS9 - Present Perfect Tense",
       "author": "Gen8",
       "description": "Present Perfect Tense",
+      "category": "worksheets"
+    },
+    "worksheets/pre - gs8 - review tense 2": {
+      "path": "worksheets/pre - gs8 - review tense 2",
+      "title": "Pre GS8 - review tense - Worksheets 1",
+      "author": "ngọc diệp",
+      "description": "Review Tense",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-personal-pronouns": {
@@ -278,6 +285,13 @@
       "title": "Pre Gs6 - Danh từ (Nouns) - Part 2",
       "author": "Gen8",
       "description": "Danh Từ (Nouns) - Phần 2: Bất quy tắc & Đếm được/Không đếm được",
+      "category": "worksheets"
+    },
+    "worksheets/pre - gs8 - review verb form 1": {
+      "path": "worksheets/pre - gs8 - review verb form 1",
+      "title": "Pre GS8 - Review verb form \\'96 \\'d4n T\\uc0\\u7853 p",
+      "author": "Gen8",
+      "description": "Không có mô tả.",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-articles": {

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verb To Be - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .print-only {
+                display: block !important;
+            }
+            
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            .highlight {
+                background-color: #fef08a !important;
+            }
+            
+            .correct {
+                color: #16a34a !important;
+            }
+            
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+        
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+        
+        .correct {
+            color: #16a34a;
+        }
+        
+        .incorrect {
+            color: #dc2626;
+        }
+        
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+        
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+        
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+        
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+        
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+        
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+            
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 0.875rem;
+            }
+            
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Verb To Be - am/is/are/was/were</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+                
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date: _______________</p>
+            </div>
+            
+            <!-- Grammar Summary -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Grammar Summary</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">Present Simple (am/is/are)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1"><span class="font-bold">I am</span> a student.</li>
+                            <li class="mb-1"><span class="font-bold">He/She/It is</span> at home.</li>
+                            <li class="mb-1"><span class="font-bold">You/We/They are</span> happy.</li>
+                            <li>Used for present time and permanent states</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">Past Simple (was/were)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1"><span class="font-bold">I/He/She/It was</span> at school.</li>
+                            <li class="mb-1"><span class="font-bold">You/We/They were</span> friends.</li>
+                            <li class="mb-1">Used for completed actions in the past</li>
+                            <li class="mb-1"><span class="font-bold">Công thức:</span></li>
+                            <li class="mb-1">(+) S + was/were + ...</li>
+                            <li class="mb-1">(-) S + was/were + not + ...</li>
+                            <li class="mb-1">(?) Was/Were + S + ...?</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">Negative Forms</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Add <span class="font-bold">not</span> after the verb</li>
+                            <li>I <span class="font-bold">am not</span> tired. / She <span class="font-bold">was not</span> (wasn't) there.</li>
+                            <li>They <span class="font-bold">are not</span> (aren't) students.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">Questions</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Was / Were + S + ...?</li>
+                            <li class="mb-1">Was she your teacher? → Yes, she was. / No, she wasn't.</li>
+                            <li class="mb-1">Were they at school? → Yes, they were. / No, they weren't.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exercise 1: Gap Filling -->
+            <div class="mb-4">
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Điền was hoặc were vào chỗ trống</h4>
+                            <p class="exercise-instruction">Fill in the blanks with was or were</p>
+                            
+                            <div class="grid grid-cols-1 gap-y-4">
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">1.</span>
+                                    <span class="text-gray-700">Yesterday, it <input type="text" class="answer-input" data-answer="was" onblur="checkAnswer(this)"> sunny.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">2.</span>
+                                    <span class="text-gray-700">I <input type="text" class="answer-input" data-answer="was" onblur="checkAnswer(this)"> at home last night.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">3.</span>
+                                    <span class="text-gray-700">They <input type="text" class="answer-input" data-answer="were" onblur="checkAnswer(this)"> not at school yesterday.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">4.</span>
+                                    <span class="text-gray-700">We <input type="text" class="answer-input" data-answer="were" onblur="checkAnswer(this)"> in the park last Sunday.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">5.</span>
+                                    <span class="text-gray-700">She <input type="text" class="answer-input" data-answer="was" onblur="checkAnswer(this)"> my best friend when we were kids.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">6.</span>
+                                    <span class="text-gray-700">There <input type="text" class="answer-input" data-answer="were" onblur="checkAnswer(this)"> many people at the party last night.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">7.</span>
+                                    <span class="text-gray-700">I <input type="text" class="answer-input" data-answer="was" onblur="checkAnswer(this)"> very busy last week.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">8.</span>
+                                    <span class="text-gray-700">The weather <input type="text" class="answer-input" data-answer="was" onblur="checkAnswer(this)"> cold yesterday.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">9.</span>
+                                    <span class="text-gray-700">My parents <input type="text" class="answer-input" data-answer="were" onblur="checkAnswer(this)"> in Da Nang last summer.</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">10.</span>
+                                    <span class="text-gray-700">He <input type="text" class="answer-input" data-answer="was" onblur="checkAnswer(this)"> my neighbor when I was a child.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exercise 2: Multiple Choice -->
+            <div class="mb-4">
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Chọn đáp án đúng</h4>
+                            <p class="exercise-instruction">Choose the correct answer (a, b, or c)</p>
+                            
+                            <div class="grid grid-cols-1 gap-y-4">
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">1.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">He ______ at the party last night.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q1" class="radio-input" value="a" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>a) is</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q1" class="radio-input" value="b" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>b) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q1" class="radio-input" value="c" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>c) were</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">2.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">They ______ in London last year.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q2" class="radio-input" value="a" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>a) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q2" class="radio-input" value="b" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>b) were</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q2" class="radio-input" value="c" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>c) are</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">3.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">I ______ at the cinema yesterday.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q3" class="radio-input" value="a" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>a) am</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q3" class="radio-input" value="b" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>b) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q3" class="radio-input" value="c" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>c) were</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">4.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">She ______ happy last weekend.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q4" class="radio-input" value="a" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>a) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q4" class="radio-input" value="b" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>b) were</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q4" class="radio-input" value="c" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>c) is</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">5.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">You ______ at home last Monday.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q5" class="radio-input" value="a" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>a) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q5" class="radio-input" value="b" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>b) were</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q5" class="radio-input" value="c" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>c) is</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">6.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">It ______ very hot last summer.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q6" class="radio-input" value="a" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>a) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q6" class="radio-input" value="b" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>b) is</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q6" class="radio-input" value="c" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>c) were</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">7.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">We ______ students three years ago.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q7" class="radio-input" value="a" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>a) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q7" class="radio-input" value="b" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>b) were</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q7" class="radio-input" value="c" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>c) are</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">8.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">My father ______ a teacher before.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q8" class="radio-input" value="a" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>a) is</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q8" class="radio-input" value="b" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>b) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q8" class="radio-input" value="c" data-answer="b" onclick="checkAnswer(this)">
+                                                <span>c) were</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">9.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">The children ______ in the garden yesterday.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q9" class="radio-input" value="a" data-answer="c" onclick="checkAnswer(this)">
+                                                <span>a) is</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q9" class="radio-input" value="b" data-answer="c" onclick="checkAnswer(this)">
+                                                <span>b) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q9" class="radio-input" value="c" data-answer="c" onclick="checkAnswer(this)">
+                                                <span>c) were</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">10.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">There ______ a cat on the roof last night.</p>
+                                        <div class="radio-group">
+                                            <label class="radio-label">
+                                                <input type="radio" name="q10" class="radio-input" value="a" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>a) was</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q10" class="radio-input" value="b" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>b) were</span>
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="q10" class="radio-input" value="c" data-answer="a" onclick="checkAnswer(this)">
+                                                <span>c) is</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exercise 3: Negative Forms -->
+            <div class="mb-4">
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 3: Viết lại câu sau ở dạng phủ định</h4>
+                            <p class="exercise-instruction">Rewrite the sentences in negative form</p>
+                            
+                            <div class="grid grid-cols-1 gap-y-4">
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">1.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">I was at school yesterday. → <input type="text" class="answer-input flex-1" data-answer="I was not at school yesterday." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">2.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">They were in the library. → <input type="text" class="answer-input flex-1" data-answer="They were not in the library." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">3.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">She was my teacher. → <input type="text" class="answer-input flex-1" data-answer="She was not my teacher." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">4.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">It was cold last night. → <input type="text" class="answer-input flex-1" data-answer="It was not cold last night." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">5.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">We were late. → <input type="text" class="answer-input flex-1" data-answer="We were not late." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">6.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">He was at home last Sunday. → <input type="text" class="answer-input flex-1" data-answer="He was not at home last Sunday." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">7.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">The weather was bad yesterday. → <input type="text" class="answer-input flex-1" data-answer="The weather was not bad yesterday." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">8.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">There was a dog in the garden. → <input type="text" class="answer-input flex-1" data-answer="There was not a dog in the garden." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">9.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">We were tired after the trip. → <input type="text" class="answer-input flex-1" data-answer="We were not tired after the trip." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">10.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">You were at the cinema yesterday. → <input type="text" class="answer-input flex-1" data-answer="You were not at the cinema yesterday." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exercise 4: Find and Correct Mistakes -->
+            <div class="mb-4">
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 4: Tìm lỗi sai và viết lại câu đúng</h4>
+                            <p class="exercise-instruction">Find the mistakes and write the correct sentences</p>
+                            
+                            <div class="grid grid-cols-1 gap-y-4">
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">1.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">They was at the zoo yesterday.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="They were at the zoo yesterday." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">2.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">She were my teacher last year.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="She was my teacher last year." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">3.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">We was very tired after the trip.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="We were very tired after the trip." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">4.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">I were at home last night.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="I was at home last night." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">5.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">There were a cat on the bed.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="There was a cat on the bed." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">6.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">My parents was doctors when they were young.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="My parents were doctors when they were young." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">7.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">He were at school this morning.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="He was at school this morning." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">8.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">The weather were very hot yesterday.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="The weather was very hot yesterday." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">9.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">You was very friendly to me.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="You were very friendly to me." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <span class="w-8 text-gray-700 text-right mr-2">10.</span>
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 mb-2">The children was in the garden.</p>
+                                        <p class="text-gray-700">→ <input type="text" class="answer-input flex-1" data-answer="The children were in the garden." onblur="checkAnswer(this)"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exercise 5: Fill in Was/Were for Questions -->
+            <div class="mb-4">
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 5: Điền "Was" hoặc "Were" vào chỗ trống</h4>
+                            <p class="exercise-instruction">Fill in "Was" or "Were" in the blanks</p>
+                            
+                            <div class="grid grid-cols-1 gap-y-2">
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">1.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Was" onblur="checkAnswer(this)"> she at home yesterday?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">2.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Were" onblur="checkAnswer(this)"> they your classmates last year?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">3.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Were" onblur="checkAnswer(this)"> you tired after the trip?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">4.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Was" onblur="checkAnswer(this)"> it sunny last Sunday?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">5.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Was" onblur="checkAnswer(this)"> your father a doctor?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">6.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Were" onblur="checkAnswer(this)"> we late for the meeting?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">7.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Was" onblur="checkAnswer(this)"> he at the library this morning?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">8.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Was" onblur="checkAnswer(this)"> there a dog in the garden?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">9.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Were" onblur="checkAnswer(this)"> the students in the classroom?</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-8 text-gray-700 text-right mr-2">10.</span>
+                                    <span class="text-gray-700"><input type="text" class="answer-input" data-answer="Were" onblur="checkAnswer(this)"> you at the party last night?</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+        
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const label = radio.nextElementSibling;
+                    // Reset all labels first
+                    label.classList.remove('text-green-600', 'text-red-600', 'font-bold');
+                    
+                    // If this is the selected answer
+                    if (radio.checked) {
+                        if (radio.value === correctAnswer) {
+                            label.classList.add('text-green-600', 'font-bold');
+                        } else {
+                            label.classList.add('text-red-600', 'font-bold');
+                        }
+                    }
+                });
+                return;
+            }
+            
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+    </script>
+</body>
+</html>
