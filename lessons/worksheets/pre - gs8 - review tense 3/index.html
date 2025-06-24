@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Worksheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .correct-answer {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .exercise-container {
+            transition: all 0.3s ease;
+        }
+        .exercise-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .answer-input {
+            border-bottom: 2px solid #d1d5db;
+            padding-bottom: 2px;
+            width: 100px;
+            text-align: center;
+        }
+        .answer-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-700 mb-2">English Grammar Worksheet</h1>
+            <p class="text-gray-600">Practice your verb tenses with these exercises</p>
+            <div class="w-20 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <div class="grid gap-8">
+            <!-- Section I: Multiple Choice -->
+            <div class="exercise-container bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                        <span>I</span>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800">Multiple Choice</h2>
+                </div>
+                <p class="text-gray-600 mb-4">Choose the best answer A, B, C, or D.</p>
+                
+                <div class="space-y-4">
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">1. I often __________ badminton with my friends after school.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" class="mr-2"> A. plays
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" class="mr-2"> B. playing
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" class="mr-2"> C. play
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q1" class="mr-2"> D. played
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">2. Yesterday, they __________ to the countryside to do volunteer work.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" class="mr-2"> A. go
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" class="mr-2"> B. went
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" class="mr-2"> C. are going
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q2" class="mr-2"> D. will go
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">3. My parents __________ their car now.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" class="mr-2"> A. wash
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" class="mr-2"> B. are washing
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" class="mr-2"> C. washed
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q3" class="mr-2"> D. will wash
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">4. Look! The children __________ in the school yard.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" class="mr-2"> A. play
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" class="mr-2"> B. are playing
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" class="mr-2"> C. will play
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q4" class="mr-2"> D. played
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">5. I think robots __________ many things for us in the future.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" class="mr-2"> A. do
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" class="mr-2"> B. did
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" class="mr-2"> C. will do
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="q5" class="mr-2"> D. are doing
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section II: Fill in the blanks -->
+            <div class="exercise-container bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                        <span>II</span>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800">Fill in the blanks</h2>
+                </div>
+                <p class="text-gray-600 mb-4">Fill in the blanks with the correct form of the verbs in brackets.</p>
+                
+                <div class="space-y-4">
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">1. She always <input type="text" class="answer-input" placeholder="(arrive)"> at the office by 8 AM.</p>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">2. Last summer, we <input type="text" class="answer-input" placeholder="(go)"> on a memorable road trip across the country.</p>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">3. My family <input type="text" class="answer-input" placeholder="(enjoy)"> spending time together on weekends.</p>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">4. <input type="text" class="answer-input" placeholder="(Do)"> you <input type="text" class="answer-input" placeholder="(enjoy)"> the concert last night?</p>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p class="font-medium">5. She <input type="text" class="answer-input" placeholder="(read)"> an interesting novel yesterday evening.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section III: Choose the correct answer -->
+            <div class="exercise-container bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                        <span>III</span>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800">Fill in the correct form</h2>
+                </div>
+                <p class="text-gray-600 mb-4">Fill in the blanks with the correct form of the verbs.</p>
+                
+                <div class="space-y-4" id="fill-correct-form-section">
+                    <div class="question p-3 hover:bg-gray-50 rounded flex items-center flex-wrap">
+                        <span class="mr-2">1. We</span>
+                        <div class="options flex gap-4 mr-2">
+                            <label class="flex items-center"><input type="radio" name="fill1" value="study" class="mr-1"> study</label>
+                            <label class="flex items-center"><input type="radio" name="fill1" value="studied" class="mr-1"> studied</label>
+                        </div>
+                        <span>English every day.</span>
+                    </div>
+                    <div class="question p-3 hover:bg-gray-50 rounded flex items-center flex-wrap">
+                        <span class="mr-2">2. He</span>
+                        <div class="options flex gap-4 mr-2">
+                            <label class="flex items-center"><input type="radio" name="fill2" value="finishes" class="mr-1"> finishes</label>
+                            <label class="flex items-center"><input type="radio" name="fill2" value="finished" class="mr-1"> finished</label>
+                        </div>
+                        <span>his homework yesterday.</span>
+                    </div>
+                    <div class="question p-3 hover:bg-gray-50 rounded flex items-center flex-wrap">
+                        <span class="mr-2">3. She</span>
+                        <div class="options flex gap-4 mr-2">
+                            <label class="flex items-center"><input type="radio" name="fill3" value="cooked" class="mr-1"> cooked</label>
+                            <label class="flex items-center"><input type="radio" name="fill3" value="cooks" class="mr-1"> cooks</label>
+                        </div>
+                        <span>a delicious meal for us last night.</span>
+                    </div>
+                    <div class="question p-3 hover:bg-gray-50 rounded flex items-center flex-wrap">
+                        <span class="mr-2">4. She</span>
+                        <div class="options flex gap-4 mr-2">
+                            <label class="flex items-center"><input type="radio" name="fill4" value="likes" class="mr-1"> likes</label>
+                            <label class="flex items-center"><input type="radio" name="fill4" value="liked" class="mr-1"> liked</label>
+                        </div>
+                        <span>reading books in her free time.</span>
+                    </div>
+                    <div class="question p-3 hover:bg-gray-50 rounded flex items-center flex-wrap">
+                        <span class="mr-2">5. They</span>
+                        <div class="options flex gap-4 mr-2">
+                            <label class="flex items-center"><input type="radio" name="fill5" value="watch" class="mr-1"> watch</label>
+                            <label class="flex items-center"><input type="radio" name="fill5" value="watched" class="mr-1"> watched</label>
+                        </div>
+                        <span>the news every morning.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading Comprehension -->
+            <div class="exercise-container bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800">Reading Comprehension</h2>
+                </div>
+                <p class="text-gray-600 mb-4">Choose the best answer (A, B, C or D) to complete the passage.</p>
+                
+                <div class="bg-gray-50 p-4 rounded mb-6">
+                    <p class="italic text-gray-700 mb-4">My name is Linh and I have a wonderful family. Every weekend, we often do things together. My father loves gardening, so he usually (1) __________ flowers and vegetables in the garden. My mother enjoys cooking, and she (2) __________ delicious meals for the family. My brother and I often help with the housework. Yesterday, we (3) __________ the living room and cleaned all the windows. Next weekend, we (4) __________ a picnic by the lake. I think spending time with family is the (5) __________ way to relax after a busy week.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>1. My father loves gardening, so he usually __________ flowers and vegetables in the garden.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="radio" name="reading1" class="mr-2"> A. plant</label>
+                            <label class="flex items-center"><input type="radio" name="reading1" class="mr-2"> B. plants</label>
+                            <label class="flex items-center"><input type="radio" name="reading1" class="mr-2"> C. planted</label>
+                            <label class="flex items-center"><input type="radio" name="reading1" class="mr-2"> D. planting</label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>2. My mother enjoys cooking, and she __________ delicious meals for the family.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="radio" name="reading2" class="mr-2"> A. cook</label>
+                            <label class="flex items-center"><input type="radio" name="reading2" class="mr-2"> B. cooked</label>
+                            <label class="flex items-center"><input type="radio" name="reading2" class="mr-2"> C. is cooking</label>
+                            <label class="flex items-center"><input type="radio" name="reading2" class="mr-2"> D. cooks</label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>3. Yesterday, we __________ the living room and cleaned all the windows.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="radio" name="reading3" class="mr-2"> A. tidy</label>
+                            <label class="flex items-center"><input type="radio" name="reading3" class="mr-2"> B. tidies</label>
+                            <label class="flex items-center"><input type="radio" name="reading3" class="mr-2"> C. tidied</label>
+                            <label class="flex items-center"><input type="radio" name="reading3" class="mr-2"> D. will tidy</label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>4. Next weekend, we __________ a picnic by the lake.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="radio" name="reading4" class="mr-2"> A. have</label>
+                            <label class="flex items-center"><input type="radio" name="reading4" class="mr-2"> B. are having</label>
+                            <label class="flex items-center"><input type="radio" name="reading4" class="mr-2"> C. had</label>
+                            <label class="flex items-center"><input type="radio" name="reading4" class="mr-2"> D. will have</label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>5. I think spending time with family is the __________ way to relax after a busy week.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="radio" name="reading5" class="mr-2"> A. good</label>
+                            <label class="flex items-center"><input type="radio" name="reading5" class="mr-2"> B. best</label>
+                            <label class="flex items-center"><input type="radio" name="reading5" class="mr-2"> C. better</label>
+                            <label class="flex items-center"><input type="radio" name="reading5" class="mr-2"> D. the good</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section IV: Find the mistake in each sentence -->
+            <div class="exercise-container bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                        <span>IV</span>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-800">Find the mistake in each sentence</h2>
+                </div>
+                <p class="text-gray-600 mb-4">Choose the underlined word or phrase that is incorrect.</p>
+                
+                <div class="space-y-4">
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>1. I don't like drinking coffee because it make me feel sleepy.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake1" class="mr-2"> A. don't
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake1" class="mr-2"> B. because
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake1" class="mr-2"> C. make
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake1" class="mr-2"> D. feel
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>2. She usually go to school by bus in the morning.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake2" class="mr-2"> A. usually
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake2" class="mr-2"> B. go
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake2" class="mr-2"> C. to
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake2" class="mr-2"> D. in
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>3. My brother did not went to the party last night because he was sick.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake3" class="mr-2"> A. did
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake3" class="mr-2"> B. last
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake3" class="mr-2"> C. because
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake3" class="mr-2"> D. went
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>4. Are they going to the cinema yesterday?</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake4" class="mr-2"> A. Are
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake4" class="mr-2"> B. to
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake4" class="mr-2"> C. the
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake4" class="mr-2"> D. yesterday
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question p-3 hover:bg-gray-50 rounded">
+                        <p>5. My parents often drinks tea in the morning.</p>
+                        <div class="options mt-2 ml-4 grid grid-cols-2 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake5" class="mr-2"> A. drinks
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake5" class="mr-2"> B. tea
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake5" class="mr-2"> C. often
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="mistake5" class="mr-2"> D. in
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="submit-fill-correct-form" class="mt-8 px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 block mx-auto">Submit</button>
+        <div id="fill-correct-form-result" class="mt-4 text-lg font-semibold text-center"></div>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>© 2023 English Grammar Worksheet. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="#" class="text-indigo-600 hover:text-indigo-800"><i class="fas fa-print"></i> Print</a>
+                <a href="#" class="text-indigo-600 hover:text-indigo-800"><i class="fas fa-share-alt"></i> Share</a>
+                <a href="#" class="text-indigo-600 hover:text-indigo-800"><i class="fas fa-download"></i> Download</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight correct answers when clicked
+            const correctAnswers = document.querySelectorAll('.correct-answer');
+            correctAnswers.forEach(answer => {
+                answer.addEventListener('click', function() {
+                    this.classList.toggle('bg-green-100');
+                });
+            });
+
+            // Add focus styles to answer inputs
+            const answerInputs = document.querySelectorAll('.answer-input');
+            answerInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('bg-blue-50');
+                });
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('bg-blue-50');
+                });
+            });
+
+            // Đáp án đúng cho từng câu
+            const fillCorrectAnswers = {
+                fill1: 'study',
+                fill2: 'finished',
+                fill3: 'cooked',
+                fill4: 'likes',
+                fill5: 'watch'
+            };
+
+            // Xử lý khi nhấn nút Submit
+            const submitBtn = document.getElementById('submit-fill-correct-form');
+            if (submitBtn) {
+                submitBtn.onclick = function() {
+                    let correct = 0;
+                    let total = 5;
+                    let feedback = '';
+                    for (let i = 1; i <= total; i++) {
+                        const selected = document.querySelector('input[name="fill' + i + '"]:checked');
+                        if (selected) {
+                            if (selected.value === fillCorrectAnswers['fill' + i]) {
+                                correct++;
+                                feedback += `<div>Câu ${i}: <span style='color:green'>Đúng</span></div>`;
+                            } else {
+                                feedback += `<div>Câu ${i}: <span style='color:red'>Sai</span> (Đáp án đúng: <b>${fillCorrectAnswers['fill' + i]}</b>)</div>`;
+                            }
+                        } else {
+                            feedback += `<div>Câu ${i}: <span style='color:orange'>Chưa chọn đáp án</span> (Đáp án đúng: <b>${fillCorrectAnswers['fill' + i]}</b>)</div>`;
+                        }
+                    }
+                    document.getElementById('fill-correct-form-result').innerHTML =
+                        `Kết quả: <b>${correct}/${total}</b> câu đúng.<br>` + feedback;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
