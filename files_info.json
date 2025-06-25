@@ -63,11 +63,11 @@
       "description": "Lượng từ some, many, much, a lot of, lots of. Cách sử dụng lượng từ với danh từ đếm được và không đếm được, vị trí trong câu",
       "category": "slides"
     },
-    "slides/programming-introduction": {
-      "path": "slides/programming-introduction",
-      "title": "Giới thiệu về lập trình",
+    "slides/pre-gs6-adjectives-1": {
+      "path": "slides/pre-gs6-adjectives-1",
+      "title": "Pre GS6 - Adjectives Part 1 (Tính từ phần 1)",
       "author": "Gen8",
-      "description": "Giới thiệu về lập trình",
+      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ mô tả.",
       "category": "slides"
     },
     "slides/pre-gs8-simple-sentences": {
@@ -215,6 +215,13 @@
       "title": "Pre GS9 - Wish + Past Simple",
       "author": "Gen8",
       "description": "Wish + Past Simple (Wish loại 2)",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-ws-adjectives-1": {
+      "path": "worksheets/pre-gs6-ws-adjectives-1",
+      "title": "Pre GS6 - Adjectives Part 1 (Tính từ phần 1)",
+      "author": "Gen8",
+      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ mô tả.",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-quantifiers": {
