@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS8: Simple Future Tense</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Don't change the script here
+        function adjustFontSize() {
+            const screenWidth = window.innerWidth;
+            const htmlElement = document.documentElement;
+
+            if (screenWidth <= 768) { // Mobile breakpoint
+                htmlElement.style.fontSize = '20px';
+            } else {
+                // Scale font size based on screen width, with 30px at 1680px width
+                const scaleFactor = screenWidth / 1680;
+                const fontSize = Math.max(20, Math.min(30, 30 * scaleFactor));
+                htmlElement.style.fontSize = `${fontSize}px`;
+            }
+        }
+
+        function showZoomInstructions() {
+            // Check if it's a mobile device
+            if (window.innerWidth <= 768) {
+                return;
+            }
+
+            if (localStorage.getItem('hideZoomInstructions')) {
+                return;
+            }
+
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.95);
+                background: white;
+                padding: 25px;
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                z-index: 1000;
+                max-width: 90%;
+                width: 400px;
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+
+            popup.innerHTML = `
+                <div style="
+                    text-align: center;
+                    margin-bottom: 20px;
+                ">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 15px;">
+                        <path d="M15 3H21V9" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 21H3V15" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 3L14 10" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 21L10 14" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 style="
+                        margin: 0 0 15px 0;
+                        color: #1f2937;
+                        font-size: 25px;
+                        font-weight: 600;
+                    ">Hướng dẫn phóng to/thu nhỏ</h3>
+                </div>
+                <div style="
+                    background: #f3f4f6;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                ">
+                    <p style="
+                        margin: 0;
+                        color: #4b5563;
+                        font-size: 20px;
+                        line-height: 1.6;
+                    ">
+                        Bạn có thể sử dụng tổ hợp phím sau để phóng to/thu nhỏ nội dung cho phù hợp với màn hình của bạn:
+                    </p>
+                    <div style="
+                        margin-top: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    ">
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Windows</span>
+                            <span style="color: #4b5563;">Ctrl + (+/-)</span>
+                        </div>
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Mac</span>
+                            <span style="color: #4b5563;">Command + (+/-)</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="dismissPopup" style="
+                    background: #4f46e5;
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    font-size: 15px;
+                    font-weight: 500;
+                    transition: background-color 0.2s ease;
+                ">Không hiển thị lại</button>
+            `;
+
+            document.body.appendChild(popup);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                popup.style.transform = 'translate(-50%, -50%) scale(1)';
+                popup.style.opacity = '1';
+            });
+
+            // Add hover effect to button
+            const button = document.getElementById('dismissPopup');
+            button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = '#4338ca';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = '#4f46e5';
+            });
+
+            button.addEventListener('click', () => {
+                popup.style.transform = 'translate(-50%, -50%) scale(0.95)';
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    localStorage.setItem('hideZoomInstructions', 'true');
+                    popup.remove();
+                }, 300);
+            });
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            adjustFontSize();
+            showZoomInstructions();
+        });
+
+        // Run when window is resized
+        window.addEventListener('resize', adjustFontSize);
+    </script>
+
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+        }
+
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .future-image {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .calendar-icon {
+            width: 80px;
+            height: 80px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .rainbow-text {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50 min-h-screen flex items-center justify-center p-2">
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-700">Nội dung bài học</h2>
+                    <button onclick="toggleOutline()" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose prose-lg max-w-none">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4">Thì Tương Lai Đơn (Simple Future Tense)</h3>
+                    
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(0)">
+                        <h4 class="text-lg font-bold text-indigo-500">1. Giới thiệu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Mục tiêu bài học:
+                                <ul class="list-disc pl-6 mt-2">
+                                    <li>Hiểu sâu về cách dùng thì tương lai đơn</li>
+                                    <li>Nắm vững cấu trúc và quy tắc ngữ pháp</li>
+                                    <li>Phân biệt các trường hợp sử dụng</li>
+                                    <li>Áp dụng vào các tình huống thực tế</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(1)">
+                        <h4 class="text-lg font-bold text-indigo-500">2. Cách dùng Thì Tương Lai Đơn</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Diễn tả hành động sẽ xảy ra trong tương lai</li>
+                            <li>Dự đoán dựa trên kinh nghiệm hoặc bằng chứng</li>
+                            <li>Diễn tả lời hứa, đề nghị hoặc quyết định tức thì</li>
+                            <li>Mẹo nhớ: Hình ảnh "chiếc đồng hồ" liên tưởng đến tương lai</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(2)">
+                        <h4 class="text-lg font-bold text-indigo-500">3. Công thức Thì Tương Lai Đơn</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Khẳng định: S + will + V (nguyên thể)</li>
+                            <li>Phủ định: S + will not (won't) + V</li>
+                            <li>Nghi vấn: Will + S + V?</li>
+                            <li>Lưu ý: "Will" dùng với mọi chủ ngữ, sau "will" là động từ nguyên thể không "to"</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(3)">
+                        <h4 class="text-lg font-bold text-indigo-500">4. Dấu hiệu nhận biết</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Tomorrow (ngày mai)</li>
+                            <li>Next (week/month/year)</li>
+                            <li>In the future</li>
+                            <li>In + thời gian (in 5 minutes, in 2 days...)</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(4)">
+                        <h4 class="text-lg font-bold text-indigo-500">5. Bài tập 1: Điền "will" hoặc "won't"</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Luyện tập chọn "will" hoặc "won't" cho các tình huống tương lai</li>
+                            <li>Ví dụ: She will help you with your project.</li>
+                            <li>Ví dụ: They won't come to the party because they're busy.</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(5)">
+                        <h4 class="text-lg font-bold text-indigo-500">6. Bài tập 2: Sắp xếp thành câu đúng</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>1. (next week / will / I / visit / my grandparents.)</li>
+                            <li>2. (go / won't / to the zoo / We / tomorrow.)</li>
+                            <li>3. (Will / play / they / football / in the park?)</li>
+                            <li>4. (will / It / rain / in the evening.)</li>
+                            <li>5. (next year. / won't / travel / We / abroad)</li>
+                            <li>6. (Will / help / you / me / with my homework?)</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(6)">
+                        <h4 class="text-lg font-bold text-indigo-500">7. Bài tập 3: Dịch sang tiếng Anh</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Dịch các câu tiếng Việt sang tiếng Anh</li>
+                            <li>Ví dụ: Tôi sẽ học tiếng Anh vào ngày mai.</li>
+                            <li>Ví dụ: Họ sẽ không đi xem phim.</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(7)">
+                        <h4 class="text-lg font-bold text-indigo-500">8. Câu hỏi tình huống</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>1. Tình huống: Travel - Dự đoán thời tiết</li>
+                            <li>2. Tình huống: Promise - Lời hứa</li>
+                            <li>3. Tình huống: Plan - Kế hoạch</li>
+                            <li>4. Tình huống: Prediction - Dự đoán</li>
+                            <li>5. Tình huống: Refusal - Từ chối</li>
+                            <li>6. Tình huống: Decision - Quyết định tức thì</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(8)">
+                        <h4 class="text-lg font-bold text-indigo-500">9. Kết thúc & Tóm tắt</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Tóm tắt bài học:
+                                <ul class="list-disc pl-6 mt-2">
+                                    <li>Diễn tả hành động, dự đoán, lời hứa trong tương lai</li>
+                                    <li>Công thức: S + will/won't + V (nguyên thể)</li>
+                                    <li>Dấu hiệu: tomorrow, next..., in the future, in + time</li>
+                                    <li>Ứng dụng trong các tình huống học thuật và chuyên nghiệp</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl text-2xl">
+            <!-- Slide 0: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-center h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">GRAMMAR FOR PRE - GRADE 8</h1>
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-2xl md:text-4xl font-bold px-6 py-3 rounded-full my-8 shadow-lg floating">
+                        THÌ TƯƠNG LAI ĐƠN (Simple Future Tense)
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2784/2784195.png" alt="Future" class="future-image floating">
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-100 to-purple-100 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu sâu về cách dùng thì tương lai đơn</li>
+                                <li>Nắm vững cấu trúc và quy tắc ngữ pháp</li>
+                                <li>Phân biệt các trường hợp sử dụng</li>
+                                <li>Áp dụng vào các tình huống thực tế</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: Usage -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cách dùng Thì Tương Lai Đơn</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="w-full">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500 text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2821/2821797.png" class="calendar-icon mx-auto mb-3">
+                                    <p class="font-bold text-green-800 text-xl">Hành động trong tương lai</p>
+                                    <p class="text-lg mt-2">Diễn tả hành động sẽ xảy ra trong tương lai</p>
+                                    <p class="text-lg mt-2"><span class="highlight">"I will attend the conference next month."</span></p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1995/1995511.png" class="calendar-icon mx-auto mb-3">
+                                    <p class="font-bold text-blue-800 text-xl">Dự đoán tương lai</p>
+                                    <p class="text-lg mt-2">Dự đoán dựa trên kinh nghiệm hoặc bằng chứng</p>
+                                    <p class="text-lg mt-2"><span class="highlight">"The weather forecast says it will rain heavily tomorrow."</span></p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500 text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3024/3024039.png" class="calendar-icon mx-auto mb-3">
+                                    <p class="font-bold text-purple-800 text-xl">Lời hứa, đề nghị</p>
+                                    <p class="text-lg mt-2">Diễn tả lời hứa, đề nghị hoặc quyết định tức thì</p>
+                                    <p class="text-lg mt-2"><span class="highlight">"I will help you with your research project."</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-yellow-100 p-4 rounded-lg mt-4">
+                            <p class="font-bold text-yellow-800 text-xl">💡 Mẹo nhớ:</p>
+                            <p class="text-lg">Hình ảnh "chiếc đồng hồ" giúp ta liên tưởng đến tương lai mà "will" diễn tả.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Formula -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Công thức Thì Tương Lai Đơn</h2>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <table class="w-full text-center border-collapse">
+                                <thead>
+                                    <tr class="bg-indigo-100">
+                                        <th class="p-3 border">Thể</th>
+                                        <th class="p-3 border">Công thức</th>
+                                        <th class="p-3 border">Ví dụ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-3 border font-bold">Khẳng định</td>
+                                        <td class="p-3 border">S + will + V (nguyên thể)</td>
+                                        <td class="p-3 border"><span class="highlight">"I will visit my grandma."</span></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 border font-bold">Phủ định</td>
+                                        <td class="p-3 border">S + will not (won't) + V</td>
+                                        <td class="p-3 border"><span class="highlight">"She won't go to school."</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 border font-bold">Nghi vấn</td>
+                                        <td class="p-3 border">Will + S + V?</td>
+                                        <td class="p-3 border"><span class="highlight">"Will you help me?"<br>"Yes, I will."<br>"No, I won't."</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bg-blue-100 p-4 rounded-lg">
+                            <p class="font-bold text-blue-800 text-xl">💡 Lưu ý:</p>
+                            <p class="text-lg">"Will" dùng với tất cả các chủ ngữ (I, you, we, they, he, she, it)</p>
+                            <p class="text-lg mt-2">Sau "will" luôn là động từ nguyên thể không "to"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Signal Words -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Dấu hiệu nhận biết</h2>
+                <div class="flex flex-col md:flex-row gap-8 h-4/5">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4 h-full">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-yellow-50 p-4 rounded-lg text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="w-16 h-16 mx-auto mb-3">
+                                    <p class="text-xl font-bold text-yellow-700">Tomorrow</p>
+                                    <p class="text-lg mt-2">(ngày mai)</p>
+                                    <p class="text-lg mt-2"><span class="highlight">"I will call you tomorrow."</span></p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/615/615075.png" class="w-16 h-16 mx-auto mb-3">
+                                    <p class="text-xl font-bold text-green-700">Next (week/month/year)</p>
+                                    <p class="text-lg mt-2">(tuần/tháng/năm tới)</p>
+                                    <p class="text-lg mt-2"><span class="highlight">"We will travel next month."</span></p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" class="w-16 h-16 mx-auto mb-3">
+                                    <p class="text-xl font-bold text-blue-700">In the future</p>
+                                    <p class="text-lg mt-2">(trong tương lai)</p>
+                                    <p class="text-lg mt-2"><span class="highlight">"Robots will help us in the future."</span></p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg text-center">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3039/3039380.png" class="w-16 h-16 mx-auto mb-3">
+                                    <p class="text-xl font-bold text-purple-700">In + thời gian</p>
+                                    <p class="text-lg mt-2">(in 5 minutes, in 2 days...)</p>
+                                    <p class="text-lg mt-2"><span class="highlight">"She will arrive in 10 minutes."</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Fill in will/won't -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Điền "will" hoặc "won't"</h2>
+                    <p class="text-2xl mb-8">Chọn "will" hoặc "won't" để điền vào chỗ trống:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">1. She <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> help you with your project.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Câu này diễn tả lời đề nghị giúp đỡ trong tương lai nên dùng "will"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">2. They <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="won't">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> come to the party because they're busy.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Vì họ bận nên "sẽ không" đến, dùng "won't"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">3. We <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> visit Hanoi next year.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: "next year" là dấu hiệu của tương lai, hành động tích cực nên dùng "will"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">4. I <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="won't">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> eat sweets because I am on a diet.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Vì đang ăn kiêng nên "sẽ không" ăn đồ ngọt, dùng "won't"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">5. My father <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> buy a new car next month.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: "next month" là dấu hiệu của tương lai, hành động tích cực nên dùng "will"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">6. It <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> be sunny tomorrow.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: "tomorrow" là dấu hiệu của tương lai, dự đoán thời tiết nên dùng "will"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">7. You <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> pass the exam if you study hard.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Nếu học chăm chỉ thì "sẽ" vượt qua kỳ thi, dùng "will"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">8. They <select class="border-2 border-indigo-300 rounded px-3 py-1 text-2xl" data-answer="won't">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> go outside if it rains.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Nếu trời mưa thì "sẽ không" ra ngoài, dùng "won't"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Rearrange Sentences -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Sắp xếp thành câu đúng</h2>
+                    <p class="text-2xl mb-8">Sắp xếp các từ sau thành câu hoàn chỉnh:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-8">Bài tập 2: Sắp xếp thành câu đúng</p>
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                                    <p class="text-2xl mb-4">1. (next week / will / I / visit / my grandparents.)</p>
+                                    <input type="text" class="exercise-input w-full" data-answer="I will visit my grandparents next week.">
+                                    <div class="flex items-center space-x-4 mt-4">
+                                        <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                        <div class="answer hidden text-xl"></div>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                                    <p class="text-2xl mb-4">2. (go / won't / to the zoo / We / tomorrow.)</p>
+                                    <input type="text" class="exercise-input w-full" data-answer="We won't go to the zoo tomorrow.">
+                                    <div class="flex items-center space-x-4 mt-4">
+                                        <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                        <div class="answer hidden text-xl"></div>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                                    <p class="text-2xl mb-4">3. (Will / play / they / football / in the park?)</p>
+                                    <input type="text" class="exercise-input w-full" data-answer="Will they play football in the park?">
+                                    <div class="flex items-center space-x-4 mt-4">
+                                        <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                        <div class="answer hidden text-xl"></div>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                                    <p class="text-2xl mb-4">4. (will / It / rain / in the evening.)</p>
+                                    <input type="text" class="exercise-input w-full" data-answer="It will rain in the evening.">
+                                    <div class="flex items-center space-x-4 mt-4">
+                                        <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                        <div class="answer hidden text-xl"></div>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                                    <p class="text-2xl mb-4">5. (next year. / won't / travel / We / abroad)</p>
+                                    <input type="text" class="exercise-input w-full" data-answer="We won't travel abroad next year.">
+                                    <div class="flex items-center space-x-4 mt-4">
+                                        <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                        <div class="answer hidden text-xl"></div>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                                    <p class="text-2xl mb-4">6. (Will / help / you / me / with my homework?)</p>
+                                    <input type="text" class="exercise-input w-full" data-answer="Will you help me with my homework?">
+                                    <div class="flex items-center space-x-4 mt-4">
+                                        <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                        <div class="answer hidden text-xl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Translation Exercise -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Dịch sang tiếng Anh</h2>
+                    <p class="text-2xl mb-8">Dịch các câu sau sang tiếng Anh sử dụng thì tương lai đơn:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">1. Tôi sẽ học tiếng Anh vào ngày mai.</p>
+                            <input type="text" class="exercise-input w-full" data-answer="I will study English tomorrow.">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Đây là hành động sẽ xảy ra trong tương lai (ngày mai)</p>
+                                    <p class="text-gray-600">Cấu trúc: S + will + V (study) + O (English) + trạng từ chỉ thời gian (tomorrow)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">2. Họ sẽ không đi xem phim.</p>
+                            <input type="text" class="exercise-input w-full" data-answer="They won't go to the cinema.">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Đây là hành động phủ định trong tương lai</p>
+                                    <p class="text-gray-600">Cấu trúc: S + won't + V (go) + cụm giới từ (to the cinema)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">3. Bạn có giúp tôi không?</p>
+                            <input type="text" class="exercise-input w-full" data-answer="Will you help me?">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Đây là câu hỏi về khả năng giúp đỡ trong tương lai</p>
+                                    <p class="text-gray-600">Cấu trúc: Will + S (you) + V (help) + O (me)?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">4. Chúng tôi sẽ về nhà lúc 8 giờ.</p>
+                            <input type="text" class="exercise-input w-full" data-answer="We will go home at 8 o'clock.">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Hành động sẽ xảy ra trong tương lai (lúc 8 giờ)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">5. Cô ấy sẽ không ăn sáng vào ngày mai.</p>
+                            <input type="text" class="exercise-input w-full" data-answer="She won't have breakfast tomorrow.">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl">
+                                    <p class="correct">✓ Đúng: Hành động phủ định trong tương lai (ngày mai)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Situational Questions -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Câu hỏi tình huống</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md text-center">
+                            <img src="https://e3.365dm.com/21/07/2048x1152/skynews-boeing-737-plane_5435020.jpg" alt="Travel" class="h-32 mx-auto mb-4">
+                            <p class="text-xl mb-4">1. Tình huống: Travel</p>
+                            <p class="text-lg">"Do you think it <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> rain tomorrow? No, I think it <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="won't">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> rain."</p>
+                            <button onclick="checkDoubleSelect(this)" class="btn-check px-4 py-1 rounded-lg mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-sm mt-2">
+                                <p class="correct">✓ Câu 1: "will" - dự đoán về thời tiết</p>
+                                <p class="correct">✓ Câu 2: "won't" - dự đoán phủ định</p>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md text-center">
+                            <img src="https://callio.vn/wp-content/uploads/2024/08/Blended-call-center.jpg" alt="Promise" class="h-32 mx-auto mb-4">
+                            <p class="text-xl mb-4">2. Tình huống: Promise</p>
+                            <p class="text-lg">"I <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> call you later. I promise I <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="won't">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> forget!"</p>
+                            <button onclick="checkDoubleSelect(this)" class="btn-check px-4 py-1 rounded-lg mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-sm mt-2">
+                                <p class="correct">✓ Câu 1: "will" - lời hứa</p>
+                                <p class="correct">✓ Câu 2: "won't" - lời hứa dạng phủ định</p>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md text-center">
+                            <img src="https://i0.wp.com/apeejay.news/wp-content/uploads/2022/05/rohit-garg-new.jpg?fit=1200%2C1200&ssl=1" alt="Plan" class="h-32 mx-auto mb-4">
+                            <p class="text-xl mb-4">3. Tình huống: Plan</p>
+                            <p class="text-lg">"We <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> visit our grandparents this weekend."
+                            </p>
+                            <button onclick="checkSelect(this)" class="btn-check px-4 py-1 rounded-lg mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-sm mt-2">
+                                <p class="correct">✓ "will" - kế hoạch cho tương lai</p>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md text-center">
+                            <img src="https://feweek.co.uk/wp-content/uploads/2023/03/Daniel-Thomas-staff-room-winning-succeed-competition-feat.jpg" alt="Prediction" class="h-32 mx-auto mb-4">
+                            <p class="text-xl mb-4">4. Tình huống: Prediction</p>
+                            <p class="text-lg">"I think she <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> win the competition."
+                            </p>
+                            <button onclick="checkSelect(this)" class="btn-check px-4 py-1 rounded-lg mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-sm mt-2">
+                                <p class="correct">✓ "will" - dự đoán về kết quả</p>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md text-center">
+                            <img src="https://media.baamboozle.com/uploads/images/72727/1592406310_26107" alt="Refusal" class="h-32 mx-auto mb-4">
+                            <p class="text-xl mb-4">5. Tình huống: Refusal</p>
+                            <p class="text-lg">"He <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="won't">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> join the game because he is tired."
+                            </p>
+                            <button onclick="checkSelect(this)" class="btn-check px-4 py-1 rounded-lg mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-sm mt-2">
+                                <p class="correct">✓ "won't" - từ chối tham gia do mệt</p>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md text-center">
+                            <img src="https://media.istockphoto.com/id/1405295069/vector/confusing-sign.jpg?s=612x612&w=0&k=20&c=gvBD07-oLLbQWyNRPrrNMcdniG7mmdHS5YQb4KAiAOg=" alt="Decision" class="h-32 mx-auto mb-4">
+                            <p class="text-xl mb-4">6. Tình huống: Decision</p>
+                            <p class="text-lg">"I <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="will">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> go to the party tonight. I decided I <select class="border-2 border-indigo-300 rounded px-2 py-1" data-answer="won't">
+                                <option value="">Chọn...</option>
+                                <option value="will">will</option>
+                                <option value="won't">won't</option>
+                            </select> go."</p>
+                            <button onclick="checkDoubleSelect(this)" class="btn-check px-4 py-1 rounded-lg mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-sm mt-2">
+                                <p class="correct">✓ Câu 1: "will" - quyết định tham gia</p>
+                                <p class="correct">✓ Câu 2: "won't" - quyết định không tham gia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Conclusion -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-center h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">Chúc mừng!</h1>
+                    <div class="text-2xl md:text-3xl text-gray-700 mb-8">
+                        <p class="mb-4">Bạn đã hoàn thành bài học về</p>
+                        <div class="rainbow-text text-4xl font-bold px-6 py-2 rounded-full inline-block">
+                            THÌ TƯƠNG LAI ĐƠN
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md max-w-xl mb-8 text-left">
+                        <h3 class="text-xl font-bold text-indigo-700 mb-3">Tóm tắt bài học:</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Diễn tả hành động, dự đoán, lời hứa trong tương lai</li>
+                            <li>Công thức: S + will/won't + V (nguyên thể)</li>
+                            <li>Dấu hiệu: tomorrow, next..., in the future, in + time</li>
+                            <li>Ứng dụng trong các tình huống học thuật và chuyên nghiệp</li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3976/3976626.png" alt="Celebration" class="h-32">
+                    </div>
+                    <div class="bg-gradient-to-r from-indigo-400 to-purple-500 text-white p-4 rounded-xl mt-6">
+                        <p class="text-xl md:text-2xl font-bold">Hẹn gặp lại trong bài học tiếp theo!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+    </script>
+    <script>
+        // Exercise functions
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                const capitalizedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
+
+                if (userAnswer === correctAnswer || 
+                    (correctAnswer === '' && (userAnswer === '' || userAnswer === '(không)'))) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${input.previousSibling?.textContent || ''} <span class="font-bold">${capitalizedAnswer || '(không)'}</span></p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: ${input.previousSibling?.textContent || ''} <span class="font-bold">${capitalizedAnswer || '(không)'}</span> (Bạn điền: ${userAnswer || 'trống'})</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkSelect(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const select = exerciseItem.querySelector('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const correctAnswer = select.dataset.answer;
+            const capitalizedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
+
+            if (select.value === correctAnswer) {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác!</p>';
+                select.classList.add('border-green-500');
+                select.classList.remove('border-indigo-300');
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${capitalizedAnswer}</span></p>`;
+                select.classList.add('border-red-500');
+                select.classList.remove('border-indigo-300');
+            }
+
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+        }
+
+        function checkDoubleSelect(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const selects = exerciseItem.querySelectorAll('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            selects.forEach(select => {
+                const correctAnswer = select.dataset.answer;
+                const capitalizedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
+                if (select.value === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: <span class="font-bold">${capitalizedAnswer}</span></p>`;
+                    select.classList.add('border-green-500');
+                    select.classList.remove('border-indigo-300');
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: <span class="font-bold">${capitalizedAnswer}</span> (Bạn chọn: ${select.value || 'trống'})</p>`;
+                    select.classList.add('border-red-500');
+                    select.classList.remove('border-indigo-300');
+                    allCorrect = false;
+                }
+            });
+
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const selects = exerciseItem.querySelectorAll('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset inputs
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset selects
+            selects.forEach(select => {
+                select.value = '';
+                select.classList.remove('border-green-500', 'border-red-500');
+                select.classList.add('border-indigo-300');
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            button.onclick = function() {
+                if (inputs.length > 0) {
+                    checkInput(button);
+                } else if (selects.length > 0) {
+                    if (selects.length === 2) {
+                        checkDoubleSelect(button);
+                    } else {
+                        checkSelect(button);
+                    }
+                }
+            };
+
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
+        }
+    </script>
+</body>
+</html>
