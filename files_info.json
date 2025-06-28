@@ -1,9 +1,5 @@
 {
   "categories": {
-    "in-progess": {
-      "name": "In Progess",
-      "icon": "https://example.com/icons/folder.png"
-    },
     "slides": {
       "name": "Slides",
       "icon": "https://cdn-icons-png.flaticon.com/512/11473/11473512.png"
@@ -18,20 +14,6 @@
     }
   },
   "lessons": {
-    "in-progess/pre-gs6-ws-adjectives-2": {
-      "path": "in-progess/pre-gs6-ws-adjectives-2",
-      "title": "Pre GS6 - Adjectives Part 2 (Tính từ phần 2)",
-      "author": "Gen8",
-      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ sở hữu, phân biệt với đại từ sở hữu.",
-      "category": "in-progess"
-    },
-    "in-progess/pre-gs6-adjectives-2": {
-      "path": "in-progess/pre-gs6-adjectives-2",
-      "title": "Pre GS6 - Adjectives Part 2 (Tính từ phần 2)",
-      "author": "Gen8",
-      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ sở hữu, phân biệt với đại từ sở hữu.",
-      "category": "in-progess"
-    },
     "slides/pre-gs6-personal-pronouns": {
       "path": "slides/pre-gs6-personal-pronouns",
       "title": "Pre GS6 - Personal Pronouns (Đại từ nhân xưng)",
@@ -298,6 +280,13 @@
       "description": "Sở hữu cách (Possessive)",
       "category": "worksheets"
     },
+    "worksheets/pre-gs6-ws-adjectives-2": {
+      "path": "worksheets/pre-gs6-ws-adjectives-2",
+      "title": "Pre GS6 - Adjectives Part 2 (Tính từ phần 2)",
+      "author": "Gen8",
+      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ sở hữu, phân biệt với đại từ sở hữu.",
+      "category": "worksheets"
+    },
     "worksheets/pre-gs9-present-perfect": {
       "path": "worksheets/pre-gs9-present-perfect",
       "title": "Pre GS9 - Present Perfect Tense",
@@ -478,6 +467,13 @@
       "title": "Pre Gs6 Test 1 - Paper 6",
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs6-adjectives-2": {
+      "path": "tests/pre-gs6-adjectives-2",
+      "title": "Pre GS6 - Adjectives Part 2 (Tính từ phần 2)",
+      "author": "Gen8",
+      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ sở hữu, phân biệt với đại từ sở hữu.",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-2": {

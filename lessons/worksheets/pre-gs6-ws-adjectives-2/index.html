@@ -532,19 +532,19 @@
                 <div class="exercise-container">
                     <div class="flex items-start mb-3 w-full">
                         <div>
-                            <h4 class="exercise-title">Bài 1: Điền tính từ sở hữu thích hợp</h4>
+                            <h4 class="exercise-title">Bài 1: Điền tính từ sở hữu thích hợp / Exercise 1: Fill in the appropriate possessive adjectives</h4>
                             <p class="exercise-instruction">👉 Chọn và điền các tính từ sở hữu (my, your, his, her, its, our, their) vào chỗ trống:</p>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <p class="mb-2">1. This is <input type="text" class="answer-input w-20" data-answer="my"> (I) book. </p>
-                                    <p class="mb-2">2. Is this <input type="text" class="answer-input w-20" data-answer="your"> (you) helmet? </p>
-                                    <p class="mb-2">3. That's <input type="text" class="answer-input w-20" data-answer="his"> (he) city map. </p>
+                                    <p class="mb-2">1. This is <input type="text" class="answer-input w-20" data-answer="my" onblur="checkAnswer(this)"> (I) book. </p>
+                                    <p class="mb-2">2. Is this <input type="text" class="answer-input w-20" data-answer="your" onblur="checkAnswer(this)"> (you) helmet? </p>
+                                    <p class="mb-2">3. That's <input type="text" class="answer-input w-20" data-answer="his" onblur="checkAnswer(this)"> (he) city map. </p>
                                 </div>
                                 <div>
-                                    <p class="mb-2">4. <input type="text" class="answer-input w-20" data-answer="her"> (She) favorite place is the floating market. </p>
-                                    <p class="mb-2">5. The dog is playing with <input type="text" class="answer-input w-20" data-answer="its"> (it) toy. </p>
-                                    <p class="mb-2">6. We love <input type="text" class="answer-input w-20" data-answer="our"> (we) new school. </p>
+                                    <p class="mb-2">4. <input type="text" class="answer-input w-20" data-answer="her" onblur="checkAnswer(this)"> (She) favorite place is the floating market. </p>
+                                    <p class="mb-2">5. The dog is playing with <input type="text" class="answer-input w-20" data-answer="its" onblur="checkAnswer(this)"> (it) toy. </p>
+                                    <p class="mb-2">6. We love <input type="text" class="answer-input w-20" data-answer="our" onblur="checkAnswer(this)"> (we) new school. </p>
                                 </div>
                             </div>
                         </div>
@@ -557,10 +557,10 @@
                 <div class="exercise-container">
                     <div class="flex items-start mb-4">
                         <div>
-                            <h4 class="exercise-title">Bài 2: Phân biệt tính từ sở hữu và đại từ sở hữu</h4>
+                            <h4 class="exercise-title">Bài 2: Phân biệt tính từ sở hữu và đại từ sở hữu / Exercise 2: Distinguish between possessive adjectives and possessive pronouns</h4>
                             <p class="exercise-instruction">👉 Chọn đáp án đúng (tính từ sở hữu hoặc đại từ sở hữu) để hoàn thành câu:</p>
 
-                            <div class="grid grid-cols-1 gap-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4">
                                 <div class="exercise-item">
                                     <p>1. This is ___ postcard. (my/mine)</p>
                                     <div class="radio-group">
@@ -613,6 +613,84 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div>
+                                    <p>5. The red car is ___. (his/him)</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="his" data-answer="his" onclick="checkAnswer(this)">
+                                            <span>his</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="him" data-answer="his" onclick="checkAnswer(this)">
+                                            <span>him</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>6. This is ___ favorite restaurant. (their/theirs)</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="their" data-answer="their" onclick="checkAnswer(this)">
+                                            <span>their</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="theirs" data-answer="their" onclick="checkAnswer(this)">
+                                            <span>theirs</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>7. The blue house is ___. (our/ours)</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="our" data-answer="ours" onclick="checkAnswer(this)">
+                                            <span>our</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="ours" data-answer="ours" onclick="checkAnswer(this)">
+                                            <span>ours</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>8. Is that ___ new phone? (her/hers)</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="her" data-answer="her" onclick="checkAnswer(this)">
+                                            <span>her</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="hers" data-answer="her" onclick="checkAnswer(this)">
+                                            <span>hers</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>9. The cat is playing with ___ toy. (its/it's)</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="its" data-answer="its" onclick="checkAnswer(this)">
+                                            <span>its</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="it's" data-answer="its" onclick="checkAnswer(this)">
+                                            <span>it's</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>10. These books are ___. (my/mine)</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="my" data-answer="mine" onclick="checkAnswer(this)">
+                                            <span>my</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="mine" data-answer="mine" onclick="checkAnswer(this)">
+                                            <span>mine</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -621,24 +699,24 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 3: Sử dụng từ vựng và tính từ sở hữu để hoàn thành câu</h4>
+                            <h4 class="exercise-title">Bài 3: Sử dụng từ vựng và tính từ sở hữu để hoàn thành câu / Exercise 3: Use vocabulary and possessive adjectives to complete sentences</h4>
                             <p class="exercise-instruction">👉 Dùng từ trong ngoặc kết hợp với tính từ sở hữu thích hợp để hoàn thành câu:</p>
 
                             <div class="space-y-4">
                                 <div>
-                                    <p>1. We took photos at ___ (Times Square) yesterday.</p>
-                                    <input type="text" class="answer-input w-full" data-answer="our Times Square" onblur="checkAnswer(this)">
+                                    <p>1. We took photos at ___ (house) yesterday.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="our house" onblur="checkAnswer(this)">
                                 </div>
                                 <div>
-                                    <p>2. The tourist lost ___ (city map) near the landmark.</p>
+                                    <p>2. The tourist lost ___ (city map) near the landmark. He is looking for it.</p>
                                     <input type="text" class="answer-input w-full" data-answer="his city map" onblur="checkAnswer(this)">
                                 </div>
                                 <div>
-                                    <p>3. She bought some souvenirs from ___ (floating market).</p>
-                                    <input type="text" class="answer-input w-full" data-answer="the floating market" onblur="checkAnswer(this)">
+                                    <p>3. Susan has a new store. She bought some souvenirs from ___ (store).</p>
+                                    <input type="text" class="answer-input w-full" data-answer="her store" onblur="checkAnswer(this)">
                                 </div>
                                 <div>
-                                    <p>4. They rented ___ (bike) to explore the city.</p>
+                                    <p>4. They are riding ___ (bike) to explore the city.</p>
                                     <input type="text" class="answer-input w-full" data-answer="their bikes" onblur="checkAnswer(this)">
                                 </div>
                                 <div>
@@ -663,37 +741,41 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 4: Sắp xếp từ thành câu hoàn chỉnh</h4>
+                            <h4 class="exercise-title">Bài 4: Sắp xếp từ thành câu hoàn chỉnh / Exercise 4: Arrange words into complete sentences</h4>
                             <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu hoàn chỉnh có sử dụng tính từ sở hữu:</p>
-
-                            <div class="drag-drop-container mb-4">
-                                <div class="drag-item" draggable="true">his</div>
-                                <div class="drag-item" draggable="true">her</div>
-                                <div class="drag-item" draggable="true">their</div>
-                                <div class="drag-item" draggable="true">Royal Palace</div>
-                                <div class="drag-item" draggable="true">street food</div>
-                                <div class="drag-item" draggable="true">is</div>
-                                <div class="drag-item" draggable="true">are</div>
-                                <div class="drag-item" draggable="true">favorite</div>
-                                <div class="drag-item" draggable="true">postcards</div>
-                                <div class="drag-item" draggable="true">landmark</div>
-                            </div>
 
                             <div class="space-y-4">
                                 <div>
                                     <p>1. favorite / landmark / is / his / The Royal Palace</p>
-                                    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                    <input type="text" class="answer-input w-full hidden" data-answer="His favorite landmark is the Royal Palace" onblur="checkAnswer(this)">
+                                    <input type="text" class="answer-input w-full" data-answer="His favorite landmark is the Royal Palace" onblur="checkAnswer(this)">
                                 </div>
                                 <div>
                                     <p>2. collecting / She / postcards / is / her</p>
-                                    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                    <input type="text" class="answer-input w-full hidden" data-answer="She is collecting her postcards" onblur="checkAnswer(this)">
+                                    <input type="text" class="answer-input w-full" data-answer="She is collecting her postcards" onblur="checkAnswer(this)">
                                 </div>
                                 <div>
                                     <p>3. street food / Their / is / favorite / Vietnamese</p>
-                                    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                                    <input type="text" class="answer-input w-full hidden" data-answer="Their favorite street food is Vietnamese" onblur="checkAnswer(this)">
+                                    <input type="text" class="answer-input w-full" data-answer="Their favorite street food is Vietnamese" onblur="checkAnswer(this)">
+                                </div>
+                                <div>
+                                    <p>4. bike / is / my / new / This</p>
+                                    <input type="text" class="answer-input w-full" data-answer="This is my new bike" onblur="checkAnswer(this)">
+                                </div>
+                                <div>
+                                    <p>5. helmet / forgot / his / He / at / the / stall</p>
+                                    <input type="text" class="answer-input w-full" data-answer="He forgot his helmet at the stall" onblur="checkAnswer(this)">
+                                </div>
+                                <div>
+                                    <p>6. city map / lost / her / tourist / The</p>
+                                    <input type="text" class="answer-input w-full" data-answer="The tourist lost her city map" onblur="checkAnswer(this)">
+                                </div>
+                                <div>
+                                    <p>7. store / bought / souvenirs / from / their / They</p>
+                                    <input type="text" class="answer-input w-full" data-answer="They bought souvenirs from their store" onblur="checkAnswer(this)">
+                                </div>
+                                <div>
+                                    <p>8. shell / collection / is / beautiful / your</p>
+                                    <input type="text" class="answer-input w-full" data-answer="Your shell collection is beautiful" onblur="checkAnswer(this)">
                                 </div>
                             </div>
                         </div>
@@ -703,7 +785,7 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 5: Tìm và sửa lỗi sai về tính từ sở hữu</h4>
+                            <h4 class="exercise-title">Bài 5: Tìm và sửa lỗi sai về tính từ sở hữu / Exercise 5: Find and correct possessive adjective errors</h4>
 
                             <div class="grid grid-cols-1 w-full gap-y-2">
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
@@ -734,36 +816,32 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 6: Đặt câu hoàn chỉnh sử dụng các từ cho sẵn</h4>
+                            <h4 class="exercise-title">Bài 6: Đặt câu hoàn chỉnh sử dụng các từ cho sẵn / Exercise 6: Make complete sentences using given words</h4>
                             <p class="exercise-instruction">👉 Sử dụng tính từ sở hữu kết hợp với từ vựng đã học để đặt câu:</p>
 
                             <div class="matching-container">
                                 <div class="match-item">
                                     <div class="match-key">1. my / helpful / guide</div>
                                     <div class="match-value">
-                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
-                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: My guide is very helpful.</p>
+                                        <input type="text" class="match-input w-full border-none">
                                     </div>
                                 </div>
                                 <div class="match-item">
                                     <div class="match-key">2. her / beautiful / postcards</div>
                                     <div class="match-value">
-                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
-                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: Her postcards are beautiful.</p>
+                                        <input type="text" class="match-input w-full border-none">
                                     </div>
                                 </div>
                                 <div class="match-item">
                                     <div class="match-key">3. our / crowded / floating market</div>
                                     <div class="match-value">
-                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
-                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: Our floating market is very crowded.</p>
+                                        <input type="text" class="match-input w-full border-none">
                                     </div>
                                 </div>
                                 <div class="match-item">
                                     <div class="match-key">4. their / favorite / street food</div>
                                     <div class="match-value">
-                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
-                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: Their favorite street food is pho.</p>
+                                        <input type="text" class="match-input w-full border-none">
                                     </div>
                                 </div>
                             </div>
