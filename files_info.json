@@ -147,6 +147,13 @@
       "description": "Danh từ bất quy tắc, danh từ đếm được/không đếm được, cách nhận biết, vị trí của danh từ trong câu",
       "category": "slides"
     },
+    "slides/pre-gs6-adjectives-2": {
+      "path": "slides/pre-gs6-adjectives-2",
+      "title": "Pre GS6 - Adjectives Part 2 (Tính từ phần 2)",
+      "author": "Gen8",
+      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ sở hữu, phân biệt với đại từ sở hữu.",
+      "category": "slides"
+    },
     "slides/pre-gs8-personal-pronouns-and-possesive": {
       "path": "slides/pre-gs8-personal-pronouns-and-possesive",
       "title": "Pre GS8 - Personal Pronouns and Possessive Adjectives (Đại từ nhân xưng và Tính từ sở hữu)",
@@ -467,13 +474,6 @@
       "title": "Pre Gs6 Test 1 - Paper 6",
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
-      "category": "tests"
-    },
-    "tests/pre-gs6-adjectives-2": {
-      "path": "tests/pre-gs6-adjectives-2",
-      "title": "Pre GS6 - Adjectives Part 2 (Tính từ phần 2)",
-      "author": "Gen8",
-      "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ sở hữu, phân biệt với đại từ sở hữu.",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-2": {
