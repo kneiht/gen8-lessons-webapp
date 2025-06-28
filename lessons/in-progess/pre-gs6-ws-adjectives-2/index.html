@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adjectives (Part 1) - Worksheets</title>
+    <title>PreGS6 - Adjectives (Part 1) - Worksheets</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -76,7 +76,6 @@
         .worksheet-container {
             background-color: white;
             border-radius: 0.75rem;
-            /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
             padding: 1rem;
             margin-bottom: 0.75rem;
         }
@@ -84,25 +83,20 @@
         /* Typography */
         .worksheet-title {
             font-size: 1.5rem;
-            /* text-2xl */
             font-weight: 700;
             color: #2563eb;
-            /* text-blue-600 */
         }
 
         .section-title {
             font-size: 1.25rem;
-            /* text-xl */
             font-weight: 700;
             color: #1f2937;
-            /* text-gray-800 */
         }
 
         .subsection-title {
             font-size: 1.125rem;
             font-weight: 600;
             color: #1f2937;
-            /* text-gray-800 */
         }
 
         /* Input styles */
@@ -292,6 +286,72 @@
                 font-size: 0.875rem;
             }
         }
+
+        /* Custom drag and drop styles */
+        .drag-drop-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .drag-item {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.25rem;
+            padding: 0.5rem 1rem;
+            cursor: grab;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .drop-zone {
+            min-height: 50px;
+            border: 2px dashed #d1d5db;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            background-color: #f9fafb;
+        }
+
+        .highlight {
+            background-color: #f0fdf4;
+            border-color: #86efac;
+        }
+
+        /* Matching exercise styles */
+        .matching-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .match-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .match-key {
+            flex: 0 0 150px;
+            padding: 0.5rem;
+            background-color: #f1f5f9;
+            border-radius: 0.25rem;
+        }
+
+        .match-value {
+            flex: 1;
+            padding: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .match-input {
+            border: none;
+            border-bottom: 1px dashed #4b5563;
+            min-width: 100px;
+        }
     </style>
 </head>
 
@@ -327,61 +387,58 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <div class="info-card bg-yellow-50">
-                        <h4 class="subsection-title">1. Khái niệm tính từ</h4>
-                        <p class="text-gray-700 mb-3">Tính từ là từ dùng để miêu tả hoặc bổ nghĩa cho danh từ, giúp cung cấp thêm thông tin về đặc điểm, tính chất của người, vật, sự việc.</p>
-                        <p class="text-gray-700 mb-3">Adjectives are words that describe or modify nouns, providing more information about the characteristics of people, things, or events.</p>
-                        <p class="text-gray-700 italic">Ví dụ/Example: fantastic performance, fit athlete, sporty look</p>
+                        <h4 class="subsection-title">1. Tính từ sở hữu (Possessive Adjectives)</h4>
+                        <p class="text-gray-700 mb-3">Dùng để chỉ sự sở hữu, đứng trước danh từ để bổ nghĩa cho danh từ đó.</p>
+                        <p class="text-gray-700 italic">Ví dụ: my book, her cat, their house</p>
+                        <p class="text-gray-700 mt-2"><strong>Các tính từ sở hữu:</strong> my, your, his, her, its, our, their</p>
                     </div>
 
                     <div class="info-card bg-green-50">
-                        <h4 class="subsection-title">2. Chức năng của tính từ</h4>
+                        <h4 class="subsection-title">2. Cụm tính từ sở hữu + danh từ</h4>
+                        <p class="text-gray-700 mb-3">Tính từ sở hữu luôn đứng trước danh từ và không thay đổi theo số lượng của danh từ.</p>
                         <ul class="list-disc pl-5 text-gray-700">
-                            <li class="mb-1">Bổ nghĩa cho danh từ (Modify nouns): <span class="italic">a fantastic tournament</span></li>
-                            <li class="mb-1">Làm vị ngữ (Predicative use): <span class="italic">The equipment is new</span></li>
-                            <li>So sánh (Comparison): <span class="italic">This marathon is longer than last year's</span></li>
+                            <li class="mb-1">This is <em>my book</em> (Đây là cuốn sách của tôi)</li>
+                            <li>These are <em>my books</em> (Đây là những cuốn sách của tôi)</li>
                         </ul>
                     </div>
 
                     <div class="info-card bg-blue-50">
-                        <h4 class="subsection-title">3. Tính từ mô tả</h4>
-                        <p class="text-gray-700 mb-3">Tính từ mô tả cung cấp thông tin về đặc điểm, tính chất của danh từ.</p>
-                        <p class="text-gray-700 mb-3">Descriptive adjectives provide information about the qualities of nouns.</p>
-                        <ul class="list-disc pl-5 text-gray-700">
-                            <li class="mb-1"><span class="italic">fantastic</span> - tuyệt vời</li>
-                            <li class="mb-1"><span class="italic">fit</span> - mạnh khỏe</li>
-                            <li><span class="italic">sporty</span> - có dáng thể thao</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card bg-purple-50">
-                        <h4 class="subsection-title">4. Cụm tính từ mô tả + danh từ</h4>
-                        <p class="text-gray-700 mb-3">Tính từ thường đứng trước danh từ mà nó bổ nghĩa.</p>
-                        <p class="text-gray-700 mb-3">Adjectives usually come before the nouns they modify.</p>
-                        <ul class="list-disc pl-5 text-gray-700">
-                            <li class="mb-1"><span class="italic">a fantastic career</span></li>
-                            <li class="mb-1"><span class="italic">a fit marathon runner</span></li>
-                            <li><span class="italic">sporty goggles</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card bg-pink-50">
-                        <h4 class="subsection-title">5. Cách nhận biết & vị trí</h4>
+                        <h4 class="subsection-title">3. Phân biệt tính từ sở hữu và đại từ sở hữu</h4>
                         <table class="w-full text-left text-gray-700 border-collapse">
+                            <thead>
+                                <tr class="border-b border-gray-300">
+                                    <th class="py-1 px-2">Tính từ sở hữu</th>
+                                    <th class="py-1 px-2">Đại từ sở hữu</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr class="border-b border-gray-200">
-                                    <td class="py-1 px-4">Vị trí trước danh từ</td>
-                                    <td class="py-1 px-4 italic">a fantastic competition</td>
+                                    <td class="py-1 px-2">my book</td>
+                                    <td class="py-1 px-2">The book is mine</td>
                                 </tr>
                                 <tr class="border-b border-gray-200">
-                                    <td class="py-1 px-4">Sau động từ to be</td>
-                                    <td class="py-1 px-4 italic">The tournament was fantastic</td>
+                                    <td class="py-1 px-2">your pen</td>
+                                    <td class="py-1 px-2">The pen is yours</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-1 px-4">Sau động từ liên kết</td>
-                                    <td class="py-1 px-4 italic">The athlete looks fit</td>
+                                    <td class="py-1 px-2">their house</td>
+                                    <td class="py-1 px-2">The house is theirs</td>
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Cách nhận biết & vị trí</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-2"><strong>Nhận biết:</strong> đứng trước danh từ, trả lời cho câu hỏi "Whose?" (Của ai?)</li>
+                            <li class="mb-2"><strong>Vị trí:</strong> 
+                                <ul class="list-decimal pl-5">
+                                    <li>Trước danh từ: <em>her bag</em></li>
+                                    <li>Sau động từ to be: <em>This bag is her</em> (sai!), phải dùng đại từ sở hữu: <em>This bag is hers</em></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -397,76 +454,68 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                     <div class="vocab-card">
-                        <p class="vocab-word">aerobics <span class="vocab-type">(n)</span> /eəˈrəʊbɪks/</p>
-                        <p class="vocab-meaning">thể dục nhịp điệu</p>
+                        <p class="vocab-word">(river) bank <span class="vocab-type">(n)</span> /ˈrɪvə/ /bæŋk/</p>
+                        <p class="vocab-meaning">bờ (sông)</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">career <span class="vocab-type">(n)</span> /kəˈrɪə/</p>
-                        <p class="vocab-meaning">nghề nghiệp, sự nghiệp</p>
+                        <p class="vocab-word">crowded <span class="vocab-type">(adj)</span> /ˈkraʊdɪd/</p>
+                        <p class="vocab-meaning">đông đúc</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">competition <span class="vocab-type">(n)</span> /ˌkɒmpəˈtɪʃn/</p>
-                        <p class="vocab-meaning">cuộc đua</p>
+                        <p class="vocab-word">floating market <span class="vocab-type">(n)</span> /ˈfləʊtɪŋ ˈmɑːkɪt/</p>
+                        <p class="vocab-meaning">chợ nổi</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">congratulation <span class="vocab-type">(n)</span> /kənˌɡrætʃəˈleɪʃn/</p>
-                        <p class="vocab-meaning">lời chúc mừng</p>
+                        <p class="vocab-word">helpful <span class="vocab-type">(adj)</span> /ˈhelpfl/</p>
+                        <p class="vocab-meaning">sẵn sàng giúp đỡ</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">equipment <span class="vocab-type">(n)</span> /ɪˈkwɪpmənt/</p>
-                        <p class="vocab-meaning">thiết bị, dụng cụ</p>
+                        <p class="vocab-word">helmet <span class="vocab-type">(n)</span> /ˈhelmɪt/</p>
+                        <p class="vocab-meaning">mũ bảo hiểm</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">fantastic <span class="vocab-type">(adj)</span> /fænˈtæstɪk/</p>
-                        <p class="vocab-meaning">tuyệt vời</p>
+                        <p class="vocab-word">landmark <span class="vocab-type">(n)</span> /ˈlændmɑːk/</p>
+                        <p class="vocab-meaning">địa điểm/ công trình thu hút du khách</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">fit <span class="vocab-type">(adj)</span> /fɪt/</p>
-                        <p class="vocab-meaning">mạnh khoẻ</p>
+                        <p class="vocab-word">city map <span class="vocab-type">(n)</span> /ˈsɪti mæp/</p>
+                        <p class="vocab-meaning">bản đồ thành phố</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">goggles <span class="vocab-type">(n)</span> /ˈɡɒɡlz/</p>
-                        <p class="vocab-meaning">kính bơi</p>
+                        <p class="vocab-word">palace <span class="vocab-type">(n)</span> /ˈpæləs/</p>
+                        <p class="vocab-meaning">cung điện</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">gym <span class="vocab-type">(n)</span> /dʒɪm/</p>
-                        <p class="vocab-meaning">phòng tập thể dục thể thao</p>
+                        <p class="vocab-word">postcard <span class="vocab-type">(n)</span> /ˈpəʊstkɑːd/</p>
+                        <p class="vocab-meaning">bưu thiếp</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">karate <span class="vocab-type">(n)</span> /kəˈrɑːti/</p>
-                        <p class="vocab-meaning">môn võ ka-ra-tê</p>
+                        <p class="vocab-word">rent <span class="vocab-type">(v)</span> /rent/</p>
+                        <p class="vocab-meaning">thuê</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">last <span class="vocab-type">(v)</span> /lɑːst/</p>
-                        <p class="vocab-meaning">kéo dài</p>
+                        <p class="vocab-word">Royal Palace <span class="vocab-type">(n)</span> /ˈrɔɪəl ˈpæləs/</p>
+                        <p class="vocab-meaning">Cung điện Hoàng gia</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">marathon <span class="vocab-type">(n)</span> /ˈmærəθən/</p>
-                        <p class="vocab-meaning">cuộc chạy đua ma-ra-tông</p>
+                        <p class="vocab-word">shell <span class="vocab-type">(n)</span> /ʃel/</p>
+                        <p class="vocab-meaning">vỏ sò</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">racket <span class="vocab-type">(n)</span> /ˈrækɪt/</p>
-                        <p class="vocab-meaning">cái vợt (cầu lông...)</p>
+                        <p class="vocab-word">stall <span class="vocab-type">(n)</span> /stɔːl/</p>
+                        <p class="vocab-meaning">gian hàng</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">score <span class="vocab-type">(v)</span> /skɔː/</p>
-                        <p class="vocab-meaning">ghi bàn, ghi điểm</p>
+                        <p class="vocab-word">street food <span class="vocab-type">(n)</span> /ˈstriːt fuːd/</p>
+                        <p class="vocab-meaning">thức ăn đường phố</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">shoot <span class="vocab-type">(v)</span> /ʃuːt/</p>
-                        <p class="vocab-meaning">bắn, bắn súng</p>
+                        <p class="vocab-word">Times Square <span class="vocab-type">(n)</span> /ˌtaɪmz ˈskweə/</p>
+                        <p class="vocab-meaning">Quảng trường Thời đại</p>
                     </div>
                     <div class="vocab-card">
-                        <p class="vocab-word">sporty <span class="vocab-type">(adj)</span> /ˈspɔːti/</p>
-                        <p class="vocab-meaning">khoẻ mạnh, dáng thể thao</p>
-                    </div>
-                    <div class="vocab-card">
-                        <p class="vocab-word">take place <span class="vocab-type">(phr)</span> /'teɪk pleɪs/</p>
-                        <p class="vocab-meaning">diễn ra, được tổ chức</p>
-                    </div>
-                    <div class="vocab-card">
-                        <p class="vocab-word">tournament <span class="vocab-type">(n)</span> /ˈtʊənəmənt/</p>
-                        <p class="vocab-meaning">giải đấu</p>
+                        <p class="vocab-word">tower <span class="vocab-type">(n)</span> /ˈtaʊə/</p>
+                        <p class="vocab-meaning">tháp</p>
                     </div>
                 </div>
             </div>
@@ -483,29 +532,19 @@
                 <div class="exercise-container">
                     <div class="flex items-start mb-3 w-full">
                         <div>
-                            <h4 class="exercise-title">Bài 1: Nhận biết tính từ trong câu</h4>
-                            <p class="exercise-instruction">👉 Gạch chân tất cả tính từ trong các câu sau:</p>
+                            <h4 class="exercise-title">Bài 1: Điền tính từ sở hữu thích hợp</h4>
+                            <p class="exercise-instruction">👉 Chọn và điền các tính từ sở hữu (my, your, his, her, its, our, their) vào chỗ trống:</p>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
-                                    onclick="highlightPhrase(this)" data-phrases="fantastic,fit">
-                                    <p class="text-gray-800">The fantastic competition had many fit athletes.</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="mb-2">1. This is <input type="text" class="answer-input w-20" data-answer="my"> (I) book. </p>
+                                    <p class="mb-2">2. Is this <input type="text" class="answer-input w-20" data-answer="your"> (you) helmet? </p>
+                                    <p class="mb-2">3. That's <input type="text" class="answer-input w-20" data-answer="his"> (he) city map. </p>
                                 </div>
-                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
-                                    onclick="highlightPhrase(this)" data-phrases="sporty">
-                                    <p class="text-gray-800">She wore sporty goggles for the swimming competition.</p>
-                                </div>
-                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
-                                    onclick="highlightPhrase(this)" data-phrases="new">
-                                    <p class="text-gray-800">We need new equipment for the gym.</p>
-                                </div>
-                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
-                                    onclick="highlightPhrase(this)" data-phrases="long,exciting">
-                                    <p class="text-gray-800">The long marathon was an exciting event.</p>
-                                </div>
-                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
-                                    onclick="highlightPhrase(this)" data-phrases="professional">
-                                    <p class="text-gray-800">He has a professional racket for the tournament.</p>
+                                <div>
+                                    <p class="mb-2">4. <input type="text" class="answer-input w-20" data-answer="her"> (She) favorite place is the floating market. </p>
+                                    <p class="mb-2">5. The dog is playing with <input type="text" class="answer-input w-20" data-answer="its"> (it) toy. </p>
+                                    <p class="mb-2">6. We love <input type="text" class="answer-input w-20" data-answer="our"> (we) new school. </p>
                                 </div>
                             </div>
                         </div>
@@ -518,81 +557,59 @@
                 <div class="exercise-container">
                     <div class="flex items-start mb-4">
                         <div>
-                            <h4 class="exercise-title">Bài 2: Chọn tính từ thích hợp để hoàn thành câu</h4>
+                            <h4 class="exercise-title">Bài 2: Phân biệt tính từ sở hữu và đại từ sở hữu</h4>
+                            <p class="exercise-instruction">👉 Chọn đáp án đúng (tính từ sở hữu hoặc đại từ sở hữu) để hoàn thành câu:</p>
 
-                            <div class="grid grid-cols-1 w-full gap-y-2">
-                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The ________ tournament will take place next month.</span>
+                            <div class="grid grid-cols-1 gap-y-4">
+                                <div class="exercise-item">
+                                    <p>1. This is ___ postcard. (my/mine)</p>
                                     <div class="radio-group">
                                         <label class="radio-label">
-                                            <input type="radio" name="q1" class="radio-input" value="fantastic"
-                                                data-answer="fantastic" onclick="checkAnswer(this)">
-                                            <span>fantastic</span>
+                                            <input type="radio" name="q1" class="radio-input" value="my" data-answer="my" onclick="checkAnswer(this)">
+                                            <span>my</span>
                                         </label>
                                         <label class="radio-label">
-                                            <input type="radio" name="q1" class="radio-input" value="goggles"
-                                                data-answer="fantastic" onclick="checkAnswer(this)">
-                                            <span>goggles</span>
+                                            <input type="radio" name="q1" class="radio-input" value="mine" data-answer="my" onclick="checkAnswer(this)">
+                                            <span>mine</span>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She has a very ________ look with her new sportswear.</span>
+                                <div>
+                                    <p>2. That camera is ___. (her/hers)</p>
                                     <div class="radio-group">
                                         <label class="radio-label">
-                                            <input type="radio" name="q2" class="radio-input" value="sporty"
-                                                data-answer="sporty" onclick="checkAnswer(this)">
-                                            <span>sporty</span>
+                                            <input type="radio" name="q2" class="radio-input" value="her" data-answer="hers" onclick="checkAnswer(this)">
+                                            <span>her</span>
                                         </label>
                                         <label class="radio-label">
-                                            <input type="radio" name="q2" class="radio-input" value="racket"
-                                                data-answer="sporty" onclick="checkAnswer(this)">
-                                            <span>racket</span>
+                                            <input type="radio" name="q2" class="radio-input" value="hers" data-answer="hers" onclick="checkAnswer(this)">
+                                            <span>hers</span>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Marathon runners need to be very ________.</span>
+                                <div>
+                                    <p>3. Their stall is more crowded than ___. (our/ours)</p>
                                     <div class="radio-group">
                                         <label class="radio-label">
-                                            <input type="radio" name="q3" class="radio-input" value="fit"
-                                                data-answer="fit" onclick="checkAnswer(this)">
-                                            <span>fit</span>
+                                            <input type="radio" name="q3" class="radio-input" value="our" data-answer="ours" onclick="checkAnswer(this)">
+                                            <span>our</span>
                                         </label>
                                         <label class="radio-label">
-                                            <input type="radio" name="q3" class="radio-input" value="karate"
-                                                data-answer="fit" onclick="checkAnswer(this)">
-                                            <span>karate</span>
+                                            <input type="radio" name="q3" class="radio-input" value="ours" data-answer="ours" onclick="checkAnswer(this)">
+                                            <span>ours</span>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The ________ equipment helped him win the competition.</span>
+                                <div>
+                                    <p>4. Is this ___ shell collection? (your/yours)</p>
                                     <div class="radio-group">
                                         <label class="radio-label">
-                                            <input type="radio" name="q4" class="radio-input" value="new"
-                                                data-answer="new" onclick="checkAnswer(this)">
-                                            <span>new</span>
+                                            <input type="radio" name="q4" class="radio-input" value="your" data-answer="your" onclick="checkAnswer(this)">
+                                            <span>your</span>
                                         </label>
                                         <label class="radio-label">
-                                            <input type="radio" name="q4" class="radio-input" value="aerobics"
-                                                data-answer="new" onclick="checkAnswer(this)">
-                                            <span>aerobics</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The ________ competition lasted three hours.</span>
-                                    <div class="radio-group">
-                                        <label class="radio-label">
-                                            <input type="radio" name="q5" class="radio-input" value="long"
-                                                data-answer="long" onclick="checkAnswer(this)">
-                                            <span>long</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="q5" class="radio-input" value="marathon"
-                                                data-answer="long" onclick="checkAnswer(this)">
-                                            <span>marathon</span>
+                                            <input type="radio" name="q4" class="radio-input" value="yours" data-answer="your" onclick="checkAnswer(this)">
+                                            <span>yours</span>
                                         </label>
                                     </div>
                                 </div>
@@ -604,34 +621,29 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 3: Sắp xếp từ thành câu hoàn chỉnh</h4>
-                            <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu có nghĩa, chú ý vị trí của tính từ:</p>
+                            <h4 class="exercise-title">Bài 3: Sử dụng từ vựng và tính từ sở hữu để hoàn thành câu</h4>
+                            <p class="exercise-instruction">👉 Dùng từ trong ngoặc kết hợp với tính từ sở hữu thích hợp để hoàn thành câu:</p>
 
-                            <div class="grid grid-cols-1 w-full gap-y-4">
-                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">tournament / fantastic / was / the</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="The tournament was fantastic" onblur="checkAnswer(this)">
+                            <div class="space-y-4">
+                                <div>
+                                    <p>1. We took photos at ___ (Times Square) yesterday.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="our Times Square" onblur="checkAnswer(this)">
                                 </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">goggles / sporty / bought / she / new</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="She bought new sporty goggles" onblur="checkAnswer(this)">
+                                <div>
+                                    <p>2. The tourist lost ___ (city map) near the landmark.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="his city map" onblur="checkAnswer(this)">
                                 </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">career / has / a / fantastic / athlete / the</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="The athlete has a fantastic career" onblur="checkAnswer(this)">
+                                <div>
+                                    <p>3. She bought some souvenirs from ___ (floating market).</p>
+                                    <input type="text" class="answer-input w-full" data-answer="the floating market" onblur="checkAnswer(this)">
                                 </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">marathon / was / long / the / very</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="The marathon was very long" onblur="checkAnswer(this)">
+                                <div>
+                                    <p>4. They rented ___ (bike) to explore the city.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="their bikes" onblur="checkAnswer(this)">
                                 </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">competition / exciting / the / was</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="The competition was exciting" onblur="checkAnswer(this)">
+                                <div>
+                                    <p>5. He forgot ___ (helmet) at the stall.</p>
+                                    <input type="text" class="answer-input w-full" data-answer="his helmet" onblur="checkAnswer(this)">
                                 </div>
                             </div>
                         </div>
@@ -651,40 +663,37 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 4: Điền tính từ thích hợp vào chỗ trống</h4>
-                            <p class="exercise-instruction">👉 Chọn từ trong khung để điền vào chỗ trống:</p>
-                            <p class="text-gray-500 mb-3">(fantastic, fit, sporty, long, new, exciting)</p>
+                            <h4 class="exercise-title">Bài 4: Sắp xếp từ thành câu hoàn chỉnh</h4>
+                            <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu hoàn chỉnh có sử dụng tính từ sở hữu:</p>
+
+                            <div class="drag-drop-container mb-4">
+                                <div class="drag-item" draggable="true">his</div>
+                                <div class="drag-item" draggable="true">her</div>
+                                <div class="drag-item" draggable="true">their</div>
+                                <div class="drag-item" draggable="true">Royal Palace</div>
+                                <div class="drag-item" draggable="true">street food</div>
+                                <div class="drag-item" draggable="true">is</div>
+                                <div class="drag-item" draggable="true">are</div>
+                                <div class="drag-item" draggable="true">favorite</div>
+                                <div class="drag-item" draggable="true">postcards</div>
+                                <div class="drag-item" draggable="true">landmark</div>
+                            </div>
 
                             <div class="space-y-4">
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The ________ marathon will take place next Sunday.</span>
-                                    <input type="text" class="answer-input block print:hidden" data-answer="long"
-                                        onblur="checkAnswer(this)">
+                                <div>
+                                    <p>1. favorite / landmark / is / his / The Royal Palace</p>
+                                    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    <input type="text" class="answer-input w-full hidden" data-answer="His favorite landmark is the Royal Palace" onblur="checkAnswer(this)">
                                 </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She looks very ________ in her new training outfit.</span>
-                                    <input type="text" class="answer-input block print:hidden"
-                                        data-answer="sporty" onblur="checkAnswer(this)">
+                                <div>
+                                    <p>2. collecting / She / postcards / is / her</p>
+                                    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    <input type="text" class="answer-input w-full hidden" data-answer="She is collecting her postcards" onblur="checkAnswer(this)">
                                 </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The karate competition was absolutely ________.</span>
-                                    <input type="text" class="answer-input block print:hidden" data-answer="fantastic"
-                                        onblur="checkAnswer(this)">
-                                </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Athletes need to be very ________ to compete in tournaments.</span>
-                                    <input type="text" class="answer-input block print:hidden" data-answer="fit"
-                                        onblur="checkAnswer(this)">
-                                </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We need ________ equipment for our gym.</span>
-                                    <input type="text" class="answer-input block print:hidden" data-answer="new"
-                                        onblur="checkAnswer(this)">
-                                </div>
-                                <div class="flex flex-col md:flex-row items-start md:items-center">
-                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The aerobics competition was very ________ to watch.</span>
-                                    <input type="text" class="answer-input block print:hidden" data-answer="exciting"
-                                        onblur="checkAnswer(this)">
+                                <div>
+                                    <p>3. street food / Their / is / favorite / Vietnamese</p>
+                                    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    <input type="text" class="answer-input w-full hidden" data-answer="Their favorite street food is Vietnamese" onblur="checkAnswer(this)">
                                 </div>
                             </div>
                         </div>
@@ -694,34 +703,28 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 5: Viết lại câu sử dụng tính từ cho sẵn</h4>
-                            <p class="exercise-instruction">👉 Viết lại các câu sau bằng cách thêm tính từ thích hợp vào vị trí đúng:</p>
+                            <h4 class="exercise-title">Bài 5: Tìm và sửa lỗi sai về tính từ sở hữu</h4>
 
                             <div class="grid grid-cols-1 w-full gap-y-2">
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">The tournament was ________. (fantastic)</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="The tournament was fantastic" onblur="checkAnswer(this)">
+                                    <span class="font-medium text-gray-700">1. This is hers book.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="This is her book." onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">She has a ________ career. (sporty)</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="She has a sporty career" onblur="checkAnswer(this)">
+                                    <span class="font-medium text-gray-700">2. Your house is bigger than our.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Your house is bigger than ours." onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">The ________ competition lasted all day. (karate)</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="The karate competition lasted all day" onblur="checkAnswer(this)">
+                                    <span class="font-medium text-gray-700">3. The shell collection is my.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="The shell collection is mine." onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">He bought ________ goggles. (new)</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="He bought new goggles" onblur="checkAnswer(this)">
+                                    <span class="font-medium text-gray-700">4. Their stalls is near river bank.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Their stalls are near the river bank." onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">The ________ marathon was challenging. (long)</span>
-                                    <input type="text" class="answer-input flex-1"
-                                        data-answer="The long marathon was challenging" onblur="checkAnswer(this)">
+                                    <span class="font-medium text-gray-700">5. Is this you helmet?</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Is this your helmet?" onblur="checkAnswer(this)">
                                 </div>
                             </div>
                         </div>
@@ -731,29 +734,37 @@
                 <div class="exercise-container w-full">
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
-                            <h4 class="exercise-title">Bài 6: Đặt câu hoàn chỉnh sử dụng tính từ và danh từ đã cho</h4>
-                            <p class="exercise-instruction">👉 Dùng các từ sau để đặt câu có nghĩa:</p>
+                            <h4 class="exercise-title">Bài 6: Đặt câu hoàn chỉnh sử dụng các từ cho sẵn</h4>
+                            <p class="exercise-instruction">👉 Sử dụng tính từ sở hữu kết hợp với từ vựng đã học để đặt câu:</p>
 
-                            <div class="grid grid-cols-1 w-full gap-y-2">
-                                <div class="flex flex-col sm:flex-row sm:items-center  w-full">
-                                    <span class="font-medium text-gray-700">fantastic + tournament:</span>
-                                    <input type="text" class="answer-input flex-1">
+                            <div class="matching-container">
+                                <div class="match-item">
+                                    <div class="match-key">1. my / helpful / guide</div>
+                                    <div class="match-value">
+                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
+                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: My guide is very helpful.</p>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center  w-full">
-                                    <span class="font-medium text-gray-700">fit + athlete:</span>
-                                    <input type="text" class="answer-input flex-1">
+                                <div class="match-item">
+                                    <div class="match-key">2. her / beautiful / postcards</div>
+                                    <div class="match-value">
+                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
+                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: Her postcards are beautiful.</p>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center  w-full">
-                                    <span class="font-medium text-gray-700">sporty + goggles:</span>
-                                    <input type="text" class="answer-input flex-1">
+                                <div class="match-item">
+                                    <div class="match-key">3. our / crowded / floating market</div>
+                                    <div class="match-value">
+                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
+                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: Our floating market is very crowded.</p>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center  w-full">
-                                    <span class="font-medium text-gray-700">long + marathon:</span>
-                                    <input type="text" class="answer-input flex-1">
-                                </div>
-                                <div class="flex flex-col sm:flex-row sm:items-center  w-full">
-                                    <span class="font-medium text-gray-700">exciting + competition:</span>
-                                    <input type="text" class="answer-input flex-1">
+                                <div class="match-item">
+                                    <div class="match-key">4. their / favorite / street food</div>
+                                    <div class="match-value">
+                                        <input type="text" class="match-input w-full" placeholder="Viết câu của bạn ở đây" onblur="checkAnswer(this)">
+                                        <p class="hidden answer-match text-sm text-gray-500">Gợi ý: Their favorite street food is pho.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -764,8 +775,6 @@
     </div>
 
     <script>
-        // Common functions for worksheets
-
         // Function to print the worksheet
         function printWorksheet() {
             window.print();
@@ -775,7 +784,7 @@
         function checkAnswer(input) {
             const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
             const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
-            console.log(userAnswer, correctAnswer);
+            
             // Handle radio buttons
             if (input.type === 'radio') {
                 const radioGroup = document.getElementsByName(input.name);
@@ -807,25 +816,47 @@
             }
         }
 
-        // Function to highlight phrases in sentences
-        function highlightPhrase(element) {
-            const text = element.querySelector('p').textContent;
-            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+        // Drag and drop functions
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
 
-            let highlightedText = text;
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.textContent);
+        }
 
-            // Highlight each phrase
-            phrasesToHighlight.forEach(phrase => {
-                const cleanPhrase = phrase.trim();
-                if (cleanPhrase) {
-                    // Create a case-insensitive regex for the phrase
-                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
-                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
-                }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.textContent = data;
+            ev.target.classList.add('highlight');
+            const input = ev.target.nextElementSibling;
+            if (input) {
+                input.value = data;
+                input.classList.remove('hidden');
+            }
+        }
+
+        // Set up draggable items
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.drag-item');
+            items.forEach(item => {
+                item.addEventListener('dragstart', drag);
             });
 
-            element.querySelector('p').innerHTML = highlightedText;
-        }
+            // Show hint when focusing on match input
+            const matchInputs = document.querySelectorAll('.match-input');
+            matchInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    const hint = this.parentElement.querySelector('.answer-match');
+                    if (hint) hint.classList.remove('hidden');
+                });
+                input.addEventListener('blur', function() {
+                    const hint = this.parentElement.querySelector('.answer-match');
+                    if (hint) hint.classList.add('hidden');
+                });
+            });
+        });
     </script>
 </body>
 
