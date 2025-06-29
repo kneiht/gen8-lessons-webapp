@@ -105,6 +105,13 @@
       "description": "Khái niệm mạo từ, cách sử dụng a/an và the, phân biệt danh từ cụ thể và không cụ thể",
       "category": "slides"
     },
+    "slides/pre-gs7-Comparison-Structures": {
+      "path": "slides/pre-gs7-Comparison-Structures",
+      "title": "pre-GS7-Comparison Structures",
+      "author": "Hoa Bac",
+      "description": "Cấu trúc so sánh",
+      "category": "slides"
+    },
     "slides/pre-gs7-personal-pronouns": {
       "path": "slides/pre-gs7-personal-pronouns",
       "title": "Pre GS7 - Personal Pronouns (Đại từ nhân xưng)",
@@ -250,6 +257,13 @@
       "title": "Pre   Gs8   Review Tense 1",
       "author": "Gen8",
       "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs7-WS-Comparison-Structures": {
+      "path": "worksheets/pre-gs7-WS-Comparison-Structures",
+      "title": "pre-GS7-Comparison Structures",
+      "author": "Hoa Bac",
+      "description": "Cấu trúc so sánh",
       "category": "worksheets"
     },
     "worksheets/pre - gs8 - review - verb form 2": {
