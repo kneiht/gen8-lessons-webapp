@@ -105,13 +105,6 @@
       "description": "Khái niệm mạo từ, cách sử dụng a/an và the, phân biệt danh từ cụ thể và không cụ thể",
       "category": "slides"
     },
-    "slides/pre-gs7-possessive": {
-      "path": "slides/pre-gs7-possessive",
-      "title": "Pre Gs7 - Possessive (Sở hữu cách)",
-      "author": "Hoa Bac",
-      "description": "Sở hữu cách (Possessive)",
-      "category": "slides"
-    },
     "slides/pre-gs7-personal-pronouns": {
       "path": "slides/pre-gs7-personal-pronouns",
       "title": "Pre GS7 - Personal Pronouns (Đại từ nhân xưng)",
@@ -119,8 +112,15 @@
       "description": "Hiểu khái niệm đại từ nhân xưng, phân biệt đại từ chủ ngữ và tân ngữ, nắm vị trí trong câu, làm bài tập ứng dụng",
       "category": "slides"
     },
-    "slides/pre-gs7-adjective": {
-      "path": "slides/pre-gs7-adjective",
+    "slides/pre-gs7-possessives": {
+      "path": "slides/pre-gs7-possessives",
+      "title": "Pre Gs7 - Possessive (Sở hữu cách)",
+      "author": "Hoa Bac",
+      "description": "Sở hữu cách (Possessive)",
+      "category": "slides"
+    },
+    "slides/pre-gs7-adjectives": {
+      "path": "slides/pre-gs7-adjectives",
       "title": "pre-GS7-Adjective",
       "author": "Hoa Bac",
       "description": "Tính từ mô tả",
