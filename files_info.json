@@ -189,6 +189,13 @@
       "description": "Cách sử dụng và dấu hiệu nhận biết, cấu trúc câu khẳng định, phủ định, nghi vấn, phân biệt hai thì hiện tại đơn và hiện tại tiếp diễn",
       "category": "slides"
     },
+    "slides/pre-gs7-verbs-2": {
+      "path": "slides/pre-gs7-verbs-2",
+      "title": "pre-GS7-verbs-2",
+      "author": "Hoa Bac",
+      "description": "Động từ (Phần 2)",
+      "category": "slides"
+    },
     "worksheets/pre-gs6-personal-pronouns": {
       "path": "worksheets/pre-gs6-personal-pronouns",
       "title": "Pre Gs6 - Đại từ nhân xưng (Personal Pronouns)",
@@ -278,6 +285,13 @@
       "title": "pre-GS7-Comparison Structures",
       "author": "Hoa Bac",
       "description": "Cấu trúc so sánh",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs7-WS-verbs-2": {
+      "path": "worksheets/pre-gs7-WS-verbs-2",
+      "title": "pre-GS7-verbs-2",
+      "author": "Hoa Bac",
+      "description": "Động từ (Phần 2)",
       "category": "worksheets"
     },
     "worksheets/pre - gs8 - review - verb form 2": {
