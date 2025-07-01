@@ -1,711 +1,1015 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regular Verbs Exercises</title>
+    <title>REGULAR VERBS - Động từ thường</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+        
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.3);
+            background-image: url('https://i.pinimg.com/736x/e2/2d/e0/e22de0b1ee4aeab2b69310c54e71b5cd.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+            border-radius: 1rem;
+        }
+        
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+        
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+        
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+        
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
         .verb-card {
             transition: all 0.3s ease;
         }
+        
         .verb-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        .answer-input {
-            border-bottom: 2px solid #4b5563;
-            width: 100px;
-            text-align: center;
-            margin: 0 5px;
-        }
-        .answer-input:focus {
-            outline: none;
-            border-color: #3b82f6;
-        }
-        .check-btn {
-            transition: all 0.2s ease;
-        }
-        .check-btn:hover {
-            transform: scale(1.05);
-        }
-        .correct-answer {
-            background-color: #d1fae5;
-            border-left: 4px solid #10b981;
-        }
-        .incorrect-answer {
-            background-color: #fee2e2;
-            border-left: 4px solid #ef4444;
+
+        /* Tiêu đề trong suốt cho tất cả slide */
+        .content-box h1, .content-box h2, .content-box h3, .content-box h4, .content-box h5, .content-box h6 {
+            background-color: transparent !important;
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
-        <!-- Header -->
-        <header class="text-center mb-8 relative">
-            <button onclick="window.print()" class="absolute right-0 top-0 bg-indigo-500 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg shadow transition duration-200 print:hidden">
-                <i class="fas fa-print mr-2"></i> Print
+<body class="bg-blue-50 min-h-screen flex items-center justify-center p-2">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
             </button>
-            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-2">
-                Regular Verbs in English<br>
-                <span class="text-lg font-normal text-gray-700">Động từ thường trong tiếng Anh</span>
-            </h1>
-            <p class="text-gray-600">
-                Learn about regular verbs and practice with interactive exercises<br>
-                <span class="text-sm text-gray-700">Tìm hiểu về động từ thường và luyện tập với các bài tập tương tác</span>
-            </p>
-            <div class="w-20 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
-        </header>
-
-        <!-- Introduction Section -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8 verb-card">
-            <div class="flex items-start mb-4">
-                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                    <i class="fas fa-info-circle text-indigo-600 text-xl"></i>
-                </div>
-                <div>
-                    <h2 class="text-xl font-semibold text-gray-800 mb-2">What are Regular Verbs?</h2>
-                    <div class="mt-4 mb-4 p-4 bg-yellow-100 border-l-4 border-yellow-400 rounded">
-                        <h3 class="font-semibold text-yellow-800 mb-2">Giải thích bằng tiếng Việt:</h3>
-                        <p class="text-gray-800 mb-2">
-                            <strong>Động từ thường</strong> là những động từ không phải là "to be". Ví dụ: play (chơi), eat (ăn), go (đi), watch (xem), study (học), fix (sửa)...
-                        </p>
-                        <ul class="list-disc pl-6 text-gray-800 mb-2">
-                            <li><strong>Động từ chỉ hành động (Action Verbs):</strong> mô tả các hành động vật lý. Ví dụ: jump (nhảy), write (viết), play (chơi), run (chạy), swim (bơi), dance (nhảy múa).</li>
-                            <li><strong>Động từ chỉ trạng thái (Stative Verbs):</strong> mô tả trạng thái, cảm xúc hoặc suy nghĩ. Ví dụ: like (thích), know (biết), hate (ghét), belong (thuộc về), love (yêu), believe (tin tưởng).</li>
-                        </ul>
-                        <p class="text-gray-800">Tóm lại: Động từ thường là các động từ không phải "to be".</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 mt-6">
-                <div class="bg-blue-50 p-4 rounded-lg">
-                    <h3 class="font-medium text-blue-800 mb-3 flex items-center">
-                        <i class="fas fa-running mr-2"></i> Action Verbs
-                    </h3>
-                    <p class="text-gray-700">
-                        Describe physical actions. Examples: jump, write, play, run, swim, dance
-                    </p>
-                </div>
-                <div class="bg-purple-50 p-4 rounded-lg">
-                    <h3 class="font-medium text-purple-800 mb-3 flex items-center">
-                        <i class="fas fa-brain mr-2"></i> Stative Verbs
-                    </h3>
-                    <p class="text-gray-700">
-                        Describe states, emotions, thoughts. Examples: like, know, hate, belong, love, believe
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rules Section -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8 verb-card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-graduation-cap text-indigo-600 mr-3"></i> Adding -s/-es Rules (for He/She/It)
-            </h2>
-            
-            <div class="mt-2 mb-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded">
-                <h3 class="font-semibold text-yellow-800 mb-2">Giải thích tiếng Việt:</h3>
-                <ul class="list-disc pl-6 text-gray-800 mb-2">
-                    <li><strong>Hầu hết các động từ:</strong> Thêm "-s" vào sau động từ. <em>Ví dụ:</em> play → plays, cook → cooks</li>
-                    <li><strong>Động từ kết thúc bằng -s, -sh, -ch, -x, -z, -o:</strong> Thêm "-es" vào sau động từ. <em>Ví dụ:</em> watch → watches, go → goes</li>
-                    <li><strong>Động từ kết thúc bằng phụ âm + y:</strong> Đổi "y" thành "i" rồi thêm "es". <em>Ví dụ:</em> study → studies, cry → cries</li>
-                    <li><strong>Động từ kết thúc bằng nguyên âm + y:</strong> Thêm "-s". <em>Ví dụ:</em> play → plays, enjoy → enjoys</li>
-                </ul>
-                <p class="text-gray-800"><strong>Lưu ý:</strong> Với các chủ ngữ I/You/We/They, KHÔNG thêm gì vào động từ. Chỉ He/She/It mới cần thêm "-s" hoặc "-es".</p>
-            </div>
-            
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-200 rounded-lg">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="py-3 px-4 text-left text-gray-700 font-medium">Case</th>
-                            <th class="py-3 px-4 text-left text-gray-700 font-medium">Rule</th>
-                            <th class="py-3 px-4 text-left text-gray-700 font-medium">Examples</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        <tr>
-                            <td class="py-3 px-4">Most verbs</td>
-                            <td class="py-3 px-4">Add -s</td>
-                            <td class="py-3 px-4">play → plays, cook → cooks</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="py-3 px-4">Ends with -s, -sh, -ch, -x, -z, -o</td>
-                            <td class="py-3 px-4">Add -es</td>
-                            <td class="py-3 px-4">watch → watches, go → goes</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 px-4">Ends with consonant + y</td>
-                            <td class="py-3 px-4">Change y to i + es</td>
-                            <td class="py-3 px-4">study → studies, cry → cries</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="py-3 px-4">Ends with vowel + y</td>
-                            <td class="py-3 px-4">Add -s</td>
-                            <td class="py-3 px-4">play → plays, enjoy → enjoys</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <i class="fas fa-exclamation-circle text-yellow-500"></i>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-sm text-yellow-700">
-                            <strong>Note:</strong> With subjects I/You/We/They, don't add anything to the verb. Only He/She/It needs -s/-es.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Exercise 1 -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8 verb-card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-pencil-alt text-indigo-600 mr-3"></i> Exercise 1: Classify the Verbs
-            </h2>
-            <p class="text-gray-700 mb-4">Classify these verbs into Action Verbs and Stative Verbs:</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span class="bg-gray-200 px-3 py-1 rounded-full">run</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">eat</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">swim</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">love</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">think</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">jump</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">believe</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">sing</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">dance</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">know</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">like</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">walk</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">have</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">play</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">read</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">belong</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">write</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">know</span>
-                <span class="bg-gray-200 px-3 py-1 rounded-full">hate</span>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <h3 class="font-medium text-blue-800 mb-3">Action Verbs:</h3>
-                    <div class="bg-blue-50 p-4 rounded-lg min-h-32" id="action-verbs-container">
-                        <!-- Answers will appear here -->
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-medium text-purple-800 mb-3">Stative Verbs:</h3>
-                    <div class="bg-purple-50 p-4 rounded-lg min-h-32" id="stative-verbs-container">
-                        <!-- Answers will appear here -->
-                    </div>
-                </div>
-            </div>
-            
-            <button onclick="checkExercise1()" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 check-btn">
-                <i class="fas fa-check mr-2"></i> Check Answers
+            <button onclick="showSlide(currentSlide + 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
             </button>
-            
-            <div id="exercise1-feedback" class="hidden mt-4 p-4 rounded-lg"></div>
-        </section>
-
-        <!-- Exercise 2 -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8 verb-card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-pencil-alt text-indigo-600 mr-3"></i> Exercise 2: Find the Verbs
-            </h2>
-            <p class="text-gray-700 mb-4">Underline the verbs in these sentences:</p>
-            
-            <div class="space-y-4">
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">1. She plays the piano every day.</p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="plays">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">2. I feel tired after work.</p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="feel">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">3. We are students.</p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="are">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">4. They eat breakfast at 7 a.m.</p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="eat">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">5. He knows the answer.</p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="knows">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
+            <button onclick="toggleOutline()" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
             </div>
-            
-            <button onclick="showAllExercise2Answers()" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 check-btn">
-                <i class="fas fa-lightbulb mr-2"></i> Show All Answers
-            </button>
-        </section>
-
-        <!-- Exercise 3 -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8 verb-card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-pencil-alt text-indigo-600 mr-3"></i> Exercise 3: Identify Verbs
-            </h2>
-            <p class="text-gray-700 mb-4">Select the verb in each group of words:</p>
-            
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">apple</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">run</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">book</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">chair</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="run">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">sing</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">TV</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">sleep</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">hat</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="sing,sleep">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">bag</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">write</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">eat</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">key</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="write,eat">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <div class="flex flex-wrap gap-2 mb-3">
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">think</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">door</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">house</span>
-                        <span class="bg-gray-200 px-3 py-1 rounded-full">candle</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="think">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <button onclick="showAllExercise3Answers()" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 check-btn">
-                <i class="fas fa-lightbulb mr-2"></i> Show All Answers
-            </button>
-        </section>
-
-        <!-- Exercise 4 -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8 verb-card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-pencil-alt text-indigo-600 mr-3"></i> Exercise 4: Add -s/-es
-            </h2>
-            <p class="text-gray-700 mb-4">Add "s" or "es" to the verbs for He/She/It:</p>
-            
-            <div class="space-y-4">
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">He (work) at a hospital. → <span class="font-medium">__________</span></p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="works">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">She (want) to be a teacher. → <span class="font-medium">__________</span></p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="wants">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">My brother (play) football every day. → <span class="font-medium">__________</span></p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="plays">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">The dog (run) very fast. → <span class="font-medium">__________</span></p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="runs">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800">She (eat) lunch at 12. → <span class="font-medium">__________</span></p>
-                    <div class="mt-2 flex items-center">
-                        <span class="text-sm text-gray-500 mr-2">Answer:</span>
-                        <input type="text" class="answer-input" data-answer="eats">
-                        <button onclick="checkSingleAnswer(this)" class="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-1 px-3 rounded check-btn">
-                            Check
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <button onclick="showAllExercise4Answers()" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 check-btn">
-                <i class="fas fa-lightbulb mr-2"></i> Show All Answers
-            </button>
-        </section>
-
-        <!-- Exercise 5 -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8 verb-card">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-pencil-alt text-indigo-600 mr-3"></i> Exercise 5: Multiple Choice
-            </h2>
-            <p class="text-gray-700 mb-4">Choose the correct form of the verb:</p>
-            
-            <div class="space-y-6">
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800 mb-3">She _______ to school by bike.</p>
-                    <div class="grid md:grid-cols-2 gap-2">
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">A. go</button>
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">B. goes</button>
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">C. going</button>
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">D. went</button>
-                    </div>
-                    <div class="mt-3 hidden answer-feedback"></div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800 mb-3">He always _______ his hands before meals.</p>
-                    <div class="grid md:grid-cols-2 gap-2">
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">A. wash</button>
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">B. washing</button>
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">C. washes</button>
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">D. washed</button>
-                    </div>
-                    <div class="mt-3 hidden answer-feedback"></div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800 mb-3">My brother _______ video games every day.</p>
-                    <div class="grid md:grid-cols-2 gap-2">
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">A. play</button>
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">B. plays</button>
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">C. played</button>
-                        <button onclick="checkMCQAnswer(this, 'B')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">D. playing</button>
-                    </div>
-                    <div class="mt-3 hidden answer-feedback"></div>
-                </div>
-                
-                <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <p class="text-gray-800 mb-3">The baby often _______ at night.</p>
-                    <div class="grid md:grid-cols-2 gap-2">
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">A. cry</button>
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">B. crying</button>
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">C. cries</button>
-                        <button onclick="checkMCQAnswer(this, 'C')" class="text-left bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">D. cried</button>
-                    </div>
-                    <div class="mt-3 hidden answer-feedback"></div>
-                </div>
-            </div>
-            
-            <button onclick="showAllExercise5Answers()" class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200 check-btn">
-                <i class="fas fa-lightbulb mr-2"></i> Show All Answers
-            </button>
-        </section>
-
-        <!-- Submit Button and Result -->
-        <div class="flex flex-col items-center my-8">
-            <button onclick="submitAllExercises()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition duration-200">
-                <i class="fas fa-paper-plane mr-2"></i> Submit
-            </button>
-            <div id="submit-result" class="mt-6 w-full max-w-xl text-center text-lg font-semibold"></div>
         </div>
 
-        <!-- Footer -->
-        <footer class="text-center text-gray-600 text-sm mt-12">
-            
-        </footer>
+        <!-- Outline Modal -->
+        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-700">Nội dung bài học</h2>
+                    <button onclick="toggleOutline()" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose prose-lg max-w-none">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4">Động Từ Thường</h3>
+                    
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(0)">
+                        <h4 class="text-lg font-bold text-indigo-500">1. Giới thiệu & Mục tiêu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Hiểu động từ thường là gì</li>
+                            <li>Phân biệt động từ hành động và trạng thái</li>
+                            <li>Nắm quy tắc thêm -s/-es</li>
+                            <li>Làm bài tập ứng dụng</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(1)">
+                        <h4 class="text-lg font-bold text-indigo-500">2. Động từ thường là gì?</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Định nghĩa động từ thường</li>
+                            <li>Ví dụ: play, eat, go, watch</li>
+                            <li>Lưu ý: Động từ "to be" không phải là động từ thường</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(2)">
+                        <h4 class="text-lg font-bold text-indigo-500">3. Phân loại động từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Động từ hành động: jump, write, play, run</li>
+                            <li>Động từ trạng thái: like, know, hate, belong</li>
+                            <li>Lưu ý: Động từ trạng thái thường không dùng với thì tiếp diễn</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(3)">
+                        <h4 class="text-lg font-bold text-indigo-500">4. Quy tắc thêm -s/-es</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Thêm -s/-es khi chủ ngữ là He/She/It</li>
+                            <li>Bảng ví dụ: play → plays, go → goes, study → studies...</li>
+                            <li>Lưu ý quan trọng: He/She/It cần thêm -s/-es; I/You/We/They không thêm</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(4)">
+                        <h4 class="text-lg font-bold text-indigo-500">5. Bài tập 1: Chọn từ là động từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chọn các từ là động từ trong danh sách</li>
+                            <li>5 câu trắc nghiệm checkbox</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(5)">
+                        <h4 class="text-lg font-bold text-indigo-500">6. Bài tập 2: Tìm động từ trong câu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chọn động từ đúng trong câu (dropdown)</li>
+                            <li>5 câu thực hành</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(6)">
+                        <h4 class="text-lg font-bold text-indigo-500">7. Bài tập 3: Thêm -s/-es</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Điền động từ đúng dạng -s/-es cho 10 câu</li>
+                            <li>Thực hành với nhiều trường hợp khác nhau</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(7)">
+                        <h4 class="text-lg font-bold text-indigo-500">8. Tổng kết</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Ôn lại kiến thức động từ thường</li>
+                            <li>Ví dụ tổng hợp</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(8)">
+                        <h4 class="text-lg font-bold text-indigo-500">9. Kết thúc</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chúc mừng hoàn thành bài học</li>
+                            <li>Chuẩn bị cho bài tiếp theo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl text-2xl">
+            <!-- Slide 0: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-indigo-700 mb-6 tracking-wider uppercase">ĐỘNG TỪ THƯỜNG</h1>
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-3xl md:text-4xl font-extrabold px-10 py-4 rounded-full shadow-lg mb-8" style="display:inline-block;">
+                        REGULAR VERBS
+                    </div>
+                    <div class="bg-yellow-400 text-xl md:text-2xl font-bold px-6 py-3 rounded-full my-8 shadow-lg floating">
+                        VÀ CÁCH THÊM -S/-ES
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Grammar Learning" class="object-cover h-52 floating">
+                        </div>
+                        <div class="bg-gradient-to-r from-orange-100 to-orange-200 border-l-4 border-orange-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu động từ thường là gì</li>
+                                <li>Phân biệt động từ hành động và trạng thái</li>
+                                <li>Nắm quy tắc thêm -s/-es</li>
+                                <li>Làm bài tập ứng dụng</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: Definition -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">1. Động từ thường là gì?</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="w-full">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Động từ thường (regular verb) là động từ <span class="highlight">không phải "to be"</span>.</p>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 mt-6">
+                                <p class="font-bold text-blue-800 text-xl">Ví dụ:</p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                                    <div class="verb-card bg-white p-3 rounded-lg shadow text-center">
+                                        <p class="font-bold">play</p>
+                                        <p class="text-sm">chơi</p>
+                                    </div>
+                                    <div class="verb-card bg-white p-3 rounded-lg shadow text-center">
+                                        <p class="font-bold">eat</p>
+                                        <p class="text-sm">ăn</p>
+                                    </div>
+                                    <div class="verb-card bg-white p-3 rounded-lg shadow text-center">
+                                        <p class="font-bold">go</p>
+                                        <p class="text-sm">đi</p>
+                                    </div>
+                                    <div class="verb-card bg-white p-3 rounded-lg shadow text-center">
+                                        <p class="font-bold">watch</p>
+                                        <p class="text-sm">xem</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-yellow-100 p-4 rounded-lg mt-6">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Lưu ý:</p>
+                                <p class="text-lg">Động từ "to be" (am/is/are) không phải là động từ thường</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Verb Types -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">2. Phân loại động từ</h2>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                    <p class="font-extrabold text-green-800 text-2xl md:text-3xl mb-2">1. Động từ hành động</p>
+                                    <p class="text-lg mt-2">Diễn tả hành động thực sự</p>
+                                    <div class="mt-4 grid grid-cols-2 gap-2">
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">jump<br><span class="text-base md:text-lg font-normal">(nhảy)</span></div>
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">write<br><span class="text-base md:text-lg font-normal">(viết)</span></div>
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">play<br><span class="text-base md:text-lg font-normal">(chơi)</span></div>
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">run<br><span class="text-base md:text-lg font-normal">(chạy)</span></div>
+                                    </div>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                    <p class="font-extrabold text-purple-800 text-2xl md:text-3xl mb-2">2. Động từ trạng thái</p>
+                                    <p class="text-lg mt-2">Diễn tả cảm xúc, suy nghĩ, sở hữu</p>
+                                    <div class="mt-4 grid grid-cols-2 gap-2">
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">like<br><span class="text-base md:text-lg font-normal">(thích)</span></div>
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">know<br><span class="text-base md:text-lg font-normal">(biết)</span></div>
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">hate<br><span class="text-base md:text-lg font-normal">(ghét)</span></div>
+                                        <div class="bg-white p-2 rounded shadow text-center text-xl md:text-2xl font-bold">belong<br><span class="text-base md:text-lg font-normal">(thuộc về)</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-100 p-4 rounded-lg">
+                            <p class="font-bold text-blue-800 text-xl">💡 Ghi nhớ:</p>
+                            <p class="text-lg">Động từ trạng thái thường không dùng với thì tiếp diễn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Adding -s/-es -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">3. Quy tắc thêm -s/-es</h2>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Chỉ thêm -s/-es khi chủ ngữ là <span class="highlight">He/She/It</span></p>
+                            
+                            <div class="overflow-x-auto mt-6">
+                                <table class="w-full text-center text-lg">
+                                    <thead>
+                                        <tr class="bg-indigo-100">
+                                            <th class="p-3">Trường hợp</th>
+                                            <th class="p-3">Cách thêm</th>
+                                            <th class="p-3">Ví dụ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b">
+                                            <td class="p-3 font-bold text-left">Hầu hết các động từ</td>
+                                            <td class="p-3">Thêm -s</td>
+                                            <td class="p-3">
+                                                <div class="bg-pink-50 rounded-xl py-2 mb-2">play → plays</div>
+                                                <div class="bg-pink-50 rounded-xl py-2">cook → cooks</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-3 font-bold text-left">Kết thúc bằng -s, -sh, -ch, -x, -z, -o</td>
+                                            <td class="p-3">Thêm -es</td>
+                                            <td class="p-3">
+                                                <div class="bg-pink-50 rounded-xl py-2 mb-2">watch → watches</div>
+                                                <div class="bg-pink-50 rounded-xl py-2">go → goes</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-3 font-bold text-left">Kết thúc bằng phụ âm + y</td>
+                                            <td class="p-3">Đổi y → i + es</td>
+                                            <td class="p-3">
+                                                <div class="bg-pink-50 rounded-xl py-2 mb-2">study → studies</div>
+                                                <div class="bg-pink-50 rounded-xl py-2">cry → cries</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 font-bold text-left">Kết thúc bằng nguyên âm + y</td>
+                                            <td class="p-3">Thêm -s</td>
+                                            <td class="p-3">
+                                                <div class="bg-pink-50 rounded-xl py-2 mb-2">play → plays</div>
+                                                <div class="bg-pink-50 rounded-xl py-2">enjoy → enjoys</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-100 p-4 rounded-lg">
+                            <p class="font-bold text-red-800 text-xl">❗️ Lưu ý quan trọng:</p>
+                            <p class="text-lg mb-2">Chủ ngữ <span class="font-bold">He/She/It...</span> cần thêm <span class="font-bold">-s/-es</span></p>
+                            <ul class="list-disc pl-6 text-lg mb-2">
+                                <li>He plays soccer.</li>
+                                <li>She watches TV.</li>
+                                <li>The dog eats a banana.</li>
+                            </ul>
+                            <p class="text-lg mt-2">Chủ ngữ <span class="font-bold">I</span>/<span class="font-bold">You</span>/<span class="font-bold">We</span>/<span class="font-bold">They</span> thì <span class="font-bold">KHÔNG</span> thêm gì vào động từ</p>
+                            <p class="text-lg">Ví dụ: <span class="font-bold">I</span> play, <span class="font-bold">They</span> go, <span class="font-bold">You</span> study</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Exercise 1 - Choose verbs (GỘP 5 CÂU) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Chọn từ là động từ</h2>
+                    <p class="text-2xl mb-8">Chọn từ là động từ trong các từ sau:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <!-- Câu 1 -->
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">1. 
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="speak">
+                                    <span class="ml-2">speak</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">man</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="love">
+                                    <span class="ml-2">love</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">picture</span>
+                                </label>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkCheckbox(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <!-- Câu 2 -->
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">2. 
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="walk">
+                                    <span class="ml-2">walk</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">shirt</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">flower</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="read">
+                                    <span class="ml-2">read</span>
+                                </label>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkCheckbox(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <!-- Câu 3 -->
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">3. 
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">fork</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="hear">
+                                    <span class="ml-2">hear</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">shoes</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">camera</span>
+                                </label>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkCheckbox(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <!-- Câu 4 -->
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">4. 
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">sun</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="see">
+                                    <span class="ml-2">see</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">car</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">cake</span>
+                                </label>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkCheckbox(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <!-- Câu 5 -->
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">5. 
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="draw">
+                                    <span class="ml-2">draw</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">table</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600">
+                                    <span class="ml-2">window</span>
+                                </label>
+                                <label class="inline-flex items-center mx-2">
+                                    <input type="checkbox" class="form-checkbox h-5 w-5 text-indigo-600" data-answer="cook">
+                                    <span class="ml-2">cook</span>
+                                </label>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkCheckbox(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Exercise 2 - Find verbs in sentences (GỘP 5 CÂU) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Tìm động từ trong câu</h2>
+                    <p class="text-2xl mb-8">Chọn từ là động từ trong các câu sau:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">1. She <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl" data-answer="goes">
+                                <option value="">Chọn...</option>
+                                <option value="goes">goes</option>
+                                <option value="school">school</option>
+                                <option value="bike">bike</option>
+                            </select> to school by bike.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">2. I <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl" data-answer="like">
+                                <option value="">Chọn...</option>
+                                <option value="like">like</option>
+                                <option value="ice">ice</option>
+                                <option value="cream">cream</option>
+                            </select> ice cream.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">3. They <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl" data-answer="play">
+                                <option value="">Chọn...</option>
+                                <option value="They">They</option>
+                                <option value="play">play</option>
+                                <option value="soccer">soccer</option>
+                            </select> soccer every afternoon.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">4. He <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl" data-answer="watches">
+                                <option value="">Chọn...</option>
+                                <option value="He">He</option>
+                                <option value="watches">watches</option>
+                                <option value="TV">TV</option>
+                            </select> TV after dinner.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">5. We <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl" data-answer="play">
+                                <option value="">Chọn...</option>
+                                <option value="play">play</option>
+                                <option value="football">football</option>
+                                <option value="Sunday">Sunday</option>
+                            </select> football every Sunday.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Exercise 3 - Add -s/-es (GỘP 10 CÂU) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Thêm -s/-es</h2>
+                    <p class="text-2xl mb-8">Thêm "s" hoặc "es" cho động từ trong ngoặc:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">1. He <input type="text" class="exercise-input" data-answer="likes"> (like) chocolate.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">2. She <input type="text" class="exercise-input" data-answer="watches"> (watch) cartoons on TV.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">3. My dad <input type="text" class="exercise-input" data-answer="goes"> (go) to work at 7 a.m.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">4. The cat <input type="text" class="exercise-input" data-answer="chases"> (chase) the mouse.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">5. Anna <input type="text" class="exercise-input" data-answer="teaches"> (teach) English.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">6. He always <input type="text" class="exercise-input" data-answer="kisses"> (kiss) his mom goodbye.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">7. John <input type="text" class="exercise-input" data-answer="fixes"> (fix) bikes on weekends.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">8. My sister <input type="text" class="exercise-input" data-answer="studies"> (study) very hard.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">9. The dog <input type="text" class="exercise-input" data-answer="barks"> (bark) loudly at night.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">10. She <input type="text" class="exercise-input" data-answer="finishes"> (finish) her homework quickly.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Exercise 3 Part 2 -->
+            <!-- Slide 10: Exercise 3 Part 3 -->
+            <!-- Slide 11: Exercise 3 Part 4 -->
+            <!-- Slide 12: Exercise 3 Part 5 -->
+
+            <!-- Slide 13: Summary -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-3xl font-bold text-indigo-700 mb-8">Tổng kết bài học</h1>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md w-full max-w-3xl">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="text-xl font-bold text-blue-800 mb-3">Động từ thường</h3>
+                                <ul class="list-disc pl-5 text-left space-y-2">
+                                    <li>Không phải "to be"</li>
+                                    <li>2 loại: hành động và trạng thái</li>
+                                    <li>Ví dụ: play, eat, go, like, know</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h3 class="text-xl font-bold text-green-800 mb-3">Thêm -s/-es</h3>
+                                <ul class="list-disc pl-5 text-left space-y-2">
+                                    <li>Chỉ với He/She/It</li>
+                                    <li>Thêm -s với hầu hết động từ</li>
+                                    <li>Thêm -es với -s, -sh, -ch, -x, -z, -o</li>
+                                    <li>Đổi y → i + es với phụ âm + y</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl max-w-3xl w-full">
+                        <h3 class="text-2xl font-bold text-purple-800 mb-4">Ví dụ tổng hợp</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-3 rounded shadow">
+                                <p class="font-bold">She plays tennis.</p>
+                                <p class="text-sm">(play + s)</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow">
+                                <p class="font-bold">He watches TV.</p>
+                                <p class="text-sm">(watch + es)</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow">
+                                <p class="font-bold">It goes fast.</p>
+                                <p class="text-sm">(go + es)</p>
+                            </div>
+                            <div class="bg-white p-3 rounded shadow">
+                                <p class="font-bold">She studies English.</p>
+                                <p class="text-sm">(study → studies)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Final Exercise -->
+            <!-- Slide 15: Conclusion -->
+        </div>
     </div>
 
     <script>
-        // Exercise 1: Classify verbs
-        function checkExercise1() {
-            const actionVerbs = ['run', 'eat', 'swim', 'jump', 'sing', 'dance', 'walk', 'play', 'read', 'write'];
-            const stativeVerbs = ['love', 'think', 'believe', 'know', 'like', 'have', 'belong', 'know', 'hate'];
-            
-            const actionContainer = document.getElementById('action-verbs-container');
-            const stativeContainer = document.getElementById('stative-verbs-container');
-            
-            actionContainer.innerHTML = '';
-            stativeContainer.innerHTML = '';
-            
-            actionVerbs.forEach(verb => {
-                actionContainer.innerHTML += `<span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full inline-block mb-2 mr-2">${verb}</span>`;
-            });
-            
-            stativeVerbs.forEach(verb => {
-                stativeContainer.innerHTML += `<span class="bg-purple-200 text-purple-800 px-3 py-1 rounded-full inline-block mb-2 mr-2">${verb}</span>`;
-            });
-            
-            const feedback = document.getElementById('exercise1-feedback');
-            feedback.classList.remove('hidden');
-            feedback.innerHTML = `
-                <div class="flex items-center text-green-600">
-                    <i class="fas fa-check-circle mr-2"></i>
-                    <span>Great job! These are the correct classifications.</span>
-                </div>
-                <p class="mt-2 text-gray-700">Remember: Action verbs show physical actions, while stative verbs show states, emotions, or thoughts.</p>
-            `;
-            feedback.classList.add('bg-green-50');
-        }
-        
-        // General function to check single answers
-        function checkSingleAnswer(button) {
-            const input = button.previousElementSibling;
-            const correctAnswer = input.dataset.answer;
-            const userAnswer = input.value.trim().toLowerCase();
-            const possibleAnswers = correctAnswer.split(',');
-            
-            const parentDiv = input.closest('.p-4');
-            
-            if (possibleAnswers.includes(userAnswer)) {
-                parentDiv.classList.add('correct-answer');
-                parentDiv.classList.remove('incorrect-answer');
-                
-                // Create feedback element if it doesn't exist
-                let feedback = parentDiv.querySelector('.answer-feedback');
-                if (!feedback) {
-                    feedback = document.createElement('div');
-                    feedback.className = 'answer-feedback mt-2 text-sm';
-                    parentDiv.appendChild(feedback);
-                }
-                
-                feedback.innerHTML = `
-                    <div class="flex items-center text-green-600">
-                        <i class="fas fa-check-circle mr-2"></i>
-                        <span>Correct!</span>
-                    </div>
-                `;
-            } else {
-                parentDiv.classList.add('incorrect-answer');
-                parentDiv.classList.remove('correct-answer');
-                
-                // Create feedback element if it doesn't exist
-                let feedback = parentDiv.querySelector('.answer-feedback');
-                if (!feedback) {
-                    feedback = document.createElement('div');
-                    feedback.className = 'answer-feedback mt-2 text-sm';
-                    parentDiv.appendChild(feedback);
-                }
-                
-                feedback.innerHTML = `
-                    <div class="flex items-center text-red-600">
-                        <i class="fas fa-times-circle mr-2"></i>
-                        <span>Incorrect. Try again!</span>
-                    </div>
-                    ${correctAnswer.includes(',') ? 
-                      `<p class="text-gray-700 mt-1">Possible answers: ${correctAnswer.split(',').join(' or ')}</p>` : 
-                      `<p class="text-gray-700 mt-1">The correct answer is: ${correctAnswer}</p>`}
-                `;
-            }
-        }
-        
-        // Function to check MCQ answers
-        function checkMCQAnswer(button, correctOption) {
-            const selectedOption = button.textContent.trim().charAt(0);
-            const feedbackDiv = button.closest('.p-4').querySelector('.answer-feedback');
-            
-            // Reset all buttons in this question
-            const allButtons = button.closest('.grid').querySelectorAll('button');
-            allButtons.forEach(btn => {
-                btn.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
-            });
-            
-            if (selectedOption === correctOption) {
-                button.classList.add('bg-green-100', 'border-green-500', 'border');
-                feedbackDiv.innerHTML = `
-                    <div class="flex items-center text-green-600">
-                        <i class="fas fa-check-circle mr-2"></i>
-                        <span>Correct! Well done.</span>
-                    </div>
-                `;
-            } else {
-                button.classList.add('bg-red-100', 'border-red-500', 'border');
-                // Highlight the correct answer
-                allButtons.forEach(btn => {
-                    if (btn.textContent.trim().charAt(0) === correctOption) {
-                        btn.classList.add('bg-green-100', 'border-green-500', 'border');
-                    }
-                });
-                feedbackDiv.innerHTML = `
-                    <div class="flex items-center text-red-600">
-                        <i class="fas fa-times-circle mr-2"></i>
-                        <span>Incorrect. The right answer is ${correctOption}.</span>
-                    </div>
-                `;
-            }
-            
-            feedbackDiv.classList.remove('hidden');
-        }
-        
-        // Show all answers functions
-        function showAllExercise2Answers() {
-            const answers = ['plays', 'feel', 'are', 'eat', 'knows'];
-            const inputs = document.querySelectorAll('.answer-input');
-            
-            inputs.forEach((input, index) => {
-                input.value = answers[index];
-            });
-        }
-        
-        function showAllExercise3Answers() {
-            const answers = ['run', 'sing,sleep', 'write,eat', 'think'];
-            const inputs = document.querySelectorAll('.answer-input');
-            
-            inputs.forEach((input, index) => {
-                input.value = answers[index];
-            });
-        }
-        
-        function showAllExercise4Answers() {
-            const answers = ['works', 'wants', 'plays', 'runs', 'eats'];
-            const inputs = document.querySelectorAll('.answer-input');
-            
-            inputs.forEach((input, index) => {
-                input.value = answers[index];
-            });
-        }
-        
-        function showAllExercise5Answers() {
-            const answers = ['B', 'C', 'B', 'C'];
-            const buttons = document.querySelectorAll('.check-btn');
-            
-            buttons.forEach((button, index) => {
-                button.click();
-                const selectedOption = button.textContent.trim().charAt(0);
-                const correctOption = answers[index];
-                
-                if (selectedOption === correctOption) {
-                    button.classList.add('bg-green-100', 'border-green-500', 'border');
-                } else {
-                    button.classList.add('bg-red-100', 'border-red-500', 'border');
-                }
-            });
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            modal.classList.toggle('hidden');
         }
 
-        function submitAllExercises() {
-            let total = 0;
-            let correct = 0;
-            let wrong = 0;
-            // 1. Check all input answers (text)
-            const inputs = document.querySelectorAll('.answer-input');
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+    </script>
+    
+    <script>
+        // Exercise functions
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
             inputs.forEach(input => {
-                const correctAnswer = input.dataset.answer;
                 const userAnswer = input.value.trim().toLowerCase();
-                const possibleAnswers = correctAnswer ? correctAnswer.split(',') : [];
-                if (possibleAnswers.length > 0) {
-                    total++;
-                    if (possibleAnswers.includes(userAnswer)) {
-                        correct++;
-                    } else {
-                        wrong++;
-                    }
-                }
-            });
-            // 2. Check all MCQ answers
-            document.querySelectorAll('.space-y-6 > .p-4').forEach((mcqDiv, idx) => {
-                const correctOptions = ['B', 'C', 'B', 'C']; // Đáp án đúng cho từng câu MCQ
-                const selectedBtn = mcqDiv.querySelector('button.bg-green-100');
-                total++;
-                if (selectedBtn && selectedBtn.textContent.trim().charAt(0) === correctOptions[idx]) {
-                    correct++;
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    input.style.borderBottom = '2px solid #10b981';
                 } else {
-                    wrong++;
+                    answersHtml += `<p class="incorrect">✗ Sai! Đáp án đúng là: ${correctAnswer} (Bạn điền: ${userAnswer || 'trống'})</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
                 }
             });
-            // Hiển thị kết quả
-            const resultDiv = document.getElementById('submit-result');
-            resultDiv.innerHTML = `<div class="p-4 rounded-lg ${wrong === 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
-                Bạn làm đúng <span class="font-bold">${correct}/${total}</span> câu hỏi.<br>
-                ${wrong === 0 ? 'Xuất sắc! Bạn đã hoàn thành tất cả câu hỏi đúng.' : 'Hãy kiểm tra lại các câu sai và thử lại nhé!'}
-            </div>`;
-            window.scrollTo({ top: resultDiv.offsetTop - 100, behavior: 'smooth' });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkSelect(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const select = exerciseItem.querySelector('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const correctAnswer = select.dataset.answer;
+
+            if (select.value === correctAnswer) {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác!</p>';
+                select.classList.add('border-green-500');
+                select.classList.remove('border-indigo-300');
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${correctAnswer}</span></p>`;
+                select.classList.add('border-red-500');
+                select.classList.remove('border-indigo-300');
+            }
+
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+        }
+
+        function checkCheckbox(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const checkboxes = exerciseItem.querySelectorAll('input[type="checkbox"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            checkboxes.forEach(checkbox => {
+                const isCorrect = checkbox.checked === (checkbox.dataset.answer !== undefined);
+                const verb = checkbox.nextElementSibling.textContent;
+
+                if (isCorrect) {
+                    if (checkbox.dataset.answer) {
+                        answersHtml += `<p class="correct">✓ Đúng: "${verb}" là động từ</p>`;
+                    } else {
+                        answersHtml += `<p class="correct">✓ Đúng: "${verb}" không phải động từ</p>`;
+                    }
+                } else {
+                    if (checkbox.dataset.answer) {
+                        answersHtml += `<p class="incorrect">✗ Sai: "${verb}" là động từ (bạn không chọn)</p>`;
+                    } else {
+                        answersHtml += `<p class="incorrect">✗ Sai: "${verb}" không phải động từ (bạn chọn nhầm)</p>`;
+                    }
+                    allCorrect = false;
+                }
+            });
+
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const selects = exerciseItem.querySelectorAll('select');
+            const checkboxes = exerciseItem.querySelectorAll('input[type="checkbox"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset inputs
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset selects
+            selects.forEach(select => {
+                select.value = '';
+                select.classList.remove('border-green-500', 'border-red-500');
+                select.classList.add('border-indigo-300');
+            });
+
+            // Reset checkboxes
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            button.onclick = function() {
+                if (inputs.length > 0) {
+                    checkInput(button);
+                } else if (selects.length > 0) {
+                    checkSelect(button);
+                } else if (checkboxes.length > 0) {
+                    checkCheckbox(button);
+                }
+            };
+
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
         }
     </script>
 </body>
