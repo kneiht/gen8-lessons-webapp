@@ -47,7 +47,11 @@
         }
         
         .content-box {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.3);
+            background-image: url('https://i.pinimg.com/736x/e2/2d/e0/e22de0b1ee4aeab2b69310c54e71b5cd.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             overflow-y: auto;
             padding: 1rem 1rem 2rem 1rem;
             border-radius: 1rem;
@@ -98,6 +102,11 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+
+        /* Tiêu đề trong suốt cho tất cả slide */
+        .content-box h1, .content-box h2, .content-box h3, .content-box h4, .content-box h5, .content-box h6 {
+            background-color: transparent !important;
+        }
     </style>
 </head>
 <body class="bg-blue-50 min-h-screen flex items-center justify-center p-2">
@@ -126,20 +135,96 @@
         </div>
 
         <!-- Outline Modal -->
-        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-            <div class="bg-white rounded-xl p-6 max-w-md w-full max-h-[80vh] overflow-y-auto">
-                <h2 class="text-xl font-bold text-indigo-700 mb-4">Nội dung bài học</h2>
-                <ul class="space-y-2">
-                    <li><button onclick="goToSlide(0)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">1. Giới thiệu bài học</button></li>
-                    <li><button onclick="goToSlide(1)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">2. Động từ thường là gì?</button></li>
-                    <li><button onclick="goToSlide(2)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">3. Phân loại động từ</button></li>
-                    <li><button onclick="goToSlide(3)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">4. Quy tắc thêm -s/-es</button></li>
-                    <li><button onclick="goToSlide(4)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">5. Bài tập 1: Chọn động từ</button></li>
-                    <li><button onclick="goToSlide(5)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">6. Bài tập 2: Tìm động từ trong câu</button></li>
-                    <li><button onclick="goToSlide(6)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">7. Bài tập 3: Thêm -s/-es</button></li>
-                    <li><button onclick="goToSlide(7)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">8. Tổng kết</button></li>
-                </ul>
-                <button onclick="toggleOutline()" class="mt-4 w-full bg-indigo-600 text-white py-2 rounded-lg">Đóng</button>
+        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-700">Nội dung bài học</h2>
+                    <button onclick="toggleOutline()" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose prose-lg max-w-none">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4">Động Từ Thường</h3>
+                    
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(0)">
+                        <h4 class="text-lg font-bold text-indigo-500">1. Giới thiệu & Mục tiêu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Hiểu động từ thường là gì</li>
+                            <li>Phân biệt động từ hành động và trạng thái</li>
+                            <li>Nắm quy tắc thêm -s/-es</li>
+                            <li>Làm bài tập ứng dụng</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(1)">
+                        <h4 class="text-lg font-bold text-indigo-500">2. Động từ thường là gì?</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Định nghĩa động từ thường</li>
+                            <li>Ví dụ: play, eat, go, watch</li>
+                            <li>Lưu ý: Động từ "to be" không phải là động từ thường</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(2)">
+                        <h4 class="text-lg font-bold text-indigo-500">3. Phân loại động từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Động từ hành động: jump, write, play, run</li>
+                            <li>Động từ trạng thái: like, know, hate, belong</li>
+                            <li>Lưu ý: Động từ trạng thái thường không dùng với thì tiếp diễn</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(3)">
+                        <h4 class="text-lg font-bold text-indigo-500">4. Quy tắc thêm -s/-es</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Thêm -s/-es khi chủ ngữ là He/She/It</li>
+                            <li>Bảng ví dụ: play → plays, go → goes, study → studies...</li>
+                            <li>Lưu ý quan trọng: He/She/It cần thêm -s/-es; I/You/We/They không thêm</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(4)">
+                        <h4 class="text-lg font-bold text-indigo-500">5. Bài tập 1: Chọn từ là động từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chọn các từ là động từ trong danh sách</li>
+                            <li>5 câu trắc nghiệm checkbox</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(5)">
+                        <h4 class="text-lg font-bold text-indigo-500">6. Bài tập 2: Tìm động từ trong câu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chọn động từ đúng trong câu (dropdown)</li>
+                            <li>5 câu thực hành</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(6)">
+                        <h4 class="text-lg font-bold text-indigo-500">7. Bài tập 3: Thêm -s/-es</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Điền động từ đúng dạng -s/-es cho 10 câu</li>
+                            <li>Thực hành với nhiều trường hợp khác nhau</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(7)">
+                        <h4 class="text-lg font-bold text-indigo-500">8. Tổng kết</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Ôn lại kiến thức động từ thường</li>
+                            <li>Ví dụ tổng hợp</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(8)">
+                        <h4 class="text-lg font-bold text-indigo-500">9. Kết thúc</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Chúc mừng hoàn thành bài học</li>
+                            <li>Chuẩn bị cho bài tiếp theo</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
