@@ -3,176 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GS7 - Grammar Tenses Test</title>
+    <title>Bài Kiểm Tra Ngữ Pháp - Grammar Test</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-size: 14px;
-        }
         @media print {
             .print\:hidden { display: none !important; }
         }
     </style>
 </head>
 <body class="bg-gray-50">
-    <div class="test-paper max-w-2xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8 print:mt-0">
+    <div class="test-paper max-w-2xl mx-auto bg-white shadow-lg print:shadow-none    rounded-lg p-8 mt-8 print:mt-0">
         <div class="header text-center mb-8">
-            <h3 class="text-lg font-bold text-blue-800">ENGLISH GRAMMAR TENSES TEST 2</h3>
-            <p class="mb-2"><strong>Time:</strong> 45 minutes | <strong>Full name:</strong> <input type="text" class="border-b border-gray-400 outline-none px-2 print:hidden" style="width:220px" /></p>
+            <h3 class="text-lg font-bold text-blue-800">PRE GRADE 6 - ENGLISH GRAMMAR TEST 2 - (PAPER 1)</h3>
+            <p class="mb-2"><strong>Time:</strong> 60 minutes | <strong>Full name:</strong> <input type="text" class="border-b border-gray-400 outline-none px-2 print:hidden" style="width:220px" /></p>
         </div>
         <form id="grammarTest">
         <!-- Phần 1: Trắc nghiệm -->
         <div class="section mb-8">
-            <div class="section-title font-semibold mb-3">Phần 1: Trắc nghiệm (2 điểm) - Multiple Choice (2 marks)</div>
+            <div class="section-title font-semibold mb-3">Phần 1: Trắc nghiệm (4 điểm) - Multiple Choice (4 marks)</div>
             <p class="mb-4">Chọn đáp án đúng nhất (Choose the best answer):</p>
-            <!-- MCQ Questions -->
-            <div class="space-y-4">
-                <!-- Mixed order -->
-                <div class="question" data-answer="A">
-                    <label>1. She ___ puzzles in her free time.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq1" value="A" class="mr-2">A. solves</label><br>
-                        <label><input type="radio" name="mcq1" value="B" class="mr-2">B. is solving</label><br>
-                        <label><input type="radio" name="mcq1" value="C" class="mr-2">C. solved</label><br>
-                        <label><input type="radio" name="mcq1" value="D" class="mr-2">D. will solve</label>
+            <div class="space-y-2">
+                <div class="question" data-answer="B">
+                    <label>1. He ____ a teacher.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq1" value="A" class="mr-2">A. are</label>
+                        <label class=""><input type="radio" name="mcq1" value="B" class="mr-2">B. is</label>
+                        <label class=""><input type="radio" name="mcq1" value="C" class="mr-2">C. am</label>
+                        <label class=""><input type="radio" name="mcq1" value="D" class="mr-2">D. be</label>
                     </div>
                 </div>
-                <div class="question" data-answer="C">
-                    <label>2. Last month, they ___ camping in the mountains.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq2" value="A" class="mr-2">A. go</label><br>
-                        <label><input type="radio" name="mcq2" value="B" class="mr-2">B. are going</label><br>
-                        <label><input type="radio" name="mcq2" value="C" class="mr-2">C. went</label><br>
-                        <label><input type="radio" name="mcq2" value="D" class="mr-2">D. will go</label>
+                <div class="question" data-answer="A">
+                    <label>2. Which is a modal verb?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq2" value="A" class="mr-2">A. can</label>
+                        <label class=""><input type="radio" name="mcq2" value="B" class="mr-2">B. is</label>
+                        <label class=""><input type="radio" name="mcq2" value="C" class="mr-2">C. goes</label>
+                        <label class=""><input type="radio" name="mcq2" value="D" class="mr-2">D. am</label>
                     </div>
                 </div>
                 <div class="question" data-answer="B">
-                    <label>3. Look! The chef ___ noodles right now.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq3" value="A" class="mr-2">A. fries</label><br>
-                        <label><input type="radio" name="mcq3" value="B" class="mr-2">B. is frying</label><br>
-                        <label><input type="radio" name="mcq3" value="C" class="mr-2">C. fried</label><br>
-                        <label><input type="radio" name="mcq3" value="D" class="mr-2">D. will fry</label>
-                    </div>
-                </div>
-                <div class="question" data-answer="D">
-                    <label>4. Next year, people ___ more renewable energy.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq4" value="A" class="mr-2">A. use</label><br>
-                        <label><input type="radio" name="mcq4" value="B" class="mr-2">B. are using</label><br>
-                        <label><input type="radio" name="mcq4" value="C" class="mr-2">C. used</label><br>
-                        <label><input type="radio" name="mcq4" value="D" class="mr-2">D. will use</label>
-                    </div>
-                </div>
-                <div class="question" data-answer="A">
-                    <label>5. He always ___ his helmet when cycling.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq5" value="A" class="mr-2">A. wears</label><br>
-                        <label><input type="radio" name="mcq5" value="B" class="mr-2">B. is wearing</label><br>
-                        <label><input type="radio" name="mcq5" value="C" class="mr-2">C. wore</label><br>
-                        <label><input type="radio" name="mcq5" value="D" class="mr-2">D. will wear</label>
+                    <label>3. Which sentence is correct?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq3" value="A" class="mr-2">A. She should goes.</label>
+                        <label class=""><input type="radio" name="mcq3" value="B" class="mr-2">B. She should go.</label>
+                        <label class=""><input type="radio" name="mcq3" value="C" class="mr-2">C. She should to go.</label>
+                        <label class=""><input type="radio" name="mcq3" value="D" class="mr-2">D. She should going.</label>
                     </div>
                 </div>
                 <div class="question" data-answer="B">
-                    <label>6. The students ___ for the midterm test now.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq6" value="A" class="mr-2">A. study</label><br>
-                        <label><input type="radio" name="mcq6" value="B" class="mr-2">B. are studying</label><br>
-                        <label><input type="radio" name="mcq6" value="C" class="mr-2">C. studied</label><br>
-                        <label><input type="radio" name="mcq6" value="D" class="mr-2">D. will study</label>
-                    </div>
-                </div>
-                <div class="question" data-answer="C">
-                    <label>7. Yesterday, we ___ old clothes to charity.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq7" value="A" class="mr-2">A. donate</label><br>
-                        <label><input type="radio" name="mcq7" value="B" class="mr-2">B. are donating</label><br>
-                        <label><input type="radio" name="mcq7" value="C" class="mr-2">C. donated</label><br>
-                        <label><input type="radio" name="mcq7" value="D" class="mr-2">D. will donate</label>
+                    <label>4. They ____ at home now.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq4" value="A" class="mr-2">A. is</label>
+                        <label class=""><input type="radio" name="mcq4" value="B" class="mr-2">B. are</label>
+                        <label class=""><input type="radio" name="mcq4" value="C" class="mr-2">C. am</label>
+                        <label class=""><input type="radio" name="mcq4" value="D" class="mr-2">D. be</label>
                     </div>
                 </div>
                 <div class="question" data-answer="A">
-                    <label>8. The actor ___ in a horror film last week.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq8" value="A" class="mr-2">A. performed</label><br>
-                        <label><input type="radio" name="mcq8" value="B" class="mr-2">B. performs</label><br>
-                        <label><input type="radio" name="mcq8" value="C" class="mr-2">C. is performing</label><br>
-                        <label><input type="radio" name="mcq8" value="D" class="mr-2">D. will perform</label>
+                    <label>5. Which is a possessive adjective?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq5" value="A" class="mr-2">A. his</label>
+                        <label class=""><input type="radio" name="mcq5" value="B" class="mr-2">B. him</label>
+                        <label class=""><input type="radio" name="mcq5" value="C" class="mr-2">C. he</label>
+                        <label class=""><input type="radio" name="mcq5" value="D" class="mr-2">D. hers</label>
                     </div>
                 </div>
                 <div class="question" data-answer="B">
-                    <label>9. They ___ in the community garden every Sunday.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq9" value="A" class="mr-2">A. are gardening</label><br>
-                        <label><input type="radio" name="mcq9" value="B" class="mr-2">B. garden</label><br>
-                        <label><input type="radio" name="mcq9" value="C" class="mr-2">C. gardened</label><br>
-                        <label><input type="radio" name="mcq9" value="D" class="mr-2">D. will garden</label>
-                    </div>
-                </div>
-                <div class="question" data-answer="D">
-                    <label>10. In the future, people ___ teleport to work.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq10" value="A" class="mr-2">A. teleport</label><br>
-                        <label><input type="radio" name="mcq10" value="B" class="mr-2">B. are teleporting</label><br>
-                        <label><input type="radio" name="mcq10" value="C" class="mr-2">C. teleported</label><br>
-                        <label><input type="radio" name="mcq10" value="D" class="mr-2">D. will teleport</label>
-                    </div>
-                </div>
-                <div class="question" data-answer="C">
-                    <label>11. My sister ___ classical music on the piano.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq11" value="A" class="mr-2">A. is playing</label><br>
-                        <label><input type="radio" name="mcq11" value="B" class="mr-2">B. played</label><br>
-                        <label><input type="radio" name="mcq11" value="C" class="mr-2">C. plays</label><br>
-                        <label><input type="radio" name="mcq11" value="D" class="mr-2">D. will play</label>
+                    <label>6. Which sentence uses "to be" correctly?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq6" value="A" class="mr-2">A. I are happy.</label>
+                        <label class=""><input type="radio" name="mcq6" value="B" class="mr-2">B. I am happy.</label>
+                        <label class=""><input type="radio" name="mcq6" value="C" class="mr-2">C. I is happy.</label>
+                        <label class=""><input type="radio" name="mcq6" value="D" class="mr-2">D. I be happy.</label>
                     </div>
                 </div>
                 <div class="question" data-answer="A">
-                    <label>12. The festival ___ next weekend.</label>
-                    <div class="ml-4 space-y-1">
-                        <label><input type="radio" name="mcq12" value="A" class="mr-2">A. will celebrate</label><br>
-                        <label><input type="radio" name="mcq12" value="B" class="mr-2">B. celebrates</label><br>
-                        <label><input type="radio" name="mcq12" value="C" class="mr-2">C. celebrated</label><br>
-                        <label><input type="radio" name="mcq12" value="D" class="mr-2">D. is celebrating</label>
+                    <label>7. Which is a descriptive adjective?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq7" value="A" class="mr-2">A. tall</label>
+                        <label class=""><input type="radio" name="mcq7" value="B" class="mr-2">B. my</label>
+                        <label class=""><input type="radio" name="mcq7" value="C" class="mr-2">C. her</label>
+                        <label class=""><input type="radio" name="mcq7" value="D" class="mr-2">D. his</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>8. Which is a correct noun phrase?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq8" value="A" class="mr-2">A. a smart boy</label>
+                        <label class=""><input type="radio" name="mcq8" value="B" class="mr-2">B. boy smart</label>
+                        <label class=""><input type="radio" name="mcq8" value="C" class="mr-2">C. the smarts</label>
+                        <label class=""><input type="radio" name="mcq8" value="D" class="mr-2">D. a smart</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>9. Which is a possessive pronoun?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq9" value="A" class="mr-2">A. mine</label>
+                        <label class=""><input type="radio" name="mcq9" value="B" class="mr-2">B. my</label>
+                        <label class=""><input type="radio" name="mcq9" value="C" class="mr-2">C. me</label>
+                        <label class=""><input type="radio" name="mcq9" value="D" class="mr-2">D. I</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>10. Which is a correct sentence?</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq10" value="A" class="mr-2">A. This is her bag.</label>
+                        <label class=""><input type="radio" name="mcq10" value="B" class="mr-2">B. This is hers bag.</label>
+                        <label class=""><input type="radio" name="mcq10" value="C" class="mr-2">C. This is she bag.</label>
+                        <label class=""><input type="radio" name="mcq10" value="D" class="mr-2">D. This is me bag.</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>11. She ____ (play) the piano every day.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq11" value="A" class="mr-2">A. play</label>
+                        <label class=""><input type="radio" name="mcq11" value="B" class="mr-2">B. plays</label>
+                        <label class=""><input type="radio" name="mcq11" value="C" class="mr-2">C. playing</label>
+                        <label class=""><input type="radio" name="mcq11" value="D" class="mr-2">D. to play</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>12. They ____ (study) English on Mondays.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq12" value="A" class="mr-2">A. study</label>
+                        <label class=""><input type="radio" name="mcq12" value="B" class="mr-2">B. studies</label>
+                        <label class=""><input type="radio" name="mcq12" value="C" class="mr-2">C. studying</label>
+                        <label class=""><input type="radio" name="mcq12" value="D" class="mr-2">D. to study</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="C">
+                    <label>13. He ____ (watch) TV every night.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq13" value="A" class="mr-2">A. watch</label>
+                        <label class=""><input type="radio" name="mcq13" value="B" class="mr-2">B. watched</label>
+                        <label class=""><input type="radio" name="mcq13" value="C" class="mr-2">C. watches</label>
+                        <label class=""><input type="radio" name="mcq13" value="D" class="mr-2">D. watching</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>14. I ____ (like) oranges.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq14" value="A" class="mr-2">A. like</label>
+                        <label class=""><input type="radio" name="mcq14" value="B" class="mr-2">B. likes</label>
+                        <label class=""><input type="radio" name="mcq14" value="C" class="mr-2">C. liking</label>
+                        <label class=""><input type="radio" name="mcq14" value="D" class="mr-2">D. to like</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>15. My father ____ (cook) very well.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq15" value="A" class="mr-2">A. cook</label>
+                        <label class=""><input type="radio" name="mcq15" value="B" class="mr-2">B. cooks</label>
+                        <label class=""><input type="radio" name="mcq15" value="C" class="mr-2">C. cooking</label>
+                        <label class=""><input type="radio" name="mcq15" value="D" class="mr-2">D. cooked</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>16. We ____ (read) books at school.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq16" value="A" class="mr-2">A. read</label>
+                        <label class=""><input type="radio" name="mcq16" value="B" class="mr-2">B. reads</label>
+                        <label class=""><input type="radio" name="mcq16" value="C" class="mr-2">C. reading</label>
+                        <label class=""><input type="radio" name="mcq16" value="D" class="mr-2">D. readed</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="C">
+                    <label>17. She ____ (finish) her homework every day.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq17" value="A" class="mr-2">A. finish</label>
+                        <label class=""><input type="radio" name="mcq17" value="B" class="mr-2">B. finished</label>
+                        <label class=""><input type="radio" name="mcq17" value="C" class="mr-2">C. finishes</label>
+                        <label class=""><input type="radio" name="mcq17" value="D" class="mr-2">D. finishing</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>18. You ____ (close) the door, please.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq18" value="A" class="mr-2">A. close</label>
+                        <label class=""><input type="radio" name="mcq18" value="B" class="mr-2">B. closes</label>
+                        <label class=""><input type="radio" name="mcq18" value="C" class="mr-2">C. closing</label>
+                        <label class=""><input type="radio" name="mcq18" value="D" class="mr-2">D. closed</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="B">
+                    <label>19. The dog often ____ (catch) balls in the yard.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq19" value="A" class="mr-2">A. catch</label>
+                        <label class=""><input type="radio" name="mcq19" value="B" class="mr-2">B. catches</label>
+                        <label class=""><input type="radio" name="mcq19" value="C" class="mr-2">C. catched</label>
+                        <label class=""><input type="radio" name="mcq19" value="D" class="mr-2">D. catching</label>
+                    </div>
+                </div>
+                <div class="question" data-answer="A">
+                    <label>20. I ____ (write) stories every week.</label>
+                    <div class="grid grid-cols-2 gap-x-8">
+                        <label class=""><input type="radio" name="mcq20" value="A" class="mr-2">A. write</label>
+                        <label class=""><input type="radio" name="mcq20" value="B" class="mr-2">B. writes</label>
+                        <label class=""><input type="radio" name="mcq20" value="C" class="mr-2">C. writing</label>
+                        <label class=""><input type="radio" name="mcq20" value="D" class="mr-2">D. to write</label>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Phần 2: Điền từ -->
+        <!-- Phần 2: Tìm lỗi sai -->
         <div class="section mb-8">
-            <div class="section-title font-semibold mb-3">Phần 2: Điền từ (2 điểm) - Fill in the blanks (2 marks)</div>
-            <p class="mb-4">Điền từ thích hợp vào chỗ trống (Fill in the blanks with appropriate words):</p>
+            <div class="section-title font-semibold mb-3">Phần 2: Tìm lỗi sai và viết lại câu hoàn chỉnh (2 điểm) - Error Correction (2 marks)</div>
+            <p class="mb-4">Tìm lỗi sai và viết lại câu đúng (Find the errors and rewrite the sentences correctly):</p>
             <div class="space-y-4">
-                <div class="question" data-answer="exercises">1. He <input type="text" name="blank1" class="border-b border-gray-400 w-24 px-1"> (exercise) every morning to stay healthy.</div>
-                <div class="question" data-answer="will avoid">2. In the future, people <input type="text" name="blank2" class="border-b border-gray-400 w-24 px-1"> (avoid) traffic jams by using flying cars.</div>
-                <div class="question" data-answer="is knitting">3. My grandmother <input type="text" name="blank3" class="border-b border-gray-400 w-24 px-1"> (knit) a sweater right now.</div>
-                <div class="question" data-answer="recycled">4. Last week, we <input type="text" name="blank4" class="border-b border-gray-400 w-24 px-1"> (recycle) all the plastic bottles.</div>
-                <div class="question" data-answer="cycles">5. She usually <input type="text" name="blank5" class="border-b border-gray-400 w-24 px-1"> (cycle) to school to avoid traffic.</div>
-                <div class="question" data-answer="will protect">6. Solar energy <input type="text" name="blank6" class="border-b border-gray-400 w-24 px-1"> (protect) the environment in the future.</div>
+                <div class="question" data-answer="This is his bag.">1. This is him bag.<br>
+                    <textarea name="err1" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
+                </div>
+                <div class="question" data-answer="They are smart students.">2. They is smart students.<br>
+                    <textarea name="err2" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
+                </div>
+                <div class="question" data-answer="She can run very fast.">3. She can runs very fast.<br>
+                    <textarea name="err3" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
+                </div>
+                <div class="question" data-answer="He has a new bike.">4. He have a new bike.<br>
+                    <textarea name="err4" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
+                </div>
+                <div class="question" data-answer="This is my sister's book.">5. This is my sisters book.<br>
+                    <textarea name="err5" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
+                </div>
             </div>
         </div>
-        <!-- Phần 3: Tìm lỗi sai -->
+        <!-- Phần 3: Sắp xếp từ -->
         <div class="section mb-8">
-            <div class="section-title font-semibold mb-3">Phần 3: Tìm lỗi sai (2 điểm) - Error Correction (2 marks)</div>
-            <p class="mb-4">Tìm lỗi sai và viết lại câu đúng (Find the error and rewrite the sentence correctly):</p>
+            <div class="section-title font-semibold mb-3">Phần 3: Sắp xếp từ để tạo thành câu hoàn chỉnh (2 điểm) - Rearrangement (2 marks)</div>
+            <p class="mb-4">Sắp xếp các từ sau thành câu hoàn chỉnh (Rearrange the words to make correct sentences):</p>
             <div class="space-y-4">
-                <div class="question" data-answer="She solves puzzles in her free time.">1. She is solving puzzles in her free time.<br>
-                    <input type="text" name="err1" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                <div class="question" data-answer="You must clean your room.">1. must / your / you / clean / room<br>
+                    <textarea name="rw1" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
                 </div>
-                <div class="question" data-answer="They will use renewable energy next year.">2. They use renewable energy next year.<br>
-                    <input type="text" name="err2" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                <div class="question" data-answer="Tom is a clever boy.">2. is / a / boy / Tom / clever<br>
+                    <textarea name="rw2" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
                 </div>
-                <div class="question" data-answer="We donated clothes to charity yesterday.">3. We donate clothes to charity yesterday.<br>
-                    <input type="text" name="err3" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                <div class="question" data-answer="He can swim very well.">3. can / swim / well / very / he<br>
+                    <textarea name="rw3" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
                 </div>
-                <div class="question" data-answer="The students are studying for the test now.">4. The students study for the test now.<br>
-                    <input type="text" name="err4" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                <div class="question" data-answer="This is my red bag.">4. is / bag / my / this / red<br>
+                    <textarea name="rw4" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
                 </div>
-                <div class="question" data-answer="People will teleport in the future.">5. People teleport in the future.<br>
-                    <input type="text" name="err5" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
-                </div>
-                <div class="question" data-answer="They garden every Sunday.">6. They are gardening every Sunday.<br>
-                    <input type="text" name="err6" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
+                <div class="question" data-answer="You should eat more fruits.">5. should / eat / fruits / you / more<br>
+                    <textarea name="rw5" class="border border-gray-300 rounded w-full mt-1 p-1" rows="1"></textarea>
                 </div>
             </div>
         </div>
@@ -181,27 +254,19 @@
             <div class="section-title font-semibold mb-3">Phần 4: Điền từ vào đoạn văn (2 điểm) - Cloze Test (2 marks)</div>
             <p class="mb-4">Điền từ thích hợp vào chỗ trống trong đoạn văn sau (Fill in the blanks with appropriate words):</p>
             <p>
-                Last summer, I <input type="text" name="cloze1" class="border-b border-gray-400 w-20 px-1" data-answer="went"> camping with my family. 
-                We <input type="text" name="cloze2" class="border-b border-gray-400 w-20 px-1" data-answer="saw"> many beautiful landmarks and <input type="text" name="cloze3" class="border-b border-gray-400 w-20 px-1" data-answer="learned"> about different cultures. My father <input type="text" name="cloze4" class="border-b border-gray-400 w-20 px-1" data-answer="brought"> his camera to take photos. We <input type="text" name="cloze5" class="border-b border-gray-400 w-20 px-1" data-answer="enjoyed"> the outdoor activities very much.
+                <span class="question" data-answer="is">Anna <input type="text" name="cloze1" class="border-b border-gray-400 w-20 px-1"></span> (1) a student. 
+                She <span class="question" data-answer="can"><input type="text" name="cloze2" class="border-b border-gray-400 w-20 px-1"></span> (2) play the guitar. 
+                She has a <span class="question" data-answer="black"><input type="text" name="cloze3" class="border-b border-gray-400 w-24 px-1"></span> (3) cat. 
+                This is <span class="question" data-answer="her"><input type="text" name="cloze4" class="border-b border-gray-400 w-20 px-1"></span> (4) house. 
+                She <span class="question" data-answer="must"><input type="text" name="cloze5" class="border-b border-gray-400 w-20 px-1"></span> (5) study every day to improve.
             </p>
-        </div>
-        <!-- Phần 5: Viết câu hoàn chỉnh -->
-        <div class="section mb-8">
-            <div class="section-title font-semibold mb-3">Phần 5: Viết câu hoàn chỉnh (2 điểm) - Sentence Writing (2 marks)</div>
-            <p class="mb-4">Viết câu hoàn chỉnh sử dụng từ/cụm từ gợi ý (Write complete sentences using the given words/phrases):</p>
-            <div class="space-y-4">
-                <div class="question" data-answer="she likes to knit in her free time">1. She / like / knit / free time.<br>
-                    <input type="text" name="sent1" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
-                </div>
-                <div class="question" data-answer="the chef is frying noodles now">2. Chef / fry / noodles / now.<br>
-                    <input type="text" name="sent2" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
-                </div>
-                <div class="question" data-answer="we went camping last month">3. We / go / camping / last month.<br>
-                    <input type="text" name="sent3" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
-                </div>
-                <div class="question" data-answer="people will use wind power in the future">4. People / use / wind power / future.<br>
-                    <input type="text" name="sent4" class="border-b border-gray-300 w-full mt-1 p-1" rows="1"></input>
-                </div>
+            <!-- Instructions -->
+            <div class="instructions mt-3">
+                <p>1. A to be verb (một động từ "to be")</p>
+                <p>2. A modal verb (một động từ khiếm khuyết)</p>
+                <p>3. Adjective for color (tính từ chỉ màu sắc)</p>
+                <p>4. A possessive adjective (một tính từ sở hữu)</p>
+                <p>5. A modal verb (một động từ khiếm khuyết)</p>
             </div>
         </div>
         <div class="flex justify-center mt-8 print:hidden">
@@ -211,104 +276,74 @@
         </form>
     </div>
     <script>
+    function getAnswersFromAttr(questionElem) {
+        // Trả về mảng đáp án (có thể nhiều đáp án, phân tách bằng ||)
+        return (questionElem.getAttribute('data-answer')||'').split('||').map(s=>s.trim());
+    }
     function gradeTest() {
         let score = 0;
-        let total = 12 + 6 + 6 + 5 + 4; // MCQ + blank + err + cloze + sent
         let form = document.forms['grammarTest'];
-        
         // Reset all highlights
-        // MCQ
-        for(let i=1;i<=12;i++){
-            let radios = form[`mcq${i}`];
-            if (!radios) continue;
-            let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
-            radioList.forEach(radio => {
-                radio.parentElement.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+        document.querySelectorAll('.question').forEach(q => {
+            q.querySelectorAll('input[type=radio], input[type=text], textarea').forEach(input => {
+                input.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+                if(input.type==='radio') input.parentElement.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
             });
-        }
-        
-        // Inputs
-        let allInputs = form.querySelectorAll('input[type=text], input');
-        allInputs.forEach(input => {
-            input.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
         });
-
         // MCQ
-        for(let i=1;i<=12;i++){
-            let questionDiv = form.querySelector(`input[name=mcq${i}]`).closest('.question');
-            let correctAnswer = questionDiv.getAttribute('data-answer');
+        for(let i=1;i<=20;i++){
+            let qElem = document.querySelector(`.question input[name=mcq${i}]`).closest('.question');
+            let correct = getAnswersFromAttr(qElem)[0];
             let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
             radioList.forEach(radio => {
                 if(radio.checked){
-                    if(radio.value === correctAnswer){
+                    if(radio.value === correct){
                         radio.parentElement.classList.add('bg-green-100','border-green-500','border-2');
-                        score++;
+                        score += 0.2;
                     } else {
                         radio.parentElement.classList.add('bg-red-100','border-red-500','border-2');
                     }
                 }
             });
         }
-        
-        // Fill in blank
-        let blankQuestions = form.querySelectorAll('.section:nth-child(2) .question');
-        blankQuestions.forEach((question, index) => {
-            let input = question.querySelector('input');
-            let correctAnswer = question.getAttribute('data-answer');
-            if(input.value.trim().toLowerCase() === correctAnswer.toLowerCase()){
-                input.classList.add('bg-green-100','border-green-500','border-2'); 
-                score++;
-            } else {
-                input.classList.add('bg-red-100','border-red-500','border-2');
-            }
-        });
-        
         // Error correction
-        let errQuestions = form.querySelectorAll('.section:nth-child(3) .question');
-        errQuestions.forEach((question, index) => {
-            let input = question.querySelector('input');
-            let correctAnswers = question.getAttribute('data-answer').split('|');
-            let userAnswer = input.value.trim().toLowerCase();
-            let isCorrect = correctAnswers.some(answer => answer.toLowerCase() === userAnswer);
-            if(isCorrect){
-                input.classList.add('bg-green-100','border-green-500','border-2'); 
-                score++;
+        for(let i=1;i<=5;i++){
+            let qElem = document.querySelector(`textarea[name=err${i}]`).closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = form[`err${i}`].value.trim().toLowerCase();
+            if(corrects.includes(val)){
+                form[`err${i}`].classList.add('bg-green-100','border-green-500','border-2'); score += 0.4;
             } else {
-                input.classList.add('bg-red-100','border-red-500','border-2');
+                form[`err${i}`].classList.add('bg-red-100','border-red-500','border-2');
             }
-        });
-        
+        }
+        // Rearrangement
+        for(let i=1;i<=5;i++){
+            let qElem = document.querySelector(`textarea[name=rw${i}]`).closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = form[`rw${i}`].value.trim().toLowerCase();
+            if(corrects.some(ans=>val===ans)){
+                form[`rw${i}`].classList.add('bg-green-100','border-green-500','border-2'); score += 0.4;
+            } else {
+                form[`rw${i}`].classList.add('bg-red-100','border-red-500','border-2');
+            }
+        }
         // Cloze
-        let clozeInputs = form.querySelectorAll('input[name^="cloze"]');
-        clozeInputs.forEach(input => {
-            let correctAnswer = input.getAttribute('data-answer');
-            if(input.value.trim().toLowerCase() === correctAnswer.toLowerCase()){
-                input.classList.add('bg-green-100','border-green-500','border-2'); 
-                score++;
+        for(let i=1;i<=5;i++){
+            let input = form[`cloze${i}`];
+            let qElem = input.closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = input.value.trim().toLowerCase();
+            if(corrects.includes(val)){
+                input.classList.add('bg-green-100','border-green-500','border-2'); score += 0.4;
             } else {
                 input.classList.add('bg-red-100','border-red-500','border-2');
             }
-        });
-        
-        // Sentence writing
-        let sentQuestions = form.querySelectorAll('.section:nth-child(5) .question');
-        sentQuestions.forEach((question, index) => {
-            let input = question.querySelector('input');
-            let correctAnswers = question.getAttribute('data-answer').split('|');
-            let userAnswer = input.value.trim().toLowerCase();
-            let isCorrect = correctAnswers.some(answer => answer.toLowerCase() === userAnswer);
-            if(isCorrect){
-                input.classList.add('bg-green-100','border-green-500','border-2'); 
-                score++;
-            } else {
-                input.classList.add('bg-red-100','border-red-500','border-2');
-            }
-        });
-        
+        }
         // Show result
         document.getElementById('result').style.display = '';
-        document.getElementById('result').innerHTML = `Điểm của bạn: <span class=\"text-blue-700\">${score} / 33</span>`;
+        document.getElementById('result').innerHTML = `Điểm của bạn: <span class="text-blue-700">${score.toFixed(1)} / 10</span>`;
     }
     </script>
 </body>
-</html> 
+</html>
