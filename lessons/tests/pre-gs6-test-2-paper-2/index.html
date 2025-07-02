@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Kiểm Tra Ngữ Pháp - Grammar Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .print\:hidden { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="test-paper max-w-2xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8 print:mt-0">
+        <div class="header text-center mb-8">
+            <h3 class="text-xl font-bold text-blue-800">PRE GRADE 6 - ENGLISH GRAMMAR TEST 2 - (PAPER 2)</h3>
+            <p class="mb-2"><strong>Time:</strong> 60 minutes | <strong>Full name:</strong> <input type="text" class="border-b border-gray-400 outline-none px-2 print:hidden" style="width:220px" /></p>
+            <p class="text-sm text-blue-800 text-bold">Đọc kỹ đề bài và đáp án bằng tiếng Anh, chú ý các từ "NOT" nếu có</p>
+        </div>
+        <form id="grammarTest">
+        <!-- Phần 1: Trắc nghiệm -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 1: Trắc nghiệm (4 điểm) - Multiple Choice (4 marks)</div>
+            <p class="mb-4">Chọn đáp án đúng nhất (Choose the best answer):</p>
+            <div class="space-y-2" id="mcq-container">
+                <!-- Các câu hỏi sẽ được sắp xếp ngẫu nhiên bằng JavaScript -->
+            </div>
+        </div>
+        <!-- Phần 2: Tìm lỗi sai -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 2: Tìm lỗi sai và viết lại câu hoàn chỉnh (2 điểm) - Error Correction (2 marks)</div>
+            <p class="mb-4">Tìm lỗi sai và viết lại câu đúng (Find the errors and rewrite the sentences correctly):</p>
+            <div class="space-y-4" id="error-correction-container">
+                <!-- Các câu hỏi sẽ được sắp xếp ngẫu nhiên bằng JavaScript -->
+            </div>
+        </div>
+        <!-- Phần 3: Sắp xếp từ -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 3: Sắp xếp từ để tạo thành câu hoàn chỉnh (2 điểm) - Rearrangement (2 marks)</div>
+            <p class="mb-4">Sắp xếp các từ sau thành câu hoàn chỉnh (Rearrange the words to make correct sentences):</p>
+            <div class="space-y-4" id="rearrangement-container">
+                <!-- Các câu hỏi sẽ được sắp xếp ngẫu nhiên bằng JavaScript -->
+            </div>
+        </div>
+        <!-- Phần 4: Điền từ vào đoạn văn -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">
+              Phần 4: Điền từ vào đoạn văn (2 điểm) - Cloze Test (2 marks)
+            </div>
+            <p class="mb-4">
+              Hãy điền từ thích hợp vào chỗ trống trong đoạn văn sau.  
+              (Fill in the blanks with the appropriate words):
+            </p>
+            <p>
+              Hello! My name <span class="question" data-answer="is"><input type="text" name="cloze1" class="border-b border-gray-400 w-20 px-1"></span> (1) Anna.  
+              I <span class="question" data-answer="can"><input type="text" name="cloze2" class="border-b border-gray-400 w-20 px-1"></span> (2) speak English and French.  
+              I have a <span class="question" data-answer="small"><input type="text" name="cloze3" class="border-b border-gray-400 w-24 px-1"></span> (3) dog.  
+              That is <span class="question" data-answer="my"><input type="text" name="cloze4" class="border-b border-gray-400 w-20 px-1"></span> (4) school.  
+              I <span class="question" data-answer="must"><input type="text" name="cloze5" class="border-b border-gray-400 w-20 px-1"></span> (5) go to school every day.
+            </p>
+          
+            <!-- Instructions -->
+            <div class="instructions mt-3">
+              <p>1. A "to be" verb (một động từ to be)</p>
+              <p>2. A modal verb (một động từ khiếm khuyết)</p>
+              <p>3. The opposite (trái nghĩa) of "big"</p>
+              <p>4. A possessive adjective (một tính từ sở hữu)</p>
+              <p>5. A modal verb (một động từ khiếm khuyết)</p>
+            </div>
+          </div>
+          
+        <div class="flex justify-center mt-8 print:hidden">
+            <button type="button" onclick="gradeTest()" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 font-semibold">Nộp bài / Submit</button>
+        </div>
+        <div id="result" class="mt-8 text-center text-lg font-bold print:hidden" style="display:none"></div>
+        </form>
+    </div>
+    <script>
+    // Câu hỏi trắc nghiệm
+    const mcqQuestions = [
+        {
+            question: "We ____ students.",
+            options: ["A. is", "B. am", "C. are", "D. be"],
+            answer: "C"
+        },
+        {
+            question: "Which is NOT a modal verb (động từ khiếm khuyết)?",
+            options: ["A. must", "B. has", "C. should", "D. can"],
+            answer: "B"
+        },
+        {
+            question: "Which sentence is correct (câu đúng)?",
+            options: ["A. She must to study.", "B. She must studying.", "C. She must studies.", "D. She must study."],
+            answer: "D"
+        },
+        {
+            question: "My sister ____ a doctor.",
+            options: ["A. is", "B. are", "C. am", "D. be"],
+            answer: "A"
+        },
+        {
+            question: "Which is NOT a possessive adjective (tính từ sở hữu)?",
+            options: ["A. our", "B. your", "C. their", "D. us"],
+            answer: "D"
+        },
+        {
+            question: "Which sentence uses \"to be\" correctly?",
+            options: ["A. You is happy.", "B. You am happy.", "C. You are happy.", "D. You be happy."],
+            answer: "C"
+        },
+        {
+            question: "Which is NOT a descriptive adjective (tính từ mô tả)?",
+            options: ["A. happy", "B. mine", "C. tall", "D. smart"],
+            answer: "B"
+        },
+        {
+            question: "Which is a correct noun phrase (cụm danh từ)?",
+            options: ["A. an old book", "B. book old", "C. old a book", "D. an book old"],
+            answer: "A"
+        },
+        {
+            question: "Which is NOT a possessive pronoun (đại từ sở hữu)?",
+            options: ["A. yours", "B. you", "C. hers", "D. theirs"],
+            answer: "B"
+        },
+        {
+            question: "Which is a correct sentence (câu đúng)?",
+            options: ["A. This is yours book.", "B. This is you book.", "C. This is your book.", "D. This is them book."],
+            answer: "C"
+        },
+        {
+            question: "My brother ____ (wash) his car every Sunday.",
+            options: ["A. wash", "B. washes", "C. washing", "D. to wash"],
+            answer: "B"
+        },
+        {
+            question: "The children ____ (play) in the park every afternoon.",
+            options: ["A. play", "B. plays", "C. playing", "D. to play"],
+            answer: "A"
+        },
+        {
+            question: "She ____ (go) to school by bus every day.",
+            options: ["A. go", "B. gos", "C. goes", "D. going"],
+            answer: "C"
+        },
+        {
+            question: "I ____ (do) my homework every evening.",
+            options: ["A. do", "B. does", "C. doing", "D. to do"],
+            answer: "A"
+        },
+        {
+            question: "The sun ____ (rise) in the east.",
+            options: ["A. rise", "B. rises", "C. rising", "D. to rise"],
+            answer: "B"
+        },
+        {
+            question: "We ____ (have) breakfast at 7 am.",
+            options: ["A. have", "B. has", "C. having", "D. to have"],
+            answer: "A"
+        },
+        {
+            question: "My mother ____ (teach) English at a high school.",
+            options: ["A. teach", "B. teached", "C. teaches", "D. teaching"],
+            answer: "C"
+        },
+        {
+            question: "You ____ (need) to study harder.",
+            options: ["A. need", "B. needs", "C. needing", "D. to need"],
+            answer: "A"
+        },
+        {
+            question: "The baby ____ (cry) when he is hungry.",
+            options: ["A. cry", "B. cries", "C. crys", "D. crying"],
+            answer: "B"
+        },
+        {
+            question: "They ____ (live) in a big house.",
+            options: ["A. live", "B. lives", "C. living", "D. to live"],
+            answer: "A"
+        }
+    ];
+
+    // Câu hỏi tìm lỗi sai
+    const errorCorrectionQuestions = [
+        {
+            question: "This is ours house.",
+            answer: "This is our house."
+        },
+        {
+            question: "She are a beautiful girl.",
+            answer: "She is a beautiful girl."
+        },
+        {
+            question: "You must finishes your work.",
+            answer: "You must finish your work."
+        },
+        {
+            question: "They has two cats.",
+            answer: "They have two cats."
+        },
+        {
+            question: "That is my fathers car.",
+            answer: "That is my father's car."
+        }
+    ];
+
+    // Câu hỏi sắp xếp từ
+    const rearrangementQuestions = [
+        {
+            question: "must / a / wear / she / uniform",
+            answer: "She must wear a uniform."
+        },
+        {
+            question: "are / students / they / good",
+            answer: "They are good students."
+        },
+        {
+            question: "should / drink / you / more / water",
+            answer: "You should drink more water."
+        },
+        {
+            question: "is / bicycle / her / this / new",
+            answer: "This is her new bicycle."
+        },
+        {
+            question: "can / swim / we / pool / the / in",
+            answer: "We can swim in the pool."
+        }
+    ];
+
+    // Hàm trộn ngẫu nhiên mảng
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Hiển thị câu hỏi trắc nghiệm đã được trộn
+    function displayMcqQuestions() {
+        const container = document.getElementById('mcq-container');
+        const shuffledQuestions = shuffleArray([...mcqQuestions]);
+        
+        shuffledQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.setAttribute('data-answer', q.answer);
+            
+            const label = document.createElement('label');
+            label.textContent = `${index + 1}. ${q.question}`;
+            questionDiv.appendChild(label);
+            
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = 'grid grid-cols-2 gap-x-8';
+            
+            // Trộn các lựa chọn
+            const shuffledOptions = shuffleArray([...q.options]);
+            
+            shuffledOptions.forEach(option => {
+                const optionLabel = document.createElement('label');
+                optionLabel.className = 'block';
+                
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = `mcq${index + 1}`;
+                radio.value = option.charAt(0);
+                radio.className = 'mr-2';
+                
+                optionLabel.appendChild(radio);
+                optionLabel.appendChild(document.createTextNode(option));
+                optionsDiv.appendChild(optionLabel);
+            });
+            
+            questionDiv.appendChild(optionsDiv);
+            container.appendChild(questionDiv);
+        });
+    }
+
+    // Hiển thị câu hỏi tìm lỗi sai đã được trộn
+    function displayErrorCorrectionQuestions() {
+        const container = document.getElementById('error-correction-container');
+        const shuffledQuestions = shuffleArray([...errorCorrectionQuestions]);
+        
+        shuffledQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.setAttribute('data-answer', q.answer);
+            
+            const questionText = document.createElement('div');
+            questionText.innerHTML = `${index + 1}. ${q.question}<br>`;
+            
+            const textarea = document.createElement('textarea');
+            textarea.name = `err${index + 1}`;
+            textarea.className = 'border border-gray-300 rounded w-full mt-1 p-1';
+            textarea.rows = 1;
+            
+            questionDiv.appendChild(questionText);
+            questionDiv.appendChild(textarea);
+            container.appendChild(questionDiv);
+        });
+    }
+
+    // Hiển thị câu hỏi sắp xếp từ đã được trộn
+    function displayRearrangementQuestions() {
+        const container = document.getElementById('rearrangement-container');
+        const shuffledQuestions = shuffleArray([...rearrangementQuestions]);
+        
+        shuffledQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.setAttribute('data-answer', q.answer);
+            
+            const questionText = document.createElement('div');
+            questionText.innerHTML = `${index + 1}. ${q.question}<br>`;
+            
+            const textarea = document.createElement('textarea');
+            textarea.name = `rw${index + 1}`;
+            textarea.className = 'border border-gray-300 rounded w-full mt-1 p-1';
+            textarea.rows = 1;
+            
+            questionDiv.appendChild(questionText);
+            questionDiv.appendChild(textarea);
+            container.appendChild(questionDiv);
+        });
+    }
+
+    // Gọi các hàm hiển thị khi trang được tải
+    window.onload = function() {
+        displayMcqQuestions();
+        displayErrorCorrectionQuestions();
+        displayRearrangementQuestions();
+    };
+
+    function getAnswersFromAttr(questionElem) {
+        // Trả về mảng đáp án (có thể nhiều đáp án, phân tách bằng ||)
+        return (questionElem.getAttribute('data-answer')||'').split('||').map(s=>s.trim());
+    }
+    function gradeTest() {
+        let score = 0;
+        let form = document.forms['grammarTest'];
+        // Reset all highlights
+        document.querySelectorAll('.question').forEach(q => {
+            q.querySelectorAll('input[type=radio], input[type=text], textarea').forEach(input => {
+                input.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+                if(input.type==='radio') input.parentElement.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+            });
+        });
+        // MCQ
+        for(let i=1;i<=20;i++){
+            let qElem = document.querySelector(`.question input[name=mcq${i}]`).closest('.question');
+            let correct = getAnswersFromAttr(qElem)[0];
+            let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+            radioList.forEach(radio => {
+                if(radio.checked){
+                    if(radio.value === correct){
+                        radio.parentElement.classList.add('bg-green-100','border-green-500','border-2');
+                        score += 0.2;
+                    } else {
+                        radio.parentElement.classList.add('bg-red-100','border-red-500','border-2');
+                    }
+                }
+            });
+        }
+        // Error correction
+        for(let i=1;i<=5;i++){
+            let qElem = document.querySelector(`textarea[name=err${i}]`).closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = form[`err${i}`].value.trim().toLowerCase();
+            if(corrects.includes(val)){
+                form[`err${i}`].classList.add('bg-green-100','border-green-500','border-2'); score += 0.4;
+            } else {
+                form[`err${i}`].classList.add('bg-red-100','border-red-500','border-2');
+            }
+        }
+        // Rearrangement
+        for(let i=1;i<=5;i++){
+            let qElem = document.querySelector(`textarea[name=rw${i}]`).closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = form[`rw${i}`].value.trim().toLowerCase();
+            if(corrects.some(ans=>val===ans)){
+                form[`rw${i}`].classList.add('bg-green-100','border-green-500','border-2'); score += 0.4;
+            } else {
+                form[`rw${i}`].classList.add('bg-red-100','border-red-500','border-2');
+            }
+        }
+        // Cloze
+        for(let i=1;i<=5;i++){
+            let input = form[`cloze${i}`];
+            let qElem = input.closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = input.value.trim().toLowerCase();
+            if(corrects.includes(val)){
+                input.classList.add('bg-green-100','border-green-500','border-2'); score += 0.4;
+            } else {
+                input.classList.add('bg-red-100','border-red-500','border-2');
+            }
+        }
+        // Show result
+        document.getElementById('result').style.display = '';
+        document.getElementById('result').innerHTML = `Điểm của bạn: <span class="text-blue-700">${score.toFixed(1)} / 10</span>`;
+    }
+    </script>
+</body>
+</html>

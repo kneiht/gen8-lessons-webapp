@@ -459,6 +459,13 @@
       "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
       "category": "tests"
     },
+    "tests/pre-gs6-test-2-paper-4": {
+      "path": "tests/pre-gs6-test-2-paper-4",
+      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
+      "author": "Gen8",
+      "description": "Động từ, tính từ",
+      "category": "tests"
+    },
     "tests/gs7-tenses-test-paper-4": {
       "path": "tests/gs7-tenses-test-paper-4",
       "title": "GS7 Tenses Test - Paper 4",
@@ -489,6 +496,13 @@
     },
     "tests/pre-gs6-test-2-paper-1": {
       "path": "tests/pre-gs6-test-2-paper-1",
+      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
+      "author": "Gen8",
+      "description": "Động từ, tính từ",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-2-paper-3": {
+      "path": "tests/pre-gs6-test-2-paper-3",
       "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
       "author": "Gen8",
       "description": "Động từ, tính từ",
@@ -536,6 +550,13 @@
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     },
+    "tests/pre-gs6-test-2-paper-5": {
+      "path": "tests/pre-gs6-test-2-paper-5",
+      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
+      "author": "Gen8",
+      "description": "Động từ, tính từ",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-4": {
       "path": "tests/pre-gs6-test-1-paper-4",
       "title": "Pre Gs6 Test 1 - Paper 4",
@@ -548,6 +569,13 @@
       "title": "Pre Gs7 Test 1 - Paper 3",
       "author": "Gen8",
       "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-2-paper-2": {
+      "path": "tests/pre-gs6-test-2-paper-2",
+      "title": "Pre GS6 - English Grammar Test 2 - Paper 2",
+      "author": "Gen8",
+      "description": "Động từ, tính từ",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-1": {
