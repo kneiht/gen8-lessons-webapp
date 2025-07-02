@@ -1,9 +1,5 @@
 {
   "categories": {
-    "in-progess": {
-      "name": "In Progess",
-      "icon": "https://example.com/icons/folder.png"
-    },
     "slides": {
       "name": "Slides",
       "icon": "https://cdn-icons-png.flaticon.com/512/11473/11473512.png"
@@ -18,34 +14,6 @@
     }
   },
   "lessons": {
-    "in-progess/pre-gs6-test-2-paper-4": {
-      "path": "in-progess/pre-gs6-test-2-paper-4",
-      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
-      "author": "Gen8",
-      "description": "Động từ, tính từ",
-      "category": "in-progess"
-    },
-    "in-progess/pre-gs6-test-2-paper-3": {
-      "path": "in-progess/pre-gs6-test-2-paper-3",
-      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
-      "author": "Gen8",
-      "description": "Động từ, tính từ",
-      "category": "in-progess"
-    },
-    "in-progess/pre-gs6-test-2-paper-5": {
-      "path": "in-progess/pre-gs6-test-2-paper-5",
-      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
-      "author": "Gen8",
-      "description": "Động từ, tính từ",
-      "category": "in-progess"
-    },
-    "in-progess/pre-gs6-test-2-paper-2": {
-      "path": "in-progess/pre-gs6-test-2-paper-2",
-      "title": "Pre GS6 - English Grammar Test 2 - Paper 2",
-      "author": "Gen8",
-      "description": "Động từ, tính từ",
-      "category": "in-progess"
-    },
     "slides/pre-gs6-personal-pronouns": {
       "path": "slides/pre-gs6-personal-pronouns",
       "title": "Pre GS6 - Personal Pronouns (Đại từ nhân xưng)",
@@ -461,7 +429,7 @@
     },
     "tests/pre-gs6-test-2-paper-4": {
       "path": "tests/pre-gs6-test-2-paper-4",
-      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
+      "title": "Pre GS6 - English Grammar Test 2 - Paper 4",
       "author": "Gen8",
       "description": "Động từ, tính từ",
       "category": "tests"
@@ -503,7 +471,7 @@
     },
     "tests/pre-gs6-test-2-paper-3": {
       "path": "tests/pre-gs6-test-2-paper-3",
-      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
+      "title": "Pre GS6 - English Grammar Test 2 - Paper 3",
       "author": "Gen8",
       "description": "Động từ, tính từ",
       "category": "tests"
@@ -552,7 +520,7 @@
     },
     "tests/pre-gs6-test-2-paper-5": {
       "path": "tests/pre-gs6-test-2-paper-5",
-      "title": "Pre GS6 - English Grammar Test 2 - Paper 1",
+      "title": "Pre GS6 - English Grammar Test 2 - Paper 5",
       "author": "Gen8",
       "description": "Động từ, tính từ",
       "category": "tests"
