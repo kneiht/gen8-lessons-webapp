@@ -476,6 +476,13 @@
       "description": "Động từ, tính từ",
       "category": "tests"
     },
+    "tests/pre-gs6-test-1-paper-11": {
+      "path": "tests/pre-gs6-test-1-paper-11",
+      "title": "Pre Gs6 Test 1 - Paper 11",
+      "author": "Anh Thư",
+      "description": "Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-2-paper-3": {
       "path": "tests/pre-gs6-test-2-paper-3",
       "title": "Pre GS6 - English Grammar Test 2 - Paper 3",
