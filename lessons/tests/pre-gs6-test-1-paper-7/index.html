@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRE GRADE 6 - ENGLISH GRAMMAR TEST 1 – (PAPER 7)</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 32px 32px 24px 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .main-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: #1743b3;
+        }
+        .info {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .info strong {
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-title .vi {
+            font-weight: bold;
+        }
+        .section-title .en {
+            font-style: italic;
+            font-weight: normal;
+        }
+        .section-desc {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .question {
+            margin-bottom: 1.2rem;
+        }
+        .question strong {
+            font-weight: bold;
+        }
+        .answers {
+            margin-left: 2.2em;
+            margin-top: 0.3em;
+        }
+        .answers label {
+            display: block;
+            margin-bottom: 0.2em;
+            cursor: pointer;
+            font-weight: normal;
+        }
+        .answers input[type="radio"] {
+            margin-right: 8px;
+        }
+        .blank, .cloze-input {
+            border: none;
+            border-bottom: 1px solid #888;
+            min-width: 60px;
+            display: inline-block;
+            text-align: center;
+            font-size: 1em;
+            margin: 0 2px;
+            background: #fff;
+        }
+        .error-input {
+            border: none;
+            border-bottom: 1px solid #888;
+            font-size: 1em;
+            width: 75%;
+            padding: 2px 4px;
+            text-align: left;
+            background: #fff;
+            margin-left: 5px;
+        }
+        .student-name {
+            border: none;
+            border-bottom: 1px solid #222;
+            min-width: 200px;
+            font-size: 1em;
+            background: #fff;
+        }
+        .error-correct {
+            margin-left: 2.2em;
+            margin-top: 0.3em;
+        }
+        .submit-btn {
+            font-size:1.1em;
+            padding: 0.6em 2em;
+            background:#1743b3;
+            color:#fff;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            margin-top:2.5rem;
+            display: inline-block;
+        }
+        .submit-wrap {
+            text-align:center;
+        }
+        .error-question {
+            margin-bottom: 1.6rem;
+        }
+        .cloze-paragraph {
+            line-height: 1.8;
+        }
+        .correct-line {
+            margin-top: 0.5rem; /* Increased spacing */
+        }
+        .explanation-text {
+            display: block;
+            color: #d94d00;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 0.4em;
+        }
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100vw !important;
+                margin: 0 !important;
+                padding: 0 14px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+            }
+            .main-title {
+                font-size: 1rem !important;
+                text-align: center !important;
+                margin-bottom: 1em !important;
+                color: #1743b3 !important;
+                font-weight: bold !important;
+            }
+            .info, .section-title, .section-desc {
+                font-size: 0.95rem !important;
+                text-align: center !important;
+            }
+            .section-title {
+                margin-top: 1.2em !important;
+                margin-bottom: 0.5em !important;
+                font-weight: bold !important;
+            }
+            .section-desc {
+                margin-bottom: 1em !important;
+            }
+            .question {
+                font-size: 0.93rem !important;
+                margin-bottom: 0.8rem !important;
+                padding-left: 0.1em !important;
+                padding-right: 0.1em !important;
+            }
+            .answers {
+                margin-left: 0 !important;
+                margin-top: 0.2em !important;
+            }
+            .answers label {
+                display: flex !important;
+                align-items: center !important;
+                font-size: 0.93rem !important;
+                margin-bottom: 0.3em !important;
+                padding: 0.15em 0 0.15em 0.1em !important;
+                border-radius: 0 !important;
+                background: none !important;
+                font-weight: normal !important;
+                cursor: pointer !important;
+                border: none !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .answers input[type="radio"] {
+                width: 1em !important;
+                height: 1em !important;
+                accent-color: #1743b3 !important;
+                margin-right: 8px !important;
+                flex-shrink: 0 !important;
+            }
+            .blank, .cloze-input, .error-input, .student-name {
+                min-width: 40px !important;
+                font-size: 0.93em !important;
+                width: 90% !important;
+                box-sizing: border-box !important;
+                margin-bottom: 5px !important;
+                border-radius: 3px !important;
+            }
+            .submit-btn {
+                font-size: 0.98em !important;
+                padding: 0.7em 1.2em !important;
+                width: 100% !important;
+                margin-top: 1em !important;
+                border-radius: 5px !important;
+                background: #1743b3 !important;
+                color: #fff !important;
+                font-weight: bold !important;
+                border: none !important;
+                letter-spacing: 0.5px !important;
+                display: block !important;
+            }
+            .submit-btn:hover, .submit-btn:focus {
+                background: #0d2e7a !important;
+            }
+            .submit-wrap {
+                padding: 0 !important;
+            }
+            #score-modal-content {
+                width: 98vw !important;
+                max-width: 99vw !important;
+                padding: 1em 0.2em 1em 0.2em !important;
+                font-size: 0.98em !important;
+            }
+            #score-modal-score {
+                font-size: 1.2em !important;
+            }
+            #score-modal-message {
+                font-size: 0.95em !important;
+            }
+        }
+        #score-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.35);
+            align-items: center;
+            justify-content: center;
+        }
+        #score-modal-content {
+            background: #fff;
+            padding: 2em 1.5em 1.5em 1.5em;
+            border-radius: 16px;
+            max-width: 90vw;
+            width: 350px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+            text-align: center;
+            position: relative;
+        }
+        #score-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        #score-modal-message {
+            font-size: 1.15em;
+            margin-bottom: 1.2em;
+        }
+        #score-modal-score {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #d94d00;
+            margin-bottom: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-title">PRE GRADE 6 - ENGLISH GRAMMAR TEST 1 – (PAPER 7)</div>
+        <div class="info">
+            <strong>Time:</strong> 45 minutes | <strong>Full name:</strong> <input class="student-name" type="text" placeholder="">
+        </div>
+
+        <!-- Part 1: Multiple Choice -->
+        <div class="section-title"><span class="vi">Phần 1: Trắc nghiệm (2 điểm)</span> - <span class="en">Multiple Choice (2 marks)</span></div>
+        <div class="section-desc"><em>Chọn đáp án đúng nhất</em> (<span>Choose the best answer</span>):</div>
+        <div class="question">
+            1. Which of the following is <strong>a countable noun</strong>?
+            <div class="answers">
+                <label><input type="radio" name="q1" value="A">A. chalk</label>
+                <label><input type="radio" name="q1" value="B">B. desk</label>
+                <label><input type="radio" name="q1" value="C">C. information</label>
+                <label><input type="radio" name="q1" value="D">D. advice</label>
+            </div>
+        </div>
+        <div class="question">
+            2. Choose the correct plural form of <strong>baby</strong>:
+            <div class="answers">
+                <label><input type="radio" name="q2" value="A">A. babys</label>
+                <label><input type="radio" name="q2" value="B">B. babis</label>
+                <label><input type="radio" name="q2" value="C">C. babies</label>
+                <label><input type="radio" name="q2" value="D">D. babyes</label>
+            </div>
+        </div>
+        <div class="question">
+            3. Which noun is <strong>uncountable</strong>?
+            <div class="answers">
+                <label><input type="radio" name="q3" value="A">A. pencil</label>
+                <label><input type="radio" name="q3" value="B">B. chair</label>
+                <label><input type="radio" name="q3" value="C">C. knowledge</label>
+                <label><input type="radio" name="q3" value="D">D. student</label>
+            </div>
+        </div>
+        <div class="question">
+            4. There is ___ chalk on the board.
+            <div class="answers">
+                <label><input type="radio" name="q4" value="A">A. a</label>
+                <label><input type="radio" name="q4" value="B">B. an</label>
+                <label><input type="radio" name="q4" value="C">C. some</label>
+                <label><input type="radio" name="q4" value="D">D. the</label>
+            </div>
+        </div>
+        <div class="question">
+            5. Mary saw Teacher Sofia standing by the door. She gave ___ pen to ___ teacher.
+            <div class="answers">
+                <label><input type="radio" name="q5" value="A">A. a/a</label>
+                <label><input type="radio" name="q5" value="B">B. the/a</label>
+                <label><input type="radio" name="q5" value="C">C. an/the</label>
+                <label><input type="radio" name="q5" value="D">D. a/the</label>
+            </div>
+        </div>
+        <div class="question">
+            6. There aren't ___ books in the bag.
+            <div class="answers">
+                <label><input type="radio" name="q6" value="A">A. some</label>
+                <label><input type="radio" name="q6" value="B">B. any</label>
+                <label><input type="radio" name="q6" value="C">C. a</label>
+                <label><input type="radio" name="q6" value="D">D. an</label>
+            </div>
+        </div>
+        <div class="question">
+            7. The correct sentence is:
+            <div class="answers">
+                <label><input type="radio" name="q7" value="A">A. She new has a notebook.</label>
+                <label><input type="radio" name="q7" value="B">B. She has a new notebook.</label>
+                <label><input type="radio" name="q7" value="C">C. New she has a notebook.</label>
+                <label><input type="radio" name="q7" value="D">D. She has notebook a new.</label>
+            </div>
+        </div>
+        <div class="question">
+            8. Which pronoun replaces <strong>"Tom and me"</strong> as object?
+            <div class="answers">
+                <label><input type="radio" name="q8" value="A">A. we</label>
+                <label><input type="radio" name="q8" value="B">B. us</label>
+                <label><input type="radio" name="q8" value="C">C. our</label>
+                <label><input type="radio" name="q8" value="D">D. they</label>
+            </div>
+        </div>
+        <div class="question">
+            9. The plural of <strong>"class"</strong> is:
+            <div class="answers">
+                <label><input type="radio" name="q9" value="A">A. classs</label>
+                <label><input type="radio" name="q9" value="B">B. classes</label>
+                <label><input type="radio" name="q9" value="C">C. classies</label>
+                <label><input type="radio" name="q9" value="D">D. classz</label>
+            </div>
+        </div>
+        <div class="question">
+            10. Which sentence uses articles correctly?
+            <div class="answers">
+                <label><input type="radio" name="q10" value="A">A. I have pencil in my bag.</label>
+                <label><input type="radio" name="q10" value="B">B. I have a pencil in the bag.</label>
+                <label><input type="radio" name="q10" value="C">C. I have an pencil in bag.</label>
+                <label><input type="radio" name="q10" value="D">D. I have the pencil at a bag.</label>
+            </div>
+        </div>
+
+        <!-- Part 2: Fill in the blanks -->
+        <div class="section-title"><span class="vi">Phần 2: Điền từ (2 điểm)</span> - <span class="en">Fill in the blanks (2 marks)</span></div>
+        <div class="section-desc"><em>Điền từ thích hợp vào chỗ trống</em> (<span>Fill in the blanks with appropriate words</span>):</div>
+        <div class="question">1. We saw some <input class="blank" type="text" name="f1" autocomplete="off" placeholder=""> (child/children) playing in the park.</div>
+        <div class="question">2. Please give this ruler to <input class="blank" type="text" name="f2" autocomplete="off" placeholder=""> (he/him).</div>
+        <div class="question">3. She doesn't have <input class="blank" type="text" name="f3" autocomplete="off" placeholder=""> (some/any) pencils left.</div>
+        <div class="question">4. My father works at <input class="blank" type="text" name="f4" autocomplete="off" placeholder=""> (a/an/the) university in New York.</div>
+        <div class="question">5. There are many <input class="blank" type="text" name="f5" autocomplete="off" placeholder=""> (boxes) on the desk. </div>
+        <div class="question">6. <input class="blank" type="text" name="f6" autocomplete="off" placeholder=""> (She/Her) is talking to Tom about the homework.</div>
+        <div class="question">7. <input class="blank" type="text" name="f7" autocomplete="off" placeholder=""> (They/Them) are going to visit London this summer.</div>
+        <div class="question">8. Anna wants to buy <input class="blank" type="text" name="f8" autocomplete="off" placeholder=""> (a/an/some) bread from the bakery.</div>
+        <div class="question">9. <input class="blank" type="text" name="f9" autocomplete="off" placeholder=""> (a/an/the/Ø) water is important for life.</div>
+        <div class="question">10. Would you like <input class="blank" type="text" name="f10" autocomplete="off" placeholder=""> (a/an/some) paper?</div>
+
+        <!-- Part 3: Error Correction -->
+        <div class="section-title"><span class="vi">Phần 3: Tìm lỗi sai (3 điểm)</span> - <span class="en">Error Correction (3 marks)</span></div>
+        <div class="section-desc"><em>Tìm lỗi sai và viết lại câu đúng</em> (<span>Find the error and rewrite the sentence correctly</span>):</div>
+        <div class="question error-question">
+            1. There are two mouses in the corner of the room.<br>
+            Correct: <input class="error-input" type="text" name="e1" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            2. She needs some informations about the lesson.<br>
+            Correct: <input class="error-input" type="text" name="e2" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            3. There aren't some books on the table.<br>
+            Correct: <input class="error-input" type="text" name="e3" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            4. Me and my classmate are late for school.<br>
+            Correct: <input class="error-input" type="text" name="e4" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            5. They gave the homework to I yesterday.<br>
+            Correct: <input class="error-input" type="text" name="e5" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            6. He drinks a milk every morning.<br>
+            Correct: <input class="error-input" type="text" name="e6" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            7. My grandpa is a honest man.<br>
+            Correct: <input class="error-input" type="text" name="e7" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            8. I saw many sheeps in the field.<br>
+            Correct: <input class="error-input" type="text" name="e8" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            9. She gave me an apple and an banana for lunch.<br>
+            Correct: <input class="error-input" type="text" name="e9" autocomplete="off" placeholder="">
+        </div>
+        <div class="question error-question">
+            10. I live in the Long Hai Town.<br>
+            Correct: <input class="error-input" type="text" name="e10" autocomplete="off" placeholder="">
+        </div>
+
+        <!-- Part 4: Cloze Test -->
+        <div class="section-title"><span class="vi">Phần 4: Điền từ vào đoạn văn (3 điểm)</span> - <span class="en">Cloze Test (3 marks)</span></div>
+        <div class="section-desc"><em>Điền từ thích hợp vào chỗ trống trong đoạn văn sau</em> (<span>Fill in the blanks with appropriate words</span>):</div>
+        <div class="question cloze-paragraph">
+            <strong>A.</strong> Yesterday, I went to <input class="cloze-input" type="text" name="c1" autocomplete="off" placeholder=""> (1) classroom to get my books. Then, I picked up <input class="cloze-input" type="text" name="c2" autocomplete="off" placeholder=""> (2) eraser and <input class="cloze-input" type="text" name="c3" autocomplete="off" placeholder=""> (3) ruler from my desk. After that, I went to the store to get <input class="cloze-input" type="text" name="c4" autocomplete="off" placeholder=""> (4) pens but they didn't have <input class="cloze-input" type="text" name="c5" autocomplete="off" placeholder=""> (5) in stock so I went back home.
+        </div>
+        <div class="question cloze-paragraph">
+            <strong>B.</strong> Yesterday, I stayed at home and helped my mom. She asked me to bring her <input class="cloze-input" type="text" name="c6" autocomplete="off" placeholder=""> (1) apples and <input class="cloze-input" type="text" name="c7" autocomplete="off" placeholder=""> (2) bottle of water from the kitchen, but there weren't <input class="cloze-input" type="text" name="c8" autocomplete="off" placeholder=""> (3) apples left, so I made her <input class="cloze-input" type="text" name="c9" autocomplete="off" placeholder=""> (4) sandwich to eat. She smiled at <input class="cloze-input" type="text" name="c10" autocomplete="off" placeholder=""> (5) and said, &quot;Thank you!&quot;
+        </div>
+
+        <div class="submit-wrap">
+            <button class="submit-btn">Nộp bài / Submit</button>
+            <div id="score-result" style="margin-top:1.5em;font-size:1.1em;font-weight:bold;color:#1743b3;"></div>
+        </div>
+    </div>
+    <div id="score-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.35);align-items:center;justify-content:center;">
+        <div id="score-modal-content" style="background:#fff;padding:2em 1.5em 1.5em 1.5em;border-radius:16px;max-width:90vw;width:350px;box-shadow:0 4px 32px rgba(0,0,0,0.18);text-align:center;position:relative;">
+            <span id="score-modal-close" style="position:absolute;top:10px;right:18px;font-size:1.5em;cursor:pointer;">&times;</span>
+            <div id="score-modal-message" style="font-size:1.15em;margin-bottom:1.2em;"></div>
+            <div id="score-modal-score" style="font-size:2.2em;font-weight:bold;color:#d94d00;margin-bottom:0.7em;"></div>
+        </div>
+    </div>
+    <script>
+    const answers = {
+        // Part 1
+        q1: 'B', // desk is a countable noun
+        q2: 'C', // babies is the correct plural of baby
+        q3: 'C', // knowledge is uncountable
+        q4: 'C', // some chalk
+        q5: 'D', // a pen to the teacher
+        q6: 'B', // any books
+        q7: 'B', // She has a new notebook
+        q8: 'B', // us (object pronoun)
+        q9: 'B', // classes
+        q10: 'B', // I have a pencil in the bag
+        // Part 2
+        f1: 'children',
+        f2: 'him',
+        f3: 'any',
+        f4: 'a',
+        f5: 'boxes',
+        f6: 'She',
+        f7: 'They',
+        f8: 'some',
+        f9: 'Ø',
+        f10: 'some',
+        // Part 3
+        e1: 'There are two mice in the corner of the room.',
+        e2: 'She needs some information about the lesson.',
+        e3: 'There aren\'t any books on the table.',
+        e4: 'My classmate and I are late for school.',
+        e5: 'They gave the homework to me yesterday.',
+        e6: 'He drinks some milk every morning.',
+        e7: 'My grandpa is an honest man.',
+        e8: 'I saw many sheep in the field.',
+        e9: 'She gave me an apple and a banana for lunch.',
+        e10: 'I live in Long Hai Town.',
+        // Part 4
+        c1: 'the', c2: 'an', c3: 'a', c4: 'some', c5: 'any',
+        c6: 'some', c7: 'a', c8: 'any', c9: 'a', c10: 'me',
+    };
+
+    const explanations = {
+        // Part 1
+        q1: "Đáp án đúng là: desk. 'Desk' là danh từ đếm được (countable noun), còn 'chalk', 'information', 'advice' là danh từ không đếm được (uncountable nouns).",
+        q2: "Đáp án đúng là: babies. Số nhiều của 'baby' là 'babies' (quy tắc: đổi y thành i rồi thêm es).",
+        q3: "Đáp án đúng là: knowledge. 'Knowledge' là danh từ không đếm được (uncountable noun), các đáp án khác đều là danh từ đếm được.",
+        q4: "Đáp án đúng là: some. 'Chalk' là danh từ không đếm được, dùng 'some' để chỉ một lượng không xác định.",
+        q5: "Đáp án đúng là: a/the. 'A pen' (một cây bút bất kỳ) và 'the teacher' (cô giáo đã xác định).",
+        q6: "Đáp án đúng là: any. Dùng 'any' trong câu phủ định (aren't any books).",
+        q7: "Đáp án đúng là: She has a new notebook. Câu này đúng ngữ pháp và trật tự từ. Các câu khác sai về trật tự từ hoặc thiếu mạo từ.",
+        q8: "Đáp án đúng là: us. Đại từ tân ngữ (object pronoun) thay thế cho 'Tom and me' là 'us'.",
+        q9: "Đáp án đúng là: classes. Số nhiều của 'class' là 'classes' (thêm es vì tận cùng là s).",
+        q10: "Đáp án đúng là: I have a pencil in the bag. Câu này dùng mạo từ đúng với danh từ đếm được số ít ('a pencil') và danh từ xác định ('the bag').",
+        // Part 2
+        f1: "Đáp án đúng là: children. Số nhiều của 'child' là 'children'.",
+        f2: "Đáp án đúng là: him. 'Him' là đại từ tân ngữ (object pronoun) dùng sau giới từ 'to'.",
+        f3: "Đáp án đúng là: any. Dùng 'any' trong câu phủ định (doesn't have any).",
+        f4: "Đáp án đúng là: a. 'University' phát âm bắt đầu bằng /ju:/ nên dùng 'a' thay vì 'an'.",
+        f5: "Đáp án đúng là: boxes. Số nhiều của 'box' là 'boxes'.",
+        f6: "Đáp án đúng là: She. 'She' là đại từ chủ ngữ (subject pronoun) đứng đầu câu.",
+        f7: "Đáp án đúng là: They. 'They' là đại từ chủ ngữ (subject pronoun) dùng cho số nhiều.",
+        f8: "Đáp án đúng là: some. 'Bread' là danh từ không đếm được, dùng 'some' để chỉ một lượng không xác định.",
+        f9: "Đáp án đúng là: Ø. 'Water' là danh từ không đếm được, không dùng mạo từ khi nói chung chung.",
+        f10: "Đáp án đúng là: some. 'Paper' là danh từ không đếm được, dùng 'some' khi hỏi muốn một ít giấy.",
+        // Part 3
+        e1: "Đáp án đúng là: There are two mice in the corner of the room. Số nhiều của 'mouse' là 'mice'.",
+        e2: "Đáp án đúng là: She needs some information about the lesson. 'Information' là danh từ không đếm được, không có dạng số nhiều.",
+        e3: "Đáp án đúng là: There aren't any books on the table. Dùng 'any' trong câu phủ định.",
+        e4: "Đáp án đúng là: My classmate and I are late for school. Chủ ngữ phải là 'My classmate and I'.",
+        e5: "Đáp án đúng là: They gave the homework to me yesterday. 'Me' là đại từ tân ngữ (object pronoun) dùng sau giới từ 'to'.",
+        e6: "Đáp án đúng là: He drinks some milk every morning. 'Milk' là danh từ không đếm được, không dùng 'a'.",
+        e7: "Đáp án đúng là: My grandpa is an honest man. 'Honest' phát âm bắt đầu bằng nguyên âm nên dùng 'an'.",
+        e8: "Đáp án đúng là: I saw many sheep in the field. Số nhiều của 'sheep' vẫn là 'sheep'.",
+        e9: "Đáp án đúng là: She gave me an apple and a banana for lunch. 'Banana' bắt đầu bằng phụ âm nên dùng 'a'.",
+        e10: "Đáp án đúng là: I live in Long Hai Town. Không dùng 'the' trước tên thị trấn, thành phố.",
+        // Part 4
+        c1: "Đáp án đúng là: the. (1) 'The classroom' đã xác định.",
+        c2: "Đáp án đúng là: an. (2) 'An eraser' - một cục tẩy bất kỳ, bắt đầu bằng nguyên âm.",
+        c3: "Đáp án đúng là: a. (3) 'A ruler' - một thước bất kỳ.",
+        c4: "Đáp án đúng là: some. (4) 'Some pens' - một vài cây bút.",
+        c5: "Đáp án đúng là: any. (5) Không còn cây bút nào nên dùng 'any'.",
+        c6: "Đáp án đúng là: some. (1) 'Some apples' - một vài quả táo.",
+        c7: "Đáp án đúng là: a. (2) 'A bottle' - một chai nước.",
+        c8: "Đáp án đúng là: any. (3) Không còn quả táo nào nên dùng 'any'.",
+        c9: "Đáp án đúng là: a. (4) 'A sandwich' - một chiếc bánh mì.",
+        c10: "Đáp án đúng là: me. (5) 'Me' là đại từ tân ngữ (object pronoun) chỉ bản thân mình."
+    };
+
+    document.querySelector('.submit-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Clear previous results and explanations
+        document.querySelectorAll('.answers label').forEach(lab => {
+            lab.style.color = ''; lab.style.fontWeight = '';
+        });
+        document.querySelectorAll('.blank, .cloze-input, .error-input').forEach(inp => {
+            inp.style.background = ''; inp.style.color = '';
+        });
+        document.querySelectorAll('.explanation-text').forEach(el => el.remove());
+        document.getElementById('score-result').textContent = '';
+
+        let part1Correct = 0, part2Correct = 0, part3Correct = 0, part4Correct = 0;
+
+        const showExplanation = (key, element) => {
+            if (explanations[key]) {
+                const exp = document.createElement('span');
+                exp.className = 'explanation-text';
+                exp.textContent = explanations[key];
+                element.parentNode.appendChild(exp);
+            }
+        };
+
+        // Check Part 1: Multiple Choice
+        for (let i = 1; i <= 10; i++) {
+            const qName = 'q' + i;
+            const correct = answers[qName];
+            const checked = document.querySelector(`input[name="${qName}"]:checked`);
+            if (checked) {
+                if (checked.value.toLowerCase() === correct.toLowerCase()) {
+                    checked.parentElement.style.color = 'green';
+                    checked.parentElement.style.fontWeight = 'bold';
+                    part1Correct++;
+                } else {
+                    checked.parentElement.style.color = 'red';
+                    checked.parentElement.style.fontWeight = 'bold';
+                    showExplanation(qName, checked.parentElement);
+                }
+            }
+        }
+
+        // Check Part 2, 3, 4: Inputs
+        Object.keys(answers).forEach(key => {
+            if (key.startsWith('f') || key.startsWith('e') || key.startsWith('c')) {
+                const inp = document.querySelector(`[name="${key}"]`);
+                if (!inp) return;
+                let userVal = inp.value.trim().replace(/\s+/g, ' ');
+                let correctVal = answers[key];
+                let isCorrect = false;
+                if (key.startsWith('e')) {
+                    const normalize = str => {
+                        str = str.trim();
+                        // Bỏ toàn bộ dấu chấm, dấu chấm than, dấu hỏi cuối câu
+                        str = str.replace(/[.?!]+$/, '');
+                        if (str.length > 0) str = str[0].toLowerCase() + str.slice(1);
+                        return str.toLowerCase();
+                    };
+                    let userNorm = normalize(userVal);
+                    let correctNorm = normalize(String(correctVal));
+                    isCorrect = userNorm === correctNorm;
+                } else if (Array.isArray(correctVal)) {
+                    isCorrect = correctVal.some(val => userVal.toLowerCase() === val.toLowerCase());
+                } else if (String(correctVal) === 'Ø') {
+                    // Chấp nhận cả khi học sinh để trống hoặc nhập 'Ø'
+                    isCorrect = userVal === '' || userVal.toLowerCase() === 'ø';
+                } else {
+                    isCorrect = userVal.toLowerCase() === String(correctVal).toLowerCase();
+                }
+                if (isCorrect) {
+                    inp.style.background = '#d4edda'; // green
+                    inp.style.color = '#155724';
+                    if (key.startsWith('f')) part2Correct++;
+                    else if (key.startsWith('e')) part3Correct++;
+                    else if (key.startsWith('c')) part4Correct++;
+                } else {
+                    inp.style.background = '#f8d7da'; // red
+                    inp.style.color = '#721c24';
+                    showExplanation(key, inp);
+                }
+            }
+        });
+
+        // Tính điểm
+        let score1 = (part1Correct * 0.2).toFixed(2);
+        let score2 = (part2Correct * 0.2).toFixed(2);
+        let score3 = (part3Correct * 0.3).toFixed(2);
+        let score4 = (part4Correct * 0.3).toFixed(2);
+        let total = (parseFloat(score1) + parseFloat(score2) + parseFloat(score3) + parseFloat(score4)).toFixed(2);
+        document.getElementById('score-result').innerHTML = `<span style='font-size:1.2em;'>Tổng điểm: <b>${Number(total).toFixed(1)}/10</b></span>`;
+        // Custom popup
+        const modal = document.getElementById('score-modal');
+        const modalMsg = document.getElementById('score-modal-message');
+        const modalScore = document.getElementById('score-modal-score');
+        let scoreColor = parseFloat(total) >= 7 ? '#1ca01c' : '#d94d00';
+        let labelColor = scoreColor;
+        modalScore.innerHTML = `<span style='font-size:1em;font-weight:bold;color:${labelColor};display:block;'>Số điểm của bạn là:</span><span style='font-size:2.2em;font-weight:bold;color:${scoreColor};display:block;'>${Number(total).toFixed(1)}/10</span>`;
+        if (parseFloat(total) >= 7) {
+            modalMsg.textContent = `Chúc mừng bạn đã đạt yêu cầu bài kiểm tra!`;
+        } else {
+            modalMsg.textContent = `Bạn chưa đạt yêu cầu bài kiểm tra, hãy luyện tập thêm nhé!`;
+        }
+        modal.style.display = 'flex';
+        // Đóng modal khi bấm nút hoặc click ra ngoài
+        document.getElementById('score-modal-close').onclick = function() { modal.style.display = 'none'; };
+        modal.onclick = function(e) { if (e.target === modal) modal.style.display = 'none'; };
+    });
+    </script>
+</body>
+</html>

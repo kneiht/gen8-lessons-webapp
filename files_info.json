@@ -497,6 +497,13 @@
       "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
       "category": "tests"
     },
+    "tests/pre-gs6-test-1-paper-8": {
+      "path": "tests/pre-gs6-test-1-paper-8",
+      "title": "Pre Gs6 Test 1 - Paper 8",
+      "author": "Anh Thư",
+      "description": "Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
     "tests/pre-gs7-test-1-paper-2": {
       "path": "tests/pre-gs7-test-1-paper-2",
       "title": "Pre Gs7 Test 1 - Paper 2",
@@ -565,6 +572,13 @@
       "title": "Pre Gs6 Test 1 - Paper 1",
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-1-paper-7": {
+      "path": "tests/pre-gs6-test-1-paper-7",
+      "title": "Pre Gs6 Test 1 - Paper 7",
+      "author": "Anh Thư",
+      "description": "Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-6": {
