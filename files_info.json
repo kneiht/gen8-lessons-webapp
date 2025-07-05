@@ -77,6 +77,13 @@
       "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ mô tả.",
       "category": "slides"
     },
+    "slides/pre-gs6-adverbs": {
+      "path": "slides/pre-gs6-adverbs",
+      "title": "Pre GS6 - Adverbs",
+      "author": "Gen8",
+      "description": "trạng từ chỉ cách thức, tần suất.",
+      "category": "slides"
+    },
     "slides/pre-gs8-simple-sentences": {
       "path": "slides/pre-gs8-simple-sentences",
       "title": "Pre GS8 - Review future simple \\'96 \\'d4n T\\uc0\\u7853 p",
@@ -208,6 +215,13 @@
       "title": "Pre Gs6 - Đại từ nhân xưng (Personal Pronouns)",
       "author": "Gen8",
       "description": "Personal Pronouns (Đại Từ Nhân Xưng) - Lesson 1",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-ws-adverbs": {
+      "path": "worksheets/pre-gs6-ws-adverbs",
+      "title": "Pre GS6 - Adverbs",
+      "author": "Gen8",
+      "description": "trạng từ chỉ cách thức, tần suất.",
       "category": "worksheets"
     },
     "worksheets/pre-gs8-nouns-ad-articles": {
