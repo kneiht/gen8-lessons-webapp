@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Verbs Worksheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Modal Verbs (Động từ khiếm khuyết)</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. What are Modal Verbs? (Động từ khiếm khuyết là gì?)</h4>
+                        <p class="text-gray-700 mb-3">Modal verbs are special verbs (can, must, should, may...) used with the base form of another verb (without "to") to express ability, permission, obligation, advice, etc.</p>
+                        <p class="text-gray-700 mb-3">Động từ khiếm khuyết đi kèm với động từ nguyên thể không "to" để diễn tả khả năng, sự cho phép, bắt buộc...</p>
+                        <p class="text-gray-700 italic">Example: I can swim. (Tôi có thể bơi.)</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Common Modal Verbs (Các động từ khiếm khuyết thông dụng)</h4>
+                        <table class="w-full text-left text-gray-700 border-collapse">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="py-2 px-4">Modal Verb</th>
+                                    <th class="py-2 px-4">Usage</th>
+                                    <th class="py-2 px-4">Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-2 px-4 font-medium">Can</td>
+                                    <td class="py-2 px-4">Ability, possibility (Khả năng)</td>
+                                    <td class="py-2 px-4 italic">I can swim.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-2 px-4 font-medium">Must</td>
+                                    <td class="py-2 px-4">Obligation (Bắt buộc)</td>
+                                    <td class="py-2 px-4 italic">You must study hard.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-2 px-4 font-medium">Should</td>
+                                    <td class="py-2 px-4">Advice (Lời khuyên)</td>
+                                    <td class="py-2 px-4 italic">She should go to bed early.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Examples (Ví dụ khác)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1 italic">He can't speak Chinese. (Phủ định: thêm "not" sau động từ khiếm khuyết)</li>
+                            <li class="mb-1 italic">Must I do my homework now? (Câu hỏi: đảo modal verb lên trước chủ ngữ)</li>
+                            <li class="italic">You <b>should not</b> (shouldn't) eat more candy.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">Negatives (Thể phủ định)</h4>
+                        <p class="text-gray-700 mb-2"><span class="english">Add "not" after the modal verb</span><br><span class="vietnamese">Thêm "not" sau động từ khiếm khuyết</span></p>
+                        <div class="example-sentence">
+                            <p class="english">He <b>cannot</b> (can't) speak Chinese.</p>
+                            <p class="vietnamese">Anh ấy không thể nói tiếng Trung.</p>
+                        </div>
+                        <div class="example-sentence">
+                            <p class="english">You <b>must not</b> (mustn't) smoke here.</p>
+                            <p class="vietnamese">Bạn không được hút thuốc ở đây.</p>
+                        </div>
+                        <div class="example-sentence">
+                            <p class="english">You <b>should not</b> (shouldn't) eat more candy.</p>
+                            <p class="vietnamese">Bạn không nên ăn nhiều kẹo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Bài tập (Exercises)</h3>
+                </div>
+
+                <!-- Exercise 1 -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Chọn đáp án đúng (Choose the correct answer)</h4>
+                            <p class="exercise-instruction">👉 Chọn modal verb phù hợp để hoàn thành câu</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <p class="text-gray-800 mb-1">1. You ___ wear a helmet when you ride a motorbike.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="can" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>can</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="must" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="should" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>should</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-gray-800 mb-1">2. I ___ swim when I was five.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="can" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>can</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="must" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="should" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>should</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-gray-800 mb-1">3. You look tired. You ___ go to bed early.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="must" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="can" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>can</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="should" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>should</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-gray-800 mb-1">4. Students ___ bring their books to school every day.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="shouldn't" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>shouldn't</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="can't" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>can't</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="must" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-gray-800 mb-1">5. You ___ eat more vegetables. They are good for your health.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="must" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="can" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>can</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="should" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>should</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-gray-800 mb-1">6. People ___ smoke in hospitals.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="must" data-answer="mustn't" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="mustn't" data-answer="mustn't" onclick="checkAnswer(this)">
+                                            <span>mustn't</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="can't" data-answer="mustn't" onclick="checkAnswer(this)">
+                                            <span>can't</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col">
+                                    <p class="text-gray-800 mb-1">7. He ___ play the guitar and the piano.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="can" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>can</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="should" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>should</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="must" data-answer="can" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Tìm lỗi sai và sửa lại (Find and correct mistakes)</h4>
+                            <p class="exercise-instruction">👉 Mỗi câu sau có 1 lỗi sai về cách dùng modal verb. Tìm và sửa lại cho đúng</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. She can to swim very well.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She can swim very well." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. You must to wear a uniform at school.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="You must wear a uniform at school." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. I should to bring an umbrella.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="I should bring an umbrella." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. They can plays football on weekends.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="They can play football on weekends." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. He musts finish his homework before dinner.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="He must finish his homework before dinner." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 3: Sắp xếp từ thành câu hoàn chỉnh (Rearrange words to make sentences)</h4>
+                            <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu hoàn chỉnh sử dụng modal verbs</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">homework / must / you / do / your</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="You must do your homework." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">help / me / can / you / ?</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Can you help me?" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">drink / should / water / more / we</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="We should drink more water." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">wear / helmet / must / a / drivers</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Drivers must wear a helmet." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">play / can / she / piano / the</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She can play the piano." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 4 -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 4: Tổng hợp 1 (Mixed Exercise 1)</h4>
+                            <p class="exercise-instruction">👉 Hoàn thành các câu sau bằng cách sử dụng modal verbs phù hợp</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">1. Students ___ bring their ID cards to school every day.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="must" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">2. You ___ speak loudly in the library.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="mustn't" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">3. My sister ___ play the violin beautifully.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="can" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">4. You look sick. You ___ see a doctor.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="should" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">5. Children ___ eat healthy food to grow well.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="should" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">6. Drivers ___ wear seatbelts when driving.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="must" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">7. You ___ drink more water when you have a fever.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="should" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">8. People ___ park their cars in front of fire hydrants.</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="mustn't" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (radio.value === correctAnswer) {
+                        radio.closest('.radio-label').classList.add('text-green-600');
+                    } else {
+                        radio.closest('.radio-label').classList.remove('text-green-600');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (radio.checked && radio.value !== correctAnswer) {
+                        radio.closest('.radio-label').classList.add('text-red-600');
+                    } else {
+                        radio.closest('.radio-label').classList.remove('text-red-600');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            } else {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md', 'border-red-500', 'bg-red-100');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+    </script>
+</body>
+
+</html>
