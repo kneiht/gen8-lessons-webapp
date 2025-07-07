@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepositions - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Drag and drop styles */
+        .drop-zone {
+            min-height: 40px;
+            border: 2px dashed #ccc;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .draggable-item {
+            background-color: #e5e7eb;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            cursor: move;
+            user-select: none;
+        }
+        
+        .draggable-item.dragging {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Giới từ (Prepositions) - Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Khái niệm giới từ</h4>
+                        <p class="text-gray-700 mb-3">Giới từ là từ dùng để diễn tả mối quan hệ giữa các từ trong câu, thường chỉ vị trí, thời gian, phương hướng, nguyên nhân, mục đích...</p>
+                        <p class="text-gray-700 italic">Ví dụ: in, on, at, under, between, before, after</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Chức năng trong câu</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Chỉ vị trí: The book is <span class="italic">on</span> the table</li>
+                            <li>Chỉ thời gian: We meet <span class="italic">at</span> 5 o'clock</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Các loại giới từ</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Giới từ chỉ thời gian: at, on, in, before, after</li>
+                            <li class="mb-1">Giới từ chỉ địa điểm: in, on, at, under, above</li>
+                            <li>Giới từ chỉ phương hướng: to, from, into, out of</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Giới từ chỉ thời gian</h4>
+                        <table class="w-full text-left text-gray-700 border-collapse">
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">at</td>
+                                    <td class="py-1 px-4 italic">giờ (at 5pm), thời điểm (at night)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">on</td>
+                                    <td class="py-1 px-4 italic">ngày (on Monday), ngày tháng (on June 5th)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1 px-4">in</td>
+                                    <td class="py-1 px-4 italic">tháng/năm (in May, in 2023), buổi (in the morning)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Giới từ chỉ địa điểm</h4>
+                        <table class="w-full text-left text-gray-700 border-collapse">
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">in</td>
+                                    <td class="py-1 px-4 italic">trong không gian (in the room, in Vietnam)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">on</td>
+                                    <td class="py-1 px-4 italic">trên bề mặt (on the table, on the wall)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1 px-4">at</td>
+                                    <td class="py-1 px-4 italic">tại điểm (at home, at school)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">6. Giới từ thông dụng khác</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">belong to (thuộc về)</li>
+                            <li class="mb-1">take on (nhận thêm)</li>
+                            <li>benefit from (hưởng lợi từ)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">belong to <span class="vocab-type">(v)</span> /bɪˈlɒŋ tə/</p>
+                        <p class="vocab-meaning">thuộc về</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">benefit <span class="vocab-type">(n)</span> /ˈbenɪfɪt/</p>
+                        <p class="vocab-meaning">lợi ích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">bug <span class="vocab-type">(n)</span> /bʌɡ/</p>
+                        <p class="vocab-meaning">con bọ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cardboard <span class="vocab-type">(n)</span> /ˈkɑːdbɔːd/</p>
+                        <p class="vocab-meaning">bìa các tông</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dollhouse <span class="vocab-type">(n)</span> /ˈdɒlhaʊs/</p>
+                        <p class="vocab-meaning">nhà búp bê</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">gardening <span class="vocab-type">(n)</span> /ˈɡɑːdnɪŋ/</p>
+                        <p class="vocab-meaning">làm vườn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">glue <span class="vocab-type">(n)</span> /ɡluː/</p>
+                        <p class="vocab-meaning">keo dán / hồ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">horse riding <span class="vocab-type">(n)</span> /ˈhɔːs raɪdɪŋ/</p>
+                        <p class="vocab-meaning">cưỡi ngựa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">insect <span class="vocab-type">(n)</span> /ˈɪnsekt/</p>
+                        <p class="vocab-meaning">côn trùng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">jogging <span class="vocab-type">(n)</span> /ˈdʒɒɡɪŋ/</p>
+                        <p class="vocab-meaning">đi / chạy bộ thư giãn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">making models <span class="vocab-type">(n)</span> /ˈmeɪkɪŋ ˈmɒdlz/</p>
+                        <p class="vocab-meaning">làm mô hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">maturity <span class="vocab-type">(n)</span> /məˈtʃʊərəti/</p>
+                        <p class="vocab-meaning">sự trưởng thành</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">patient <span class="vocab-type">(adj)</span> /ˈpeɪʃnt/</p>
+                        <p class="vocab-meaning">kiên nhẫn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">popular <span class="vocab-type">(adj)</span> /ˈpɒpjələ/</p>
+                        <p class="vocab-meaning">được nhiều người ưa thích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">responsibility <span class="vocab-type">(n)</span> /rɪˌspɒnsəˈbɪləti/</p>
+                        <p class="vocab-meaning">sự chịu trách nhiệm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">set <span class="vocab-type">(v)</span> /set/</p>
+                        <p class="vocab-meaning">(mặt trời) lặn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">stress <span class="vocab-type">(n)</span> /stres/</p>
+                        <p class="vocab-meaning">sự căng thẳng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">take on <span class="vocab-type">(v)</span> /teɪk ɒn/</p>
+                        <p class="vocab-meaning">nhận thêm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">unusual <span class="vocab-type">(adj)</span> /ʌnˈjuːʒuəl/</p>
+                        <p class="vocab-meaning">khác thường</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">valuable <span class="vocab-type">(adj)</span> /ˈvæljuəbl/</p>
+                        <p class="vocab-meaning">quý giá</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">yoga <span class="vocab-type">(n)</span> /ˈjəʊɡə/</p>
+                        <p class="vocab-meaning">yoga</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Chọn giới từ đúng</h4>
+                            <p class="exercise-instruction">👉 Chọn giới từ thích hợp để hoàn thành các câu sau:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The sun sets ________ 6:30 pm ________ summer.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="at, in" data-answer="at, in" onclick="checkAnswer(this)">
+                                            <span>at, in</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="on, in" data-answer="at, in" onclick="checkAnswer(this)">
+                                            <span>on, in</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="in, at" data-answer="at, in" onclick="checkAnswer(this)">
+                                            <span>in, at</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She's interested ________ making models ________ cardboard.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="in, with" data-answer="in, with" onclick="checkAnswer(this)">
+                                            <span>in, with</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="on, of" data-answer="in, with" onclick="checkAnswer(this)">
+                                            <span>on, of</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="at, from" data-answer="in, with" onclick="checkAnswer(this)">
+                                            <span>at, from</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">This dollhouse belongs ________ my little sister.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="to" data-answer="to" onclick="checkAnswer(this)">
+                                            <span>to</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="for" data-answer="to" onclick="checkAnswer(this)">
+                                            <span>for</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="with" data-answer="to" onclick="checkAnswer(this)">
+                                            <span>with</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We usually go horse riding ________ Sundays ________ the morning.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="on, in" data-answer="on, in" onclick="checkAnswer(this)">
+                                            <span>on, in</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="at, on" data-answer="on, in" onclick="checkAnswer(this)">
+                                            <span>at, on</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="in, at" data-answer="on, in" onclick="checkAnswer(this)">
+                                            <span>in, at</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The glue is ________ the table, ________ the books and the scissors.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="on, between" data-answer="on, between" onclick="checkAnswer(this)">
+                                            <span>on, between</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="at, among" data-answer="on, between" onclick="checkAnswer(this)">
+                                            <span>at, among</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="in, next to" data-answer="on, between" onclick="checkAnswer(this)">
+                                            <span>in, next to</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Điền giới từ thích hợp</h4>
+                            <p class="exercise-instruction">👉 Điền giới từ thích hợp vào chỗ trống:</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She's very patient ________ children and good ________ handling stress.</span>
+                                    <input type="text" class="answer-input" data-answer="with, at" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">This valuable book belongs ________ the school library.</span>
+                                    <input type="text" class="answer-input" data-answer="to" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We usually do yoga ________ the morning ________ weekdays.</span>
+                                    <input type="text" class="answer-input" data-answer="in, on" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The insect is ________ the box, ________ the left side.</span>
+                                    <input type="text" class="answer-input" data-answer="in, on" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Gardening is popular ________ people who want to relax ________ nature.</span>
+                                    <input type="text" class="answer-input" data-answer="among, in" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">He takes ________ more responsibility ________ work.</span>
+                                    <input type="text" class="answer-input" data-answer="on, at" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 3: Sắp xếp lại câu</h4>
+                            <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu hoàn chỉnh (chú ý giới từ):</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">dollhouse / belongs / this / to / my / sister / little</span>
+                                    <input type="text" class="answer-input w-full" data-answer="This dollhouse belongs to my little sister." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">popular / is / jogging / among / people / health-conscious</span>
+                                    <input type="text" class="answer-input w-full" data-answer="Jogging is popular among health-conscious people." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">gardening / relax / helps / stress / from / me</span>
+                                    <input type="text" class="answer-input w-full" data-answer="Gardening helps me relax from stress." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">unusual / found / insect / an / we / cardboard / the / box / in</span>
+                                    <input type="text" class="answer-input w-full" data-answer="We found an unusual insect in the cardboard box." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">maturity / comes / responsibility / with</span>
+                                    <input type="text" class="answer-input w-full" data-answer="Maturity comes with responsibility." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 4: Viết lại câu với giới từ thích hợp</h4>
+                            <p class="exercise-instruction">👉 Viết lại các câu sau sử dụng giới từ thích hợp:</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">The bug is under the table. (Change to: on)</span>
+                                    <input type="text" class="answer-input w-full" data-answer="The bug is on the table." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">We meet at 5pm. (Change to: before)</span>
+                                    <input type="text" class="answer-input w-full" data-answer="We meet before 5pm." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">She's good with children. (Change to: at handling)</span>
+                                    <input type="text" class="answer-input w-full" data-answer="She's good at handling children." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">The book is mine. (Use: belong to)</span>
+                                    <input type="text" class="answer-input w-full" data-answer="The book belongs to me." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">He takes more work. (Use: take on)</span>
+                                    <input type="text" class="answer-input w-full" data-answer="He takes on more work." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 5: Kéo thả giới từ vào chỗ trống</h4>
+                            <p class="exercise-instruction">👉 Kéo các giới từ bên dưới vào chỗ trống thích hợp:</p>
+                            
+                            <div class="mb-4">
+                                <div class="flex flex-wrap gap-2 mb-2" id="preposition-bank">
+                                    <div class="draggable-item" draggable="true" data-preposition="at">at</div>
+                                    <div class="draggable-item" draggable="true" data-preposition="in">in</div>
+                                    <div class="draggable-item" draggable="true" data-preposition="on">on</div>
+                                    <div class="draggable-item" draggable="true" data-preposition="to">to</div>
+                                    <div class="draggable-item" draggable="true" data-preposition="with">with</div>
+                                    <div class="draggable-item" draggable="true" data-preposition="between">between</div>
+                                    <div class="draggable-item" draggable="true" data-preposition="from">from</div>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <span class="font-medium text-gray-700 mr-2">1. The sun sets ________ 6:30 pm ________ summer.</span>
+                                        <div class="drop-zone" data-answer="at,in" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="font-medium text-gray-700 mr-2">2. This dollhouse belongs ________ my sister.</span>
+                                        <div class="drop-zone" data-answer="to" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="font-medium text-gray-700 mr-2">3. She's good ________ handling stress ________ work.</span>
+                                        <div class="drop-zone" data-answer="at,at" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="font-medium text-gray-700 mr-2">4. The glue is ________ the table, ________ the books.</span>
+                                        <div class="drop-zone" data-answer="on,between" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="font-medium text-gray-700 mr-2">5. Yoga helps me relax ________ stress.</span>
+                                        <div class="drop-zone" data-answer="from" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button onclick="checkDragDropAnswers()" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg">
+                                Kiểm tra đáp án
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 6: Trả lời câu hỏi ngắn</h4>
+                            <p class="exercise-instruction">👉 Trả lời các câu hỏi sau sử dụng giới từ thích hợp:</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">1. Where do you usually put your books? (on)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">2. When does your school start in the morning? (at)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">3. What activity helps you relax from stress? (from)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">4. Where is your favorite place to study? (in/at)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-gray-700 mb-2">5. Who does your bicycle belong to? (to)</span>
+                                    <input type="text" class="answer-input w-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+        
+        // Drag and drop functions
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.dataset.preposition);
+            ev.target.classList.add('dragging');
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const dropZone = ev.target.closest('.drop-zone');
+            
+            // Clear existing content if it's not a preposition
+            if (!dropZone.querySelector('.draggable-item')) {
+                dropZone.innerHTML = '';
+            }
+            
+            // Create a new draggable item
+            const newItem = document.createElement('div');
+            newItem.className = 'draggable-item';
+            newItem.textContent = data;
+            newItem.draggable = true;
+            newItem.dataset.preposition = data;
+            newItem.addEventListener('dragstart', drag);
+            
+            dropZone.appendChild(newItem);
+            
+            // Remove the dragging class from the original element
+            document.querySelector('.dragging')?.classList.remove('dragging');
+        }
+        
+        function checkDragDropAnswers() {
+            const dropZones = document.querySelectorAll('.drop-zone');
+            
+            dropZones.forEach(zone => {
+                const correctAnswers = zone.dataset.answer.split(',');
+                const userAnswers = Array.from(zone.querySelectorAll('.draggable-item')).map(item => item.textContent);
+                
+                // Check if answers match (order matters)
+                let isCorrect = true;
+                if (userAnswers.length !== correctAnswers.length) {
+                    isCorrect = false;
+                } else {
+                    for (let i = 0; i < correctAnswers.length; i++) {
+                        if (userAnswers[i] !== correctAnswers[i]) {
+                            isCorrect = false;
+                            break;
+                        }
+                    }
+                }
+                
+                // Visual feedback
+                if (isCorrect) {
+                    zone.classList.add('bg-green-100', 'border-green-500');
+                    zone.classList.remove('bg-red-100', 'border-red-500');
+                } else {
+                    zone.classList.add('bg-red-100', 'border-red-500');
+                    zone.classList.remove('bg-green-100', 'border-green-500');
+                }
+            });
+        }
+        
+        // Initialize draggable items
+        document.addEventListener('DOMContentLoaded', function() {
+            const draggableItems = document.querySelectorAll('.draggable-item');
+            draggableItems.forEach(item => {
+                item.addEventListener('dragstart', drag);
+            });
+        });
+    </script>
+</body>
+</html>

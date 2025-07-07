@@ -210,6 +210,13 @@
       "description": "Hiểu khái niệm và vai trò của mạo từ trong câu, nắm vững cách sử dụng mạo từ a/an và the, phân biệt được danh từ cụ thể và không cụ thể",
       "category": "slides"
     },
+    "slides/pre-gs7-prepositions": {
+      "path": "slides/pre-gs7-prepositions",
+      "title": "pre-GS7-prepositions",
+      "author": "Hoa Bac",
+      "description": "Giới từ",
+      "category": "slides"
+    },
     "slides/pre-gs9-presen-simple-and-present-continuous": {
       "path": "slides/pre-gs9-presen-simple-and-present-continuous",
       "title": "Pre GS9 - Present Simple and Present Continuous (Hiện tại đơn và Hiện tại tiếp diễn)",
@@ -292,6 +299,13 @@
       "title": "Pre GS6 - Adjectives Part 1 (Tính từ phần 1)",
       "author": "Gen8",
       "description": "Khái niệm, chức năng, phân loại, vị trí, tính từ mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs7-WS-prepositions": {
+      "path": "worksheets/pre-gs7-WS-prepositions",
+      "title": "pre-GS7-prepositions",
+      "author": "Hoa Bac",
+      "description": "Giới từ",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-quantifiers": {
