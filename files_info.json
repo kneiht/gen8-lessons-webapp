@@ -133,6 +133,13 @@
       "description": "Khái niệm mạo từ, cách sử dụng a/an và the, phân biệt danh từ cụ thể và không cụ thể",
       "category": "slides"
     },
+    "slides/pre-gs6-sentence-structures-1": {
+      "path": "slides/pre-gs6-sentence-structures-1",
+      "title": "Sentence structures part 1 (S + be + Bổ ngữ)",
+      "author": "Gen8",
+      "description": "Hiểu và vận dụng cấu trúc S + be + Bổ ngữ (Complement), các dụng câu khẳng định, phủ định, câu hỏi",
+      "category": "slides"
+    },
     "slides/pre-gs7-Comparison-Structures": {
       "path": "slides/pre-gs7-Comparison-Structures",
       "title": "pre-GS7-Comparison Structures",
@@ -306,6 +313,13 @@
       "title": "pre-GS7-prepositions",
       "author": "Hoa Bac",
       "description": "Giới từ",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-ws-sentence-structures-1": {
+      "path": "worksheets/pre-gs6-ws-sentence-structures-1",
+      "title": "Sentence structures part 1 (S + be + Bổ ngữ)",
+      "author": "Gen8",
+      "description": "Hiểu và vận dụng cấu trúc S + be + Bổ ngữ (Complement), các dụng câu khẳng định, phủ định, câu hỏi",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-quantifiers": {
