@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS6 - Giới từ (Prepositions) - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Giới từ (Prepositions) - Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Grammar Summary -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Part 1: Grammar Summary (Tóm tắt ngữ pháp)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+
+                    <div class="info-card bg-green-50 col-span-1 sm:col-span-2">
+                        <h4 class="subsection-title">1. Giới từ (Preposition) là gì?</h4>
+                        <p class="text-gray-700 mb-2">Giới từ là từ (ví dụ: <span class="font-bold">in, on, at</span>) dùng để liên kết danh từ, đại từ với các thành phần khác trong câu. Chúng thường chỉ <span class="font-bold text-blue-600">thời gian, địa điểm, hoặc phương hướng</span>.</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>The book is <span class="highlight">on</span> the table. (Sách ở trên bàn)</li>
+                            <li>We go to school <span class="highlight">in</span> the morning. (Chúng tôi đi học vào buổi sáng)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">2. Giới từ chỉ Thời gian (Time)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li><span class="font-bold">IN:</span> Dùng cho tháng, năm, mùa, buổi. (e.g., <span class="highlight">in August, in 2025, in summer, in the afternoon</span>)</li>
+                            <li><span class="font-bold">ON:</span> Dùng cho ngày trong tuần, ngày tháng. (e.g., <span class="highlight">on Monday, on June 1st</span>)</li>
+                            <li><span class="font-bold">AT:</span> Dùng cho giờ cụ thể, ban đêm. (e.g., <span class="highlight">at 7 AM, at night</span>)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">3. Giới từ chỉ Địa điểm (Place)</h4>
+                         <ul class="list-disc pl-5 text-gray-700">
+                            <li><span class="font-bold">IN:</span> Bên trong một không gian (thành phố, quốc gia, căn phòng, hộp). (e.g., <span class="highlight">in Vietnam, in the box</span>)</li>
+                            <li><span class="font-bold">ON:</span> Trên một bề mặt. (e.g., <span class="highlight">on the table, on the wall</span>)</li>
+                            <li><span class="font-bold">AT:</span> Tại một địa điểm cụ thể. (e.g., <span class="highlight">at the bus stop, at school</span>)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Part 2: Vocabulary (Từ vựng)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-2">
+                    <div class="vocab-card"><p class="vocab-word">be in need <span class="vocab-type"></span> /bi ɪn niːd/</p><p class="vocab-meaning">cần</p></div>
+                    <div class="vocab-card"><p class="vocab-word">charity <span class="vocab-type">(n)</span> /ˈtʃærəti/</p><p class="vocab-meaning">từ thiện</p></div>
+                    <div class="vocab-card"><p class="vocab-word">container <span class="vocab-type">(n)</span> /kənˈteɪnə/</p><p class="vocab-meaning">đồ đựng</p></div>
+                    <div class="vocab-card"><p class="vocab-word">do a survey <span class="vocab-type"></span> /du ə ˈsɜːveɪ/</p><p class="vocab-meaning">thực hiện khảo sát</p></div>
+                    <div class="vocab-card"><p class="vocab-word">environment <span class="vocab-type">(n)</span> /ɪnˈvaɪrənmənt/</p><p class="vocab-meaning">môi trường</p></div>
+                    <div class="vocab-card"><p class="vocab-word">exchange <span class="vocab-type">(v)</span> /ɪksˈtʃeɪndʒ/</p><p class="vocab-meaning">trao đổi</p></div>
+                    <div class="vocab-card"><p class="vocab-word">fair <span class="vocab-type">(n)</span> /feə/</p><p class="vocab-meaning">hội chợ</p></div>
+                    <div class="vocab-card"><p class="vocab-word">go green <span class="vocab-type"></span> /ɡəʊ ɡriːn/</p><p class="vocab-meaning">sống xanh</p></div>
+                    <div class="vocab-card"><p class="vocab-word">instead of <span class="vocab-type">(pre)</span> /ɪnˈsted əv/</p><p class="vocab-meaning">thay cho</p></div>
+                    <div class="vocab-card"><p class="vocab-word">pick up <span class="vocab-type"></span> /pɪk ʌp/</p><p class="vocab-meaning">nhặt (rác), đón</p></div>
+                    <div class="vocab-card"><p class="vocab-word">president <span class="vocab-type">(n)</span> /ˈprezɪdənt/</p><p class="vocab-meaning">chủ tịch</p></div>
+                    <div class="vocab-card"><p class="vocab-word">recycle <span class="vocab-type">(v)</span> /ˌriːˈsaɪkl/</p><p class="vocab-meaning">tái chế</p></div>
+                    <div class="vocab-card"><p class="vocab-word">recycling bin <span class="vocab-type"></span> /ˌriːˈsaɪklɪŋ bɪn/</p><p class="vocab-meaning">thùng rác tái chế</p></div>
+                    <div class="vocab-card"><p class="vocab-word">reduce <span class="vocab-type">(v)</span> /rɪˈdjuːs/</p><p class="vocab-meaning">giảm</p></div>
+                    <div class="vocab-card"><p class="vocab-word">reuse <span class="vocab-type">(v)</span> /ˌriːˈjuːz/</p><p class="vocab-meaning">tái sử dụng</p></div>
+                    <div class="vocab-card"><p class="vocab-word">reusable <span class="vocab-type">(adj)</span> /ˌriːˈjuːzəbl/</p><p class="vocab-meaning">có thể dùng lại</p></div>
+                    <div class="vocab-card"><p class="vocab-word">rubbish <span class="vocab-type">(n)</span> /ˈrʌbɪʃ/</p><p class="vocab-meaning">rác</p></div>
+                    <div class="vocab-card"><p class="vocab-word">tip <span class="vocab-type">(n)</span> /tɪp/</p><p class="vocab-meaning">mẹo, cách</p></div>
+                    <div class="vocab-card"><p class="vocab-word">wrap <span class="vocab-type">(v)</span> /ræp/</p><p class="vocab-meaning">gói, bọc</p></div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Part 3: Basic Exercises (Bài tập cơ bản)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Exercise 1: Choose the correct preposition</h4>
+                    <p class="exercise-instruction">👉 Chọn giới từ đúng (in, on, at):</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">1. The fair will be ___ Saturday.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q1" class="radio-input" value="in" data-answer="on" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q1" class="radio-input" value="on" data-answer="on" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q1" class="radio-input" value="at" data-answer="on" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">2. The charity event is ___ May.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q2" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q2" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q2" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">3. Let's meet ___ the fair.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q3" class="radio-input" value="in" data-answer="at" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q3" class="radio-input" value="on" data-answer="at" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q3" class="radio-input" value="at" data-answer="at" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">4. Put the rubbish ___ the recycling bin.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q4" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q4" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q4" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">5. The charity fair is ___ the park.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q5" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q5" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q5" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">6. The president's speech starts ___ 8 o'clock.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q6" class="radio-input" value="in" data-answer="at" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q6" class="radio-input" value="on" data-answer="at" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q6" class="radio-input" value="at" data-answer="at" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">7. The charity office is ___ the third floor.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q7" class="radio-input" value="in" data-answer="on" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q7" class="radio-input" value="on" data-answer="on" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q7" class="radio-input" value="at" data-answer="on" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">8. There are many reusable containers ___ the shelf.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q8" class="radio-input" value="in" data-answer="on" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q8" class="radio-input" value="on" data-answer="on" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q8" class="radio-input" value="at" data-answer="on" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">9. The charity was founded ___ 2012.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q9" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q9" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q9" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">10. The rubbish is ___ the sofa, please pick it up.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q10" class="radio-input" value="in" data-answer="on" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q10" class="radio-input" value="on" data-answer="on" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q10" class="radio-input" value="at" data-answer="on" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">11. The president arrived ___ the fair early.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q11" class="radio-input" value="in" data-answer="at" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q11" class="radio-input" value="on" data-answer="at" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q11" class="radio-input" value="at" data-answer="at" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">12. We will pick up rubbish ___ the garden.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q12" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q12" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q12" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">13. The "Go Green" event is ___ the stadium.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q13" class="radio-input" value="in" data-answer="at" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q13" class="radio-input" value="on" data-answer="at" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q13" class="radio-input" value="at" data-answer="at" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">14. I left the reusable bag ___ my car.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q14" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q14" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q14" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">15. The tip for recycling is ___ the wall.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q15" class="radio-input" value="in" data-answer="on" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q15" class="radio-input" value="on" data-answer="on" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q15" class="radio-input" value="at" data-answer="on" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">16. Our charity helps the environment ___ summer.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q16" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q16" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q16" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">17. The president is waiting ___ the door.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q17" class="radio-input" value="in" data-answer="at" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q17" class="radio-input" value="on" data-answer="at" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q17" class="radio-input" value="at" data-answer="at" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">18. There is a container ___ the ceiling.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q18" class="radio-input" value="in" data-answer="on" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q18" class="radio-input" value="on" data-answer="on" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q18" class="radio-input" value="at" data-answer="on" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">19. We will exchange books ___ the corner of the street.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q19" class="radio-input" value="in" data-answer="at" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q19" class="radio-input" value="on" data-answer="at" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q19" class="radio-input" value="at" data-answer="at" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row items-start md:items-center">
+                                <span class="w-full md:w-auto text-gray-700 md:mr-2">20. Students are learning to recycle ___ the library now.</span>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="q20" class="radio-input" value="in" data-answer="in" onclick="checkAnswer(this)"><span>A. in</span></label>
+                                    <label class="radio-label"><input type="radio" name="q20" class="radio-input" value="on" data-answer="in" onclick="checkAnswer(this)"><span>B. on</span></label>
+                                    <label class="radio-label"><input type="radio" name="q20" class="radio-input" value="at" data-answer="in" onclick="checkAnswer(this)"><span>C. at</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Exercise 2: Fill in the blanks</h4>
+                    <p class="exercise-instruction">👉 Điền giới từ đúng (in, on, at) vào chỗ trống:</p>
+                    <div class="space-y-2">
+                        <p>1. We should help people <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> need.</p>
+                        <p>2. The president will give a speech <input type="text" class="answer-input" data-answer="at" onblur="checkAnswer(this)"> 9 AM.</p>
+                        <p>3. Don't throw rubbish <input type="text" class="answer-input" data-answer="on" onblur="checkAnswer(this)"> the street.</p>
+                        <p>4. The fair is <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> July.</p>
+                        <p>5. Please put the container <input type="text" class="answer-input" data-answer="on" onblur="checkAnswer(this)"> the table.</p>
+                        <p>6. We will do a survey <input type="text" class="answer-input" data-answer="at" onblur="checkAnswer(this)"> 7 o'clock.</p>
+                        <p>7. Let's pick up rubbish <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> the park.</p>
+                        <p>8. The charity meets <input type="text" class="answer-input" data-answer="on" onblur="checkAnswer(this)"> Mondays.</p>
+                        <p>9. There is a tip about recycling <input type="text" class="answer-input" data-answer="on" onblur="checkAnswer(this)"> the wall.</p>
+                        <p>10. The president of the charity works <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> this office.</p>
+                        <p>11. The time to exchange items starts <input type="text" class="answer-input" data-answer="at" onblur="checkAnswer(this)"> 8 PM.</p>
+                        <p>12. We protect the environment <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> spring.</p>
+                        <p>13. We will recycle bottles <input type="text" class="answer-input" data-answer="on" onblur="checkAnswer(this)"> Tuesday.</p>
+                        <p>14. The poster about the fair is hanging <input type="text" class="answer-input" data-answer="on" onblur="checkAnswer(this)"> the wall.</p>
+                        <p>15. The "Go Green" campaign started <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> 2010.</p>
+                        <p>16. I pick up my friend <input type="text" class="answer-input" data-answer="at" onblur="checkAnswer(this)"> 6 o'clock.</p>
+                        <p>17. The recycling bin is <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> the classroom.</p>
+                        <p>18. He left the reusable container <input type="text" class="answer-input" data-answer="on" onblur="checkAnswer(this)"> the table.</p>
+                        <p>19. The charity helps people in need <input type="text" class="answer-input" data-answer="in" onblur="checkAnswer(this)"> winter.</p>
+                        <p>20. She arrived <input type="text" class="answer-input" data-answer="at" onblur="checkAnswer(this)"> the fair early.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Part 4: Advanced Exercises (Bài tập nâng cao)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <h4 class="exercise-title">Exercise 3: Correct the mistakes</h4>
+                    <p class="exercise-instruction">👉 Mỗi câu có một lỗi sai về giới từ. Tìm và sửa lỗi:</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span>1. The president lives on London. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="The president lives in London" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>2. The fair is in Sunday. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="The fair is on Sunday" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>3. I pick up rubbish on 6 AM. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="I pick up rubbish at 6 AM" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>4. He put the container in the table. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="He put the container on the table" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>5. We should pick on the rubbish. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="We should pick up the rubbish" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>6. She learns to recycle at the morning. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="She learns to recycle in the morning" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>7. The charity has a meeting in 3 PM. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="The charity has a meeting at 3 PM" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>8. We protect the environment on the garden. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="We protect the environment in the garden" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>9. The fair is at July. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="The fair is in July" onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span>10. The president arrived in the station. →</span>
+                            <input type="text" class="answer-input flex-1" data-answer="The president arrived at the station" onblur="checkAnswer(this)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <h4 class="exercise-title">Exercise 4: Sentence Ordering</h4>
+                    <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu hoàn chỉnh, sử dụng đúng giới từ và từ vựng đã học:</p>
+                    <div class="space-y-4">
+                        <div>
+                            <span>1. (We / should / reduce / rubbish / at / the fair / on / Saturday)</span><br>
+                            <input type="text" class="answer-input w-full mt-1" data-answer="We should reduce rubbish at the fair on Saturday" onblur="checkAnswer(this)">
+                        </div>
+                        <div>
+                            <span>2. (The charity / helps / people / in need / at / the fair)</span><br>
+                            <input type="text" class="answer-input w-full mt-1" data-answer="The charity helps people in need at the fair" onblur="checkAnswer(this)">
+                        </div>
+                        <div>
+                            <span>3. (Instead of / wrapping / gifts, / she / puts / them / in / a reusable container)</span><br>
+                            <input type="text" class="answer-input w-full mt-1" data-answer="Instead of wrapping gifts, she puts them in a reusable container" onblur="checkAnswer(this)">
+                        </div>
+                        <div>
+                            <span>4. (The president / will / give a tip / at / the library / on / Monday)</span><br>
+                            <input type="text" class="answer-input w-full mt-1" data-answer="The president will give a tip at the library on Monday" onblur="checkAnswer(this)">
+                        </div>
+                        <div>
+                            <span>5. (Let's / exchange / old items / at / the charity event / in / July)</span><br>
+                            <input type="text" class="answer-input w-full mt-1" data-answer="Let's exchange old items at the charity event in July" onblur="checkAnswer(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.!?]/g, '') : (input.checked ? input.value.toLowerCase() : '');
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                const parentContainer = input.closest('.radio-group').parentNode;
+                
+                // Reset styles for all labels in the group
+                parentContainer.querySelectorAll('.radio-label').forEach(label => {
+                    label.classList.remove('bg-green-100', 'bg-red-100', 'p-1', 'rounded');
+                });
+
+                const selectedLabel = input.closest('.radio-label');
+                if (userAnswer === correctAnswer) {
+                    selectedLabel.classList.add('bg-green-100', 'p-1', 'rounded');
+                } else {
+                    selectedLabel.classList.add('bg-red-100', 'p-1', 'rounded');
+                }
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            } else {
+                 input.classList.remove('border-green-500', 'bg-green-100', 'border-red-500', 'bg-red-100');
+            }
+        }
+    </script>
+</body>
+
+</html>

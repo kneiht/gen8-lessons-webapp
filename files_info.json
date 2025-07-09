@@ -119,6 +119,13 @@
       "description": "Danh từ đếm được và không đếm được, mạo từ a/an/the và mạo từ rỗng, số ít, số nhiều, danh từ bất quy tắc",
       "category": "slides"
     },
+    "slides/pre-gs6-prepositions": {
+      "path": "slides/pre-gs6-prepositions",
+      "title": "PreGS6 - Giới từ (Prepositions)",
+      "author": "Gen8",
+      "description": "khái niệm về giới từ (Preposition), chức năng của giới từ trong câu, Sử dụng đúng các giới từ chỉ thời gian và địa điểm",
+      "category": "slides"
+    },
     "slides/pre-gs6-verbs-2": {
       "path": "slides/pre-gs6-verbs-2",
       "title": "Pre GS6 - Verbs 2 (Động từ)",
@@ -135,7 +142,7 @@
     },
     "slides/pre-gs6-sentence-structures-1": {
       "path": "slides/pre-gs6-sentence-structures-1",
-      "title": "Sentence structures part 1 (S + be + Bổ ngữ)",
+      "title": "Pre-GS6 Sentence structures part 1 (S + be + Bổ ngữ)",
       "author": "Gen8",
       "description": "Hiểu và vận dụng cấu trúc S + be + Bổ ngữ (Complement), các dụng câu khẳng định, phủ định, câu hỏi",
       "category": "slides"
@@ -317,7 +324,7 @@
     },
     "worksheets/pre-gs6-ws-sentence-structures-1": {
       "path": "worksheets/pre-gs6-ws-sentence-structures-1",
-      "title": "Sentence structures part 1 (S + be + Bổ ngữ)",
+      "title": "Pre-GS6 Sentence structures part 1 (S + be + Bổ ngữ)",
       "author": "Gen8",
       "description": "Hiểu và vận dụng cấu trúc S + be + Bổ ngữ (Complement), các dụng câu khẳng định, phủ định, câu hỏi",
       "category": "worksheets"
@@ -348,6 +355,13 @@
       "title": "Pre GS8 - verb of likes/dislikes",
       "author": "Gen8",
       "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-ws-prepositions": {
+      "path": "worksheets/pre-gs6-ws-prepositions",
+      "title": "PreGS6 - Giới từ (Prepositions)",
+      "author": "Gen8",
+      "description": "khái niệm về giới từ (Preposition), chức năng của giới từ trong câu, Sử dụng đúng các giới từ chỉ thời gian và địa điểm",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-WS-verbs-2": {
