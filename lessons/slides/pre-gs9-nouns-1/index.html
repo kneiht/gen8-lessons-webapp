@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Từ Tiếng Anh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+            background: url('https://i.pinimg.com/originals/9a/c8/61/9ac861cb5497c0e71001f1d687295a92.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .thought-bubble {
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thought-bubble:after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent white;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+
+        .boy {
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-2" style="background: url('https://i.pinimg.com/originals/9a/c8/61/9ac861cb5497c0e71001f1d687295a92.jpg') no-repeat center center fixed; background-size: cover;">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Zoom buttons -->
+        <div class="absolute bottom-4 right-4 z-50 flex flex-col gap-2">
+            <button onclick="zoomIn()" class="bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+            </button>
+            <button onclick="zoomOut()" class="bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div class="bg-white rounded-2xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-indigo-700">Nội dung bài học</h2>
+                    <button onclick="toggleOutline()" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose prose-lg max-w-none">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-4">Danh Từ - Phần 1</h3>
+                    
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(0)">
+                        <h4 class="text-lg font-bold text-indigo-500">1. Giới thiệu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Mục tiêu bài học:
+                                <ul class="list-disc pl-6 mt-2">
+                                    <li>Hiểu khái niệm danh từ</li>
+                                    <li>Nhận biết 4 loại danh từ</li>
+                                    <li>Hiểu về danh từ số ít</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(1)">
+                        <h4 class="text-lg font-bold text-indigo-500">2. Danh Từ là gì?</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Định nghĩa danh từ</li>
+                            <li>Danh từ chỉ người, địa điểm, vật, khái niệm</li>
+                            <li>Mẹo nhận biết: trả lời câu hỏi "ai?" hoặc "cái gì?"</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(2)">
+                        <h4 class="text-lg font-bold text-indigo-500">3. 4 Loại Danh Từ Chính</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Danh từ riêng (Proper Nouns)</li>
+                            <li>Danh từ chung (Common Nouns)</li>
+                            <li>Danh từ cụ thể (Concrete Nouns)</li>
+                            <li>Danh từ trừu tượng (Abstract Nouns)</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(3)">
+                        <h4 class="text-lg font-bold text-indigo-500">4. Ví dụ Về Các Loại Danh Từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Danh từ riêng: London, Mr. Smith, Monday</li>
+                            <li>Danh từ chung: city, teacher, day</li>
+                            <li>Danh từ cụ thể: car, dog, book</li>
+                            <li>Danh từ trừu tượng: love, courage, freedom</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(4)">
+                        <h4 class="text-lg font-bold text-indigo-500">5. Bài tập 1: Xác định danh từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Phân biệt danh từ và các từ loại khác</li>
+                            <li>Ví dụ: book, happy, teacher, quickly, water, run</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(5)">
+                        <h4 class="text-lg font-bold text-indigo-500">6. Bài tập 2: Phân loại danh từ</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Kéo thả các từ vào đúng nhóm</li>
+                            <li>Phân loại: London, happiness, dog, teacher, table, freedom, Paris, city</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(6)">
+                        <h4 class="text-lg font-bold text-indigo-500">7. Danh Từ Số Ít</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Định nghĩa danh từ số ít</li>
+                            <li>Đặc điểm của danh từ số ít</li>
+                            <li>Cách sử dụng với động từ số ít</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(7)">
+                        <h4 class="text-lg font-bold text-indigo-500">8. Ví dụ Danh Từ Số Ít</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>a student (một học sinh)</li>
+                            <li>an apple (một quả táo)</li>
+                            <li>the house (ngôi nhà)</li>
+                            <li>water (nước - không đếm được)</li>
+                            <li>information (thông tin - không đếm được)</li>
+                            <li>love (tình yêu - trừu tượng)</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(8)">
+                        <h4 class="text-lg font-bold text-indigo-500">9. Bài tập 3: Chọn danh từ số ít</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Phân biệt danh từ số ít và số nhiều</li>
+                            <li>Ví dụ: book/books, child/children, mouse/mice, women/woman, information/informations</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(9)">
+                        <h4 class="text-lg font-bold text-indigo-500">10. Bài tập 4: Điền danh từ số ít</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Điền danh từ số ít thích hợp vào chỗ trống</li>
+                            <li>Ví dụ: dog, apple, book, water</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(10)">
+                        <h4 class="text-lg font-bold text-indigo-500">11. Bài tập 5: Sắp xếp câu</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Sắp xếp các từ thành câu đúng</li>
+                            <li>Ví dụ: She has a cat, The book is on the table, My mother wants some coffee</li>
+                        </ul>
+                    </div>
+
+                    <div class="outline-item hover:bg-indigo-50 p-2 rounded cursor-pointer transition-colors" onclick="goToSlide(11)">
+                        <h4 class="text-lg font-bold text-indigo-500">12. Kết thúc</h4>
+                        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                            <li>Tổng kết bài học</li>
+                            <li>Những gì đã học:
+                                <ul class="list-disc pl-6 mt-2">
+                                    <li>Khái niệm về danh từ</li>
+                                    <li>4 loại danh từ chính</li>
+                                    <li>Cách nhận biết danh từ số ít</li>
+                                    <li>Bài tập thực hành</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl text-2xl" style="background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(2px);">
+            <!-- Slide 0: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full" style="background: rgba(255, 255, 255, 0.2);">
+                <div class="w-full text-center mb-4">
+                    <span style="font-size:2.5rem; font-weight:700; color:#4338ca; letter-spacing:2px; font-family:'Baloo 2',cursive;">GRAMMAR FOR PRE-GRADE 9</span>
+                </div>
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">DANH TỪ TRONG TIẾNG ANH</h1>
+                    <div class="bg-purple-500 text-white text-2xl md:text-4xl font-bold px-6 py-3 rounded-full my-8 shadow-lg floating">
+                        NOUNS
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://www.efe.global/assets/images/grammar1-2-1080x720.png" alt="Grammar Learning" class="object-cover h-52 floating">
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-100 to-purple-100 border-l-4 border-purple-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu khái niệm danh từ</li>
+                                <li>Nhận biết 4 loại danh từ</li>
+                                <li>Hiểu về danh từ số ít</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: Introduction -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Danh Từ là gì?</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="w-full">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-question-circle text-blue-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xl">Danh từ <span class="highlight">(Noun)</span> là từ dùng để chỉ:</p>
+                                    <ul class="list-disc pl-5 space-y-2 mt-3 text-lg">
+                                        <li>Người (teacher, student, Mary)</li>
+                                        <li>Địa điểm (school, park, Vietnam)</li>
+                                        <li>Vật (book, table, computer)</li>
+                                        <li>Khái niệm (love, happiness, information)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bg-yellow-100 p-4 rounded-lg mt-6 border-l-4 border-yellow-400">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Mẹo nhớ:</p>
+                                <p class="text-lg">Danh từ là từ trả lời cho câu hỏi <span class="highlight">"ai?"</span> hoặc <span class="highlight">"cái gì?"</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Noun Categories -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">4 Loại Danh Từ Chính</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="card-hover bg-blue-50 p-4 rounded-xl border-l-4 border-blue-500">
+                        <h3 class="font-bold text-blue-800 text-xl mb-2">1. Danh từ riêng</h3>
+                        <p class="text-lg">Tên riêng của người, địa điểm</p>
+                        <p class="text-gray-600 italic">VD: Ho Chi Minh City, Anna, Vietnam</p>
+                        <div class="mt-2 text-purple-500">
+                            <i class="fas fa-star"></i> Viết hoa chữ cái đầu
+                        </div>
+                    </div>
+                    <div class="card-hover bg-green-50 p-4 rounded-xl border-l-4 border-green-500">
+                        <h3 class="font-bold text-green-800 text-xl mb-2">2. Danh từ chung</h3>
+                        <p class="text-lg">Tên chung cho sự vật, hiện tượng</p>
+                        <p class="text-gray-600 italic">VD: city, woman, country</p>
+                        <div class="mt-2 text-purple-500">
+                            <i class="fas fa-star"></i> Không viết hoa (trừ đầu câu)
+                        </div>
+                    </div>
+                    <div class="card-hover bg-yellow-50 p-4 rounded-xl border-l-4 border-yellow-500">
+                        <h3 class="font-bold text-yellow-800 text-xl mb-2">3. Danh từ cụ thể</h3>
+                        <p class="text-lg">Có thể nhìn thấy, sờ thấy</p>
+                        <p class="text-gray-600 italic">VD: apple, chair, river</p>
+                        <div class="mt-2 text-purple-500">
+                            <i class="fas fa-star"></i> Có thể đếm được
+                        </div>
+                    </div>
+                    <div class="card-hover bg-red-50 p-4 rounded-xl border-l-4 border-red-500">
+                        <h3 class="font-bold text-red-800 text-xl mb-2">4. Danh từ trừu tượng</h3>
+                        <p class="text-lg">Khái niệm không sờ thấy được</p>
+                        <p class="text-gray-600 italic">VD: love, happiness, information</p>
+                        <div class="mt-2 text-purple-500">
+                            <i class="fas fa-star"></i> Không đếm được
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Noun Categories Example -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Ví dụ Về Các Loại Danh Từ</h2>
+                <div class="flex items-center justify-center">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/943/943329.png" class="h-16 mr-4" alt="Proper Noun">
+                            <div>
+                                <h3 class="font-bold text-lg">Danh từ riêng (Proper Nouns)</h3>
+                                <div class="text-gray-600 mb-2">
+                                    <p>✓ Đặc điểm:</p>
+                                    <ul class="list-disc pl-5 text-sm">
+                                        <li>Luôn viết hoa chữ cái đầu</li>
+                                        <li>Chỉ một người, địa điểm, tổ chức cụ thể</li>
+                                        <li>Không có dạng số nhiều</li>
+                                    </ul>
+                                </div>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/684/684908.png' class='w-5 h-5 mr-1' alt='city'>Ha Noi</span>
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/194/194938.png' class='w-5 h-5 mr-1' alt='person'>Mr. Smith</span>
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/2921/2921222.png' class='w-5 h-5 mr-1' alt='calendar'>Monday</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3940/3940052.png" class="h-16 mr-4" alt="Common Noun">
+                            <div>
+                                <h3 class="font-bold text-lg">Danh từ chung (Common Nouns)</h3>
+                                <div class="text-gray-600 mb-2">
+                                    <p>✓ Đặc điểm:</p>
+                                    <ul class="list-disc pl-5 text-sm">
+                                        <li>Không viết hoa (trừ đầu câu)</li>
+                                        <li>Chỉ một nhóm người, vật, nơi chốn</li>
+                                        <li>Có thể có dạng số ít và số nhiều</li>
+                                    </ul>
+                                </div>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/535/535239.png' class='w-5 h-5 mr-1' alt='city'>city</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/1995/1995574.png' class='w-5 h-5 mr-1' alt='teacher'>teacher</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/747/747310.png' class='w-5 h-5 mr-1' alt='day'>day</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3194/3194905.png" class="h-16 mr-4" alt="Concrete Noun">
+                            <div>
+                                <h3 class="font-bold text-lg">Danh từ cụ thể (Concrete Nouns)</h3>
+                                <div class="text-gray-600 mb-2">
+                                    <p>✓ Đặc điểm:</p>
+                                    <ul class="list-disc pl-5 text-sm">
+                                        <li>Có thể nhìn thấy, sờ thấy, ngửi thấy</li>
+                                        <li>Thường là danh từ đếm được</li>
+                                        <li>Có thể có dạng số ít và số nhiều</li>
+                                    </ul>
+                                </div>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://static.danhgiaxe.com/data/201525/the-aventadors-aggressive-lines-and-stealth-fighter-like-edges-make-for-a-menacing-beauty-thats-perfect-for-lambos-attention-hoarding-ethos_2324.jpg' class='w-7 h-5 object-cover rounded mr-1' alt='car'>car</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/616/616408.png' class='w-5 h-5 mr-1' alt='dog'>dog</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/29/29302.png' class='w-5 h-5 mr-1' alt='book'>book</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3774/3774117.png" class="h-16 mr-4" alt="Abstract Noun">
+                            <div>
+                                <h3 class="font-bold text-lg">Danh từ trừu tượng (Abstract Nouns)</h3>
+                                <div class="text-gray-600 mb-2">
+                                    <p>✓ Đặc điểm:</p>
+                                    <ul class="list-disc pl-5 text-sm">
+                                        <li>Không thể nhìn thấy, sờ thấy</li>
+                                        <li>Thường là danh từ không đếm được</li>
+                                        <li>Không có dạng số nhiều</li>
+                                    </ul>
+                                </div>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/833/833472.png' class='w-5 h-5 mr-1' alt='love'>love</span>
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/1828/1828884.png' class='w-5 h-5 mr-1' alt='courage'>courage</span>
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm flex items-center"><img src='https://cdn-icons-png.flaticon.com/512/1828/1828919.png' class='w-5 h-5 mr-1' alt='freedom'>freedom</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-100 p-4 rounded-lg mt-6">
+                            <p class="font-bold text-purple-800 mb-2">💡 Mẹo nhớ:</p>
+                            <ul class="list-disc pl-5 text-sm">
+                                <li>Danh từ riêng: Luôn viết hoa, chỉ một cái tên cụ thể</li>
+                                <li>Danh từ chung: Không viết hoa, chỉ một nhóm chung</li>
+                                <li>Danh từ cụ thể: Có thể nhìn thấy, sờ thấy được</li>
+                                <li>Danh từ trừu tượng: Không thể nhìn thấy, sờ thấy được</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Identify Nouns Exercise 1 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Xác định danh từ</h2>
+                    <p class="text-xl mb-8">Trong các từ sau, từ nào là danh từ?</p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md text-center" onclick="checkWord(this, true)">
+                            <p class="text-2xl mb-4">book</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md text-center" onclick="checkWord(this, false)">
+                            <p class="text-2xl mb-4">happy</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md text-center" onclick="checkWord(this, true)">
+                            <p class="text-2xl mb-4">teacher</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md text-center" onclick="checkWord(this, false)">
+                            <p class="text-2xl mb-4">quickly</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md text-center" onclick="checkWord(this, true)">
+                            <p class="text-2xl mb-4">water</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md text-center" onclick="checkWord(this, false)">
+                            <p class="text-2xl mb-4">run</p>
+                            <div class="answer hidden text-xl"></div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button onclick="resetExercise(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Làm lại</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Identify Noun Types Exercise -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Phân loại danh từ</h2>
+                    <p class="text-xl mb-8">Kéo thả các từ vào đúng nhóm:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-blue-100 p-3 rounded-xl" ondrop="drop(event, 'proper')" ondragover="allowDrop(event)">
+                            <p class="font-bold text-center">Danh từ riêng</p>
+                            <div id="proper" class="min-h-10"></div>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-xl" ondrop="drop(event, 'common')" ondragover="allowDrop(event)">
+                            <p class="font-bold text-center">Danh từ chung</p>
+                            <div id="common" class="min-h-10"></div>
+                        </div>
+                        <div class="bg-yellow-100 p-3 rounded-xl" ondrop="drop(event, 'concrete')" ondragover="allowDrop(event)">
+                            <p class="font-bold text-center">Danh từ cụ thể</p>
+                            <div id="concrete" class="min-h-10"></div>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded-xl" ondrop="drop(event, 'abstract')" ondragover="allowDrop(event)">
+                            <p class="font-bold text-center">Danh từ trừu tượng</p>
+                            <div id="abstract" class="min-h-10"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-3 rounded-xl shadow-md flex-wrap flex">
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="london" data-type="proper">London</span>
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="happiness" data-type="abstract">happiness</span>
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="dog" data-type="concrete">dog</span>
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="teacher" data-type="common">teacher</span>
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="table" data-type="concrete">table</span>
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="freedom" data-type="abstract">freedom</span>
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="paris" data-type="proper">Paris</span>
+                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="city" data-type="common">city</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <button onclick="checkDragDrop()" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                        <div id="dragDropAnswer" class="hidden mt-4 p-3 rounded-xl"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Singular Nouns -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Danh Từ Số Ít</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="w-full">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-info-circle text-purple-600 text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xl">Danh từ số ít chỉ <span class="highlight">một người, một vật</span> hoặc <span class="highlight">một khái niệm</span>.</p>
+                                </div>
+                            </div>
+                            <div class="p-3 rounded-lg bg-blue-50">
+                                <p class="font-bold text-blue-800 mb-2">💡 Đặc điểm:</p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Không có "s" ở cuối từ (đối với danh từ đếm được)</li>
+                                    <li>Đi với động từ số ít (is, has, plays)</li>
+                                    <li>Dùng "a/an" hoặc "the" đứng trước</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-yellow-100 p-4 rounded-lg mt-4 border-l-4 border-yellow-400">
+                    <p class="font-bold text-yellow-800 text-xl">Lưu ý quan trọng:</p>
+                    <p class="text-lg">Hầu hết danh từ số ít (đếm được) có dạng số nhiều bằng cách thêm "s" hoặc "es".</p>
+                </div>
+
+                <div class="bg-blue-100 p-4 rounded-lg mt-4 border-l-4 border-blue-400">
+                    <p class="font-bold text-blue-800 text-xl">Cách sử dụng mạo từ "an":</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li>Dùng "an" trước danh từ số ít bắt đầu bằng nguyên âm (a, e, i, o, u)</li>
+                        <li>Ví dụ:
+                            <ul class="list-disc pl-5 mt-1">
+                                <li>an apple (một quả táo)</li>
+                                <li>an elephant (một con voi)</li>
+                                <li>an ice cream (một cây kem)</li>
+                                <li>an orange (một quả cam)</li>
+                                <li>an umbrella (một cái ô)</li>
+                            </ul>
+                        </li>
+                        <li>Lưu ý: Một số từ bắt đầu bằng "h" câm cũng dùng "an":
+                            <ul class="list-disc pl-5 mt-1">
+                                <li>an hour (một giờ)</li>
+                                <li>an honest person (một người trung thực)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slide 7: Singular Noun Examples -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Ví dụ Danh Từ Số Ít</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-blue-500">
+                        <div class="flex items-center">
+                            <img src="https://thumbs.dreamstime.com/b/male-student-working-desk-chinese-school-26363958.jpg" alt="student" class="w-16 h-16 object-cover rounded-full mr-4">
+                            <p class="text-2xl font-bold">a student</p>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-1">(một học sinh)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-green-500">
+                        <div class="flex items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="apple" class="w-16 h-16 object-cover rounded-full mr-4">
+                            <p class="text-2xl font-bold">an apple</p>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-1">(một quả táo)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-purple-500">
+                        <div class="flex items-center">
+                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" alt="house" class="w-16 h-16 object-cover rounded-full mr-4">
+                            <p class="text-2xl font-bold">the house</p>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-1">(ngôi nhà)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-red-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-tint text-red-500 mr-4" style="font-size:2.5rem;"></i>
+                            <p class="text-2xl font-bold">water</p>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-1">(nước - không đếm được)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-yellow-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-info-circle text-yellow-500 mr-4" style="font-size:2.5rem;"></i>
+                            <p class="text-2xl font-bold">information</p>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-1">(thông tin - không đếm được)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md border-t-4 border-pink-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-heart text-pink-500 mr-4" style="font-size:2.5rem;"></i>
+                            <p class="text-2xl font-bold">love</p>
+                        </div>
+                        <p class="text-lg text-gray-500 mt-1">(tình yêu - trừu tượng)</p>
+                    </div>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg mt-6">
+                    <p class="text-lg">👉 Danh từ số ít luôn đi với động từ số ít:</p>
+                    <p class="text-xl italic text-indigo-700 mt-2">"The cat <span class="highlight">is</span> sleeping." (Con mèo đang ngủ.)</p>
+                </div>
+            </div>
+
+            <!-- Slide 8: Singular Noun Practice -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Chọn danh từ số ít</h2>
+                    <p class="text-xl mb-8">Trong các cặp từ sau, từ nào là danh từ số ít?</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">book / books</p>
+                            <div class="flex gap-4">
+                                <button onclick="checkSingularWord(this, 'book', true)" class="btn-check px-4 py-1 rounded-lg">book</button>
+                                <button onclick="checkSingularWord(this, 'books', false)" class="btn-check px-4 py-1 rounded-lg">books</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">child / children</p>
+                            <div class="flex gap-4">
+                                <button onclick="checkSingularWord(this, 'child', true)" class="btn-check px-4 py-1 rounded-lg">child</button>
+                                <button onclick="checkSingularWord(this, 'children', false)" class="btn-check px-4 py-1 rounded-lg">children</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">mouse / mice</p>
+                            <div class="flex gap-4">
+                                <button onclick="checkSingularWord(this, 'mouse', true)" class="btn-check px-4 py-1 rounded-lg">mouse</button>
+                                <button onclick="checkSingularWord(this, 'mice', false)" class="btn-check px-4 py-1 rounded-lg">mice</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">women / woman</p>
+                            <div class="flex gap-4">
+                                <button onclick="checkSingularWord(this, 'women', false)" class="btn-check px-4 py-1 rounded-lg">women</button>
+                                <button onclick="checkSingularWord(this, 'woman', true)" class="btn-check px-4 py-1 rounded-lg">woman</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">information / informations</p>
+                            <div class="flex gap-4">
+                                <button onclick="checkSingularWord(this, 'information', true)" class="btn-check px-4 py-1 rounded-lg">information</button>
+                                <button onclick="checkSingularWord(this, 'informations', false)" class="btn-check px-4 py-1 rounded-lg">informations</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button onclick="resetExercise(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Làm lại</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Fill in the Blank -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 4: Điền danh từ số ít</h2>
+                    <p class="text-xl mb-8">Điền danh từ số ít thích hợp vào chỗ trống:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">I have a <input type="text" class="exercise-input" data-answer="dog"> <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="dog" class="inline w-8 h-8 align-middle ml-2">. It's very cute.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">She wants to buy an <input type="text" class="exercise-input" data-answer="apple"> <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="apple" class="inline w-8 h-8 align-middle ml-2">.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">This is my <input type="text" class="exercise-input" data-answer="book"> <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="book" class="inline w-8 h-8 align-middle ml-2">.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">He needs some <input type="text" class="exercise-input" data-answer="water"> <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="water" class="inline w-8 h-8 align-middle ml-2">.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button onclick="resetInputs(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Làm lại</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Sentence Rearrangement -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 5: Sắp xếp câu</h2>
+                    <p class="text-xl mb-8">Sắp xếp các từ sau thành câu đúng:</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4"><span class="text-gray-500">(a / has / cat / she)</span></p>
+                            <input type="text" class="exercise-input" data-answer="She has a cat." style="width: 100%;">
+                            <div class="flex items-center space-x-4 mt-2">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4"><span class="text-gray-500">(is / the / table / on / book / the)</span></p>
+                            <input type="text" class="exercise-input" data-answer="The book is on the table." style="width: 100%;">
+                            <div class="flex items-center space-x-4 mt-2">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4"><span class="text-gray-500">(my / wants / mother / some / coffee)</span></p>
+                            <input type="text" class="exercise-input" data-answer="My mother wants some coffee." style="width: 100%;">
+                            <div class="flex items-center space-x-4 mt-2">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Conclusion -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">Chúc mừng!</h1>
+                    <div class="text-2xl md:text-3xl text-gray-700 mb-3">
+                        <p class="mb-4">Bạn đã hoàn thành bài học về</p>
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-4xl font-bold px-6 py-2 rounded-full inline-block">
+                            DANH TỪ
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md max-w-xl text-left mt-6">
+                        <h3 class="font-bold text-xl mb-3">Những gì đã học:</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Khái niệm về danh từ</li>
+                            <li>4 loại danh từ chính</li>
+                            <li>Cách nhận biết danh từ số ít</li>
+                            <li>Bài tập thực hành</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 rounded-xl max-w-xl mt-6">
+                        <p class="text-xl md:text-2xl font-bold mb-2">Hẹn gặp lại trong bài học tiếp theo!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dont change the script here
+        // Update outline list
+        function updateOutline() {
+            const outlineList = document.getElementById('outlineList');
+            const slides = document.querySelectorAll('.slide h2, .slide h1');
+            outlineList.innerHTML = '';
+            
+            slides.forEach((slide, index) => {
+                if (slide.textContent.trim() && !slide.textContent.includes("Chúc mừng")) {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.textContent = slide.textContent;
+                    link.className = 'text-blue-600 hover:text-blue-800';
+                    link.onclick = (e) => {
+                        e.preventDefault();
+                        goToSlide(index);
+                    };
+                    listItem.appendChild(link);
+                    outlineList.appendChild(listItem);
+                }
+            });
+        }
+
+        // Font size adjustment
+        function adjustFontSize() {
+            const screenWidth = window.innerWidth;
+            const htmlElement = document.documentElement;
+
+            if (screenWidth <= 768) { // Mobile breakpoint
+                htmlElement.style.fontSize = '20px';
+            } else {
+                // Scale font size based on screen width, with 30px at 1680px width
+                const scaleFactor = screenWidth / 1680;
+                const fontSize = Math.max(20, Math.min(30, 30 * scaleFactor));
+                htmlElement.style.fontSize = `${fontSize}px`;
+            }
+        }
+
+        // Call adjustFontSize on load and resize
+        window.addEventListener('load', adjustFontSize);
+        window.addEventListener('resize', adjustFontSize);
+
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            modal.classList.toggle('hidden');
+            updateOutline();
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Exercise functions
+        // For word checking exercise
+        function checkWord(element, isNoun) {
+            const answerDiv = element.querySelector('.answer');
+            answerDiv.classList.remove('hidden');
+            
+            if (isNoun) {
+                answerDiv.innerHTML = '<p class="correct">✓ Đúng! Đây là danh từ</p>';
+                element.classList.add('bg-green-50');
+            } else {
+                answerDiv.innerHTML = '<p class="incorrect">✗ Không phải danh từ</p>';
+                element.classList.add('bg-red-50');
+            }
+        }
+
+        function resetExercise() {
+            document.querySelectorAll('.exercise-item').forEach(item => {
+                item.querySelector('.answer').classList.add('hidden');
+                item.classList.remove('bg-green-50', 'bg-red-50');
+            });
+        }
+
+        // For drag and drop exercise
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev, targetId) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const draggedItem = document.getElementById(data);
+            const targetElement = document.getElementById(targetId);
+            
+            // Remove from any existing container
+            if (draggedItem.parentNode.id === 'proper' || 
+                draggedItem.parentNode.id === 'common' || 
+                draggedItem.parentNode.id === 'concrete' || 
+                draggedItem.parentNode.id === 'abstract') {
+                document.querySelector('.word-container').appendChild(draggedItem);
+            }
+            
+            // Add to new container
+            targetElement.appendChild(draggedItem);
+        }
+
+        function checkDragDrop() {
+            const answerDiv = document.getElementById('dragDropAnswer');
+            answerDiv.classList.remove('hidden');
+            
+            let allCorrect = true;
+            const answers = {
+                proper: ['london', 'paris'],
+                common: ['teacher', 'city'],
+                concrete: ['dog', 'table'],
+                abstract: ['happiness', 'freedom']
+            };
+            
+            let resultHtml = '<div>';
+            
+            Object.keys(answers).forEach(type => {
+                const container = document.getElementById(type);
+                const correctCount = answers[type].length;
+                let correctItems = 0;
+                
+                answers[type].forEach(id => {
+                    const item = document.getElementById(id);
+                    if (container.contains(item)) {
+                        correctItems++;
+                    }
+                });
+                
+                if (correctItems === correctCount) {
+                    resultHtml += `<p class="correct mb-1">✓ ${type.toUpperCase()}: Đúng!</p>`;
+                } else {
+                    resultHtml += `<p class="incorrect mb-1">✗ ${type.toUpperCase()}: Sai (Đúng: ${answers[type].join(', ')})</p>`;
+                    allCorrect = false;
+                }
+            });
+            
+            resultHtml += '</div>';
+            answerDiv.innerHTML = resultHtml;
+            
+            if (allCorrect) {
+                answerDiv.classList.add('bg-green-50');
+            } else {
+                answerDiv.classList.add('bg-red-50');
+            }
+        }
+
+        // For singular noun exercise
+        function checkSingular(button, correctAnswer) {
+            const parent = button.parentNode;
+            const answerDiv = parent.querySelector('.answer');
+            const word = button.previousElementSibling.textContent.split(' / ')[0];
+            
+            answerDiv.classList.remove('hidden');
+            
+            if (word === correctAnswer) {
+                answerDiv.innerHTML = '<p class="correct">✓ Đúng! "' + word + '" là danh từ số ít</p>';
+                button.parentNode.parentNode.classList.add('bg-green-50');
+            } else {
+                answerDiv.innerHTML = '<p class="incorrect">✗ Sai! "' + correctAnswer + '" mới là danh từ số ít</p>';
+                button.parentNode.parentNode.classList.add('bg-red-50');
+            }
+        }
+
+        // For input checking
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                let img = '';
+                if (correctAnswer === 'dog') img = '<img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="dog" class="inline w-8 h-8 align-middle ml-2">';
+                if (correctAnswer === 'apple') img = '<img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="apple" class="inline w-8 h-8 align-middle ml-2">';
+                if (correctAnswer === 'book') img = '<img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" alt="book" class="inline w-8 h-8 align-middle ml-2">';
+                if (correctAnswer === 'water') img = '<img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="water" class="inline w-8 h-8 align-middle ml-2">';
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: <span class="font-bold">${correctAnswer}</span> ${img}</p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là <span class="font-bold">${correctAnswer}</span> ${img} (Bạn điền: ${userAnswer || 'trống'})</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetInputs(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function resetInputs(button) {
+            const inputs = document.querySelectorAll('.exercise-input');
+            const answerDivs = document.querySelectorAll('.answer');
+            
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+            
+            answerDivs.forEach(div => {
+                div.classList.add('hidden');
+            });
+            
+            if (button) {
+                button.textContent = 'Kiểm tra';
+                button.onclick = function() {
+                    checkInput(button);
+                };
+            }
+            
+            document.querySelectorAll('.exercise-item').forEach(item => {
+                item.classList.remove('bg-green-50', 'bg-red-50');
+            });
+        }
+
+        // Zoom functions
+        let currentZoom = 1;
+        const zoomStep = 0.1;
+        const maxZoom = 2;
+        const minZoom = 0.5;
+
+        function zoomIn() {
+            if (currentZoom < maxZoom) {
+                currentZoom += zoomStep;
+                applyZoom();
+            }
+        }
+
+        function zoomOut() {
+            if (currentZoom > minZoom) {
+                currentZoom -= zoomStep;
+                applyZoom();
+            }
+        }
+
+        function applyZoom() {
+            const container = document.querySelector('.relative.w-full.max-w-6xl');
+            container.style.transform = `scale(${currentZoom})`;
+            container.style.transformOrigin = 'center center';
+        }
+
+        // Bổ sung hàm kiểm tra từng từ cho bài tập số 3
+        function checkSingularWord(button, word, isCorrect) {
+            const parent = button.parentNode;
+            const answerDiv = parent.querySelector('.answer');
+            answerDiv.classList.remove('hidden');
+            parent.querySelectorAll('button').forEach(btn => btn.disabled = true);
+            if (isCorrect) {
+                answerDiv.innerHTML = `<p class='correct'>✓ Đúng! "${word}" là danh từ số ít</p>`;
+                parent.parentNode.classList.add('bg-green-50');
+            } else {
+                const correctBtn = parent.querySelector('button[onclick*="true"]');
+                const correctWord = correctBtn ? correctBtn.textContent : '';
+                answerDiv.innerHTML = `<p class='incorrect'>✗ Sai! Đáp án đúng là <b>${correctWord}</b></p>`;
+                parent.parentNode.classList.add('bg-red-50');
+            }
+        }
+    </script>
+</body>
+</html>

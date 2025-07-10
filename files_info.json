@@ -21,6 +21,13 @@
       "description": "Hiểu khái niệm đại từ nhân xưng, phân biệt đại từ chủ ngữ và tân ngữ, nắm vị trí trong câu, làm bài tập ứng dụng",
       "category": "slides"
     },
+    "slides/pre-gs9-nouns-2": {
+      "path": "slides/pre-gs9-nouns-2",
+      "title": "Pre GS9 - Nouns-2 ( Danh từ phần 2)",
+      "author": "Gen8",
+      "description": "- Số nhiều của danh từ, Cách thêm s/es- Danh từ bất quy tắc-Danh từ đếm được/không đếm được-Cách nhận biết-Vị trí của danh từ trong câu.",
+      "category": "slides"
+    },
     "slides/pre-gs9-present-perfect-and-present-continuous": {
       "path": "slides/pre-gs9-present-perfect-and-present-continuous",
       "title": "Pre GS9 - Present Perfect and Present Continuous (Hiện tại hoàn thành và Hiện tại tiếp diễn)",
@@ -54,6 +61,13 @@
       "title": "pre-GS7-verbs-1",
       "author": "Hoa Bac",
       "description": "Động từ (Phần 1)",
+      "category": "slides"
+    },
+    "slides/pre-gs9-nouns-1": {
+      "path": "slides/pre-gs9-nouns-1",
+      "title": "Pre GS9 - Nouns-1 ( Danh từ phần 1)",
+      "author": "Gen8",
+      "description": "Khái niệm danh từ, Phân loại danh từ và Số ít của danh từ",
       "category": "slides"
     },
     "slides/pre-gs7-nouns": {
@@ -259,6 +273,13 @@
       "description": "trạng từ chỉ cách thức, tần suất.",
       "category": "worksheets"
     },
+    "worksheets/pre-GS9-nouns-part 2": {
+      "path": "worksheets/pre-GS9-nouns-part 2",
+      "title": "Pre GS9 - Nouns-Part 2-( Danh từ phần 2)",
+      "author": "Gen8",
+      "description": "Nouns-Part 2-( Danh từ phần 2)",
+      "category": "worksheets"
+    },
     "worksheets/pre-gs8-nouns-ad-articles": {
       "path": "worksheets/pre-gs8-nouns-ad-articles",
       "title": "Pre GS8 - Danh Từ và Mạo Từ (Nouns & Articles) – Ôn Tập",
@@ -334,6 +355,13 @@
       "title": "Pre GS7 - Lượng từ (Quantifiers)",
       "author": "Gen8",
       "description": "Lượng từ (Quantifiers)",
+      "category": "worksheets"
+    },
+    "worksheets/pre-GS9-nouns-part 1": {
+      "path": "worksheets/pre-GS9-nouns-part 1",
+      "title": "Pre GS9 - Nouns-Part 1-( Danh từ phần 1)",
+      "author": "Gen8",
+      "description": "Nouns-Part 1-( Danh từ phần 1)",
       "category": "worksheets"
     },
     "worksheets/pre-gs9-simple-past-and-past-continuous": {
