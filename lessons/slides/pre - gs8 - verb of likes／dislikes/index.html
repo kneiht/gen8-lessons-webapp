@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar: Likes/Dislikes (V-ing vs to V)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+        
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+            border-radius: 1rem;
+        }
+        
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+        
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+        
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+        
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
+        .thought-bubble {
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .thought-bubble:after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent white;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+        
+        .boy {
+            animation: bounce 2s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .shopping-cart {
+            animation: shake 0.5s ease infinite alternate;
+        }
+        
+        @keyframes shake {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        .verb-card {
+            transition: all 0.3s ease;
+        }
+        
+        .verb-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center p-2">
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()" class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-xl p-6 w-full max-w-md max-h-[80vh] overflow-y-auto">
+                <h3 class="text-xl font-bold text-indigo-700 mb-4">Nội dung bài học</h3>
+                <ul class="space-y-2">
+                    <li><button onclick="goToSlide(0)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">1. Giới thiệu</button></li>
+                    <li><button onclick="goToSlide(1)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">2. Động từ diễn tả sở thích</button></li>
+                    <li><button onclick="goToSlide(2)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">3. Cấu trúc V-ing/to V</button></li>
+                    <li><button onclick="goToSlide(3)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">4. Bài tập 1: Chọn dạng động từ</button></li>
+                    <li><button onclick="goToSlide(4)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">5. Bài tập 2: Chọn đáp án đúng</button></li>
+                    <li><button onclick="goToSlide(5)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">6. Bài tập 3: Viết lại câu</button></li>
+                    <li><button onclick="goToSlide(6)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">7. Bài tập 4: Tìm lỗi sai</button></li>
+                    <li><button onclick="goToSlide(7)" class="text-left w-full hover:bg-indigo-50 p-2 rounded">8. Tổng kết</button></li>
+                </ul>
+                <button onclick="toggleOutline()" class="mt-4 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Đóng</button>
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl text-2xl">
+            <!-- Slide 0: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">GRAMMAR FOR PRE-GRADE 8</h1>
+                    <div class="bg-gradient-to-r from-pink-500 to-orange-500 text-white text-2xl md:text-4xl font-bold px-6 py-3 rounded-full my-8 shadow-lg floating">
+                        VERBS OF LIKES/DISLIKES
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2491/2491902.png" alt="Grammar Learning" class="object-cover h-52 floating">
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-100 to-purple-100 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu các động từ diễn tả sở thích</li>
+                                <li>Phân biệt V-ing và to V</li>
+                                <li>Làm bài tập ứng dụng</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: Verbs of Likes/Dislikes -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Động từ diễn tả sở thích</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Like -->
+                    <div class="verb-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Like</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2">Nghĩa: <span class="font-semibold">thích</span></p>
+                        <p class="text-gray-600">Ví dụ: <span class="highlight">"I like swimming."</span></p>
+                    </div>
+                    
+                    <!-- Love -->
+                    <div class="verb-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Love</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2">Nghĩa: <span class="font-semibold">yêu thích</span></p>
+                        <p class="text-gray-600">Ví dụ: <span class="highlight">"She loves to dance."</span></p>
+                    </div>
+                    
+                    <!-- Enjoy -->
+                    <div class="verb-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Enjoy</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2">Nghĩa: <span class="font-semibold">thưởng thức, rất thích</span></p>
+                        <p class="text-gray-600">Ví dụ: <span class="highlight">"They enjoy playing chess."</span></p>
+                    </div>
+                    
+                    <!-- Hate -->
+                    <div class="verb-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <!-- Thay icon X bằng icon angry face -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <path d="M9 10c-.5-.5-1.5-.5-2 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M17 10c-.5-.5-1.5-.5-2 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M8 16c1.5-1 6.5-1 8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Hate</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2">Nghĩa: <span class="font-semibold">ghét</span></p>
+                        <p class="text-gray-600">Ví dụ: <span class="highlight">"He hates doing homework."</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: V-ing vs to V -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Cấu trúc V-ing và to V</h2>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md mb-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Quy tắc sử dụng</h3>
+                    </div>
+                    <!-- Bảng 1: like/love/prefer/hate -->
+                    <div class="overflow-x-auto mb-6">
+                        <table class="min-w-full text-base border border-gray-300 rounded-xl">
+                            <thead class="bg-indigo-100">
+                                <tr>
+                                    <th class="px-3 py-2 border">Động từ</th>
+                                    <th class="px-3 py-2 border">+ V-ing</th>
+                                    <th class="px-3 py-2 border">+ to V</th>
+                                    <th class="px-3 py-2 border">Ví dụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white">
+                                    <td class="px-3 py-2 border font-bold">like</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border">I like eating sushi<br>I like to eat sushi</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-3 py-2 border font-bold">love</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border">Many people love eating fish<br>Many people love to eat fish</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-3 py-2 border font-bold">prefer</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border">My dad prefers walking<br>My dad prefers to walk</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-3 py-2 border font-bold">hate</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border text-green-600 font-bold text-xl">✅</td>
+                                    <td class="px-3 py-2 border">He hates doing chores<br>He hates to do chores</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Bảng 2: Chỉ đi với V-ing -->
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-base border border-gray-300 rounded-xl">
+                            <thead class="bg-yellow-100">
+                                <tr>
+                                    <th class="px-3 py-2 border">Động từ</th>
+                                    <th class="px-3 py-2 border">Nghĩa tiếng Việt</th>
+                                    <th class="px-3 py-2 border">Cấu trúc sử dụng</th>
+                                    <th class="px-3 py-2 border">Ví dụ câu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white">
+                                    <td class="px-3 py-2 border font-bold">adore</td>
+                                    <td class="px-3 py-2 border">rất yêu thích</td>
+                                    <td class="px-3 py-2 border">adore + V-ing</td>
+                                    <td class="px-3 py-2 border">I adore reading books.</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-3 py-2 border font-bold">enjoy</td>
+                                    <td class="px-3 py-2 border">thích thú</td>
+                                    <td class="px-3 py-2 border">enjoy + V-ing</td>
+                                    <td class="px-3 py-2 border">They enjoy playing chess.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-3 py-2 border font-bold">fancy</td>
+                                    <td class="px-3 py-2 border">thích, muốn</td>
+                                    <td class="px-3 py-2 border">fancy + V-ing</td>
+                                    <td class="px-3 py-2 border">Do you fancy going out tonight?</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-3 py-2 border font-bold">dislike</td>
+                                    <td class="px-3 py-2 border">không thích</td>
+                                    <td class="px-3 py-2 border">dislike + V-ing</td>
+                                    <td class="px-3 py-2 border">She dislikes doing homework.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-3 py-2 border font-bold">detest</td>
+                                    <td class="px-3 py-2 border">ghét cay ghét đắng</td>
+                                    <td class="px-3 py-2 border">detest + V-ing</td>
+                                    <td class="px-3 py-2 border">He detests waking up early.</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-3 py-2 border font-bold">mind</td>
+                                    <td class="px-3 py-2 border">phiền, bận tâm</td>
+                                    <td class="px-3 py-2 border">mind + V-ing</td>
+                                    <td class="px-3 py-2 border">Would you mind closing the door?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Slide 3: Exercise 1 - Choose V-ing or to V -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Chọn dạng động từ</h2>
+                    <p class="text-xl mb-8">Chọn dạng đúng của động từ (V-ing hoặc to V):</p>
+                    
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">1</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">I like __________ (read) books before going to bed.</p>
+                                    <div class="flex space-x-4">
+                                        <button onclick="checkExercise1(this, 'reading')" class="btn-check px-4 py-2 rounded-lg font-bold">reading</button>
+                                        <button onclick="checkExercise1(this, 'to read')" class="btn-check px-4 py-2 rounded-lg font-bold">to read</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Cả hai đều đúng:</span></p>
+                                        <p>- "I like reading books..." (thích đọc sách nói chung)</p>
+                                        <p>- "I like to read books..." (thích đọc sách vào thời điểm cụ thể)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">2</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">She hates __________ (wake up) early in the morning.</p>
+                                    <div class="flex space-x-4">
+                                        <button onclick="checkExercise1(this, 'waking up')" class="btn-check px-4 py-2 rounded-lg font-bold">waking up</button>
+                                        <button onclick="checkExercise1(this, 'to wake up')" class="btn-check px-4 py-2 rounded-lg font-bold">to wake up</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Cả hai đều đúng:</span></p>
+                                        <p>- "She hates waking up early..." (ghét việc dậy sớm nói chung)</p>
+                                        <p>- "She hates to wake up early..." (ghét việc phải dậy sớm)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">3</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">They enjoy __________ (watch) cartoons together.</p>
+                                    <div class="flex space-x-4">
+                                        <button onclick="checkExercise1(this, 'watching')" class="btn-check px-4 py-2 rounded-lg font-bold">watching</button>
+                                        <button onclick="checkExercise1(this, 'to watch')" class="btn-check px-4 py-2 rounded-lg font-bold">to watch</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Đáp án đúng: watching</span></p>
+                                        <p>- "Enjoy" luôn đi với V-ing, không đi với "to V"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Thêm câu 4 và 5 vào Bài tập 1 -->
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">4</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">He prefers __________ (travel) by car.</p>
+                                    <div class="flex space-x-4">
+                                        <button onclick="checkExercise1(this, 'travelling')" class="btn-check px-4 py-2 rounded-lg font-bold">travelling</button>
+                                        <button onclick="checkExercise1(this, 'to travel')" class="btn-check px-4 py-2 rounded-lg font-bold">to travel</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Cả hai đều đúng:</span></p>
+                                        <p>- "He prefers travelling..." (nhấn mạnh trải nghiệm)</p>
+                                        <p>- "He prefers to travel..." (nhấn mạnh mục đích/cụ thể)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">5</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">We adore __________ (spend) time with our dog.</p>
+                                    <div class="flex space-x-4">
+                                        <button onclick="checkExercise1(this, 'spending')" class="btn-check px-4 py-2 rounded-lg font-bold">spending</button>
+                                        <button onclick="checkExercise1(this, 'to spend')" class="btn-check px-4 py-2 rounded-lg font-bold">to spend</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Đáp án đúng: spending</span></p>
+                                        <p>- "Adore" chỉ đi với V-ing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Exercise 2 - Multiple Choice -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Chọn đáp án đúng</h2>
+                    <p class="text-xl mb-8">Chọn đáp án đúng (V-ing hoặc to V):</p>
+                    
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">1</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">I enjoy __________ books in my free time.</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <button onclick="checkExercise2(this, 'reading', true)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">A. reading</button>
+                                        <button onclick="checkExercise2(this, 'to read', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">B. to read</button>
+                                        <button onclick="checkExercise2(this, 'read', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">C. read</button>
+                                        <button onclick="checkExercise2(this, 'reads', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">D. reads</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Đáp án đúng: A. reading</span></p>
+                                        <p>- "Enjoy" luôn đi với V-ing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">2</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">She dislikes __________ in crowded places.</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <button onclick="checkExercise2(this, 'being', true)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">A. being</button>
+                                        <button onclick="checkExercise2(this, 'be', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">B. be</button>
+                                        <button onclick="checkExercise2(this, 'to being', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">C. to being</button>
+                                        <button onclick="checkExercise2(this, 'been', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">D. been</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Đáp án đúng: A. being</span></p>
+                                        <p>- "Dislike" đi với V-ing</p>
+                                        <p>- "Being" là dạng V-ing của "be"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">3</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">Would you mind __________ the door?</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <button onclick="checkExercise2(this, 'open', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">A. open</button>
+                                        <button onclick="checkExercise2(this, 'opening', true)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">B. opening</button>
+                                        <button onclick="checkExercise2(this, 'to open', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">C. to open</button>
+                                        <button onclick="checkExercise2(this, 'opened', false)" class="btn-check px-4 py-2 rounded-lg font-bold text-left">D. opened</button>
+                                    </div>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Đáp án đúng: B. opening</span></p>
+                                        <p>- "Mind" luôn đi với V-ing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Exercise 3 - Sắp xếp từ thành câu đúng (chỉ hiện từ xáo trộn, không có câu gợi ý, 5 câu) -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Sắp xếp từ thành câu đúng</h2>
+                    <p class="text-xl mb-8">Sắp xếp các từ sau thành câu hoàn chỉnh:</p>
+                    <div class="grid grid-cols-1 gap-6">
+                        <!-- Câu 1 -->
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">1</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="word-bank flex flex-wrap gap-2 mb-4" data-answer="She enjoys swimming."></div>
+                                    <div class="user-sentence flex flex-wrap gap-2 mb-4"></div>
+                                    <button onclick="checkSentence(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Câu 2 -->
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">2</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="word-bank flex flex-wrap gap-2 mb-4" data-answer="I hate getting up early."></div>
+                                    <div class="user-sentence flex flex-wrap gap-2 mb-4"></div>
+                                    <button onclick="checkSentence(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Câu 3 -->
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">3</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="word-bank flex flex-wrap gap-2 mb-4" data-answer="Do you fancy going out tonight?"></div>
+                                    <div class="user-sentence flex flex-wrap gap-2 mb-4"></div>
+                                    <button onclick="checkSentence(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Câu 4 -->
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">4</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="word-bank flex flex-wrap gap-2 mb-4" data-answer="They enjoy playing chess."></div>
+                                    <div class="user-sentence flex flex-wrap gap-2 mb-4"></div>
+                                    <button onclick="checkSentence(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Câu 5 -->
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">5</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="word-bank flex flex-wrap gap-2 mb-4" data-answer="Would you mind closing the door?"></div>
+                                    <div class="user-sentence flex flex-wrap gap-2 mb-4"></div>
+                                    <button onclick="checkSentence(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Exercise 4 - Find Mistakes -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 4: Tìm lỗi sai</h2>
+                    <p class="text-xl mb-8">Tìm và sửa lỗi sai trong các câu sau:</p>
+                    
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">1</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">I enjoy to play tennis on weekends.</p>
+                                    <input type="text" class="exercise-input w-full mb-4" data-answer="I enjoy playing tennis on weekends.">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Lỗi sai:</span> "enjoy" không đi với "to V"</p>
+                                        <p><span class="font-bold">Sửa lại:</span> "I enjoy playing tennis..."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">2</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">She doesn't mind to help with the housework.</p>
+                                    <input type="text" class="exercise-input w-full mb-4" data-answer="She doesn't mind helping with the housework.">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Lỗi sai:</span> "mind" không đi với "to V"</p>
+                                        <p><span class="font-bold">Sửa lại:</span> "She doesn't mind helping..."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4 mt-1">
+                                    <span class="text-indigo-700 font-bold">3</span>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-xl mb-4">Do you fancy to go for a walk?</p>
+                                    <input type="text" class="exercise-input w-full mb-4" data-answer="Do you fancy going for a walk?">
+                                    <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                    <div class="answer hidden mt-4 p-3 bg-gray-50 rounded-lg">
+                                        <p class="text-lg"><span class="font-bold">Lỗi sai:</span> "fancy" không đi với "to V"</p>
+                                        <p><span class="font-bold">Sửa lại:</span> "Do you fancy going..."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Summary -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">Tóm tắt bài học</h1>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6 w-full max-w-2xl">
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Những gì đã học</h3>
+                        </div>
+                        
+                        <ul class="text-left space-y-3 pl-5">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Các động từ diễn tả sở thích: like, love, enjoy, prefer, hate, dislike, etc.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Phân biệt V-ing (hoạt động chung) và to V (hoạt động cụ thể)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Một số động từ bắt buộc dùng V-ing: enjoy, mind, fancy, etc.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex justify-center mb-8">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1904/1904889.png" alt="Celebration" class="h-40">
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-4 rounded-xl max-w-xl">
+                        <p class="text-xl md:text-2xl font-bold">Chúc mừng bạn đã hoàn thành bài học!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Exercise functions
+        function checkExercise1(button, answer) {
+            const exerciseItem = button.closest('.exercise-item');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            
+            // Check if this is a case where both answers are correct
+            const question = exerciseItem.querySelector('p').textContent;
+            const isBothCorrect = question.includes('like') || question.includes('hate') || question.includes('love') || question.includes('prefer');
+            
+            if (isBothCorrect) {
+                answerDiv.innerHTML = `
+                    <p class="text-lg"><span class="font-bold">Cả hai đều đúng:</span></p>
+                    <p>- V-ing: diễn tả hoạt động chung chung</p>
+                    <p>- to V: diễn tả hoạt động cụ thể</p>
+                `;
+            } else {
+                // For verbs that only take V-ing
+                answerDiv.innerHTML = `
+                    <p class="text-lg"><span class="font-bold">Đáp án đúng: ${answer}</span></p>
+                    <p>- Động từ này chỉ đi với V-ing</p>
+                `;
+            }
+            
+            answerDiv.classList.remove('hidden');
+            
+            // Change all buttons to show correct answer
+            const buttons = exerciseItem.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-indigo-600');
+                if (btn.textContent.trim() === answer || isBothCorrect) {
+                    btn.classList.add('bg-green-500', 'hover:bg-green-600');
+                } else {
+                    btn.classList.add('bg-red-500', 'hover:bg-red-600');
+                }
+                btn.onclick = null;
+            });
+        }
+
+        function checkExercise2(button, answer, isCorrect) {
+            const exerciseItem = button.closest('.exercise-item');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            
+            if (isCorrect) {
+                button.classList.remove('bg-indigo-600');
+                button.classList.add('bg-green-500', 'hover:bg-green-600');
+                answerDiv.innerHTML = `
+                    <p class="text-lg"><span class="font-bold">Đáp án đúng: ${answer}</span></p>
+                    <p>- Giải thích lý do tại sao đúng</p>
+                `;
+            } else {
+                button.classList.remove('bg-indigo-600');
+                button.classList.add('bg-red-500', 'hover:bg-red-600');
+                answerDiv.innerHTML = `
+                    <p class="text-lg"><span class="font-bold">Sai rồi!</span> Đáp án đúng là: ${exerciseItem.querySelector('button[data-correct="true"]').textContent}</p>
+                    <p>- Giải thích lý do tại sao sai</p>
+                `;
+            }
+            
+            answerDiv.classList.remove('hidden');
+            
+            // Disable all buttons after checking
+            const buttons = exerciseItem.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.onclick = null;
+                if (btn.getAttribute('data-correct') === 'true') {
+                    btn.classList.add('bg-green-500', 'hover:bg-green-600');
+                }
+            });
+        }
+
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const input = exerciseItem.querySelector('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const userAnswer = input.value.trim();
+            const correctAnswer = input.dataset.answer;
+
+            if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                answerDiv.innerHTML = `<p class="correct">✓ Chính xác!</p>`;
+                input.style.borderBottom = '2px solid #10b981';
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${correctAnswer}</span></p>`;
+                input.style.borderBottom = '2px solid #ef4444';
+            }
+
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const input = exerciseItem.querySelector('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset input
+            if (input) {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            }
+
+            // Reset buttons
+            const buttons = exerciseItem.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-green-500', 'bg-red-500', 'hover:bg-green-600', 'hover:bg-red-600');
+                btn.classList.add('bg-indigo-600', 'hover:bg-indigo-700');
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            if (exerciseItem.querySelector('.exercise-input')) {
+                button.onclick = function() { checkInput(button); };
+            } else if (exerciseItem.querySelector('button[data-correct]')) {
+                // For multiple choice questions
+                const buttons = exerciseItem.querySelectorAll('button');
+                buttons.forEach(btn => {
+                    btn.onclick = function() {
+                        checkExercise2(btn, btn.textContent.trim(), btn.getAttribute('data-correct') === 'true');
+                    };
+                });
+            } else {
+                // For V-ing/to V choice questions
+                const buttons = exerciseItem.querySelectorAll('button');
+                buttons.forEach(btn => {
+                    btn.onclick = function() {
+                        checkExercise1(btn, btn.textContent.trim());
+                    };
+                });
+            }
+        }
+
+        // --- Sắp xếp từ thành câu đúng cho Bài tập 3 ---
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+        function setupSentenceOrdering() {
+            document.querySelectorAll('.word-bank').forEach(function(bank) {
+                const answer = bank.getAttribute('data-answer');
+                const words = shuffle(answer.replace(/[.?!]/g, '').split(' '));
+                bank.innerHTML = '';
+                const userSentence = bank.parentElement.querySelector('.user-sentence');
+                userSentence.innerHTML = '';
+                words.forEach(word => {
+                    const btn = document.createElement('button');
+                    btn.textContent = word;
+                    btn.className = 'bg-indigo-100 px-3 py-1 rounded-lg font-bold text-lg hover:bg-indigo-200';
+                    btn.onclick = function() {
+                        userSentence.appendChild(btn);
+                        btn.onclick = function() {
+                            bank.appendChild(btn);
+                            btn.onclick = arguments.callee.caller;
+                        };
+                    };
+                    bank.appendChild(btn);
+                });
+            });
+        }
+        function checkSentence(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const userSentenceDiv = exerciseItem.querySelector('.user-sentence');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const wordBank = exerciseItem.querySelector('.word-bank');
+            const correct = wordBank.getAttribute('data-answer').replace(/[.?!]/g, '').trim();
+            const userAnswer = Array.from(userSentenceDiv.children).map(btn => btn.textContent).join(' ').trim();
+            if (userAnswer === correct) {
+                answerDiv.innerHTML = `<p class="correct">✓ Chính xác!</p>`;
+                userSentenceDiv.style.borderBottom = '2px solid #10b981';
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${wordBank.getAttribute('data-answer')}</span></p>`;
+                userSentenceDiv.style.borderBottom = '2px solid #ef4444';
+            }
+            answerDiv.classList.remove('hidden');
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                setupSentenceOrdering();
+                answerDiv.innerHTML = '';
+                answerDiv.classList.add('hidden');
+                userSentenceDiv.style.borderBottom = '';
+                button.textContent = 'Kiểm tra';
+                button.onclick = function() { checkSentence(button); };
+            };
+        }
+        document.addEventListener('DOMContentLoaded', setupSentenceOrdering);
+    </script>
+</body>
+</html>
