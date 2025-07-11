@@ -567,17 +567,15 @@
                         </div>
                     </div>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-white p-3 rounded-xl shadow-md flex-wrap flex">
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="london" data-type="proper">London</span>
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="happiness" data-type="abstract">happiness</span>
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="dog" data-type="concrete">dog</span>
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="teacher" data-type="common">teacher</span>
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="table" data-type="concrete">table</span>
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="freedom" data-type="abstract">freedom</span>
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="paris" data-type="proper">Paris</span>
-                            <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="city" data-type="common">city</span>
-                        </div>
+                    <div id="word-container" class="bg-white p-3 rounded-xl shadow-md flex-wrap flex">
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="london" data-type="proper">London</span>
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="happiness" data-type="abstract">happiness</span>
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="dog" data-type="concrete">dog</span>
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="teacher" data-type="common">teacher</span>
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="table" data-type="concrete">table</span>
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="freedom" data-type="abstract">freedom</span>
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="paris" data-type="proper">Paris</span>
+                        <span class="word bg-white p-2 m-1 rounded-xl shadow-sm border border-gray-200" draggable="true" ondragstart="drag(event)" id="city" data-type="common">city</span>
                     </div>
                     
                     <div class="mt-4 text-center">
@@ -1042,11 +1040,13 @@
             const targetElement = document.getElementById(targetId);
             
             // Remove from any existing container
-            if (draggedItem.parentNode.id === 'proper' || 
+            if (
+                draggedItem.parentNode.id === 'proper' || 
                 draggedItem.parentNode.id === 'common' || 
                 draggedItem.parentNode.id === 'concrete' || 
-                draggedItem.parentNode.id === 'abstract') {
-                document.querySelector('.word-container').appendChild(draggedItem);
+                draggedItem.parentNode.id === 'abstract'
+            ) {
+                document.getElementById('word-container').appendChild(draggedItem);
             }
             
             // Add to new container
