@@ -161,6 +161,13 @@
       "description": "Hiểu và vận dụng cấu trúc S + be + Bổ ngữ (Complement), các dụng câu khẳng định, phủ định, câu hỏi",
       "category": "slides"
     },
+    "slides/pre-gs6-sentence-structures-2": {
+      "path": "slides/pre-gs6-sentence-structures-2",
+      "title": "Sentence structures part 2 (S + V, S + V + O)",
+      "author": "Gen8",
+      "description": "Cấu trúc S + V và S + V + O, câu khẳng định, câu phủ định, câu hỏi Yes/No và WH-",
+      "category": "slides"
+    },
     "slides/pre-gs7-Comparison-Structures": {
       "path": "slides/pre-gs7-Comparison-Structures",
       "title": "pre-GS7-Comparison Structures",
@@ -390,6 +397,13 @@
       "title": "Pre GS8 - verb of likes/dislikes",
       "author": "Gen8",
       "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-ws-sentence-structures-2": {
+      "path": "worksheets/pre-gs6-ws-sentence-structures-2",
+      "title": "Sentence structures part 2 (S + V, S + V + O)",
+      "author": "Gen8",
+      "description": "Cấu trúc S + V và S + V + O, câu khẳng định, câu phủ định, câu hỏi Yes/No và WH-",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-ws-prepositions": {
