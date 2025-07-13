@@ -126,6 +126,13 @@
       "description": "Cách sử dụng và dấu hiệu nhận biết, cấu trúc câu khẳng định, phủ định, nghi vấn, phân biệt hai thì quá khứ đơn và quá khứ tiếp diễn",
       "category": "slides"
     },
+    "slides/pre-gs7-present-simple-tense": {
+      "path": "slides/pre-gs7-present-simple-tense",
+      "title": "pre-GS7-Simple Present Tense",
+      "author": "Hoa Bac",
+      "description": "Thì hiện tại đơn",
+      "category": "slides"
+    },
     "slides/pre-gs8-nouns-and-articles": {
       "path": "slides/pre-gs8-nouns-and-articles",
       "title": "Nouns and Articles (Danh từ và Mạo từ)",
@@ -523,6 +530,13 @@
       "title": "Pre GS6 - Động từ (Verbs) - Phần 1",
       "author": "Gen8",
       "description": "Hiểu khái niệm và chức năng của động từ, nắm vững vị trí động từ trong câu, phân biệt các loại động từ cơ bản, sử dụng thành thạo động từ to be",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs7-WS-present-simple-tense": {
+      "path": "worksheets/pre-gs7-WS-present-simple-tense",
+      "title": "pre-GS7-Simple Present Tense",
+      "author": "Hoa Bac",
+      "description": "Thì hiện tại đơn",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-nouns-2": {

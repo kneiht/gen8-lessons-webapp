@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Simple Tense - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Drag and drop styles */
+        .drag-item {
+            background-color: #e5e7eb;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: move;
+            margin: 0.25rem;
+            display: inline-block;
+        }
+        
+        .drop-zone {
+            min-height: 50px;
+            border: 2px dashed #9ca3af;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+        }
+        
+        .drop-zone.highlight {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Present Simple Tense - Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <i class="fas fa-print mr-2"></i>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Part 1: Grammar Summary (Tóm tắt ngữ pháp)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Usage (Cách sử dụng)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Habits and routines (thói quen và việc thường làm)</li>
+                            <li class="mb-1">Facts (sự thật hiển nhiên)</li>
+                            <li class="mb-1">Permanent situations (tình huống cố định lâu dài)</li>
+                            <li>General truths (chân lý phổ biến)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Structure (Cấu trúc)</h4>
+                        <div class="mb-2">
+                            <h5 class="font-semibold">With 'to be' (Với động từ to be)</h5>
+                            <p class="text-gray-700">(+) S + am/is/are + ...</p>
+                            <p class="text-gray-700">(-) S + am/is/are + not + ...</p>
+                            <p class="text-gray-700">(?) Am/Is/Are + S + ...?</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold">With normal verbs (Với động từ thường)</h5>
+                            <p class="text-gray-700">(+) S + V(s/es) + ...</p>
+                            <p class="text-gray-700">(-) S + do/does + not + V + ...</p>
+                            <p class="text-gray-700">(?) Do/Does + S + V + ...?</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Signal Words (Dấu hiệu nhận biết)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Always, usually, often, sometimes, rarely, never</li>
+                            <li class="mb-1">Every day/week/month/year</li>
+                            <li class="mb-1">On Mondays, at weekends</li>
+                            <li>Once/twice a week, three times a month</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Spelling Rules (Quy tắc thêm s/es)</h4>
+                        <table class="w-full text-left text-gray-700 border-collapse">
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">Most verbs: add -s</td>
+                                    <td class="py-1 px-4 italic">work → works</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">Verbs ending in -ch, -sh, -ss, -x, -o: add -es</td>
+                                    <td class="py-1 px-4 italic">watch → watches</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">Verbs ending in consonant + y: change y to i + es</td>
+                                    <td class="py-1 px-4 italic">study → studies</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1 px-4">Verbs ending in vowel + y: add -s</td>
+                                    <td class="py-1 px-4 italic">play → plays</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Part 2: Vocabulary (Từ vựng)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">belong to <span class="vocab-type">(v)</span> /bɪˈlɒŋ tə/</p>
+                        <p class="vocab-meaning">thuộc về</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">benefit <span class="vocab-type">(n)</span> /ˈbenɪfɪt/</p>
+                        <p class="vocab-meaning">lợi ích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">bug <span class="vocab-type">(n)</span> /bʌɡ/</p>
+                        <p class="vocab-meaning">con bọ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">cardboard <span class="vocab-type">(n)</span> /ˈkɑːdbɔːd/</p>
+                        <p class="vocab-meaning">bìa các tông</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dollhouse <span class="vocab-type">(n)</span> /ˈdɒlhaʊs/</p>
+                        <p class="vocab-meaning">nhà búp bê</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">gardening <span class="vocab-type">(n)</span> /ˈɡɑːdnɪŋ/</p>
+                        <p class="vocab-meaning">làm vườn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">glue <span class="vocab-type">(n)</span> /ɡluː/</p>
+                        <p class="vocab-meaning">keo dán / hồ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">horse riding <span class="vocab-type">(n)</span> /ˈhɔːs raɪdɪŋ/</p>
+                        <p class="vocab-meaning">cưỡi ngựa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">insect <span class="vocab-type">(n)</span> /ˈɪnsekt/</p>
+                        <p class="vocab-meaning">côn trùng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">jogging <span class="vocab-type">(n)</span> /ˈdʒɒɡɪŋ/</p>
+                        <p class="vocab-meaning">đi / chạy bộ thư giãn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">making models <span class="vocab-type">(n)</span> /ˈmeɪkɪŋ ˈmɒdlz/</p>
+                        <p class="vocab-meaning">làm mô hình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">maturity <span class="vocab-type">(n)</span> /məˈtʃʊərəti/</p>
+                        <p class="vocab-meaning">sự trưởng thành</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">patient <span class="vocab-type">(adj)</span> /ˈpeɪʃnt/</p>
+                        <p class="vocab-meaning">kiên nhẫn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">popular <span class="vocab-type">(adj)</span> /ˈpɒpjələ/</p>
+                        <p class="vocab-meaning">được nhiều người ưa thích</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">responsibility <span class="vocab-type">(n)</span> /rɪˌspɒnsəˈbɪləti/</p>
+                        <p class="vocab-meaning">sự chịu trách nhiệm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">set <span class="vocab-type">(v)</span> /set/</p>
+                        <p class="vocab-meaning">(mặt trời) lặn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">stress <span class="vocab-type">(n)</span> /stres/</p>
+                        <p class="vocab-meaning">sự căng thẳng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">take on <span class="vocab-type">(v)</span> /teɪk ɒn/</p>
+                        <p class="vocab-meaning">nhận thêm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">unusual <span class="vocab-type">(adj)</span> /ʌnˈjuːʒuəl/</p>
+                        <p class="vocab-meaning">khác thường</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">valuable <span class="vocab-type">(adj)</span> /ˈvæljuəbl/</p>
+                        <p class="vocab-meaning">quý giá</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">yoga <span class="vocab-type">(n)</span> /ˈjəʊɡə/</p>
+                        <p class="vocab-meaning">yoga</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Part 3: Basic Exercises (Bài tập cơ bản)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Exercise 1: Fill in the blanks with the correct form of verbs</h4>
+                            <p class="exercise-instruction">👉 Complete the sentences with the present simple form of the verbs in brackets:</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">My sister _______________ (go) jogging every morning.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="goes" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The sun _______________ (set) in the west.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="sets" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">These insects _______________ (belong to) the same family.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="belong to" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She _______________ (not take on) too much responsibility at work.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="does not take on" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">________ your brother ________ (do) yoga regularly?</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="does do" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 2: Choose the correct answer</h4>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col md:flex-row items-start md:items-center py-1">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">My hobby ________ making models from cardboard.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="is" data-answer="is" onclick="checkAnswer(this)">
+                                            <span>is</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="are" data-answer="is" onclick="checkAnswer(this)">
+                                            <span>are</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="am" data-answer="is" onclick="checkAnswer(this)">
+                                            <span>am</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Horse riding ________ very popular among teenagers.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="is" data-answer="is" onclick="checkAnswer(this)">
+                                            <span>is</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="are" data-answer="is" onclick="checkAnswer(this)">
+                                            <span>are</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">My little sister ________ her dollhouse every day.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="play with" data-answer="plays with" onclick="checkAnswer(this)">
+                                            <span>play with</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="plays with" data-answer="plays with" onclick="checkAnswer(this)">
+                                            <span>plays with</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Gardening ________ me feel relaxed.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="make" data-answer="makes" onclick="checkAnswer(this)">
+                                            <span>make</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="makes" data-answer="makes" onclick="checkAnswer(this)">
+                                            <span>makes</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">________ these bugs belong to the same species?</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="Do" data-answer="Do" onclick="checkAnswer(this)">
+                                            <span>Do</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="Does" data-answer="Do" onclick="checkAnswer(this)">
+                                            <span>Does</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Part 4: Advanced Exercises (Bài tập nâng cao)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 3: Rearrange the words to make correct sentences</h4>
+                            <p class="exercise-instruction">👉 Drag and drop the words into the correct order:</p>
+                            
+                            <div class="mb-4">
+                                <div class="flex flex-wrap mb-2" id="drag-words-1">
+                                    <div class="drag-item" draggable="true">My</div>
+                                    <div class="drag-item" draggable="true">father</div>
+                                    <div class="drag-item" draggable="true">always</div>
+                                    <div class="drag-item" draggable="true">does</div>
+                                    <div class="drag-item" draggable="true">yoga</div>
+                                    <div class="drag-item" draggable="true">in</div>
+                                    <div class="drag-item" draggable="true">the</div>
+                                    <div class="drag-item" draggable="true">morning</div>
+                                </div>
+                                <div class="drop-zone" id="drop-zone-1" data-answer="My father always does yoga in the morning"></div>
+                                <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mt-2" onclick="checkDragAnswer('drop-zone-1')">Check Answer</button>
+                                <span id="feedback-1" class="ml-2"></span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="flex flex-wrap mb-2" id="drag-words-2">
+                                    <div class="drag-item" draggable="true">This</div>
+                                    <div class="drag-item" draggable="true">valuable</div>
+                                    <div class="drag-item" draggable="true">book</div>
+                                    <div class="drag-item" draggable="true">belongs</div>
+                                    <div class="drag-item" draggable="true">to</div>
+                                    <div class="drag-item" draggable="true">my</div>
+                                    <div class="drag-item" draggable="true">teacher</div>
+                                </div>
+                                <div class="drop-zone" id="drop-zone-2" data-answer="This valuable book belongs to my teacher"></div>
+                                <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mt-2" onclick="checkDragAnswer('drop-zone-2')">Check Answer</button>
+                                <span id="feedback-2" class="ml-2"></span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="flex flex-wrap mb-2" id="drag-words-3">
+                                    <div class="drag-item" draggable="true">Gardening</div>
+                                    <div class="drag-item" draggable="true">and</div>
+                                    <div class="drag-item" draggable="true">making</div>
+                                    <div class="drag-item" draggable="true">models</div>
+                                    <div class="drag-item" draggable="true">are</div>
+                                    <div class="drag-item" draggable="true">my</div>
+                                    <div class="drag-item" draggable="true">favorite</div>
+                                    <div class="drag-item" draggable="true">hobbies</div>
+                                </div>
+                                <div class="drop-zone" id="drop-zone-3" data-answer="Gardening and making models are my favorite hobbies"></div>
+                                <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded mt-2" onclick="checkDragAnswer('drop-zone-3')">Check Answer</button>
+                                <span id="feedback-3" class="ml-2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 4: Rewrite the sentences using the given words</h4>
+                            <p class="exercise-instruction">👉 Rewrite the sentences keeping the same meaning:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">My brother enjoys horse riding. (like)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="My brother likes horse riding." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">This dollhouse is mine. (belong to)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="This dollhouse belongs to me." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">She doesn't have stress from work. (get)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She doesn't get stress from work." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">Jogging has many benefits for health. (be)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Jogging is beneficial for health." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">Do you need glue for this model? (use)</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Do you use glue for this model?" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 5: Write complete sentences using the given words</h4>
+                            <p class="exercise-instruction">👉 Use the following words to make meaningful sentences in present simple:</p>
+
+                            <div class="grid grid-cols-1 w-full gap-y-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">gardening / my mother / every weekend</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="My mother does gardening every weekend." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">these insects / belong to / unusual species</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="These insects belong to unusual species." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">the sun / set / early / in winter</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="The sun sets early in winter." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">my sister / not take on / too much responsibility</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="My sister does not take on too much responsibility." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center w-full">
+                                    <span class="font-medium text-gray-700">yoga / help / reduce stress</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Yoga helps reduce stress." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (radio.value === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (radio.checked && radio.value !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Drag and drop functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dragItems = document.querySelectorAll('.drag-item');
+            const dropZones = document.querySelectorAll('.drop-zone');
+            
+            // Add event listeners for drag items
+            dragItems.forEach(item => {
+                item.addEventListener('dragstart', dragStart);
+            });
+            
+            // Add event listeners for drop zones
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', dragOver);
+                zone.addEventListener('dragenter', dragEnter);
+                zone.addEventListener('dragleave', dragLeave);
+                zone.addEventListener('drop', drop);
+            });
+        });
+        
+        let draggedItem = null;
+        
+        function dragStart() {
+            draggedItem = this;
+            setTimeout(() => {
+                this.style.display = 'none';
+            }, 0);
+        }
+        
+        function dragOver(e) {
+            e.preventDefault();
+        }
+        
+        function dragEnter(e) {
+            e.preventDefault();
+            this.classList.add('highlight');
+        }
+        
+        function dragLeave() {
+            this.classList.remove('highlight');
+        }
+        
+        function drop() {
+            this.classList.remove('highlight');
+            if (draggedItem) {
+                this.appendChild(draggedItem);
+                draggedItem.style.display = 'inline-block';
+                draggedItem = null;
+            }
+        }
+        
+        function checkDragAnswer(zoneId) {
+            const dropZone = document.getElementById(zoneId);
+            const correctAnswer = dropZone.dataset.answer.toLowerCase().replace(/\s+/g, ' ');
+            const userAnswer = Array.from(dropZone.children)
+                .map(item => item.textContent.trim())
+                .join(' ')
+                .toLowerCase()
+                .replace(/\s+/g, ' ');
+            
+            const feedbackElement = document.getElementById(`feedback-${zoneId.split('-')[2]}`);
+            
+            if (userAnswer === correctAnswer) {
+                dropZone.classList.add('bg-green-100', 'border-green-500');
+                dropZone.classList.remove('bg-red-100', 'border-red-500');
+                feedbackElement.textContent = 'Correct!';
+                feedbackElement.className = 'ml-2 text-green-600';
+            } else {
+                dropZone.classList.add('bg-red-100', 'border-red-500');
+                dropZone.classList.remove('bg-green-100', 'border-green-500');
+                feedbackElement.textContent = 'Try again!';
+                feedbackElement.className = 'ml-2 text-red-600';
+            }
+        }
+    </script>
+</body>
+</html>
