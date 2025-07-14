@@ -588,6 +588,13 @@
       "description": "Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     },
+    "tests/pre-gs7-test-2-paper-2": {
+      "path": "tests/pre-gs7-test-2-paper-2",
+      "title": "Pre GS7 - English Grammar Test 2 - Paper 2",
+      "author": "Gen8",
+      "description": "Tính từ, cấu trúc so sánh, động từ, giới từ",
+      "category": "tests"
+    },
     "tests/gs7-tenses-test-paper-4": {
       "path": "tests/gs7-tenses-test-paper-4",
       "title": "GS7 Tenses Test - Paper 4",
@@ -600,6 +607,13 @@
       "title": "Pre Gs6 Test 1 - Paper 5",
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs9-test-1-paper-2": {
+      "path": "tests/pre-gs9-test-1-paper-2",
+      "title": "Pre GS9 - English Grammar Test 1 - Paper 1",
+      "author": "Gen8",
+      "description": "Hiện tại đơn – Hiện tại tiếp diễn – Quá khứ đơn – Quá khứ tiếp diễn – Hiện tại hoàn thành",
       "category": "tests"
     },
     "tests/pre-gs7-test-1-paper-5": {
@@ -630,6 +644,13 @@
       "description": "Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     },
+    "tests/pre-gs7-test-2-paper-5": {
+      "path": "tests/pre-gs7-test-2-paper-5",
+      "title": "Pre GS7 - English Grammar Test 2 - Paper 5",
+      "author": "Gen8",
+      "description": "Tính từ, cấu trúc so sánh, động từ, giới từ",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-2-paper-3": {
       "path": "tests/pre-gs6-test-2-paper-3",
       "title": "Pre GS6 - English Grammar Test 2 - Paper 3",
@@ -637,11 +658,25 @@
       "description": "Động từ, tính từ",
       "category": "tests"
     },
+    "tests/pre-gs9-test-1-paper-3": {
+      "path": "tests/pre-gs9-test-1-paper-3",
+      "title": "Pre GS9 - English Grammar Test 1 - Paper 3",
+      "author": "Gen8",
+      "description": "Hiện tại đơn – Hiện tại tiếp diễn – Quá khứ đơn – Quá khứ tiếp diễn – Hiện tại hoàn thành",
+      "category": "tests"
+    },
     "tests/gs7-tenses-test-paper-3": {
       "path": "tests/gs7-tenses-test-paper-3",
       "title": "GS7 Tenses Test - Paper 2",
       "author": "Gen8",
       "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
+      "category": "tests"
+    },
+    "tests/pre-gs9-test-1-paper-5": {
+      "path": "tests/pre-gs9-test-1-paper-5",
+      "title": "Pre GS9 - English Grammar Test 1 - Paper 5",
+      "author": "Gen8",
+      "description": "Hiện tại đơn – Hiện tại tiếp diễn – Quá khứ đơn – Quá khứ tiếp diễn – Hiện tại hoàn thành",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-8": {
@@ -707,6 +742,27 @@
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
     },
+    "tests/pre-gs7-test-2-paper-1": {
+      "path": "tests/pre-gs7-test-2-paper-1",
+      "title": "Pre GS7 - English Grammar Test 2 - Paper 1",
+      "author": "Gen8",
+      "description": "Tính từ, cấu trúc so sánh, động từ, giới từ",
+      "category": "tests"
+    },
+    "tests/pre-gs7-test-2-paper-3": {
+      "path": "tests/pre-gs7-test-2-paper-3",
+      "title": "Pre GS7 - English Grammar Test 2 - Paper 3",
+      "author": "Gen8",
+      "description": "Tính từ, cấu trúc so sánh, động từ, giới từ",
+      "category": "tests"
+    },
+    "tests/pre-gs9-test-1-paper-1": {
+      "path": "tests/pre-gs9-test-1-paper-1",
+      "title": "Pre GS9 - English Grammar Test 1 - Paper 1",
+      "author": "Gen8",
+      "description": "Hiện tại đơn – Hiện tại tiếp diễn – Quá khứ đơn – Quá khứ tiếp diễn – Hiện tại hoàn thành",
+      "category": "tests"
+    },
     "tests/pre-gs7-test-1-paper-3": {
       "path": "tests/pre-gs7-test-1-paper-3",
       "title": "Pre Gs7 Test 1 - Paper 3",
@@ -733,6 +789,20 @@
       "title": "Pre Gs6 Test 1 - Paper 7",
       "author": "Anh Thư",
       "description": "Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs7-test-2-paper-4": {
+      "path": "tests/pre-gs7-test-2-paper-4",
+      "title": "Pre GS7 - English Grammar Test 2 - Paper 4",
+      "author": "Gen8",
+      "description": "Tính từ, cấu trúc so sánh, động từ, giới từ",
+      "category": "tests"
+    },
+    "tests/pre-gs9-test-1-paper-4": {
+      "path": "tests/pre-gs9-test-1-paper-4",
+      "title": "Pre GS9 - English Grammar Test 1 - Paper 4",
+      "author": "Gen8",
+      "description": "Hiện tại đơn – Hiện tại tiếp diễn – Quá khứ đơn – Quá khứ tiếp diễn – Hiện tại hoàn thành",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-6": {
