@@ -637,6 +637,20 @@
       "description": "Động từ, tính từ",
       "category": "tests"
     },
+    "tests/pre-gs6-test-3-paper-2": {
+      "path": "tests/pre-gs6-test-3-paper-2",
+      "title": "Pre GS6 - English Grammar Test 3 - Paper 2",
+      "author": "Gen8",
+      "description": "Trạng từ cách thức, tần suất, giới từ",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-3-paper-5": {
+      "path": "tests/pre-gs6-test-3-paper-5",
+      "title": "Pre GS6 - English Grammar Test 3 - Paper 5",
+      "author": "Gen8",
+      "description": "Trạng từ cách thức, tần suất, giới từ",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-11": {
       "path": "tests/pre-gs6-test-1-paper-11",
       "title": "Pre Gs6 Test 1 - Paper 11",
@@ -777,11 +791,25 @@
       "description": "Động từ, tính từ",
       "category": "tests"
     },
+    "tests/pre-gs6-test-3-paper-3": {
+      "path": "tests/pre-gs6-test-3-paper-3",
+      "title": "Pre GS6 - English Grammar Test 3 - Paper 3",
+      "author": "Gen8",
+      "description": "Trạng từ cách thức, tần suất, giới từ",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-1": {
       "path": "tests/pre-gs6-test-1-paper-1",
       "title": "Pre Gs6 Test 1 - Paper 1",
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-3-paper-1": {
+      "path": "tests/pre-gs6-test-3-paper-1",
+      "title": "Pre GS6 - English Grammar Test 3 - Paper 1",
+      "author": "Gen8",
+      "description": "Trạng từ cách thức, tần suất, giới từ",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-7": {
@@ -796,6 +824,13 @@
       "title": "Pre GS7 - English Grammar Test 2 - Paper 4",
       "author": "Gen8",
       "description": "Tính từ, cấu trúc so sánh, động từ, giới từ",
+      "category": "tests"
+    },
+    "tests/pre-gs6-test-3-paper-4": {
+      "path": "tests/pre-gs6-test-3-paper-4",
+      "title": "Pre GS6 - English Grammar Test 3 - Paper 4",
+      "author": "Gen8",
+      "description": "Trạng từ cách thức, tần suất, giới từ",
       "category": "tests"
     },
     "tests/pre-gs9-test-1-paper-4": {
