@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRẠNG TỪ CHỈ TẦN SUẤT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        function adjustFontSize() {
+            const screenWidth = window.innerWidth;
+            const htmlElement = document.documentElement;
+
+            if (screenWidth <= 768) { // Mobile breakpoint
+                htmlElement.style.fontSize = '20px';
+            } else {
+                // Scale font size based on screen width, with 30px at 1680px width
+                const scaleFactor = screenWidth / 1680;
+                const fontSize = Math.max(20, Math.min(30, 30 * scaleFactor));
+                htmlElement.style.fontSize = `${fontSize}px`;
+            }
+        }
+
+        function showZoomInstructions() {
+            // Check if it's a mobile device
+            if (window.innerWidth <= 768) {
+                return;
+            }
+
+            if (localStorage.getItem('hideZoomInstructions')) {
+                return;
+            }
+
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.95);
+                background: white;
+                padding: 25px;
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                z-index: 1000;
+                max-width: 90%;
+                width: 400px;
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+
+            popup.innerHTML = `
+                <div style="
+                    text-align: center;
+                    margin-bottom: 20px;
+                ">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 15px;">
+                        <path d="M15 3H21V9" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 21H3V15" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 3L14 10" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 21L10 14" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 style="
+                        margin: 0 0 15px 0;
+                        color: #1f2937;
+                        font-size: 25px;
+                        font-weight: 600;
+                    ">Hướng dẫn phóng to/thu nhỏ</h3>
+                </div>
+                <div style="
+                    background: #f3f4f6;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                ">
+                    <p style="
+                        margin: 0;
+                        color: #4b5563;
+                        font-size: 20px;
+                        line-height: 1.6;
+                    ">
+                        Bạn có thể sử dụng tổ hợp phím sau để phóng to/thu nhỏ nội dung cho phù hợp với màn hình của bạn:
+                    </p>
+                    <div style="
+                        margin-top: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    ">
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Windows</span>
+                            <span style="color: #4b5563;">Ctrl + (+/-)</span>
+                        </div>
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Mac</span>
+                            <span style="color: #4b5563;">Command + (+/-)</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="dismissPopup" style="
+                    background: #4f46e5;
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    font-size: 15px;
+                    font-weight: 500;
+                    transition: background-color 0.2s ease;
+                ">Không hiển thị lại</button>
+            `;
+
+            document.body.appendChild(popup);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                popup.style.transform = 'translate(-50%, -50%) scale(1)';
+                popup.style.opacity = '1';
+            });
+
+            // Add hover effect to button
+            const button = document.getElementById('dismissPopup');
+            button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = '#4338ca';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = '#4f46e5';
+            });
+
+            button.addEventListener('click', () => {
+                popup.style.transform = 'translate(-50%, -50%) scale(0.95)';
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    localStorage.setItem('hideZoomInstructions', 'true');
+                    popup.remove();
+                }, 300);
+            });
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            adjustFontSize();
+            showZoomInstructions();
+        });
+
+        // Run when window is resized
+        window.addEventListener('resize', adjustFontSize);
+    </script>
+
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.45);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+        }
+
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: '#4338ca';
+        }
+
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .thought-bubble {
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thought-bubble:after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent white;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+
+        .boy {
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .verb-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .verb-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .verb-example {
+            border-left: 4px solid #4f46e5;
+            padding-left: 12px;
+        }
+
+        .outline-content {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .outline-item {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+        }
+
+        .outline-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .outline-slide {
+            display: block;
+            transform: scale(0.3);
+            transform-origin: top left;
+            width: 333.33%; /* 100% / 0.3 */
+            height: 333.33%; /* 100% / 0.3 */
+            pointer-events: none;
+            background-color: white;
+        }
+
+        .slide-preview {
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 0 auto;
+        }
+                
+        .slide-wrapper {
+            width: 1200px;
+            height: 1000px;
+            transform: scale(0.25);
+            transform-origin: top left;
+        }
+
+        .slide-wrapper > .slide {
+            display: block !important;
+            pointer-events: none;
+        }
+
+        /* Audio button style */
+        .audio-btn {
+            background-color: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.2s;
+        }
+
+        .audio-btn:hover {
+            background-color: #2563eb;
+            transform: scale(1.1);
+        }
+
+        /* Frequency scale visualization */
+        .frequency-scale {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 120px;
+            margin: 20px 0;
+            padding: 0 10px;
+        }
+
+        .frequency-bar {
+            width: 8%;
+            background: linear-gradient(to top, #4f46e5, #818cf8);
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .frequency-label {
+            position: absolute;
+            bottom: -25px;
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .frequency-word {
+            position: absolute;
+            top: -25px;
+            font-weight: bold;
+            color: #4f46e5;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center min-h-screen flex items-center justify-center p-2">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div id="outlineContent" class="outline-content">
+                <!-- Outline content will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+
+            <!-- Slide 1: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">GRAMMAR FOR PRE-GRADE 6</h1>
+                    <div
+                        class="bg-yellow-400 text-2xl md:text-4xl font-bold px-6 py-3 rounded-full mb-5 shadow-lg floating">
+                        TRẠNG TỪ CHỈ TẦN SUẤT
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://img.freepik.com/free-vector/hand-drawn-english-learning-illustration_23-2149470189.jpg"
+                                alt="Grammar Learning" class="object-cover h-52 rounded-xl floating">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-indigo-100 to-green-200 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu khái niệm trạng từ chỉ tần suất</li>
+                                <li>Nhận biết các trạng từ chỉ tần suất phổ biến</li>
+                                <li>Nắm vững vị trí của trạng từ trong câu</li>
+                                <li>Vận dụng đúng vào giao tiếp hàng ngày</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="my-3 opacity-0">---</div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Khái niệm trạng từ chỉ tần suất -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">1. Khái niệm trạng từ chỉ tần suất</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Trạng từ chỉ tần suất là từ dùng để diễn tả <span class="highlight">mức độ thường xuyên</span> của một hành động.</p>
+
+                            <div
+                                class="mt-6 bg-gradient-to-r from-blue-100 to-indigo-100 p-4 rounded-lg border-l-4 border-blue-500">
+                                <p class="font-bold text-blue-800 text-xl">Ví dụ:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p class="text-xl">I <span class="text-red-500 font-bold">always</span> brush my teeth.</p>
+                                        <p class="text-gray-600">(Tôi luôn luôn đánh răng)</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p class="text-xl">She <span class="text-red-500 font-bold">never</span> eats fast food.</p>
+                                        <p class="text-gray-600">(Cô ấy không bao giờ ăn đồ ăn nhanh)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 bg-yellow-100 p-4 rounded-lg">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Ghi nhớ:</p>
+                                <p class="text-lg">Trạng từ chỉ tần suất trả lời cho câu hỏi "How often?" (Bao lâu một lần?)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Các trạng từ chỉ tần suất phổ biến -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">2. Các trạng từ chỉ tần suất phổ biến</h2>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Dưới đây là các trạng từ chỉ tần suất từ thường xuyên nhất đến không bao giờ:</p>
+
+                            <!-- Frequency scale visualization -->
+                            <div class="frequency-scale">
+                                <div class="frequency-bar" style="height: 100%;">
+                                    <span class="frequency-word">always</span>
+                                    <span class="frequency-label">100%</span>
+                                </div>
+                                <div class="frequency-bar" style="height: 90%;">
+                                    <span class="frequency-word">usually</span>
+                                    <span class="frequency-label">90%</span>
+                                </div>
+                                <div class="frequency-bar" style="height: 80%;">
+                                    <span class="frequency-word">often</span>
+                                    <span class="frequency-label">80%</span>
+                                </div>
+                                <div class="frequency-bar" style="height: 50%;">
+                                    <span class="frequency-word">sometimes</span>
+                                    <span class="frequency-label">50%</span>
+                                </div>
+                                <div class="frequency-bar" style="height: 30%;">
+                                    <span class="frequency-word">occasionally</span>
+                                    <span class="frequency-label">30%</span>
+                                </div>
+                                <div class="frequency-bar" style="height: 10%;">
+                                    <span class="frequency-word">rarely</span>
+                                    <span class="frequency-label">10%</span>
+                                </div>
+                                <div class="frequency-bar" style="height: 5%;">
+                                    <span class="frequency-word">hardly ever</span>
+                                    <span class="frequency-label">5%</span>
+                                </div>
+                                <div class="frequency-bar" style="height: 0%;">
+                                    <span class="frequency-word">never</span>
+                                    <span class="frequency-label">0%</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 bg-green-100 p-4 rounded-lg">
+                                <p class="font-bold text-green-800 text-xl">Câu hỏi:</p>
+                                <p class="text-xl mb-3">Trạng từ nào diễn tả tần suất khoảng 50%?</p>
+                                <button onclick="showAnswer(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Xem đáp
+                                    án</button>
+                                <div class="answer hidden text-xl mt-2">
+                                    <p class="correct">Đáp án: "sometimes" (đôi khi, thỉnh thoảng)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Vị trí trong câu với động từ thường -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">3. Vị trí với động từ thường</h2>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Khi câu có động từ thường, trạng từ chỉ tần suất đứng <span class="highlight">trước động từ chính</span>:</p>
+
+                            <div class="mt-6 grid grid-cols-1 gap-4">
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-500">
+                                    <p class="text-xl">S + <span class="text-purple-500 font-bold">trạng từ tần suất</span> + V + O</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow verb-example">
+                                    <p class="text-xl">She <span class="text-purple-500 font-bold">often</span> visits her grandparents.</p>
+                                    <p class="text-gray-600">(Cô ấy thường xuyên thăm ông bà)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow verb-example">
+                                    <p class="text-xl">They <span class="text-purple-500 font-bold">sometimes</span> play tennis.</p>
+                                    <p class="text-gray-600">(Họ thỉnh thoảng chơi quần vợt)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-100 p-4 rounded-lg">
+                            <p class="font-bold text-yellow-800 text-xl">💡 Ngoại lệ:</p>
+                            <p class="text-lg">Khi động từ là "have to" hoặc "used to", trạng từ đứng sau:</p>
+                            <p class="text-xl mt-2">I <span class="highlight">always</span> have to wake up early.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Vị trí trong câu với động từ to be -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">4. Vị trí với động từ to be</h2>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Khi câu có động từ to be, trạng từ chỉ tần suất đứng <span class="highlight">sau động từ to be</span>:</p>
+
+                            <div class="mt-6 grid grid-cols-1 gap-4">
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p class="text-xl">S + to be + <span class="text-blue-500 font-bold">trạng từ tần suất</span> + ...</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow verb-example">
+                                    <p class="text-xl">He <span class="text-blue-500 font-bold">is</span> <span class="text-blue-500 font-bold">always</span> late.</p>
+                                    <p class="text-gray-600">(Anh ấy luôn luôn muộn)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg shadow verb-example">
+                                    <p class="text-xl">They <span class="text-blue-500 font-bold">are</span> <span class="text-blue-500 font-bold">usually</span> happy.</p>
+                                    <p class="text-gray-600">(Họ thường xuyên vui vẻ)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-pink-100 p-4 rounded-lg">
+                            <p class="font-bold text-pink-800 text-xl">Câu hỏi:</p>
+                            <p class="text-xl mb-3">Điền trạng từ "never" vào câu: "She ___ on time."</p>
+                            <button onclick="showAnswer(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Xem đáp
+                                án</button>
+                            <div class="answer hidden text-xl mt-2">
+                                <p class="correct">Đáp án: "She is never on time." (Cô ấy không bao giờ đúng giờ)</p>
+                                <p class="text-gray-600 mt-2">Giải thích: Với động từ to be "is", trạng từ "never" đứng sau.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Bài tập 1 - Điền trạng từ phù hợp -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Điền trạng từ phù hợp</h2>
+                    <p class="text-2xl mb-8">Chọn trạng từ chỉ tần suất phù hợp để hoàn thành câu:</p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">I ___ (100%) eat breakfast before school.
+                                <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl ml-2"
+                                    data-answer="always">
+                                    <option value="">Chọn...</option>
+                                    <option value="always">always</option>
+                                    <option value="usually">usually</option>
+                                    <option value="never">never</option>
+                                </select>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)"
+                                    class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">She ___ (0%) watches horror movies.
+                                <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl ml-2"
+                                    data-answer="never">
+                                    <option value="">Chọn...</option>
+                                    <option value="sometimes">sometimes</option>
+                                    <option value="never">never</option>
+                                    <option value="often">often</option>
+                                </select>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)"
+                                    class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">We ___ (50%) go to the cinema on weekends.
+                                <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl ml-2"
+                                    data-answer="sometimes">
+                                    <option value="">Chọn...</option>
+                                    <option value="always">always</option>
+                                    <option value="sometimes">sometimes</option>
+                                    <option value="rarely">rarely</option>
+                                </select>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)"
+                                    class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-purple-100 p-4 rounded-lg">
+                        <p class="font-bold text-purple-800 text-xl">💡 Gợi ý:</p>
+                        <p class="text-lg">Chú ý phần trăm trong ngoặc để chọn trạng từ phù hợp.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Bài tập 2 - Sắp xếp từ thành câu -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Sắp xếp từ thành câu</h2>
+                    <p class="text-2xl mb-8">Sắp xếp các từ sau thành câu đúng:</p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Các từ: <span class="font-bold">usually / breakfast / I / at 7am / have</span></p>
+                            <input type="text" class="exercise-input w-full"
+                                data-answer="I usually have breakfast at 7am" placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Các từ: <span class="font-bold">never / late / is / she / for school</span></p>
+                            <input type="text" class="exercise-input w-full" data-answer="She is never late for school"
+                                placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-blue-100 p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 text-xl">💡 Quy tắc:</p>
+                        <p class="text-lg">Nhớ vị trí trạng từ: trước động từ thường, sau động từ to be.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Bài tập 3 - Tìm lỗi sai -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Tìm lỗi sai</h2>
+                    <p class="text-2xl mb-8">Tìm và sửa lỗi sai trong các câu sau:</p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">"My brother always is happy."</p>
+                            <input type="text" class="exercise-input w-full" data-answer="My brother is always happy"
+                                placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">"They go usually to the park on Sundays."</p>
+                            <input type="text" class="exercise-input w-full" data-answer="They usually go to the park on Sundays"
+                                placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-green-100 p-4 rounded-lg">
+                        <p class="font-bold text-green-800 text-xl">💡 Nhớ:</p>
+                        <p class="text-lg">Trạng từ chỉ tần suất đứng sau "to be" nhưng trước động từ thường.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Bài tập 4 - Viết câu theo gợi ý -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 4: Viết câu theo gợi ý</h2>
+                    <p class="text-2xl mb-8">Viết câu hoàn chỉnh sử dụng trạng từ chỉ tần suất:</p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">(always) I / do / homework / after school</p>
+                            <input type="text" class="exercise-input w-full" data-answer="I always do homework after school"
+                                placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">(usually) My parents / be / at home / in the evening</p>
+                            <input type="text" class="exercise-input w-full" data-answer="My parents are usually at home in the evening"
+                                placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-yellow-100 p-4 rounded-lg">
+                        <p class="font-bold text-yellow-800 text-xl">💡 Lưu ý:</p>
+                        <p class="text-lg">Chú ý vị trí trạng từ trong câu và chia động từ phù hợp.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Bài tập 5 - Nối câu -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 5: Nối câu</h2>
+                    <p class="text-2xl mb-8">Nối câu ở cột A với câu phù hợp ở cột B:</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl font-bold mb-3">Cột A</p>
+                            <div class="space-y-3">
+                                <div class="p-3 bg-blue-50 rounded-lg cursor-pointer" draggable="true" data-match="2" onclick="matchSentence(this)">1. I always wake up early</div>
+                                <div class="p-3 bg-blue-50 rounded-lg cursor-pointer" draggable="true" data-match="3" onclick="matchSentence(this)">2. She usually has cereal</div>
+                                <div class="p-3 bg-blue-50 rounded-lg cursor-pointer" draggable="true" data-match="1" onclick="matchSentence(this)">3. They never forget</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl font-bold mb-3">Cột B</p>
+                            <div class="space-y-3">
+                                <div class="p-3 bg-green-50 rounded-lg cursor-pointer" draggable="true" data-match="3" onclick="matchSentence(this)">A. for breakfast</div>
+                                <div class="p-3 bg-green-50 rounded-lg cursor-pointer" draggable="true" data-match="1" onclick="matchSentence(this)">B. at 6 o'clock</div>
+                                <div class="p-3 bg-green-50 rounded-lg cursor-pointer" draggable="true" data-match="2" onclick="matchSentence(this)">C. to do their homework</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-pink-100 p-4 rounded-lg">
+                        <button onclick="checkMatching()" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra kết quả</button>
+                        <div id="matchingResult" class="hidden text-xl mt-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Tổng kết -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Tổng kết bài học</h2>
+
+                    <div class="w-full bg-white p-6 rounded-xl shadow-md">
+                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                            <p class="text-xl font-bold text-blue-800 text-center">Kiến thức trọng tâm về trạng từ chỉ tần suất</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-indigo-800">1. Khái niệm</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Diễn tả mức độ thường xuyên của hành động</li>
+                                    <li>Trả lời cho câu hỏi "How often?"</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-green-800">2. Các trạng từ phổ biến</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Từ thường xuyên đến không bao giờ: always, usually, often, sometimes, rarely, hardly ever, never</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-yellow-800">3. Vị trí trong câu</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Sau động từ to be: She is always happy</li>
+                                    <li>Trước động từ thường: They usually play football</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-purple-800">4. Ghi nhớ nhanh</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Với to be: S + to be + adv + ...</li>
+                                    <li>Với động từ thường: S + adv + V + ...</li>
+                                    <li>Nhớ thứ tự các trạng từ từ 100% đến 0%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Kết thúc -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">Chúc mừng!</h1>
+                    <div class="text-2xl md:text-3xl text-gray-700 mb-3">
+                        <p class="mb-4">Bạn đã hoàn thành bài học về</p>
+                        <div
+                            class="bg-gradient-to-r from-yellow-400 to-red-500 text-white text-4xl font-bold px-6 py-2 rounded-full inline-block">
+                            TRẠNG TỪ CHỈ TẦN SUẤT
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-3">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                            class="h-32 rounded-xl object-cover" alt="Celebration Image">
+                    </div>
+
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl max-w-xl">
+                        <p class="text-xl md:text-2xl font-bold mb-2">Hẹn gặp lại trong bài học tiếp theo!</p>
+                        <p class="text-sm mt-2">Grammar for Pre-Secondary</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            const isHidden = modal.classList.contains('hidden');
+                        
+            if (isHidden) {
+                // Generate outline content when opening
+                generateOutline();
+            }
+                        
+            modal.classList.toggle('hidden');
+        }
+
+        function generateOutline() {
+            const outlineContent = document.getElementById('outlineContent');
+            outlineContent.innerHTML = '';
+            const slides = document.querySelectorAll('.slide');
+            let outlineHTML = '';
+
+            slides.forEach((slide, index) => {
+                const isActive = index === currentSlide;
+                const slideClone = slide.cloneNode(true);
+                                
+                slideClone.classList.remove('active');
+                                
+                outlineHTML += `
+                    <div class="outline-item rounded-lg cursor-pointer relative ${isActive ? 'ring-2 ring-indigo-500 bg-indigo-50' : 'bg-white shadow-md'}"
+                          onclick="goToSlide(${index})">
+                        <div class="slide-number text-xs bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full font-medium mb-2 inline-block absolute bottom-1 right-5 z-10">
+                            Slide ${index + 1}
+                        </div>
+                        <div class="slide-preview">
+                            <div class="slide-wrapper">
+                                ${slideClone.outerHTML}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            outlineContent.innerHTML = outlineHTML;
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+
+            // Update outline if it's open
+            if (!document.getElementById('outlineModal').classList.contains('hidden')) {
+                generateOutline();
+            }
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Exercise functions
+        function showAnswer(button) {
+            const answerDiv = button.nextElementSibling;
+            answerDiv.classList.toggle('hidden');
+            button.textContent = answerDiv.classList.contains('hidden') ? 'Xem đáp án' : 'Ẩn đáp án';
+        }
+
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là "${correctAnswer}" (Bạn điền: "${userAnswer || 'trống'}")</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkEditable(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const editableSpans = exerciseItem.querySelectorAll('[contenteditable="true"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            editableSpans.forEach(span => {
+                const userAnswer = span.textContent.trim().toLowerCase();
+                const correctAnswer = span.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    span.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là "${correctAnswer}" (Bạn điền: "${userAnswer || 'trống'}")</p>`;
+                    span.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkSelect(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const select = exerciseItem.querySelector('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const correctAnswer = select.dataset.answer;
+
+            if (select.value === correctAnswer) {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác!</p>';
+                select.classList.add('border-green-500');
+                select.classList.remove('border-indigo-300');
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${correctAnswer}</span></p>`;
+                select.classList.add('border-red-500');
+                select.classList.remove('border-indigo-300');
+            }
+
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const selects = exerciseItem.querySelectorAll('select');
+            const editableSpans = exerciseItem.querySelectorAll('[contenteditable="true"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset inputs
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset selects
+            selects.forEach(select => {
+                select.value = '';
+                select.classList.remove('border-green-500', 'border-red-500');
+                select.classList.add('border-indigo-300');
+            });
+
+            // Reset editable spans
+            editableSpans.forEach(span => {
+                span.textContent = '';
+                span.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            button.onclick = function () {
+                if (inputs.length > 0) {
+                    checkInput(button);
+                } else if (selects.length > 0) {
+                    checkSelect(button);
+                } else if (editableSpans.length > 0) {
+                    checkEditable(button);
+                }
+            };
+
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
+        }
+
+        // Matching exercise functions
+        let selectedItems = [];
+        
+        function matchSentence(item) {
+            // Toggle selection
+            if (item.classList.contains('bg-blue-200') || item.classList.contains('bg-green-200')) {
+                item.classList.remove('bg-blue-200', 'bg-green-200');
+                selectedItems = selectedItems.filter(selected => selected.element !== item);
+            } else {
+                if (item.parentElement.parentElement.querySelector('.bg-blue-50')) {
+                    item.classList.add('bg-blue-200');
+                } else {
+                    item.classList.add('bg-green-200');
+                }
+                
+                selectedItems.push({
+                    element: item,
+                    match: item.dataset.match
+                });
+            }
+            
+            // Check if we have a pair
+            if (selectedItems.length === 2) {
+                const [first, second] = selectedItems;
+                
+                if (first.match === second.match) {
+                    // Correct match
+                    first.element.classList.add('bg-green-100');
+                    second.element.classList.add('bg-green-100');
+                    first.element.classList.remove('bg-blue-200', 'bg-green-200');
+                    second.element.classList.remove('bg-blue-200', 'bg-green-200');
+                    
+                    // Disable matched items
+                    first.element.style.opacity = '0.6';
+                    first.element.style.pointerEvents = 'none';
+                    second.element.style.opacity = '0.6';
+                    second.element.style.pointerEvents = 'none';
+                } else {
+                    // Wrong match
+                    first.element.classList.add('bg-red-100');
+                    second.element.classList.add('bg-red-100');
+                    
+                    // Reset after delay
+                    setTimeout(() => {
+                        first.element.classList.remove('bg-blue-200', 'bg-green-200', 'bg-red-100');
+                        second.element.classList.remove('bg-blue-200', 'bg-green-200', 'bg-red-100');
+                    }, 1000);
+                }
+                
+                selectedItems = [];
+            }
+        }
+        
+        function checkMatching() {
+            const resultDiv = document.getElementById('matchingResult');
+            const unmatchedItems = document.querySelectorAll('[draggable="true"]:not([style*="opacity: 0.6"])');
+            
+            if (unmatchedItems.length === 0) {
+                resultDiv.innerHTML = '<p class="correct">✓ Hoàn hảo! Bạn đã nối đúng tất cả các cặp.</p>';
+            } else {
+                resultDiv.innerHTML = `<p class="incorrect">✗ Còn ${unmatchedItems.length/2} cặp chưa được nối đúng. Hãy thử lại!</p>`;
+            }
+            
+            resultDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

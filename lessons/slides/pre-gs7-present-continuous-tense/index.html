@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thì Hiện Tại Tiếp Diễn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'baloo': ['Baloo 2', 'cursive'],
+                    },
+                    colors: {
+                        'primary': '#4f46e5',
+                        'secondary': '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+        }
+
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .audio-btn {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .audio-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .verb-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .verb-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .example-box {
+            border-left: 4px solid #4f46e5;
+            padding-left: 12px;
+        }
+
+        .speech-bubble {
+            position: relative;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50px;
+            border-width: 15px 15px 0;
+            border-style: solid;
+            border-color: white transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50 min-h-screen flex items-center justify-center p-2 font-baloo">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <div
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+
+            <!-- Slide 1: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">NGỮ PHÁP TIẾNG ANH</h1>
+                    <div class="bg-yellow-400 text-2xl md:text-4xl font-bold px-6 py-3 rounded-full mb-5 shadow-lg floating">
+                        THÌ HIỆN TẠI TIẾP DIỄN
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://img.freepik.com/free-vector/hand-drawn-english-school-background_23-2149464866.jpg"
+                                alt="Grammar Learning" class="object-cover h-52 rounded-xl floating">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-indigo-100 to-green-200 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu cách sử dụng thì hiện tại tiếp diễn</li>
+                                <li>Nắm vững cấu trúc câu</li>
+                                <li>Nhận biết dấu hiệu thì hiện tại tiếp diễn</li>
+                                <li>Làm thành thạo các bài tập</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Khái niệm -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">1. Thì hiện tại tiếp diễn là gì?</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Thì hiện tại tiếp diễn (Present Continuous) dùng để diễn tả:</p>
+                            
+                            <div class="mt-6 bg-gradient-to-r from-blue-100 to-indigo-100 p-4 rounded-lg border-l-4 border-blue-500">
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3">1</div>
+                                    <p class="font-bold text-blue-800 text-xl">Hành động đang xảy ra ngay lúc nói</p>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg shadow example-box">
+                                        <p class="text-xl">Look! It <span class="text-red-500 font-bold">is raining</span>.</p>
+                                        <p class="text-gray-600">(Nhìn kìa! Trời đang mưa)</p>
+                                        <div class="audio-btn mt-2 text-indigo-600 flex items-center" onclick="playAudio('audio1')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                            </svg>
+                                            Nghe
+                                        </div>
+                                        <audio id="audio1" src="https://ssl.gstatic.com/dictionary/static/sounds/20200429/rain--_gb_1.mp3"></audio>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow example-box">
+                                        <p class="text-xl">I <span class="text-red-500 font-bold">am reading</span> a book now.</p>
+                                        <p class="text-gray-600">(Tôi đang đọc sách)</p>
+                                        <div class="audio-btn mt-2 text-indigo-600 flex items-center" onclick="playAudio('audio2')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                            </svg>
+                                            Nghe
+                                        </div>
+                                        <audio id="audio2" src="https://ssl.gstatic.com/dictionary/static/sounds/20200429/read--_gb_1.mp3"></audio>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-yellow-100 p-4 rounded-lg">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Ghi nhớ:</p>
+                                <p class="text-lg">Thì hiện tại tiếp diễn giống như đang quay video - ghi lại hành động đang diễn ra ngay lúc đó.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Cách sử dụng 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">2. Cách sử dụng (tiếp)</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="mt-4 bg-gradient-to-r from-green-100 to-teal-100 p-4 rounded-lg border-l-4 border-green-500">
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-green-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3">2</div>
+                                    <p class="font-bold text-green-800 text-xl">Hành động tạm thời, không thường xuyên</p>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg shadow example-box">
+                                        <p class="text-xl">I <span class="text-red-500 font-bold">am staying</span> with my friend this week.</p>
+                                        <p class="text-gray-600">(Tuần này tôi đang ở với bạn)</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow example-box">
+                                        <p class="text-xl">She <span class="text-red-500 font-bold">is working</span> in Hanoi this month.</p>
+                                        <p class="text-gray-600">(Cô ấy đang làm việc ở HN tháng này)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-lg border-l-4 border-purple-500">
+                                <div class="flex items-center mb-3">
+                                    <div class="bg-purple-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3">3</div>
+                                    <p class="font-bold text-purple-800 text-xl">Hành động sẽ xảy ra trong tương lai gần</p>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg shadow example-box">
+                                        <p class="text-xl">We <span class="text-red-500 font-bold">are going</span> to the cinema tonight.</p>
+                                        <p class="text-gray-600">(Tối nay chúng tôi sẽ đi xem phim)</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow example-box">
+                                        <p class="text-xl">He <span class="text-red-500 font-bold">is meeting</span> his friends tomorrow.</p>
+                                        <p class="text-gray-600">(Ngày mai anh ấy sẽ gặp bạn bè)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-yellow-100 p-4 rounded-lg">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Mẹo nhớ:</p>
+                                <p class="text-lg">Khi thấy các từ "now, at the moment, today, this week..." thường là thì hiện tại tiếp diễn.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Cấu trúc câu -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">3. Cấu trúc câu</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Công thức chung:</p>
+                            
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                    <p class="font-bold text-red-800 text-xl">1. Câu khẳng định</p>
+                                    <p class="text-xl mt-2">S + am/is/are + V-ing</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl">I <span class="text-red-500 font-bold">am eating</span> breakfast.</p>
+                                        <p class="text-gray-600">(Tôi đang ăn sáng)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p class="font-bold text-blue-800 text-xl">2. Câu phủ định</p>
+                                    <p class="text-xl mt-2">S + am/is/are + not + V-ing</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl">She <span class="text-blue-500 font-bold">is not sleeping</span>.</p>
+                                        <p class="text-gray-600">(Cô ấy không ngủ)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                    <p class="font-bold text-green-800 text-xl">3. Câu hỏi</p>
+                                    <p class="text-xl mt-2">Am/Is/Are + S + V-ing?</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl"><span class="text-green-500 font-bold">Are</span> you <span class="text-green-500 font-bold">listening</span> to me?</p>
+                                        <p class="text-gray-600">(Bạn có đang nghe tôi không?)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-purple-100 p-4 rounded-lg">
+                            <p class="font-bold text-purple-800 text-xl">Câu h hỏi:</p>
+                            <p class="text-xl mb-3">Chọn câu đúng cấu trúc thì hiện tại tiếp diễn:</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="structure" class="mr-2" data-correct="false">
+                                    <span>He is play football now.</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="structure" class="mr-2" data-correct="true">
+                                    <span>They are watching TV at the moment.</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="structure" class="mr-2" data-correct="false">
+                                    <span>I am not write a letter.</span>
+                                </label>
+                            </div>
+                            <button onclick="checkRadio(this)" class="btn-check px-4 py-2 rounded-lg font-bold mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-xl mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Cách thêm -ing -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">4. Cách thêm -ing vào động từ</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Có 4 quy tắc chính:</p>
+                            
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-red-100 p-4 rounded-lg verb-card">
+                                    <p class="font-bold text-red-800 text-xl">1. Thêm -ing bình thường</p>
+                                    <p class="text-lg mt-2">play → playing<br>read → reading</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl">She <span class="text-red-500 font-bold">is reading</span> a book.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-100 p-4 rounded-lg verb-card">
+                                    <p class="font-bold text-blue-800 text-xl">2. Bỏ -e cuối rồi thêm -ing</p>
+                                    <p class="text-lg mt-2">write → writing<br>dance → dancing</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl">He <span class="text-blue-500 font-bold">is writing</span> a letter.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-green-100 p-4 rounded-lg verb-card">
+                                    <p class="font-bold text-green-800 text-xl">3. Gấp đôi phụ âm cuối</p>
+                                    <p class="text-lg mt-2">run → running<br>swim → swimming</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl">They <span class="text-green-500 font-bold">are swimming</span>.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-yellow-100 p-4 rounded-lg verb-card">
+                                    <p class="font-bold text-yellow-800 text-xl">4. Đổi -ie thành -y</p>
+                                    <p class="text-lg mt-2">lie → lying<br>die → dying</p>
+                                    <div class="mt-3 bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl">The dog <span class="text-yellow-600 font-bold">is lying</span> on the floor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-purple-100 p-4 rounded-lg">
+                            <p class="font-bold text-purple-800 text-xl">Bài tập nhỏ:</p>
+                            <p class="text-xl mb-3">Chọn dạng -ing đúng của động từ "sit":</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="ing" class="mr-2" data-correct="false">
+                                    <span>siting</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="ing" class="mr-2" data-correct="true">
+                                    <span>sitting</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="ing" class="mr-2" data-correct="false">
+                                    <span>sit</span>
+                                </label>
+                            </div>
+                            <button onclick="checkRadio(this)" class="btn-check px-4 py-2 rounded-lg font-bold mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-xl mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Dấu hiệu nhận biết -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">5. Dấu hiệu nhận biết</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Thì hiện tại tiếp diễn thường đi với các từ chỉ thời gian:</p>
+                            
+                            <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="bg-indigo-50 p-4 rounded-lg text-center">
+                                    <p class="font-bold text-indigo-800 text-xl">now</p>
+                                    <p class="text-gray-600">(bây giờ)</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                    <p class="font-bold text-blue-800 text-xl">at the moment</p>
+                                    <p class="text-gray-600">(ngay lúc này)</p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg text-center">
+                                    <p class="font-bold text-purple-800 text-xl">right now</p>
+                                    <p class="text-gray-600">(ngay bây giờ)</p>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-lg text-center">
+                                    <p class="font-bold text-red-800 text-xl">at present</p>
+                                    <p class="text-gray-600">(hiện tại)</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg text-center">
+                                    <p class="font-bold text-green-800 text-xl">today</p>
+                                    <p class="text-gray-600">(hôm nay)</p>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg text-center">
+                                    <p class="font-bold text-yellow-800 text-xl">this week</p>
+                                    <p class="text-gray-600">(tuần này)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-gradient-to-r from-pink-100 to-red-100 p-4 rounded-lg">
+                                <p class="font-bold text-pink-800 text-xl">Ví dụ:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl"><span class="text-pink-500 font-bold">Right now</span>, I <span class="text-pink-500 font-bold">am doing</span> my homework.</p>
+                                        <p class="text-gray-600">(Ngay bây giờ, tôi đang làm bài tập)</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg example-box">
+                                        <p class="text-xl">She <span class="text-pink-500 font-bold">is cooking</span> dinner <span class="text-pink-500 font-bold">at the moment</span>.</p>
+                                        <p class="text-gray-600">(Cô ấy đang nấu bữa tối)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-100 p-4 rounded-lg">
+                            <p class="font-bold text-yellow-800 text-xl">💡 Mẹo nhớ:</p>
+                            <p class="text-lg">Khi thấy các từ "now, at the moment, right now..." thì chắc chắn là thì hiện tại tiếp diễn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Bài tập 1 - Chọn đáp án đúng -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Chọn đáp án đúng</h2>
+                    <p class="text-2xl mb-8">Chọn câu đúng sử dụng thì hiện tại tiếp diễn:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">Chọn câu đúng:</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="ex1" class="mr-2" data-correct="false">
+                                    <span>She is watch TV now.</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="ex1" class="mr-2" data-correct="true">
+                                    <span>They are playing football in the park.</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="ex1" class="mr-2" data-correct="false">
+                                    <span>I am not listen to music.</span>
+                                </label>
+                            </div>
+                            <button onclick="checkRadio(this)" class="btn-check px-4 py-2 rounded-lg font-bold mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-xl mt-2"></div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-4">Chọn câu h hỏi đúng:</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="ex2" class="mr-2" data-correct="false">
+                                    <span>Do you watching TV?</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="ex2" class="mr-2" data-correct="true">
+                                    <span>Are you watching TV?</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="ex2" class="mr-2" data-correct="false">
+                                    <span>Is you watching TV?</span>
+                                </label>
+                            </div>
+                            <button onclick="checkRadio(this)" class="btn-check px-4 py-2 rounded-lg font-bold mt-3">Kiểm tra</button>
+                            <div class="answer hidden text-xl mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Bài tập 2 - Điền động từ -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Điền động từ</h2>
+                    <p class="text-2xl mb-8">Điền dạng đúng của động từ trong ngoặc:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Look! The sun <input type="text" class="exercise-input" data-answer="is shining"> (shine) brightly.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">They <input type="text" class="exercise-input" data-answer="are not studying"> (not study) at the moment.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">What <input type="text" class="exercise-input" data-answer="are you doing"> (you/do) now?</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-blue-100 p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 text-xl">💡 Gợi ý:</p>
+                        <p class="text-lg">Nhớ chia động từ "to be" phù hợp với chủ ngữ và thêm -ing vào động từ chính.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Bài tập 3 - Sắp xếp từ -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 3: Sắp xếp từ</h2>
+                    <p class="text-2xl mb-8">Sắp xếp các từ sau thành câu đúng:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Các từ: <span class="font-bold">now / TV / watching / is / she</span></p>
+                            <input type="text" class="exercise-input w-full" data-answer="She is watching TV now" placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Các từ: <span class="font-bold">the / moment / at / not / I / working / am</span></p>
+                            <input type="text" class="exercise-input w-full" data-answer="I am not working at the moment" placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-green-100 p-4 rounded-lg">
+                        <p class="font-bold text-green-800 text-xl">💡 Quy tắc:</p>
+                        <p class="text-lg">Câu hiện tại tiếp diễn thường theo thứ tự: Chủ ngữ + am/is/are + V-ing + ...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Bài tập 4 - Tìm lỗi sai -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 4: Tìm lỗi sai</h2>
+                    <p class="text-2xl mb-8">Tìm và sửa lỗi sai trong các câu sau:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Câu: "He is play football now."</p>
+                            <input type="text" class="exercise-input w-full" data-answer="He is playing football now" placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Câu: "Are they watch TV at the moment?"</p>
+                            <input type="text" class="exercise-input w-full" data-answer="Are they watching TV at the moment" placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-red-100 p-4 rounded-lg">
+                        <p class="font-bold text-red-800 text-xl">💡 Lưu  ý:</p>
+                        <p class="text-lg">Nhớ luôn thêm -ing vào động từ chính trong thì hiện tại tiếp diễn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Bài tập 5 - Nghe và điền từ -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 5: Nghe và điền từ</h2>
+                    <p class="text-2xl mb-8">Nghe câu và điền từ còn thiếu:</p>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <div class="flex items-center mb-3">
+                                <div class="audio-btn text-indigo-600 flex items-center" onclick="playAudio('audio3')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                    </svg>
+                                    <span class="text-xl">Nghe câu</span>
+                                </div>
+                                <audio id="audio3" src="https://ssl.gstatic.com/dictionary/static/sounds/20200429/rain--_gb_1.mp3"></audio>
+                            </div>
+                            <p class="text-2xl mb-4">It <input type="text" class="exercise-input" data-answer="is raining"> outside now.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <div class="flex items-center mb-3">
+                                <div class="audio-btn text-indigo-600 flex items-center" onclick="playAudio('audio4')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                    </svg>
+                                    <span class="text-xl">Nghe câu</span>
+                                </div>
+                                <audio id="audio4" src="https://ssl.gstatic.com/dictionary/static/sounds/20200429/read--_gb_1.mp3"></audio>
+                            </div>
+                            <p class="text-2xl mb-4">She <input type="text" class="exercise-input" data-answer="is reading"> a book at the moment.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Tổng kết -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Tổng kết bài học</h2>
+                    
+                    <div class="w-full bg-white p-6 rounded-xl shadow-md">
+                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                            <p class="text-xl font-bold text-blue-800 text-center">Kiến thức trọng tâm về thì hiện tại tiếp diễn</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-indigo-800">1. Cách sử dụng</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Hành động đang xảy ra ngay lúc nói</li>
+                                    <li>Hành động tạm thời, không thường xuyên</li>
+                                    <li>Hành động sẽ xảy ra trong tương lai gần</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-green-800">2. Cấu trúc câu</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Khẳng định: S + am/is/are + V-ing</li>
+                                    <li>Phủ định: S + am/is/are + not + V-ing</li>
+                                    <li>Câu h hỏi: Am/Is/Are + S + V-ing?</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-yellow-800">3. Dấu hiệu nhận biết</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>now, at the moment, right now</li>
+                                    <li>at present, today, this week</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-purple-800">4. Cách thêm -ing</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Thêm -ing bình thường: play → playing</li>
+                                    <li>Bỏ -e cuối: write → writing</li>
+                                    <li>Gấp đôi phụ âm cuối: run → running</li>
+                                    <li>Đổi -ie thành -y: lie → lying</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-red-800">5. Ghi nhớ nhanh</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Thì hiện tại tiếp diễn giống như đang quay video</li>
+                                    <li>Nhớ chia "to be" phù hợp: I am - She is - You are</li>
+                                    <li>Luôn thêm -ing vào động từ chính</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Kết thúc -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">Chúc mừng!</h1>
+                    <div class="text-2xl md:text-3xl text-gray-700 mb-3">
+                        <p class="mb-4">Bạn đã hoàn thành bài học về</p>
+                        <div class="bg-gradient-to-r from-yellow-400 to-red-500 text-white text-4xl font-bold px-6 py-2 rounded-full inline-block">
+                            THÌ HIỆN TẠI TIẾP DIỄN
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center mb-3">
+                        <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                            class="h-32 rounded-xl object-cover" alt="Celebration Image">
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl max-w-xl">
+                        <p class="text-xl md:text-2xl font-bold mb-2">Hẹn gặp lại trong bài học tiếp theo!</p>
+                        <p class="text-sm mt-2">Grammar for Kids</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+        
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+            
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+            
+            // Update slide counter
+            updateSlideCounter();
+        }
+
+        // Initialize
+        showSlide(currentSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Play audio function
+        function playAudio(id) {
+            const audio = document.getElementById(id);
+            audio.currentTime = 0;
+            audio.play();
+        }
+
+        // Exercise functions
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là "${correctAnswer}" (Bạn điền: "${userAnswer || 'trống'}")</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+            
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+            
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+            
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+        
+        function checkRadio(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const radios = exerciseItem.querySelectorAll('input[type="radio"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let selectedRadio = null;
+            let isCorrect = false;
+            
+            radios.forEach(radio => {
+                if (radio.checked) {
+                    selectedRadio = radio;
+                    isCorrect = radio.dataset.correct === 'true';
+                }
+            });
+            
+            if (selectedRadio) {
+                if (isCorrect) {
+                    answerDiv.innerHTML = '<p class="correct">✓ Chính xác! Bạn giỏi quá!</p>';
+                } else {
+                    // Find the correct answer
+                    let correctAnswer = '';
+                    radios.forEach(radio => {
+                        if (radio.dataset.correct === 'true') {
+                            correctAnswer = radio.nextElementSibling.textContent;
+                        }
+                    });
+                    answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${correctAnswer}</span></p>`;
+                }
+            } else {
+                answerDiv.innerHTML = '<p class="incorrect">✗ Bạn chưa chọn đáp án!</p>';
+            }
+            
+            answerDiv.classList.remove('hidden');
+            
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetExercise(button);
+            };
+        }
+        
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const radios = exerciseItem.querySelectorAll('input[type="radio"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            
+            // Reset inputs
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+            
+            // Reset radios
+            radios.forEach(radio => {
+                radio.checked = false;
+            });
+            
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+            
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            if (inputs.length > 0) {
+                button.onclick = function() {
+                    checkInput(button);
+                };
+            } else if (radios.length > 0) {
+                button.onclick = function() {
+                    checkRadio(button);
+                };
+            }
+            
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
+        }
+    </script>
+</body>
+
+</html>

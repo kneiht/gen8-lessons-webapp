@@ -21,6 +21,13 @@
       "description": "Hiểu khái niệm đại từ nhân xưng, phân biệt đại từ chủ ngữ và tân ngữ, nắm vị trí trong câu, làm bài tập ứng dụng",
       "category": "slides"
     },
+    "slides/pre-gs7-adverbs of frequency": {
+      "path": "slides/pre-gs7-adverbs of frequency",
+      "title": "pre-GS7-Adverbs of frequency",
+      "author": "Hoa Bac",
+      "description": "Trạng từ chỉ tần suất",
+      "category": "slides"
+    },
     "slides/pre-gs9-nouns-2": {
       "path": "slides/pre-gs9-nouns-2",
       "title": "Pre GS9 - Nouns-2 ( Danh từ phần 2)",
@@ -124,6 +131,13 @@
       "title": "Pre GS9 - Past Simple and Past Continuous (Quá khứ đơn và Quá khứ tiếp diễn)",
       "author": "Gen8",
       "description": "Cách sử dụng và dấu hiệu nhận biết, cấu trúc câu khẳng định, phủ định, nghi vấn, phân biệt hai thì quá khứ đơn và quá khứ tiếp diễn",
+      "category": "slides"
+    },
+    "slides/pre-gs7-present-continuous-tense": {
+      "path": "slides/pre-gs7-present-continuous-tense",
+      "title": "pre-GS7-present-continuous-tense",
+      "author": "Hoa Bac",
+      "description": "Thì hiện tại tiếp diễn",
       "category": "slides"
     },
     "slides/pre-gs7-present-simple-tense": {
@@ -279,6 +293,13 @@
       "author": "Hoa Bac",
       "description": "Động từ (Phần 2)",
       "category": "slides"
+    },
+    "worksheets/pre-gs7WS-present-continuous-tense": {
+      "path": "worksheets/pre-gs7WS-present-continuous-tense",
+      "title": "pre-GS7-present-continuous-tense",
+      "author": "Hoa Bac",
+      "description": "Thì hiện tại tiếp diễn",
+      "category": "worksheets"
     },
     "worksheets/pre-gs6-personal-pronouns": {
       "path": "worksheets/pre-gs6-personal-pronouns",
@@ -467,6 +488,13 @@
       "title": "Pre Gs7 - Sở hữu cách (Possessive)",
       "author": "Hoa Bac",
       "description": "Sở hữu cách (Possessive)",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs7-Adverbs-of-frequency": {
+      "path": "worksheets/pre-gs7-Adverbs-of-frequency",
+      "title": "pre-GS7-Adverbs of frequency",
+      "author": "Hoa Bac",
+      "description": "Trạng từ chỉ tần suất",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-ws-adjectives-2": {
