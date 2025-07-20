@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .question-card {
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .option:hover {
+            background-color: #f0f9ff;
+        }
+        .selected {
+            background-color: #e0f2fe;
+            border-color: #38bdf8;
+        }
+        .correct {
+            background-color: #bbf7d0;
+            border-color: #4ade80;
+        }
+        .incorrect {
+            background-color: #fecaca;
+            border-color: #f87171;
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+        #timer {
+            animation: pulse 1s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">English Grammar Test</h1>
+            <p class="text-gray-600">Test your knowledge of adjectives, modals, possessive adjectives, and gerunds/infinitives</p>
+            
+            <div class="mt-6 bg-white rounded-lg shadow p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-medium text-gray-700">Progress</span>
+                    <span id="question-count" class="text-sm font-medium text-gray-700">1/36</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="progress-bar bg-blue-600 h-2.5 rounded-full" style="width: 2.78%"></div>
+                </div>
+                
+                <div class="mt-4 flex justify-between items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-blue-500 mr-2"></i>
+                        <span id="timer" class="font-medium">30:00</span>
+                    </div>
+                    <button id="submit-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+                        Submit Test
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Test Container -->
+        <div id="test-container" class="space-y-6">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-8 flex justify-between">
+            <button id="prev-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition disabled:opacity-50" disabled>
+                <i class="fas fa-arrow-left mr-2"></i>Previous
+            </button>
+            <button id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+                Next<i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="results-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div class="text-center">
+                <i class="fas fa-trophy text-5xl text-yellow-500 mb-4"></i>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Test Completed!</h2>
+                <p class="text-gray-600 mb-4">Your results are ready</p>
+                
+                <div class="bg-blue-50 rounded-lg p-4 mb-4">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Correct Answers:</span>
+                        <span id="correct-count" class="font-bold text-green-600">0</span>
+                    </div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Incorrect Answers:</span>
+                        <span id="incorrect-count" class="font-bold text-red-600">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="font-medium">Score:</span>
+                        <span id="score" class="font-bold text-blue-600">0%</span>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-4">
+                    <button id="review-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-list-ol mr-2"></i>Review Answers
+                    </button>
+                    <button id="close-modal" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
+                        <i class="fas fa-check mr-2"></i>Done
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Questions data
+        const questions = [
+            {
+                question: "1. She always helps others. She is very ______.",
+                options: ["help", "helping", "helpful", "helpless"],
+                correctAnswer: 2,
+                explanation: "The correct answer is 'helpful' because it's an adjective describing her character."
+            },
+            {
+                question: "2. That movie was so ______ that I couldn't stop laughing!",
+                options: ["funy", "funny", "funnily", "funness"],
+                correctAnswer: 1,
+                explanation: "The correct answer is 'funny' as it's the proper adjective form describing the movie."
+            },
+            {
+                question: "3. My father is a ______ driver. He never causes accidents.",
+                options: ["careful", "care", "carefully", "careless"],
+                correctAnswer: 0,
+                explanation: "'Careful' is the correct adjective describing how he drives."
+            },
+            {
+                question: "4. The cake smells ______. I can't wait to eat it!",
+                options: ["delicious", "delight", "delighted", "delightfully"],
+                correctAnswer: 0,
+                explanation: "'Delicious' is the adjective that describes how the cake smells."
+            },
+            {
+                question: "5. This test is too ______. I don't understand anything.",
+                options: ["difficulty", "difficult", "difficultly", "difficulties"],
+                correctAnswer: 1,
+                explanation: "'Difficult' is the adjective describing the test."
+            },
+            {
+                question: "6. She felt very ______ after watching the movie.",
+                options: ["sad", "healthy", "noisy", "depressingly"],
+                correctAnswer: 0,
+                explanation: "'Sad' is the adjective describing her feeling."
+            },
+            {
+                question: "7. Tom is a ______ student. He always has creative ideas.",
+                options: ["create", "created", "creation", "creative"],
+                correctAnswer: 3,
+                explanation: "'Creative' is the adjective describing Tom as a student."
+            },
+            {
+                question: "8. I'm so ______. I haven't slept all night.",
+                options: ["sleepy", "sleeping", "sleep", "slept"],
+                correctAnswer: 0,
+                explanation: "'Sleepy' is the adjective describing how you feel."
+            },
+            {
+                question: "9. The weather is ______ today. Let's go for a walk!",
+                options: ["sun", "sunlight", "sunny", "sunshine"],
+                correctAnswer: 2,
+                explanation: "'Sunny' is the adjective describing the weather."
+            },
+            {
+                question: "10. That was a very ______ answer. Good job!",
+                options: ["intelligence", "intelligently", "intelligent", "intellectual"],
+                correctAnswer: 2,
+                explanation: "'Intelligent' is the adjective describing the answer."
+            },
+            {
+                question: "11. You ______ do your homework before watching TV.",
+                options: ["must", "can", "should", "may"],
+                correctAnswer: 2,
+                explanation: "'Should' is used to give advice or make a recommendation."
+            },
+            {
+                question: "12. I'm not feeling well. I ______ see a doctor.",
+                options: ["must", "can", "should", "will"],
+                correctAnswer: 2,
+                explanation: "'Should' is used to give advice about what is a good idea."
+            },
+            {
+                question: "13. We ______ speak English in this class.",
+                options: ["can", "mustn't", "shouldn't", "all correct"],
+                correctAnswer: 0,
+                explanation: "'Can' is used to express permission or ability to speak English in this class."
+            },
+            {
+                question: "14. It's dangerous. You ______ touch that wire!",
+                options: ["shouldn't", "mustn't", "can't", "won't"],
+                correctAnswer: 1,
+                explanation: "'Mustn't' is used for strong prohibition."
+            },
+            {
+                question: "15. If you want to be healthy, you ______ eat more vegetables.",
+                options: ["must", "can", "should", "will"],
+                correctAnswer: 2,
+                explanation: "'Should' is used to give advice."
+            },
+            {
+                question: "16. She _____ speak three languages.",
+                options: ["should", "can", "could", "must"],
+                correctAnswer: 1,
+                explanation: "'Can' is used to express ability in the present or general ability."
+            },
+            {
+                question: "17. You ______ wear a helmet when riding a motorbike.",
+                options: ["must", "can", "should", "mustn't"],
+                correctAnswer: 0,
+                explanation: "'Must' is used for strong obligation."
+            },
+            {
+                question: "18. You ______ be late for school!",
+                options: ["should", "mustn't", "can", "shouldn't"],
+                correctAnswer: 1,
+                explanation: "'Mustn't' is used for strong prohibition."
+            },
+            {
+                question: "19. I have some ______ candy.",
+                options: ["natural", "delicious", "possible", "visible"],
+                correctAnswer: 1,
+                explanation: "'Delicious' is the adjective describing the candy."
+            },
+            {
+                question: "20. Peter and I are preparing ______ float for the parade.",
+                options: ["his", "our", "their", "your"],
+                correctAnswer: 1,
+                explanation: "'Our' is the possessive adjective for 'Peter and I'."
+            },
+            {
+                question: "21. Look at the cat! ______ tail looks like a carved decoration!",
+                options: ["Its", "Her", "Their", "Our"],
+                correctAnswer: 0,
+                explanation: "'Its' is the possessive adjective for the cat."
+            },
+            {
+                question: "22. The children are watching ______ first fireworks display.",
+                options: ["my", "their", "our", "his"],
+                correctAnswer: 1,
+                explanation: "'Their' is the possessive adjective for 'the children'."
+            },
+            {
+                question: "23. John is painting ______ Mid-Autumn Festival lantern.",
+                options: ["his", "our", "their", "its"],
+                correctAnswer: 0,
+                explanation: "'His' is the possessive adjective for 'John'."
+            },
+            {
+                question: "24. We are hanging up ______ decorations for Easter.",
+                options: ["our", "your", "their", "her"],
+                correctAnswer: 0,
+                explanation: "'Our' is the possessive adjective for 'we'."
+            },
+            {
+                question: "25. Mary is upset because she forgot ______ costume at home.",
+                options: ["her", "his", "your", "their"],
+                correctAnswer: 0,
+                explanation: "'Her' is the possessive adjective for 'Mary'."
+            },
+            {
+                question: "26. I really enjoy ______ candy during the Mid-Autumn Festival.",
+                options: ["to eat", "eating", "eat", "ate"],
+                correctAnswer: 1,
+                explanation: "After 'enjoy' we use the gerund form (-ing)."
+            },
+            {
+                question: "27. She detests ______ in noisy parades.",
+                options: ["dance", "to dancing", "dancing", "to dance"],
+                correctAnswer: 2,
+                explanation: "After 'detest' we use the gerund form (-ing)."
+            },
+            {
+                question: "28. We prefer ______ costumes for the Halloween party.",
+                options: ["to wearing", "to wear", "wore", "wear"],
+                correctAnswer: 1,
+                explanation: "After 'prefer' we can use 'to + infinitive' or gerund, but 'to wear' is the correct option here."
+            },
+            {
+                question: "29. Do you mind ______ the decorations on the wall?",
+                options: ["to hang", "hang", "hanging", "hung"],
+                correctAnswer: 2,
+                explanation: "After 'mind' we use the gerund form (-ing)."
+            },
+            {
+                question: "30. My brother hates ______ floats in the parade. He thinks it's boring.",
+                options: ["to making", "maing", "make", "to make"],
+                correctAnswer: 3,
+                explanation: "After 'hate' we can use 'to + infinitive' or gerund, but 'to make' is the correct option here."
+            },
+            {
+                question: "31. They adore ______ fireworks on New Year's Eve.",
+                options: ["to watching", "watch", "watching", "watched"],
+                correctAnswer: 2,
+                explanation: "After 'adore' we use the gerund form (-ing)."
+            },
+            {
+                question: "32. I don't fancy ______ to crowded festivals.",
+                options: ["go", "going", "to going", "to go"],
+                correctAnswer: 1,
+                explanation: "After 'fancy' we use the gerund form (-ing)."
+            },
+            {
+                question: "33. Would you like ______ with us to the feast tomorrow?",
+                options: ["coing", "come", "to come", "to coming"],
+                correctAnswer: 2,
+                explanation: "After 'would like' we use 'to + infinitive'."
+            },
+            {
+                question: "34. He dislikes ______ traditional food, but he tries to be polite.",
+                options: ["to eating", "eating", "eat", "to ate"],
+                correctAnswer: 1,
+                explanation: "After 'dislike' we use the gerund form (-ing)."
+            },
+            {
+                question: "35. I'd prefer ______ home and relaxing tonight.",
+                options: ["stayingg", "to stay", "to staying", "stay"],
+                correctAnswer: 1,
+                explanation: "After 'would prefer' we use 'to + infinitive'."
+            }
+        ];
+
+        // Test state
+        let currentQuestion = 0;
+        let userAnswers = Array(questions.length).fill(null);
+        let timer;
+        let timeLeft = 30 * 60; // 30 minutes in seconds
+
+        // DOM elements
+        const testContainer = document.getElementById('test-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const questionCount = document.getElementById('question-count');
+        const progressBar = document.getElementById('progress-bar');
+        const timerDisplay = document.getElementById('timer');
+        const resultsModal = document.getElementById('results-modal');
+        const correctCount = document.getElementById('correct-count');
+        const incorrectCount = document.getElementById('incorrect-count');
+        const scoreDisplay = document.getElementById('score');
+        const reviewBtn = document.getElementById('review-btn');
+        const closeModal = document.getElementById('close-modal');
+
+        // Initialize the test
+        function initTest() {
+            displayQuestion();
+            startTimer();
+            updateProgress();
+        }
+
+        // Display current question
+        function displayQuestion() {
+            const question = questions[currentQuestion];
+            
+            let optionsHtml = '';
+            question.options.forEach((option, index) => {
+                let optionClass = "option block w-full text-left p-3 mb-2 border rounded-lg cursor-pointer";
+                
+                if (userAnswers[currentQuestion] === index) {
+                    optionClass += " selected";
+                }
+                
+                optionsHtml += `
+                    <div class="${optionClass}" data-index="${index}">
+                        ${String.fromCharCode(97 + index)}. ${option}
+                    </div>
+                `;
+            });
+            
+            testContainer.innerHTML = `
+                <div class="question-card bg-white rounded-lg shadow p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">${question.question}</h3>
+                    <div class="options-container">
+                        ${optionsHtml}
+                    </div>
+                    ${userAnswers[currentQuestion] !== null ? `
+                        <div class="mt-4 p-3 bg-blue-50 rounded-lg">
+                            <p class="font-medium text-blue-800">${question.explanation}</p>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            
+            // Add event listeners to options
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', selectOption);
+            });
+            
+            // Update navigation buttons
+            prevBtn.disabled = currentQuestion === 0;
+            nextBtn.textContent = currentQuestion === questions.length - 1 ? 'Finish' : 'Next';
+        }
+
+        // Select an option
+        function selectOption(e) {
+            const selectedIndex = parseInt(e.currentTarget.getAttribute('data-index'));
+            userAnswers[currentQuestion] = selectedIndex;
+            
+            // Update UI
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            e.currentTarget.classList.add('selected');
+            
+            // Enable submit button if all questions are answered
+            if (userAnswers.every(answer => answer !== null)) {
+                submitBtn.classList.remove('bg-gray-400');
+                submitBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+            }
+        }
+
+        // Navigate to next question
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+                updateProgress();
+            } else {
+                finishTest();
+            }
+        }
+
+        // Navigate to previous question
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                displayQuestion();
+                updateProgress();
+            }
+        }
+
+        // Update progress bar and question count
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            questionCount.textContent = `${currentQuestion + 1}/${questions.length}`;
+        }
+
+        // Start timer
+        function startTimer() {
+            updateTimerDisplay();
+            
+            timer = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    finishTest();
+                }
+            }, 1000);
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 300) { // 5 minutes left
+                timerDisplay.classList.add('text-red-500');
+            }
+        }
+
+        // Finish the test
+        function finishTest() {
+            clearInterval(timer);
+            
+            // Calculate results
+            let correct = 0;
+            let incorrect = 0;
+            
+            userAnswers.forEach((answer, index) => {
+                if (answer === questions[index].correctAnswer) {
+                    correct++;
+                } else if (answer !== null) {
+                    incorrect++;
+                }
+            });
+            
+            const score = Math.round((correct / questions.length) * 100);
+            
+            // Display results
+            correctCount.textContent = correct;
+            incorrectCount.textContent = incorrect;
+            scoreDisplay.textContent = `${score}%`;
+            
+            // Show modal
+            resultsModal.classList.remove('hidden');
+        }
+
+        // Review answers
+        function reviewAnswers() {
+            resultsModal.classList.add('hidden');
+            
+            // Mark all questions as answered to show explanations
+            userAnswers = userAnswers.map((answer, index) => {
+                return answer === null ? -1 : answer;
+            });
+            
+            currentQuestion = 0;
+            displayQuestion();
+        }
+
+        // Close modal
+        function closeResultsModal() {
+            resultsModal.classList.add('hidden');
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextQuestion);
+        prevBtn.addEventListener('click', prevQuestion);
+        submitBtn.addEventListener('click', finishTest);
+        reviewBtn.addEventListener('click', reviewAnswers);
+        closeModal.addEventListener('click', closeResultsModal);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentQuestion < questions.length - 1) {
+                nextQuestion();
+            } else if (e.key === 'ArrowLeft' && currentQuestion > 0) {
+                prevQuestion();
+            }
+        });
+
+        // Initialize the test
+        initTest();
+    </script>
+</body>
+</html>
