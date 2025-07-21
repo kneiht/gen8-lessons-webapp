@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS6 - Verbs Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Động từ (Verbs) - Grammar Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Định nghĩa động từ / Definition of Verbs</h4>
+                        <p class="text-gray-700 mb-3">Động từ là từ dùng để diễn tả hành động hoặc trạng thái của chủ ngữ.</p>
+                        <p class="text-gray-700 mb-3 italic">Verbs are words that describe actions or states of the subject.</p>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <p class="font-medium">Hành động / Actions:</p>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>run (chạy)</li>
+                                    <li>eat (ăn)</li>
+                                    <li>study (học)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-medium">Trạng thái / States:</p>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>be (là)</li>
+                                    <li>feel (cảm thấy)</li>
+                                    <li>seem (dường như)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-2 bg-blue-50 rounded">
+                            <p class="text-blue-700">💡 Thử nghĩ: Mỗi câu bắt buộc phải có một động từ!</p>
+                            <p class="text-blue-700 italic">Remember: Every sentence must have at least one verb!</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Ví dụ động từ / Verb Examples</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <p class="font-medium">Hành động / Actions:</p>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>She runs to school. (Cô ấy chạy đến trường)</li>
+                                    <li>They play football. (Họ chơi bóng đá)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-medium">Trạng thái / States:</p>
+                                <ul class="list-disc pl-5 text-gray-700">
+                                    <li>I am a student. (Tôi là học sinh)</li>
+                                    <li>He feels happy. (Anh ấy cảm thấy vui)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3 p-2 bg-yellow-50 rounded">
+                            <p class="text-blue-700">Câu hỏi: "Smell" trong câu "The flowers smell nice" là động từ hành động hay trạng thái?</p>
+                            <p class="text-blue-700 italic">Question: Is "smell" in "The flowers smell nice" an action or state verb?</p>
+                            <button onclick="document.getElementById('answer1').classList.toggle('hidden')" class="text-blue-600 underline mt-1">Xem đáp án / Show Answer</button>
+                            <p id="answer1" class="hidden font-bold text-green-600">Đáp án: Trạng thái / Answer: State verb</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Cách nhận biết động từ / Identifying Verbs</h4>
+                        <p class="text-gray-700 mb-3">Có 3 cách chính để nhận biết động từ:</p>
+                        <p class="text-gray-700 mb-3 italic">There are 3 main ways to identify verbs:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Trả lời cho câu hỏi "Làm gì?" hoặc "Như thế nào?"</li>
+                            <li class="mb-1 italic">Answers the questions "What to do?" or "How?"</li>
+                            <li class="mb-1">Đứng sau chủ ngữ trong câu đơn</li>
+                            <li class="mb-1 italic">Comes after the subject in a simple sentence</li>
+                            <li>Thường ở dạng nguyên mẫu với "to" (to go, to eat, to study)</li>
+                            <li class="italic">Often appears in infinitive form with "to"</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Vị trí động từ / Verb Position</h4>
+                        <p class="text-gray-700 mb-3">Động từ thường đứng:</p>
+                        <p class="text-gray-700 mb-3 italic">Verbs usually appear:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Sau chủ ngữ / After the subject</li>
+                            <li class="mb-1">Trước tân ngữ (nếu có) / Before object (if any)</li>
+                            <li class="mb-1">Sau trạng từ chỉ tần suất / After frequency adverbs</li>
+                        </ul>
+                        <p class="font-medium mt-2">Quy tắc cơ bản / Basic Rule:</p>
+                        <p class="italic">Subject + Verb + (Object)</p>
+                        <div class="grid grid-cols-3 gap-2 mt-2 text-sm">
+                            <div class="p-2 bg-white rounded">
+                                <p class="font-medium">Sau chủ ngữ:</p>
+                                <p class="italic">She reads books.</p>
+                            </div>
+                            <div class="p-2 bg-white rounded">
+                                <p class="font-medium">Trước tân ngữ:</p>
+                                <p class="italic">They eat fruit.</p>
+                            </div>
+                            <div class="p-2 bg-white rounded">
+                                <p class="font-medium">Sau trạng từ:</p>
+                                <p class="italic">He never drinks coffee.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Sự biến đổi động từ / Verb Conjugation</h4>
+                        <p class="text-gray-700 mb-3">Động từ thay đổi hình thức theo:</p>
+                        <p class="text-gray-700 mb-3 italic">Verbs change form according to:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Chủ ngữ (ngôi, số ít/số nhiều)</li>
+                            <li class="mb-1 italic">Subject (person, singular/plural)</li>
+                            <li class="mb-1">Thì (hiện tại, quá khứ, tương lai)</li>
+                            <li class="mb-1 italic">Tense (present, past, future)</li>
+                            <li>Thể (khẳng định, phủ định, nghi vấn)</li>
+                            <li class="italic">Form (positive, negative, question)</li>
+                        </ul>
+                        <p class="font-medium mt-2">Ví dụ động từ "go" / Example with "go":</p>
+                        <div class="grid grid-cols-3 gap-2 mt-1 text-sm">
+                            <div class="p-2 bg-white rounded">
+                                <p>present: go/goes</p>
+                                <p>past: went</p>
+                            </div>
+                            <div class="p-2 bg-white rounded">
+                                <p>future: will go</p>
+                                <p>continuous: going</p>
+                            </div>
+                            <div class="p-2 bg-white rounded">
+                                <p>negative: don't go</p>
+                                <p>question: Do...go?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">6. Các loại động từ chính / Main Verb Types</h4>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="p-2 bg-white rounded">
+                                <p class="font-medium">To be:</p>
+                                <p class="italic">am, is, are, was, were</p>
+                                <p>I am happy.</p>
+                            </div>
+                            <div class="p-2 bg-white rounded">
+                                <p class="font-medium">Thường / Regular:</p>
+                                <p class="italic">run, eat, play, study</p>
+                                <p>They play football.</p>
+                            </div>
+                            <div class="p-2 bg-white rounded">
+                                <p class="font-medium">Khuyết thiếu / Modal:</p>
+                                <p class="italic">can, must, may, should</p>
+                                <p>I can swim.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">democratic <span class="vocab-type">(adj)</span> /ˌdeməˈkrætɪk/</p>
+                        <p class="vocab-meaning">thuộc dân chủ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dependent <span class="vocab-type">(adj)</span> /dɪˈpendənt/</p>
+                        <p class="vocab-meaning">lệ thuộc vào</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">dye <span class="vocab-type">(v)</span> /daɪ/</p>
+                        <p class="vocab-meaning">nhuộm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">extended <span class="vocab-type">(adj)</span> /ɪkˈstendɪd/</p>
+                        <p class="vocab-meaning">nhiều thế hệ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">family-oriented <span class="vocab-type">(adj)</span> /ˈfæməli ˈɔrientɪd/</p>
+                        <p class="vocab-meaning">coi trọng gia đình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">gap <span class="vocab-type">(n)</span> /ɡæp/</p>
+                        <p class="vocab-meaning">khoảng cách</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">generation <span class="vocab-type">(n)</span> /ˌdʒenəˈreɪʃn/</p>
+                        <p class="vocab-meaning">thế hệ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">household <span class="vocab-type">(n)</span> /ˈhaʊshəʊld/</p>
+                        <p class="vocab-meaning">hộ gia đình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">lifestyle <span class="vocab-type">(n)</span> /ˈlaɪfstaɪl/</p>
+                        <p class="vocab-meaning">lối sống</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">memorise <span class="vocab-type">(v)</span> /ˈmeməraɪz/</p>
+                        <p class="vocab-meaning">ghi nhớ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">monk <span class="vocab-type">(n)</span> /mʌŋk/</p>
+                        <p class="vocab-meaning">nhà sư</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">nuclear <span class="vocab-type">(adj)</span> /ˈnjuːkliə/</p>
+                        <p class="vocab-meaning">hai thế hệ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">opportunity <span class="vocab-type">(n)</span> /ˌɒpəˈtjuːnəti/</p>
+                        <p class="vocab-meaning">cơ hội</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">popularity <span class="vocab-type">(n)</span> /ˌpɒpjuˈlærəti/</p>
+                        <p class="vocab-meaning">sự phổ biến</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">privacy <span class="vocab-type">(n)</span> /ˈprɪvəsi/</p>
+                        <p class="vocab-meaning">sự riêng tư</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">promise <span class="vocab-type">(n, v)</span> /ˈprɒmɪs/</p>
+                        <p class="vocab-meaning">lời hứa, hứa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">pursue <span class="vocab-type">(v)</span> /pəˈsjuː/</p>
+                        <p class="vocab-meaning">theo đuổi</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">replace <span class="vocab-type">(v)</span> /rɪˈpleɪs/</p>
+                        <p class="vocab-meaning">thay thế</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">take notes <span class="vocab-type">(phrase)</span> /teɪk nəʊts/</p>
+                        <p class="vocab-meaning">ghi chép</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">trend <span class="vocab-type">(n)</span> /trend/</p>
+                        <p class="vocab-meaning">xu hướng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">western <span class="vocab-type">(adj)</span> /ˈwestən/</p>
+                        <p class="vocab-meaning">thuộc phương Tây</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Nhận biết động từ trong câu</h4>
+                            <p class="exercise-instruction">👉 Gạch chân tất cả động từ trong các câu sau (Underline all verbs in the following sentences):</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="runs">
+                                    <p class="text-gray-800">She runs to school every morning.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="feel,pursue">
+                                    <p class="text-gray-800">Young people feel free to pursue their dreams.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="are,memorise">
+                                    <p class="text-gray-800">Students are required to memorise new words daily.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="take,dyed">
+                                    <p class="text-gray-800">Many teenagers take notes and have dyed their hair.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="replaces,promises">
+                                    <p class="text-gray-800">Modern lifestyle replaces traditional values and promises more freedom.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Page -->
+            <div class="mb-4">
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Chọn dạng đúng của động từ</h4>
+                            <p class="exercise-instruction">👉 Chọn dạng động từ đúng trong ngoặc (Choose the correct verb form in brackets):</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">The monk __________ (study/studies) ancient texts every day.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="study"
+                                                data-answer="studies" onclick="checkAnswer(this)">
+                                            <span>study</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="studies"
+                                                data-answer="studies" onclick="checkAnswer(this)">
+                                            <span>studies</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">They __________ (was/were) happy with their results.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="was"
+                                                data-answer="were" onclick="checkAnswer(this)">
+                                            <span>was</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="were"
+                                                data-answer="were" onclick="checkAnswer(this)">
+                                            <span>were</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She __________ (promise/promises) to help her parents.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="promise"
+                                                data-answer="promises" onclick="checkAnswer(this)">
+                                            <span>promise</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="promises"
+                                                data-answer="promises" onclick="checkAnswer(this)">
+                                            <span>promises</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Nuclear families __________ (has/have) become popular.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="has"
+                                                data-answer="have" onclick="checkAnswer(this)">
+                                            <span>has</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="have"
+                                                data-answer="have" onclick="checkAnswer(this)">
+                                            <span>have</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Western culture __________ (influence/influences) many countries.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="influence"
+                                                data-answer="influences" onclick="checkAnswer(this)">
+                                            <span>influence</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="influences"
+                                                data-answer="influences" onclick="checkAnswer(this)">
+                                            <span>influences</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- Thay thế 5 câu sau bằng 5 câu mới -->
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She __________ (visited/visits) her grandmother last weekend.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="visited" data-answer="visited" onclick="checkAnswer(this)">
+                                            <span>visited</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q6" class="radio-input" value="visits" data-answer="visited" onclick="checkAnswer(this)">
+                                            <span>visits</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">They __________ (were playing/played) football when it started to rain.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="were playing" data-answer="were playing" onclick="checkAnswer(this)">
+                                            <span>were playing</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q7" class="radio-input" value="played" data-answer="were playing" onclick="checkAnswer(this)">
+                                            <span>played</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">He __________ (has finished/finished) his homework already.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="has finished" data-answer="has finished" onclick="checkAnswer(this)">
+                                            <span>has finished</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q8" class="radio-input" value="finished" data-answer="has finished" onclick="checkAnswer(this)">
+                                            <span>finished</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">I __________ (am reading/read) a book right now.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="am reading" data-answer="am reading" onclick="checkAnswer(this)">
+                                            <span>am reading</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q9" class="radio-input" value="read" data-answer="am reading" onclick="checkAnswer(this)">
+                                            <span>read</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">They __________ (have lived/live) here for ten years.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="have lived" data-answer="have lived" onclick="checkAnswer(this)">
+                                            <span>have lived</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q10" class="radio-input" value="live" data-answer="have lived" onclick="checkAnswer(this)">
+                                            <span>live</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">You __________ (must/should) do your homework before playing.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q13" class="radio-input" value="must" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>must</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q13" class="radio-input" value="should" data-answer="must" onclick="checkAnswer(this)">
+                                            <span>should</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">He __________ (may/might) come to the party tonight.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q14" class="radio-input" value="may" data-answer="may" onclick="checkAnswer(this)">
+                                            <span>may</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q14" class="radio-input" value="might" data-answer="may" onclick="checkAnswer(this)">
+                                            <span>might</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">Children __________ (should/can) respect their elders.</span>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q15" class="radio-input" value="should" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>should</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q15" class="radio-input" value="can" data-answer="should" onclick="checkAnswer(this)">
+                                            <span>can</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 3: Điền động từ "to be" đúng dạng</h4>
+                            <p class="exercise-instruction">👉 Điền am/is/are vào chỗ trống (Fill in am/is/are in the blanks):</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">1. I __________ a family-oriented person.</p>
+                                    <input type="text" class="answer-input" data-answer="am" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">2. The generation gap __________ getting wider nowadays.</p>
+                                    <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">3. They __________ dependent on their parents for money.</p>
+                                    <input type="text" class="answer-input" data-answer="are" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">4. My household __________ a nuclear family.</p>
+                                    <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">5. There __________ many opportunities for young people today.</p>
+                                    <input type="text" class="answer-input" data-answer="are" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">6. Privacy __________ important for teenagers.</p>
+                                    <input type="text" class="answer-input" data-answer="is" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 4: Sắp xếp từ thành câu</h4>
+                            <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu hoàn chỉnh (Rearrange the words to make complete sentences):</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">1. often / traditional / memorize / monks / values</p>
+                                    <input type="text" class="answer-input" data-answer="The monks often memorize traditional values." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">2. family / democratic / our / decisions / makes / together</p>
+                                    <input type="text" class="answer-input" data-answer="Our family makes democratic decisions together." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">3. the / is / western / becoming / more / lifestyle / popular</p>
+                                    <input type="text" class="answer-input" data-answer="The western lifestyle is becoming more popular." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">4. teenagers / their / pursue / many / dreams / actively</p>
+                                    <input type="text" class="answer-input" data-answer="Many teenagers actively pursue their dreams." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">5. modern / replaces / technology / traditions / often</p>
+                                    <input type="text" class="answer-input" data-answer="Modern technology often replaces traditions." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">6. household / has / my / become / extended / an</p>
+                                    <input type="text" class="answer-input" data-answer="My household has become an extended one." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">7. privacy / was / important / for / teenagers</p>
+                                    <input type="text" class="answer-input" data-answer="Privacy was important for teenagers." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">8. monks / had / their / dyed / robes / orange / before / the / festival</p>
+                                    <input type="text" class="answer-input" data-answer="Monks had dyed their robes orange before the festival." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">9. generation / the / was / gap / closing / slowly</p>
+                                    <input type="text" class="answer-input" data-answer="The generation gap was closing slowly." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">10. lifestyle / a / western / was / becoming / new / trend</p>
+                                    <input type="text" class="answer-input" data-answer="A western lifestyle was becoming a new trend." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 5: Viết lại câu với dạng đúng của động từ</h4>
+                            <p class="exercise-instruction">👉 Viết lại các câu sau với dạng đúng của động từ trong ngoặc (Rewrite the sentences with the correct verb form in brackets):</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">1. She (take) good notes in every class.</p>
+                                    <input type="text" class="answer-input" data-answer="She takes good notes in every class." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">2. Many students (memorize) new words now.</p>
+                                    <input type="text" class="answer-input" data-answer="Many students are memorizing new words now." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">3. Traditional families (be) more common in the past.</p>
+                                    <input type="text" class="answer-input" data-answer="Traditional families were more common in the past." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">4. The monk (dye) his robe orange yesterday.</p>
+                                    <input type="text" class="answer-input" data-answer="The monk dyed his robe orange yesterday." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">5. We (have) an extended family gathering next week.</p>
+                                    <input type="text" class="answer-input" data-answer="We will have an extended family gathering next week." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 6: Đặt câu hoàn chỉnh sử dụng các từ gợi ý</h4>
+                            <p class="exercise-instruction">👉 Sử dụng các từ gợi ý để đặt câu hoàn chỉnh (Use the prompts to make complete sentences):</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">1. (generation gap / widen)</p>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">2. (western culture / influence / lifestyle)</p>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">3. (young people / pursue / opportunities)</p>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">4. (nuclear families / become / popular)</p>
+                                    <input type="text" class="answer-input">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-700 mb-2">5. (modern technology / replace / traditions)</p>
+                                    <input type="text" class="answer-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+    </script>
+</body>
+</html>

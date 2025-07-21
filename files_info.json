@@ -231,6 +231,13 @@
       "description": "Khái niệm danh từ, vị trí danh từ trong câu, số ít và số nhiều, cách thêm -s/-es",
       "category": "slides"
     },
+    "slides/pre-gs9-verbs": {
+      "path": "slides/pre-gs9-verbs",
+      "title": "Pre GS9 - Verbs ( Động từ )",
+      "author": "Gen8",
+      "description": "Động từ- To be - Động từ thường- Động từ khuyết khuyết-Cách nhận biết- Vị trí của động từ trong câu- Sự biến đổi của động từ",
+      "category": "slides"
+    },
     "slides/pre-gs6-verbs-1": {
       "path": "slides/pre-gs6-verbs-1",
       "title": "Pre-GS6: Động từ (Verbs) - Phần 1",
@@ -348,6 +355,13 @@
       "title": "Pre GS8 - Review Tense 3  \\'96 \\'d4n T\\uc0\\u7853 p",
       "author": "Gen8",
       "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-GS9-verbs": {
+      "path": "worksheets/pre-GS9-verbs",
+      "title": "Pre GS9 - Verbs ( Động từ )",
+      "author": "Gen8",
+      "description": "Động từ- To be - Động từ thường- Động từ khuyết khuyết-Bài tập về động từ",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-verbs-1": {
