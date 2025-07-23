@@ -705,7 +705,7 @@
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
                                     <span class="font-medium text-gray-700">Jogging has many benefits for health. (be)</span>
-                                    <input type="text" class="answer-input flex-1" data-answer="Jogging is beneficial for health." onblur="checkAnswer(this)">
+                                    <input type="text" class="answer-input flex-1" data-answer="Jogging is good for health." onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
                                     <span class="font-medium text-gray-700">Do you need glue for this model? (use)</span>
@@ -797,15 +797,27 @@
 
         // Drag and drop functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Shuffle drag words for Exercise 3
+            function shuffleNodeChildren(parentId) {
+                const parent = document.getElementById(parentId);
+                if (!parent) return;
+                const items = Array.from(parent.children);
+                for (let i = items.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    parent.appendChild(items[j]);
+                    items.splice(j, 1);
+                }
+            }
+            shuffleNodeChildren('drag-words-1');
+            shuffleNodeChildren('drag-words-2');
+            shuffleNodeChildren('drag-words-3');
+
+            // Drag and drop event listeners
             const dragItems = document.querySelectorAll('.drag-item');
             const dropZones = document.querySelectorAll('.drop-zone');
-            
-            // Add event listeners for drag items
             dragItems.forEach(item => {
                 item.addEventListener('dragstart', dragStart);
             });
-            
-            // Add event listeners for drop zones
             dropZones.forEach(zone => {
                 zone.addEventListener('dragover', dragOver);
                 zone.addEventListener('dragenter', dragEnter);
