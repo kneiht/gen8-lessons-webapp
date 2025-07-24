@@ -98,6 +98,13 @@
       "description": "Không có mô tả.",
       "category": "slides"
     },
+    "slides/pre-gs6-sentence-structures-3": {
+      "path": "slides/pre-gs6-sentence-structures-3",
+      "title": "Câu mệnh lệnh (Imperatives)",
+      "author": "Gen8",
+      "description": "How to form and use imperative sentences for commands, requests, and instructions.",
+      "category": "slides"
+    },
     "slides/pre-gs7-quantifiers": {
       "path": "slides/pre-gs7-quantifiers",
       "title": "Pre GS7 - Quantifiers (Lượng từ)",
@@ -208,6 +215,13 @@
       "title": "Pre GS7 - Personal Pronouns (Đại từ nhân xưng)",
       "author": "Gen8",
       "description": "Hiểu khái niệm đại từ nhân xưng, phân biệt đại từ chủ ngữ và tân ngữ, nắm vị trí trong câu, làm bài tập ứng dụng",
+      "category": "slides"
+    },
+    "slides/pre-gs6-sentence-structures-4": {
+      "path": "slides/pre-gs6-sentence-structures-4",
+      "title": "Dummy Subjects: It, There",
+      "author": "Gen8",
+      "description": "Learn about dummy subjects 'It' and 'There', and their usage in 'It's...' and 'There is/are' structures.",
       "category": "slides"
     },
     "slides/pre-gs7-possessives": {
@@ -439,6 +453,13 @@
       "title": "Pre GS8 - verb of likes/dislikes",
       "author": "Gen8",
       "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs6-ws-sentence-structures-3": {
+      "path": "worksheets/pre-gs6-ws-sentence-structures-3",
+      "title": "Câu mệnh lệnh (Imperatives)",
+      "author": "Gen8",
+      "description": "How to form and use imperative sentences for commands, requests, and instructions.",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-ws-sentence-structures-2": {
