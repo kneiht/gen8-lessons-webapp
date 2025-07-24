@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjective vs Adverb Exercise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .question-card {
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .option {
+            transition: all 0.2s ease;
+        }
+        .option:hover {
+            background-color: #f0f9ff;
+        }
+        .correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        .correct::after {
+            content: " ✅";
+        }
+        .incorrect {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-800 mb-2">Adjective vs Adverb Exercise</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Choose the correct word (adjective or adverb) to fill in each blank.</p>
+            
+            <!-- Progress bar -->
+            <div class="mt-6 bg-white rounded-full h-4 max-w-2xl mx-auto shadow-inner overflow-hidden">
+                <div id="progress" class="progress-bar h-full bg-indigo-500" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-between items-center mt-2 max-w-2xl mx-auto">
+                <span id="progress-text" class="text-sm font-medium text-indigo-700">0/34</span>
+                <span id="score" class="text-sm font-medium text-indigo-700">Score: 0%</span>
+            </div>
+        </header>
+
+        <!-- Questions container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="questions-container">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Results modal -->
+        <div id="results-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl">
+                <div class="text-center">
+                    <i class="fas fa-trophy text-5xl text-yellow-500 mb-4"></i>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Exercise Completed!</h2>
+                    <p id="final-score" class="text-xl font-semibold text-indigo-600 mb-4">Your score: 0%</p>
+                    <p class="text-gray-600 mb-6">Great job practicing adjectives and adverbs!</p>
+                    <button onclick="resetQuiz()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition">
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Questions data
+        const questions = [
+            {
+                question: "1. She sings __________.",
+                options: ["beautiful", "beautifully", "beauty", "beautify"],
+                correct: 1
+            },
+            {
+                question: "2. Tom is a __________ driver.",
+                options: ["careful", "carefully", "care", "careless"],
+                correct: 0
+            },
+            {
+                question: "3. The children played __________ in the garden.",
+                options: ["happy", "happiness", "happily", "unhappily"],
+                correct: 2
+            },
+            {
+                question: "4. My father speaks English __________.",
+                options: ["fluent", "fluently", "fluency", "fluentness"],
+                correct: 1
+            },
+            {
+                question: "5. This movie is very __________.",
+                options: ["excitement", "excited", "exciting", "excitedly"],
+                correct: 2
+            },
+            {
+                question: "6. They arrived at the airport __________.",
+                options: ["late", "lately", "lateness", "laten"],
+                correct: 0
+            },
+            {
+                question: "8. He drives too __________.",
+                options: ["fast", "faster", "fastest", "fastly"],
+                correct: 0
+            },
+            {
+                question: "9. The baby is sleeping __________.",
+                options: ["quiet", "quietly", "quieter", "quietness"],
+                correct: 1
+            },
+            {
+                question: "10. He always answers the teacher's questions __________.",
+                options: ["polite", "politely", "politeness", "impolite"],
+                correct: 1
+            },
+            {
+                question: "11. It's a __________ day to go hiking.",
+                options: ["wonder", "wonderful", "wonderfully", "wondering"],
+                correct: 1
+            },
+            {
+                question: "12. The singer performed __________ on stage.",
+                options: ["amazing", "amazed", "amazingly", "amazement"],
+                correct: 2
+            },
+            {
+                question: "14. He ran __________ to catch the bus.",
+                options: ["quick", "quickly", "quickest", "quicker"],
+                correct: 1
+            },
+            {
+                question: "15. The weather was __________ yesterday.",
+                options: ["bad", "badly", "worst", "worse"],
+                correct: 0
+            },
+            {
+                question: "16. Please speak more __________. I can't hear you.",
+                options: ["loud", "loudly", "louder", "loudness"],
+                correct: 1
+            },
+            {
+                question: "18. They worked __________ on the group project.",
+                options: ["hard", "hardly", "harder", "hardness"],
+                correct: 0
+            },
+            {
+                question: "20. The exam was really __________.",
+                options: ["difficulty", "difficult", "difficultly", "differ"],
+                correct: 1
+            },
+            {
+                question: "21. The baby is sleeping. Please speak ________.",
+                options: ["quiet", "quietly", "quieter", "quietness"],
+                correct: 1
+            },
+            {
+                question: "22. He answered the question very ________.",
+                options: ["clear", "clearer", "clearly", "clearness"],
+                correct: 2
+            },
+            {
+                question: "23. They finished the project ________ before the deadline.",
+                options: ["beautifully", "lovely", "slow", "fast"],
+                correct: 3
+            },
+            {
+                question: "24. She drives very ________, especially at night.",
+                options: ["careful", "carefully", "careless", "care"],
+                correct: 1
+            },
+            {
+                question: "25. We should walk ________ on the icy road.",
+                options: ["slow", "slowly", "slower", "slowness"],
+                correct: 1
+            },
+            {
+                question: "26. The dog barked ________ at the stranger.",
+                options: ["loud", "loudly", "louder", "loudness"],
+                correct: 1
+            },
+            {
+                question: "27. She solved the problem ________ with her excellent math skills.",
+                options: ["smart", "smartness", "smartly", "smarter"],
+                correct: 2
+            },
+            {
+                question: "28. He greeted us ________ with a big smile.",
+                options: ["polite", "politely", "politeness", "politer"],
+                correct: 1
+            },
+            {
+                question: "29. The athlete ran ________ and won the race.",
+                options: ["fast", "fastly", "faster", "fastest"],
+                correct: 0
+            },
+            {
+                question: "30. Jane is a ________ girl.",
+                options: ["kind", "kindly", "kindness", "kinder"],
+                correct: 0
+            },
+            {
+                question: "31. The cat moved ________ through the grass.",
+                options: ["quiet", "quietly", "quietness", "quieter"],
+                correct: 1
+            },
+            {
+                question: "32. My mother speaks English very ________.",
+                options: ["fluent", "fluently", "fluency", "fluentlyness"],
+                correct: 1
+            },
+            {
+                question: "33. She dances ________ on stage.",
+                options: ["beautifuly", "beautifully", "beauty", "beautiful"],
+                correct: 1
+            },
+            {
+                question: "34. He shouted ________ to get our attention.",
+                options: ["loud", "loudly", "louder", "loudness"],
+                correct: 1
+            },
+            {
+                question: "The weather today is very ______.",
+                options: ["rain", "raining", "rainy", "rained"],
+                correct: 2
+            },
+            {
+                question: "She is wearing a ______ dress.",
+                options: ["beauty", "beautiful", "beautifully", "beautify"],
+                correct: 1
+            },
+            {
+                question: "He is so ______ that everyone likes him.",
+                options: ["kind", "kindly", "kindness", "kindnesses"],
+                correct: 0
+            },
+            {
+                question: "Your room is very ______. Please clean it.",
+                options: ["dirty", "dirt", "dirtied", "dirtily"],
+                correct: 0
+            },
+            {
+                question: "She is a ______ student.",
+                options: ["intelligence", "intelligently", "intelligent", "intelligents"],
+                correct: 2
+            },
+            {
+                question: "The baby is so ______ when she sleeps.",
+                options: ["peace", "peacefully", "peaceful", "peaceness"],
+                correct: 2
+            }
+        ];
+
+        // Quiz state
+        let answeredCount = 0;
+        let correctCount = 0;
+        let selectedOptions = Array(questions.length).fill(null);
+
+        // Initialize the quiz
+        function initQuiz() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+
+            questions.forEach((q, index) => {
+                const card = document.createElement('div');
+                card.className = 'question-card bg-white rounded-xl p-6 shadow-md border border-gray-100';
+                card.innerHTML = `
+                    <h3 class="text-lg font-medium text-gray-800 mb-4">${q.question}</h3>
+                    <div class="space-y-3">
+                        ${q.options.map((opt, optIndex) => `
+                            <div 
+                                class="option cursor-pointer border rounded-lg py-2 px-4 ${selectedOptions[index] === optIndex ? 
+                                    (selectedOptions[index] === q.correct ? 'correct' : 'incorrect') : ''}"
+                                onclick="selectOption(${index}, ${optIndex})"
+                            >
+                                ${String.fromCharCode(97 + optIndex)}. ${opt}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            updateProgress();
+        }
+
+        // Handle option selection
+        function selectOption(qIndex, optIndex) {
+            if (selectedOptions[qIndex] !== null) return; // Already answered
+            
+            const question = questions[qIndex];
+            selectedOptions[qIndex] = optIndex;
+            
+            if (optIndex === question.correct) {
+                correctCount++;
+            }
+            
+            answeredCount++;
+            updateProgress();
+            initQuiz(); // Re-render to show selected state
+            
+            // Show results modal when all questions are answered
+            if (answeredCount === questions.length) {
+                setTimeout(() => {
+                    document.getElementById('final-score').textContent = `Your score: ${Math.round((correctCount / questions.length) * 100)}%`;
+                    document.getElementById('results-modal').classList.remove('hidden');
+                }, 500);
+            }
+        }
+
+        // Update progress bar and counters
+        function updateProgress() {
+            const progress = (answeredCount / questions.length) * 100;
+            document.getElementById('progress').style.width = `${progress}%`;
+            document.getElementById('progress-text').textContent = `${answeredCount}/${questions.length}`;
+            document.getElementById('score').textContent = `Score: ${answeredCount ? Math.round((correctCount / answeredCount) * 100) : 0}%`;
+        }
+
+        // Reset the quiz
+        function resetQuiz() {
+            answeredCount = 0;
+            correctCount = 0;
+            selectedOptions = Array(questions.length).fill(null);
+            document.getElementById('results-modal').classList.add('hidden');
+            initQuiz();
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initQuiz);
+    </script>
+</body>
+</html>
