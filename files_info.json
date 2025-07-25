@@ -266,6 +266,13 @@
       "description": "Không có mô tả.",
       "category": "slides"
     },
+    "slides/pre-gs9-adjectives": {
+      "path": "slides/pre-gs9-adjectives",
+      "title": "Pre GS9 - Adjectives ( Tính từ)",
+      "author": "Gen8",
+      "description": "Tính từ mô tả danh từ,  Mô tả người/vật bằng tính từ, Cách nhận biết, Vị trí của tính từ trong câu",
+      "category": "slides"
+    },
     "slides/pre-gs6-nouns-2": {
       "path": "slides/pre-gs6-nouns-2",
       "title": "Pre GS6 - Nouns Part 2 (Danh từ phần 2)",
@@ -334,6 +341,13 @@
       "title": "Pre GS6 - Adverbs",
       "author": "Gen8",
       "description": "trạng từ chỉ cách thức, tần suất.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-GS9-Adjectives": {
+      "path": "worksheets/pre-GS9-Adjectives",
+      "title": "Pre GS9 - Adjectives ( Tính từ)",
+      "author": "Gen8",
+      "description": "Tính từ mô tả danh từ,  Mô tả người/vật bằng tính từ, Cách nhận biết, Vị trí của tính từ trong câu",
       "category": "worksheets"
     },
     "worksheets/pre-GS9-nouns-part 2": {

@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjectives Worksheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .print-only {
+                display: block !important;
+            }
+            
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .highlight {
+                background-color: #fef08a !important;
+            }
+            
+            .correct {
+                color: #16a34a !important;
+            }
+            
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+        
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+        
+        .correct {
+            color: #16a34a;
+        }
+        
+        .incorrect {
+            color: #dc2626;
+        }
+        
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+        
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+        
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+        
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+        
+        .vocab-type {
+            color: #6b7280;
+        }
+        
+        .vocab-meaning {
+            color: #374151;
+        }
+        
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+        
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+        
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+            
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+        
+        .text-gray-800 {
+            color: #1f2937;
+        }
+        
+        .text-gray-500 {
+            color: #6b7280;
+        }
+        
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+        
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        
+        .p-2 {
+            padding: 0.5rem;
+        }
+        
+        .p-4 {
+            padding: 1rem;
+        }
+        
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        
+        /* Adjective categories */
+        .adj-category {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .adj-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            color: white;
+        }
+        
+        .adj-example {
+            background-color: #f3f4f6;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+            
+            .section-title {
+                font-size: 0.875rem;
+            }
+            
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Custom tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Tính từ (Adjectives) - Grammar Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+                
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date: _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Phần 1: Tóm tắt kiến thức (Key Notes)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Tính từ là gì? (What are adjectives?)</h4>
+                        <p class="text-gray-700 mb-3">Tính từ là từ dùng để mô tả đặc điểm của danh từ (người, vật, sự việc).</p>
+                        <p class="text-gray-700">Adjectives are words that describe characteristics of nouns (people, things, events).</p>
+                        <div class="adj-example">
+                            <p><em>"Tính từ -> bổ nghĩa -> danh từ"</em></p>
+                            <p><em>"Adjective -> modifies -> noun"</em></p>
+                            <p>Tính từ giúp trả lời câu hỏi: "Như thế nào?"</p>
+                            <p>Adjectives help answer the question: "How?"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Chức năng của tính từ (Functions of adjectives)</h4>
+                        <p class="text-gray-700 mb-3">Tính từ có hai chức năng chính:</p>
+                        <p class="text-gray-700 mb-3">Adjectives have two main functions:</p>
+                        
+                        <div class="adj-category">
+                            <div class="adj-icon bg-blue-500">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <p><strong>1. Mô tả người (Describe people):</strong></p>
+                        </div>
+                        <p class="text-gray-700">Diễn tả đặc điểm thể chất, tính cách</p>
+                        <p class="text-gray-700">Describe physical characteristics, personality</p>
+                        <div class="adj-example">
+                            <p><em>Ví dụ/Example:</em> tall, kind, happy, smart</p>
+                            <p><em>"She is a beautiful girl."</em></p>
+                        </div>
+                        
+                        <div class="adj-category mt-2">
+                            <div class="adj-icon bg-green-500">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <p><strong>2. Mô tả vật/sự việc (Describe things/events):</strong></p>
+                        </div>
+                        <p class="text-gray-700">Diễn tả hình dáng, màu sắc, tính chất</p>
+                        <p class="text-gray-700">Describe shape, color, characteristics</p>
+                        <div class="adj-example">
+                            <p><em>Ví dụ/Example:</em> big, red, expensive, fast</p>
+                            <p><em>"This is a new car."</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Cách nhận biết tính từ (How to identify adjectives) (1/2)</h4>
+                        <p class="text-gray-700 mb-3">Tính từ thường có những đặc điểm sau:</p>
+                        <p class="text-gray-700 mb-3">Adjectives usually have these characteristics:</p>
+                        
+                        <p class="font-medium text-gray-800">1. Kết thúc bằng các đuôi (End with these suffixes):</p>
+                        <div class="grid grid-cols-2 gap-1">
+                            <div><span class="font-bold">-ful</span> <span class="italic">useful</span></div>
+                            <div><span class="font-bold">-ous</span> <span class="italic">famous</span></div>
+                            <div><span class="font-bold">-al</span> <span class="italic">natural</span></div>
+                            <div><span class="font-bold">-y</span> <span class="italic">happy</span></div>
+                        </div>
+                        
+                        <div class="adj-example mt-2">
+                            <p>💡 <strong>Mẹo nhớ:</strong> Thường các từ chỉ màu sắc, hình dáng đều là tính từ.</p>
+                            <p>💡 <strong>Tip:</strong> Words for colors and shapes are usually adjectives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Cách nhận biết tính từ (How to identify adjectives) (2/2)</h4>
+                        
+                        <p class="font-medium text-gray-800">2. Tính từ thường đứng (Adjectives usually stand):</p>
+                        
+                        <div class="adj-category">
+                            <div class="adj-icon bg-purple-500">
+                                <i class="fas fa-sort-alpha-down"></i>
+                            </div>
+                            <p><strong>Trước danh từ (Before nouns):</strong></p>
+                        </div>
+                        <div class="adj-example">
+                            <p><em>A happy child</em></p>
+                        </div>
+                        
+                        <div class="adj-category mt-2">
+                            <div class="adj-icon bg-pink-500">
+                                <i class="fas fa-sort-alpha-up"></i>
+                            </div>
+                            <p><strong>Sau "to be" (After "to be"):</strong></p>
+                        </div>
+                        <div class="adj-example">
+                            <p><em>The child is happy</em></p>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <p class="font-medium text-gray-800">3. Bài tập nhận biết (Identification exercise):</p>
+                            <p>Trong câu sau, gạch chân các tính từ:</p>
+                            <p>In the following sentence, underline the adjectives:</p>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                onclick="highlightPhrase(this)" data-phrases="big,green,lazy,brown">
+                                <p class="text-gray-800">"The big green frog jumps over the lazy brown dog."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Vị trí của tính từ (Position of adjectives) (1/2)</h4>
+                        <p class="text-gray-700 mb-3">Tính từ có hai vị trí chính trong câu:</p>
+                        <p class="text-gray-700 mb-3">Adjectives have two main positions in sentences:</p>
+                        
+                        <div class="adj-category">
+                            <div class="adj-icon bg-indigo-500">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </div>
+                            <p><strong>1. Đứng trước danh từ (Before nouns):</strong></p>
+                        </div>
+                        <p class="text-gray-700">Mô tả trực tiếp (Direct description):</p>
+                        <div class="adj-example">
+                            <p><em>A red rose</em></p>
+                        </div>
+                        
+                        <p class="text-gray-700 mt-2">Nhiều tính từ (Multiple adjectives):</p>
+                        <div class="adj-example">
+                            <p><em>A big yellow house</em></p>
+                        </div>
+                        
+                        <div class="adj-example bg-blue-100 mt-2">
+                            <p>💡 <strong>Quy tắc thứ tự tính từ (Adjective order rule):</strong></p>
+                            <p><strong>OSASCOMP</strong> là viết tắt của các loại tính từ theo thứ tự: <br>
+                                <span class="font-bold">O</span>pinion (ý kiến),
+                                <span class="font-bold">S</span>ize (kích cỡ),
+                                <span class="font-bold">A</span>ge (tuổi),
+                                <span class="font-bold">S</span>hape (hình dạng),
+                                <span class="font-bold">C</span>olor (màu sắc),
+                                <span class="font-bold">O</span>rigin (nguồn gốc),
+                                <span class="font-bold">M</span>aterial (chất liệu),
+                                <span class="font-bold">P</span>urpose (mục đích)
+                            </p>
+                            <p class="mt-1 italic">Ví dụ đầy đủ: <br>
+                                <span class="block">A lovely little old rectangular green French wooden jewelry box</span>
+                                <span class="block text-sm text-gray-600">(Opinion - Size - Age - Shape - Color - Origin - Material - Purpose)</span>
+                            </p>
+                            <p class="mt-1 italic">Another example: <br>
+                                <span class="block">An amazing big new round blue Italian metal serving tray</span>
+                                <span class="block text-sm text-gray-600">(Opinion - Size - Age - Shape - Color - Origin - Material - Purpose)</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card bg-indigo-50">
+                        <h4 class="subsection-title">6. Vị trí của tính từ (Position of adjectives) (2/2)</h4>
+                        
+                        <div class="adj-category">
+                            <div class="adj-icon bg-red-500">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <p><strong>2. Đứng sau động từ (After linking verbs):</strong></p>
+                        </div>
+                        <p class="text-gray-700">Mô tả chủ ngữ thông qua các động từ liên kết:</p>
+                        <p class="text-gray-700">Describe the subject through linking verbs:</p>
+                        
+                        <div class="adj-example">
+                            <p><strong>To be</strong> <em>She is beautiful</em></p>
+                        </div>
+                        
+                        <div class="adj-example mt-1">
+                            <p><strong>Nhóm "seem, appear, become..."</strong></p>
+                            <p><strong>Group "seem, appear, become..."</strong></p>
+                            <p><em>He looks tired</em></p>
+                        </div>
+                        
+                        <div class="adj-example mt-1">
+                            <p><strong>Nhóm giác quan (Sense verbs)</strong></p>
+                            <p><em>The food smells good</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card bg-orange-50">
+                        <h4 class="subsection-title">7. Tính từ mô tả người (Adjectives for people)</h4>
+                        <p class="text-gray-700 mb-3">Các loại tính từ mô tả người:</p>
+                        <p class="text-gray-700 mb-3">Types of adjectives that describe people:</p>
+                        
+                        <div class="grid grid-cols-3 gap-2">
+                            <div>
+                                <div class="adj-category">
+                                    <div class="adj-icon bg-blue-400">
+                                        <i class="fas fa-user-alt"></i>
+                                    </div>
+                                    <p class="font-medium">Ngoại hình:</p>
+                                </div>
+                                <p class="text-sm">Appearance</p>
+                                <div class="adj-example mt-1">
+                                    <p class="text-sm">tall/short<br>fat/thin<br>beautiful/handsome</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="adj-category">
+                                    <div class="adj-icon bg-purple-400">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <p class="font-medium">Tính cách:</p>
+                                </div>
+                                <p class="text-sm">Personality</p>
+                                <div class="adj-example mt-1">
+                                    <p class="text-sm">kind/mean<br>smart/stupid<br>friendly</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="adj-category">
+                                    <div class="adj-icon bg-pink-400">
+                                        <i class="fas fa-smile"></i>
+                                    </div>
+                                    <p class="font-medium">Cảm xúc:</p>
+                                </div>
+                                <p class="text-sm">Emotions</p>
+                                <div class="adj-example mt-1">
+                                    <p class="text-sm">happy/sad<br>angry<br>excited</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-2 mt-3">
+                            <div class="adj-example p-2 text-center">
+                                <p><em>Happy woman</em></p>
+                                <p><em>She is happy</em></p>
+                            </div>
+                            <div class="adj-example p-2 text-center">
+                                <p><em>Tall man</em></p>
+                                <p><em>He is tall</em></p>
+                            </div>
+                            <div class="adj-example p-2 text-center">
+                                <p><em>Smart woman</em></p>
+                                <p><em>She is smart</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card bg-teal-50">
+                        <h4 class="subsection-title">8. Tính từ mô tả vật (Adjectives for objects)</h4>
+                        <p class="text-gray-700 mb-3">Các loại tính từ mô tả vật:</p>
+                        <p class="text-gray-700 mb-3">Types of adjectives that describe objects:</p>
+                        
+                        <div class="grid grid-cols-3 gap-2">
+                            <div>
+                                <div class="adj-category">
+                                    <div class="adj-icon bg-green-400">
+                                        <i class="fas fa-ruler"></i>
+                                    </div>
+                                    <p class="font-medium">Kích thước:</p>
+                                </div>
+                                <p class="text-sm">Size</p>
+                                <div class="adj-example mt-1">
+                                    <p class="text-sm">big/small<br>long/short<br>tall/short</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="adj-category">
+                                    <div class="adj-icon bg-red-400">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <p class="font-medium">Màu sắc:</p>
+                                </div>
+                                <p class="text-sm">Color</p>
+                                <div class="adj-example mt-1">
+                                    <p class="text-sm">red/blue/green<br>light/dark<br>bright</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="adj-category">
+                                    <div class="adj-icon bg-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p class="font-medium">Đặc điểm:</p>
+                                </div>
+                                <p class="text-sm">Characteristics</p>
+                                <div class="adj-example mt-1">
+                                    <p class="text-sm">new/old<br>expensive/cheap<br>strong/weak</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <button id="showAdjectiveGame" onclick="showAdjectiveGame()" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-3 rounded-lg flex items-center">
+                                <i class="fas fa-gamepad mr-2"></i> Bài tập nhỏ: Kết hợp tính từ với danh từ phù hợp
+                            </button>
+                            
+                            <div id="adjectiveGame" class="hidden mt-3 bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold mb-2">Match the adjectives with the nouns:</h4>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="p-2 border border-blue-200 rounded-lg bg-white">
+                                        <p class="font-medium">Soft</p>
+                                        <div class="flex justify-between mt-2">
+                                            <button onclick="matchWord('soft', 'pillow')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Pillow</button>
+                                            <button onclick="matchWord('soft', 'bucket')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Bucket</button>
+                                        </div>
+                                    </div>
+                                    <div class="p-2 border border-blue-200 rounded-lg bg-white">
+                                        <p class="font-medium">Spicy</p>
+                                        <div class="flex justify-between mt-2">
+                                            <button onclick="matchWord('spicy', 'food')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Food</button>
+                                            <button onclick="matchWord('spicy', 'water')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Water</button>
+                                        </div>
+                                    </div>
+                                    <div class="p-2 border border-blue-200 rounded-lg bg-white">
+                                        <p class="font-medium">Fast</p>
+                                        <div class="flex justify-between mt-2">
+                                            <button onclick="matchWord('fast', 'car')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Car</button>
+                                            <button onclick="matchWord('fast', 'tree')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Tree</button>
+                                        </div>
+                                    </div>
+                                    <div class="p-2 border border-blue-200 rounded-lg bg-white">
+                                        <p class="font-medium">Friendly</p>
+                                        <div class="flex justify-between mt-2">
+                                            <button onclick="matchWord('friendly', 'dog')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Dog</button>
+                                            <button onclick="matchWord('friendly', 'stones')" class="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded">Stones</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p id="gameFeedback" class="mt-2 font-medium"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Phần 2: Từ vựng cần sử dụng trong bài tập</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">access <span class="vocab-type">(n)</span> /ˈækses/</p>
+                        <p class="vocab-meaning">tiếp cận, đến được</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">annual <span class="vocab-type">(adj)</span> /ˈænjuəl/</p>
+                        <p class="vocab-meaning">(xảy ra) hằng năm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">biodiversity <span class="vocab-type">(n)</span> /ˌbaɪəʊdaɪˈvɜːsəti/</p>
+                        <p class="vocab-meaning">sự đa dạng sinh học</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">coral <span class="vocab-type">(n, adj)</span> /ˈkɒrəl/</p>
+                        <p class="vocab-meaning">san hô</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">crazy <span class="vocab-type">(adj)</span> /ˈkreɪzi/</p>
+                        <p class="vocab-meaning">thích mê</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">destination <span class="vocab-type">(n)</span> /ˌdestɪˈneɪʃn/</p>
+                        <p class="vocab-meaning">điểm đến</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">ecosystem <span class="vocab-type">(n)</span> /ˈiːkəʊsɪstəm/</p>
+                        <p class="vocab-meaning">hệ sinh thái</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">feature <span class="vocab-type">(n)</span> /ˈfiːtʃə/</p>
+                        <p class="vocab-meaning">đặc điểm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">locate <span class="vocab-type">(v)</span> /ləʊˈkeɪt/</p>
+                        <p class="vocab-meaning">định vị, đặt ở</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">location <span class="vocab-type">(n)</span> /ləʊˈkeɪʃn/</p>
+                        <p class="vocab-meaning">địa điểm, nơi chốn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">majestic <span class="vocab-type">(adj)</span> /məˈdʒestɪk/</p>
+                        <p class="vocab-meaning">uy nghi, tráng lệ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">occur <span class="vocab-type">(v)</span> /əˈkɜː/</p>
+                        <p class="vocab-meaning">xảy ra</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">paradise <span class="vocab-type">(n)</span> /ˈpærədaɪs/</p>
+                        <p class="vocab-meaning">thiên đường, nơi đẹp tuyệt trần</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">peak <span class="vocab-type">(n)</span> /piːk/</p>
+                        <p class="vocab-meaning">đỉnh, đỉnh núi</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">permission <span class="vocab-type">(n)</span> /pəˈmɪʃn/</p>
+                        <p class="vocab-meaning">sự cho phép</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">permit <span class="vocab-type">(v)</span> /pəˈmɪt/</p>
+                        <p class="vocab-meaning">cho phép</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">possess <span class="vocab-type">(v)</span> /pəˈzes/</p>
+                        <p class="vocab-meaning">có, sở hữu</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">support <span class="vocab-type">(v)</span> /səˈpɔːt/</p>
+                        <p class="vocab-meaning">ủng hộ, giúp đỡ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">sustainable <span class="vocab-type">(adj)</span> /səˈsteɪnəbl/</p>
+                        <p class="vocab-meaning">bền vững</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">travel destination <span class="vocab-type">(n)</span> /ˈtrævl ˌdestɪˈneɪʃn/</p>
+                        <p class="vocab-meaning">điểm đến du lịch</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">urgent <span class="vocab-type">(adj)</span> /ˈɜːdʒənt/</p>
+                        <p class="vocab-meaning">gấp, cấp bách</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Phần 3: Bài tập cơ bản (Basic Exercises)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 1: Điền tính từ thích hợp vào chỗ trống</h4>
+                            <p class="exercise-instruction">👉 Chọn từ những tính từ sau: happy, big, green, lazy, brown, beautiful, new, fast, smart, kind</p>
+                            
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">She has a __________ smile.</span>
+                                    <input type="text" class="answer-input" data-answer="happy" onblur="checkAnswer(this)">
+                                    <span class="tooltip ml-1 cursor-pointer">
+                                        <i class="fas fa-info-circle text-blue-500"></i>
+                                        <span class="tooltiptext">Hint: describes a positive emotion</span>
+                                    </span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">This is a __________ house.</span>
+                                    <input type="text" class="answer-input" data-answer="big" onblur="checkAnswer(this)">
+                                    <span class="tooltip ml-1 cursor-pointer">
+                                        <i class="fas fa-info-circle text-blue-500"></i>
+                                        <span class="tooltiptext">Hint: describes size</span>
+                                    </span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">The __________ frog jumps.</span>
+                                    <input type="text" class="answer-input" data-answer="green" onblur="checkAnswer(this)">
+                                    <span class="tooltip ml-1 cursor-pointer">
+                                        <i class="fas fa-info-circle text-blue-500"></i>
+                                        <span class="tooltiptext">Hint: describes color</span>
+                                    </span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">The dog is __________.</span>
+                                    <input type="text" class="answer-input" data-answer="lazy" onblur="checkAnswer(this)">
+                                    <span class="tooltip ml-1 cursor-pointer">
+                                        <i class="fas fa-info-circle text-blue-500"></i>
+                                        <span class="tooltiptext">Hint: describes behavior</span>
+                                    </span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-32 font-medium text-gray-700">She has __________ eyes.</span>
+                                    <input type="text" class="answer-input" data-answer="brown" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Bài 2: Chọn tính từ phù hợp để hoàn thành câu</h4>
+                            
+                            <div class="space-y-3">
+                                <div>
+                                    <p class="font-medium text-gray-700">The __________ mountains attract many tourists every year.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="majestic" data-answer="majestic" onclick="checkAnswer(this)">
+                                            <span>majestic</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="occur" data-answer="majestic" onclick="checkAnswer(this)">
+                                            <span>occur</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="biodiversity" data-answer="majestic" onclick="checkAnswer(this)">
+                                            <span>biodiversity</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium text-gray-700">This island is a tropical __________ with white sandy beaches.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="destination" data-answer="paradise" onclick="checkAnswer(this)">
+                                            <span>destination</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="paradise" data-answer="paradise" onclick="checkAnswer(this)">
+                                            <span>paradise</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="coral" data-answer="paradise" onclick="checkAnswer(this)">
+                                            <span>coral</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium text-gray-700">The __________ reef is home to many marine species.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="coral" data-answer="coral" onclick="checkAnswer(this)">
+                                            <span>coral</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="peak" data-answer="coral" onclick="checkAnswer(this)">
+                                            <span>peak</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="location" data-answer="coral" onclick="checkAnswer(this)">
+                                            <span>location</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium text-gray-700">This is an __________ issue that needs immediate attention.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="urgent" data-answer="urgent" onclick="checkAnswer(this)">
+                                            <span>urgent</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="annual" data-answer="urgent" onclick="checkAnswer(this)">
+                                            <span>annual</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="sustainable" data-answer="urgent" onclick="checkAnswer(this)">
+                                            <span>sustainable</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="font-medium text-gray-700">They're implementing __________ tourism practices to protect the environment.</p>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="crazy" data-answer="sustainable" onclick="checkAnswer(this)">
+                                            <span>crazy</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="sustainable" data-answer="sustainable" onclick="checkAnswer(this)">
+                                            <span>sustainable</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="feature" data-answer="sustainable" onclick="checkAnswer(this)">
+                                            <span>feature</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 3: Sắp xếp từ thành câu</h4>
+                            <p class="exercise-instruction">👉 Sắp xếp các từ sau thành câu đúng (nhớ quy tắc vị trí tính từ)</p>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="p-2 bg-blue-50 rounded-lg">
+                                        <p class="font-medium mb-1">blue / sky / is / the / beautiful</p>
+                                        <input type="text" class="answer-input w-full" data-answer="The beautiful sky is blue." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="p-2 bg-blue-50 rounded-lg">
+                                        <p class="font-medium mb-1">has / she / long / hair / black</p>
+                                        <input type="text" class="answer-input w-full" data-answer="She has long black hair." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="p-2 bg-blue-50 rounded-lg">
+                                        <p class="font-medium mb-1">new / big / he / car / a / bought</p>
+                                        <input type="text" class="answer-input w-full" data-answer="He bought a big new car." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="p-2 bg-blue-50 rounded-lg">
+                                        <p class="font-medium mb-1">happy / children / are / the / excited / and</p>
+                                        <input type="text" class="answer-input w-full" data-answer="The children are happy and excited." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="p-2 bg-blue-50 rounded-lg">
+                                        <p class="font-medium mb-1">small / lovely / this / old / is / house</p>
+                                        <input type="text" class="answer-input w-full" data-answer="This is a lovely small old house." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Phần 4: Bài tập nâng cao (Advanced Exercises)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 4: Viết lại câu với tính từ đúng</h4>
+                            <p class="exercise-instruction">👉 Viết lại các câu sau bằng cách sắp xếp các tính từ theo đúng thứ tự</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">I bought a (wooden/square/beautiful) table.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="I bought a beautiful square wooden table." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She has (long/brown/straight) hair.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="She has long straight brown hair." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We visited an (old/amazing/brick) castle.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="We visited an amazing old brick castle." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">He gave me a (small/leather/black) wallet.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="He gave me a small black leather wallet." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">It's a (Chinese/round/metal/interesting) sculpture.</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="It's an interesting round Chinese metal sculpture." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">A / delicious / big / round / chocolate / birthday / cake</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="A delicious big round chocolate birthday cake" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">An / interesting / small / old / square / blue / Spanish / ceramic / vase</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="An interesting small old square blue Spanish ceramic vase" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col md:flex-row items-start md:items-center">
+                                    <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">A / beautiful / long / ancient / Vietnamese / silk / dress</span>
+                                    <input type="text" class="answer-input block print:hidden" data-answer="A beautiful long ancient Vietnamese silk dress" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 5: Đọc hiểu và dịch đoạn văn</h4>
+                            <p class="exercise-instruction">👉 Đọc đoạn văn sau và dịch sang tiếng Việt. Chú ý các tính từ được gạch chân.</p>
+                            
+                            <div class="mt-3 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                                <h5 class="font-bold text-gray-800 mb-3">The Beautiful Island Paradise</h5>
+                                <p class="text-gray-700 leading-relaxed mb-3">
+                                    Last summer, my family visited a <span class="bg-yellow-200">majestic</span> island in the Pacific Ocean. The <span class="bg-yellow-200">tropical</span> climate was <span class="bg-yellow-200">warm</span> and <span class="bg-yellow-200">pleasant</span>, perfect for our <span class="bg-yellow-200">annual</span> vacation. The <span class="bg-yellow-200">white</span> sandy beaches were <span class="bg-yellow-200">soft</span> and <span class="bg-yellow-200">clean</span>, stretching for miles along the <span class="bg-yellow-200">crystal-clear</span> <span class="bg-yellow-200">blue</span> waters.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed mb-3">
+                                    The <span class="bg-yellow-200">tall</span> palm trees swayed gently in the <span class="bg-yellow-200">fresh</span> ocean breeze. We stayed in a <span class="bg-yellow-200">modern</span>, <span class="bg-yellow-200">luxurious</span> hotel with <span class="bg-yellow-200">spacious</span> rooms and <span class="bg-yellow-200">friendly</span> staff. The <span class="bg-yellow-200">local</span> people were <span class="bg-yellow-200">kind</span> and <span class="bg-yellow-200">helpful</span>, always ready to share their <span class="bg-yellow-200">traditional</span> culture with visitors.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed mb-3">
+                                    One morning, we took a <span class="bg-yellow-200">small</span> boat to explore the <span class="bg-yellow-200">colorful</span> coral reefs. The underwater world was <span class="bg-yellow-200">amazing</span> and <span class="bg-yellow-200">diverse</span>, filled with <span class="bg-yellow-200">bright</span> fish and <span class="bg-yellow-200">strange</span> sea creatures. The <span class="bg-yellow-200">experienced</span> guide told us about the <span class="bg-yellow-200">fragile</span> ecosystem and the <span class="bg-yellow-200">urgent</span> need for <span class="bg-yellow-200">sustainable</span> tourism practices.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed mb-3">
+                                    In the afternoon, we hiked up a <span class="bg-yellow-200">steep</span> mountain trail to reach the <span class="bg-yellow-200">highest</span> peak. The <span class="bg-yellow-200">panoramic</span> view was absolutely <span class="bg-yellow-200">breathtaking</span>! We could see the <span class="bg-yellow-200">entire</span> island, from the <span class="bg-yellow-200">dense</span> green forests to the <span class="bg-yellow-200">distant</span> horizon. The <span class="bg-yellow-200">golden</span> sunset painted the sky with <span class="bg-yellow-200">beautiful</span> colors.
+                                </p>
+                                <p class="text-gray-700 leading-relaxed">
+                                    That evening, we enjoyed a <span class="bg-yellow-200">delicious</span> dinner at a <span class="bg-yellow-200">famous</span> restaurant. The <span class="bg-yellow-200">fresh</span> seafood was <span class="bg-yellow-200">excellent</span>, and the <span class="bg-yellow-200">local</span> music was <span class="bg-yellow-200">lively</span> and <span class="bg-yellow-200">entertaining</span>. It was truly a <span class="bg-yellow-200">memorable</span> and <span class="bg-yellow-200">wonderful</span> experience that we will never forget.
+                                </p>
+                            </div>
+                            
+                            <div class="mt-3 p-3 bg-green-50 rounded-lg">
+                                <p class="font-medium text-gray-700 mb-2">💡 Gợi ý:</p>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Đếm xem có bao nhiêu tính từ trong đoạn văn (khoảng 50 từ)</li>
+                                    <li>• Chú ý cách sử dụng tính từ để mô tả người, vật, địa điểm</li>
+                                    <li>• Dịch theo nghĩa phù hợp với ngữ cảnh</li>
+                                    <li>• Giữ nguyên cấu trúc câu và ý nghĩa của đoạn văn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Bài 6: Tìm và sửa lỗi (sai thứ tự tính từ hoặc sai tính từ)</h4>
+                            
+                            <div class="space-y-3">
+                                <div class="flex flex-col sm:items-start">
+                                    <span class="font-medium text-gray-700">She has silk beautiful long scarf.</span>
+                                    <input type="text" class="answer-input w-full sm:w-96" data-answer="She has a beautiful long silk scarf." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:items-start">
+                                    <span class="font-medium text-gray-700">We saw an red big old truck.</span>
+                                    <input type="text" class="answer-input w-full sm:w-96" data-answer="We saw a big old red truck." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:items-start">
+                                    <span class="font-medium text-gray-700">That's my wool warm favorite sweater.</span>
+                                    <input type="text" class="answer-input w-full sm:w-96" data-answer="That's my favorite warm wool sweater." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:items-start">
+                                    <span class="font-medium text-gray-700">He gave me leather small black a wallet.</span>
+                                    <input type="text" class="answer-input w-full sm:w-96" data-answer="He gave me a small black leather wallet." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:items-start">
+                                    <span class="font-medium text-gray-700">The museum has metal interesting round sculptures.</span>
+                                    <input type="text" class="answer-input w-full sm:w-96" data-answer="The museum has interesting round metal sculptures." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+        
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+        
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    
+                    // Always show correct answer in green
+                    if (radio.value === correctAnswer) {
+                        const label = radio.closest('.radio-label');
+                        label.classList.add('correct');
+                    } else {
+                        const label = radio.closest('.radio-label');
+                        label.classList.remove('correct');
+                    }
+                    
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer === radio.value && userAnswer !== correctAnswer) {
+                        const label = radio.closest('.radio-label');
+                        label.classList.add('incorrect');
+                    } else {
+                        const label = radio.closest('.radio-label');
+                        label.classList.remove('incorrect');
+                    }
+                });
+                return;
+            }
+            
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+        
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+            
+            let highlightedText = text;
+            
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+            
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+        
+        // Function to show/hide the adjective matching game
+        function showAdjectiveGame() {
+            const gameDiv = document.getElementById('adjectiveGame');
+            if (gameDiv.classList.contains('hidden')) {
+                gameDiv.classList.remove('hidden');
+            } else {
+                gameDiv.classList.add('hidden');
+            }
+        }
+        
+        // Function for the adjective matching game
+        function matchWord(adjective, noun) {
+            const feedback = document.getElementById('gameFeedback');
+            const correctPairs = {
+                'soft': 'pillow',
+                'spicy': 'food',
+                'fast': 'car',
+                'friendly': 'dog'
+            };
+            
+            if (correctPairs[adjective] === noun) {
+                feedback.textContent = "Correct! " + adjective + " " + noun + " is a good match.";
+                feedback.classList.remove('text-red-500');
+                feedback.classList.add('text-green-500');
+            } else {
+                feedback.textContent = "Not quite! " + adjective + " " + noun + " doesn't sound right. Try again.";
+                feedback.classList.remove('text-green-500');
+                feedback.classList.add('text-red-500');
+            }
+        }
+    </script>
+</body>
+</html>
