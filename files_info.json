@@ -693,6 +693,13 @@
       "description": "Tính từ, cấu trúc so sánh, động từ, giới từ",
       "category": "tests"
     },
+    "tests/pre-gs6-125-all-multiple-choice-questions": {
+      "path": "tests/pre-gs6-125-all-multiple-choice-questions",
+      "title": "Pre GS6 - Review all",
+      "author": "Gen8",
+      "description": "Ôn tập toàn bộ",
+      "category": "tests"
+    },
     "tests/gs7-tenses-test-paper-4": {
       "path": "tests/gs7-tenses-test-paper-4",
       "title": "GS7 Tenses Test - Paper 4",
@@ -817,6 +824,13 @@
       "title": "GS7 Tenses Test - Paper 1",
       "author": "Gen8",
       "description": "Bài kiểm tra thì trong GS7, thì hiện tại đơn, hiện tại tiếp diễn, quá khứ đơn, tương lai đơn",
+      "category": "tests"
+    },
+    "tests/pre-gs6-all-writing": {
+      "path": "tests/pre-gs6-all-writing",
+      "title": "Pre GS6 - Review all",
+      "author": "Gen8",
+      "description": "Ôn tập toàn bộ",
       "category": "tests"
     },
     "tests/pre-gs7-test-1-paper-1": {

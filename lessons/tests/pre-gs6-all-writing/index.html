@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .print\:hidden { display: none !important; }
+        }
+        /* Style for answer inputs: only border-bottom */
+        .answer-input, .answer-textarea {
+            border: none;
+            border-bottom: 1px solid #cbd5e1; /* Tailwind gray-300, lighter and thinner */
+            border-radius: 0;
+            outline: none;
+            background: transparent;
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+            min-width: 60px;
+            transition: border-color 0.2s;
+        }
+        .answer-input:focus, .answer-textarea:focus {
+            border-bottom-color: #2563eb; /* Tailwind blue-600 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="test-paper max-w-4xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8 print:mt-0">
+        <div class="header text-center mb-8">
+            <h3 class="text-xl font-bold text-blue-800">ENGLISH GRAMMAR TEST</h3>
+            <p class="mb-2"><strong>Time:</strong> 90 minutes | <strong>Full name:</strong> <input type="text" class="border-b border-gray-300 outline-none px-2 print:hidden" style="width:220px" /></p>
+        </div>
+        <form id="grammarTest">
+        <!-- Part 1: Error Correction -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Part 1: Error Correction</div>
+            <p class="mb-4">Find the errors and rewrite the sentences correctly:</p>
+            <div class="space-y-4" id="error-correction-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+        </div>
+        <!-- Part 2: Rearrangement -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Part 2: Rearrangement</div>
+            <p class="mb-4">Rearrange the words to make correct sentences:</p>
+            <div class="space-y-4" id="rearrangement-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+        </div>
+        <!-- Part 3: Word Form Completion -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Part 3: Word Form Completion</div>
+            <p class="mb-4">Complete the sentences with the correct form of the word in brackets:</p>
+            <div class="space-y-4" id="word-form-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-8 print:hidden">
+            <button type="button" onclick="gradeTest()" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 font-semibold">Submit</button>
+        </div>
+        <div id="result" class="mt-8 text-center text-lg font-bold print:hidden" style="display:none"></div>
+        </form>
+    </div>
+    <script>
+    // Error Correction Questions (30 questions, 30 points)
+    const errorCorrectionQuestions = [
+        // Common & Proper Nouns, Danh từ số ít, vị trí danh từ
+        { question: "She is reading harry potter book.", answer: "She is reading a Harry Potter book." },
+
+        // Singular & Plural Nouns, Danh từ số nhiều (s/es), bất quy tắc
+        { question: "There are two mouse in the kitchen.", answer: "There are two mice in the kitchen." },
+        { question: "I saw five childs at the playground.", answer: "I saw five children at the playground." },
+        { question: "He has three box in his room.", answer: "He has three boxes in his room." },
+
+        // Countable & Uncountable Nouns, Danh từ đếm được/không đếm được
+        { question: "She gave me an advice.", answer: "She gave me some advice." },
+        { question: "I need informations about the course.", answer: "I need information about the course." },
+
+        // Some / Any
+        { question: "There isn't some apples in the fridge.", answer: "There aren't any apples in the fridge." },
+        { question: "Do you have some pens I can borrow?", answer: "Do you have any pens I can borrow?" },
+        { question: "Would you like any coffee?", answer: "Would you like some coffee?" },
+
+        // Articles (a/an/the)
+        { question: "He is a honest man.", answer: "He is an honest man." },
+        { question: "I saw a elephant at zoo.", answer: "I saw an elephant at the zoo." },
+        { question: "She can play piano very well.", answer: "She can play the piano very well." },
+
+        // Personal Pronouns, Đại từ nhân xưng chủ ngữ/tân ngữ
+        { question: "Her is going to the market.", answer: "She is going to the market." },
+        { question: "Me and Tom are friends.", answer: "Tom and I are friends." },
+
+        // Verb to be (am/is/are), Cấu trúc S + be + bổ ngữ
+        { question: "They is not at home.", answer: "They are not at home." },
+        { question: "Am he your brother?", answer: "Is he your brother?" },
+
+        // Regular Verbs (s/es), Vị trí động từ
+        { question: "My sister go to school by bus.", answer: "My sister goes to school by bus." },
+        { question: "He like play football.", answer: "He likes playing football." },
+        { question: "The dog bark loudly every night.", answer: "The dog barks loudly every night." },
+
+        // Modal Verbs (can/should/must)
+        { question: "She can sings very well.", answer: "She can sing very well." },
+        { question: "You must to finish your homework.", answer: "You must finish your homework." },
+
+        // Possessive Adjectives, Cụm tính từ sở hữu + danh từ
+        { question: "This is she bag.", answer: "This is her bag." },
+        { question: "They forgot them keys.", answer: "They forgot their keys." },
+
+        // Adjective + Noun, Sự biến đổi từ tính từ
+        { question: "She is a beautifully singer.", answer: "She is a beautiful singer." },
+        { question: "He is a quickly runner.", answer: "He is a quick runner." },
+
+        // Adverbs (manner, frequency), Trạng từ chỉ cách thức, tần suất
+        { question: "He speaks English fluent.", answer: "He speaks English fluently." },
+        { question: "She always is late for class.", answer: "She is always late for class." },
+
+        // Prepositions (in, on, at), Giới từ chỉ thời gian & địa điểm
+        { question: "We have a meeting at Monday.", answer: "We have a meeting on Monday." },
+        { question: "My birthday is on June.", answer: "My birthday is in June." },
+
+        // Câu mệnh lệnh, S + V + O, phủ định, nghi vấn
+        { question: "Don't to open the window.", answer: "Don't open the window." },
+        { question: "Does she likes ice cream?", answer: "Does she like ice cream?" },
+
+        // Chủ ngữ giả: It, There; It's ... (thời tiết, giờ), There is/are
+        { question: "Its raining outside.", answer: "It's raining outside." },
+        { question: "There are seven o'clock now.", answer: "It's seven o'clock now." },
+        { question: "There are a book on the table.", answer: "There is a book on the table." },
+        { question: "There is many students in the hall.", answer: "There are many students in the hall." }
+    ];
+
+    // Rearrangement Questions (30 questions, 30 points)
+    const rearrangementQuestions = [
+        // Danh từ số ít, số nhiều, bất quy tắc, vị trí danh từ, mạo từ, some/any
+        { question: "a / is / cat / the / under / table", answer: "The cat is under a table." },
+        { question: "are / apples / there / any / in / fridge / the", answer: "Are there any apples in the fridge?" },
+        { question: "children / the / are / playing / park / in / the", answer: "The children are playing in the park." },
+        { question: "has / my / two / friend / dogs", answer: "My friend has two dogs." },
+        { question: "some / I / need / information", answer: "I need some information." },
+
+        // Đại từ nhân xưng chủ ngữ/tân ngữ, động từ to be, động từ thường, vị trí động từ
+        { question: "is / she / not / at / home", answer: "She is not at home." },
+        { question: "him / I / saw / at / the / station", answer: "I saw him at the station." },
+        { question: "are / they / students / new", answer: "They are new students." },
+        { question: "us / the / teacher / gave / homework / to", answer: "The teacher gave homework to us." },
+        { question: "do / you / know / her", answer: "Do you know her?" },
+
+        // Động từ thường (s/es), động từ bất quy tắc, danh từ đếm được/không đếm được
+        { question: "reads / every / my / books / brother / night", answer: "My brother reads books every night." },
+        { question: "does / not / she / eat / meat", answer: "She does not eat meat." },
+        { question: "drink / water / should / you / more", answer: "You should drink more water." },
+        { question: "flies / south / winter / in / the / bird", answer: "The bird flies south in the winter." },
+        { question: "bought / I / some / bread / yesterday", answer: "I bought some bread yesterday." },
+
+        // Động từ khiếm khuyết, tính từ sở hữu, cụm tính từ mô tả + danh từ
+        { question: "can / my / little / sister / swim", answer: "My little sister can swim." },
+        { question: "should / your / parents / visit / doctor / the", answer: "Your parents should visit the doctor." },
+        { question: "must / we / finish / our / homework / tonight", answer: "We must finish our homework tonight." },
+        { question: "is / her / very / cat / cute", answer: "Her cat is very cute." },
+        { question: "has / a / big / house / family / my", answer: "My family has a big house." },
+
+        // Trạng từ chỉ cách thức, tần suất, sự biến đổi từ tính từ
+        { question: "always / he / is / on / time", answer: "He is always on time." },
+        { question: "speaks / English / she / fluently", answer: "She speaks English fluently." },
+        { question: "usually / we / breakfast / have / at / 7", answer: "We usually have breakfast at 7." },
+        { question: "runs / very / fast / dog / the", answer: "The dog runs very fast." },
+        { question: "is / a / careful / driver / Tom", answer: "Tom is a careful driver." },
+
+        // Giới từ chỉ thời gian & địa điểm, cấu trúc S + be + bổ ngữ, câu hỏi, phủ định
+        { question: "meeting / is / the / at / 10 / AM", answer: "The meeting is at 10 AM." },
+        { question: "in / live / they / a / small / village", answer: "They live in a small village." },
+        { question: "not / there / any / are / eggs / fridge / the / in", answer: "There are not any eggs in the fridge." },
+        { question: "is / it / raining / outside", answer: "It is raining outside." },
+        { question: "is / what / time / it", answer: "What time is it?" },
+
+        // Câu mệnh lệnh, chủ ngữ giả, there is/are, It's (thời tiết, giờ)
+        { question: "open / not / do / the / window", answer: "Do not open the window." },
+        { question: "is / there / a / mouse / in / kitchen / the", answer: "There is a mouse in the kitchen." },
+        { question: "are / there / many / people / in / the / hall", answer: "There are many people in the hall." },
+        { question: "is / it / seven / o'clock / now", answer: "It is seven o'clock now." },
+        { question: "is / it / cold / today", answer: "It is cold today." }
+    ];
+
+    // Word Form Completion Questions (30 questions, 30 points)
+    const wordFormQuestions = [
+        // Nouns: singular, plural, irregular, countable, uncountable, noun position
+        { question: "There are several ______ on the table. (box)", answer: "boxes" },
+        { question: "How many ______ do you see in the garden? (child)", answer: "children" },
+        { question: "I bought two ______ of bread. (loaf)", answer: "loaves" },
+        { question: "The ______ is under the chair. (mouse)", answer: "mouse" },
+        { question: "We need some ______ for the recipe. (information)", answer: "information" },
+        { question: "She has a lot of ______ in her bag. (key)", answer: "keys" },
+        { question: "There are no ______ in the fridge. (egg)", answer: "eggs" },
+        { question: "I don't have much ______ left. (money)", answer: "money" },
+        { question: "The ______ are playing outside. (child)", answer: "children" },
+        { question: "He gave me two ______. (knife)", answer: "knives" },
+
+        // Articles, some/any, noun position
+        { question: "______ umbrella is on the chair. (mạo từ - article)", answer: "The" },
+        { question: "I need ______ advice. (lượng từ - quantifier)", answer: "some" },
+        { question: "Do you have ______ pencils? (lượng từ - quantifier)", answer: "any" },
+        { question: "She doesn't have ______ friends here. (lượng từ - quantifier)", answer: "any" },
+        { question: "______ apple a day keeps the doctor away. (mạo từ - article)", answer: "An" },
+
+        // Personal pronouns, subject/object, verb position
+        { question: "______ gave the letter to me. (He)", answer: "He" },
+        { question: "Can you help ______ with my homework? (I)", answer: "me" },
+        { question: "______ is my best friend. (She)", answer: "She" },
+        { question: "I saw ______ at the bus stop. (they)", answer: "them" },
+        { question: "______ are going to the museum. (We)", answer: "We" },
+
+        // Verb to be, regular/irregular verbs, modal verbs, verb position
+        { question: "My parents ______ at home now. (tobe)", answer: "are" },
+        { question: "The cat ______ not under the table. (tobe)", answer: "is" },
+        { question: "______ you ready for the test? (tobe)", answer: "Are" },
+        { question: "She ______ play the piano very well. (modal verb)", answer: "can" },
+        { question: "You ______ finish your homework before dinner. (modal verb)", answer: "must" },
+
+        // Possessive adjectives, descriptive noun phrases
+        { question: "This is ______ new bicycle. (I)", answer: "my" },
+        { question: "______ parents are doctors. (They)", answer: "Their" },
+        { question: "He lives with ______ uncle in London. (he)", answer: "his" },
+        { question: "______ little sister is very clever. (I)", answer: "My" },
+        { question: "Our ______ house is very old. (family)", answer: "family's" },
+
+        // Adverbs: manner, frequency, adjective/adverb transformation
+        { question: "She sings very ______. (beautiful)", answer: "beautifully" },
+        { question: "He is a ______ runner. (fast)", answer: "fast" },
+        { question: "They ______ go to the cinema on weekends. (often)", answer: "often" },
+        { question: "He speaks English ______. (fluent)", answer: "fluently" },
+        { question: "I  ______ tired after work. (tobe + always)", answer: "always" },
+
+        // Prepositions: time, place
+        { question: "The meeting starts ______ 8 o'clock. (preposition)", answer: "at" },
+        { question: "We have a holiday ______ July. (preposition)", answer: "in" },
+        { question: "The picture is ______ the wall. (preposition)", answer: "on" },
+        { question: "She was born ______ 2005. (preposition)", answer: "in" },
+        { question: "Let's meet ______ the library. (preposition)", answer: "at" },
+
+        // There is/are, It (weather, time), commands, S + be + complement
+        { question: "______ is a big tree in the garden. (Dummy subject)", answer: "There" },
+        { question: "______ are some sandwiches on the plate. (Dummy subject)", answer: "There" },
+        { question: "______ is raining today. (Dummy subject)", answer: "It" },
+        { question: "______ is ten o'clock now. (Dummy subject)", answer: "It" },
+        { question: "______ not open the door! (command)", answer: "Don't" }
+    ];
+
+
+    // Function to shuffle array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Display Error Correction Questions
+    function displayErrorCorrectionQuestions() {
+        const container = document.getElementById('error-correction-container');
+        const shuffledQuestions = shuffleArray([...errorCorrectionQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.setAttribute('data-answer', q.answer);
+            const label = document.createElement('label');
+            label.innerHTML = `${index + 1}. ${q.question}<br>`;
+            // Use input instead of textarea
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = `err${index + 1}`;
+            input.className = 'answer-input w-full mt-1 p-1';
+            label.appendChild(input);
+            questionDiv.appendChild(label);
+            container.appendChild(questionDiv);
+        });
+    }
+
+    // Display Rearrangement Questions
+    function displayRearrangementQuestions() {
+        const container = document.getElementById('rearrangement-container');
+        const shuffledQuestions = shuffleArray([...rearrangementQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.setAttribute('data-answer', q.answer);
+            const label = document.createElement('label');
+            label.innerHTML = `${index + 1}. ${q.question}<br>`;
+            // Use input instead of textarea
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = `rw${index + 1}`;
+            input.className = 'answer-input w-full mt-1 p-1';
+            label.appendChild(input);
+            questionDiv.appendChild(label);
+            container.appendChild(questionDiv);
+        });
+    }
+
+    // Display Word Form Questions
+    function displayWordFormQuestions() {
+        const container = document.getElementById('word-form-container');
+        const shuffledQuestions = shuffleArray([...wordFormQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.setAttribute('data-answer', q.answer);
+            const label = document.createElement('label');
+            const questionText = q.question.replace('______', `<input type="text" name="word${index + 1}" class="answer-input">`);
+            label.innerHTML = `${index + 1}. ${questionText}`;
+            questionDiv.appendChild(label);
+            container.appendChild(questionDiv);
+        });
+    }
+
+    // Display Cloze Test
+    function displayClozeTest() {
+        document.getElementById('word-box').textContent = clozeTest.words.join(', ');
+        document.getElementById('cloze-paragraph-container').innerHTML = clozeTest.content;
+    }
+
+    // Initialize when page loads
+    window.onload = function() {
+        displayErrorCorrectionQuestions();
+        displayRearrangementQuestions();
+        displayWordFormQuestions();
+        displayClozeTest();
+    };
+
+    function getAnswersFromAttr(questionElem) {
+        return (questionElem.getAttribute('data-answer')||'').split('||').map(s=>s.trim());
+    }
+
+    function gradeTest() {
+        let score = 0;
+        let form = document.forms['grammarTest'];
+        document.querySelectorAll('.question').forEach(q => {
+            q.querySelectorAll('input[type=text], textarea').forEach(input => {
+                input.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+            });
+        });
+
+        // Grade Error Correction (30 points)
+        for(let i=1;i<=errorCorrectionQuestions.length;i++){
+            let qElem = document.querySelector(`input[name=err${i}]`).closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase().replace(/[.\s]+/g, ' ').trim());
+            let val = form[`err${i}`].value.trim().toLowerCase().replace(/[.\s]+/g, ' ').trim();
+            if(corrects.includes(val)){ form[`err${i}`].classList.add('bg-green-100','border-green-500','border-2'); score += 1; }
+            else { form[`err${i}`].classList.add('bg-red-100','border-red-500','border-2'); }
+        }
+
+        // Grade Rearrangement (30 points)
+        for(let i=1;i<=rearrangementQuestions.length;i++){
+            let qElem = document.querySelector(`input[name=rw${i}]`).closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase().replace(/[?.\s]+/g, ' ').trim());
+            let val = form[`rw${i}`].value.trim().toLowerCase().replace(/[?.\s]+/g, ' ').trim();
+            if(corrects.some(ans=>val===ans)){ form[`rw${i}`].classList.add('bg-green-100','border-green-500','border-2'); score += 1; }
+            else { form[`rw${i}`].classList.add('bg-red-100','border-red-500','border-2'); }
+        }
+
+        // Grade Word Form (30 points)
+        for(let i=1;i<=wordFormQuestions.length;i++){
+            let input = form[`word${i}`];
+            let qElem = input.closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = input.value.trim().toLowerCase();
+            if(corrects.includes(val)){ input.classList.add('bg-green-100','border-green-500','border-2'); score += 1; }
+            else { input.classList.add('bg-red-100','border-red-500','border-2'); }
+        }
+
+        // Grade Cloze Test (10 points)
+        for(let i=1;i<=5;i++){
+            let input = form[`cloze${i}`];
+            let qElem = input.closest('.question');
+            let corrects = getAnswersFromAttr(qElem).map(ans=>ans.toLowerCase());
+            let val = input.value.trim().toLowerCase();
+            if(corrects.includes(val)){ input.classList.add('bg-green-100','border-green-500','border-2'); score += 2; }
+            else { input.classList.add('bg-red-100','border-red-500','border-2'); }
+        }
+
+        document.getElementById('result').style.display = '';
+        document.getElementById('result').innerHTML = `Your score: <span class="text-blue-700">${score.toFixed(1)} / 100</span>`;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Kiểm Tra Ngữ Pháp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .print\:hidden { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="test-paper max-w-4xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8 print:mt-0">
+        <div class="header text-center mb-8">
+            <h3 class="text-xl font-bold text-blue-800">ENGLISH GRAMMAR TEST</h3>
+            <p class="mb-2"><strong>Time:</strong> 90 minutes | <strong>Full name:</strong> <input type="text" class="border-b border-gray-400 outline-none px-2 print:hidden" style="width:220px" /></p>
+        </div>
+        <form id="grammarTest">
+        <!-- Phần 1: Trắc nghiệm -->
+        <div class="section mb-8">
+            <div class="section-title font-semibold mb-3">Phần 1: Trắc nghiệm (10 điểm) - Multiple Choice (10 marks)</div>
+            <p class="mb-4">Chọn đáp án đúng nhất (Choose the best answer):</p>
+            <div class="space-y-2" id="mcq-container">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+        </div>
+        <div class="flex justify-center mt-8 print:hidden">
+            <button type="button" onclick="gradeTest()" class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 font-semibold">Nộp bài / Submit</button>
+        </div>
+        <div id="result" class="mt-8 text-center text-lg font-bold print:hidden" style="display:none"></div>
+        </form>
+    </div>
+    <script>
+    // 100 Multiple Choice Questions covering all specified grammar topics
+    const mcqQuestions = [
+        // Danh từ chung & Danh từ riêng (Common & Proper Nouns) - 3 questions
+        { question: "Which word is a proper noun?", options: ["A. city", "B. London", "C. school", "D. book"], answer: "B" },
+        { question: "Which word is a common noun?", options: ["A. John", "B. Paris", "C. teacher", "D. Monday"], answer: "C" },
+        { question: "Which word is a proper noun?", options: ["A. dog", "B. cat", "C. Mary", "D. house"], answer: "C" },
+
+        // Danh từ số ít (Singular Nouns) - 3 questions
+        { question: "Choose the singular noun:", options: ["A. books", "B. cars", "C. cat", "D. trees"], answer: "C" },
+        { question: "Which is a singular noun?", options: ["A. dogs", "B. bird", "C. flowers", "D. feet"], answer: "B" },
+        { question: "Select the singular form:", options: ["A. men", "B. pen", "C. children", "D. doors"], answer: "B" },
+
+        // Danh từ số nhiều (s/es) (Regular Plural Nouns) - 3 questions
+        { question: "What is the plural of 'book'?", options: ["A. bookes", "B. books", "C. bookies", "D. book"], answer: "B" },
+        { question: "What is the plural of 'box'?", options: ["A. boxs", "B. boxes", "C. boxies", "D. box"], answer: "B" },
+        { question: "What is the plural of 'bus'?", options: ["A. buss", "B. buses", "C. busies", "D. bus"], answer: "B" },
+
+        // Danh từ số nhiều bất quy tắc (Irregular Plural Nouns) - 3 questions
+        { question: "What is the plural of 'child'?", options: ["A. childs", "B. children", "C. childes", "D. child"], answer: "B" },
+        { question: "What is the plural of 'man'?", options: ["A. mans", "B. men", "C. manes", "D. man"], answer: "B" },
+        { question: "What is the plural of 'foot'?", options: ["A. foots", "B. feet", "C. footes", "D. foot"], answer: "B" },
+
+        // Danh từ đếm được (Countable Nouns) - 3 questions
+        { question: "Which is a countable noun?", options: ["A. water", "B. air", "C. apple", "D. milk"], answer: "C" },
+        { question: "Choose the countable noun:", options: ["A. rice", "B. bread", "C. car", "D. sugar"], answer: "C" },
+        { question: "Which noun can you count?", options: ["A. music", "B. time", "C. book", "D. love"], answer: "C" },
+
+        // Danh từ không đếm được (Uncountable Nouns) - 3 questions
+        { question: "Which is an uncountable noun?", options: ["A. chair", "B. water", "C. cat", "D. pen"], answer: "B" },
+        { question: "Choose the uncountable noun:", options: ["A. table", "B. milk", "C. dog", "D. book"], answer: "B" },
+        { question: "Which noun cannot be counted?", options: ["A. house", "B. rice", "C. tree", "D. car"], answer: "B" },
+
+        // Vị trí danh từ trong câu (Position of Nouns) - 3 questions
+        { question: "Where is the noun in 'The cat sleeps'?", options: ["A. The", "B. cat", "C. sleeps", "D. cat sleeps"], answer: "B" },
+        { question: "Which word is the subject noun in 'Dogs run fast'?", options: ["A. Dogs", "B. run", "C. fast", "D. Dogs run"], answer: "A" },
+        { question: "Find the object noun in 'I see a bird'", options: ["A. I", "B. see", "C. a", "D. bird"], answer: "D" },
+
+        // Some / Any - 3 questions
+        { question: "I have ___ apples.", options: ["A. some", "B. any", "C. a", "D. the"], answer: "A" },
+        { question: "Do you have ___ milk?", options: ["A. some", "B. any", "C. a", "D. the"], answer: "B" },
+        { question: "There isn't ___ bread left.", options: ["A. some", "B. any", "C. a", "D. the"], answer: "B" },
+        { question: "Would you like ___ tea?", options: ["A. some", "B. any", "C. a", "D. the"], answer: "A" },
+
+        // Mạo từ a/an/the (Articles) - 4 questions
+        { question: "I see ___ apple.", options: ["A. a", "B. an", "C. any", "D. some"], answer: "B" },
+        { question: "___ sun is bright.", options: ["A. A", "B. An", "C. The", "D. Some"], answer: "C" },
+        { question: "She has ___ car.", options: ["A. a", "B. an", "C. any", "D. some"], answer: "A" },
+        { question: "___ elephant is big.", options: ["A. A", "B. An", "C. Any", "D. Many"], answer: "B" },
+        { question: "He plays ___ guitar.", options: ["A. a", "B. an", "C. the", "D. some"], answer: "C" },
+        { question: "She can play ___ piano.", options: ["A. a", "B. an", "C. the", "D. some"], answer: "C" },
+        { question: "___ moon is full tonight.", options: ["A. A", "B. An", "C. The", "D. Some"], answer: "C" },
+        { question: "They are looking at ___ stars.", options: ["A. a", "B. an", "C. the", "D. some"], answer: "C" },
+        { question: "___ sky is blue.", options: ["A. A", "B. An", "C. The", "D. Some"], answer: "C" },
+
+        // Đại từ nhân xưng chủ ngữ và tân ngữ (Personal Pronouns) - 4 questions
+        { question: "___ am a student.", options: ["A. I", "B. Me", "C. My", "D. Mine"], answer: "A" },
+        { question: "She likes ___", options: ["A. I", "B. me", "C. my", "D. mine"], answer: "B" },
+        { question: "___ are friends.", options: ["A. We", "B. Us", "C. Our", "D. Ours"], answer: "A" },
+        { question: "He helps ___", options: ["A. they", "B. them", "C. their", "D. theirs"], answer: "B" },
+
+        // Vị trí động từ trong câu (Position of Verbs) - 3 questions
+        { question: "Where is the verb in 'Cats sleep'?", options: ["A. Cats", "B. sleep", "C. both", "D. none"], answer: "B" },
+        { question: "Which word is the verb in 'I eat rice'?", options: ["A. I", "B. eat", "C. rice", "D. I eat"], answer: "B" },
+        { question: "Find the verb in 'She reads books'", options: ["A. She", "B. reads", "C. books", "D. She reads"], answer: "B" },
+
+        // Động từ to be (am/is/are) - 4 questions
+        { question: "I ___ happy.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "A" },
+        { question: "She ___ a teacher.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "B" },
+        { question: "They ___ students.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "C" },
+        { question: "We ___ friends.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "C" },
+
+        // Động từ thường (s/es) (Regular Verbs) - 4 questions
+        { question: "He ___ English.", options: ["A. speak", "B. speaks", "C. speaking", "D. spoke"], answer: "B" },
+        { question: "She ___ to school.", options: ["A. go", "B. goes", "C. going", "D. went"], answer: "B" },
+        { question: "The cat ___ milk.", options: ["A. drink", "B. drinks", "C. drinking", "D. drank"], answer: "B" },
+        { question: "My brother ___ football.", options: ["A. play", "B. plays", "C. playing", "D. played"], answer: "B" },
+
+        // Động từ khiếm khuyết (can/should/must) - 4 questions
+        { question: "I ___ swim.", options: ["A. can", "B. should", "C. must", "D. will"], answer: "A" },
+        { question: "You ___ study hard.", options: ["A. can", "B. should", "C. must", "D. will"], answer: "B" },
+        { question: "Students ___ wear uniforms.", options: ["A. can", "B. should", "C. must", "D. will"], answer: "C" },
+        { question: "She ___ speak French.", options: ["A. can", "B. should", "C. must", "D. will"], answer: "A" },
+
+        // Tính từ sở hữu (Possessive Adjectives) - 4 questions
+        { question: "This is ___ book.", options: ["A. I", "B. me", "C. my", "D. mine"], answer: "C" },
+        { question: "That is ___ car.", options: ["A. he", "B. him", "C. his", "D. his"], answer: "C" },
+        { question: "These are ___ shoes.", options: ["A. she", "B. her", "C. hers", "D. her"], answer: "B" },
+        { question: "Those are ___.", options: ["A. they", "B. them", "C. their", "D. theirs"], answer: "D" },
+
+        // Cụm tính từ mô tả + danh từ (Descriptive Adjectives) - 3 questions
+        { question: "I have a ___ car.", options: ["A. red", "B. quickly", "C. run", "D. beauty"], answer: "A" },
+        { question: "She is a ___ girl.", options: ["A. beautiful", "B. beauty", "C. beautifully", "D. beautify"], answer: "A" },
+        { question: "This is a ___ house.", options: ["A. big", "B. bigness", "C. bigly", "D. bigger"], answer: "A" },
+
+        // Cụm tính từ sở hữu + danh từ (Possessive Adjectives + Nouns) - 3 questions
+        { question: "___ house is big.", options: ["A. I", "B. Me", "C. My", "D. Mine"], answer: "C" },
+        { question: "___ car is red.", options: ["A. He", "B. Him", "C. His", "D. His"], answer: "C" },
+        { question: "___ books are new.", options: ["A. They", "B. Them", "C. Their", "D. Theirs"], answer: "C" },
+
+        // Trạng từ chỉ cách thức (Adverbs of Manner) - 4 questions
+        { question: "He runs ___", options: ["A. quick", "B. quickly", "C. quickness", "D. quicker"], answer: "B" },
+        { question: "She speaks ___", options: ["A. clear", "B. clearly", "C. clearness", "D. clearer"], answer: "B" },
+        { question: "The boy walks ___", options: ["A. slow", "B. slowly", "C. slowness", "D. slower"], answer: "B" },
+        { question: "They work ___", options: ["A. hard", "B. hardly", "C. hardness", "D. harder"], answer: "A" },
+
+        // Sự biến đổi từ tính từ (Adjective to Adverb) - 3 questions
+        { question: "The adjective 'good' becomes the adverb ___", options: ["A. goodly", "B. good", "C. well", "D. better"], answer: "C" },
+        { question: "The adjective 'fast' becomes the adverb ___", options: ["A. fastly", "B. fast", "C. faster", "D. fastest"], answer: "B" },
+        { question: "The adjective 'early' becomes the adverb ___", options: ["A. early", "B. earlier", "C. earliest", "D. earlyly"], answer: "A" },
+
+        // Trạng từ tần suất (Adverbs of Frequency) - 4 questions
+        { question: "I ___ go to school.", options: ["A. always", "B. never", "C. sometimes", "D. All are correct"], answer: "D" },
+        { question: "He is ___ late.", options: ["A. rare", "B. rarely", "C. rarity", "D. rareness"], answer: "B" },
+        { question: "Do you ___ watch TV?", options: ["A. often", "B. frequent", "C. usual", "D. common"], answer: "A" },
+        { question: "She ___ forgets her homework.", options: ["A. sometime", "B. some time", "C. sometimes", "D. some times"], answer: "C" },
+
+        // Giới từ chỉ thời gian & địa điểm: in, on, at - 4 questions
+        { question: "The party is ___ Friday.", options: ["A. at", "B. on", "C. in", "D. from"], answer: "B" },
+        { question: "My birthday is ___ October.", options: ["A. at", "B. on", "C. in", "D. for"], answer: "C" },
+        { question: "The train leaves ___ 3:00 PM.", options: ["A. at", "B. on", "C. in", "D. by"], answer: "A" },
+        { question: "I will see you ___ Christmas Day.", options: ["A. at", "B. on", "C. in", "D. for"], answer: "B" },
+        { question: "We have a meeting ___ Monday morning.", options: ["A. in", "B. on", "C. at", "D. by"], answer: "B" },
+        { question: "She was born ___ 2005.", options: ["A. in", "B. on", "C. at", "D. for"], answer: "A" },
+        { question: "Let's meet ___ the park.", options: ["A. in", "B. on", "C. at", "D. by"], answer: "C" },
+        { question: "He usually gets up ___ 6 o'clock.", options: ["A. in", "B. on", "C. at", "D. for"], answer: "C" },
+        { question: "The children play ___ the garden.", options: ["A. in", "B. on", "C. at", "D. by"], answer: "A" },
+
+        // Cấu trúc S + be + Bổ ngữ (S + be + Complement) - 4 questions
+        { question: "I ___ a student.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "A" },
+        { question: "She ___ happy.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "B" },
+        { question: "They ___ teachers.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "C" },
+        { question: "We ___ friends.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "C" },
+        { question: "He ___ a doctor.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "B" },
+        { question: "You ___ my classmate.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "C" },
+        { question: "It ___ a cat.", options: ["A. am", "B. is", "C. are", "D. be"], answer: "B" },
+
+        // Cấu trúc S + V và S + V + O (S + V and S + V + O) - 4 questions
+        { question: "Birds ___", options: ["A. fly", "B. flies", "C. flying", "D. flew"], answer: "A" },
+        { question: "I ___ rice.", options: ["A. eat", "B. eats", "C. eating", "D. ate"], answer: "A" },
+        { question: "She ___ a book.", options: ["A. read", "B. reads", "C. reading", "D. readed"], answer: "B" },
+        { question: "They ___ football.", options: ["A. play", "B. plays", "C. playing", "D. played"], answer: "A" },
+        { question: "We ___ to school every day.", options: ["A. go", "B. goes", "C. going", "D. goed"], answer: "A" },
+        { question: "My father ___ coffee in the morning.", options: ["A. drink", "B. drinks", "C. drinking", "D. drinked"], answer: "B" },
+        { question: "The cat ___ on the sofa.", options: ["A. sleep", "B. sleeps", "C. sleeping", "D. sleeped"], answer: "B" },
+        { question: "You ___ your teeth every morning.", options: ["A. brush", "B. brushes", "C. brushing", "D. brushed"], answer: "A" },
+        { question: "He ___ to music in his free time.", options: ["A. listen", "B. listens", "C. listening", "D. listened"], answer: "B" },
+        { question: "We ___ English at school.", options: ["A. learn", "B. learns", "C. learning", "D. learned"], answer: "A" },
+        { question: "The dog ___ loudly at night.", options: ["A. bark", "B. barks", "C. barking", "D. barked"], answer: "B" },
+        { question: "Anna ___ her homework after dinner.", options: ["A. do", "B. does", "C. doing", "D. did"], answer: "B" },
+
+        // Câu mệnh lệnh (Imperative Sentences) - 3 questions
+        { question: "___ the door, please.", options: ["A. Open", "B. Opens", "C. Opening", "D. Opened"], answer: "A" },
+        { question: "___ quiet!", options: ["A. Be", "B. Is", "C. Are", "D. Being"], answer: "A" },
+        { question: "___ your homework.", options: ["A. Do", "B. Does", "C. Doing", "D. Done"], answer: "A" },
+        { question: "___ down, please.", options: ["A. Sit", "B. Sits", "C. Sitting", "D. Sat"], answer: "A" },
+        { question: "___ your books.", options: ["A. Close", "B. Closes", "C. Closing", "D. Closed"], answer: "A" },
+
+        // Chủ ngữ giả: It, There - 3 questions
+        { question: "___ is raining.", options: ["A. It", "B. There", "C. This", "D. That"], answer: "A" },
+        { question: "___ is a book on the table.", options: ["A. It", "B. There", "C. This", "D. That"], answer: "B" },
+        { question: "___ is cold today.", options: ["A. It", "B. There", "C. This", "D. That"], answer: "A" },
+
+        // It's …… (thời tiết) - 3 questions
+        { question: "___ sunny today.", options: ["A. It's", "B. There's", "C. This's", "D. That's"], answer: "A" },
+        { question: "___ raining.", options: ["A. It's", "B. There's", "C. This's", "D. That's"], answer: "A" },
+        { question: "___ cold outside.", options: ["A. It's", "B. There's", "C. This's", "D. That's"], answer: "A" },
+
+        // It's ……. (giờ) - 3 questions
+        { question: "___ 3 o'clock.", options: ["A. It's", "B. There's", "C. This's", "D. That's"], answer: "A" },
+        { question: "___ time to go.", options: ["A. It's", "B. There's", "C. This's", "D. That's"], answer: "A" },
+        { question: "___ late.", options: ["A. It's", "B. There's", "C. This's", "D. That's"], answer: "A" },
+
+        // There is / There are - 4 questions
+        { question: "___ a cat in the garden.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "A" },
+        { question: "___ three books on the table.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "B" },
+        { question: "___ some water in the glass.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "A" },
+        { question: "___ many students in the class.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "B" },
+        { question: "___ an apple on the table.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "A" },
+        { question: "___ two dogs in the park.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "B" },
+        { question: "___ a lot of milk in the bottle.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "A" },
+        { question: "___ some flowers in the vase.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "B" },
+        { question: "___ a pen on the desk.", options: ["A. There is", "B. There are", "C. It is", "D. They are"], answer: "A" }
+    ];
+
+    // Function to shuffle array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Display MCQ Questions
+    function displayMcqQuestions() {
+        const container = document.getElementById('mcq-container');
+        const shuffledQuestions = shuffleArray([...mcqQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            const label = document.createElement('label');
+            label.className = 'font-medium text-gray-800';
+            label.textContent = `${index + 1}. ${q.question}`;
+            questionDiv.appendChild(label);
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = 'grid grid-cols-4 gap-x-4';
+            const correctAnswerText = q.options.find(opt => opt.startsWith(q.answer + '.')).substring(3);
+            const optionTexts = q.options.map(opt => opt.substring(3));
+            const shuffledOptionTexts = shuffleArray([...optionTexts]);
+            const newCorrectAnswerLetter = String.fromCharCode(65 + shuffledOptionTexts.indexOf(correctAnswerText));
+            questionDiv.setAttribute('data-answer', newCorrectAnswerLetter);
+            const letters = ['A', 'B', 'C', 'D'];
+            shuffledOptionTexts.forEach((text, i) => {
+                const optionLabel = document.createElement('label');
+                optionLabel.className = 'block cursor-pointer hover:bg-gray-50 p-1 rounded';
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = `mcq${index + 1}`;
+                radio.value = letters[i];
+                radio.className = 'mr-2';
+                optionLabel.appendChild(radio);
+                optionLabel.appendChild(document.createTextNode(`${letters[i]}. ${text}`));
+                optionsDiv.appendChild(optionLabel);
+            });
+            questionDiv.appendChild(optionsDiv);
+            container.appendChild(questionDiv);
+        });
+    }
+
+    // Initialize when page loads
+    window.onload = function() {
+        displayMcqQuestions();
+    };
+
+    function getAnswersFromAttr(questionElem) {
+        return (questionElem.getAttribute('data-answer')||'').split('||').map(s=>s.trim());
+    }
+
+    function gradeTest() {
+        let score = 0;
+        let form = document.forms['grammarTest'];
+        document.querySelectorAll('.question').forEach(q => {
+            q.querySelectorAll('input[type=radio]').forEach(input => {
+                input.parentElement.classList.remove('bg-green-100','border-green-500','bg-red-100','border-red-500','border-2');
+            });
+        });
+
+        // Grade MCQs (10 points)
+        for(let i=1;i<=mcqQuestions.length;i++){
+            let qElem = document.querySelector(`.question input[name=mcq${i}]`).closest('.question');
+            let correct = getAnswersFromAttr(qElem)[0];
+            let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+            radioList.forEach(radio => {
+                if(radio.checked){
+                    if(radio.value === correct){ 
+                        radio.parentElement.classList.add('bg-green-100','border-green-500','border-2'); 
+                        score += 0.1; 
+                    }
+                    else { 
+                        radio.parentElement.classList.add('bg-red-100','border-red-500','border-2'); 
+                    }
+                }
+            });
+        }
+
+        document.getElementById('result').style.display = '';
+        document.getElementById('result').innerHTML = `Điểm của bạn: <span class="text-blue-700">${score.toFixed(1)} / 10</span>`;
+    }
+    </script>
+</body>
+</html>
