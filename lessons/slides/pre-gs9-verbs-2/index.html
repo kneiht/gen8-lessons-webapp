@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS9: Động từ (Phần 2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        function adjustFontSize() {
+            const screenWidth = window.innerWidth;
+            const htmlElement = document.documentElement;
+
+            if (screenWidth <= 768) { // Mobile breakpoint
+                htmlElement.style.fontSize = '20px';
+            } else {
+                // Scale font size based on screen width, with 30px at 1680px width
+                const scaleFactor = screenWidth / 1680;
+                const fontSize = Math.max(20, Math.min(30, 30 * scaleFactor));
+                htmlElement.style.fontSize = `${fontSize}px`;
+            }
+        }
+
+        function showZoomInstructions() {
+            // Check if it's a mobile device
+            if (window.innerWidth <= 768) {
+                return;
+            }
+
+            if (localStorage.getItem('hideZoomInstructions')) {
+                return;
+            }
+
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.95);
+        background: white;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        z-index: 1000;
+        max-width: 90%;
+        width: 400px;
+        opacity: 0;
+        transition: all 0.3s ease;
+    `;
+
+            popup.innerHTML = `
+        <div style="
+            text-align: center;
+            margin-bottom: 20px;
+        ">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 15px;">
+                <path d="M15 3H21V9" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 21H3V15" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 3L14 10" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 21L10 14" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 style="
+                margin: 0 0 15px 0;
+                color: #1f2937;
+                font-size: 25px;
+                font-weight: 600;
+            ">Hướng dẫn phóng to/thu nhỏ</h3>
+        </div>
+        <div style="
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        ">
+            <p style="
+                margin: 0;
+                color: #4b5563;
+                font-size: 20px;
+                line-height: 1.6;
+            ">
+                Bạn có thể sử dụng tổ hợp phím sau để phóng to/thu nhỏ nội dung cho phù hợp với màn hình của bạn:
+            </p>
+            <div style="
+                margin-top: 12px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            ">
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                ">
+                    <span style="
+                        background: #e5e7eb;
+                        padding: 4px 8px;
+                        border-radius: 4px;
+                        font-size: 20px;
+                        color: #374151;
+                    ">Windows</span>
+                    <span style="color: #4b5563;">Ctrl + (+/-)</span>
+                </div>
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                ">
+                    <span style="
+                        background: #e5e7eb;
+                        padding: 4px 8px;
+                        border-radius: 4px;
+                        font-size: 20px;
+                        color: #374151;
+                    ">Mac</span>
+                    <span style="color: #4b5563;">Command + (+/-)</span>
+                </div>
+            </div>
+        </div>
+        <button id="dismissPopup" style="
+            background: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        ">Không hiển thị lại</button>
+    `;
+
+            document.body.appendChild(popup);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                popup.style.transform = 'translate(-50%, -50%) scale(1)';
+                popup.style.opacity = '1';
+            });
+
+            // Add hover effect to button
+            const button = document.getElementById('dismissPopup');
+            button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = '#4338ca';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = '#4f46e5';
+            });
+
+            button.addEventListener('click', () => {
+                popup.style.transform = 'translate(-50%, -50%) scale(0.95)';
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    localStorage.setItem('hideZoomInstructions', 'true');
+                    popup.remove();
+                }, 300);
+            });
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            adjustFontSize();
+            showZoomInstructions();
+        });
+
+        // Run when window is resized
+        window.addEventListener('resize', adjustFontSize);
+    </script>
+
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.45);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+        }
+
+        .exercise-input {
+            border-bottom: 2px dashed #4f46e5;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .exercise-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        .btn-check {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: #4338ca;
+        }
+
+        .correct {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #ef4444;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .thought-bubble {
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .thought-bubble:after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 15px 0 15px 25px;
+            border-color: transparent white;
+            display: block;
+            width: 0;
+            z-index: 1;
+        }
+
+        .boy {
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .verb-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .verb-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .verb-example {
+            border-left: 4px solid #4f46e5;
+            padding-left: 12px;
+        }
+
+        .outline-content {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .outline-item {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+        }
+
+        .outline-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .outline-slide {
+            display: block;
+            transform: scale(0.3);
+            transform-origin: top left;
+            width: 333.33%; /* 100% / 0.3 */
+            height: 333.33%; /* 100% / 0.3 */
+            pointer-events: none;
+            background-color: white;
+        }
+
+        .slide-preview {
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 0 auto;
+        }
+                
+        .slide-wrapper {
+            width: 1200px;
+            height: 1000px;
+            transform: scale(0.25);
+            transform-origin: top left;
+        }
+
+        .slide-wrapper > .slide {
+            display: block !important;
+            pointer-events: none;
+        }
+        
+        /* Modal verb card */
+        .modal-verb {
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal-verb:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Perception verbs illustration */
+        .sense-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Linking verb animation */
+        .linking-line {
+            position: relative;
+            height: 10px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .linking-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+            animation: shine 2s infinite;
+        }
+        
+        @keyframes shine {
+            100% {
+                left: 100%;
+            }
+        }
+        
+        /* Auxiliary verb styling */
+        .auxiliary-card {
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .auxiliary-card:hover {
+            border-color: #a78bfa;
+            box-shadow: 0 10px 15px -3px rgba(167, 139, 250, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center min-h-screen flex items-center justify-center p-2">
+
+    <div class="relative w-full max-w-6xl h-[95vh] mx-auto">
+        <!-- Slide counter -->
+        <div class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button onclick="showSlide(currentSlide - 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button onclick="showSlide(currentSlide + 1)"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button onclick="toggleOutline()"
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div
+                class="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div id="outlineContent" class="outline-content">
+                <!-- Outline content will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+
+            <!-- Slide 1: Title -->
+            <div class="slide active content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">GRAMMAR FOR PRE-GRADE 9</h1>
+                    <div
+                        class="bg-yellow-400 text-2xl md:text-4xl font-bold px-6 py-3 rounded-full mb-5 shadow-lg floating">
+                        ĐỘNG TỪ (PHẦN 2)
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://img.freepik.com/free-photo/learning-concept-education-writing-notes-desk_53876-133865.jpg"
+                                alt="Grammar Learning" class="object-cover h-52 rounded-xl floating">
+                        </div>
+                        <div
+                            class="bg-gradient-to-r from-indigo-100 to-green-200 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-xl">
+                            <p class="font-bold text-indigo-800">Mục tiêu bài học:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-xl">
+                                <li>Hiểu cách dùng modal verbs (động từ khiếm khuyết)</li>
+                                <li>Phân biệt stative và action verbs</li>
+                                <li>Sử dụng đúng perception verbs</li>
+                                <li>Nhận biết linking verbs</li>
+                                <li>Hiểu vai trò auxiliary verbs (động từ trợ)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="my-3 opacity-0">---</div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Modal Verbs Introduction -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">1. Modal Verbs (Động từ khiếm khuyết)</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Modal verbs là những động từ đặc biệt bổ sung ý nghĩa cho động từ chính:</p>
+                            
+                            <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold text-blue-800 text-xl">Đặc điểm chung:</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-2">
+                                    <li>Không chia theo ngôi</li>
+                                    <li>Theo sau bởi động từ nguyên thể không "to"</li>
+                                    <li>Diễn tả ý nghĩa như khả năng, nghĩa vụ, sự cho phép</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-6 bg-yellow-100 p-4 rounded-lg">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Ghi nhớ:</p>
+                                <p class="text-lg">Các modal verbs phổ biến: can, could, may, might, must, shall, should, will, would</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Modal Verbs List -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">2. Modal Verbs và công dụng</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="modal-verb bg-red-50 p-4 rounded-lg">
+                        <p class="font-bold text-red-700 text-lg">can / could</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>Khả năng (ability)</li>
+                            <li>Sự xin phép (permission)</li>
+                            <li>Yêu cầu (request)</li>
+                        </ul>
+                        <div class="mt-3 bg-white p-2 rounded verb-example">
+                            <p>I can swim. (Tôi có thể bơi)</p>
+                            <p>Can I go out? (Tôi ra ngoài được không?)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-verb bg-blue-50 p-4 rounded-lg">
+                        <p class="font-bold text-blue-700 text-lg">may / might</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>Xin phép (permission)</li>
+                            <li>Khả năng xảy ra (possibility)</li>
+                            <li>Dự đoán (prediction)</li>
+                        </ul>
+                        <div class="mt-3 bg-white p-2 rounded verb-example">
+                            <p>May I sit here? (Tôi ngồi đây được không?)</p>
+                            <p>It might rain. (Trời có thể mưa)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-verb bg-green-50 p-4 rounded-lg">
+                        <p class="font-bold text-green-700 text-lg">must / have to</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>Sự bắt buộc (obligation)</li>
+                            <li>Sự cần thiết (necessity)</li>
+                            <li>Dự đoán chắc chắn (certainty)</li>
+                        </ul>
+                        <div class="mt-3 bg-white p-2 rounded verb-example">
+                            <p>You must study. (Bạn phải học)</p>
+                            <p>She must be tired. (Chắc cô ấy mệt)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-verb bg-yellow-50 p-4 rounded-lg">
+                        <p class="font-bold text-yellow-700 text-lg">should / ought to</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>Lời khuyên (advice)</li>
+                            <li>Việc nên làm (recommendation)</li>
+                            <li>Dự đoán hợp lý (expectation)</li>
+                        </ul>
+                        <div class="mt-3 bg-white p-2 rounded verb-example">
+                            <p>You should eat more. (Bạn nên ăn nhiều hơn)</p>
+                            <p>He ought to arrive soon. (Anh ấy hẳn sắp tới)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-verb bg-purple-50 p-4 rounded-lg">
+                        <p class="font-bold text-purple-700 text-lg">will / would</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>Tương lai (future)</li>
+                            <li>Yêu cầu lịch sự (polite request)</li>
+                            <li>Ước muốn (desire)</li>
+                        </ul>
+                        <div class="mt-3 bg-white p-2 rounded verb-example">
+                            <p>I will help you. (Tôi sẽ giúp bạn)</p>
+                            <p>Would you like some tea? (Bạn có muốn uống trà không?)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-verb bg-pink-50 p-4 rounded-lg">
+                        <p class="font-bold text-pink-700 text-lg">shall</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>Gợi ý (suggestion)</li>
+                            <li>Hứa hẹn (promise)</li>
+                            <li>Yêu cầu ý kiến (offer)</li>
+                        </ul>
+                        <div class="mt-3 bg-white p-2 rounded verb-example">
+                            <p>Shall we dance? (Chúng ta nhảy nhé?)</p>
+                            <p>I shall return. (Tôi sẽ quay lại)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Modal Verbs Exercise 1 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 1: Chọn modal verb phù hợp</h2>
+                    <p class="text-2xl mb-8">Chọn modal verb đúng để hoàn thành câu:</p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">She ___ speak French fluently when she was young.
+                                <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl ml-2"
+                                    data-answer="could">
+                                    <option value="">Chọn...</option>
+                                    <option value="can">can</option>
+                                    <option value="could">could</option>
+                                    <option value="must">must</option>
+                                </select>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)"
+                                    class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">You ___ finish your homework before watching TV.
+                                <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl ml-2"
+                                    data-answer="must">
+                                    <option value="">Chọn...</option>
+                                    <option value="can">can</option>
+                                    <option value="may">may</option>
+                                    <option value="must">must</option>
+                                </select>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)"
+                                    class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">___ I borrow your pen, please?
+                                <select class="border-2 border-indigo-300 rounded px-3 py-1 text-xl ml-2"
+                                    data-answer="May">
+                                    <option value="">Chọn...</option>
+                                    <option value="May">May</option>
+                                    <option value="Must">Must</option>
+                                    <option value="Should">Should</option>
+                                </select>
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkSelect(this)"
+                                    class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-purple-100 p-4 rounded-lg">
+                        <p class="font-bold text-purple-800 text-xl">💡 Gợi ý:</p>
+                        <p class="text-lg">Chú ý ngữ cảnh (khả năng, nghĩa vụ, xin phép) để chọn modal verb phù hợp.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Modal Verbs Exercise 2 -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập 2: Sắp xếp câu</h2>
+                    <p class="text-2xl mb-8">Sắp xếp các từ sau thành câu đúng:</p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Các từ: <span class="font-bold">might / rain / it / tomorrow</span></p>
+                            <input type="text" class="exercise-input w-full"
+                                data-answer="It might rain tomorrow" placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-xl mb-2">Các từ: <span class="font-bold">you / help / could / me</span></p>
+                            <input type="text" class="exercise-input w-full"
+                                data-answer="Could you help me" placeholder="Viết câu đúng">
+                            <div class="flex items-center space-x-4 mt-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-blue-100 p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 text-xl">💡 Quy tắc:</p>
+                        <p class="text-lg">Câu với modal verb: Chủ ngữ + Modal verb + Động từ nguyên thể (+ Tân ngữ).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Stative Verbs Introduction -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">3. Stative Verbs (Động từ trạng thái)</h2>
+                <div class="flex flex-col md:flex-row items-start justify-around gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">Stative verbs diễn tả trạng thái thay vì hành động:</p>
+                            
+                            <div class="mt-6 bg-red-50 p-4 rounded-lg">
+                                <p class="font-bold text-red-800 text-xl">Đặc điểm:</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-2">
+                                    <li>Không thường dùng ở thì tiếp diễn (-ing)</li>
+                                    <li>Diễn tả trạng thái/đặc điểm (không phải hành động)</li>
+                                    <li>Thường chỉ nhận thức, cảm xúc, sự sở hữu</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold text-blue-800 text-xl">Ví dụ:</p>
+                                <div class="grid grid-cols-2 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p>I <span class="text-blue-500 font-bold">know</span> the answer.</p>
+                                        <p class="text-gray-600">(Tôi biết câu trả lời)</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p>She <span class="text-blue-500 font-bold">loves</span> music.</p>
+                                        <p class="text-gray-600">(Cô ấy yêu âm nhạc)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Common Stative Verbs -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">4. Các Stative Verbs phổ biến</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <p class="font-bold text-yellow-800 text-lg">Tư duy & Nhận thức</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>know (biết)</li>
+                            <li>believe (tin)</li>
+                            <li>understand (hiểu)</li>
+                            <li>remember (nhớ)</li>
+                            <li>forget (quên)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="font-bold text-green-800 text-lg">Cảm xúc</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>love (yêu)</li>
+                            <li>hate (ghét)</li>
+                            <li>like (thích)</li>
+                            <li>prefer (thích hơn)</li>
+                            <li>want (muốn)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 text-lg">Sở hữu</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>have (có)</li>
+                            <li>own (sở hữu)</li>
+                            <li>possess (nắm giữ)</li>
+                            <li>belong (thuộc về)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="font-bold text-purple-800 text-lg">Giác quan & Trạng thái</p>
+                        <ul class="list-disc pl-5 mt-2 text-sm">
+                            <li>seem (dường như)</li>
+                            <li>appear (xuất hiện)</li>
+                            <li>taste (nếm có vị)</li>
+                            <li>smell (có mùi)</li>
+                            <li>sound (nghe có vẻ)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-pink-100 p-4 rounded-lg">
+                    <p class="font-bold text-pink-800 text-xl">💡 Ghi nhớ:</p>
+                    <p class="text-lg">Những động từ này thường không dùng trong thì tiếp diễn.</p>
+                    <p class="text-lg mt-2">Sai: "I am knowing the answer" → Đúng: "I know the answer"</p>
+                </div>
+            </div>
+
+            <!-- Slide 8: Stative vs Action Verbs -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">5. Phân biệt Stative và Action Verbs</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                    <p class="font-bold text-red-800 text-xl">Action Verbs</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Diễn tả hành động vật lý</li>
+                                        <li>Có thể dùng ở tiếp diễn</li>
+                                        <li>Ví dụ: run, eat, write, play</li>
+                                    </ul>
+                                    <div class="mt-3 bg-white p-3 rounded-lg verb-example">
+                                        <p>She <span class="text-red-500 font-bold">is running</span> now.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p class="font-bold text-blue-800 text-xl">Stative Verbs</p>
+                                    <ul class="list-disc pl-5 mt-2 space-y-2">
+                                        <li>Diễn tả trạng thái</li>
+                                        <li>Thường không dùng ở tiếp diễn</li>
+                                        <li>Ví dụ: know, love, have, belong</li>
+                                    </ul>
+                                    <div class="mt-3 bg-white p-3 rounded-lg verb-example">
+                                        <p class="incorrect">❌ I am knowing the answer.</p>
+                                        <p class="correct">✅ I know the answer.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <p class="font-bold text-green-800 text-xl">Câu hỏi:</p>
+                            <p class="text-xl mb-3">Câu nào sau đây đúng?</p>
+                            <div class="flex flex-col space-y-3">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="stative-ex" class="h-5 w-5" value="incorrect">
+                                    <span class="ml-2 text-xl">She is loving chocolate.</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="stative-ex" class="h-5 w-5" value="correct">
+                                    <span class="ml-2 text-xl">She loves chocolate.</span>
+                                </label>
+                            </div>
+                            <button onclick="checkRadio(this)" class="btn-check px-4 py-2 rounded-lg font-bold mt-3">Kiểm tra đáp án</button>
+                            <div class="answer hidden text-xl mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Perception Verbs -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">6. Perception Verbs (Động từ giác quan)</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Các động từ giác quan phổ biến:</p>
+                            
+                            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6">
+                                <div class="text-center">
+                                    <div class="sense-icon bg-red-100 text-red-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </div>
+                                    <p class="font-bold mt-2">see (nhìn)</p>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="sense-icon bg-blue-100 text-blue-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                        </svg>
+                                    </div>
+                                    <p class="font-bold mt-2">hear (nghe)</p>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="sense-icon bg-yellow-100 text-yellow-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                        </svg>
+                                    </div>
+                                    <p class="font-bold mt-2">taste (nếm)</p>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="sense-icon bg-green-100 text-green-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c.4.398.4 1.042 0 1.442l-.847.846a1.04 1.04 0 01-1.442 0L19.8 15.3zm-14.8.8l-1.403 1.403a1.04 1.04 0 01-1.441 0l-.847-.846a1.04 1.04 0 010-1.442L5 14.5z" />
+                                        </svg>
+                                    </div>
+                                    <p class="font-bold mt-2">smell (ngửi)</p>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="sense-icon bg-purple-100 text-purple-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                        </svg>
+                                    </div>
+                                    <p class="font-bold mt-2">feel (cảm thấy)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-yellow-100 p-4 rounded-lg">
+                                <p class="font-bold text-yellow-800 text-xl">💡 Đặc điểm:</p>
+                                <p class="text-lg">Những động từ này có cả cách dùng stative (trạng thái) và action (hành động).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Perception Verbs Usage -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">7. Cách dùng Perception Verbs</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <p class="font-bold text-blue-800 text-xl">Dạng hành động (Action)</p>
+                                    <ul class="list-disc pl-5 mt-2 text-sm">
+                                        <li>Có thể dùng ở tiếp diễn</li>
+                                        <li>Theo sau bởi tân ngữ</li>
+                                        <li>Diễn tả hành động chủ động</li>
+                                    </ul>
+                                    <div class="mt-3 bg-white p-3 rounded-lg verb-example">
+                                        <p>She is <span class="text-blue-500 font-bold">smelling</span> the flowers.</p>
+                                        <p class="text-gray-600">(Cô ấy đang ngửi hoa)</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold text-green-800 text-xl">Dạng trạng thái (Stative)</p>
+                                    <ul class="list-disc pl-5 mt-2 text-sm">
+                                        <li>Không dùng ở tiếp diễn</li>
+                                        <li>Theo sau bởi tính từ</li>
+                                        <li>Diễn tả nhận thức</li>
+                                    </ul>
+                                    <div class="mt-3 bg-white p-3 rounded-lg verb-example">
+                                        <p>The flowers <span class="text-green-500 font-bold">smell</span> nice.</p>
+                                        <p class="text-gray-600">(Hoa có mùi thơm)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-100 p-4 rounded-lg">
+                            <p class="font-bold text-red-800 text-xl">Quy tắc vàng:</p>
+                            <p class="text-lg">Nếu theo sau Perception Verb là:</p>
+                            <ul class="list-disc pl-5 mt-2">
+                                <li><span class="font-bold">Danh từ</span> → Hành động (có thể dùng tiếp diễn)</li>
+                                <li><span class="font-bold">Tính từ</span> → Trạng thái (không dùng tiếp diễn)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-4 bg-purple-100 p-4 rounded-lg">
+                            <p class="font-bold text-purple-800 text-xl">Câu hỏi:</p>
+                            <p class="text-xl mb-3">Tìm câu đúng trong các câu sau:</p>
+                            <div class="flex flex-col space-y-3">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="perception-ex" class="h-5 w-5" value="correct">
+                                    <span class="ml-2 text-xl">This soup tastes delicious.</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="perception-ex" class="h-5 w-5" value="incorrect">
+                                    <span class="ml-2 text-xl">This soup is tasting delicious.</span>
+                                </label>
+                            </div>
+                            <button onclick="checkRadio2(this)" class="btn-check px-4 py-2 rounded-lg font-bold mt-3">Kiểm tra đáp án</button>
+                            <div class="answer hidden text-xl mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Linking Verbs -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">8. Linking Verbs (Động từ nối)</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Linking verbs nối chủ ngữ với thông tin mô tả:</p>
+                            
+                            <div class="mt-6 bg-gradient-to-r from-blue-100 to-purple-100 p-4 rounded-lg">
+                                <p class="font-bold text-blue-800 text-xl">Đặc điểm chính:</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-2">
+                                    <li>Không diễn tả hành động</li>
+                                    <li>Đứng trước tính từ hoặc danh từ</li>
+                                    <li>Giúp mô tả đặc điểm của chủ ngữ</li>
+                                </ul>
+                                <div class="linking-line"></div>
+                                <div class="text-center text-xl">
+                                    <p>Chủ ngữ <span class="font-bold text-indigo-600">Linking Verb</span> Tính từ/Danh từ</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                                <p class="font-bold text-green-800 text-xl">Các linking verbs phổ biến:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p><span class="text-green-500 font-bold">be</span> (am, is, are)</p>
+                                        <p>She is happy.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p><span class="text-green-500 font-bold">seem</span></p>
+                                        <p>He seems tired.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p><span class="text-green-500 font-bold">become</span></p>
+                                        <p>She became a doctor.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p><span class="text-green-500 font-bold">appear</span></p>
+                                        <p>You appear angry.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p><span class="text-green-500 font-bold">feel</span></p>
+                                        <p>I feel great.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg shadow verb-example">
+                                        <p><span class="text-green-500 font-bold">look</span></p>
+                                        <p>You look beautiful.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Auxiliary Verbs -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">9. Auxiliary Verbs (Động từ trợ)</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8"<div class="flex-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+                            <p class="text-2xl mb-4">Auxiliary verbs giúp tạo dạng thức khác nhau cho động từ chính:</p>
+                            
+                            <div class="mt-6 bg-indigo-50 p-4 rounded-lg">
+                                <p class="font-bold text-indigo-800 text-xl">Primary Auxiliaries (Trợ động từ chính)</p>
+                                <p class="text-lg mt-2">Dùng để <span class="font-bold">tạo thì, câu phủ định, câu hỏi</span>:</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                                    <div class="auxiliary-card bg-red-50 p-4 rounded-lg">
+                                        <p class="font-bold text-red-800 text-lg">BE</p>
+                                        <p class="text-sm text-gray-600 mb-2">am, is, are, was, were, been, being</p>
+                                        <div class="bg-white p-3 rounded-lg verb-example">
+                                            <p><span class="text-red-500 font-bold">I am</span> studying.</p>
+                                            <p><span class="text-red-500 font-bold">She was</span> reading.</p>
+                                            <p><span class="text-red-500 font-bold">Are</span> you coming?</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="auxiliary-card bg-blue-50 p-4 rounded-lg">
+                                        <p class="font-bold text-blue-800 text-lg">HAVE</p>
+                                        <p class="text-sm text-gray-600 mb-2">have, has, had</p>
+                                        <div class="bg-white p-3 rounded-lg verb-example">
+                                            <p><span class="text-blue-500 font-bold">I have</span> finished.</p>
+                                            <p><span class="text-blue-500 font-bold">She has</span> gone.</p>
+                                            <p><span class="text-blue-500 font-bold">Have</span> you eaten?</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="auxiliary-card bg-green-50 p-4 rounded-lg">
+                                        <p class="font-bold text-green-800 text-lg">DO</p>
+                                        <p class="text-sm text-gray-600 mb-2">do, does, did</p>
+                                        <div class="bg-white p-3 rounded-lg verb-example">
+                                            <p><span class="text-green-500 font-bold">Do</span> you like it?</p>
+                                            <p>I <span class="text-green-500 font-bold">don't</span> know.</p>
+                                            <p><span class="text-green-500 font-bold">Did</span> she come?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-purple-50 p-4 rounded-lg">
+                                <p class="font-bold text-purple-800 text-xl">Modal Auxiliaries (Trợ động từ khiếm khuyết)</p>
+                                <p class="text-lg mt-2">Dùng để diễn tả <span class="font-bold">khả năng, nghĩa vụ, xin phép</span>:</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                                    <div class="auxiliary-card bg-yellow-50 p-4 rounded-lg">
+                                        <p class="font-bold text-yellow-800 text-lg">CAN/COULD</p>
+                                        <div class="bg-white p-3 rounded-lg verb-example">
+                                            <p><span class="text-yellow-600 font-bold">Can</span> you swim?</p>
+                                            <p><span class="text-yellow-600 font-bold">Could</span> you help me?</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="auxiliary-card bg-orange-50 p-4 rounded-lg">
+                                        <p class="font-bold text-orange-800 text-lg">WILL/WOULD</p>
+                                        <div class="bg-white p-3 rounded-lg verb-example">
+                                            <p>I <span class="text-orange-600 font-bold">will</span> go.</p>
+                                            <p><span class="text-orange-600 font-bold">Would</span> you like tea?</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="auxiliary-card bg-pink-50 p-4 rounded-lg">
+                                        <p class="font-bold text-pink-800 text-lg">MUST/SHOULD</p>
+                                        <div class="bg-white p-3 rounded-lg verb-example">
+                                            <p>You <span class="text-pink-600 font-bold">must</span> study.</p>
+                                            <p>You <span class="text-pink-600 font-bold">should</span> rest.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-100 p-4 rounded-lg">
+                            <p class="font-bold text-yellow-800 text-xl">💡 Ghi nhớ:</p>
+                            <p class="text-lg">Động từ trợ luôn đi kèm với một động từ chính để tạo thành cụm động từ.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Review Exercise -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Bài tập ôn tập</h2>
+                    <p class="text-2xl mb-8">Điền từ thích hợp vào chỗ trống:</p>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">She ___ <input type="text" class="exercise-input" data-answer="must"> finish her homework before going out.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">This cake ___ <input type="text" class="exercise-input" data-answer="tastes"> delicious! (taste)</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+
+                        <div class="exercise-item bg-white p-4 rounded-xl shadow-md">
+                            <p class="text-2xl mb-4">They ___ <input type="text" class="exercise-input" data-answer="will"> visit us next week.</p>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="checkInput(this)" class="btn-check px-4 py-2 rounded-lg font-bold">Kiểm
+                                    tra</button>
+                                <div class="answer hidden text-xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Summary -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full">
+                    <h2 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-5">Tổng kết bài học</h2>
+
+                    <div class="w-full bg-white p-6 rounded-xl shadow-md">
+                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                            <p class="text-xl font-bold text-blue-800 text-center">Kiến thức trọng tâm về động từ (Phần 2)</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-indigo-800">1. Modal Verbs</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Diễn tả khả năng, nghĩa vụ, xin phép</li>
+                                    <li>Không chia theo ngôi + V1 (không to)</li>
+                                    <li>Ví dụ: can, must, should, may</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-green-800">2. Stative Verbs</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Diễn tả trạng thái thay vì hành động</li>
+                                    <li>Không thường dùng ở tiếp diễn</li>
+                                    <li>Ví dụ: know, love, belong, seem</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-yellow-800">3. Perception Verbs</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Có 2 cách dùng: hành động và trạng thái</li>
+                                    <li>Theo sau danh từ → hành động</li>
+                                    <li>Theo sau tính từ → trạng thái</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-purple-800">4. Linking Verbs</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Nối chủ ngữ với tính từ/danh từ</li>
+                                    <li>Không diễn tả hành động</li>
+                                    <li>Ví dụ: be, seem, become, appear</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="text-xl font-bold text-red-800">5. Auxiliary Verbs</p>
+                                <ul class="list-disc pl-6 mt-2 space-y-2">
+                                    <li>Giúp tạo câu hỏi, thì hoàn thành, tương lai</li>
+                                    <li>Đứng trước động từ chính</li>
+                                    <li>Ví dụ: do, have, will</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: End -->
+            <div class="slide content-box px-5 py-2 rounded-2xl w-full h-full">
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-3">Chúc mừng!</h1>
+                    <div class="text-2xl md:text-3xl text-gray-700 mb-3">
+                        <p class="mb-4">Bạn đã hoàn thành bài học về</p>
+                        <div
+                            class="bg-gradient-to-r from-yellow-400 to-red-500 text-white text-4xl font-bold px-6 py-2 rounded-full inline-block">
+                            ĐỘNG TỪ (PHẦN 2)
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mb-3">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                            class="h-32 rounded-xl object-cover" alt="Celebration Image">
+                    </div>
+
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl max-w-xl">
+                        <p class="text-xl md:text-2xl font-bold mb-2">Hẹn gặp lại trong bài học tiếp theo!</p>
+                        <p class="text-sm mt-2">Grammar for Pre-Grade 9</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Outline Modal functions
+        function toggleOutline() {
+            const modal = document.getElementById('outlineModal');
+            const isHidden = modal.classList.contains('hidden');
+                        
+            if (isHidden) {
+                // Generate outline content when opening
+                generateOutline();
+            }
+                        
+            modal.classList.toggle('hidden');
+        }
+
+        function generateOutline() {
+            const outlineContent = document.getElementById('outlineContent');
+            outlineContent.innerHTML = '';
+            const slides = document.querySelectorAll('.slide');
+            let outlineHTML = '';
+
+            slides.forEach((slide, index) => {
+                const isActive = index === currentSlide;
+                const slideClone = slide.cloneNode(true);
+                                
+                slideClone.classList.remove('active');
+                                
+                outlineHTML += `
+                    <div class="outline-item rounded-lg cursor-pointer relative ${isActive ? 'ring-2 ring-indigo-500 bg-indigo-50' : 'bg-white shadow-md'}"
+                          onclick="goToSlide(${index})">
+                        <div class="slide-number text-xs bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full font-medium mb-2 inline-block absolute bottom-1 right-5 z-10">
+                            Slide ${index + 1}
+                        </div>
+                        <div class="slide-preview">
+                            <div class="slide-wrapper">
+                                ${slideClone.outerHTML}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            outlineContent.innerHTML = outlineHTML;
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                toggleOutline();
+            }
+        });
+
+        // Slide management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slide-counter');
+
+        // Update URL with current slide
+        function updateURL(slideNumber) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('slide', slideNumber + 1);
+            window.history.pushState({}, '', url);
+        }
+
+        // Get initial slide from URL if present
+        function getInitialSlide() {
+            const url = new URL(window.location.href);
+            const slideParam = url.searchParams.get('slide');
+            if (slideParam) {
+                const slideNumber = parseInt(slideParam) - 1;
+                if (slideNumber >= 0 && slideNumber < totalSlides) {
+                    return slideNumber;
+                }
+            }
+            return 0;
+        }
+
+        // Update the counter display with total slides
+        function updateSlideCounter() {
+            slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        }
+
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Calculate new slide index
+            currentSlide = (n + totalSlides) % totalSlides;
+
+            // Show new slide
+            slides[currentSlide].classList.add('active');
+
+            // Update slide counter
+            updateSlideCounter();
+
+            // Update URL
+            updateURL(currentSlide);
+
+            // Update outline if it's open
+            if (!document.getElementById('outlineModal').classList.contains('hidden')) {
+                generateOutline();
+            }
+        }
+
+        // Initialize with slide from URL if present
+        currentSlide = getInitialSlide();
+        showSlide(currentSlide);
+
+        // Touch swipe detection
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (diff > threshold) {
+                showSlide(currentSlide + 1);
+            } else if (diff < -threshold) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Exercise functions
+        function showAnswer(button) {
+            const answerDiv = button.nextElementSibling;
+            answerDiv.classList.toggle('hidden');
+            button.textContent = answerDiv.classList.contains('hidden') ? 'Xem đáp án' : 'Ẩn đáp án';
+        }
+        
+        function checkRadio(button) {
+            const exerciseItem = button.closest('.exercise-item') || button.closest('.bg-green-100');
+            const selectedOption = exerciseItem.querySelector('input[type="radio"]:checked');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            
+            if (!selectedOption) {
+                answerDiv.innerHTML = '<p class="incorrect">Vui lòng chọn một đáp án!</p>';
+                answerDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (selectedOption.value === 'correct') {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác! "She loves chocolate" là câu đúng vì "love" là stative verb không dùng ở dạng tiếp diễn.</p>';
+                exerciseItem.classList.add('bg-green-50');
+            } else {
+                answerDiv.innerHTML = '<p class="incorrect">✗ Sai rồi! "She loves chocolate" là câu đúng vì "love" là stative verb không dùng ở dạng tiếp diễn.</p>';
+            }
+            
+            answerDiv.classList.remove('hidden');
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetRadioExercise(button, exerciseItem);
+            };
+        }
+        
+        function resetRadioExercise(button, exerciseItem) {
+            const options = exerciseItem.querySelectorAll('input[type="radio"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            
+            options.forEach(opt => { opt.checked = false; });
+            answerDiv.classList.add('hidden');
+            exerciseItem.classList.remove('bg-green-50');
+            button.textContent = 'Kiểm tra đáp án';
+            button.onclick = function() { checkRadio(this); };
+        }
+        
+        function checkRadio2(button) {
+            const exerciseItem = button.closest('.exercise-item') || button.closest('.bg-purple-100');
+            const selectedOption = exerciseItem.querySelector('input[type="radio"]:checked');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            
+            if (!selectedOption) {
+                answerDiv.innerHTML = '<p class="incorrect">Vui lòng chọn một đáp án!</p>';
+                answerDiv.classList.remove('hidden');
+                return;
+            }
+            
+            if (selectedOption.value === 'correct') {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác! "This soup tastes delicious" là câu đúng vì "taste" ở đây là stative verb (theo sau bởi tính từ) nên không dùng tiếp diễn.</p>';
+                exerciseItem.classList.add('bg-green-50');
+            } else {
+                answerDiv.innerHTML = '<p class="incorrect">✗ Sai rồi! "This soup is tasting delicious" là sai vì khi "taste" theo sau bởi tính từ thì nó là stative verb và không dùng tiếp diễn.</p>';
+            }
+            
+            answerDiv.classList.remove('hidden');
+            button.textContent = 'Làm lại';
+            button.onclick = function() {
+                resetRadioExercise2(button, exerciseItem);
+            };
+        }
+        
+        function resetRadioExercise2(button, exerciseItem) {
+            const options = exerciseItem.querySelectorAll('input[type="radio"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            
+            options.forEach(opt => { opt.checked = false; });
+            answerDiv.classList.add('hidden');
+            exerciseItem.classList.remove('bg-green-50');
+            button.textContent = 'Kiểm tra đáp án';
+            button.onclick = function() { checkRadio2(this); };
+        }
+
+        function checkInput(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    input.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là "${correctAnswer}" (Bạn điền: "${userAnswer || 'trống'}")</p>`;
+                    input.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkEditable(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const editableSpans = exerciseItem.querySelectorAll('[contenteditable="true"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            let allCorrect = true;
+            let answersHtml = '<div class="space-y-2">';
+
+            editableSpans.forEach(span => {
+                const userAnswer = span.textContent.trim().toLowerCase();
+                const correctAnswer = span.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    answersHtml += `<p class="correct">✓ Đúng: ${correctAnswer}</p>`;
+                    span.style.borderBottom = '2px solid #10b981';
+                } else {
+                    answersHtml += `<p class="incorrect">✗ Sai: Đáp án đúng là "${correctAnswer}" (Bạn điền: "${userAnswer || 'trống'}")</p>`;
+                    span.style.borderBottom = '2px solid #ef4444';
+                    allCorrect = false;
+                }
+            });
+
+            answersHtml += '</div>';
+            answerDiv.innerHTML = answersHtml;
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+
+            if (allCorrect) {
+                exerciseItem.classList.add('bg-green-50');
+            }
+        }
+
+        function checkSelect(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const select = exerciseItem.querySelector('select');
+            const answerDiv = exerciseItem.querySelector('.answer');
+            const correctAnswer = select.dataset.answer;
+
+            if (select.value === correctAnswer) {
+                answerDiv.innerHTML = '<p class="correct">✓ Chính xác!</p>';
+                select.classList.add('border-green-500');
+                select.classList.remove('border-indigo-300');
+            } else {
+                answerDiv.innerHTML = `<p class="incorrect">✗ Sai rồi! Đáp án đúng là: <span class="font-bold">${correctAnswer}</span></p>`;
+                select.classList.add('border-red-500');
+                select.classList.remove('border-indigo-300');
+            }
+
+            answerDiv.classList.remove('hidden');
+
+            // Change button to reset button
+            button.textContent = 'Làm lại';
+            button.onclick = function () {
+                resetExercise(button);
+            };
+        }
+
+        function resetExercise(button) {
+            const exerciseItem = button.closest('.exercise-item');
+            const inputs = exerciseItem.querySelectorAll('.exercise-input');
+            const selects = exerciseItem.querySelectorAll('select');
+            const editableSpans = exerciseItem.querySelectorAll('[contenteditable="true"]');
+            const radios = exerciseItem.querySelectorAll('input[type="radio"]');
+            const answerDiv = exerciseItem.querySelector('.answer');
+
+            // Reset inputs
+            inputs.forEach(input => {
+                input.value = '';
+                input.style.borderBottom = '2px dashed #4f46e5';
+            });
+
+            // Reset selects
+            selects.forEach(select => {
+                select.value = '';
+                select.classList.remove('border-green-500', 'border-red-500');
+                select.classList.add('border-indigo-300');
+            });
+
+            // Reset editable spans
+            editableSpans.forEach(span => {
+                span.textContent = '';
+                span.style.borderBottom = '2px dashed #4f46e5';
+            });
+            
+            // Reset radio buttons
+            radios.forEach(radio => {
+                radio.checked = false;
+            });
+
+            // Reset answer display
+            answerDiv.innerHTML = '';
+            answerDiv.classList.add('hidden');
+
+            // Reset button
+            button.textContent = 'Kiểm tra';
+            button.onclick = function () {
+                if (inputs.length > 0) {
+                    checkInput(button);
+                } else if (selects.length > 0) {
+                    checkSelect(button);
+                } else if (editableSpans.length > 0) {
+                    checkEditable(button);
+                } else if (radios.length > 0) {
+                    if (button.textContent.includes('Kiểm tra đáp án')) {
+                        checkRadio(button);
+                    } else {
+                        checkRadio2(button);
+                    }
+                }
+            };
+
+            // Remove success background
+            exerciseItem.classList.remove('bg-green-50');
+        }
+    </script>
+</body>
+
+</html>

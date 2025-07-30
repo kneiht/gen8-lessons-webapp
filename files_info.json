@@ -126,6 +126,13 @@
       "description": "trạng từ chỉ cách thức, tần suất.",
       "category": "slides"
     },
+    "slides/pre-gs9-verbs-2": {
+      "path": "slides/pre-gs9-verbs-2",
+      "title": "Pre GS9 - Verbs Part 2 ( Động từ Phần 2)",
+      "author": "Gen8",
+      "description": "Động từ-  Động từ khuyết khuyết, Động từ trạng thái, Động từ giác quan",
+      "category": "slides"
+    },
     "slides/pre-gs8-simple-sentences": {
       "path": "slides/pre-gs8-simple-sentences",
       "title": "Pre GS8 - Review future simple \\'96 \\'d4n T\\uc0\\u7853 p",
@@ -152,6 +159,13 @@
       "title": "pre-GS7-Simple Present Tense",
       "author": "Hoa Bac",
       "description": "Thì hiện tại đơn",
+      "category": "slides"
+    },
+    "slides/pre-gs9-verbs-1": {
+      "path": "slides/pre-gs9-verbs-1",
+      "title": "Pre GS9 - Verbs ( Động từ )",
+      "author": "Gen8",
+      "description": "Động từ- To be - Động từ thường- Động từ khuyết khuyết-Cách nhận biết- Vị trí của động từ trong câu- Sự biến đổi của động từ",
       "category": "slides"
     },
     "slides/pre-gs8-nouns-and-articles": {
@@ -243,13 +257,6 @@
       "title": "Pre GS6 - Nouns Part 1 (Danh từ phần 1)",
       "author": "Gen8",
       "description": "Khái niệm danh từ, vị trí danh từ trong câu, số ít và số nhiều, cách thêm -s/-es",
-      "category": "slides"
-    },
-    "slides/pre-gs9-verbs": {
-      "path": "slides/pre-gs9-verbs",
-      "title": "Pre GS9 - Verbs ( Động từ )",
-      "author": "Gen8",
-      "description": "Động từ- To be - Động từ thường- Động từ khuyết khuyết-Cách nhận biết- Vị trí của động từ trong câu- Sự biến đổi của động từ",
       "category": "slides"
     },
     "slides/pre-gs6-verbs-1": {
@@ -350,6 +357,13 @@
       "description": "Tính từ mô tả danh từ,  Mô tả người/vật bằng tính từ, Cách nhận biết, Vị trí của tính từ trong câu",
       "category": "worksheets"
     },
+    "worksheets/pre-GS9-verbs-part 1": {
+      "path": "worksheets/pre-GS9-verbs-part 1",
+      "title": "Pre GS9 - Verbs ( Động từ )",
+      "author": "Gen8",
+      "description": "Động từ- To be - Động từ thường- Động từ khuyết khuyết-Bài tập về động từ",
+      "category": "worksheets"
+    },
     "worksheets/pre-GS9-nouns-part 2": {
       "path": "worksheets/pre-GS9-nouns-part 2",
       "title": "Pre GS9 - Nouns-Part 2-( Danh từ phần 2)",
@@ -390,13 +404,6 @@
       "title": "Pre GS8 - adv - adj",
       "author": "Gen8",
       "description": "Không có mô tả.",
-      "category": "worksheets"
-    },
-    "worksheets/pre-GS9-verbs": {
-      "path": "worksheets/pre-GS9-verbs",
-      "title": "Pre GS9 - Verbs ( Động từ )",
-      "author": "Gen8",
-      "description": "Động từ- To be - Động từ thường- Động từ khuyết khuyết-Bài tập về động từ",
       "category": "worksheets"
     },
     "worksheets/pre-gs7-verbs-1": {
@@ -649,6 +656,13 @@
       "title": "Pre GS8 - Review verb form \\'96 \\'d4n T\\uc0\\u7853 p",
       "author": "Gen8",
       "description": "Không có mô tả.",
+      "category": "worksheets"
+    },
+    "worksheets/pre-GS9-verbs-part 2": {
+      "path": "worksheets/pre-GS9-verbs-part 2",
+      "title": "Pre GS9 - Verbs Part 2 ( Động từ Phần 2)",
+      "author": "Gen8",
+      "description": "Động từ-  Động từ khuyết khuyết, Động từ trạng thái, Động từ giác quan",
       "category": "worksheets"
     },
     "worksheets/pre-gs6-articles": {
