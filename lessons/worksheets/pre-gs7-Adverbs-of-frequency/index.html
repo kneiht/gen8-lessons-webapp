@@ -329,22 +329,14 @@
                         <ul class="list-disc pl-5 text-gray-700">
                             <li class="mb-1">Diễn tả tần suất của hành động</li>
                             <li>Trả lời cho câu hỏi "How often...?"</li>
+                            <li>Trả lời cho câu hỏi "Do you ever...?"</li>
                         </ul>
                     </div>
 
                     <div class="info-card bg-blue-50">
-                        <h4 class="subsection-title">3. Cách sử dụng</h4>
+                        <h4 class="subsection-title">3. Vị trí trong câu</h4>
                         <ul class="list-disc pl-5 text-gray-700">
-                            <li class="mb-1">Đứng trước động từ thường: <span class="italic">I often eat tofu.</span>
-                            </li>
-                            <li>Đứng sau động từ tobe: <span class="italic">She is always healthy.</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="info-card bg-purple-50">
-                        <h4 class="subsection-title">4. Vị trí trong câu</h4>
-                        <ul class="list-disc pl-5 text-gray-700">
-                            <li class="mb-1">Trước động từ thường: <span class="italic">He rarely gets sunburn.</span>
+                            <li class="mb-1">Trước động từ thường: <span class="italic">He rarely gets a sunburn.</span>
                             </li>
                             <li class="mb-1">Sau động từ tobe: <span class="italic">They are usually indoors.</span>
                             </li>
@@ -353,8 +345,8 @@
                         </ul>
                     </div>
 
-                    <div class="info-card bg-pink-50">
-                        <h4 class="subsection-title">5. Thứ tự mức độ thường xuyên</h4>
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Thứ tự mức độ thường xuyên</h4>
                         <table class="w-full text-left text-gray-700 border-collapse">
                             <tbody>
                                 <tr class="border-b border-gray-200">
@@ -366,7 +358,7 @@
                                     <td class="py-1 px-4 italic">usually (thường xuyên)</td>
                                 </tr>
                                 <tr class="border-b border-gray-200">
-                                    <td class="py-1 px-4">70%</td>
+                                    <td class="py-1 px-4">80%</td>
                                     <td class="py-1 px-4 italic">often (thường)</td>
                                 </tr>
                                 <tr class="border-b border-gray-200">
@@ -374,8 +366,16 @@
                                     <td class="py-1 px-4 italic">sometimes (thỉnh thoảng)</td>
                                 </tr>
                                 <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">30%</td>
+                                    <td class="py-1 px-4 italic">occasionally (đôi khi)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
                                     <td class="py-1 px-4">10%</td>
                                     <td class="py-1 px-4 italic">rarely (hiếm khi)</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="py-1 px-4">5%</td>
+                                    <td class="py-1 px-4 italic">hardly ever (hầu như không bao giờ)</td>
                                 </tr>
                                 <tr>
                                     <td class="py-1 px-4">0%</td>
@@ -507,37 +507,37 @@
                             <div class="space-y-4">
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">I ________ eat tofu
-                                        because it's rich in protein.</span>
+                                        because it's rich in protein. <span class="text-blue-600 text-sm">(Hint: I eat it regularly but not every day)</span></span>
                                     <input type="text" class="answer-input block print:hidden" data-answer="often"
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She is ________
-                                        healthy because she exercises daily.</span>
+                                        healthy because she exercises daily. <span class="text-blue-600 text-sm">(Hint: She exercises every single day)</span></span>
                                     <input type="text" class="answer-input block print:hidden" data-answer="always"
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We ________ stay
-                                        indoors when the weather is bad.</span>
+                                        indoors when the weather is bad. <span class="text-blue-600 text-sm">(Hint: This happens most of the time when weather is bad)</span></span>
                                     <input type="text" class="answer-input block print:hidden" data-answer="usually"
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">He ________ pops
-                                        pimples because it affects his skin condition.</span>
+                                        pimples because it affects his skin condition. <span class="text-blue-600 text-sm">(Hint: This is something you should never do)</span></span>
                                     <input type="text" class="answer-input block print:hidden" data-answer="never"
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">They ________ get
-                                        sunburn because they rarely go out in the sun.</span>
+                                        a sunburn because they rarely go out in the sun. <span class="text-blue-600 text-sm">(Hint: If they rarely go out, they almost never get sunburn)</span></span>
                                     <input type="text" class="answer-input block print:hidden" data-answer="rarely"
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">My doctor
-                                        ________ recommends eye drops when my eyes are tired.</span>
+                                        ________ recommends eye drops when my eyes are tired. <span class="text-blue-600 text-sm">(Hint: Doctors don't always recommend the same treatment)</span></span>
                                     <input type="text" class="answer-input block print:hidden" data-answer="sometimes"
                                         onblur="checkAnswer(this)">
                                 </div>
@@ -570,7 +570,7 @@
                                     <span class="font-medium text-gray-700 mb-2">3. rarely / gets / My sister / because /
                                         she / sunburn / wears sunscreen</span>
                                     <input type="text" class="answer-input w-full"
-                                        data-answer="My sister rarely gets sunburn because she wears sunscreen."
+                                        data-answer="My sister rarely gets a sunburn because she wears sunscreen."
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col">
@@ -599,7 +599,7 @@
                             <div class="grid grid-cols-1 w-full gap-y-2">
                                 <div class="flex flex-col md:flex-row items-start md:items-center py-1">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">I ________ eat
-                                        tofu because it's healthy.</span>
+                                        tofu because it's healthy. <span class="text-blue-600 text-sm">(Hint: I eat it regularly but not every day)</span></span>
                                     <div class="radio-group">
                                         <label class="radio-label">
                                             <input type="radio" name="q1" class="radio-input" value="always"
@@ -616,11 +616,21 @@
                                                 data-answer="often" onclick="checkAnswer(this)">
                                             <span>never</span>
                                         </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="hardly ever"
+                                                data-answer="often" onclick="checkAnswer(this)">
+                                            <span>hardly ever</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q1" class="radio-input" value="occasionally"
+                                                data-answer="often" onclick="checkAnswer(this)">
+                                            <span>occasionally</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">She ________
-                                        uses eye drops when her eyes are tired.</span>
+                                        uses eye drops when her eyes are tired. <span class="text-blue-600 text-sm">(Hint: She uses them only when needed, not always)</span></span>
                                     <div class="radio-group">
                                         <label class="radio-label">
                                             <input type="radio" name="q2" class="radio-input" value="sometimes"
@@ -637,11 +647,21 @@
                                                 data-answer="sometimes" onclick="checkAnswer(this)">
                                             <span>always</span>
                                         </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="hardly ever"
+                                                data-answer="sometimes" onclick="checkAnswer(this)">
+                                            <span>hardly ever</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q2" class="radio-input" value="occasionally"
+                                                data-answer="sometimes" onclick="checkAnswer(this)">
+                                            <span>occasionally</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">They ________
-                                        stay indoors when it's raining.</span>
+                                        stay indoors when it's raining. <span class="text-blue-600 text-sm">(Hint: This happens most of the time when it rains)</span></span>
                                     <div class="radio-group">
                                         <label class="radio-label">
                                             <input type="radio" name="q3" class="radio-input" value="usually"
@@ -658,11 +678,21 @@
                                                 data-answer="usually" onclick="checkAnswer(this)">
                                             <span>never</span>
                                         </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="hardly ever"
+                                                data-answer="usually" onclick="checkAnswer(this)">
+                                            <span>hardly ever</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q3" class="radio-input" value="occasionally"
+                                                data-answer="usually" onclick="checkAnswer(this)">
+                                            <span>occasionally</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">He ________
-                                        gets sunburn because he always wears sunscreen.</span>
+                                        gets a sunburn because he always wears sunscreen. <span class="text-blue-600 text-sm">(Hint: If he always wears sunscreen, he almost never gets sunburn)</span></span>
                                     <div class="radio-group">
                                         <label class="radio-label">
                                             <input type="radio" name="q4" class="radio-input" value="rarely"
@@ -679,11 +709,21 @@
                                                 data-answer="rarely" onclick="checkAnswer(this)">
                                             <span>always</span>
                                         </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="hardly ever"
+                                                data-answer="rarely" onclick="checkAnswer(this)">
+                                            <span>hardly ever</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q4" class="radio-input" value="occasionally"
+                                                data-answer="rarely" onclick="checkAnswer(this)">
+                                            <span>occasionally</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="flex flex-col md:flex-row items-start md:items-center">
                                     <span class="w-full md:w-auto font-medium text-gray-700 md:mr-2">We ________
-                                        eat soybean products to get enough protein.</span>
+                                        eat soybean products to get enough protein. <span class="text-blue-600 text-sm">(Hint: We eat them occasionally, not regularly)</span></span>
                                     <div class="radio-group">
                                         <label class="radio-label">
                                             <input type="radio" name="q5" class="radio-input" value="sometimes"
@@ -699,6 +739,16 @@
                                             <input type="radio" name="q5" class="radio-input" value="always"
                                                 data-answer="sometimes" onclick="checkAnswer(this)">
                                             <span>always</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="hardly ever"
+                                                data-answer="sometimes" onclick="checkAnswer(this)">
+                                            <span>hardly ever</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="q5" class="radio-input" value="occasionally"
+                                                data-answer="sometimes" onclick="checkAnswer(this)">
+                                            <span>occasionally</span>
                                         </label>
                                     </div>
                                 </div>
@@ -743,8 +793,8 @@
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-medium text-gray-700 mb-2">4. He gets sunburn. (rarely)</span>
-                                    <input type="text" class="answer-input w-full" data-answer="He rarely gets sunburn."
+                                    <span class="font-medium text-gray-700 mb-2">4. He gets a sunburn. (rarely)</span>
+                                    <input type="text" class="answer-input w-full" data-answer="He rarely gets a sunburn."
                                         onblur="checkAnswer(this)">
                                 </div>
                                 <div class="flex flex-col">
@@ -782,12 +832,12 @@
                                     <input type="text" class="answer-input w-full">
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-medium text-gray-700 mb-2">3. How often do you stay indoors when
-                                        it's sunny?</span>
+                                    <span class="font-medium text-gray-700 mb-2">3. Do you ever stay indoors when it's
+                                        sunny?</span>
                                     <input type="text" class="answer-input w-full">
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="font-medium text-gray-700 mb-2">4. How often do you get sunburn?</span>
+                                    <span class="font-medium text-gray-700 mb-2">4. Do you ever get a sunburn?</span>
                                     <input type="text" class="answer-input w-full">
                                 </div>
                                 <div class="flex flex-col">
@@ -820,7 +870,7 @@
                                     <input type="text" class="answer-input flex-1">
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
-                                    <span class="font-medium text-gray-700">rarely / get / sunburn / wear sunscreen</span>
+                                    <span class="font-medium text-gray-700">rarely / get / a sunburn / wear sunscreen</span>
                                     <input type="text" class="answer-input flex-1">
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center w-full">
