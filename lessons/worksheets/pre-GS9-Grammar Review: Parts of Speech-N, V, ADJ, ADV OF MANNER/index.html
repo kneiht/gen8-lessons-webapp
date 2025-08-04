@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Review Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .print-only {
+                display: block !important;
+            }
+            
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .highlight {
+                background-color: #fef08a !important;
+            }
+            
+            .correct {
+                color: #16a34a !important;
+            }
+            
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+        
+        /* Custom styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .highlight {
+            background-color: #fef08a;
+        }
+        
+        .correct {
+            color: #16a34a;
+        }
+        
+        .incorrect {
+            color: #dc2626;
+        }
+        
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+        
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+        
+        /* Color themes */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+        
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+        
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+    </style>
+</head>
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full max-w-6xl mx-auto">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Grammar Review: Parts of Speech</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+                
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date: _______________</p>
+            </div>
+            
+            <!-- Nouns Section -->
+            <div class="mb-8">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h2 class="section-title">Nouns (Danh từ)</h2>
+                </div>
+                
+                <!-- Nouns Theory -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">1. Definition (Định nghĩa)</h4>
+                        <p class="text-gray-700 mb-3">A noun is a word that names a person, place, thing, idea, or quality.</p>
+                        <p class="text-gray-700 mb-3">Danh từ là từ chỉ người, địa điểm, sự vật, ý tưởng hoặc đặc tính.</p>
+                        <p class="text-gray-700 italic">
+                            <span class="font-medium">Examples:</span> teacher (giáo viên), book (sách), happiness (hạnh phúc)
+                        </p>
+                    </div>
+                    
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">2. Types of Nouns (Loại danh từ)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">
+                                <span class="font-medium">Common nouns:</span> general names (danh từ chung)
+                                <p class="italic ml-3">E.g.: city, country</p>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-medium">Proper nouns:</span> specific names (danh từ riêng)
+                                <p class="italic ml-3">E.g.: New York, Vietnam</p>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-medium">Countable nouns:</span> can be counted (danh từ đếm được)
+                                <p class="italic ml-3">E.g.: apple, student</p>
+                            </li>
+                            <li>
+                                <span class="font-medium">Uncountable nouns:</span> cannot be counted (danh từ không đếm được)
+                                <p class="italic ml-3">E.g.: water, information</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Nouns Exercises -->
+                <div class="mb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="w-5 h-5 bg-blue-400 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">A</span>
+                        </div>
+                        <h3 class="section-title">Nouns - Basic Exercises</h3>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 1: Identify the nouns in each sentence (Xác định danh từ trong mỗi câu)</h4>
+                        <p class="exercise-instruction">Underline all the nouns in the following sentences (Gạch chân tất cả danh từ trong các câu sau):</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'dog, park')">
+                                <p class="text-gray-800">The dog ran quickly through the park.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'Maria, happiness, face')">
+                                <p class="text-gray-800">Maria's face showed pure happiness.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'students, classroom, teacher')">
+                                <p class="text-gray-800">The students in the classroom listened to the teacher.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'London, city, architecture')">
+                                <p class="text-gray-800">London is a beautiful city with amazing architecture.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 2: Countable or Uncountable?</h4>
+                        <p class="exercise-instruction">Write "C" for countable and "U" for uncountable nouns (Viết "C" cho danh từ đếm được và "U" cho danh từ không đếm được):</p>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mt-2">
+                            <!-- Row 1 -->
+                            <div class="flex items-center">
+                                <span class="w-24">water</span>
+                                <input type="text" class="answer-input" data-answer="U" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">apple</span>
+                                <input type="text" class="answer-input" data-answer="C" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">information</span>
+                                <input type="text" class="answer-input" data-answer="U" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">computer</span>
+                                <input type="text" class="answer-input" data-answer="C" onblur="checkAnswer(this)">
+                            </div>
+                            
+                            <!-- Row 2 -->
+                            <div class="flex items-center">
+                                <span class="w-24">rice</span>
+                                <input type="text" class="answer-input" data-answer="U" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">student</span>
+                                <input type="text" class="answer-input" data-answer="C" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">advice</span>
+                                <input type="text" class="answer-input" data-answer="U" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">table</span>
+                                <input type="text" class="answer-input" data-answer="C" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nouns Advanced Exercises -->
+                <div class="mb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">B</span>
+                        </div>
+                        <h3 class="section-title">Nouns - Advanced Exercises</h3>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 3: Plural Forms (Dạng số nhiều)</h4>
+                        <p class="exercise-instruction">Write the plural form of these nouns (Viết dạng số nhiều của các danh từ sau):</p>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 mt-3">
+                            <div class="flex items-center">
+                                <span class="w-24">child</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="children" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">city</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="cities" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">mouse</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="mice" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">box</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="boxes" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">knife</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="knives" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">woman</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="women" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 4: Correct the sentences</h4>
+                        <p class="exercise-instruction">Rewrite these sentences with correct noun usage (Viết lại các câu sau với cách dùng danh từ chính xác):</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-72">She gave me some advices.</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="She gave me some advice." onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-72">I have three informations for you.</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="I have three pieces of information for you." onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-72">There are many fishes in the ocean.</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="There are many fish in the ocean." onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Verbs Section -->
+            <div class="mb-8">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h2 class="section-title">Verbs (Động từ)</h2>
+                </div>
+                
+                <!-- Verbs Theory -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">1. Definition (Định nghĩa)</h4>
+                        <p class="text-gray-700 mb-3">A verb is a word that shows an action, occurrence, or state of being.</p>
+                        <p class="text-gray-700 mb-3">Động từ là từ chỉ hành động, sự việc, hoặc trạng thái.</p>
+                        <p class="text-gray-700 italic">
+                            <span class="font-medium">Examples:</span> run (chạy), become (trở nên), think (nghĩ)
+                        </p>
+                    </div>
+                    
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Types of Verbs (Loại động từ)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">
+                                <span class="font-medium">Action verbs:</span> show physical or mental action (động từ hành động)
+                                <p class="italic ml-3">E.g.: jump, write, think</p>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-medium">Linking verbs:</span> connect subject to description (động từ nối)
+                                <p class="italic ml-3">E.g.: be, seem, appear</p>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-medium">Helping verbs:</span> help main verbs (trợ động từ)
+                                <p class="italic ml-3">E.g.: can, will, should</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Verbs Exercises -->
+                <div class="mb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="w-5 h-5 bg-green-400 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">A</span>
+                        </div>
+                        <h3 class="section-title">Verbs - Basic Exercises</h3>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 1: Identify the verbs (Xác định động từ)</h4>
+                        <p class="exercise-instruction">Underline all the verbs in the following sentences (Gạch chân tất cả động từ trong các câu sau):</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-green-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'runs, plays')">
+                                <p class="text-gray-800">Peter runs fast and plays soccer well.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-green-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'is, thinking')">
+                                <p class="text-gray-800">She is thinking about her future.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-green-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'has, finished, working')">
+                                <p class="text-gray-800">John has finished working on his project.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-green-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'appears, will, arrive')">
+                                <p class="text-gray-800">It appears they will arrive late.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 2: Action or Linking Verbs?</h4>
+                        <p class="exercise-instruction">Write "A" for action verbs and "L" for linking verbs (Viết "A" cho động từ hành động và "L" cho động từ nối):</p>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mt-2">
+                            <!-- Row 1 -->
+                            <div class="flex items-center">
+                                <span class="w-24">run</span>
+                                <input type="text" class="answer-input" data-answer="A" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">seem</span>
+                                <input type="text" class="answer-input" data-answer="L" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">jump</span>
+                                <input type="text" class="answer-input" data-answer="A" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">appear</span>
+                                <input type="text" class="answer-input" data-answer="L" onblur="checkAnswer(this)">
+                            </div>
+                            
+                            <!-- Row 2 -->
+                            <div class="flex items-center">
+                                <span class="w-24">write</span>
+                                <input type="text" class="answer-input" data-answer="A" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">become</span>
+                                <input type="text" class="answer-input" data-answer="L" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">sing</span>
+                                <input type="text" class="answer-input" data-answer="A" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-24">feel</span>
+                                <input type="text" class="answer-input" data-answer="L|A" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Verbs Advanced Exercises -->
+                <div class="mb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">B</span>
+                        </div>
+                        <h3 class="section-title">Verbs - Advanced Exercises</h3>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 3: Verb Tenses (Thì của động từ)</h4>
+                        <p class="exercise-instruction">Fill in the blanks with the correct form of the verb in parentheses (Điền dạng đúng của động từ trong ngoặc):</p>
+                        
+                        <div class="space-y-3 mt-3">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">She _____ (study) English every day.</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="studies" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">Yesterday, I _____ (go) to the market.</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="went" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">Tomorrow, they _____ (finish) their project.</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="will finish" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">She _____ (read) a book when I called.</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="was reading" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adjectives Section -->
+            <div class="mb-8">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-600 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h2 class="section-title">Adjectives (Tính từ)</h2>
+                </div>
+                
+                <!-- Adjectives Theory -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. Definition (Định nghĩa)</h4>
+                        <p class="text-gray-700 mb-3">An adjective is a word that describes or modifies a noun.</p>
+                        <p class="text-gray-700 mb-3">Tính từ là từ mô tả hoặc bổ nghĩa cho danh từ.</p>
+                        <p class="text-gray-700 italic">
+                            <span class="font-medium">Examples:</span> beautiful (đẹp), tall (cao), interesting (thú vị)
+                        </p>
+                    </div>
+                    
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">2. Position in Sentences (Vị trí trong câu)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Before nouns (Đứng trước danh từ):
+                                <p class="italic ml-3">E.g.: a <u>red</u> car, the <u>big</u> house</p>
+                            </li>
+                            <li class="mb-1">After linking verbs (Đứng sau động từ nối):
+                                <p class="italic ml-3">E.g.: She is <u>happy</u>. The soup smells <u>delicious</u>.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">3. Comparison (So sánh)</h4>
+                        <table class="w-full text-left text-gray-700 border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="p-2">Type</th>
+                                    <th class="p-2">Form</th>
+                                    <th class="p-2">Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-2">Comparative</td>
+                                    <td class="p-2">adjective + -er / more + adjective</td>
+                                    <td class="p-2">taller / more beautiful</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-2">Superlative</td>
+                                    <td class="p-2">adjective + -est / most + adjective</td>
+                                    <td class="p-2">tallest / most beautiful</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Adjectives Exercises -->
+                <div class="mb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">A</span>
+                        </div>
+                        <h3 class="section-title">Adjectives - Basic Exercises</h3>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 1: Identify the adjectives (Xác định tính từ)</h4>
+                        <p class="exercise-instruction">Underline all the adjectives in the following sentences (Gạch chân tất cả tính từ trong các câu sau):</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-yellow-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'small, wooden, beautiful')">
+                                <p class="text-gray-800">The small wooden table had a beautiful vase.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-yellow-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'delicious, hot')">
+                                <p class="text-gray-800">The soup was delicious but too hot.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-yellow-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'tall, handsome')">
+                                <p class="text-gray-800">My tall, handsome brother is coming tomorrow.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-yellow-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'intelligent, young, Japanese')">
+                                <p class="text-gray-800">She is an intelligent young Japanese scientist.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 2: Comparative/Superlative</h4>
+                        <p class="exercise-instruction">Write the correct form of the adjective (Viết dạng đúng của tính từ):</p>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2 mt-3">
+                            <div class="flex items-center">
+                                <span class="w-28">tall (comparative)</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="taller" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-28">good (superlative)</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="best" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-28">beautiful (comparative)</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="more beautiful" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-28">bad (superlative)</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="worst" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-28">far (comparative)</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="farther|further" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-28">interesting (superlative)</span>
+                                <span class="mx-2">→</span>
+                                <input type="text" class="answer-input" data-answer="most interesting" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adverbs Section -->
+            <div class="mb-8">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h2 class="section-title">Adverbs (Trạng từ)</h2>
+                </div>
+                
+                <!-- Adverbs Theory -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">1. Definition (Định nghĩa)</h4>
+                        <p class="text-gray-700 mb-3">An adverb is a word that modifies a verb, adjective, or another adverb.</p>
+                        <p class="text-gray-700 mb-3">Trạng từ là từ bổ nghĩa cho động từ, tính từ hoặc trạng từ khác.</p>
+                        <p class="text-gray-700 italic">
+                            <span class="font-medium">Examples:</span> quickly (nhanh), very (rất), well (tốt)
+                        </p>
+                    </div>
+                    
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">2. Types of Adverbs (Loại trạng từ)</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">
+                                <span class="font-medium">Manner (cách thức):</span> how something is done
+                                <p class="italic ml-3">E.g.: slowly, carefully, well</p>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-medium">Time (thời gian):</span> when something happens
+                                <p class="italic ml-3">E.g.: now, later, yesterday</p>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-medium">Place (nơi chốn):</span> where something happens
+                                <p class="italic ml-3">E.g.: here, there, everywhere</p>
+                            </li>
+                            <li>
+                                <span class="font-medium">Frequency (tần suất):</span> how often something happens
+                                <p class="italic ml-3">E.g.: always, sometimes, never</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Adverbs Exercises -->
+                <div class="mb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="w-5 h-5 bg-purple-400 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">A</span>
+                        </div>
+                        <h3 class="section-title">Adverbs - Basic Exercises</h3>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 1: Identify the adverbs (Xác định trạng từ)</h4>
+                        <p class="exercise-instruction">Underline all the adverbs (manner) in the following sentences (Gạch chân tất cả trạng từ trong các câu sau):</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-purple-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'quickly, carefully')">
+                                <p class="text-gray-800">He walked quickly but carefully on the icy path.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-purple-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'well')">
+                                <p class="text-gray-800">She sings very well despite being nervous.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-purple-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'loudly')">
+                                <p class="text-gray-800">They spoke loudly during the meeting.</p>
+                            </div>
+                            <div class="p-2 border border-gray-200 rounded-lg hover:bg-purple-50 cursor-pointer" 
+                                onclick="highlightPhrase(this, 'happily')">
+                                <p class="text-gray-800">The children played happily in the park.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="exercise-container">
+                        <h4 class="exercise-title">Exercise 2: Adjective or Adverb?</h4>
+                        <p class="exercise-instruction">Fill in the blanks with the correct form (Điền dạng đúng: tính từ hoặc trạng từ):</p>
+                        
+                        <div class="space-y-3 mt-3">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">She is a _____ singer. (good)</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="good" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">She sings _____. (good)</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="well" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">That was a _____ answer. (quick)</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="quick" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                                <span class="w-full sm:w-80">He answered _____. (quick)</span>
+                                <input type="text" class="answer-input flex-1" 
+                                    data-answer="quickly" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mixed Exercises Section -->
+            <div class="mb-4">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">5</span>
+                    </div>
+                    <h2 class="section-title">Mixed Exercises - Review All</h2>
+                </div>
+                
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Exercise 1: Identify Parts of Speech</h4>
+                    <p class="exercise-instruction">Label each underlined word as Noun (N), Verb (V), Adjective (Adj), or Adverb (Adv):</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                        <div>
+                            <p>The <u>fast</u> runner won the race <u>easily</u>.</p>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">fast:</span>
+                                <input type="text" class="answer-input" data-answer="Adj" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">easily:</span>
+                                <input type="text" class="answer-input" data-answer="Adv" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                        <div>
+                            <p><u>Lisa</u> will <u>carefully</u> organize her <u>old</u> books.</p>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">Lisa:</span>
+                                <input type="text" class="answer-input" data-answer="N" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">carefully:</span>
+                                <input type="text" class="answer-input" data-answer="Adv" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">old:</span>
+                                <input type="text" class="answer-input" data-answer="Adj" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                        <div>
+                            <p>The <u>bright</u> sun <u>shone</u> <u>warmly</u>.</p>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">bright:</span>
+                                <input type="text" class="answer-input" data-answer="Adj" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">shone:</span>
+                                <input type="text" class="answer-input" data-answer="V" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">warmly:</span>
+                                <input type="text" class="answer-input" data-answer="Adv" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                        <div>
+                            <p>Those <u>five</u> <u>students</u> <u>studied</u> <u>hard</u>.</p>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">five:</span>
+                                <input type="text" class="answer-input" data-answer="Adj" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">students:</span>
+                                <input type="text" class="answer-input" data-answer="N" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">studied:</span>
+                                <input type="text" class="answer-input" data-answer="V" onblur="checkAnswer(this)">
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="w-16">hard:</span>
+                                <input type="text" class="answer-input" data-answer="Adv" onblur="checkAnswer(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Exercise 2: Complete the Paragraph</h4>
+                    <p class="exercise-instruction">Fill in the blanks with words from the box in their correct forms (Điền từ trong khung vào chỗ trống với dạng đúng):</p>
+                    
+                    <div class="mt-3">
+                        <div class="bg-gray-100 p-3 rounded-lg mb-3">
+                            <p class="text-sm italic">happy (adj) • run (v) • quick (adj) • slowly (adv) • friend (n) • sing (v)</p>
+                        </div>
+                        
+                        <p class="mb-2">1. I have a <input type="text" class="answer-input" data-answer="happy" onblur="checkAnswer(this)"> family.</p>
+                        <p class="mb-2">2. My best <input type="text" class="answer-input" data-answer="friend" onblur="checkAnswer(this)"> is Mai.</p>
+                        <p class="mb-2">3. She can <input type="text" class="answer-input" data-answer="sing" onblur="checkAnswer(this)"> very well.</p>
+                        <p class="mb-2">4. We <input type="text" class="answer-input" data-answer="run" onblur="checkAnswer(this)"> in the park every morning.</p>
+                        <p class="mb-2">5. The turtle walked very <input type="text" class="answer-input" data-answer="slowly" onblur="checkAnswer(this)">.</p>
+                        <p>6. He gave a <input type="text" class="answer-input" data-answer="quick" onblur="checkAnswer(this)"> answer.</p>
+                    </div>
+                </div>
+                
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Exercise 3: Error Correction</h4>
+                    <p class="exercise-instruction">Find and correct the mistakes in these sentences (Tìm và sửa lỗi trong các câu sau):</p>
+                    
+                    <div class="space-y-3 mt-3">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                            <span class="w-full sm:w-96">She sang beautiful at the concert.</span>
+                            <input type="text" class="answer-input flex-1" 
+                                data-answer="She sang beautifully at the concert." onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                            <span class="w-full sm:w-96">I have many homeworks to do.</span>
+                            <input type="text" class="answer-input flex-1" 
+                                data-answer="I have a lot of homework to do." onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                            <span class="w-full sm:w-96">He speaked to the teacher angry.</span>
+                            <input type="text" class="answer-input flex-1" 
+                                data-answer="He spoke to the teacher angrily." onblur="checkAnswer(this)">
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                            <span class="w-full sm:w-96">This is the expensivest book here.</span>
+                            <input type="text" class="answer-input flex-1" 
+                                data-answer="This is the most expensive book here." onblur="checkAnswer(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Common functions for worksheets
+        
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+        
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            // Get user's answer, normalized for comparison
+            const userAnswer = input.value ? 
+                input.value.toLowerCase().trim().replace(/[.,!?'"]/g, '') : 
+                input.checked ? input.value : '';
+            
+            // Get correct answer(s), can be multiple options separated by |
+            const correctAnswers = input.dataset.answer.toLowerCase().trim().replace(/[.,!?'"]/g, '').split('|');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    
+                    // If this is the selected answer, check if it's correct
+                    if (radio.checked) {
+                        if (correctAnswers.includes(radio.value.toLowerCase())) {
+                            container.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            container.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                });
+                return;
+            }
+            
+            // Handle text inputs
+            if (userAnswer) {
+                // Check if user's answer matches any of the correct answers
+                const isCorrect = correctAnswers.some(correctAns => 
+                    userAnswer === correctAns || 
+                    userAnswer.replace(/\s+/g, ' ') === correctAns.replace(/\s+/g, ' ')
+                );
+                
+                if (isCorrect) {
+                    input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                    input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+                } else {
+                    input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                    input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+                }
+            } else {
+                // Reset if no answer
+                input.classList.remove('border-green-500', 'bg-green-100', 'border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+        
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element, phrases) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = phrases ? phrases.split(',') : [];
+            
+            let highlightedText = text;
+            
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+            
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+    </script>
+</body>
+</html>
