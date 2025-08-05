@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Kiểm Tra Ngữ Pháp - Trạng từ & Giới từ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @media print {
+        .print\:hidden {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div
+      class="test-paper max-w-2xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8 print:mt-0"
+    >
+      <div class="header text-center mb-8">
+        <h3 class="text-xl font-bold text-blue-800">
+          ENGLISH GRAMMAR TEST: ADVERBS & PREPOSITIONS
+        </h3>
+        <p class="mb-2">
+          <strong>Time:</strong> 60 minutes | <strong>Full name:</strong>
+          <input
+            type="text"
+            class="border-b border-gray-400 outline-none px-2 print:hidden"
+            style="width: 220px"
+          />
+        </p>
+      </div>
+      <form id="grammarTest">
+        <!-- Part 1: Multiple Choice -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 1: Multiple Choice (4 marks)
+          </div>
+          <p class="mb-4">Choose the best answer:</p>
+          <div class="space-y-2" id="mcq-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <!-- Part 2: Error Correction -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 2: Error Correction (2 marks)
+          </div>
+          <p class="mb-4">
+            Find the errors and rewrite the sentences correctly:
+          </p>
+          <div class="space-y-4" id="error-correction-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <!-- Part 3: Rearrangement -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 3: Rearrangement (1 mark)
+          </div>
+          <p class="mb-4">
+            Rearrange the words to make correct sentences:
+          </p>
+          <div class="space-y-4" id="rearrangement-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <!-- Part 4: Word Completion (Adverb/Preposition) -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 4: Word Completion (Adverb/Preposition) (2 marks)
+          </div>
+          <p class="mb-4">
+            Complete the sentences with the correct adverb (by changing the adjective in brackets) or preposition (in, on, at).
+          </p>
+          <div class="space-y-4" id="verb-conjugation-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <div class="flex justify-center mt-8 print:hidden">
+          <button
+            type="button"
+            onclick="gradeTest()"
+            class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 font-semibold"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          id="result"
+          class="mt-8 text-center text-lg font-bold print:hidden"
+          style="display: none"
+        ></div>
+      </form>
+    </div>
+    <script>
+      // Multiple Choice Questions (20 questions, 4 points)
+      const mcqQuestions = [
+        // 1. Danh từ số ít
+        {
+          question:
+            "There is a ___ on the table that I borrowed from the library yesterday.",
+          options: ["A. book", "B. books", "C. a book", "D. the book"],
+          answer: "A",
+        },
+        // 2. Danh từ số nhiều (s/es)
+        {
+          question: "I have two ___ in my bag, but I can't find the blue one.",
+          options: ["A. pen", "B. pens", "C. a pen", "D. the pen"],
+          answer: "B",
+        },
+        // 3. Danh từ số nhiều bất quy tắc
+        {
+          question:
+            "There are three ___ swimming in the pond near our house.",
+          options: ["A. fishes", "B. fish", "C. fishs", "D. fishe"],
+          answer: "B",
+        },
+        // 4. Danh từ đếm được
+        {
+          question:
+            "How many ___ do you see on the kitchen counter after breakfast?",
+          options: ["A. water", "B. apple", "C. apples", "D. milks"],
+          answer: "C",
+        },
+        // 5. Danh từ không đếm được
+        {
+          question:
+            "There isn’t ___ milk left in the fridge, so we need to buy some more.",
+          options: ["A. some", "B. any", "C. a", "D. many"],
+          answer: "B",
+        },
+        // 6. Some / Any
+        {
+          question:
+            "Would you like ___ tea before you leave for work this morning?",
+          options: ["A. some", "B. any", "C. a", "D. many"],
+          answer: "A",
+        },
+        // 7. Mạo từ a/an/the
+        {
+          question:
+            "He is ___ honest man who always tells the truth, even in difficult situations.",
+          options: ["A. a", "B. an", "C. any", "D. some"],
+          answer: "B",
+        },
+        // 8. Đại từ nhân xưng chủ ngữ và tân ngữ
+        {
+          question:
+            "___ gave me this book because I needed it for my English class.",
+          options: ["A. He", "B. Him", "C. His", "D. Himself"],
+          answer: "A",
+        },
+        // 9. Động từ to be (am/is/are)
+        {
+          question:
+            "She ___ a student at the university where her mother works.",
+          options: ["A. am", "B. is", "C. are", "D. be"],
+          answer: "B",
+        },
+        // 10. Động từ thường (s/es)
+        {
+          question:
+            "My father ___ to work every day, even when it rains heavily.",
+          options: ["A. go", "B. goes", "C. going", "D. gone"],
+          answer: "B",
+        },
+        // 11. Động từ khiếm khuyết (can/should/must)
+        {
+          question:
+            "You ___ do your homework before playing computer games if you want good grades.",
+          options: ["A. can", "B. should", "C. will", "D. may"],
+          answer: "B",
+        },
+        // 12. Tính từ sở hữu
+        {
+          question:
+            "This is ___ book, not yours, so please return it to me after class.",
+          options: ["A. me", "B. my", "C. mine", "D. I"],
+          answer: "B",
+        },
+        // 13. Cụm tính từ mô tả + danh từ
+        {
+          question: "She has ___ that always sleeps on her bed at night.",
+          options: [
+            "A. cat black",
+            "B. a small cat",
+            "C. black cat",
+            "D. small cat",
+          ],
+          answer: "B",
+        },
+        // 14. Trạng từ chỉ cách thức
+        {
+          question:
+            "He runs very ___ when he is late for the morning meeting at work.",
+          options: ["A. quick", "B. quickly", "C. quicker", "D. quickest"],
+          answer: "B",
+        },
+        // 15. Trạng từ tần suất
+        {
+          question:
+            "I ___ go to school by bike, but sometimes I walk if the weather is nice.",
+          options: [
+            "A. usually",
+            "B. never",
+            "C. rarely",
+            "D. All are correct",
+          ],
+          answer: "A",
+        },
+        // 16. Giới từ chỉ thời gian
+        {
+          question:
+            "My birthday is ___ May, which is usually a warm and sunny month.",
+          options: ["A. in", "B. on", "C. at", "D. by"],
+          answer: "A",
+        },
+        // 17. Giới từ chỉ địa điểm
+        {
+          question:
+            "The cat is ___ the box, hiding from the dog that is barking outside.",
+          options: ["A. in", "B. on", "C. at", "D. by"],
+          answer: "A",
+        },
+        // 18. Cấu trúc S + be + Complement
+        {
+          question:
+            "They ___ happy because they have just received some good news from their teacher.",
+          options: ["A. is", "B. are", "C. am", "D. be"],
+          answer: "B",
+        },
+        // 19. Chủ ngữ giả: It, There
+        {
+          question:
+            "___ is raining so heavily that we can't go outside to play football.",
+          options: ["A. It", "B. There", "C. This", "D. That"],
+          answer: "A",
+        },
+        // 20. There is / There are
+        {
+          question:
+            "___ a pen on the desk that you can use to sign the document.",
+          options: ["A. There is", "B. There are", "C. It is", "D. It are"],
+          answer: "A",
+        },
+      ];
+
+      // Error Correction Questions (10 questions)
+      const errorCorrectionQuestions = [
+        {
+          question: "She have a remarkable collection of rare books in her study.",
+          answer: "She has a remarkable collection of rare books in her study."
+        },
+        {
+          question: "There are a book on the table that belongs to the principal.",
+          answer: "There is a book on the table that belongs to the principal."
+        },
+        {
+          question: "He can to swim across the river during the summer camp.",
+          answer: "He can swim across the river during the summer camp."
+        },
+        {
+          question: "My mother is teacher who inspires her students greatly.",
+          answer: "My mother is a teacher who inspires her students greatly."
+        },
+        {
+          question: "They goes to school every day, even when the weather is terrible.",
+          answer: "They go to school every day, even when the weather is terrible."
+        },
+        {
+          question: "She sings beautiful in the school choir every weekend.",
+          answer: "She sings beautifully in the school choir every weekend."
+        },
+        {
+          question: "It are cold today, so you should wear a warm jacket.",
+          answer: "It is cold today, so you should wear a warm jacket."
+        },
+        {
+          question: "There is many apples in the basket that we picked from the orchard.",
+          answer: "There are many apples in the basket that we picked from the orchard."
+        },
+        {
+          question: "We have a meeting in Monday morning.",
+          answer: "We have a meeting on Monday morning."
+        },
+        {
+          question: "She don’t like milks, especially when it is warm.",
+          answer: "She doesn’t like milk, especially when it is warm."
+        }
+      ];
+
+      // Rearrangement Questions (10 questions)
+      const rearrangementQuestions = [
+        {
+          question: "is / the / book / on / table / the",
+          answer: "The book is on the table."
+        },
+        {
+          question: "are / there / apples / in / basket / the",
+          answer: "There are apples in the basket."
+        },
+        {
+          question: "can / swim / he / well",
+          answer: "He can swim well."
+        },
+        {
+          question: "is / it / cold / today",
+          answer: "It is cold today."
+        },
+        {
+          question: "do / homework / your / you",
+          answer: "You do your homework."
+        },
+        {
+          question: "is / my / name / Anna",
+          answer: "My name is Anna."
+        },
+        {
+          question: "has / she / a / dog",
+          answer: "She has a dog."
+        },
+        {
+          question: "is / the / bus / at / stop / the",
+          answer: "The bus is at the stop."
+        },
+        {
+          question: "are / there / students / in / class / the",
+          answer: "There are students in the class."
+        },
+        {
+          question: "is / what / time / it",
+          answer: "What time is it?"
+        }
+      ];
+
+      // Word Form Questions (10 questions)
+      const verbConjugationQuestions = [
+        {
+          question: "The playground was filled with the laughter of several ______ (child) enjoying their afternoon.",
+          answer: "children"
+        },
+        {
+          question: "She ______ (go) to the prestigious university every weekday morning.",
+          answer: "goes"
+        },
+        {
+          question: "This is ______ (we) book. Please do not take it without asking us.",
+          answer: "our"
+        },
+        {
+          question: "My father is a ______ (drive) who has won many awards for safe driving.",
+          answer: "driver"
+        },
+        {
+          question: "They are ______ (happy) to see you after such a long and tiring journey.",
+          answer: "happy"
+        },
+        {
+          question: "He can ______ (swim) across the lake without stopping to rest.",
+          answer: "swim"
+        },
+        {
+          question: "These are my ______ (book), which I have been searching for all week.",
+          answer: "book"
+        },
+        {
+          question: "She speaks English very ______ (good), impressing all her teachers.",
+          answer: "well"
+        },
+        {
+          question: "There ______ (be) a lot of people here waiting for the concert to begin.",
+          answer: "are"
+        },
+        {
+          question: "I have some ______ (apple) in my bag if you are hungry after class.",
+          answer: "apples"
+        }
+      ];
+
+      // Function to shuffle array
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Display MCQ Questions
+      function displayMcqQuestions() {
+        const container = document.getElementById("mcq-container");
+        const shuffledQuestions = shuffleArray([...mcqQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          const label = document.createElement("label");
+          label.textContent = `${index + 1}. ${q.question}`;
+          questionDiv.appendChild(label);
+          const optionsDiv = document.createElement("div");
+          optionsDiv.className = "grid grid-cols-2 gap-x-8";
+          const correctAnswerText = q.options
+            .find((opt) => opt.startsWith(q.answer + "."))
+            .substring(3);
+          const optionTexts = q.options.map((opt) => opt.substring(3));
+          const shuffledOptionTexts = shuffleArray([...optionTexts]);
+          const newCorrectAnswerLetter = String.fromCharCode(
+            65 + shuffledOptionTexts.indexOf(correctAnswerText)
+          );
+          questionDiv.setAttribute("data-answer", newCorrectAnswerLetter);
+          const letters = ["A", "B", "C", "D"];
+          shuffledOptionTexts.forEach((text, i) => {
+            const optionLabel = document.createElement("label");
+            optionLabel.className = "block";
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = `mcq${index + 1}`;
+            radio.value = letters[i];
+            radio.className = "mr-2";
+            optionLabel.appendChild(radio);
+            optionLabel.appendChild(
+              document.createTextNode(`${letters[i]}. ${text}`)
+            );
+            optionsDiv.appendChild(optionLabel);
+          });
+          questionDiv.appendChild(optionsDiv);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Display Error Correction Questions
+      function displayErrorCorrectionQuestions() {
+        const container = document.getElementById("error-correction-container");
+        const shuffledQuestions = shuffleArray([...errorCorrectionQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          questionDiv.setAttribute("data-answer", q.answer);
+          const label = document.createElement("label");
+          label.innerHTML = `${index + 1}. ${q.question}<br>`;
+          const input = document.createElement("input");
+          input.name = `err${index + 1}`;
+          input.className = "border-b border-gray-300 w-full mt-1 p-1";
+          input.rows = 1;
+          label.appendChild(input);
+          questionDiv.appendChild(label);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Display Rearrangement Questions
+      function displayRearrangementQuestions() {
+        const container = document.getElementById("rearrangement-container");
+        const shuffledQuestions = shuffleArray([...rearrangementQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          questionDiv.setAttribute("data-answer", q.answer);
+          const label = document.createElement("label");
+          label.innerHTML = `${index + 1}. ${q.question}<br>`;
+          const input = document.createElement("input");
+          input.name = `rw${index + 1}`;
+          input.className = "border-b border-gray-300 w-full mt-1 p-1";
+          input.rows = 1;
+          label.appendChild(input);
+          questionDiv.appendChild(label);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Display Verb Conjugation Questions
+      function displayVerbConjugationQuestions() {
+        const container = document.getElementById("verb-conjugation-container");
+        const shuffledQuestions = shuffleArray([...verbConjugationQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          questionDiv.setAttribute("data-answer", q.answer);
+          const label = document.createElement("label");
+          const questionText = q.question.replace(
+            "______",
+            `<input type="text" name="verb${
+              index + 1
+            }" class="border-b border-gray-400 w-32 px-1">`
+          );
+          label.innerHTML = `${index + 1}. ${questionText}`;
+          questionDiv.appendChild(label);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Initialize when page loads
+      window.onload = function () {
+        displayMcqQuestions();
+        displayErrorCorrectionQuestions();
+        displayRearrangementQuestions();
+        displayVerbConjugationQuestions();
+      };
+
+      function getAnswersFromAttr(questionElem) {
+        return (questionElem.getAttribute("data-answer") || "")
+          .split("||")
+          .map((s) => s.trim());
+      }
+
+      function gradeTest() {
+        let score = 0;
+        let form = document.forms["grammarTest"];
+        document.querySelectorAll(".question").forEach((q) => {
+          q.querySelectorAll(
+            "input[type=radio], input[type=text], input"
+          ).forEach((input) => {
+            input.classList.remove(
+              "bg-green-100",
+              "border-green-500",
+              "bg-red-100",
+              "border-red-500",
+              "border-2"
+            );
+            if (input.type === "radio")
+              input.parentElement.classList.remove(
+                "bg-green-100",
+                "border-green-500",
+                "bg-red-100",
+                "border-red-500",
+                "border-2"
+              );
+          });
+        });
+
+        // Grade MCQs (4 points)
+        for (let i = 1; i <= mcqQuestions.length; i++) {
+          let qElem = document
+            .querySelector(`.question input[name=mcq${i}]`)
+            .closest(".question");
+          let correct = getAnswersFromAttr(qElem)[0];
+          let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+          radioList.forEach((radio) => {
+            if (radio.checked) {
+              if (radio.value === correct) {
+                radio.parentElement.classList.add(
+                  "bg-green-100",
+                  "border-green-500",
+                  "border-2"
+                );
+                score += 0.2;
+              } else {
+                radio.parentElement.classList.add(
+                  "bg-red-100",
+                  "border-red-500",
+                  "border-2"
+                );
+              }
+            }
+          });
+        }
+
+        // Grade Error Correction (2 points)
+        for (let i = 1; i <= errorCorrectionQuestions.length; i++) {
+          let qElem = document
+            .querySelector(`input[name=err${i}]`)
+            .closest(".question");
+          let corrects = getAnswersFromAttr(qElem).map((ans) =>
+            ans
+              .toLowerCase()
+              .replace(/[.\s]+/g, " ")
+              .trim()
+          );
+          let val = form[`err${i}`].value
+            .trim()
+            .toLowerCase()
+            .replace(/[.\s]+/g, " ")
+            .trim();
+          if (corrects.includes(val)) {
+            form[`err${i}`].classList.add(
+              "bg-green-100",
+              "border-green-500",
+              "border-2"
+            );
+            score += 0.4;
+          } else {
+            form[`err${i}`].classList.add(
+              "bg-red-100",
+              "border-red-500",
+              "border-2"
+            );
+          }
+        }
+
+        // Grade Rearrangement (1 point)
+        for (let i = 1; i <= rearrangementQuestions.length; i++) {
+          let qElem = document
+            .querySelector(`input[name=rw${i}]`)
+            .closest(".question");
+          let corrects = getAnswersFromAttr(qElem).map((ans) =>
+            ans
+              .toLowerCase()
+              .replace(/[?.\s]+/g, " ")
+              .trim()
+          );
+          let val = form[`rw${i}`].value
+            .trim()
+            .toLowerCase()
+            .replace(/[?.\s]+/g, " ")
+            .trim();
+          if (corrects.some((ans) => val === ans)) {
+            form[`rw${i}`].classList.add(
+              "bg-green-100",
+              "border-green-500",
+              "border-2"
+            );
+            score += 0.2;
+          } else {
+            form[`rw${i}`].classList.add(
+              "bg-red-100",
+              "border-red-500",
+              "border-2"
+            );
+          }
+        }
+
+        // Grade Verb Conjugation (2 points)
+        for (let i = 1; i <= verbConjugationQuestions.length; i++) {
+          let input = form[`verb${i}`];
+          let qElem = input.closest(".question");
+          let corrects = getAnswersFromAttr(qElem).map((ans) =>
+            ans.toLowerCase()
+          );
+          let val = input.value.trim().toLowerCase();
+          if (corrects.includes(val)) {
+            input.classList.add("bg-green-100", "border-green-500", "border-2");
+            score += 0.2;
+          } else {
+            input.classList.add("bg-red-100", "border-red-500", "border-2");
+          }
+        }
+
+        document.getElementById("result").style.display = "";
+        document.getElementById(
+          "result"
+        ).innerHTML = `Điểm của bạn: <span class="text-blue-700">${score.toFixed(
+          1
+        )} / 10</span>`;
+      }
+    </script>
+  </body>
+</html>

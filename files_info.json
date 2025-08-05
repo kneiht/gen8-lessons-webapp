@@ -840,6 +840,13 @@
       "description": "Hiện tại đơn – Hiện tại tiếp diễn – Quá khứ đơn – Quá khứ tiếp diễn – Hiện tại hoàn thành",
       "category": "tests"
     },
+    "tests/pre-gs6-final-test-paper-1": {
+      "path": "tests/pre-gs6-final-test-paper-1",
+      "title": "Pre GS6 - English Grammar Final Test - Paper 1",
+      "author": "Gen8",
+      "description": "Pre GS6 - English Grammar Final Test - Paper 1",
+      "category": "tests"
+    },
     "tests/gs7-tenses-test-paper-3": {
       "path": "tests/gs7-tenses-test-paper-3",
       "title": "GS7 Tenses Test - Paper 2",
@@ -950,6 +957,13 @@
       "title": "Pre Gs7 Test 1 - Paper 3",
       "author": "Gen8",
       "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
+      "category": "tests"
+    },
+    "tests/pre-gs6-final-test-paper-2": {
+      "path": "tests/pre-gs6-final-test-paper-2",
+      "title": "Pre GS6 - English Grammar Final Test - Paper 2",
+      "author": "Gen8",
+      "description": "Pre GS6 - English Grammar Final Test - Paper 2",
       "category": "tests"
     },
     "tests/pre-gs6-test-2-paper-2": {
