@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreGS7 - Present Continuous Tense - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.125rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Radio button styles */
+        .radio-group grid grid-cols-2 {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0rem 0.25rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.25rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.25rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-1 {
+            padding: 0.25rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+
+            .worksheet-container {
+                padding: 0.25rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .exercise-container {
+                padding: 0.25rem 0.5rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .info-card, .vocab-card {
+                padding: 0.5rem;
+            }
+
+            .space-y-4 > * + * {
+                margin-top: 0.5rem;
+            }
+
+            .space-y-2 > * + * {
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-4 print:py-0 pb-4 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-2">
+                <h1 class="worksheet-title">Present Continuous Tense - Worksheets</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Grammar Summary -->
+            <div class="mb-2">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Part 1: Grammar Summary (Tóm tắt ngữ pháp)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1">
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">1. Present Continuous - Cấu trúc cơ bản</h4>
+                        <p class="text-gray-700 mb-1">Dùng để diễn tả hành động đang xảy ra.</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>
+                                <span class="font-bold">Khẳng định (Affirmative):</span>
+                                S + <span class="highlight">am/is/are</span> + V-ing
+                                <br>
+                                <span class="font-bold">Ví dụ:</span> I <span class="highlight">am reading</span> a book now.<br>
+                                <span class="font-bold">Ví dụ:</span> She <span class="highlight">is cooking</span> dinner.
+                            </li>
+                            <li>
+                                <span class="font-bold">Phủ định (Negative):</span>
+                                S + <span class="highlight">am/is/are + not</span> + V-ing
+                                <br>
+                                <span class="font-bold">Ví dụ:</span> He <span class="highlight">is not (isn't) playing</span> football.<br>
+                                <span class="font-bold">Ví dụ:</span> We <span class="highlight">are not (aren't) watching</span> TV.
+                            </li>
+                            <li>
+                                <span class="font-bold">Câu hỏi (Question):</span>
+                                <span class="highlight">Am/Is/Are</span> + S + V-ing?
+                                <br>
+                                <span class="font-bold">Ví dụ:</span> <span class="highlight">Are</span> you <span class="highlight">listening</span> to music?<br>
+                                <span class="font-bold">Ví dụ:</span> <span class="highlight">Is</span> she <span class="highlight">studying</span> now?
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">2. Cách thêm -ing</h4>
+                        <p class="text-gray-700 mb-1">Quy tắc thêm -ing vào động từ:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">
+                                <span class="font-bold">Động từ thường:</span>
+                                Thêm <span class="highlight">-ing</span> vào sau động từ.<br>
+                                <span class="italic">play</span> → <span class="highlight">playing</span>, <span class="italic">read</span> → <span class="highlight">reading</span>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-bold">Động từ kết thúc bằng <span class="italic">-e</span>:</span>
+                                Bỏ <span class="italic">-e</span> rồi thêm <span class="highlight">-ing</span>.<br>
+                                <span class="italic">write</span> → <span class="highlight">writing</span>, <span class="italic">make</span> → <span class="highlight">making</span>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-bold">Động từ 1 âm tiết, kết thúc bằng phụ âm - nguyên âm - phụ âm (CVC):</span>
+                                Gấp đôi phụ âm cuối rồi thêm <span class="highlight">-ing</span>.<br>
+                                <span class="italic">run</span> → <span class="highlight">running</span>, <span class="italic">sit</span> → <span class="highlight">sitting</span>
+                            </li>
+                            <li class="mb-1">
+                                <span class="font-bold">Động từ kết thúc bằng <span class="italic">-ie</span>:</span>
+                                Đổi <span class="italic">-ie</span> thành <span class="italic">-y</span> rồi thêm <span class="highlight">-ing</span>.<br>
+                                <span class="italic">die</span> → <span class="highlight">dying</span>, <span class="italic">lie</span> → <span class="highlight">lying</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Cách sử dụng</h4>
+                        <p class="text-gray-700 mb-1">Present Continuous dùng để:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li>Hành động đang xảy ra ngay lúc nói</li>
+                            <li>Hành động tạm thời xung quanh thời điểm nói</li>
+                            <li>Kế hoạch đã sắp xếp trong tương lai gần</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">4. Dấu hiệu nhận biết</h4>
+                        <p class="text-gray-700 mb-1">Các từ chỉ thời gian thường dùng:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li><span class="font-bold">now, at the moment, at present</span></li>
+                            <li><span class="font-bold">currently, this week/month/year</span></li>
+                            <li><span class="font-bold">today, right now, look!, listen!</span></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-3">
+                <div class="flex items-center mb-1">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Part 2: Vocabulary (Từ vựng)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1">
+                    <div class="vocab-card">
+                        <p class="vocab-word">board game <span class="vocab-type">(n)</span> /ˈbɔːd ɡeɪm/</p>
+                        <p class="vocab-meaning">trò chơi trên bàn cờ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">clean-up activity <span class="vocab-type">(n)</span> /ˈkliːn ʌp ækˈtɪvəti/</p>
+                        <p class="vocab-meaning">hoạt động dọn rửa</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">collect <span class="vocab-type">(v)</span> /kəˈlekt/</p>
+                        <p class="vocab-meaning">thu thập, sưu tầm</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">community <span class="vocab-type">(n)</span> /kəˈmjuːnəti/</p>
+                        <p class="vocab-meaning">cộng đồng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">community service <span class="vocab-type">(n)</span> /kəˌmjuːnəti ˈsɜːvɪs/</p>
+                        <p class="vocab-meaning">dịch vụ cộng đồng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">develop <span class="vocab-type">(v)</span> /dɪˈveləp/</p>
+                        <p class="vocab-meaning">phát triển</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">donate <span class="vocab-type">(v)</span> /dəʊˈneɪt/</p>
+                        <p class="vocab-meaning">cho, tặng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">elderly <span class="vocab-type">(adj)</span> /ˈeldəli/</p>
+                        <p class="vocab-meaning">lớn tuổi, cao tuổi</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">exchange <span class="vocab-type">(v)</span> /ɪksˈtʃeɪndʒ/</p>
+                        <p class="vocab-meaning">trao đổi</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">flooded <span class="vocab-type">(adj)</span> /ˈflʌdɪd/</p>
+                        <p class="vocab-meaning">bị lũ lụt</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">homeless <span class="vocab-type">(adj)</span> /ˈhəʊmləs/</p>
+                        <p class="vocab-meaning">vô gia cư, không có gia đình</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">mountainous <span class="vocab-type">(adj)</span> /ˈmaʊntənəs/</p>
+                        <p class="vocab-meaning">vùng núi</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">nursing <span class="vocab-type">(n)</span> /ˈnɜːsɪŋ/</p>
+                        <p class="vocab-meaning">chăm sóc, điều dưỡng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">nursing home <span class="vocab-type">(n)</span> /ˈnɜːsɪŋ həʊm/</p>
+                        <p class="vocab-meaning">viện dưỡng lão</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">orphanage <span class="vocab-type">(n)</span> /ˈɔːfənɪdʒ/</p>
+                        <p class="vocab-meaning">trại trẻ mồ côi</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">plant <span class="vocab-type">(v)</span> /plɑːnt/</p>
+                        <p class="vocab-meaning">trồng cây</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">proud <span class="vocab-type">(adj)</span> /praʊd/</p>
+                        <p class="vocab-meaning">tự hào</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">provide <span class="vocab-type">(v)</span> /prəˈvaɪd/</p>
+                        <p class="vocab-meaning">cung cấp</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">rural area <span class="vocab-type">(n)</span> /ˈrʊərəl ˈeəriə/</p>
+                        <p class="vocab-meaning">vùng nông thôn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">skill <span class="vocab-type">(n)</span> /skɪl/</p>
+                        <p class="vocab-meaning">kĩ năng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">teenager <span class="vocab-type">(n)</span> /ˈtiːneɪdʒə/</p>
+                        <p class="vocab-meaning">thanh thiếu niên</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">tutor <span class="vocab-type">(v)</span> /ˈtjuːtə/</p>
+                        <p class="vocab-meaning">phụ đạo, dạy học</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">volunteer <span class="vocab-type">(v, n)</span> /ˌvɒlənˈtɪə/</p>
+                        <p class="vocab-meaning">tình nguyện, người tình nguyện</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-3">
+                <div class="flex items-center mb-1">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Part 3: Basic Exercises (Bài tập cơ bản)</h3>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-2 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 1: Choose the correct Present Continuous form</h4>
+                            <p class="exercise-instruction">👉 Chọn dạng đúng của thì Present Continuous:</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <!-- Column 1 -->
+                                <div class="space-y-1">
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">1. They ___ community service now.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q1" class="radio-input" value="do" data-answer="are doing" onclick="checkAnswer(this)"><span>A. do</span></label>
+                                            <label class="radio-label"><input type="radio" name="q1" class="radio-input" value="are doing" data-answer="are doing" onclick="checkAnswer(this)"><span>B. are doing</span></label>
+                                            <label class="radio-label"><input type="radio" name="q1" class="radio-input" value="does" data-answer="are doing" onclick="checkAnswer(this)"><span>C. does</span></label>
+                                            <label class="radio-label"><input type="radio" name="q1" class="radio-input" value="is doing" data-answer="are doing" onclick="checkAnswer(this)"><span>D. is doing</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">2. She ___ elderly people at the nursing home.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q2" class="radio-input" value="is helping" data-answer="is helping" onclick="checkAnswer(this)"><span>A. is helping</span></label>
+                                            <label class="radio-label"><input type="radio" name="q2" class="radio-input" value="help" data-answer="is helping" onclick="checkAnswer(this)"><span>B. help</span></label>
+                                            <label class="radio-label"><input type="radio" name="q2" class="radio-input" value="are helping" data-answer="is helping" onclick="checkAnswer(this)"><span>C. are helping</span></label>
+                                            <label class="radio-label"><input type="radio" name="q2" class="radio-input" value="helps" data-answer="is helping" onclick="checkAnswer(this)"><span>D. helps</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">3. We ___ trees in the rural area.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q3" class="radio-input" value="are planting" data-answer="are planting" onclick="checkAnswer(this)"><span>A. are planting</span></label>
+                                            <label class="radio-label"><input type="radio" name="q3" class="radio-input" value="plant" data-answer="are planting" onclick="checkAnswer(this)"><span>B. plant</span></label>
+                                            <label class="radio-label"><input type="radio" name="q3" class="radio-input" value="is planting" data-answer="are planting" onclick="checkAnswer(this)"><span>C. is planting</span></label>
+                                            <label class="radio-label"><input type="radio" name="q3" class="radio-input" value="are planted" data-answer="are planting" onclick="checkAnswer(this)"><span>D. are planted</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">4. He ___ teenagers at the orphanage.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q4" class="radio-input" value="tutors" data-answer="is tutoring" onclick="checkAnswer(this)"><span>A. tutors</span></label>
+                                            <label class="radio-label"><input type="radio" name="q4" class="radio-input" value="is tutoring" data-answer="is tutoring" onclick="checkAnswer(this)"><span>B. is tutoring</span></label>
+                                            <label class="radio-label"><input type="radio" name="q4" class="radio-input" value="are tutoring" data-answer="is tutoring" onclick="checkAnswer(this)"><span>C. are tutoring</span></label>
+                                            <label class="radio-label"><input type="radio" name="q4" class="radio-input" value="is tutor" data-answer="is tutoring" onclick="checkAnswer(this)"><span>D. is tutor</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">5. They ___ food to homeless people at the moment.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q5" class="radio-input" value="donate" data-answer="are donating" onclick="checkAnswer(this)"><span>A. donate</span></label>
+                                            <label class="radio-label"><input type="radio" name="q5" class="radio-input" value="are donating" data-answer="are donating" onclick="checkAnswer(this)"><span>B. are donating</span></label>
+                                            <label class="radio-label"><input type="radio" name="q5" class="radio-input" value="is donating" data-answer="are donating" onclick="checkAnswer(this)"><span>C. is donating</span></label>
+                                            <label class="radio-label"><input type="radio" name="q5" class="radio-input" value="are donate" data-answer="are donating" onclick="checkAnswer(this)"><span>D. are donate</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column 2 -->
+                                <div class="space-y-1">
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">6. I ___ at the orphanage this week.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q6" class="radio-input" value="am volunteering" data-answer="am volunteering" onclick="checkAnswer(this)"><span>A. am volunteering</span></label>
+                                            <label class="radio-label"><input type="radio" name="q6" class="radio-input" value="volunteer" data-answer="am volunteering" onclick="checkAnswer(this)"><span>B. volunteer</span></label>
+                                            <label class="radio-label"><input type="radio" name="q6" class="radio-input" value="is volunteering" data-answer="am volunteering" onclick="checkAnswer(this)"><span>C. is volunteering</span></label>
+                                            <label class="radio-label"><input type="radio" name="q6" class="radio-input" value="am volunteer" data-answer="am volunteering" onclick="checkAnswer(this)"><span>D. am volunteer</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">7. The volunteers ___ elderly people right now.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q7" class="radio-input" value="are helping" data-answer="are helping" onclick="checkAnswer(this)"><span>A. are helping</span></label>
+                                            <label class="radio-label"><input type="radio" name="q7" class="radio-input" value="is helping" data-answer="are helping" onclick="checkAnswer(this)"><span>B. is helping</span></label>
+                                            <label class="radio-label"><input type="radio" name="q7" class="radio-input" value="help" data-answer="are helping" onclick="checkAnswer(this)"><span>C. help</span></label>
+                                            <label class="radio-label"><input type="radio" name="q7" class="radio-input" value="are help" data-answer="are helping" onclick="checkAnswer(this)"><span>D. are help</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">8. She ___ clothes for poor children at present.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q8" class="radio-input" value="is donating" data-answer="is donating" onclick="checkAnswer(this)"><span>A. is donating</span></label>
+                                            <label class="radio-label"><input type="radio" name="q8" class="radio-input" value="donates" data-answer="is donating" onclick="checkAnswer(this)"><span>B. donates</span></label>
+                                            <label class="radio-label"><input type="radio" name="q8" class="radio-input" value="are donating" data-answer="is donating" onclick="checkAnswer(this)"><span>C. are donating</span></label>
+                                            <label class="radio-label"><input type="radio" name="q8" class="radio-input" value="is donate" data-answer="is donating" onclick="checkAnswer(this)"><span>D. is donate</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">9. We ___ skills through volunteer work this month.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q9" class="radio-input" value="are developing" data-answer="are developing" onclick="checkAnswer(this)"><span>A. are developing</span></label>
+                                            <label class="radio-label"><input type="radio" name="q9" class="radio-input" value="develop" data-answer="are developing" onclick="checkAnswer(this)"><span>B. develop</span></label>
+                                            <label class="radio-label"><input type="radio" name="q9" class="radio-input" value="is developing" data-answer="are developing" onclick="checkAnswer(this)"><span>C. is developing</span></label>
+                                            <label class="radio-label"><input type="radio" name="q9" class="radio-input" value="are develop" data-answer="are developing" onclick="checkAnswer(this)"><span>D. are develop</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-medium text-gray-700 mb-1">10. He ___ up rural areas with his friends now.</span>
+                                        <div class="radio-group grid grid-cols-2">
+                                            <label class="radio-label"><input type="radio" name="q10" class="radio-input" value="is cleaning" data-answer="is cleaning" onclick="checkAnswer(this)"><span>A. is cleaning</span></label>
+                                            <label class="radio-label"><input type="radio" name="q10" class="radio-input" value="are cleaning" data-answer="is cleaning" onclick="checkAnswer(this)"><span>B. are cleaning</span></label>
+                                            <label class="radio-label"><input type="radio" name="q10" class="radio-input" value="cleans" data-answer="is cleaning" onclick="checkAnswer(this)"><span>C. cleans</span></label>
+                                            <label class="radio-label"><input type="radio" name="q10" class="radio-input" value="is clean" data-answer="is cleaning" onclick="checkAnswer(this)"><span>D. is clean</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 2: Add -ing to the verbs</h4>
+                            <p class="exercise-instruction">👉 Thêm -ing vào các động từ sau (thứ tự đã được xáo trộn):</p>
+                            <div class="grid grid-cols-3 gap-3">
+                                    <div class="flex items-center"><span>run</span><input type="text" class="answer-input ml-1" data-answer="running" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>write</span><input type="text" class="answer-input ml-1" data-answer="writing" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>help</span><input type="text" class="answer-input ml-1" data-answer="helping" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>lie</span><input type="text" class="answer-input ml-1" data-answer="lying" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>open</span><input type="text" class="answer-input ml-1" data-answer="opening" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>donate</span><input type="text" class="answer-input ml-1" data-answer="donating" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>plant</span><input type="text" class="answer-input ml-1" data-answer="planting" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>exchange</span><input type="text" class="answer-input ml-1" data-answer="exchanging" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>listen</span><input type="text" class="answer-input ml-1" data-answer="listening" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>swim</span><input type="text" class="answer-input ml-1" data-answer="swimming" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>study</span><input type="text" class="answer-input ml-1" data-answer="studying" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>develop</span><input type="text" class="answer-input ml-1" data-answer="developing" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>make</span><input type="text" class="answer-input ml-1" data-answer="making" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>collect</span><input type="text" class="answer-input ml-1" data-answer="collecting" onblur="checkAnswer(this)"></div>
+                                    <div class="flex items-center"><span>use</span><input type="text" class="answer-input ml-1" data-answer="using" onblur="checkAnswer(this)"></div>
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container">
+                    <h4 class="exercise-title">Exercise 3: Complete with Present Simple or Present Continuous</h4>
+                    <p class="exercise-instruction">👉 Hoàn thành câu với thì Present Simple <b>hoặc</b> Present Continuous:</p>
+                    <div class="space-y-1">
+                        <p>1. Look! The children <input type="text" class="answer-input" data-answer="are playing" onblur="checkAnswer(this)"> in the garden. (play)</p>
+                        <p>2. She <input type="text" class="answer-input" data-answer="is reading" onblur="checkAnswer(this)"> a book right now. (read)</p>
+                        <p>3. We <input type="text" class="answer-input" data-answer="are cleaning" onblur="checkAnswer(this)"> the house this weekend. (clean)</p>
+                        <p>4. They <input type="text" class="answer-input" data-answer="are making" onblur="checkAnswer(this)"> dinner in the kitchen now. (make)</p>
+                        <p>5. He <input type="text" class="answer-input" data-answer="is driving" onblur="checkAnswer(this)"> to work at the moment. (drive)</p>
+                        <p>6. My brother <input type="text" class="answer-input" data-answer="lives" onblur="checkAnswer(this)"> in London. (live)</p>
+                        <p>7. I <input type="text" class="answer-input" data-answer="am listening" onblur="checkAnswer(this)"> to music now. (listen)</p>
+                        <p>8. The train <input type="text" class="answer-input" data-answer="leaves" onblur="checkAnswer(this)"> at 8:00 every morning. (leave)</p>
+                        <p>9. Listen! The birds <input type="text" class="answer-input" data-answer="are singing" onblur="checkAnswer(this)"> beautifully. (sing)</p>
+                        <p>10. My teacher <input type="text" class="answer-input" data-answer="teaches" onblur="checkAnswer(this)"> English at our school every Tuesday. (teach)</p>
+                        <p>11. She <input type="text" class="answer-input" data-answer="is cooking" onblur="checkAnswer(this)"> dinner for her family at the present. (cook)</p>
+                        <p>12. We <input type="text" class="answer-input" data-answer="go" onblur="checkAnswer(this)"> to the cinema every Saturday. (go)</p>
+                        <p>13. The students <input type="text" class="answer-input" data-answer="are writing" onblur="checkAnswer(this)"> their exams now. (write)</p>
+                        <p>14. My dog <input type="text" class="answer-input" data-answer="doesn't like" onblur="checkAnswer(this)"> cats. (not like)</p>
+                        <p>15. Look! It <input type="text" class="answer-input" data-answer="is raining" onblur="checkAnswer(this)"> outside. (rain)</p>
+                        <p>16. I <input type="text" class="answer-input" data-answer="am not working" onblur="checkAnswer(this)"> today. (not work)</p>
+                        <p>17. He usually <input type="text" class="answer-input" data-answer="wakes" onblur="checkAnswer(this)"> up at 7:00. (wake)</p>
+                        <p>18. They <input type="text" class="answer-input" data-answer="are not studying" onblur="checkAnswer(this)"> for the test today. (not study)</p>
+                        <p>19. My parents <input type="text" class="answer-input" data-answer="are visiting" onblur="checkAnswer(this)"> my grandparents now. (visit)</p>
+                        <p>20. Water <input type="text" class="answer-input" data-answer="boils" onblur="checkAnswer(this)"> at 100 degrees Celsius. (boil)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-3">
+                <div class="flex items-center mb-1">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Part 4: Advanced Exercises (Bài tập nâng cao)</h3>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 4: Negative forms</h4>
+                            <p class="exercise-instruction">👉 Chuyển các câu sau sang dạng phủ định:</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-1">
+                                    <span>1. I am volunteering at the orphanage. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="I am not volunteering at the orphanage" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>2. She is donating clothes to homeless people. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She isn't donating clothes to homeless people" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>3. They are developing skills through community service. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="They aren't developing skills through community service" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>4. He is tutoring teenagers in rural areas. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="He isn't tutoring teenagers in rural areas" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>5. We are providing nursing care to elderly people. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="We aren't providing nursing care to elderly people" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 5: Yes/No Questions</h4>
+                            <p class="exercise-instruction">👉 Đặt câu hỏi Yes/No cho các câu sau:</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-1">
+                                    <span class="whitespace-nowrap">1. They are collecting donations for flooded areas. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Are they collecting donations for flooded areas" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="whitespace-nowrap">2. She is volunteering at the nursing home. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Is she volunteering at the nursing home" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="whitespace-nowrap">3. I am exchanging skills with teenagers. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Are you exchanging skills with teenagers" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="whitespace-nowrap">4. He is providing community service. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Is he providing community service" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="whitespace-nowrap">5. We are developing board games for children. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Are we developing board games for children" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 6: WH- Questions</h4>
+                            <p class="exercise-instruction">👉 Đặt câu hỏi WH- cho phần gạch chân:</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-1">
+                                    <span>1. They are collecting <span class="highlight">books</span> for the orphanage. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="What are they collecting" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>2. She is volunteering <span class="highlight">at the nursing home</span>. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Where is she volunteering" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>3. He is helping <span class="highlight">elderly people</span>. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="Who is he helping" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>4. We are planting <span class="highlight">trees</span> in rural areas. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="What are we planting" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>5. They are providing <span class="highlight">community service</span>. →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="What are they providing" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-3 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 7: Writing Practice</h4>
+                            <p class="exercise-instruction">👉 Viết câu hoàn chỉnh sử dụng thì Present Continuous:</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-1">
+                                    <span>1. (I / study / English / now) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="I am studying English now" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>2. (She / cook / dinner / at the moment) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She is cooking dinner at the moment" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>3. (They / play / football / right now) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="They are playing football right now" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>4. (He / read / a book / at present) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="He is reading a book at present" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>5. (We / clean / the house / this week) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="We are cleaning the house this week" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>6. (The children / sing / a song / in the classroom) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="The children are singing a song in the classroom" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>7. (She / not / watch / TV / now) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="She isn't watching TV now" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>8. (I / not / work / at the moment) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="I am not working at the moment" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>9. (They / not / sleep / right now) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="They aren't sleeping right now" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span>10. (He / not / drive / to work / at present) →</span>
+                                    <input type="text" class="answer-input flex-1" data-answer="He isn't driving to work at present" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.!?]/g, '') : (input.checked ? input.value.toLowerCase() : '');
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                const parentContainer = input.closest('.radio-group').parentNode;
+                
+                // Reset styles for all labels in the group
+                parentContainer.querySelectorAll('.radio-label').forEach(label => {
+                    label.classList.remove('bg-green-100', 'bg-red-100', 'p-1', 'rounded');
+                });
+
+                const selectedLabel = input.closest('.radio-label');
+                if (userAnswer === correctAnswer) {
+                    selectedLabel.classList.add('bg-green-100', 'p-1', 'rounded');
+                } else {
+                    selectedLabel.classList.add('bg-red-100', 'p-1', 'rounded');
+                }
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            } else {
+                 input.classList.remove('border-green-500', 'bg-green-100', 'border-red-500', 'bg-red-100');
+            }
+        }
+    </script>
+</body>
+
+</html>
