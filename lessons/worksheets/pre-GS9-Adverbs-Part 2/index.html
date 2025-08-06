@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adverbs - Part 2 - Worksheets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        html {
+            font-size: 20px;
+            /* 1rem = 20px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        /* Page setup for printing */
+        @page {
+            size: A4;
+            margin: 20px 5px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            .print-only {
+                display: block !important;
+            }
+
+            body {
+                font-size: 14px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .worksheet-container {
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            /* Ensure colors print correctly */
+            .bg-blue-100,
+            .bg-yellow-50,
+            .bg-green-50,
+            .bg-blue-50,
+            .bg-purple-50,
+            .bg-pink-50,
+            .text-blue-600 {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .highlight {
+                background-color: #fef08a !important;
+            }
+
+            .correct {
+                color: #16a34a !important;
+            }
+
+            .incorrect {
+                color: #dc2626 !important;
+            }
+        }
+
+        /* Container styles */
+        .worksheet-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Typography */
+        .worksheet-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .subsection-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Input styles */
+        .answer-input {
+            border-bottom: 1px dashed #4b5563;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Highlight and feedback styles */
+        .highlight {
+            background-color: #fef08a;
+        }
+
+        .correct {
+            color: #16a34a;
+        }
+
+        .incorrect {
+            color: #dc2626;
+        }
+
+        /* Card styles */
+        .info-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        /* Section background colors */
+        .bg-yellow-50 {
+            background-color: #fefce8;
+            border-left: 4px solid #facc15;
+        }
+
+        .bg-green-50 {
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .bg-purple-50 {
+            background-color: #faf5ff;
+            border-left: 4px solid #a855f7;
+        }
+
+        .bg-pink-50 {
+            background-color: #fdf2f8;
+            border-left: 4px solid #ec4899;
+        }
+
+        /* Vocabulary card styles */
+        .vocab-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-word {
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .vocab-type {
+            color: #6b7280;
+        }
+
+        .vocab-meaning {
+            color: #374151;
+        }
+
+        /* Exercise styles */
+        .exercise-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            width: 100%;
+        }
+
+        .exercise-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .exercise-instruction {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Radio button styles */
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            padding: 0rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .radio-input {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 640px) {
+            .grid-2-cols {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+            }
+
+            .grid-3-cols {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utility classes */
+        .text-gray-700 {
+            color: #374151;
+        }
+
+        .text-gray-800 {
+            color: #1f2937;
+        }
+
+        .text-gray-500 {
+            color: #6b7280;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .worksheet-title {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 0.875rem;
+            }
+
+            .subsection-title {
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Custom styles for adverb frequency chart */
+        .frequency-bar {
+            height: 20px;
+            border-radius: 4px;
+            margin: 4px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        /* Tooltip styles */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            cursor: help;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-100">
+    <div class="px-4 py-6 print:py-0 pb-6 w-full">
+        <div class="worksheet-container">
+            <!-- Header -->
+            <div class="flex justify-between items-center my-4">
+                <h1 class="worksheet-title">Adverbs - Part 2 (Trạng từ - Phần 2)</h1>
+                <button onclick="printWorksheet()"
+                    class="print:hidden bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Print Worksheet
+                </button>
+
+                <p class="hidden print:block text-center text-gray-600">Student: _______________________ Date:
+                    _______________</p>
+            </div>
+
+            <!-- Front Page -->
+            <div class="mb-3">
+                <div class="flex items-center mb-3">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">1</span>
+                    </div>
+                    <h3 class="section-title">Part 1: Review of Adverbs (Ôn tập về trạng từ)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div class="info-card bg-yellow-50">
+                        <h4 class="subsection-title">1. What is an adverb? (Trạng từ là gì?)</h4>
+                        <p class="text-gray-700 mb-3">An adverb is a word that modifies:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">A verb: <span class="italic">She runs <span class="font-bold">quickly</span>.</span> (Cô ấy chạy nhanh)</li>
+                            <li class="mb-1">An adjective: <span class="italic">He is <span class="font-bold">very</span> tall.</span> (Anh ấy rất cao)</li>
+                            <li class="mb-1">Another adverb: <span class="italic">She sings <span class="font-bold">extremely</span> well.</span> (Cô ấy hát cực kỳ hay)</li>
+                            <li>A whole sentence: <span class="italic"><span class="font-bold">Fortunately</span>, we arrived on time.</span> (May mắn thay, chúng tôi đến đúng giờ)</li>
+                        </ul>
+                        <p class="text-gray-700 mt-2">💡 <span class="font-bold">Remember:</span> Adverbs often answer the questions: When? Where? How? How often? To what extent?</p>
+                        <p class="text-gray-700 italic">(Trạng từ thường trả lời các câu hỏi: Khi nào? Ở đâu? Như thế nào? Bao lâu? Mức độ bao nhiêu?)</p>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">2. Adverbs of Time (Trạng từ chỉ thời gian)</h4>
+                        <p class="text-gray-700 mb-3">Adverbs of time tell us when an action happens.</p>
+                        <p class="text-gray-700 mb-2">Common adverbs of time:</p>
+                        <div class="grid grid-cols-2 gap-2 mb-3">
+                            <span class="p-1 bg-blue-50 rounded">now (bây giờ)</span>
+                            <span class="p-1 bg-blue-50 rounded">today (hôm nay)</span>
+                            <span class="p-1 bg-blue-50 rounded">yesterday (hôm qua)</span>
+                            <span class="p-1 bg-blue-50 rounded">tomorrow (ngày mai)</span>
+                            <span class="p-1 bg-blue-50 rounded">soon (sớm)</span>
+                            <span class="p-1 bg-blue-50 rounded">later (sau)</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-2">Examples:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">We will go to the park <span class="font-bold">tomorrow</span>. (Chúng tôi sẽ đi công viên ngày mai.)</li>
+                            <li>She finished her homework <span class="font-bold">yesterday</span>. (Cô ấy đã hoàn thành bài tập hôm qua.)</li>
+                        </ul>
+                        <div class="mt-2 bg-blue-100 p-2 rounded">
+                            <p class="text-sm"><span class="font-bold">Position:</span> Usually at the beginning or end of sentence</p>
+                            <p class="text-sm italic">(Vị trí: Thường đứng ở đầu hoặc cuối câu)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-blue-50">
+                        <h4 class="subsection-title">3. Adverbs of Frequency (Trạng từ chỉ tần suất)</h4>
+                        <p class="text-gray-700 mb-3">Adverbs of frequency tell us how often an action happens.</p>
+                        <div class="mb-3">
+                            <p class="text-sm font-medium mb-1">Frequency scale:</p>
+                            <div class="frequency-bar bg-red-500" style="width: 0%">never (không bao giờ)</div>
+                            <div class="frequency-bar bg-orange-500" style="width: 20%">rarely (hiếm khi)</div>
+                            <div class="frequency-bar bg-yellow-500" style="width: 40%">occasionally (thỉnh thoảng)</div>
+                            <div class="frequency-bar bg-green-500" style="width: 60%">sometimes (đôi khi)</div>
+                            <div class="frequency-bar bg-blue-500" style="width: 80%">often (thường xuyên)</div>
+                            <div class="frequency-bar bg-indigo-500" style="width: 100%">always (luôn luôn)</div>
+                        </div>
+                        <p class="text-gray-700 italic mb-2">Examples:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">I <span class="font-bold">always</span> brush my teeth before bed. (Tôi luôn đánh răng trước khi ngủ.)</li>
+                            <li>She <span class="font-bold">rarely</span> eats fast food. (Cô ấy hiếm khi ăn đồ ăn nhanh.)</li>
+                        </ul>
+                        <div class="mt-2 bg-blue-100 p-2 rounded">
+                            <p class="text-sm"><span class="font-bold">Position:</span> Before main verbs, after 'to be'</p>
+                            <p class="text-sm italic">(Vị trí: Trước động từ chính, sau động từ 'to be')</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-purple-50">
+                        <h4 class="subsection-title">4. Adverbs of Place (Trạng từ chỉ nơi chốn)</h4>
+                        <p class="text-gray-700 mb-3">Adverbs of place tell us where an action happens.</p>
+                        <p class="text-gray-700 mb-2">Common adverbs of place:</p>
+                        <div class="grid grid-cols-2 gap-2 mb-3">
+                            <span class="p-1 bg-blue-50 rounded">here (ở đây)</span>
+                            <span class="p-1 bg-blue-50 rounded">there (ở đó)</span>
+                            <span class="p-1 bg-blue-50 rounded">everywhere (mọi nơi)</span>
+                            <span class="p-1 bg-blue-50 rounded">somewhere (ở đâu đó)</span>
+                            <span class="p-1 bg-blue-50 rounded">inside (bên trong)</span>
+                            <span class="p-1 bg-blue-50 rounded">outside (bên ngoài)</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-2">Examples:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Put the book <span class="font-bold">here</span>. (Đặt cuốn sách ở đây.)</li>
+                            <li>She looked <span class="font-bold">everywhere</span> for her keys. (Cô ấy đã tìm khắp nơi cho chìa khóa.)</li>
+                        </ul>
+                        <div class="mt-2 bg-blue-100 p-2 rounded">
+                            <p class="text-sm"><span class="font-bold">Position:</span> After verb/object</p>
+                            <p class="text-sm italic">(Vị trí: Sau động từ/tân ngữ)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-pink-50">
+                        <h4 class="subsection-title">5. Adverbs of Degree (Trạng từ chỉ mức độ)</h4>
+                        <p class="text-gray-700 mb-3">Adverbs of degree tell us the intensity of an adjective, adverb, or verb.</p>
+                        <p class="text-gray-700 mb-2">Common adverbs of degree:</p>
+                        <div class="grid grid-cols-2 gap-2 mb-3">
+                            <span class="p-1 bg-blue-50 rounded">very (rất)</span>
+                            <span class="p-1 bg-blue-50 rounded">really (thực sự)</span>
+                            <span class="p-1 bg-blue-50 rounded">quite (khá)</span>
+                            <span class="p-1 bg-blue-50 rounded">completely (hoàn toàn)</span>
+                            <span class="p-1 bg-blue-50 rounded">absolutely (tuyệt đối)</span>
+                            <span class="p-1 bg-blue-50 rounded">slightly (hơi)</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-2">Examples:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">She is <span class="font-bold">very</span> happy. (Cô ấy rất hạnh phúc.)</li>
+                            <li>I <span class="font-bold">really</span> like this book. (Tôi thực sự thích cuốn sách này.)</li>
+                        </ul>
+                        <div class="mt-2 bg-blue-100 p-2 rounded">
+                            <p class="text-sm"><span class="font-bold">Position:</span> Before adjectives, adverbs, or verbs</p>
+                            <p class="text-sm italic">(Vị trí: Trước tính từ, trạng từ hoặc động từ)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card bg-green-50">
+                        <h4 class="subsection-title">6. Conjunctive Adverbs (Trạng từ liên kết)</h4>
+                        <p class="text-gray-700 mb-3">Conjunctive adverbs connect clauses or sentences, showing relationships between ideas.</p>
+                        <p class="text-gray-700 mb-2">Common conjunctive adverbs:</p>
+                        <div class="grid grid-cols-2 gap-2 mb-3">
+                            <span class="p-1 bg-blue-50 rounded">however (tuy nhiên)</span>
+                            <span class="p-1 bg-blue-50 rounded">therefore (vì vậy)</span>
+                            <span class="p-1 bg-blue-50 rounded">moreover (hơn nữa)</span>
+                            <span class="p-1 bg-blue-50 rounded">besides (ngoài ra)</span>
+                            <span class="p-1 bg-blue-50 rounded">next (tiếp theo)</span>
+                            <span class="p-1 bg-blue-50 rounded">otherwise (nếu không)</span>
+                        </div>
+                        <p class="text-gray-700 italic mb-2">Examples:</p>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">I was tired; <span class="font-bold">however</span>, I finished my work. (Tôi mệt; tuy nhiên, tôi đã hoàn thành công việc.)</li>
+                            <li>It was raining; <span class="font-bold">therefore</span>, we stayed home. (Trời đang mưa; vì vậy, chúng tôi ở nhà.)</li>
+                        </ul>
+                        <div class="mt-2 bg-blue-100 p-2 rounded">
+                            <p class="text-sm"><span class="font-bold">Position:</span> Beginning, middle, or end of sentence (with proper punctuation)</p>
+                            <p class="text-sm italic">(Vị trí: Đầu, giữa hoặc cuối câu (với dấu câu phù hợp))</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">2</span>
+                    </div>
+                    <h3 class="section-title">Part 2: Vocabulary for Exercises (Từ vựng cần sử dụng trong bài tập)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                    <div class="vocab-card">
+                        <p class="vocab-word">affect <span class="vocab-type">(v)</span> /əˈfekt/</p>
+                        <p class="vocab-meaning">gây ảnh hưởng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">appreciate <span class="vocab-type">(v)</span> /əˈpriːʃieɪt/</p>
+                        <p class="vocab-meaning">đánh giá cao</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">climate change <span class="vocab-type">(n)</span> /ˈklaɪmət tʃeɪndʒ/</p>
+                        <p class="vocab-meaning">biến đổi khí hậu</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">droppings <span class="vocab-type">(n)</span> /ˈdrɒpɪŋz/</p>
+                        <p class="vocab-meaning">phân (động vật)</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">essential <span class="vocab-type">(adj)</span> /ɪˈsenʃl/</p>
+                        <p class="vocab-meaning">vô cùng quan trọng</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">ecological balance <span class="vocab-type">(n)</span> /ˌiːkəˈlɒdʒɪkl ˈbæləns/</p>
+                        <p class="vocab-meaning">cân bằng sinh thái</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">fascinating <span class="vocab-type">(adj)</span> /ˈfæsɪneɪtɪŋ/</p>
+                        <p class="vocab-meaning">rất thú vị và hấp dẫn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">fertilizer <span class="vocab-type">(n)</span> /ˈfɜːtəlaɪzə/</p>
+                        <p class="vocab-meaning">phân bón</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">food chain <span class="vocab-type">(n)</span> /ˈfuːd tʃeɪn/</p>
+                        <p class="vocab-meaning">chuỗi thức ăn</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">grassland <span class="vocab-type">(n)</span> /ˈɡrɑːslænd/</p>
+                        <p class="vocab-meaning">khu vực đồng cỏ</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">habitat <span class="vocab-type">(n)</span> /ˈhæbɪtæt/</p>
+                        <p class="vocab-meaning">môi trường sống của động thực vật</p>
+                    </div>
+                    <div class="vocab-card">
+                        <p class="vocab-word">harm <span class="vocab-type">(v)</span> /hɑːm/</p>
+                        <p class="vocab-meaning">làm hại</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">3</span>
+                    </div>
+                    <h3 class="section-title">Part 3: Basic Exercises (Bài tập cơ bản)</h3>
+                </div>
+
+                <!-- Exercise 1 -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-3 w-full">
+                        <div>
+                            <h4 class="exercise-title">Exercise 1: Identify Adverbs of Time (Nhận biết trạng từ chỉ thời gian)</h4>
+                            <p class="exercise-instruction">👉 Underline all adverbs of time in the following sentences (Gạch chân trạng từ chỉ thời gian trong các câu sau):</p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="yesterday">
+                                    <p class="text-gray-800">We arrived late yesterday.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="today">
+                                    <p class="text-gray-800">I will finish my project today.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="later">
+                                    <p class="text-gray-800">Let's discuss this matter later.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="tomorrow">
+                                    <p class="text-gray-800">They are coming to visit us tomorrow.</p>
+                                </div>
+                                <div class="p-2 border border-gray-200 rounded-lg hover:bg-blue-50 cursor-pointer"
+                                    onclick="highlightPhrase(this)" data-phrases="soon">
+                                    <p class="text-gray-800">We will have the test results soon.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2 -->
+                <div class="exercise-container">
+                    <div class="flex items-start mb-4">
+                        <div>
+                            <h4 class="exercise-title">Exercise 2: Arrange Words to Make Sentences with Adverbs of Time (Sắp xếp từ thành câu với trạng từ chỉ thời gian)</h4>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex flex-col">
+                                    <div class="flex items-center mb-2">
+                                        <span class="mr-2 font-bold">1.</span>
+                                        <span>late / arrived / we / yesterday</span>
+                                    </div>
+                                    <input type="text" class="answer-input block" data-answer="we arrived late yesterday" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center mb-2">
+                                        <span class="mr-2 font-bold">2.</span>
+                                        <span>today / park / to / go / the / they / will</span>
+                                    </div>
+                                    <input type="text" class="answer-input block" data-answer="they will go to the park today" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center mb-2">
+                                        <span class="mr-2 font-bold">3.</span>
+                                        <span>finished / homework / my / I / now</span>
+                                    </div>
+                                    <input type="text" class="answer-input block" data-answer="I finished my homework now" onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center mb-2">
+                                        <span class="mr-2 font-bold">4.</span>
+                                        <span>visit / museum / tomorrow / will / you / the / ?</span>
+                                    </div>
+                                    <input type="text" class="answer-input block" data-answer="will you visit the museum tomorrow?" onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 3 -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 3: Adverbs of Frequency (Trạng từ chỉ tần suất)</h4>
+
+                            <div class="mb-4">
+                                <p class="exercise-instruction">👉 Complete the sentences with appropriate frequency adverbs (Hoàn thành câu với trạng từ tần suất phù hợp):</p>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">She <span class="tooltip">_______<span class="tooltiptext">Choose from: always, usually, often, sometimes, rarely, never</span></span> eats breakfast at 7am.</span>
+                                        <input type="text" class="answer-input" data-answer="always" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">I ________ drink coffee in the evening.</span>
+                                        <input type="text" class="answer-input" data-answer="never" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">We ________ go to the beach in summer.</span>
+                                        <input type="text" class="answer-input" data-answer="often" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">He is ________ late for school.</span>
+                                        <input type="text" class="answer-input" data-answer="rarely" onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="exercise-instruction">👉 Arrange these words to make sentences with frequency adverbs (Sắp xếp từ thành câu với trạng từ tần suất):</p>
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center mb-2">
+                                            <span class="mr-2 font-bold">1.</span>
+                                            <span>homework / always / I / do / my</span>
+                                        </div>
+                                        <input type="text" class="answer-input block" data-answer="I always do my homework" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center mb-2">
+                                            <span class="mr-2 font-bold">2.</span>
+                                            <span>often / they / visit / grandparents / their</span>
+                                        </div>
+                                        <input type="text" class="answer-input block" data-answer="they often visit their grandparents" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center mb-2">
+                                            <span class="mr-2 font-bold">3.</span>
+                                            <span>sometimes / swimming / go / I</span>
+                                        </div>
+                                        <input type="text" class="answer-input block" data-answer="I sometimes go swimming" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center mb-2">
+                                            <span class="mr-2 font-bold">4.</span>
+                                            <span>usually / is / she / happy</span>
+                                        </div>
+                                        <input type="text" class="answer-input block" data-answer="she is usually happy" onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 4 -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 4: Adverbs of Place and Degree (Trạng từ chỉ nơi chốn và mức độ)</h4>
+
+                            <div class="mb-4">
+                                <p class="exercise-instruction">👉 Complete the sentences with place adverbs (Hoàn thành câu với trạng từ nơi chốn):</p>
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">Look at that bird ________!</span>
+                                        <input type="text" class="answer-input" data-answer="there" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">Please put your coat ________.</span>
+                                        <input type="text" class="answer-input" data-answer="inside" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">Let's meet ________ after school.</span>
+                                        <input type="text" class="answer-input" data-answer="here" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">He looked ________ but couldn't find his keys.</span>
+                                        <input type="text" class="answer-input" data-answer="everywhere" onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <p class="exercise-instruction">👉 Complete the sentences with degree adverbs (Hoàn thành câu với trạng từ mức độ):</p>
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">This book is ________ interesting.</span>
+                                        <input type="text" class="answer-input" data-answer="very" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">I ________ appreciate your help.</span>
+                                        <input type="text" class="answer-input" data-answer="really" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">She was ________ tired after the trip.</span>
+                                        <input type="text" class="answer-input" data-answer="quite" onblur="checkAnswer(this)">
+                                    </div>
+                                    <div class="flex flex-col sm:flex-row sm:items-center">
+                                        <span class="mr-2">The project is ________ finished.</span>
+                                        <input type="text" class="answer-input" data-answer="almost" onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Exercises -->
+            <div class="mb-4">
+                <div class="flex items-center mb-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <span class="font-bold text-white">4</span>
+                    </div>
+                    <h3 class="section-title">Part 4: Advanced Exercises (Bài tập nâng cao)</h3>
+                </div>
+
+                <!-- Exercise 5 -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 5: Conjunctive Adverbs (Trạng từ liên kết)</h4>
+                            <p class="exercise-instruction">👉 Join these sentences using conjunctive adverbs (Nối các câu sử dụng trạng từ liên kết):</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col">
+                                    <p class="mb-1">1. It was late. We went home.</p>
+                                    <div class="flex items-center">
+                                        <span class="mr-2">Using "therefore":</span>
+                                        <input type="text" class="answer-input flex-1" data-answer="It was late; therefore, we went home." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="mb-1">2. She didn't study. She didn't do her homework.</p>
+                                    <div class="flex items-center">
+                                        <span class="mr-2">Using "consequently":</span>
+                                        <input type="text" class="answer-input flex-1" data-answer="She didn't study; consequently, she didn't do her homework." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="mb-1">3. I wanted to go shopping. I had no money.</p>
+                                    <div class="flex items-center">
+                                        <span class="mr-2">Using "however":</span>
+                                        <input type="text" class="answer-input flex-1" data-answer="I wanted to go shopping; however, I had no money." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <p class="mb-1">4. She works hard. She gets good grades.</p>
+                                    <div class="flex items-center">
+                                        <span class="mr-2">Using "as a result":</span>
+                                        <input type="text" class="answer-input flex-1" data-answer="She works hard; as a result, she gets good grades." onblur="checkAnswer(this)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 6 -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 6: Find the Mistake (Tìm và sửa lỗi sai)</h4>
+                            <p class="exercise-instruction">👉 Each sentence has one mistake with adverb position. Find and correct it (Mỗi câu có một lỗi về vị trí trạng từ. Tìm và sửa lỗi):</p>
+
+                            <div class="space-y-4">
+                                <div class="flex flex-col sm:flex-row sm:items-center border-b pb-2">
+                                    <span class="mr-2">1. She walks to school always.</span>
+                                    <input type="text" class="answer-input" data-answer="She always walks to school." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center border-b pb-2">
+                                    <span class="mr-2">2. We go usually to the park on Sundays.</span>
+                                    <input type="text" class="answer-input" data-answer="We usually go to the park on Sundays." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center border-b pb-2">
+                                    <span class="mr-2">3. He is an often late student.</span>
+                                    <input type="text" class="answer-input" data-answer="He is often a late student." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center border-b pb-2">
+                                    <span class="mr-2">4. I like very much this book.</span>
+                                    <input type="text" class="answer-input" data-answer="I like this book very much." onblur="checkAnswer(this)">
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center border-b pb-2">
+                                    <span class="mr-2">5. Here comes the bus quickly.</span>
+                                    <input type="text" class="answer-input" data-answer="Here comes the bus." onblur="checkAnswer(this)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 7 -->
+                <div class="exercise-container w-full">
+                    <div class="flex items-start mb-4 w-full">
+                        <div class="w-full">
+                            <h4 class="exercise-title">Exercise 7: Mixed Adverb Practice (Bài tập tổng hợp về trạng từ)</h4>
+                            <p class="exercise-instruction">👉 Complete the passage with appropriate adverbs (Hoàn thành đoạn văn với trạng từ phù hợp):</p>
+
+                            <div class="mb-4 bg-yellow-50 p-4 rounded-lg">
+                                <p class="font-bold mb-2">Word Bank (Ngân hàng từ) - Choose from these adverbs:</p>
+                                <div class="grid grid-cols-4 gap-2 mb-4">
+                                    <span class="p-2 bg-blue-100 rounded text-center">today</span>
+                                    <span class="p-2 bg-blue-100 rounded text-center">However</span>
+                                    <span class="p-2 bg-blue-100 rounded text-center">clearly</span>
+                                    <span class="p-2 bg-blue-100 rounded text-center">always</span>
+                                    <span class="p-2 bg-blue-100 rounded text-center">rarely</span>
+                                    <span class="p-2 bg-blue-100 rounded text-center">completely</span>
+                                    <span class="p-2 bg-blue-100 rounded text-center">Therefore</span>
+                                    <span class="p-2 bg-blue-100 rounded text-center">seriously</span>
+                                </div>
+                                
+                                <p class="mb-2">Climate change is <input type="text" class="answer-input inline" data-answer="seriously" onblur="checkAnswer(this)"> affecting our planet. We can <input type="text" class="answer-input inline" data-answer="clearly" onblur="checkAnswer(this)"> see its impacts everywhere. <input type="text" class="answer-input inline" data-answer="therefore" onblur="checkAnswer(this)">, we must act now. Some people <input type="text" class="answer-input inline" data-answer="rarely" onblur="checkAnswer(this)"> think about how their actions affect the environment. <input type="text" class="answer-input inline" data-answer="however" onblur="checkAnswer(this)">, small changes can make a big difference. We should <input type="text" class="answer-input inline" data-answer="always" onblur="checkAnswer(this)"> recycle and <input type="text" class="answer-input inline" data-answer="completely" onblur="checkAnswer(this)"> avoid wasting resources. The future of our planet depends on what we do <input type="text" class="answer-input inline" data-answer="today" onblur="checkAnswer(this)">.</p>
+                            </div>
+                            
+                            <div>
+                                <p class="exercise-instruction">👉 Identify the type of each adverb in these sentences (Nhận diện loại trạng từ trong các câu sau):</p>
+                                
+                                <div class="mb-4 bg-green-50 p-4 rounded-lg">
+                                    <p class="font-bold mb-2">Adverb Types (Các loại trạng từ) - Choose from:</p>
+                                    <div class="grid grid-cols-5 gap-2 mb-4">
+                                        <span class="p-2 bg-purple-100 rounded text-center">degree</span>
+                                        <span class="p-2 bg-purple-100 rounded text-center">time</span>
+                                        <span class="p-2 bg-purple-100 rounded text-center">frequency</span>
+                                        <span class="p-2 bg-purple-100 rounded text-center">place</span>
+                                        <span class="p-2 bg-purple-100 rounded text-center">conjunctive</span>
+                                    </div>
+                                </div>
+                                
+                                <table class="w-full border-collapse">
+                                    <thead>
+                                        <tr class="bg-gray-100">
+                                            <th class="border p-2">Sentence</th>
+                                            <th class="border p-2">Adverb</th>
+                                            <th class="border p-2">Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border p-2">1. I always go to bed early.</td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="always" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="frequency" onblur="checkAnswer(this)"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border p-2">2. She looked everywhere for her keys.</td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="everywhere" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="place" onblur="checkAnswer(this)"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border p-2">3. This is a very interesting book.</td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="very" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="degree" onblur="checkAnswer(this)"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border p-2">4. Tomorrow, we will visit the museum.</td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="tomorrow" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="time" onblur="checkAnswer(this)"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border p-2">5. I was tired; however, I went to the party.</td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="however" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="conjunctive" onblur="checkAnswer(this)"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Common functions for worksheets
+
+        // Function to print the worksheet
+        function printWorksheet() {
+            window.print();
+        }
+
+        // Function to check answers in input fields
+        function checkAnswer(input) {
+            const userAnswer = input.value ? input.value.toLowerCase().trim().replace(/[.,!?]/g, '') : input.checked ? input.value : '';
+            const correctAnswer = input.dataset.answer.toLowerCase().trim().replace(/[.,!?]/g, '');
+            
+            // Handle radio buttons
+            if (input.type === 'radio') {
+                const radioGroup = document.getElementsByName(input.name);
+                radioGroup.forEach(radio => {
+                    const container = radio.closest('.radio-group');
+                    // Reset all containers first
+                    container.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+
+                    // Always show correct answer in green
+                    if (userAnswer === correctAnswer) {
+                        container.classList.add('bg-green-100', 'border-green-500');
+                    }
+
+                    // If this is the selected answer and it's wrong, show it in red
+                    if (userAnswer !== correctAnswer) {
+                        container.classList.add('bg-red-100', 'border-red-500');
+                    }
+                });
+                return;
+            }
+
+            // Handle text inputs
+            if (userAnswer === correctAnswer) {
+                input.classList.remove('border-red-500', 'bg-red-100', 'rounded-md');
+                input.classList.add('border-green-500', 'bg-green-100', 'rounded-md');
+            } else if (userAnswer !== '') {
+                input.classList.remove('border-green-500', 'bg-green-100', 'rounded-md');
+                input.classList.add('border-red-500', 'bg-red-100', 'rounded-md');
+            }
+        }
+
+        // Function to highlight phrases in sentences
+        function highlightPhrase(element) {
+            const text = element.querySelector('p').textContent;
+            const phrasesToHighlight = element.dataset.phrases ? element.dataset.phrases.split(',') : [];
+
+            let highlightedText = text;
+
+            // Highlight each phrase
+            phrasesToHighlight.forEach(phrase => {
+                const cleanPhrase = phrase.trim();
+                if (cleanPhrase) {
+                    // Create a case-insensitive regex for the phrase
+                    const regex = new RegExp(`\\b${cleanPhrase}\\b`, 'gi');
+                    highlightedText = highlightedText.replace(regex, match => `<span class="bg-yellow-200">${match}</span>`);
+                }
+            });
+
+            element.querySelector('p').innerHTML = highlightedText;
+        }
+    </script>
+</body>
+</html>
