@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparative Adjectives Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .question-container {
+            transition: all 0.3s ease;
+        }
+        .option:hover {
+            transform: translateY(-2px);
+        }
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+        .correct {
+            background-color: #4ade80 !important;
+            color: white !important;
+        }
+        .incorrect {
+            background-color: #f87171 !important;
+            color: white !important;
+        }
+        .selected {
+            background-color: #60a5fa !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-2">Comparative Adjectives Quiz</h1>
+            <p class="text-gray-600">Test your knowledge of comparative adjectives in English</p>
+        </header>
+
+        <!-- Quiz Info -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-semibold text-gray-800">Quiz Information</h2>
+                    <p class="text-gray-600"><span id="total-questions">50</span> questions • Multiple choice</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-center">
+                        <div class="text-sm text-gray-500">Progress</div>
+                        <div class="w-32 bg-gray-200 rounded-full h-2.5">
+                            <div id="progress-bar" class="progress-bar bg-indigo-600 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                        <span id="progress-text" class="text-sm font-medium">0/50</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sm text-gray-500">Score</div>
+                        <div id="score" class="text-xl font-bold text-indigo-600">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-container" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <!-- Question will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between">
+            <button id="prev-btn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                <i class="fas fa-arrow-left mr-2"></i>Previous
+            </button>
+            <button id="next-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg">
+                Next<i class="fas fa-arrow-right ml-2"></i>
+            </button>
+            <button id="submit-btn" class="hidden bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">
+                Submit Quiz<i class="fas fa-check ml-2"></i>
+            </button>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="results-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-4">Quiz Results</h2>
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Total Questions:</span>
+                        <span id="total-questions-result">50</span>
+                    </div>
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Correct Answers:</span>
+                        <span id="correct-answers" class="text-green-600">0</span>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <span class="font-medium">Your Score:</span>
+                        <span id="final-score" class="text-indigo-600 font-bold">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div id="score-bar" class="bg-indigo-600 h-4 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <button id="restart-quiz" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg">
+                        <i class="fas fa-redo mr-2"></i>Restart
+                    </button>
+                    <button id="close-modal" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+                        Close<i class="fas fa-times ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz data
+        const quizData = [
+            {
+                question: "Cats are ________ than dogs.",
+                options: ["quiet", "quieter", "more quiet", "quietest"],
+                correct: 1
+            },
+            {
+                question: "My new phone is ________ than my old one.",
+                options: ["better", "gooder", "more good", "best"],
+                correct: 0
+            },
+            {
+                question: "Tokyo is ________ than Bangkok.",
+                options: ["busyer", "more busy", "busier", "busiest"],
+                correct: 2
+            },
+            {
+                question: "This exam is ________ than the last one.",
+                options: ["difficulter", "more difficult", "difficulter", "most difficult"],
+                correct: 1
+            },
+            {
+                question: "He is ________ than his brother.",
+                options: ["funnyer", "more funny", "funnier", "funniest"],
+                correct: 2
+            },
+            {
+                question: "This backpack is ________ than that one.",
+                options: ["heavy", "heavier", "more heavy", "heaviest"],
+                correct: 1
+            },
+            {
+                question: "Walking is ________ than running.",
+                options: ["slow", "slower", "more slow", "slowest"],
+                correct: 1
+            },
+            {
+                question: "Today is ________ than yesterday.",
+                options: ["colder", "coldest", "more cold", "cold"],
+                correct: 0
+            },
+            {
+                question: "This movie is ________ than I expected.",
+                options: ["interesting", "more interesting", "interestinger", "most interesting"],
+                correct: 1
+            },
+            {
+                question: "She is ________ than her sister.",
+                options: ["intelligent", "intelligenter", "more intelligent", "most intelligent"],
+                correct: 2
+            },
+            {
+                question: "Jack's results are ________ than mine.",
+                options: ["worse", "more bad", "badder", "baddest"],
+                correct: 0
+            },
+            {
+                question: "The streets are ________ at night.",
+                options: ["dangerouser", "more dangerous", "dangerouser", "most dangerous"],
+                correct: 1
+            },
+            {
+                question: "This exercise is ________ than the last one.",
+                options: ["easyer", "easier", "more easy", "easist"],
+                correct: 1
+            },
+            {
+                question: "The hotel is ________ than I thought.",
+                options: ["expensiver", "expensive", "more expensive", "most expensive"],
+                correct: 2
+            },
+            {
+                question: "My grandma is ________ than yours.",
+                options: ["old", "more old", "older", "oldest"],
+                correct: 2
+            },
+            {
+                question: "Learning English is ________ than learning Chinese.",
+                options: ["easy", "easier", "more easier", "easiest"],
+                correct: 1
+            },
+            {
+                question: "I feel ________ today than yesterday.",
+                options: ["happier", "happyer", "more happy", "happiest"],
+                correct: 0
+            },
+            {
+                question: "This restaurant is ________ than the one next door.",
+                options: ["gooder", "more good", "better", "best"],
+                correct: 2
+            },
+            {
+                question: "Her voice is ________ than mine.",
+                options: ["loud", "louder", "more loud", "loudest"],
+                correct: 1
+            },
+            {
+                question: "The mountain is ________ than the hill.",
+                options: ["higher", "high", "more high", "highest"],
+                correct: 0
+            },
+            {
+                question: "Winter is ________ than summer.",
+                options: ["coldest", "more cold", "colder", "cold"],
+                correct: 2
+            },
+            {
+                question: "This dress is ________ than the blue one.",
+                options: ["prettiest", "more pretty", "prettier", "prettyer"],
+                correct: 2
+            },
+            {
+                question: "My dog is ________ than my cat.",
+                options: ["more friendly", "friendlier", "friendlyer", "most friendly"],
+                correct: 1
+            },
+            {
+                question: "That building is ________ than the one next to it.",
+                options: ["taller", "more tall", "tall", "tallest"],
+                correct: 0
+            },
+            {
+                question: "The river is ________ than the lake.",
+                options: ["deep", "more deep", "deeper", "deepper"],
+                correct: 2
+            },
+            {
+                question: "This book is ________ than the last one I read.",
+                options: ["boring", "more boring", "boringer", "bored"],
+                correct: 1
+            },
+            {
+                question: "The test was ________ than we expected.",
+                options: ["harder", "more hard", "hardest", "most hard"],
+                correct: 0
+            },
+            {
+                question: "Her shoes are ________ than mine.",
+                options: ["more colorful", "colorfuller", "most colorful", "colorfuler"],
+                correct: 0
+            },
+            {
+                question: "Tom is ________ than his brother.",
+                options: ["lazier", "more lazy", "lazyer", "laziest"],
+                correct: 0
+            },
+            {
+                question: "Today is ________ than Monday.",
+                options: ["busyer", "more busy", "busier", "busiest"],
+                correct: 2
+            },
+            {
+                question: "His handwriting is ________ than hers.",
+                options: ["neat", "neater", "more neat", "neatest"],
+                correct: 1
+            },
+            {
+                question: "My bag is ________ than yours.",
+                options: ["big", "bigger", "more big", "biggest"],
+                correct: 1
+            },
+            {
+                question: "Their house is ________ than ours.",
+                options: ["more modern", "moderner", "most modern", "modernest"],
+                correct: 0
+            },
+            {
+                question: "Jane is ________ than Susan.",
+                options: ["polite", "politer", "more polite", "most polite"],
+                correct: 2
+            },
+            {
+                question: "That subject is ________ than history.",
+                options: ["interestinger", "more interesting", "most interesting", "interestingest"],
+                correct: 1
+            },
+            {
+                question: "This math problem is ________ than the first one.",
+                options: ["complexer", "more complex", "complexxer", "most complex"],
+                correct: 1
+            },
+            {
+                question: "They are ________ than us.",
+                options: ["rich", "richer", "more rich", "richest"],
+                correct: 1
+            },
+            {
+                question: "That song is ________ than the previous one.",
+                options: ["catchyer", "more catchy", "catchier", "most catchy"],
+                correct: 1
+            },
+            {
+                question: "Her ideas are ________ than mine.",
+                options: ["creativer", "more creative", "creativest", "most creative"],
+                correct: 1
+            },
+            {
+                question: "He finished the project ________ than we did.",
+                options: ["faster", "fastlier", "more fast", "fastest"],
+                correct: 0
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "This book is more interestinger than that one.",
+                    "This book is interestinger than that one.",
+                    "This book is more interesting than that one.",
+                    "This book more interesting than that one."
+                ],
+                correct: 2
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "Her new haircut is beautifuller than before.",
+                    "Her new haircut is more beautiful than before.",
+                    "Her new haircut more beautiful than before.",
+                    "Her new haircut is beautifuler than before."
+                ],
+                correct: 1
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "My room is tidier than my sister's.",
+                    "My room is more tidy than my sister's.",
+                    "My room tidier than my sister's.",
+                    "My room is tidyer than my sister's."
+                ],
+                correct: 0
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "No building in the city is taller than this one.",
+                    "No building in the city is more tall than this one.",
+                    "No building in the city taller than this one.",
+                    "No building in the city is tall than this one."
+                ],
+                correct: 0
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "My mom is good cooker than my dad.",
+                    "My mom is better cooker than my dad.",
+                    "My mom is a better cook than my dad.",
+                    "My mom better cook than my dad."
+                ],
+                correct: 2
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "This street is noisier than that one.",
+                    "This street is more noisyer than that one.",
+                    "This street noisier than that one.",
+                    "This street is noisyer than that one."
+                ],
+                correct: 0
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "Your idea is cleverer than his.",
+                    "Your idea is more cleverer than his.",
+                    "Your idea is more cleverest than his.",
+                    "Your idea cleverer than his."
+                ],
+                correct: 0
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "This exam is the more difficult than the last one.",
+                    "This exam is more difficult than the last one.",
+                    "This exam more difficult than the last one.",
+                    "This exam is difficulter than the last one."
+                ],
+                correct: 1
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "The river is wider than the road.",
+                    "The river is more wide than the road.",
+                    "The river is widen than the road.",
+                    "The river more wide than the road."
+                ],
+                correct: 0
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "This sofa is more comfortable than that one.",
+                    "This sofa is comfortabler than that one.",
+                    "This sofa more comfortable than that one.",
+                    "This sofa is comfortablest than that one."
+                ],
+                correct: 0
+            }
+        ];
+
+        // Quiz state
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = Array(quizData.length).fill(null);
+
+        // DOM elements
+        const quizContainer = document.getElementById('quiz-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const resultsModal = document.getElementById('results-modal');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const scoreElement = document.getElementById('score');
+        const totalQuestionsElement = document.getElementById('total-questions');
+        const totalQuestionsResult = document.getElementById('total-questions-result');
+        const correctAnswersElement = document.getElementById('correct-answers');
+        const finalScoreElement = document.getElementById('final-score');
+        const scoreBar = document.getElementById('score-bar');
+        const restartQuizBtn = document.getElementById('restart-quiz');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        // Initialize quiz
+        totalQuestionsElement.textContent = quizData.length;
+        totalQuestionsResult.textContent = quizData.length;
+        loadQuestion();
+
+        // Event listeners
+        prevBtn.addEventListener('click', () => {
+            currentQuestion--;
+            loadQuestion();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (userAnswers[currentQuestion] === null) {
+                alert('Please select an answer before proceeding.');
+                return;
+            }
+            
+            currentQuestion++;
+            loadQuestion();
+        });
+
+        submitBtn.addEventListener('click', showResults);
+
+        restartQuizBtn.addEventListener('click', restartQuiz);
+        closeModalBtn.addEventListener('click', () => {
+            resultsModal.classList.add('hidden');
+        });
+
+        // Functions
+        function loadQuestion() {
+            // Update navigation buttons
+            prevBtn.disabled = currentQuestion === 0;
+            nextBtn.classList.toggle('hidden', currentQuestion === quizData.length - 1);
+            submitBtn.classList.toggle('hidden', currentQuestion !== quizData.length - 1);
+
+            // Update progress
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressText.textContent = `${currentQuestion + 1}/${quizData.length}`;
+
+            // Load question
+            const question = quizData[currentQuestion];
+            let optionsHtml = '';
+            
+            question.options.forEach((option, index) => {
+                let optionClass = "option bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 px-4 rounded-lg mb-2 cursor-pointer transition";
+                
+                if (userAnswers[currentQuestion] !== null && userAnswers[currentQuestion] === index) {
+                    optionClass += " selected";
+                }
+                
+                if (userAnswers[currentQuestion] !== null) {
+                    if (index === question.correct) {
+                        optionClass += " correct";
+                    } else if (userAnswers[currentQuestion] === index && index !== question.correct) {
+                        optionClass += " incorrect";
+                    }
+                }
+                
+                optionsHtml += `
+                    <div class="${optionClass}" data-index="${index}" onclick="selectOption(${index})">
+                        ${String.fromCharCode(97 + index)}. ${option}
+                    </div>
+                `;
+            });
+
+            quizContainer.innerHTML = `
+                <div class="question-container">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">${currentQuestion + 1}. ${question.question}</h3>
+                    <div class="options-container">
+                        ${optionsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        function selectOption(index) {
+            if (userAnswers[currentQuestion] !== null) return;
+            
+            userAnswers[currentQuestion] = index;
+            const question = quizData[currentQuestion];
+            
+            if (index === question.correct) {
+                score++;
+                scoreElement.textContent = score;
+            }
+            
+            loadQuestion();
+        }
+
+        function showResults() {
+            // Calculate final score
+            const percentage = Math.round((score / quizData.length) * 100);
+            
+            // Update results modal
+            correctAnswersElement.textContent = score;
+            finalScoreElement.textContent = `${percentage}%`;
+            scoreBar.style.width = `${percentage}%`;
+            
+            // Show modal
+            resultsModal.classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+            // Reset quiz state
+            currentQuestion = 0;
+            score = 0;
+            userAnswers = Array(quizData.length).fill(null);
+            
+            // Update UI
+            scoreElement.textContent = score;
+            resultsModal.classList.add('hidden');
+            
+            // Reload first question
+            loadQuestion();
+        }
+
+        // Make selectOption available globally
+        window.selectOption = selectOption;
+    </script>
+</body>
+</html>

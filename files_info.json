@@ -917,6 +917,13 @@
       "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
       "category": "tests"
     },
+    "tests/pre - gs8 - test quiz - comparative adjs": {
+      "path": "tests/pre - gs8 - test quiz - comparative adjs",
+      "title": "Pre GS8 Comparative - adjectives - test",
+      "author": "Gen8",
+      "description": "Không có mô tả.",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-3": {
       "path": "tests/pre-gs6-test-1-paper-3",
       "title": "Pre Gs6 Test 1 - Paper 3",
