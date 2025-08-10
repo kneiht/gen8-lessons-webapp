@@ -648,7 +648,7 @@
                                 <div class="space-y-3">
                                     <div class="flex flex-col sm:flex-row sm:items-center">
                                         <span class="mr-2">She <span class="tooltip">_______<span class="tooltiptext">Choose from: always, usually, often, sometimes, rarely, never</span></span> eats breakfast at 7am.</span>
-                                        <input type="text" class="answer-input" data-answer="always" onblur="checkAnswer(this)">
+                                        <input type="text" class="answer-input" data-answer="usually" onblur="checkAnswer(this)">
                                     </div>
                                     <div class="flex flex-col sm:flex-row sm:items-center">
                                         <span class="mr-2">I ________ drink coffee in the evening.</span>
@@ -847,7 +847,21 @@
                     <div class="flex items-start mb-4 w-full">
                         <div class="w-full">
                             <h4 class="exercise-title">Exercise 7: Mixed Adverb Practice (Bài tập tổng hợp về trạng từ)</h4>
-                            <p class="exercise-instruction">👉 Complete the passage with appropriate adverbs (Hoàn thành đoạn văn với trạng từ phù hợp):</p>
+                            <p class="exercise-instruction">👉 Complete the passage with appropriate adverbs from the word bank (Hoàn thành đoạn văn với trạng từ phù hợp từ ngân hàng từ):</p>
+
+                            <div class="mb-4 p-3 bg-blue-50 rounded-lg border">
+                                <p class="font-semibold mb-2">📝 Word Bank (Ngân hàng từ):</p>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <span class="p-2 bg-white rounded border text-center font-medium">today</span>
+                                    <span class="p-2 bg-white rounded border text-center font-medium">however</span>
+                                    <span class="p-2 bg-white rounded border text-center font-medium">clearly</span>
+                                    <span class="p-2 bg-white rounded border text-center font-medium">always</span>
+                                    <span class="p-2 bg-white rounded border text-center font-medium">seriously</span>
+                                    <span class="p-2 bg-white rounded border text-center font-medium">completely</span>
+                                    <span class="p-2 bg-white rounded border text-center font-medium">rarely</span>
+                                    <span class="p-2 bg-white rounded border text-center font-medium">therefore</span>
+                                </div>
+                            </div>
 
                             <div class="mb-4">
                                 <p class="mb-2">Climate change is <input type="text" class="answer-input inline" data-answer="seriously" onblur="checkAnswer(this)"> affecting our planet. We can <input type="text" class="answer-input inline" data-answer="clearly" onblur="checkAnswer(this)"> see its impacts everywhere. <input type="text" class="answer-input inline" data-answer="therefore" onblur="checkAnswer(this)">, we must act now. Some people <input type="text" class="answer-input inline" data-answer="rarely" onblur="checkAnswer(this)"> think about how their actions affect the environment. <input type="text" class="answer-input inline" data-answer="however" onblur="checkAnswer(this)">, small changes can make a big difference. We should <input type="text" class="answer-input inline" data-answer="always" onblur="checkAnswer(this)"> recycle and <input type="text" class="answer-input inline" data-answer="completely" onblur="checkAnswer(this)"> avoid wasting resources. The future of our planet depends on what we do <input type="text" class="answer-input inline" data-answer="today" onblur="checkAnswer(this)">.</p>
@@ -855,6 +869,18 @@
                             
                             <div>
                                 <p class="exercise-instruction">👉 Identify the type of each adverb in these sentences (Nhận diện loại trạng từ trong các câu sau):</p>
+                                
+                                <div class="mb-4 p-3 bg-green-50 rounded-lg border">
+                                    <p class="font-semibold mb-2">📚 Adverb Types (Các loại trạng từ):</p>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <span class="p-2 bg-white rounded border text-center font-medium">time (thời gian)</span>
+                                        <span class="p-2 bg-white rounded border text-center font-medium">frequency (tần suất)</span>
+                                        <span class="p-2 bg-white rounded border text-center font-medium">place (nơi chốn)</span>
+                                        <span class="p-2 bg-white rounded border text-center font-medium">degree (mức độ)</span>
+                                        <span class="p-2 bg-white rounded border text-center font-medium">conjunctive (liên kết)</span>
+                                        <span class="p-2 bg-white rounded border text-center font-medium">manner (cách thức)</span>
+                                    </div>
+                                </div>
                                 
                                 <table class="w-full border-collapse">
                                     <thead>
@@ -868,27 +894,77 @@
                                         <tr>
                                             <td class="border p-2">1. I always go to bed early.</td>
                                             <td class="border p-2"><input type="text" class="answer-input" data-answer="always" onblur="checkAnswer(this)"></td>
-                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="frequency" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2">
+                                                <select class="answer-input w-full" data-answer="frequency" onchange="checkAnswer(this)">
+                                                    <option value="">Choose type...</option>
+                                                    <option value="time">time (thời gian)</option>
+                                                    <option value="frequency">frequency (tần suất)</option>
+                                                    <option value="place">place (nơi chốn)</option>
+                                                    <option value="degree">degree (mức độ)</option>
+                                                    <option value="conjunctive">conjunctive (liên kết)</option>
+                                                    <option value="manner">manner (cách thức)</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="border p-2">2. She looked everywhere for her keys.</td>
                                             <td class="border p-2"><input type="text" class="answer-input" data-answer="everywhere" onblur="checkAnswer(this)"></td>
-                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="place" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2">
+                                                <select class="answer-input w-full" data-answer="place" onchange="checkAnswer(this)">
+                                                    <option value="">Choose type...</option>
+                                                    <option value="time">time (thời gian)</option>
+                                                    <option value="frequency">frequency (tần suất)</option>
+                                                    <option value="place">place (nơi chốn)</option>
+                                                    <option value="degree">degree (mức độ)</option>
+                                                    <option value="conjunctive">conjunctive (liên kết)</option>
+                                                    <option value="manner">manner (cách thức)</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="border p-2">3. This is a very interesting book.</td>
                                             <td class="border p-2"><input type="text" class="answer-input" data-answer="very" onblur="checkAnswer(this)"></td>
-                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="degree" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2">
+                                                <select class="answer-input w-full" data-answer="degree" onchange="checkAnswer(this)">
+                                                    <option value="">Choose type...</option>
+                                                    <option value="time">time (thời gian)</option>
+                                                    <option value="frequency">frequency (tần suất)</option>
+                                                    <option value="place">place (nơi chốn)</option>
+                                                    <option value="degree">degree (mức độ)</option>
+                                                    <option value="conjunctive">conjunctive (liên kết)</option>
+                                                    <option value="manner">manner (cách thức)</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="border p-2">4. Tomorrow, we will visit the museum.</td>
                                             <td class="border p-2"><input type="text" class="answer-input" data-answer="tomorrow" onblur="checkAnswer(this)"></td>
-                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="time" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2">
+                                                <select class="answer-input w-full" data-answer="time" onchange="checkAnswer(this)">
+                                                    <option value="">Choose type...</option>
+                                                    <option value="time">time (thời gian)</option>
+                                                    <option value="frequency">frequency (tần suất)</option>
+                                                    <option value="place">place (nơi chốn)</option>
+                                                    <option value="degree">degree (mức độ)</option>
+                                                    <option value="conjunctive">conjunctive (liên kết)</option>
+                                                    <option value="manner">manner (cách thức)</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="border p-2">5. I was tired; however, I went to the party.</td>
                                             <td class="border p-2"><input type="text" class="answer-input" data-answer="however" onblur="checkAnswer(this)"></td>
-                                            <td class="border p-2"><input type="text" class="answer-input" data-answer="conjunctive" onblur="checkAnswer(this)"></td>
+                                            <td class="border p-2">
+                                                <select class="answer-input w-full" data-answer="conjunctive" onchange="checkAnswer(this)">
+                                                    <option value="">Choose type...</option>
+                                                    <option value="time">time (thời gian)</option>
+                                                    <option value="frequency">frequency (tần suất)</option>
+                                                    <option value="place">place (nơi chốn)</option>
+                                                    <option value="degree">degree (mức độ)</option>
+                                                    <option value="conjunctive">conjunctive (liên kết)</option>
+                                                    <option value="manner">manner (cách thức)</option>
+                                                </select>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

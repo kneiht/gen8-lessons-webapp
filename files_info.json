@@ -147,6 +147,13 @@
       "description": "Động từ-  Động từ khuyết khuyết, Động từ trạng thái, Động từ giác quan",
       "category": "slides"
     },
+    "slides/pre-gs9-prepositions": {
+      "path": "slides/pre-gs9-prepositions",
+      "title": "Pre GS9 - Prepositions",
+      "author": "Gen8",
+      "description": "-Giới từ là gì -Các loại giới từ cụ thể -Vị trí của giới từ trong câu",
+      "category": "slides"
+    },
     "slides/pre - gs8 - comparative adjectives": {
       "path": "slides/pre - gs8 - comparative adjectives",
       "title": "Pre GS8 Comparative - adjectives",
@@ -733,6 +740,13 @@
       "title": "Pre Gs6 - Mạo từ (Articles) a/an/the",
       "author": "Gen8",
       "description": "Mạo từ (Articles) a/an/the",
+      "category": "worksheets"
+    },
+    "worksheets/pre-gs9-prepositions ": {
+      "path": "worksheets/pre-gs9-prepositions ",
+      "title": "Pre GS9 - Prepositions",
+      "author": "Gen8",
+      "description": "-Giới từ là gì -Các loại giới từ cụ thể -Vị trí của giới từ trong câu",
       "category": "worksheets"
     },
     "worksheets/pre-gs9-present-simple-and-present-continuous": {
