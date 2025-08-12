@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .correct-answer {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+        }
+        .timer-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-2">English Grammar Test</h1>
+            <p class="text-gray-600">Test your knowledge of comparative adjectives, verbs, and grammar rules</p>
+            <div class="flex justify-center items-center mt-4">
+                <div class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full flex items-center timer-animation">
+                    <i class="fas fa-clock mr-2"></i>
+                    <span id="timer">30:00</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Test Instructions -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-blue-500 text-xl mt-1"></i>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-medium text-blue-800">Test Instructions</h3>
+                    <div class="mt-2 text-sm text-blue-700">
+                        <p>• This test has 4 parts with different question types.</p>
+                        <p>• Part 1: Multiple choice questions - Choose the correct answer.</p>
+                        <p>• Part 2: Fill in the blanks - Write the correct form of the verb.</p>
+                        <p>• Part 3: Error correction - Find and correct the mistake.</p>
+                        <p>• Part 4: Complete the passage - Use the correct word forms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Part 1: Multiple Choice -->
+        <section class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-600 text-white px-4 py-2 rounded-full">
+                    <h2 class="text-xl font-bold">Part 1</h2>
+                </div>
+                <p class="ml-4 text-gray-600">Choose the correct answer</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Question 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">1. The bus arrives (late) __________ today than yesterday.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. later</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. more late</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. latest</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q1" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. most late</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">2. My house is ________ (big) than my cousin's.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. bigger</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. big</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. more big</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q2" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. biggest</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">3. We enjoy ________ in the park after school.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. walking</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. to walk</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q3" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. walk</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">4. They _______ go to the cinema on weekends.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. often</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. are often</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. do often</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q4" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. oftenly</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">5. This book is ________ (interesting) than that one.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. more interesting</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. interestinger</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. interestingest</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q5" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. most interesting</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">6. He drives (carefully) __________ than his brother.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q6" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. more carefully</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q6" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. carefuller</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q6" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. carefulest</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q6" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. most carefully</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">7. You ___ speak loudly in the library.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q7" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. can't</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q7" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. must</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q7" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. should</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">8. The sun ______ in the east.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q8" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. rise</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q8" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. rises</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q8" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. rising</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q8" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. rised</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">9. She runs (fast) __________ than all her classmates.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q9" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. faster</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q9" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. fastlier</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q9" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. fastly</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q9" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. fastest</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">10. Her dress is __________ than mine.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q10" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. more beautiful</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q10" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. beautifuller</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q10" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. more beautifull</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q10" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. beautifuler</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">11. We prefer __________ (eat) seafood when we go to the beach.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q11" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. eating</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q11" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. eats</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q11" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. to eating</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">12. I dislike __________ (wash) the dishes after dinner.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q12" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. washing</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q12" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. wash</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q12" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. washes</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">13. He __________ my best friend.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q13" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. is</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q13" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. am</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q13" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. are</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q13" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. be</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">14. My grandparents live ________ (far) from the city than we do.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q14" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. farther</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q14" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. more far</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q14" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. farer</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q14" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. farthest</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">15. After joining the club, she speaks English (confidently) __________.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q15" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. more confidently</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q15" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. confidentlier</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q15" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. confidentest</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q15" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. most confidently</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 16 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">16. This shop sells clothes (cheap) __________ than that one.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q16" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. cheaper</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q16" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. more cheap</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q16" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. cheapest</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q16" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. cheaplier</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 17 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">17. The children __________ (not/be) at home right now.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q17" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. is not</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q17" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. am not</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q17" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. are not</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q17" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. be not</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 18 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">18. My father __________ to work every day.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q18" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. drive</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q18" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. drives</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q18" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. driving</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q18" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">d. drived</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 19 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">19. I like __________ (listen) to music before sleeping.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q19" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. listening</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q19" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. listens</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q19" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. to listening</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 20 -->
+                <div class="bg-white p-6 rounded-lg shadow-md question-card transition duration-300">
+                    <p class="font-medium text-gray-800 mb-4">20. We ___ wear helmets when riding motorbikes.</p>
+                    <div class="space-y-3">
+                        <label class="flex items-center">
+                            <input type="radio" name="q20" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">a. must</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q20" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">b. can</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="q20" class="h-4 w-4 text-indigo-600">
+                            <span class="ml-2">c. shouldn't</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: Fill in the blanks -->
+        <section class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-600 text-white px-4 py-2 rounded-full">
+                    <h2 class="text-xl font-bold">Part 2</h2>
+                </div>
+                <p class="ml-4 text-gray-600">Write the correct answer</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">1. My sister __________ (play) badminton every Sunday.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">2. They __________ (can/should) arrive on time.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">3. The students __________ (be) in the classroom now.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">4. He __________ (read) a comic book in his room.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">5. We __________ (prefer) tea to coffee.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">6. Tom __________ (be) very tall.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">7. You __________ (must/should) keep quiet during the test.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">8. She __________ (enjoy) painting landscapes.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">9. My dog __________ (run) very quickly.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">10. The children __________ (be) excited about the trip.</p>
+                        <input type="text" class="w-full md:w-1/2 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Error Correction -->
+        <section class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-600 text-white px-4 py-2 rounded-full">
+                    <h2 class="text-xl font-bold">Part 3</h2>
+                </div>
+                <p class="ml-4 text-gray-600">Find the mistake and rewrite</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">1. The cats is very cute. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">2. She go to school by bike. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">3. You musts finish your homework. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">4. He can to play the guitar. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">5. They dislike wake up early. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">6. She runs more fastly than her sister. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">7. This road is narrowier than that one. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">8. The boy don't like reading books. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div>
+                        <p class="font-medium text-gray-800 mb-2">9. They is my best friends. →</p>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 4: Complete the passage -->
+        <section class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="bg-indigo-600 text-white px-4 py-2 rounded-full">
+                    <h2 class="text-xl font-bold">Part 4</h2>
+                </div>
+                <p class="ml-4 text-gray-600">Write the correct form of the words in brackets</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <p class="text-gray-800 mb-6">
+                    Many people enjoy (1) __________ (watch) films in their free time. They often (2) __________ (go) to the cinema with friends or family at weekends. Some people (3) __________ (prefer) action films because they are (4) __________ (exciting) than other cartoon. However, others like (5) __________ (see) romantic films because the stories (6) __________ (be) touching and emotional. Animated films are also popular, especially among children, because they (7) __________ (have) colorful scenes and funny characters. In some countries, people (8) __________ (watch) movies at home using streaming platforms. This way, they can (9) __________ (choose) from a variety of films, from comedies to documentaries. Film festivals often (10) __________ (show) special movies from around the world, giving audiences a chance to (11) __________ (learn) about different cultures. Watching films makes you more (12) __________ (happy) than playing games.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Blank 1 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">1. (watch)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 2 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">2. (go)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 3 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">3. (prefer)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 4 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">4. (exciting)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 5 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">5. (see)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 6 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">6. (be)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 7 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">7. (have)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 8 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">8. (watch)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 9 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">9. (choose)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 10 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">10. (show)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 11 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">11. (learn)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+
+                    <!-- Blank 12 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">12. (happy)</label>
+                        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit Button -->
+        <div class="text-center mb-12">
+            <button id="submitBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Submit Test
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Timer functionality
+        let timeLeft = 30 * 60; // 30 minutes in seconds
+        const timerElement = document.getElementById('timer');
+        
+        const timer = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            timerElement.textContent = `${minutes}:${seconds}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                timerElement.textContent = "Time's up!";
+                timerElement.classList.add('text-red-500');
+                timerElement.classList.remove('timer-animation');
+            } else {
+                timeLeft--;
+            }
+        }, 1000);
+
+        // Submit test functionality
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Get all multiple choice answers
+            const multipleChoiceAnswers = {};
+            for (let i = 1; i <= 20; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    multipleChoiceAnswers[`q${i}`] = selected.nextElementSibling.textContent.trim();
+                }
+            }
+
+            // Get all fill in the blank answers
+            const fillInAnswers = {};
+            const fillInInputs = document.querySelectorAll('section:nth-child(2) input[type="text"]');
+            fillInInputs.forEach((input, index) => {
+                fillInAnswers[`fill${index + 1}`] = input.value.trim();
+            });
+
+            // Get all error correction answers
+            const errorCorrectionAnswers = {};
+            const errorInputs = document.querySelectorAll('section:nth-child(3) input[type="text"]');
+            errorInputs.forEach((input, index) => {
+                errorCorrectionAnswers[`error${index + 1}`] = input.value.trim();
+            });
+
+            // Get all passage completion answers
+            const passageAnswers = {};
+            const passageInputs = document.querySelectorAll('section:nth-child(4) input[type="text"]');
+            passageInputs.forEach((input, index) => {
+                passageAnswers[`passage${index + 1}`] = input.value.trim();
+            });
+
+            // Calculate total score
+            const totalQuestions = 20 + 10 + 9 + 12; // 51 total questions
+            const answeredQuestions = Object.keys(multipleChoiceAnswers).length + Object.keys(fillInAnswers).length + Object.keys(errorCorrectionAnswers).length + Object.keys(passageAnswers).length;
+            const scorePercentage = Math.round((answeredQuestions / totalQuestions) * 100);
+            
+            // Determine grade
+            let grade = '';
+            let gradeColor = '';
+            if (scorePercentage >= 90) {
+                grade = 'A+ (Excellent)';
+                gradeColor = 'text-green-600';
+            } else if (scorePercentage >= 80) {
+                grade = 'A (Very Good)';
+                gradeColor = 'text-green-500';
+            } else if (scorePercentage >= 70) {
+                grade = 'B (Good)';
+                gradeColor = 'text-blue-500';
+            } else if (scorePercentage >= 60) {
+                grade = 'C (Satisfactory)';
+                gradeColor = 'text-yellow-500';
+            } else if (scorePercentage >= 50) {
+                grade = 'D (Needs Improvement)';
+                gradeColor = 'text-orange-500';
+            } else {
+                grade = 'F (Failed)';
+                gradeColor = 'text-red-500';
+            }
+
+            // Create results summary
+            let resultsHTML = `
+                <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div class="bg-white p-8 rounded-lg max-w-2xl max-h-[80vh] overflow-y-auto">
+                        <h2 class="text-2xl font-bold text-indigo-700 mb-6">Test Results</h2>
+                        
+                        <!-- Score Summary -->
+                        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-lg mb-6 border border-indigo-200">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-indigo-700 mb-2">${scorePercentage}%</div>
+                                <div class="text-xl ${gradeColor} font-semibold mb-2">${grade}</div>
+                                <div class="text-gray-600">${answeredQuestions} / ${totalQuestions} questions answered</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Part 1: Multiple Choice (${Object.keys(multipleChoiceAnswers).length}/20)</h3>
+                            <div class="space-y-2">
+            `;
+
+            // Add multiple choice results
+            for (let i = 1; i <= 20; i++) {
+                const answer = multipleChoiceAnswers[`q${i}`];
+                if (answer) {
+                    resultsHTML += `<p class="text-sm"><strong>Q${i}:</strong> ${answer}</p>`;
+                } else {
+                    resultsHTML += `<p class="text-sm text-red-500"><strong>Q${i}:</strong> Not answered</p>`;
+                }
+            }
+
+            resultsHTML += `
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Part 2: Fill in the Blanks (${Object.keys(fillInAnswers).length}/10)</h3>
+                            <div class="space-y-2">
+            `;
+
+            // Add fill in the blank results
+            for (let i = 1; i <= 10; i++) {
+                const answer = fillInAnswers[`fill${i}`];
+                if (answer) {
+                    resultsHTML += `<p class="text-sm"><strong>Q${i}:</strong> ${answer}</p>`;
+                } else {
+                    resultsHTML += `<p class="text-sm text-red-500"><strong>Q${i}:</strong> Not answered</p>`;
+                }
+            }
+
+            resultsHTML += `
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Part 3: Error Correction (${Object.keys(errorCorrectionAnswers).length}/9)</h3>
+                            <div class="space-y-2">
+            `;
+
+            // Add error correction results
+            for (let i = 1; i <= 9; i++) {
+                const answer = errorCorrectionAnswers[`error${i}`];
+                if (answer) {
+                    resultsHTML += `<p class="text-sm"><strong>Q${i}:</strong> ${answer}</p>`;
+                } else {
+                    resultsHTML += `<p class="text-sm text-red-500"><strong>Q${i}:</strong> Not answered</p>`;
+                }
+            }
+
+            resultsHTML += `
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-3">Part 4: Passage Completion (${Object.keys(passageAnswers).length}/12)</h3>
+                            <div class="space-y-2">
+            `;
+
+            // Add passage completion results
+            for (let i = 1; i <= 12; i++) {
+                const answer = passageAnswers[`passage${i}`];
+                if (answer) {
+                    resultsHTML += `<p class="text-sm"><strong>Q${i}:</strong> ${answer}</p>`;
+                } else {
+                    resultsHTML += `<p class="text-sm text-red-500"><strong>Q${i}:</strong> Not answered</p>`;
+                }
+            }
+
+            resultsHTML += `
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button onclick="this.closest('.fixed').remove()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                                Close Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Display results
+            document.body.insertAdjacentHTML('beforeend', resultsHTML);
+        });
+
+        // Highlight correct answers on hover for Part 1 (removed since no checkmarks)
+        // document.querySelectorAll('.question-card').forEach(card => {
+        //     card.addEventListener('mouseenter', () => {
+        //         const checkIcon = card.querySelector('.fa-check-circle');
+        //         if (checkIcon) {
+        //             checkIcon.parentElement.classList.add('correct-answer');
+        //             }
+        //         });
+        //         
+        //         card.addEventListener('mouseleave', () => {
+        //             const checkIcon = card.querySelector('.fa-check-circle');
+        //             if (checkIcon) {
+        //                 checkIcon.parentElement.classList.remove('correct-answer');
+        //             }
+        //         });
+        //     });
+    </script>
+</body>
+</html>
