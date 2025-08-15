@@ -952,6 +952,13 @@
       "description": "Không có mô tả.",
       "category": "tests"
     },
+    "tests/pre-gs7-test-3-paper-1": {
+      "path": "tests/pre-gs7-test-3-paper-1",
+      "title": "Pre GS7 - English Grammar Test 3 - Paper 1",
+      "author": "Gen8",
+      "description": "Pre GS7 - English Grammar Test 3 - Paper 1",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-3": {
       "path": "tests/pre-gs6-test-1-paper-3",
       "title": "Pre Gs6 Test 1 - Paper 3",
@@ -999,6 +1006,13 @@
       "title": "Pre GS9 - English Grammar Test 1 - Paper 1",
       "author": "Gen8",
       "description": "Hiện tại đơn – Hiện tại tiếp diễn – Quá khứ đơn – Quá khứ tiếp diễn – Hiện tại hoàn thành",
+      "category": "tests"
+    },
+    "tests/pre-gs8-test-2-paper-1": {
+      "path": "tests/pre-gs8-test-2-paper-1",
+      "title": "Pre GS8 - English Grammar Test 2 - Paper 1",
+      "author": "Gen8",
+      "description": "Pre GS8 - English Grammar Test 2 - Paper 1",
       "category": "tests"
     },
     "tests/pre-gs7-test-1-paper-3": {

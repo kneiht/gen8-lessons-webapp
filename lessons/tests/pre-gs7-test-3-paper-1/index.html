@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Present Simple & Present Continuous Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @media print {
+        .print\:hidden {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div
+      class="test-paper max-w-3xl mx-auto bg-white shadow-lg print:shadow-none rounded-lg p-8 mt-8 print:mt-0"
+    >
+      <div class="header text-center mb-8">
+        <h3 class="text-xl font-bold text-blue-800">
+          ENGLISH GRAMMAR TEST
+        </h3>
+        <p class="mb-2">
+          <strong>Time:</strong> 60 minutes | <strong>Full name:</strong>
+          <input
+            type="text"
+            class="border-b border-gray-400 outline-none px-2 print:hidden"
+            style="width: 220px"
+          />
+        </p>
+      </div>
+      <form id="grammarTest">
+        <!-- Part 1: Multiple Choice -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 1: Multiple Choice (4 marks)
+          </div>
+          <p class="mb-4">Choose the best answer:</p>
+          <div class="space-y-2" id="mcq-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <!-- Part 2: Error Correction -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 2: Error Correction (2 marks)
+          </div>
+          <p class="mb-4">
+            Find the errors and rewrite the sentences correctly:
+          </p>
+          <div class="space-y-4" id="error-correction-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <!-- Part 3: Rearrangement -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 3: Rearrangement (2 marks)
+          </div>
+          <p class="mb-4">
+            Rearrange the words to make correct sentences:
+          </p>
+          <div class="space-y-4" id="rearrangement-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <!-- Part 4: Word Completion (Adverb/Verb Form) -->
+        <div class="section mb-8">
+          <div class="section-title font-semibold mb-3">
+            Part 4: Word Completion (2 marks)
+          </div>
+          <p class="mb-4">
+            Complete the sentences with the correct adverb (by changing the adjective in brackets) or the correct verb form (present simple or present continuous).
+          </p>
+          <div class="space-y-4" id="verb-conjugation-container">
+            <!-- Questions will be inserted here by JavaScript -->
+          </div>
+        </div>
+        <div class="flex justify-center mt-8 print:hidden">
+          <button
+            type="button"
+            onclick="gradeTest()"
+            class="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 font-semibold"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          id="result"
+          class="mt-8 text-center text-lg font-bold print:hidden"
+          style="display: none"
+        ></div>
+      </form>
+    </div>
+    <script>
+      // Multiple Choice Questions (20 questions, 4 points)
+      // Chủ đề: Thì hiện tại đơn, trạng từ tần suất, thì hiện tại tiếp diễn
+      const mcqQuestions = [
+        // 1. Present Simple - he/she/it
+        {
+          question: "The cat ___ on the sofa every afternoon.",
+          options: ["A. sleep", "B. sleeps", "C. sleeping", "D. is sleeping"],
+          answer: "B",
+        },
+        // 2. Present Simple - I/you/we/they
+        {
+          question: "We ___ breakfast at 7 o'clock every day.",
+          options: ["A. has", "B. have", "C. is having", "D. having"],
+          answer: "B",
+        },
+        // 3. Present Continuous - now
+        {
+          question: "Look! The children ___ in the playground.",
+          options: ["A. play", "B. plays", "C. are playing", "D. is playing"],
+          answer: "C",
+        },
+        // 4. Present Continuous - at the moment
+        {
+          question: "I ___ my homework at the moment.",
+          options: ["A. does", "B. do", "C. am doing", "D. are doing"],
+          answer: "C",
+        },
+        // 5. Adverbs of frequency - always
+        {
+          question: "My father ___ drinks coffee in the morning.",
+          options: ["A. always", "B. never", "C. sometimes", "D. now"],
+          answer: "A",
+        },
+        // 6. Adverbs of frequency - never
+        {
+          question: "She ___ eats meat. She is a vegetarian.",
+          options: ["A. always", "B. never", "C. often", "D. now"],
+          answer: "B",
+        },
+        // 7. Present Simple - question
+        {
+          question: "___ your friends like pizza?",
+          options: ["A. Do", "B. Does", "C. Are", "D. Is"],
+          answer: "A",
+        },
+        // 8. Present Continuous - question
+        {
+          question: "___ you watching TV right now?",
+          options: ["A. Do", "B. Does", "C. Are", "D. Is"],
+          answer: "C",
+        },
+        // 9. Present Simple - negative
+        {
+          question: "Tom ___ play the guitar.",
+          options: ["A. doesn't", "B. don't", "C. aren't", "D. isn't"],
+          answer: "A",
+        },
+        // 10. Present Continuous - negative
+        {
+          question: "We ___ studying for the test at the moment.",
+          options: ["A. don't", "B. doesn't", "C. aren't", "D. isn't"],
+          answer: "C",
+        },
+        // 11. Adverbs of frequency - usually
+        {
+          question: "My sister ___ goes to the gym after work.",
+          options: ["A. usually", "B. now", "C. at the moment", "D. today"],
+          answer: "A",
+        },
+        // 12. Present Simple - she
+        {
+          question: "___ your teacher give you homework every day?",
+          options: ["A. Do", "B. Does", "C. Is", "D. Are"],
+          answer: "B",
+        },
+        // 13. Present Continuous - we
+        {
+          question: "We ___ dinner together right now.",
+          options: ["A. eat", "B. are eating", "C. eats", "D. eating"],
+          answer: "B",
+        },
+        // 14. Adverbs of frequency - sometimes
+        {
+          question: "I ___ go swimming on Sundays.",
+          options: ["A. now", "B. is", "C. sometimes", "D. at the moment"],
+          answer: "C",
+        },
+        // 15. Present Simple - it
+        {
+          question: "It ___ a lot in the winter.",
+          options: ["A. snow", "B. snows", "C. is snowing", "D. snowing"],
+          answer: "B",
+        },
+        // 16. Present Continuous - they
+        {
+          question: "Listen! They ___ a new song.",
+          options: ["A. sing", "B. are singing", "C. sings", "D. is singing"],
+          answer: "B",
+        },
+        // 17. Adverbs of frequency - often
+        {
+          question: "He ___ visits his uncle in Hanoi.",
+          options: ["A. now", "B. often", "C. at the moment", "D. today"],
+          answer: "B",
+        },
+        // 18. Present Simple - negative (he)
+        {
+          question: "My brother ___ like chocolate.",
+          options: ["A. don't", "B. doesn't", "C. isn't", "D. aren't"],
+          answer: "B",
+        },
+        // 19. Present Continuous - question (they)
+        {
+          question: "___ you doing your homework now?",
+          options: ["A. Do", "B. Does", "C. Are", "D. Is"],
+          answer: "C",
+        },
+        // 20. Present Simple - question (she)
+        {
+          question: "___ Anna play badminton?",
+          options: ["A. Do", "B. Does", "C. Is", "D. Are"],
+          answer: "B",
+        },
+      ];
+
+      // Error Correction Questions (10 questions)
+      // Chủ đề: Thì hiện tại đơn, trạng từ tần suất, thì hiện tại tiếp diễn
+      const errorCorrectionQuestions = [
+        {
+          question: "He go to the library every Saturday.",
+          answer: "He goes to the library every Saturday."
+        },
+        {
+          question: "We is having lunch now.",
+          answer: "We are having lunch now."
+        },
+        {
+          question: "She don't like apples.",
+          answer: "She doesn't like apples."
+        },
+        {
+          question: "Are you goes to school by bike?",
+          answer: "Do you go to school by bike?"
+        },
+        {
+          question: "My father reading newspaper at the moment.",
+          answer: "My father is reading newspaper at the moment."
+        },
+        {
+          question: "They doesn't play tennis on Sundays.",
+          answer: "They don't play tennis on Sundays."
+        },
+        {
+          question: "He always is early for class.",
+          answer: "He is always early for class."
+        },
+        {
+          question: "Do she like ice cream?",
+          answer: "Does she like ice cream?"
+        },
+        {
+          question: "I am not goes to the park today.",
+          answer: "I am not going to the park today."
+        },
+        {
+          question: "She is write a letter at the moment.",
+          answer: "She is writing a letter at the moment."
+        }
+      ];
+
+      // Rearrangement Questions (10 questions)
+      // Chủ đề: Thì hiện tại đơn, trạng từ tần suất, thì hiện tại tiếp diễn
+      const rearrangementQuestions = [
+        {
+          question: "usually / I / go / to / school / by / bus",
+          answer: "I usually go to school by bus."
+        },
+        {
+          question: "is / he / now / playing / football",
+          answer: "He is playing football now."
+        },
+        {
+          question: "do / you / watch / TV / often",
+          answer: "Do you often watch TV?"
+        },
+        {
+          question: "are / we / studying / English / at / the / moment",
+          answer: "We are studying English at the moment."
+        },
+        {
+          question: "never / she / eats / meat",
+          answer: "She never eats meat."
+        },
+        {
+          question: "does / your / brother / play / chess / every / weekend",
+          answer: "Does your brother play chess every weekend?"
+        },
+        {
+          question: "is / raining / it / heavily / now",
+          answer: "It is raining heavily now."
+        },
+        {
+          question: "often / my / friends / visit / me / on / Sundays",
+          answer: "My friends often visit me on Sundays."
+        },
+        {
+          question: "are / they / playing / basketball / now",
+          answer: "They are playing basketball now."
+        },
+        {
+          question: "sometimes / I / read / books / in / the / evening",
+          answer: "I sometimes read books in the evening."
+        }
+      ];
+
+      // Word Form Questions (10 questions)
+      // Chủ đề: Thì hiện tại đơn, trạng từ tần suất, thì hiện tại tiếp diễn
+      const verbConjugationQuestions = [
+        {
+          question: "He ______ (usually / walk) to school.",
+          answer: "usually walks"
+        },
+        {
+          question: "We ______ (not / eat) breakfast at 8 o'clock.",
+          answer: "don't eat"
+        },
+        {
+          question: "Listen! The teacher ______ (speak) now.",
+          answer: "is speaking"
+        },
+        {
+          question: "My mother ______ (never / drink) tea.",
+          answer: "never drinks"
+        },
+        {
+          question: "They ______ (play) football at the moment.",
+          answer: "are playing"
+        },
+        {
+          question: "She ______ (not / like) fish.",
+          answer: "doesn't like"
+        },
+        {
+          question: "I ______ (read) a magazine right now.",
+          answer: "am reading"
+        },
+        {
+          question: "Tom ______ (always / get up) early.",
+          answer: "always gets up"
+        },
+        {
+          question: "You ______ (do) your homework every day.",
+          answer: "do"
+        },
+        {
+          question: "Look! The birds ______ (fly) in the sky.",
+          answer: "are flying"
+        }
+      ];
+
+      // Function to shuffle array
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Display MCQ Questions
+      function displayMcqQuestions() {
+        const container = document.getElementById("mcq-container");
+        const shuffledQuestions = shuffleArray([...mcqQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          const label = document.createElement("label");
+          label.textContent = `${index + 1}. ${q.question}`;
+          questionDiv.appendChild(label);
+          const optionsDiv = document.createElement("div");
+          optionsDiv.className = "grid grid-cols-4 gap-x-8";
+          const correctAnswerText = q.options
+            .find((opt) => opt.startsWith(q.answer + "."))
+            .substring(3);
+          const optionTexts = q.options.map((opt) => opt.substring(3));
+          const shuffledOptionTexts = shuffleArray([...optionTexts]);
+          const newCorrectAnswerLetter = String.fromCharCode(
+            65 + shuffledOptionTexts.indexOf(correctAnswerText)
+          );
+          questionDiv.setAttribute("data-answer", newCorrectAnswerLetter);
+          const letters = ["A", "B", "C", "D"];
+          shuffledOptionTexts.forEach((text, i) => {
+            const optionLabel = document.createElement("label");
+            optionLabel.className = "block";
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = `mcq${index + 1}`;
+            radio.value = letters[i];
+            radio.className = "mr-2";
+            optionLabel.appendChild(radio);
+            optionLabel.appendChild(
+              document.createTextNode(`${letters[i]}. ${text}`)
+            );
+            optionsDiv.appendChild(optionLabel);
+          });
+          questionDiv.appendChild(optionsDiv);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Display Error Correction Questions
+      function displayErrorCorrectionQuestions() {
+        const container = document.getElementById("error-correction-container");
+        const shuffledQuestions = shuffleArray([...errorCorrectionQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          questionDiv.setAttribute("data-answer", q.answer);
+          const label = document.createElement("label");
+          label.innerHTML = `${index + 1}. ${q.question}<br>`;
+          const input = document.createElement("input");
+          input.name = `err${index + 1}`;
+          input.className = "border-b border-gray-300 w-full mt-1 p-1";
+          input.rows = 1;
+          label.appendChild(input);
+          questionDiv.appendChild(label);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Display Rearrangement Questions
+      function displayRearrangementQuestions() {
+        const container = document.getElementById("rearrangement-container");
+        const shuffledQuestions = shuffleArray([...rearrangementQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          questionDiv.setAttribute("data-answer", q.answer);
+          const label = document.createElement("label");
+          label.innerHTML = `${index + 1}. ${q.question}<br>`;
+          const input = document.createElement("input");
+          input.name = `rw${index + 1}`;
+          input.className = "border-b border-gray-300 w-full mt-1 p-1";
+          input.rows = 1;
+          label.appendChild(input);
+          questionDiv.appendChild(label);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Display Verb Conjugation Questions
+      function displayVerbConjugationQuestions() {
+        const container = document.getElementById("verb-conjugation-container");
+        const shuffledQuestions = shuffleArray([...verbConjugationQuestions]);
+        shuffledQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.className = "question";
+          questionDiv.setAttribute("data-answer", q.answer);
+          const label = document.createElement("label");
+          const questionText = q.question.replace(
+            "______",
+            `<input type="text" name="verb${
+              index + 1
+            }" class="border-b border-gray-400 w-32 px-1">`
+          );
+          label.innerHTML = `${index + 1}. ${questionText}`;
+          questionDiv.appendChild(label);
+          container.appendChild(questionDiv);
+        });
+      }
+
+      // Initialize when page loads
+      window.onload = function () {
+        displayMcqQuestions();
+        displayErrorCorrectionQuestions();
+        displayRearrangementQuestions();
+        displayVerbConjugationQuestions();
+      };
+
+      function getAnswersFromAttr(questionElem) {
+        return (questionElem.getAttribute("data-answer") || "")
+          .split("||")
+          .map((s) => s.trim());
+      }
+
+      function gradeTest() {
+        let score = 0;
+        let form = document.forms["grammarTest"];
+        document.querySelectorAll(".question").forEach((q) => {
+          q.querySelectorAll(
+            "input[type=radio], input[type=text], input"
+          ).forEach((input) => {
+            input.classList.remove(
+              "bg-green-100",
+              "border-green-500",
+              "bg-red-100",
+              "border-red-500",
+              "border-2"
+            );
+            if (input.type === "radio")
+              input.parentElement.classList.remove(
+                "bg-green-100",
+                "border-green-500",
+                "bg-red-100",
+                "border-red-500",
+                "border-2"
+              );
+          });
+        });
+
+        // Grade MCQs (4 points)
+        for (let i = 1; i <= mcqQuestions.length; i++) {
+          let qElem = document
+            .querySelector(`.question input[name=mcq${i}]`)
+            .closest(".question");
+          let correct = getAnswersFromAttr(qElem)[0];
+          let radioList = form.querySelectorAll(`input[name=mcq${i}]`);
+          radioList.forEach((radio) => {
+            if (radio.checked) {
+              if (radio.value === correct) {
+                radio.parentElement.classList.add(
+                  "bg-green-100",
+                  "border-green-500",
+                  "border-2"
+                );
+                score += 0.2;
+              } else {
+                radio.parentElement.classList.add(
+                  "bg-red-100",
+                  "border-red-500",
+                  "border-2"
+                );
+              }
+            }
+          });
+        }
+
+        // Grade Error Correction (2 points)
+        for (let i = 1; i <= errorCorrectionQuestions.length; i++) {
+          let qElem = document
+            .querySelector(`input[name=err${i}]`)
+            .closest(".question");
+          let corrects = getAnswersFromAttr(qElem).map((ans) =>
+            ans
+              .toLowerCase()
+              .replace(/[.\s]+/g, " ")
+              .trim()
+          );
+          let val = form[`err${i}`].value
+            .trim()
+            .toLowerCase()
+            .replace(/[.\s]+/g, " ")
+            .trim();
+          if (corrects.includes(val)) {
+            form[`err${i}`].classList.add(
+              "bg-green-100",
+              "border-green-500",
+              "border-2"
+            );
+            score += 0.4;
+          } else {
+            form[`err${i}`].classList.add(
+              "bg-red-100",
+              "border-red-500",
+              "border-2"
+            );
+          }
+        }
+
+        // Grade Rearrangement (1 point)
+        for (let i = 1; i <= rearrangementQuestions.length; i++) {
+          let qElem = document
+            .querySelector(`input[name=rw${i}]`)
+            .closest(".question");
+          let corrects = getAnswersFromAttr(qElem).map((ans) =>
+            ans
+              .toLowerCase()
+              .replace(/[?.\s]+/g, " ")
+              .trim()
+          );
+          let val = form[`rw${i}`].value
+            .trim()
+            .toLowerCase()
+            .replace(/[?.\s]+/g, " ")
+            .trim();
+          if (corrects.some((ans) => val === ans)) {
+            form[`rw${i}`].classList.add(
+              "bg-green-100",
+              "border-green-500",
+              "border-2"
+            );
+            score += 0.2;
+          } else {
+            form[`rw${i}`].classList.add(
+              "bg-red-100",
+              "border-red-500",
+              "border-2"
+            );
+          }
+        }
+
+        // Grade Verb Conjugation (2 points)
+        for (let i = 1; i <= verbConjugationQuestions.length; i++) {
+          let input = form[`verb${i}`];
+          let qElem = input.closest(".question");
+          let corrects = getAnswersFromAttr(qElem).map((ans) =>
+            ans.toLowerCase()
+          );
+          let val = input.value.trim().toLowerCase();
+          if (corrects.includes(val)) {
+            input.classList.add("bg-green-100", "border-green-500", "border-2");
+            score += 0.2;
+          } else {
+            input.classList.add("bg-red-100", "border-red-500", "border-2");
+          }
+        }
+
+        document.getElementById("result").style.display = "";
+        document.getElementById(
+          "result"
+        ).innerHTML = `Điểm của bạn: <span class="text-blue-700">${score.toFixed(
+          1
+        )} / 10</span>`;
+      }
+    </script>
+  </body>
+</html>
