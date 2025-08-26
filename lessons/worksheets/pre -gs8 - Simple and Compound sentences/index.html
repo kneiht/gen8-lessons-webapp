@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Conjunctions Exercises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .exercise-container {
+            transition: all 0.3s ease;
+        }
+        .exercise-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .answer-option {
+            transition: all 0.2s ease;
+        }
+        .answer-option:hover {
+            background-color: #f3f4f6;
+        }
+        .correct-answer {
+            background-color: #d1fae5 !important;
+            border-color: #10b981 !important;
+        }
+        .incorrect-answer {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-2">English Conjunctions Practice</h1>
+            <p class="text-gray-600">Choose the correct conjunctions to complete the sentences</p>
+            <div class="w-20 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <div class="grid gap-8">
+            <!-- Exercise 1 -->
+            <div class="exercise-container bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-list-ol text-indigo-500 mr-2"></i> Exercise 1: Choose the correct answers
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">1. You can have tea, ______ you can have coffee.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. or</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. and</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. so</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">2. She was very hungry, ______ she ate a big sandwich.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. or</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. so</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. for</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Continue with other questions similarly -->
+                    <!-- Question 3 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">3. He didn't go to the party, ______ he wasn't feeling well.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. and</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. for</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. but</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">4. I like apples, ______ I also enjoy bananas.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. and</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. or</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. therefore</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">5. I was tired, ______ I stayed up late to finish my homework.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. for</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. so</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. but</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">6. You must wear your helmet, ______ you will be fined.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. otherwise</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. and</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. for</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">7. I studied very hard; ______, I passed the exam with high marks.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. or</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. otherwise</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. therefore</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">8. The weather was rainy; ______, we went hiking.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. however</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. so</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. but</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">9. I have an exam tomorrow; ______, I can't go out with you.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. otherwise</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. therefore</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. but</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">10. She was tired; ______, she still helped her mom with the housework.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. however</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. so</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. for</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">11. You can go with us, ______ you can stay at home if you like.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. and</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. or</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. therefore</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">12. I was very tired, ______ I determined to walk on to the next village.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. therefore</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. however</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. and</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'D')">
+                                <span class="font-medium">D. or</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">13. You can come here either on Monday ______ on Friday.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'A')">
+                                <span class="font-medium">A. or</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'B')">
+                                <span class="font-medium">B. both</span>
+                            </button>
+                            <button class="answer-option p-3 border rounded-lg text-left" onclick="checkAnswer(this, 'C')">
+                                <span class="font-medium">C. and</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercise 2 -->
+            <div class="exercise-container bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-pen-fancy text-indigo-500 mr-2"></i> Exercise 2: Fill in the blanks
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 mb-4">Fill in the blanks with the correct conjunction (and, but, or, so, for).</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Question 1 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">1. Jaewon was cold, ______ he put on a coat.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="so">
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">2. Maria tried to read a novel in French, _____ it was too difficult.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="but">
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">3. To get from Vancouver to Victoria, you can fly, _____ you can ride the ferry.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="or">
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">4. I bought a bottle of wine, _____ we drank it together.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="and">
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">5. The waiter was not very nice, _____ the food was delicious.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="but">
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">6. I went to buy a Rolling Stones CD, ______ the shop didn't have it.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="but">
+                        </div>
+
+                        <!-- Question 7 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">7. Anna needed some money, ______ she took a part-time job.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="so">
+                        </div>
+
+                        <!-- Question 8 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">8. There's so much rain lately! Maybe it's because of El Nino, ______ maybe it's just coincidence.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="or">
+                        </div>
+
+                        <!-- Question 9 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">9. Julie has a guitar, _____ she plays it really well.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="and">
+                        </div>
+
+                        <!-- Question 10 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">10. The concert was cancelled, ______ we went to a nightclub instead.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="so">
+                        </div>
+
+                        <!-- Question 11 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">11. She didn't answer the phone, ______ she was in class.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="for">
+                        </div>
+
+                        <!-- Question 12 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">12. He worked very hard, ______ he wanted to support his family.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="for">
+                        </div>
+
+                        <!-- Question 13 -->
+                        <div class="question-group">
+                            <p class="text-gray-700 mb-2">13. They went to bed early, ______ they were very tired.</p>
+                            <input type="text" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500" data-answer="for">
+                        </div>
+                    </div>
+
+                    <button onclick="checkFillInAnswers()" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                        <i class="fas fa-check-circle mr-2"></i> Check Answers
+                    </button>
+                </div>
+            </div>
+
+            <!-- Exercise 3 -->
+            <div class="exercise-container bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-check-double text-indigo-500 mr-2"></i> Exercise 3: Choose the correct answers
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">1. Minh is interested in painting, <span class="underline">so / but</span> yesterday he decided to join the arts and crafts club.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'so')">
+                                so
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'but')">
+                                but
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">2. Life in the city seems to be more comfortable, <span class="underline">otherwise / but</span> I prefer life in the countryside.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'otherwise')">
+                                otherwise
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'but')">
+                                but
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">3. She tries to focus more on her studies; <span class="underline">therefore / otherwise</span>, she won't pass her exams.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'therefore')">
+                                therefore
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'otherwise')">
+                                otherwise
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">4. During harvest time, farmers have to get up earlier, <span class="underline">and / so</span> they have to work harder.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'and')">
+                                and
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'so')">
+                                so
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">5. Parents now have higher expectations of their children; <span class="underline">therefore / for</span>, children are under more pressure than before.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'therefore')">
+                                therefore
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'for')">
+                                for
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">6. He didn't set an alarm last night, <span class="underline">so / otherwise</span> he woke up late for school.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'so')">
+                                so
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'otherwise')">
+                                otherwise
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">7. Linda loves outdoor activities, <span class="underline">but / and</span> she rarely has free time to enjoy them.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'but')">
+                                but
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'and')">
+                                and
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">8. You should wear a jacket; <span class="underline">otherwise / therefore</span>, you will catch a cold.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'otherwise')">
+                                otherwise
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'therefore')">
+                                therefore
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">9. My brother studies engineering, <span class="underline">and / but</span> my sister wants to be a doctor.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'and')">
+                                and
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'but')">
+                                but
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question-group">
+                        <p class="text-gray-700 mb-2">10. The traffic was terrible; <span class="underline">therefore / however</span>, we arrived at the meeting late.</p>
+                        <div class="flex space-x-4">
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'therefore')">
+                                therefore
+                            </button>
+                            <button class="answer-option px-4 py-2 border rounded-lg" onclick="checkAnswerExercise3(this, 'however')">
+                                however
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit and Score Section -->
+        <div class="mt-12 bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <i class="fas fa-trophy text-yellow-500 mr-2"></i> Submit and Get Your Score
+            </h2>
+            <div class="text-center">
+                <button onclick="submitAllExercises()" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-lg font-semibold">
+                    <i class="fas fa-paper-plane mr-2"></i> Submit All Exercises
+                </button>
+                
+                <div id="scoreResults" class="mt-6 hidden">
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4">Your Results</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-white p-4 rounded-lg border border-blue-200 text-center">
+                                <div class="text-3xl font-bold text-blue-600" id="exercise1Score">0/0</div>
+                                <div class="text-sm text-gray-600">Exercise 1</div>
+                                <div class="text-xs text-gray-500">Multiple Choice</div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-blue-200 text-center">
+                                <div class="text-3xl font-bold text-blue-600" id="exercise2Score">0/0</div>
+                                <div class="text-sm text-gray-600">Exercise 2</div>
+                                <div class="text-xs text-gray-500">Fill in Blanks</div>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-blue-200 text-center">
+                                <div class="text-3xl font-bold text-blue-600" id="exercise3Score">0/0</div>
+                                <div class="text-sm text-gray-600">Exercise 3</div>
+                                <div class="text-xs text-gray-500">Choose Between</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border border-blue-200 text-center">
+                            <div class="text-4xl font-bold text-green-600" id="totalScore">0/0</div>
+                            <div class="text-lg text-gray-700">Total Score</div>
+                            <div class="text-sm text-gray-500" id="percentageScore">0%</div>
+                        </div>
+                        
+                        <div class="mt-4 text-center">
+                            <button onclick="resetAllExercises()" class="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition">
+                                <i class="fas fa-redo mr-2"></i> Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>© 2023 English Learning Exercises. Practice makes perfect!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Correct answers for Exercise 1
+        const exercise1Answers = {
+            '1': 'A', '2': 'B', '3': 'B', '4': 'A', '5': 'C',
+            '6': 'A', '7': 'C', '8': 'A', '9': 'B', '10': 'A',
+            '11': 'B', '12': 'B', '13': 'A'
+        };
+
+        // Correct answers for Exercise 3
+        const exercise3Answers = {
+            '1': 'so', '2': 'but', '3': 'otherwise', '4': 'and', '5': 'therefore',
+            '6': 'so', '7': 'but', '8': 'otherwise', '9': 'and', '10': 'therefore'
+        };
+
+        function checkAnswer(button, selectedOption) {
+            // Get question number from the parent question group
+            const questionNumber = button.closest('.question-group').querySelector('p').textContent.match(/\d+/)[0];
+            
+            // Check if answer is correct
+            const isCorrect = exercise1Answers[questionNumber] === selectedOption;
+            
+            // Reset all options in this question
+            const options = button.closest('.question-group').querySelectorAll('.answer-option');
+            options.forEach(opt => {
+                opt.classList.remove('correct-answer', 'incorrect-answer');
+            });
+            
+            // Style the selected button
+            if (isCorrect) {
+                button.classList.add('correct-answer');
+            } else {
+                button.classList.add('incorrect-answer');
+                
+                // Highlight the correct answer
+                const correctOption = exercise1Answers[questionNumber];
+                options.forEach(opt => {
+                    if (opt.textContent.includes(correctOption)) {
+                        opt.classList.add('correct-answer');
+                    }
+                });
+            }
+        }
+
+        function checkAnswerExercise3(button, selectedOption) {
+            // Get question number from the parent question group
+            const questionNumber = button.closest('.question-group').querySelector('p').textContent.match(/\d+/)[0];
+            
+            // Check if answer is correct
+            const isCorrect = exercise3Answers[questionNumber] === selectedOption;
+            
+            // Reset all options in this question
+            const options = button.closest('.question-group').querySelectorAll('.answer-option');
+            options.forEach(opt => {
+                opt.classList.remove('correct-answer', 'incorrect-answer');
+            });
+            
+            // Style the selected button
+            if (isCorrect) {
+                button.classList.add('correct-answer');
+            } else {
+                button.classList.add('incorrect-answer');
+                
+                // Highlight the correct answer
+                const correctOption = exercise3Answers[questionNumber];
+                options.forEach(opt => {
+                    if (opt.textContent.includes(correctOption)) {
+                        opt.classList.add('correct-answer');
+                    }
+                });
+            }
+        }
+
+        function checkFillInAnswers() {
+            const inputs = document.querySelectorAll('[data-answer]');
+            inputs.forEach(input => {
+                const correctAnswer = input.getAttribute('data-answer');
+                const userAnswer = input.value.trim().toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('correct-answer');
+                    input.classList.remove('incorrect-answer');
+                } else {
+                    input.classList.add('incorrect-answer');
+                    input.classList.remove('correct-answer');
+                }
+            });
+        }
+
+        // Submit and scoring functions
+        function submitAllExercises() {
+            // Calculate Exercise 1 score (Multiple Choice)
+            let exercise1Correct = 0;
+            const exercise1Questions = document.querySelectorAll('.exercise-container:nth-child(1) .question-group');
+            exercise1Questions.forEach((question, index) => {
+                const questionNumber = index + 1;
+                const selectedButton = question.querySelector('.answer-option.correct-answer, .answer-option.incorrect-answer');
+                if (selectedButton) {
+                    const selectedOption = selectedButton.textContent.match(/[ABC]/)[0];
+                    if (exercise1Answers[questionNumber] === selectedOption) {
+                        exercise1Correct++;
+                    }
+                }
+            });
+
+            // Calculate Exercise 2 score (Fill in Blanks)
+            let exercise2Correct = 0;
+            const exercise2Inputs = document.querySelectorAll('.exercise-container:nth-child(2) input[data-answer]');
+            exercise2Inputs.forEach(input => {
+                const correctAnswer = input.getAttribute('data-answer');
+                const userAnswer = input.value.trim().toLowerCase();
+                if (userAnswer === correctAnswer) {
+                    exercise2Correct++;
+                }
+            });
+
+            // Calculate Exercise 3 score (Choose Between)
+            let exercise3Correct = 0;
+            const exercise3Questions = document.querySelectorAll('.exercise-container:nth-child(3) .question-group');
+            exercise3Questions.forEach((question, index) => {
+                const questionNumber = index + 1;
+                const selectedButton = question.querySelector('.answer-option.correct-answer, .answer-option.incorrect-answer');
+                if (selectedButton) {
+                    const selectedOption = selectedButton.textContent.trim();
+                    if (exercise3Answers[questionNumber] === selectedOption) {
+                        exercise3Correct++;
+                    }
+                }
+            });
+
+            // Calculate totals
+            const exercise1Total = exercise1Questions.length;
+            const exercise2Total = exercise2Inputs.length;
+            const exercise3Total = exercise3Questions.length;
+            const totalCorrect = exercise1Correct + exercise2Correct + exercise3Correct;
+            const totalQuestions = exercise1Total + exercise2Total + exercise3Total;
+            const percentage = Math.round((totalCorrect / totalQuestions) * 100);
+
+            // Display scores
+            document.getElementById('exercise1Score').textContent = `${exercise1Correct}/${exercise1Total}`;
+            document.getElementById('exercise2Score').textContent = `${exercise2Correct}/${exercise2Total}`;
+            document.getElementById('exercise3Score').textContent = `${exercise3Correct}/${exercise3Total}`;
+            document.getElementById('totalScore').textContent = `${totalCorrect}/${totalQuestions}`;
+            document.getElementById('percentageScore').textContent = `${percentage}%`;
+
+            // Show results
+            document.getElementById('scoreResults').classList.remove('hidden');
+
+            // Scroll to results
+            document.getElementById('scoreResults').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetAllExercises() {
+            // Reset Exercise 1
+            const exercise1Buttons = document.querySelectorAll('.exercise-container:nth-child(1) .answer-option');
+            exercise1Buttons.forEach(button => {
+                button.classList.remove('correct-answer', 'incorrect-answer');
+            });
+
+            // Reset Exercise 2
+            const exercise2Inputs = document.querySelectorAll('.exercise-container:nth-child(2) input[data-answer]');
+            exercise2Inputs.forEach(input => {
+                input.value = '';
+                input.classList.remove('correct-answer', 'incorrect-answer');
+            });
+
+            // Reset Exercise 3
+            const exercise3Buttons = document.querySelectorAll('.exercise-container:nth-child(3) .answer-option');
+            exercise3Buttons.forEach(button => {
+                button.classList.remove('correct-answer', 'incorrect-answer');
+            });
+
+            // Hide results
+            document.getElementById('scoreResults').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
