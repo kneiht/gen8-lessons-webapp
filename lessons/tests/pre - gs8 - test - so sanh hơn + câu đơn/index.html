@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .correct-answer {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        .incorrect-answer {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+        }
+        .score-display {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-indigo-700 mb-2">English Grammar Test</h1>
+            <p class="text-gray-600">Complete the following exercises carefully</p>
+        </header>
+
+        <form id="testForm">
+            <!-- Exercise 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold text-indigo-600 mb-4 flex items-center">
+                    <i class="fas fa-pen-alt mr-2"></i> Exercise 1: Rewrite the sentences (use the given adverb)
+                </h2>
+                <p class="text-gray-600 mb-4">Example: Nam runs faster than Minh. → Minh runs <span class="font-semibold">more slowly than Nam</span>.</p>
+                
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">Nam runs faster than Minh.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 Minh runs</span>
+                            <input type="text" name="ex1_1" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(slowly)">
+                            <span class="ml-2">than Nam.</span>
+                        </div>
+                    </div>
+                    
+
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">A buffalo walks more slowly than a horse.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 A horse walks</span>
+                            <input type="text" name="ex1_3" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(fast)">
+                            <span class="ml-2">than a buffalo.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">John answers the teacher's questions more quickly than Peter.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 Peter answers the questions</span>
+                            <input type="text" name="ex1_4" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(slowly)">
+                            <span class="ml-2">than John.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">I get up later than my mother.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 My mother gets up</span>
+                            <input type="text" name="ex1_5" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(early)">
+                            <span class="ml-2">than me.</span>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <!-- Exercise 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold text-indigo-600 mb-4 flex items-center">
+                    <i class="fas fa-pen-alt mr-2"></i> Exercise 2: Rewrite the sentences (use the given adverb)
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">The red car can run 200 km/h while the black car can run 160 km/h.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 The red car can run</span>
+                            <input type="text" name="ex2_1" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(fast)">
+                            <span class="ml-2">than the black car.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">Nick can jump 1.5 m high while Tom can jump only 1.3 m.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 Nick can jump</span>
+                            <input type="text" name="ex2_2" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(high)">
+                            <span class="ml-2">than Tom.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">Mai and Hoa both did well on the exam. Hoa got 80% of the answers correct and Mai got 90%.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 Mai did</span>
+                            <input type="text" name="ex2_3" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(well)">
+                            <span class="ml-2">than Hoa.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">My dad expected the workers to arrive at 7 a.m., but they arrived at 6:30 a.m.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 The workers arrived</span>
+                            <input type="text" name="ex2_4" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(early)">
+                            <span class="ml-2">than expected.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                        <p class="w-full sm:w-1/2 mb-2 sm:mb-0">The buses run every 15 minutes. The trains run every 30 minutes.</p>
+                        <div class="w-full sm:w-1/2 flex items-center">
+                            <span class="mr-2">👉 The buses run</span>
+                            <input type="text" name="ex2_5" class="border border-gray-300 rounded px-3 py-2 w-full" placeholder="(frequently)">
+                            <span class="ml-2">than the trains.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Exercise 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold text-indigo-600 mb-4 flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i> Exercise 4: Choose the correct answers
+                </h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <p class="mb-2">1. Lan wants to join the school music club; ______, she can't sing or play any instruments.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_1" value="a" class="mr-2"> a. and
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_1" value="b" class="mr-2"> b. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_1" value="c" class="mr-2"> c. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_1" value="d" class="mr-2"> d. therefore
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">2. Schoolwork causes teens a lot of pressure, ______ they also feel pressure from their parents.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_2" value="a" class="mr-2"> a. and
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_2" value="b" class="mr-2"> b. but
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_2" value="c" class="mr-2"> c. or
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_2" value="d" class="mr-2"> d. otherwise
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">3. She wanted to prepare for the exam; ______, she turned off her mobile phone.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_3" value="a" class="mr-2"> a. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_3" value="b" class="mr-2"> b. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_3" value="c" class="mr-2"> c. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_3" value="d" class="mr-2"> d. but
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">4. He was very tired; ______, he finished his homework before going to bed.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_4" value="a" class="mr-2"> a. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_4" value="b" class="mr-2"> b. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_4" value="c" class="mr-2"> c. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_4" value="d" class="mr-2"> d. and
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">5. The film was long; ______, it was very interesting.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_5" value="a" class="mr-2"> a. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_5" value="b" class="mr-2"> b. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_5" value="c" class="mr-2"> c. and
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_5" value="d" class="mr-2"> d. but
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">6. You should eat more vegetables; ______, you may not be healthy.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_6" value="a" class="mr-2"> a. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_6" value="b" class="mr-2"> b. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_6" value="c" class="mr-2"> c. but
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_6" value="d" class="mr-2"> d. and
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">7. She wanted to buy the shoes; ______, they were too expensive.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_7" value="a" class="mr-2"> a. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_7" value="b" class="mr-2"> b. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_7" value="c" class="mr-2"> c. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_7" value="d" class="mr-2"> d. and
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">8. It rained heavily last night; ______, the football match was canceled.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_8" value="a" class="mr-2"> a. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_8" value="b" class="mr-2"> b. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_8" value="c" class="mr-2"> c. and
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_8" value="d" class="mr-2"> d. but
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">9. He forgot to set the alarm; ______, he was late for school.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_9" value="a" class="mr-2"> a. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_9" value="b" class="mr-2"> b. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_9" value="c" class="mr-2"> c. but
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_9" value="d" class="mr-2"> d. however
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">10. We must leave now; ______, we'll miss the train.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_10" value="a" class="mr-2"> a. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_10" value="b" class="mr-2"> b. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_10" value="c" class="mr-2"> c. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_10" value="d" class="mr-2"> d. and
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">11. Mary loves reading books; ______, her brother enjoys playing sports.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_11" value="a" class="mr-2"> a. and
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_11" value="b" class="mr-2"> b. but
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_11" value="c" class="mr-2"> c. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_11" value="d" class="mr-2"> d. so
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">12. The room was very small; ______, it was clean and comfortable.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_12" value="a" class="mr-2"> a. however
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_12" value="b" class="mr-2"> b. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_12" value="c" class="mr-2"> c. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_12" value="d" class="mr-2"> d. so
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="mb-2">13. They studied hard; ______, they passed the exam with high scores.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_13" value="a" class="mr-2"> a. otherwise
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_13" value="b" class="mr-2"> b. therefore
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_13" value="c" class="mr-2"> c. but
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="ex4_13" value="d" class="mr-2"> d. however
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mb-8">
+                <button type="button" id="submitBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center mx-auto">
+                    <i class="fas fa-paper-plane mr-2"></i> Submit Test
+                </button>
+            </div>
+        </form>
+
+        <!-- Results Section (initially hidden) -->
+        <div id="resultsSection" class="hidden bg-white rounded-lg shadow-md p-6 mb-8 score-display">
+            <h2 class="text-xl font-semibold text-indigo-600 mb-4 flex items-center">
+                <i class="fas fa-chart-bar mr-2"></i> Test Results
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-indigo-50 p-4 rounded-lg text-center">
+                    <p class="text-sm text-indigo-600">Total Questions</p>
+                    <p class="text-2xl font-bold text-indigo-700" id="totalQuestions">21</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg text-center">
+                    <p class="text-sm text-green-600">Correct Answers</p>
+                    <p class="text-2xl font-bold text-green-700" id="correctAnswers">0</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <p class="text-sm text-blue-600">Your Score</p>
+                    <p class="text-2xl font-bold text-blue-700" id="scorePercentage">0%</p>
+                </div>
+            </div>
+            
+            <div id="detailedResults" class="space-y-4">
+                <!-- Detailed results will be inserted here by JavaScript -->
+            </div>
+            
+            <div class="mt-6 text-center">
+                <button id="tryAgainBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-300 inline-flex items-center">
+                    <i class="fas fa-redo mr-2"></i> Try Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('submitBtn');
+            const resultsSection = document.getElementById('resultsSection');
+            const tryAgainBtn = document.getElementById('tryAgainBtn');
+            const testForm = document.getElementById('testForm');
+            
+            // Correct answers
+            const correctAnswers = {
+                // Exercise 1
+                ex1_1: "more slowly",
+                ex1_3: "faster",
+                ex1_4: "more slowly",
+                ex1_5: "earlier",
+                
+                // Exercise 2
+                ex2_1: "faster",
+                ex2_2: "higher",
+                ex2_3: "better",
+                ex2_4: "earlier",
+                ex2_5: "more frequently",
+                
+
+                
+                // Exercise 4
+                ex4_1: "b",
+                ex4_2: "a",
+                ex4_3: "c",
+                ex4_4: "a",
+                ex4_5: "a",
+                ex4_6: "b",
+                ex4_7: "a",
+                ex4_8: "a",
+                ex4_9: "b",
+                ex4_10: "a",
+                ex4_11: "b",
+                ex4_12: "a",
+                ex4_13: "b"
+            };
+            
+            // Alternative correct answers (variations)
+            const alternativeAnswers = {
+                ex1_1: ["worse", "more badly"],
+                ex1_3: ["more quickly"],
+                ex1_4: ["less quickly", "slower"],
+                ex1_5: ["sooner"],
+
+            };
+            
+            submitBtn.addEventListener('click', function() {
+                let score = 0;
+                const totalQuestions = 21;
+                const detailedResults = [];
+                
+                // Check Exercise 1-3 (text inputs)
+                for (let i = 1; i <= 3; i++) {
+                    const exercisePrefix = `ex${i}_`;
+                    
+                    for (let j = 1; j <= 5; j++) {
+                        const questionId = `${exercisePrefix}${j}`;
+                        if (questionId in correctAnswers) {
+                            const inputElement = document.querySelector(`input[name="${questionId}"]`);
+                            const userAnswer = inputElement ? inputElement.value.trim().toLowerCase() : '';
+                            const correctAnswer = correctAnswers[questionId].toLowerCase();
+                            
+                            let isCorrect = false;
+                            
+                            // Check if answer matches either the main correct answer or any alternative
+                            if (userAnswer === correctAnswer) {
+                                isCorrect = true;
+                            } else if (questionId in alternativeAnswers) {
+                                for (const altAnswer of alternativeAnswers[questionId]) {
+                                    if (userAnswer === altAnswer.toLowerCase()) {
+                                        isCorrect = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            
+                            if (isCorrect) {
+                                score++;
+                                if (inputElement) {
+                                    inputElement.classList.add('correct-answer');
+                                    inputElement.classList.remove('incorrect-answer');
+                                }
+                            } else {
+                                if (inputElement) {
+                                    inputElement.classList.add('incorrect-answer');
+                                    inputElement.classList.remove('correct-answer');
+                                }
+                            }
+                            
+                            // Prepare detailed result for this question
+                            detailedResults.push({
+                                question: getQuestionText(questionId),
+                                userAnswer: userAnswer || '(no answer)',
+                                correctAnswer: correctAnswer,
+                                isCorrect: isCorrect
+                            });
+                        }
+                    }
+                }
+                
+                // Check Exercise 4 (radio buttons)
+                for (let i = 1; i <= 13; i++) {
+                    const questionId = `ex4_${i}`;
+                    const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                    const userAnswer = selectedOption ? selectedOption.value : '';
+                    const correctAnswer = correctAnswers[questionId];
+                    const isCorrect = userAnswer === correctAnswer;
+                    
+                    if (isCorrect) {
+                        score++;
+                    }
+                    
+                    // Highlight correct answer if user got it wrong
+                    if (selectedOption) {
+                        if (isCorrect) {
+                            selectedOption.parentElement.classList.add('text-green-600', 'font-semibold');
+                        } else {
+                            selectedOption.parentElement.classList.add('text-red-600', 'font-semibold');
+                            // Highlight the correct answer
+                            document.querySelectorAll(`input[name="${questionId}"]`).forEach(option => {
+                                if (option.value === correctAnswer) {
+                                    option.parentElement.classList.add('text-green-600', 'font-semibold');
+                                }
+                            });
+                        }
+                    } else {
+                        // If no answer selected, just highlight the correct one
+                        document.querySelectorAll(`input[name="${questionId}"]`).forEach(option => {
+                            if (option.value === correctAnswer) {
+                                option.parentElement.classList.add('text-green-600', 'font-semibold');
+                            }
+                        });
+                    }
+                    
+                    // Prepare detailed result for this question
+                    detailedResults.push({
+                        question: getQuestionText(questionId),
+                        userAnswer: userAnswer ? `Option ${userAnswer.toUpperCase()}` : '(no answer)',
+                        correctAnswer: `Option ${correctAnswer.toUpperCase()}`,
+                        isCorrect: isCorrect
+                    });
+                }
+                
+                // Calculate percentage
+                const percentage = Math.round((score / totalQuestions) * 100);
+                
+                // Display results
+                document.getElementById('correctAnswers').textContent = score;
+                document.getElementById('scorePercentage').textContent = `${percentage}%`;
+                
+                // Generate detailed results
+                const detailedResultsContainer = document.getElementById('detailedResults');
+                detailedResultsContainer.innerHTML = '';
+                
+                detailedResults.forEach((result, index) => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = `p-3 rounded-lg ${result.isCorrect ? 'bg-green-50' : 'bg-red-50'}`;
+                    
+                    resultItem.innerHTML = `
+                        <p class="font-semibold ${result.isCorrect ? 'text-green-700' : 'text-red-700'}">
+                            ${index + 1}. ${result.question}
+                        </p>
+                        <p class="text-sm mt-1">Your answer: <span class="${result.isCorrect ? 'text-green-600' : 'text-red-600'}">${result.userAnswer}</span></p>
+                        ${!result.isCorrect ? `<p class="text-sm">Correct answer: <span class="text-green-600">${result.correctAnswer}</span></p>` : ''}
+                    `;
+                    
+                    detailedResultsContainer.appendChild(resultItem);
+                });
+                
+                // Show results section
+                resultsSection.classList.remove('hidden');
+                testForm.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            tryAgainBtn.addEventListener('click', function() {
+                // Reset form
+                testForm.reset();
+                
+                // Remove all highlighting
+                document.querySelectorAll('input[type="text"]').forEach(input => {
+                    input.classList.remove('correct-answer', 'incorrect-answer');
+                });
+                
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.parentElement.classList.remove('text-green-600', 'text-red-600', 'font-semibold');
+                });
+                
+                // Hide results section
+                resultsSection.classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Helper function to get question text
+            function getQuestionText(questionId) {
+                const questionMap = {
+                    ex1_1: "Rewrite: Nam runs faster than Minh. (slowly)",
+                    ex1_3: "Rewrite: A buffalo walks more slowly than a horse. (fast)",
+                    ex1_4: "Rewrite: John answers the teacher's questions more quickly than Peter. (slowly)",
+                    ex1_5: "Rewrite: I get up later than my mother. (early)",
+                    ex2_1: "Rewrite: The red car can run 200 km/h while the black car can run 160 km/h. (fast)",
+                    ex2_2: "Rewrite: Nick can jump 1.5 m high while Tom can jump only 1.3 m. (high)",
+                    ex2_3: "Rewrite: Mai and Hoa both did well on the exam. Hoa got 80% and Mai got 90%. (well)",
+                    ex2_4: "Rewrite: My dad expected the workers to arrive at 7 a.m., but they arrived at 6:30 a.m. (early)",
+                    ex2_5: "Rewrite: The buses run every 15 minutes. The trains run every 30 minutes. (frequently)",
+
+                    ex4_1: "Choose: Lan wants to join the school music club; ______, she can't sing or play any instruments.",
+                    ex4_2: "Choose: Schoolwork causes teens a lot of pressure, ______ they also feel pressure from their parents.",
+                    ex4_3: "Choose: She wanted to prepare for the exam; ______, she turned off her mobile phone.",
+                    ex4_4: "Choose: He was very tired; ______, he finished his homework before going to bed.",
+                    ex4_5: "Choose: The film was long; ______, it was very interesting.",
+                    ex4_6: "Choose: You should eat more vegetables; ______, you may not be healthy.",
+                    ex4_7: "Choose: She wanted to buy the shoes; ______, they were too expensive.",
+                    ex4_8: "Choose: It rained heavily last night; ______, the football match was canceled.",
+                    ex4_9: "Choose: He forgot to set the alarm; ______, he was late for school.",
+                    ex4_10: "Choose: We must leave now; ______, we'll miss the train.",
+                    ex4_11: "Choose: Mary loves reading books; ______, her brother enjoys playing sports.",
+                    ex4_12: "Choose: The room was very small; ______, it was clean and comfortable.",
+                    ex4_13: "Choose: They studied hard; ______, they passed the exam with high scores."
+                };
+                
+                return questionMap[questionId] || questionId;
+            }
+        });
+    </script>
+</body>
+</html>
