@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS6 Unit 1: School Vocabulary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        function adjustFontSize() {
+            const screenWidth = window.innerWidth;
+            const htmlElement = document.documentElement;
+
+            if (screenWidth <= 768) { // Mobile breakpoint
+                htmlElement.style.fontSize = '20px';
+            } else {
+                // Scale font size based on screen width, with 30px at 1680px width
+                const scaleFactor = screenWidth / 1680;
+                const fontSize = Math.max(20, Math.min(30, 30 * scaleFactor));
+                htmlElement.style.fontSize = `${fontSize}px`;
+            }
+        }
+
+        function showZoomInstructions() {
+            // Check if it's a mobile device
+            if (window.innerWidth <= 768) {
+                return;
+            }
+
+            if (localStorage.getItem('hideZoomInstructions')) {
+                return;
+            }
+
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0.95);
+                background: white;
+                padding: 25px;
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                z-index: 1000;
+                max-width: 90%;
+                width: 400px;
+                opacity: 0;
+                transition: all 0.3s ease;
+            `;
+
+            popup.innerHTML = `
+                <div style="
+                    text-align: center;
+                    margin-bottom: 20px;
+                ">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 15px;">
+                        <path d="M15 3H21V9" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 21H3V15" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 3L14 10" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 21L10 14" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3 style="
+                        margin: 0 0 15px 0;
+                        color: #1f2937;
+                        font-size: 25px;
+                        font-weight: 600;
+                    ">Hướng dẫn phóng to/thu nhỏ</h3>
+                </div>
+                <div style="
+                    background: #f3f4f6;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                ">
+                    <p style="
+                        margin: 0;
+                        color: #4b5563;
+                        font-size: 20px;
+                        line-height: 1.6;
+                    ">
+                        Bạn có thể sử dụng tổ hợp phím sau để phóng to/thu nhỏ nội dung cho phù hợp với màn hình của bạn:
+                    </p>
+                    <div style="
+                        margin-top: 12px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                    ">
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Windows</span>
+                            <span style="color: #4b5563;">Ctrl + (+/-)</span>
+                        </div>
+                        <div style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        ">
+                            <span style="
+                                background: #e5e7eb;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                font-size: 20px;
+                                color: #374151;
+                            ">Mac</span>
+                            <span style="color: #4b5563;">Command + (+/-)</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="dismissPopup" style="
+                    background: #4f46e5;
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: none;
+                    cursor: pointer;
+                    width: 100%;
+                    font-size: 15px;
+                    font-weight: 500;
+                    transition: background-color 0.2s ease;
+                ">Không hiển thị lại</button>
+            `;
+
+            document.body.appendChild(popup);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                popup.style.transform = 'translate(-50%, -50%) scale(1)';
+                popup.style.opacity = '1';
+            });
+
+            // Add hover effect to button
+            const button = document.getElementById('dismissPopup');
+            button.addEventListener('mouseover', () => {
+                button.style.backgroundColor = '#4338ca';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.backgroundColor = '#4f46e5';
+            });
+
+            button.addEventListener('click', () => {
+                popup.style.transform = 'translate(-50%, -50%) scale(0.95)';
+                popup.style.opacity = '0';
+                setTimeout(() => {
+                    localStorage.setItem('hideZoomInstructions', 'true');
+                    popup.remove();
+                }, 300);
+            });
+        }
+
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            adjustFontSize();
+            showZoomInstructions();
+            loadVocabularyData();
+        });
+
+        // Run when window is resized
+        window.addEventListener('resize', adjustFontSize);
+    </script>
+
+    <!-- Game Scripts -->
+    <script src="./games/game-utils.js"></script>
+    <script src="./games/game-manager.js"></script>
+    <script src="./games/matching-game.js"></script>
+    <script src="./games/memory-game.js"></script>
+    <script src="./games/word-scramble-game.js"></script>
+    <script src="./games/fill-blank-game.js"></script>
+    <script src="./games/multiple-choice-game.js"></script>
+    <script src="./games/typing-game.js"></script>
+    <script src="./games/crossword-game.js"></script>
+    <script src="./games/picture-quiz-game.js"></script>
+    <script src="./games/hangman-game.js"></script>
+
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.45);
+            overflow-y: auto;
+            padding: 1rem 1rem 2rem 1rem;
+        }
+
+        .vocab-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .vocab-card {
+                width: 260px;
+                min-width: 260px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .vocab-card {
+                width: calc(100vw - 60px);
+                min-width: 240px;
+                max-width: 300px;
+            }
+        }
+
+        .vocab-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .pronunciation {
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        .meaning {
+            color: #059669;
+            font-weight: 600;
+        }
+
+        .example {
+            font-style: italic;
+            color: #4b5563;
+        }
+
+        .category-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 1.5rem;
+            color: #6366f1;
+        }
+
+        .error-message {
+            color: #ef4444;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .outline-content {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .outline-item {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+        }
+
+        .outline-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-preview {
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin: 0 auto;
+        }
+
+        .slide-wrapper {
+            width: 1200px;
+            height: 1000px;
+            transform: scale(0.25);
+            transform-origin: top left;
+        }
+
+        .slide-wrapper>.slide {
+            display: block !important;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-blue-50 bg-[url('https://cdn.photoroom.com/v2/image-cache?path=gs://background-7ef44.appspot.com/backgrounds_v3/nice/31_nice.jpg')] bg-cover bg-center min-h-screen flex items-center justify-center p-2">
+
+    <div id="loading" class="loading">
+        <div>
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+            Đang tải từ vựng...
+        </div>
+    </div>
+
+    <div id="main-content" class="relative w-full max-w-6xl h-[96vh] mx-auto" style="display: none;">
+        <!-- Slide counter -->
+        <div id="slide-navigation"
+            class="absolute bottom-2 sm:bottom-full sm:top-7 right-4 z-50 flex items-center gap-2">
+            <button id="prev-slide-btn" onclick="showSlide(currentSlide - 1)"
+                class="bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="next-slide-btn" onclick="showSlide(currentSlide + 1)"
+                class="bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button id="outline-btn" onclick="toggleOutline()"
+                class="bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-indigo-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div id="slide-counter-countainer"
+                class="bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs"
+                style="font-size: 0.5rem;">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div id="outlineContent" class="outline-content">
+                <!-- Outline content will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div id="slides-container" class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Slides will be dynamically generated here -->
+        </div>
+    </div>
+
+    <script>
+        let vocabularyData = [];
+        let currentSlide = 0;
+        let slides = [];
+        let totalSlides = 0;
+        let gameManager = null;
+
+        async function loadVocabularyData() {
+            try {
+                const response = await fetch('./vocab.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to load vocabulary data: ${response.statusText}`);
+                }
+                vocabularyData = await response.json();
+
+                generateSlides();
+                initializeSlideNavigation();
+
+                // Hide loading and show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading vocabulary data:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="error-message">
+                        <h2>Lỗi tải dữ liệu</h2>
+                        <p>Không thể tải file vocab.json. Vui lòng kiểm tra:</p>
+                        <ul style="text-align: left; display: inline-block;">
+                            <li>File vocab.json có tồn tại trong cùng thư mục</li>
+                            <li>Đường dẫn file chính xác</li>
+                            <li>Cấu trúc JSON hợp lệ</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #6b7280;">
+                            Chi tiết lỗi: ${error.message}
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        function generateSlides() {
+            const slidesContainer = document.getElementById('slides-container');
+
+            // Clear existing slides
+            slidesContainer.innerHTML = '';
+
+            // Initialize Game Manager
+            gameManager = new GameManager();
+            gameManager.initializeGames();
+
+            // Generate title slide
+            const titleSlide = createTitleSlide();
+            slidesContainer.appendChild(titleSlide);
+
+            // Generate vocabulary slides (3 words per slide, keep categories separate)
+            vocabularyData.forEach(group => {
+                const words = group.words;
+
+                // Split each category into groups of 3
+                for (let i = 0; i < words.length; i += 3) {
+                    const wordsGroup = words.slice(i, i + 3).map(word => ({
+                        ...word,
+                        group: group.group,
+                        category: group.group // Add category for games
+                    }));
+                    const slide = createVocabularySlide(wordsGroup, group.group, i);
+                    slidesContainer.appendChild(slide);
+                }
+
+                // Add a random game slide after each complete category
+                try {
+                    const gameSlide = gameManager.createGameSlide(words, group.group);
+                    if (gameSlide) {
+                        slidesContainer.appendChild(gameSlide);
+                    }
+                } catch (error) {
+                    console.warn('Could not create game slide:', error);
+                }
+            });
+
+            // Update slides array and counter
+            slides = slidesContainer.querySelectorAll('.slide');
+            totalSlides = slides.length;
+        }
+
+        function createTitleSlide() {
+            const slide = document.createElement('div');
+            slide.className = 'slide active content-box px-5 py-2 rounded-2xl w-full h-full';
+
+            slide.innerHTML = `
+                <div class="flex flex-col items-center justify-center h-full text-center">
+                    <h1 class="text-2xl font-bold text-indigo-700 mb-8">GRADE 6 - UNIT 1</h1>
+                    <div class="bg-gradient-to-r from-yellow-400 to-orange-400 text-2xl md:text-4xl font-bold px-6 py-3 rounded-full mb-5 shadow-lg floating text-white">
+                        School Vocabulary
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000"
+                                alt="School Learning" class="object-cover h-52 rounded-xl floating">
+                        </div>
+                        <div class="bg-gradient-to-r from-indigo-100 to-green-200 border-l-4 border-indigo-500 py-5 px-10 text-left rounded-2xl text-2xl">
+                            <p class="font-bold text-indigo-800">Learning Goals:</p>
+                            <ul class="list-disc pl-5 text-gray-700 text-2xl">
+                                <li>Learn school supplies vocabulary</li>
+                                <li>Master school subjects and places</li>
+                                <li>Understand school-related activities</li>
+                                <li>Practice pronunciation and usage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            return slide;
+        }
+
+        function createVocabularySlide(words, groupTitle, partIndex) {
+            const slide = document.createElement('div');
+            slide.className = 'slide content-box px-5 py-2 rounded-2xl w-full h-full';
+
+            // Use the group title directly (no mixing of categories)
+            const title = groupTitle;
+
+            slide.innerHTML = `
+                <h2 class="text-3xl font-bold category-title mb-6 text-center">${title}</h2>
+                <div class="flex flex-row justify-center items-start gap-3 w-full" style="height:100%;">
+                    ${words.map(word => createVocabularyCard(word)).join('')}
+                </div>
+            `;
+
+            return slide;
+        }
+
+        function createVocabularyCard(word) {
+            // Try to get image from local images folder first, fallback to original path
+            const imagePath = getImagePath(word.image);
+            return `
+                <div class="vocab-card bg-white p-4 rounded-xl shadow-md w-1/3 flex flex-col h-full" style="height:80%;">
+                    <img src="${imagePath}" alt="${word.alt || word.english_word}" class="w-full h-40 object-cover rounded-lg mb-3 border border-1 border-gray-200" 
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=${encodeURIComponent(word.english_word)}';">
+                    <h3 class="text-xl font-bold text-gray-800">${word.english_word}</h3>
+                    <p class="pronunciation">${word.pronunciation}</p>
+                    <p class="meaning">${word.vietnamese_meaning}</p>
+                    <p class="example mt-2">"${word.example_sentence_en}"</p>
+                    <p class="example text-sm">"${word.example_sentence_vi}"</p>
+                </div>
+            `;
+        }
+
+        function getImagePath(originalImagePath) {
+            if (!originalImagePath) return 'https://via.placeholder.com/400x300/f3f4f6/9ca3af?text=No+Image';
+
+            // Extract filename from original path
+            const filename = originalImagePath
+            return filename;
+        }
+
+        function initializeSlideNavigation() {
+            const slideCounter = document.getElementById('slide-counter');
+
+            // Update the counter display with total slides
+            function updateSlideCounter() {
+                slideCounter.textContent = `${currentSlide + 1}/${totalSlides}`;
+            }
+
+            // Get initial slide from URL if present
+            function getInitialSlide() {
+                const url = new URL(window.location.href);
+                const slideParam = url.searchParams.get('slide');
+                if (slideParam) {
+                    const slideNumber = parseInt(slideParam) - 1;
+                    if (slideNumber >= 0 && slideNumber < totalSlides) {
+                        return slideNumber;
+                    }
+                }
+                return 0;
+            }
+
+            // Update URL with current slide
+            function updateURL(slideNumber) {
+                const url = new URL(window.location.href);
+                url.searchParams.set('slide', slideNumber + 1);
+                window.history.pushState({}, '', url);
+            }
+
+            // Show slide function
+            window.showSlide = function (n) {
+
+                // Check if currently in a game
+                if (gameManager && gameManager.isInGame) {
+                    console.log('Cannot navigate slides while in game. Use "Thoát Game" button to exit.');
+                    return;
+                }
+
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+
+                // Calculate new slide index
+                currentSlide = (n + totalSlides) % totalSlides;
+
+
+
+                // Show new slide
+                slides[currentSlide].classList.add('active');
+
+                // Update slide counter
+                updateSlideCounter();
+
+                // Update URL
+                updateURL(currentSlide);
+
+                // Update outline if it's open
+                if (!document.getElementById('outlineModal').classList.contains('hidden')) {
+                    generateOutline();
+                }
+            };
+
+            // Initialize with slide from URL if present
+            currentSlide = getInitialSlide();
+            showSlide(currentSlide);
+
+            // Touch swipe detection
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                // Check if currently in a game
+                if (gameManager && gameManager.isInGame) {
+                    return;
+                }
+
+                const threshold = 50;
+                const diff = touchStartX - touchEndX;
+                if (diff > threshold) {
+                    showSlide(currentSlide + 1);
+                } else if (diff < -threshold) {
+                    showSlide(currentSlide - 1);
+                }
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                // Check if currently in a game
+                if (gameManager && gameManager.isInGame) {
+                    // Only allow Escape key for outline modal
+                    if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                        toggleOutline();
+                    }
+                    return;
+                }
+
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    showSlide(currentSlide + 1);
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    showSlide(currentSlide - 1);
+                } else if (e.key === 'Escape' && !document.getElementById('outlineModal').classList.contains('hidden')) {
+                    toggleOutline();
+                }
+            });
+        }
+
+        // Outline Modal functions
+        function toggleOutline() {
+            // Check if currently in a game
+            if (gameManager && gameManager.isInGame) {
+                console.log('Cannot open outline while in game. Use "Thoát Game" button to exit.');
+                return;
+            }
+
+            const modal = document.getElementById('outlineModal');
+            const isHidden = modal.classList.contains('hidden');
+
+            if (isHidden) {
+                // Generate outline content when opening
+                generateOutline();
+            }
+
+            modal.classList.toggle('hidden');
+        }
+
+        function generateOutline() {
+            const outlineContent = document.getElementById('outlineContent');
+            outlineContent.innerHTML = '';
+            let outlineHTML = '';
+
+            slides.forEach((slide, index) => {
+                const isActive = index === currentSlide;
+                const slideClone = slide.cloneNode(true);
+
+                slideClone.classList.remove('active');
+
+                outlineHTML += `
+                    <div class="outline-item rounded-lg cursor-pointer relative ${isActive ? 'ring-2 ring-indigo-500 bg-indigo-50' : 'bg-white shadow-md'}" 
+                          onclick="goToSlide(${index})">
+                        <div class="slide-number text-xs bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full font-medium mb-2 inline-block absolute bottom-1 right-5 z-10">
+                            Slide ${index + 1}
+                        </div>
+                        <div class="slide-preview">
+                            <div class="slide-wrapper">
+                                ${slideClone.outerHTML}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            outlineContent.innerHTML = outlineHTML;
+        }
+
+        function goToSlide(slideNumber) {
+            // Check if currently in a game
+            if (gameManager && gameManager.isInGame) {
+                console.log('Cannot navigate slides while in game. Use "Thoát Game" button to exit.');
+                return;
+            }
+
+            showSlide(slideNumber);
+            toggleOutline(); // Đóng modal sau khi chuyển slide
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,808 @@
+[
+  {
+    "group": "School Supplies",
+    "words": [
+      {
+        "english_word": "school bag",
+        "pronunciation": "/skuːl bæɡ/",
+        "vietnamese_meaning": "(n): cặp sách",
+        "example_sentence_en": "I carry my books in my school bag.",
+        "example_sentence_vi": "Tôi mang sách vở trong cặp sách của mình.",
+        "image": "assets/images/school-bag.webp",
+        "alt": "Image for school bag"
+      },
+      {
+        "english_word": "pencil case",
+        "pronunciation": "/ˈpensl keɪs/",
+        "vietnamese_meaning": "(n): hộp bút",
+        "example_sentence_en": "My pencil case is blue and full of pens.",
+        "example_sentence_vi": "Hộp bút của tôi màu xanh và đầy bút.",
+        "image": "assets/images/pencil-case.webp",
+        "alt": "Image for pencil case"
+      },
+      {
+        "english_word": "pencil sharpener",
+        "pronunciation": "/ˈpensl ˈʃɑːpənə(r)/",
+        "vietnamese_meaning": "(n): gọt bút chì",
+        "example_sentence_en": "I use a pencil sharpener to sharpen my pencils.",
+        "example_sentence_vi": "Tôi dùng gọt bút chì để gọt bút chì của mình.",
+        "image": "assets/images/pencil-sharpener.webp",
+        "alt": "Image for pencil sharpener"
+      },
+      {
+        "english_word": "rubber",
+        "pronunciation": "/ˈrʌbə(r)/",
+        "vietnamese_meaning": "(n): cục tẩy",
+        "example_sentence_en": "I use a rubber to erase my mistakes.",
+        "example_sentence_vi": "Tôi dùng cục tẩy để xóa lỗi của mình.",
+        "image": "assets/images/rubber.webp",
+        "alt": "Image for rubber"
+      },
+      {
+        "english_word": "compass",
+        "pronunciation": "/ˈkʌmpəs/",
+        "vietnamese_meaning": "(n): com-pa",
+        "example_sentence_en": "We use a compass in math class.",
+        "example_sentence_vi": "Chúng tôi dùng com-pa trong giờ toán.",
+        "image": "assets/images/compass.webp",
+        "alt": "Image for compass"
+      },
+      {
+        "english_word": "calculator",
+        "pronunciation": "/ˈkælkjuleɪtə(r)/",
+        "vietnamese_meaning": "(n): máy tính",
+        "example_sentence_en": "I need a calculator for my maths homework.",
+        "example_sentence_vi": "Tôi cần một chiếc máy tính cho bài tập toán.",
+        "image": "assets/images/calculator.webp",
+        "alt": "Image for calculator"
+      },
+      {
+        "english_word": "notebook",
+        "pronunciation": "/ˈnəʊtbʊk/",
+        "vietnamese_meaning": "(n): vở",
+        "example_sentence_en": "I write new words in my notebook.",
+        "example_sentence_vi": "Tôi ghi từ mới vào vở của mình.",
+        "image": "assets/images/notebook.webp",
+        "alt": "Image for notebook"
+      },
+      {
+        "english_word": "uniform",
+        "pronunciation": "/ˈjuːnɪfɔːm/",
+        "vietnamese_meaning": "(n): đồng phục",
+        "example_sentence_en": "We wear a uniform at school every day.",
+        "example_sentence_vi": "Chúng tôi mặc đồng phục ở trường mỗi ngày.",
+        "image": "assets/images/uniform.webp",
+        "alt": "Image for uniform"
+      }
+    ]
+  },
+  {
+    "group": "School Subjects",
+    "words": [
+      {
+        "english_word": "English",
+        "pronunciation": "/ˈɪŋɡlɪʃ/",
+        "vietnamese_meaning": "(n): tiếng Anh",
+        "example_sentence_en": "We have English on Mondays.",
+        "example_sentence_vi": "Chúng tôi học tiếng Anh vào thứ Hai.",
+        "image": "assets/images/english.webp",
+        "alt": "Image for English"
+      },
+      {
+        "english_word": "Vietnamese",
+        "pronunciation": "/ˌvjetnəˈmiːz/",
+        "vietnamese_meaning": "(n): tiếng Việt",
+        "example_sentence_en": "Vietnamese is my mother tongue.",
+        "example_sentence_vi": "Tiếng Việt là tiếng mẹ đẻ của tôi.",
+        "image": "assets/images/vietnamese.webp",
+        "alt": "Image for Vietnamese"
+      },
+      {
+        "english_word": "Russian",
+        "pronunciation": "/ˈrʌʃn/",
+        "vietnamese_meaning": "(n): tiếng Nga",
+        "example_sentence_en": "My friend studies Russian at school.",
+        "example_sentence_vi": "Bạn tôi học tiếng Nga ở trường.",
+        "image": "assets/images/russian.webp",
+        "alt": "Image for Russian"
+      },
+      {
+        "english_word": "foreign language",
+        "pronunciation": "/ˈfɒrən ˈlæŋɡwɪdʒ/",
+        "vietnamese_meaning": "(n): ngoại ngữ",
+        "example_sentence_en": "English is a foreign language in Vietnam.",
+        "example_sentence_vi": "Tiếng Anh là ngoại ngữ ở Việt Nam.",
+        "image": "assets/images/foreign-language.webp",
+        "alt": "Image for foreign language"
+      },
+      {
+        "english_word": "history",
+        "pronunciation": "/ˈhɪstri/",
+        "vietnamese_meaning": "(n): lịch sử",
+        "example_sentence_en": "We learn about the past in history class.",
+        "example_sentence_vi": "Chúng tôi học về quá khứ trong giờ lịch sử.",
+        "image": "assets/images/history.webp",
+        "alt": "Image for history"
+      },
+      {
+        "english_word": "maths",
+        "pronunciation": "/mæθs/",
+        "vietnamese_meaning": "(n): toán học",
+        "example_sentence_en": "Maths is my favourite subject.",
+        "example_sentence_vi": "Toán là môn học yêu thích của tôi.",
+        "image": "assets/images/maths.webp",
+        "alt": "Image for maths"
+      },
+      {
+        "english_word": "science",
+        "pronunciation": "/ˈsaɪəns/",
+        "vietnamese_meaning": "(n): khoa học",
+        "example_sentence_en": "We do experiments in science class.",
+        "example_sentence_vi": "Chúng tôi làm thí nghiệm trong giờ khoa học.",
+        "image": "assets/images/science.webp",
+        "alt": "Image for science"
+      },
+      {
+        "english_word": "biology",
+        "pronunciation": "/baɪˈɒlədʒi/",
+        "vietnamese_meaning": "(n): sinh học",
+        "example_sentence_en": "We study plants and animals in biology.",
+        "example_sentence_vi": "Chúng tôi học về thực vật và động vật trong môn sinh học.",
+        "image": "assets/images/biology.webp",
+        "alt": "Image for biology"
+      },
+      {
+        "english_word": "art",
+        "pronunciation": "/ɑːt/",
+        "vietnamese_meaning": "(n): mỹ thuật",
+        "example_sentence_en": "I like drawing in art class.",
+        "example_sentence_vi": "Tôi thích vẽ trong giờ mỹ thuật.",
+        "image": "assets/images/art.webp",
+        "alt": "Image for art"
+      },
+      {
+        "english_word": "music",
+        "pronunciation": "/ˈmjuːzɪk/",
+        "vietnamese_meaning": "(n): âm nhạc",
+        "example_sentence_en": "We sing songs in music class.",
+        "example_sentence_vi": "Chúng tôi hát trong giờ âm nhạc.",
+        "image": "assets/images/music.webp",
+        "alt": "Image for music"
+      }
+    ]
+  },
+  {
+    "group": "School Places",
+    "words": [
+      {
+        "english_word": "classroom",
+        "pronunciation": "/ˈklɑːsruːm/",
+        "vietnamese_meaning": "(n): lớp học",
+        "example_sentence_en": "Our classroom is on the second floor.",
+        "example_sentence_vi": "Lớp học của chúng tôi ở tầng hai.",
+        "image": "assets/images/classroom.webp",
+        "alt": "Image for classroom"
+      },
+      {
+        "english_word": "computer room",
+        "pronunciation": "/kəmˈpjuːtə ruːm/",
+        "vietnamese_meaning": "(n): phòng máy tính",
+        "example_sentence_en": "We learn IT in the computer room.",
+        "example_sentence_vi": "Chúng tôi học tin học trong phòng máy tính.",
+        "image": "assets/images/computer-room.webp",
+        "alt": "Image for computer room"
+      },
+      {
+        "english_word": "library",
+        "pronunciation": "/ˈlaɪbrəri/",
+        "vietnamese_meaning": "(n): thư viện",
+        "example_sentence_en": "I borrow books from the library.",
+        "example_sentence_vi": "Tôi mượn sách từ thư viện.",
+        "image": "assets/images/library.webp",
+        "alt": "Image for library"
+      },
+      {
+        "english_word": "school garden",
+        "pronunciation": "/skuːl ˈɡɑːdn/",
+        "vietnamese_meaning": "(n): vườn trường",
+        "example_sentence_en": "We grow flowers in the school garden.",
+        "example_sentence_vi": "Chúng tôi trồng hoa trong vườn trường.",
+        "image": "assets/images/school-garden.webp",
+        "alt": "Image for school garden"
+      },
+      {
+        "english_word": "playground",
+        "pronunciation": "/ˈpleɪɡraʊnd/",
+        "vietnamese_meaning": "(n): sân chơi",
+        "example_sentence_en": "The students play football on the playground.",
+        "example_sentence_vi": "Học sinh chơi bóng đá trên sân chơi.",
+        "image": "assets/images/playground.webp",
+        "alt": "Image for playground"
+      },
+      {
+        "english_word": "swimming pool",
+        "pronunciation": "/ˈswɪmɪŋ puːl/",
+        "vietnamese_meaning": "(n): bể bơi",
+        "example_sentence_en": "We have swimming lessons in the swimming pool.",
+        "example_sentence_vi": "Chúng tôi học bơi ở bể bơi.",
+        "image": "assets/images/swimming-pool.webp",
+        "alt": "Image for swimming pool"
+      },
+      {
+        "english_word": "greenhouse",
+        "pronunciation": "/ˈɡriːnhaʊs/",
+        "vietnamese_meaning": "(n): nhà kính",
+        "example_sentence_en": "There are many plants in the greenhouse.",
+        "example_sentence_vi": "Có nhiều cây trong nhà kính.",
+        "image": "assets/images/greenhouse.webp",
+        "alt": "Image for greenhouse"
+      },
+      {
+        "english_word": "farm",
+        "pronunciation": "/fɑːm/",
+        "vietnamese_meaning": "(n): trang trại",
+        "example_sentence_en": "We visit a farm for our biology lesson.",
+        "example_sentence_vi": "Chúng tôi thăm trang trại cho bài học sinh học.",
+        "image": "assets/images/farm.webp",
+        "alt": "Image for farm"
+      }
+    ]
+  },
+  {
+    "group": "Types of Schools",
+    "words": [
+      {
+        "english_word": "primary school",
+        "pronunciation": "/ˈpraɪməri skuːl/",
+        "vietnamese_meaning": "(n): trường tiểu học",
+        "example_sentence_en": "My brother goes to primary school.",
+        "example_sentence_vi": "Em trai tôi học trường tiểu học.",
+        "image": "assets/images/primary-school.webp",
+        "alt": "Image for primary school"
+      },
+      {
+        "english_word": "lower secondary school",
+        "pronunciation": "/ˈləʊə ˌsekənˈderi skuːl/",
+        "vietnamese_meaning": "(n): trường trung học cơ sở",
+        "example_sentence_en": "I am a student at a lower secondary school.",
+        "example_sentence_vi": "Tôi là học sinh trường trung học cơ sở.",
+        "image": "assets/images/lower-secondary-school.webp",
+        "alt": "Image for lower secondary school"
+      },
+      {
+        "english_word": "boarding school",
+        "pronunciation": "/ˈbɔːdɪŋ skuːl/",
+        "vietnamese_meaning": "(n): trường nội trú",
+        "example_sentence_en": "Students live and study at a boarding school.",
+        "example_sentence_vi": "Học sinh sống và học tập tại trường nội trú.",
+        "image": "assets/images/boarding-school.webp",
+        "alt": "Image for boarding school"
+      },
+      {
+        "english_word": "international school",
+        "pronunciation": "/ˌɪntəˈnæʃnəl skuːl/",
+        "vietnamese_meaning": "(n): trường quốc tế",
+        "example_sentence_en": "She studies English at an international school.",
+        "example_sentence_vi": "Cô ấy học tiếng Anh ở trường quốc tế.",
+        "image": "assets/images/international-school.webp",
+        "alt": "Image for international school"
+      }
+    ]
+  },
+  {
+    "group": "People at School",
+    "words": [
+      {
+        "english_word": "student",
+        "pronunciation": "/ˈstjuːdnt/",
+        "vietnamese_meaning": "(n): học sinh",
+        "example_sentence_en": "Each student has a timetable.",
+        "example_sentence_vi": "Mỗi học sinh đều có thời khóa biểu.",
+        "image": "assets/images/student.webp",
+        "alt": "Image for student"
+      },
+      {
+        "english_word": "classmate",
+        "pronunciation": "/ˈklɑːsmeɪt/",
+        "vietnamese_meaning": "(n): bạn cùng lớp",
+        "example_sentence_en": "My classmate helps me with my homework.",
+        "example_sentence_vi": "Bạn cùng lớp giúp tôi làm bài tập về nhà.",
+        "image": "assets/images/classmate.webp",
+        "alt": "Image for classmate"
+      },
+      {
+        "english_word": "friend",
+        "pronunciation": "/frend/",
+        "vietnamese_meaning": "(n): bạn bè",
+        "example_sentence_en": "I have many friends at school.",
+        "example_sentence_vi": "Tôi có nhiều bạn ở trường.",
+        "image": "assets/images/friend.webp",
+        "alt": "Image for friend"
+      },
+      {
+        "english_word": "teacher",
+        "pronunciation": "/ˈtiːtʃə(r)/",
+        "vietnamese_meaning": "(n): giáo viên",
+        "example_sentence_en": "Our teacher is very kind.",
+        "example_sentence_vi": "Giáo viên của chúng tôi rất tốt bụng.",
+        "image": "assets/images/teacher.webp",
+        "alt": "Image for teacher"
+      }
+    ]
+  },
+  {
+    "group": "Locations",
+    "words": [
+      {
+        "english_word": "village",
+        "pronunciation": "/ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng",
+        "example_sentence_en": "My school is in a small village.",
+        "example_sentence_vi": "Trường của tôi ở một ngôi làng nhỏ.",
+        "image": "assets/images/village.webp",
+        "alt": "Image for village"
+      },
+      {
+        "english_word": "town",
+        "pronunciation": "/taʊn/",
+        "vietnamese_meaning": "(n): thị trấn",
+        "example_sentence_en": "She lives in a busy town.",
+        "example_sentence_vi": "Cô ấy sống ở một thị trấn nhộn nhịp.",
+        "image": "assets/images/town.webp",
+        "alt": "Image for town"
+      },
+      {
+        "english_word": "country",
+        "pronunciation": "/ˈkʌntri/",
+        "vietnamese_meaning": "(n): đất nước, nông thôn",
+        "example_sentence_en": "I like living in the country.",
+        "example_sentence_vi": "Tôi thích sống ở nông thôn.",
+        "image": "assets/images/country.webp",
+        "alt": "Image for country"
+      },
+      {
+        "english_word": "city",
+        "pronunciation": "/ˈsɪti/",
+        "vietnamese_meaning": "(n): thành phố",
+        "example_sentence_en": "Hanoi is a big city.",
+        "example_sentence_vi": "Hà Nội là một thành phố lớn.",
+        "image": "assets/images/city.webp",
+        "alt": "Image for city"
+      },
+      {
+        "english_word": "mountain",
+        "pronunciation": "/ˈmaʊntən/",
+        "vietnamese_meaning": "(n): núi",
+        "example_sentence_en": "There are mountains around my school.",
+        "example_sentence_vi": "Có những ngọn núi xung quanh trường tôi.",
+        "image": "assets/images/mountain.webp",
+        "alt": "Image for mountain"
+      },
+      {
+        "english_word": "green field",
+        "pronunciation": "/ɡriːn fiːld/",
+        "vietnamese_meaning": "(n): cánh đồng xanh",
+        "example_sentence_en": "The school is near green fields.",
+        "example_sentence_vi": "Trường học gần những cánh đồng xanh.",
+        "image": "assets/images/green-field.webp",
+        "alt": "Image for green field"
+      }
+    ]
+  },
+  {
+    "group": "Food and Meals",
+    "words": [
+      {
+        "english_word": "breakfast",
+        "pronunciation": "/ˈbrekfəst/",
+        "vietnamese_meaning": "(n): bữa sáng",
+        "example_sentence_en": "I have breakfast at 6:30 a.m.",
+        "example_sentence_vi": "Tôi ăn sáng lúc 6 giờ 30.",
+        "image": "assets/images/breakfast.webp",
+        "alt": "Image for breakfast"
+      },
+      {
+        "english_word": "lunch",
+        "pronunciation": "/lʌntʃ/",
+        "vietnamese_meaning": "(n): bữa trưa",
+        "example_sentence_en": "We eat lunch at school.",
+        "example_sentence_vi": "Chúng tôi ăn trưa ở trường.",
+        "image": "assets/images/lunch.webp",
+        "alt": "Image for lunch"
+      },
+      {
+        "english_word": "dinner",
+        "pronunciation": "/ˈdɪnə(r)/",
+        "vietnamese_meaning": "(n): bữa tối",
+        "example_sentence_en": "My family has dinner together.",
+        "example_sentence_vi": "Gia đình tôi ăn tối cùng nhau.",
+        "image": "assets/images/dinner.webp",
+        "alt": "Image for dinner"
+      },
+      {
+        "english_word": "snack",
+        "pronunciation": "/snæk/",
+        "vietnamese_meaning": "(n): bữa ăn nhẹ",
+        "example_sentence_en": "I have a snack at break time.",
+        "example_sentence_vi": "Tôi ăn nhẹ vào giờ ra chơi.",
+        "image": "assets/images/snack.webp",
+        "alt": "Image for snack"
+      }
+    ]
+  },
+  {
+    "group": "Describing Words",
+    "words": [
+      {
+        "english_word": "small",
+        "pronunciation": "/smɔːl/",
+        "vietnamese_meaning": "(adj): nhỏ",
+        "example_sentence_en": "My classroom is small but nice.",
+        "example_sentence_vi": "Lớp học của tôi nhỏ nhưng đẹp.",
+        "image": "assets/images/small.webp",
+        "alt": "Image for small"
+      },
+      {
+        "english_word": "large",
+        "pronunciation": "/lɑːdʒ/",
+        "vietnamese_meaning": "(adj): lớn",
+        "example_sentence_en": "The playground is very large.",
+        "example_sentence_vi": "Sân chơi rất lớn.",
+        "image": "assets/images/large.webp",
+        "alt": "Image for large"
+      },
+      {
+        "english_word": "heavy",
+        "pronunciation": "/ˈhevi/",
+        "vietnamese_meaning": "(adj): nặng",
+        "example_sentence_en": "My school bag is heavy.",
+        "example_sentence_vi": "Cặp sách của tôi nặng.",
+        "image": "assets/images/heavy.webp",
+        "alt": "Image for heavy"
+      },
+      {
+        "english_word": "smart",
+        "pronunciation": "/smɑːt/",
+        "vietnamese_meaning": "(adj): bảnh bao (mặc đồ)",
+        "example_sentence_en": "You look smart.",
+        "example_sentence_vi": "Bạn nhìn bảnh bao ghê.",
+        "image": "assets/images/smart-look.webp",
+        "alt": "Image for smart"
+      },
+      {
+        "english_word": "healthy",
+        "pronunciation": "/ˈhelθi/",
+        "vietnamese_meaning": "(adj): khỏe mạnh",
+        "example_sentence_en": "Doing exercise keeps us healthy.",
+        "example_sentence_vi": "Tập thể dục giúp chúng ta khỏe mạnh.",
+        "image": "assets/images/healthy.webp",
+        "alt": "Image for healthy"
+      },
+      {
+        "english_word": "interesting",
+        "pronunciation": "/ˈɪntrəstɪŋ/",
+        "vietnamese_meaning": "(adj): thú vị",
+        "example_sentence_en": "This book is very interesting.",
+        "example_sentence_vi": "Cuốn sách này rất thú vị.",
+        "image": "assets/images/interesting.webp",
+        "alt": "Image for interesting"
+      },
+      {
+        "english_word": "favourite",
+        "pronunciation": "/ˈfeɪvərɪt/",
+        "vietnamese_meaning": "(adj): yêu thích",
+        "example_sentence_en": "Maths is my favourite subject.",
+        "example_sentence_vi": "Toán là môn học yêu thích của tôi.",
+        "image": "assets/images/favourite.webp",
+        "alt": "Image for favourite"
+      },
+      {
+        "english_word": "same",
+        "pronunciation": "/seɪm/",
+        "vietnamese_meaning": "(adj): giống nhau",
+        "example_sentence_en": "We wear the same uniform.",
+        "example_sentence_vi": "Chúng tôi mặc đồng phục giống nhau.",
+        "image": "assets/images/same.webp",
+        "alt": "Image for same"
+      }
+    ]
+  },
+  {
+    "group": "Activities and Actions",
+    "words": [
+      {
+        "english_word": "go to school",
+        "pronunciation": "/ɡəʊ tuː skuːl/",
+        "vietnamese_meaning": "(v): đi học",
+        "example_sentence_en": "I go to school by bicycle.",
+        "example_sentence_vi": "Tôi đi học bằng xe đạp.",
+        "image": "assets/images/go-to-school.webp",
+        "alt": "Image for go to school"
+      },
+      {
+        "english_word": "go home",
+        "pronunciation": "/ɡəʊ həʊm/",
+        "vietnamese_meaning": "(v): về nhà",
+        "example_sentence_en": "I go home at 4 p.m.",
+        "example_sentence_vi": "Tôi về nhà lúc 4 giờ chiều.",
+        "image": "assets/images/go-home.webp",
+        "alt": "Image for go home"
+      },
+      {
+        "english_word": "go shopping",
+        "pronunciation": "/ɡəʊ ˈʃɒpɪŋ/",
+        "vietnamese_meaning": "(v): đi mua sắm",
+        "example_sentence_en": "We go shopping at the weekend.",
+        "example_sentence_vi": "Chúng tôi đi mua sắm vào cuối tuần.",
+        "image": "assets/images/go-shopping.webp",
+        "alt": "Image for go shopping"
+      },
+      {
+        "english_word": "go on holiday",
+        "pronunciation": "/ɡəʊ ɒn ˈhɒlədeɪ/",
+        "vietnamese_meaning": "(v): đi nghỉ",
+        "example_sentence_en": "We go on holiday every summer.",
+        "example_sentence_vi": "Chúng tôi đi nghỉ mỗi mùa hè.",
+        "image": "assets/images/go-on-holiday.webp",
+        "alt": "Image for go on holiday"
+      },
+      {
+        "english_word": "travel",
+        "pronunciation": "/ˈtrævl/",
+        "vietnamese_meaning": "(v): đi du lịch",
+        "example_sentence_en": "I like to travel to new places.",
+        "example_sentence_vi": "Tôi thích đi du lịch đến những nơi mới.",
+        "image": "assets/images/travel.webp",
+        "alt": "Image for travel"
+      },
+      {
+        "english_word": "walk",
+        "pronunciation": "/wɔːk/",
+        "vietnamese_meaning": "(v): đi bộ",
+        "example_sentence_en": "I walk to school every day.",
+        "example_sentence_vi": "Tôi đi bộ đến trường mỗi ngày.",
+        "image": "assets/images/walk.webp",
+        "alt": "Image for walk"
+      },
+      {
+        "english_word": "ride bicycles",
+        "pronunciation": "/raɪd ˈbaɪsɪklz/",
+        "vietnamese_meaning": "(v): đi xe đạp",
+        "example_sentence_en": "We ride bicycles to school.",
+        "example_sentence_vi": "Chúng tôi đi xe đạp đến trường.",
+        "image": "assets/images/ride-bicycles.webp",
+        "alt": "Image for ride bicycles"
+      },
+      {
+        "english_word": "take the bus",
+        "pronunciation": "/teɪk ðə bʌs/",
+        "vietnamese_meaning": "(v): đi xe buýt",
+        "example_sentence_en": "He takes the bus to school.",
+        "example_sentence_vi": "Cậu ấy đi học bằng xe buýt.",
+        "image": "assets/images/take-the-bus.webp",
+        "alt": "Image for take the bus"
+      },
+      {
+        "english_word": "play football",
+        "pronunciation": "/pleɪ ˈfʊtbɔːl/",
+        "vietnamese_meaning": "(v): chơi bóng đá",
+        "example_sentence_en": "We play football at break time.",
+        "example_sentence_vi": "Chúng tôi chơi bóng đá vào giờ ra chơi.",
+        "image": "assets/images/play-football.webp",
+        "alt": "Image for play football"
+      },
+      {
+        "english_word": "do exercise",
+        "pronunciation": "/duː ˈeksəsaɪz/",
+        "vietnamese_meaning": "(v): tập thể dục",
+        "example_sentence_en": "Doing exercise is good for your health.",
+        "example_sentence_vi": "Tập thể dục tốt cho sức khỏe của bạn.",
+        "image": "assets/images/do-exercise.webp",
+        "alt": "Image for do exercise"
+      },
+      {
+        "english_word": "study",
+        "pronunciation": "/ˈstʌdi/",
+        "vietnamese_meaning": "(v): học",
+        "example_sentence_en": "I study English every day.",
+        "example_sentence_vi": "Tôi học tiếng Anh mỗi ngày.",
+        "image": "assets/images/study.webp",
+        "alt": "Image for study"
+      },
+      {
+        "english_word": "learn",
+        "pronunciation": "/lɜːn/",
+        "vietnamese_meaning": "(v): học",
+        "example_sentence_en": "We learn new things at school.",
+        "example_sentence_vi": "Chúng tôi học những điều mới ở trường.",
+        "image": "assets/images/learn.webp",
+        "alt": "Image for learn"
+      },
+      {
+        "english_word": "teach",
+        "pronunciation": "/tiːtʃ/",
+        "vietnamese_meaning": "(v): dạy",
+        "example_sentence_en": "Our teacher teaches us maths.",
+        "example_sentence_vi": "Giáo viên dạy chúng tôi môn toán.",
+        "image": "assets/images/teach.webp",
+        "alt": "Image for teach"
+      },
+      {
+        "english_word": "paint",
+        "pronunciation": "/peɪnt/",
+        "vietnamese_meaning": "(v): vẽ tranh",
+        "example_sentence_en": "We paint pictures in art class.",
+        "example_sentence_vi": "Chúng tôi vẽ tranh trong giờ mỹ thuật.",
+        "image": "assets/images/paint.webp",
+        "alt": "Image for paint"
+      },
+      {
+        "english_word": "sing",
+        "pronunciation": "/sɪŋ/",
+        "vietnamese_meaning": "(v): hát",
+        "example_sentence_en": "We sing songs in music class.",
+        "example_sentence_vi": "Chúng tôi hát trong giờ âm nhạc.",
+        "image": "assets/images/sing.webp",
+        "alt": "Image for sing"
+      },
+      {
+        "english_word": "share",
+        "pronunciation": "/ʃeə(r)/",
+        "vietnamese_meaning": "(v): chia sẻ",
+        "example_sentence_en": "I share my lunch with my friend.",
+        "example_sentence_vi": "Tôi chia sẻ bữa trưa với bạn.",
+        "image": "assets/images/share.webp",
+        "alt": "Image for share"
+      },
+      {
+        "english_word": "remember",
+        "pronunciation": "/rɪˈmembə(r)/",
+        "vietnamese_meaning": "(v): nhớ",
+        "example_sentence_en": "I remember all my classmates' names.",
+        "example_sentence_vi": "Tôi nhớ tên tất cả các bạn cùng lớp.",
+        "image": "assets/images/remember.webp",
+        "alt": "Image for remember"
+      },
+      {
+        "english_word": "wear",
+        "pronunciation": "/weə(r)/",
+        "vietnamese_meaning": "(v): mặc",
+        "example_sentence_en": "We wear uniforms at school.",
+        "example_sentence_vi": "Chúng tôi mặc đồng phục ở trường.",
+        "image": "assets/images/wear.webp",
+        "alt": "Image for wear"
+      },
+      {
+        "english_word": "put on",
+        "pronunciation": "/pʊt ɒn/",
+        "vietnamese_meaning": "(v): mặc vào",
+        "example_sentence_en": "I put on my uniform every morning.",
+        "example_sentence_vi": "Tôi mặc đồng phục mỗi sáng.",
+        "image": "assets/images/put-on.webp",
+        "alt": "Image for put on"
+      },
+      {
+        "english_word": "listen to music",
+        "pronunciation": "/ˈlɪsn tuː ˈmjuːzɪk/",
+        "vietnamese_meaning": "(v): nghe nhạc",
+        "example_sentence_en": "She listens to music every evening.",
+        "example_sentence_vi": "Cô ấy nghe nhạc mỗi tối.",
+        "image": "assets/images/listen-to-music.webp",
+        "alt": "Image for listen to music"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "reason",
+        "pronunciation": "/ˈriːzn/",
+        "vietnamese_meaning": "(n): lý do",
+        "example_sentence_en": "What is your reason for being late?",
+        "example_sentence_vi": "Lý do bạn đến muộn là gì?",
+        "image": "assets/images/reason.webp",
+        "alt": "Image for reason"
+      },
+      {
+        "english_word": "advice",
+        "pronunciation": "/ədˈvaɪs/",
+        "vietnamese_meaning": "(n): lời khuyên",
+        "example_sentence_en": "My teacher gives me good advice.",
+        "example_sentence_vi": "Giáo viên cho tôi lời khuyên tốt.",
+        "image": "assets/images/advice.webp",
+        "alt": "Image for advice"
+      },
+      {
+        "english_word": "secret",
+        "pronunciation": "/ˈsiːkrət/",
+        "vietnamese_meaning": "(n): bí mật",
+        "example_sentence_en": "Can you keep a secret?",
+        "example_sentence_vi": "Bạn có thể giữ bí mật không?",
+        "image": "assets/images/secret.webp",
+        "alt": "Image for secret"
+      },
+      {
+        "english_word": "painting",
+        "pronunciation": "/ˈpeɪntɪŋ/",
+        "vietnamese_meaning": "(n): bức tranh",
+        "example_sentence_en": "There are many paintings in the art room.",
+        "example_sentence_vi": "Có nhiều bức tranh trong phòng mỹ thuật.",
+        "image": "assets/images/painting.webp",
+        "alt": "Image for painting"
+      },
+      {
+        "english_word": "cartoon",
+        "pronunciation": "/kɑːˈtuːn/",
+        "vietnamese_meaning": "(n): phim hoạt hình",
+        "example_sentence_en": "I like watching cartoons after school.",
+        "example_sentence_vi": "Tôi thích xem phim hoạt hình sau giờ học.",
+        "image": "assets/images/cartoon.webp",
+        "alt": "Image for cartoon"
+      },
+      {
+        "english_word": "dream",
+        "pronunciation": "/driːm/",
+        "vietnamese_meaning": "(n): giấc mơ",
+        "example_sentence_en": "My dream is to be a teacher.",
+        "example_sentence_vi": "Ước mơ của tôi là trở thành giáo viên.",
+        "image": "assets/images/dream.webp",
+        "alt": "Image for dream"
+      },
+      {
+        "english_word": "shower",
+        "pronunciation": "/ˈʃaʊə(r)/",
+        "vietnamese_meaning": "(n): vòi hoa sen, tắm",
+        "example_sentence_en": "I take a shower every morning.",
+        "example_sentence_vi": "Tôi tắm mỗi sáng.",
+        "image": "assets/images/shower.webp",
+        "alt": "Image for shower"
+      },
+      {
+        "english_word": "cinema",
+        "pronunciation": "/ˈsɪnəmə/",
+        "vietnamese_meaning": "(n): rạp chiếu phim",
+        "example_sentence_en": "We go to the cinema at the weekend.",
+        "example_sentence_vi": "Chúng tôi đi xem phim vào cuối tuần.",
+        "image": "assets/images/cinema.webp",
+        "alt": "Image for cinema"
+      },
+      {
+        "english_word": "holiday",
+        "pronunciation": "/ˈhɒlədeɪ/",
+        "vietnamese_meaning": "(n): kỳ nghỉ",
+        "example_sentence_en": "We have a long holiday in summer.",
+        "example_sentence_vi": "Chúng tôi có kỳ nghỉ dài vào mùa hè.",
+        "image": "assets/images/holiday.webp",
+        "alt": "Image for holiday"
+      },
+      {
+        "english_word": "mark",
+        "pronunciation": "/mɑːk/",
+        "vietnamese_meaning": "(n): điểm số",
+        "example_sentence_en": "I got a good mark in the exam.",
+        "example_sentence_vi": "Tôi được điểm tốt trong kỳ thi.",
+        "image": "assets/images/mark.webp",
+        "alt": "Image for mark"
+      },
+      {
+        "english_word": "exam",
+        "pronunciation": "/ɪɡˈzæm/",
+        "vietnamese_meaning": "(n): kỳ thi",
+        "example_sentence_en": "We have an English exam next week.",
+        "example_sentence_vi": "Chúng tôi có kỳ thi tiếng Anh vào tuần tới.",
+        "image": "assets/images/exam.webp",
+        "alt": "Image for exam"
+      },
+      {
+        "english_word": "break time",
+        "pronunciation": "/breɪk taɪm/",
+        "vietnamese_meaning": "(n): giờ ra chơi",
+        "example_sentence_en": "We play with friends at break time.",
+        "example_sentence_vi": "Chúng tôi chơi với bạn vào giờ ra chơi.",
+        "image": "assets/images/break-time.webp",
+        "alt": "Image for break time"
+      }
+    ]
+  }
+]

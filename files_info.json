@@ -11,6 +11,10 @@
     "tests": {
       "name": "Tests",
       "icon": "https://cdn-icons-png.flaticon.com/512/9913/9913544.png"
+    },
+    "GS6-slides": {
+      "name": "Gs6 Slides",
+      "icon": "https://example.com/icons/folder.png"
     }
   },
   "lessons": {
@@ -1036,13 +1040,6 @@
       "description": "Bài test Pre GS7 1, Danh từ, đại từ, mạo từ, lượng từ, sở hữu cách",
       "category": "tests"
     },
-    "tests/pre - gs8 - test - so sanh hơn + câu đơn": {
-      "path": "tests/pre - gs8 - test - so sanh hơn + câu đơn",
-      "title": "Pre GS8 - Simple and Compound sentences test\\",
-      "author": "Ng\\uc0\\u7885 c Di\\u7879 p",
-      "description": "Không có mô tả.",
-      "category": "tests"
-    },
     "tests/pre-gs6-final-test-paper-2": {
       "path": "tests/pre-gs6-final-test-paper-2",
       "title": "Pre GS6 - English Grammar Final Test - Paper 2",
@@ -1076,6 +1073,13 @@
       "title": "Pre GS6 - English Grammar Test 3 - Paper 1",
       "author": "Gen8",
       "description": "Trạng từ cách thức, tần suất, giới từ",
+      "category": "tests"
+    },
+    "tests/pre - gs8 - test - simple sentences - comparison": {
+      "path": "tests/pre - gs8 - test - simple sentences - comparison",
+      "title": "Pre GS8 - Simple and Compound sentences test\\",
+      "author": "Ng\\uc0\\u7885 c Di\\u7879 p",
+      "description": "Không có mô tả.",
       "category": "tests"
     },
     "tests/pre-gs6-test-1-paper-7": {
@@ -1119,6 +1123,13 @@
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
+    },
+    "GS6-slides/unit-1-vocab": {
+      "path": "GS6-slides/unit-1-vocab",
+      "title": "Global Success 6 - Unit 1 - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "GS6-slides"
     }
   }
 }
