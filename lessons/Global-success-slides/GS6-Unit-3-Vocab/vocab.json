@@ -1,0 +1,577 @@
+[
+  {
+    "group": "Body Parts",
+    "words": [
+      {
+        "english_word": "hair",
+        "pronunciation": "/heə(r)/",
+        "vietnamese_meaning": "(n): tóc",
+        "example_sentence_en": "She has long black hair.",
+        "example_sentence_vi": "Cô ấy có mái tóc dài màu đen.",
+        "image": "assets/images/hair.webp",
+        "alt": "Image for hair"
+      },
+      {
+        "english_word": "face",
+        "pronunciation": "/feɪs/",
+        "vietnamese_meaning": "(n): khuôn mặt",
+        "example_sentence_en": "He washed his face in the morning.",
+        "example_sentence_vi": "Anh ấy rửa mặt vào buổi sáng.",
+        "image": "assets/images/face.webp",
+        "alt": "Image for face"
+      },
+      {
+        "english_word": "eye",
+        "pronunciation": "/aɪ/",
+        "vietnamese_meaning": "(n): mắt",
+        "example_sentence_en": "She has blue eyes.",
+        "example_sentence_vi": "Cô ấy có đôi mắt màu xanh.",
+        "image": "assets/images/eye.webp",
+        "alt": "Image for eye"
+      },
+      {
+        "english_word": "ear",
+        "pronunciation": "/ɪə(r)/",
+        "vietnamese_meaning": "(n): tai",
+        "example_sentence_en": "He wears an earring in his left ear.",
+        "example_sentence_vi": "Anh ấy đeo khuyên tai ở tai trái.",
+        "image": "assets/images/ear.webp",
+        "alt": "Image for ear"
+      },
+      {
+        "english_word": "nose",
+        "pronunciation": "/nəʊz/",
+        "vietnamese_meaning": "(n): mũi",
+        "example_sentence_en": "My nose is itchy.",
+        "example_sentence_vi": "Mũi của tôi bị ngứa.",
+        "image": "assets/images/nose.webp",
+        "alt": "Image for nose"
+      },
+      {
+        "english_word": "cheek",
+        "pronunciation": "/tʃiːk/",
+        "vietnamese_meaning": "(n): má",
+        "example_sentence_en": "She kissed him on the cheek.",
+        "example_sentence_vi": "Cô ấy hôn anh ấy lên má.",
+        "image": "assets/images/cheek.webp",
+        "alt": "Image for cheek"
+      },
+      {
+        "english_word": "mouth",
+        "pronunciation": "/maʊθ/",
+        "vietnamese_meaning": "(n): miệng",
+        "example_sentence_en": "Open your mouth, please.",
+        "example_sentence_vi": "Làm ơn mở miệng ra.",
+        "image": "assets/images/mouth.webp",
+        "alt": "Image for mouth"
+      },
+      {
+        "english_word": "shoulder",
+        "pronunciation": "/ˈʃəʊldə(r)/",
+        "vietnamese_meaning": "(n): vai",
+        "example_sentence_en": "He carried the bag on his shoulder.",
+        "example_sentence_vi": "Anh ấy mang túi trên vai.",
+        "image": "assets/images/shoulder.webp",
+        "alt": "Image for shoulder"
+      },
+      {
+        "english_word": "arm",
+        "pronunciation": "/ɑːm/",
+        "vietnamese_meaning": "(n): cánh tay",
+        "example_sentence_en": "She broke her arm.",
+        "example_sentence_vi": "Cô ấy bị gãy tay.",
+        "image": "assets/images/arm.webp",
+        "alt": "Image for arm"
+      },
+      {
+        "english_word": "hand",
+        "pronunciation": "/hænd/",
+        "vietnamese_meaning": "(n): bàn tay",
+        "example_sentence_en": "Wash your hands before eating.",
+        "example_sentence_vi": "Rửa tay trước khi ăn.",
+        "image": "assets/images/hand.webp",
+        "alt": "Image for hand"
+      },
+      {
+        "english_word": "leg",
+        "pronunciation": "/leɡ/",
+        "vietnamese_meaning": "(n): chân",
+        "example_sentence_en": "He hurt his leg while playing football.",
+        "example_sentence_vi": "Anh ấy bị đau chân khi chơi bóng đá.",
+        "image": "assets/images/leg.webp",
+        "alt": "Image for leg"
+      },
+      {
+        "english_word": "foot",
+        "pronunciation": "/fʊt/",
+        "vietnamese_meaning": "(n): bàn chân",
+        "example_sentence_en": "My foot is sore.",
+        "example_sentence_vi": "Bàn chân của tôi bị đau.",
+        "image": "assets/images/foot.webp",
+        "alt": "Image for foot"
+      }
+    ]
+  },
+  {
+    "group": "Describing Words",
+    "words": [
+      {
+        "english_word": "big",
+        "pronunciation": "/bɪɡ/",
+        "vietnamese_meaning": "(adj): to, lớn",
+        "example_sentence_en": "He has a big house.",
+        "example_sentence_vi": "Anh ấy có một ngôi nhà lớn.",
+        "image": "assets/images/big.webp",
+        "alt": "Image for big"
+      },
+      {
+        "english_word": "small",
+        "pronunciation": "/smɔːl/",
+        "vietnamese_meaning": "(adj): nhỏ",
+        "example_sentence_en": "She has a small dog.",
+        "example_sentence_vi": "Cô ấy có một con chó nhỏ.",
+        "image": "assets/images/small.webp",
+        "alt": "Image for small"
+      },
+      {
+        "english_word": "tall",
+        "pronunciation": "/tɔːl/",
+        "vietnamese_meaning": "(adj): cao",
+        "example_sentence_en": "He is very tall.",
+        "example_sentence_vi": "Anh ấy rất cao.",
+        "image": "assets/images/tall.webp",
+        "alt": "Image for tall"
+      },
+      {
+        "english_word": "short",
+        "pronunciation": "/ʃɔːt/",
+        "vietnamese_meaning": "(adj): thấp, ngắn",
+        "example_sentence_en": "She has short hair.",
+        "example_sentence_vi": "Cô ấy có mái tóc ngắn.",
+        "image": "assets/images/short.webp",
+        "alt": "Image for short"
+      },
+      {
+        "english_word": "long",
+        "pronunciation": "/lɒŋ/",
+        "vietnamese_meaning": "(adj): dài",
+        "example_sentence_en": "He has long legs.",
+        "example_sentence_vi": "Anh ấy có đôi chân dài.",
+        "image": "assets/images/long.webp",
+        "alt": "Image for long"
+      },
+      {
+        "english_word": "round",
+        "pronunciation": "/raʊnd/",
+        "vietnamese_meaning": "(adj): tròn",
+        "example_sentence_en": "She has a round face.",
+        "example_sentence_vi": "Cô ấy có khuôn mặt tròn.",
+        "image": "assets/images/round.webp",
+        "alt": "Image for round"
+      },
+      {
+        "english_word": "black",
+        "pronunciation": "/blæk/",
+        "vietnamese_meaning": "(adj): đen",
+        "example_sentence_en": "He has black hair.",
+        "example_sentence_vi": "Anh ấy có mái tóc đen.",
+        "image": "assets/images/black.webp",
+        "alt": "Image for black"
+      },
+      {
+        "english_word": "blonde",
+        "pronunciation": "/blɒnd/",
+        "vietnamese_meaning": "(adj): vàng (tóc)",
+        "example_sentence_en": "She has blonde hair.",
+        "example_sentence_vi": "Cô ấy có mái tóc vàng.",
+        "image": "assets/images/blonde.webp",
+        "alt": "Image for blonde"
+      },
+      {
+        "english_word": "bright",
+        "pronunciation": "/braɪt/",
+        "vietnamese_meaning": "(adj): sáng, tươi sáng",
+        "example_sentence_en": "The room is bright.",
+        "example_sentence_vi": "Căn phòng sáng sủa.",
+        "image": "assets/images/bright.webp",
+        "alt": "Image for bright"
+      },
+      {
+        "english_word": "curly",
+        "pronunciation": "/ˈkɜːli/",
+        "vietnamese_meaning": "(adj): xoăn",
+        "example_sentence_en": "She has curly hair.",
+        "example_sentence_vi": "Cô ấy có mái tóc xoăn.",
+        "image": "assets/images/curly.webp",
+        "alt": "Image for curly"
+      },
+      {
+        "english_word": "straight",
+        "pronunciation": "/streɪt/",
+        "vietnamese_meaning": "(adj): thẳng",
+        "example_sentence_en": "He has straight hair.",
+        "example_sentence_vi": "Anh ấy có mái tóc thẳng.",
+        "image": "assets/images/straight.webp",
+        "alt": "Image for straight"
+      },
+      {
+        "english_word": "slim",
+        "pronunciation": "/slɪm/",
+        "vietnamese_meaning": "(adj): mảnh mai, thon thả",
+        "example_sentence_en": "She is slim and tall.",
+        "example_sentence_vi": "Cô ấy mảnh mai và cao.",
+        "image": "assets/images/slim.webp",
+        "alt": "Image for slim"
+      }
+    ]
+  },
+  {
+    "group": "Personality",
+    "words": [
+      {
+        "english_word": "caring",
+        "pronunciation": "/ˈkeərɪŋ/",
+        "vietnamese_meaning": "(adj): chu đáo, quan tâm",
+        "example_sentence_en": "She is a caring mother.",
+        "example_sentence_vi": "Cô ấy là một người mẹ chu đáo.",
+        "image": "assets/images/caring.webp",
+        "alt": "Image for caring"
+      },
+      {
+        "english_word": "clever",
+        "pronunciation": "/ˈklevə(r)/",
+        "vietnamese_meaning": "(adj): thông minh, lanh lợi",
+        "example_sentence_en": "He is a clever student.",
+        "example_sentence_vi": "Cậu ấy là một học sinh thông minh.",
+        "image": "assets/images/clever.webp",
+        "alt": "Image for clever"
+      },
+      {
+        "english_word": "confident",
+        "pronunciation": "/ˈkɒnfɪdənt/",
+        "vietnamese_meaning": "(adj): tự tin",
+        "example_sentence_en": "She is confident when speaking English.",
+        "example_sentence_vi": "Cô ấy tự tin khi nói tiếng Anh.",
+        "image": "assets/images/confident.webp",
+        "alt": "Image for confident"
+      },
+      {
+        "english_word": "creative",
+        "pronunciation": "/kriˈeɪtɪv/",
+        "vietnamese_meaning": "(adj): sáng tạo",
+        "example_sentence_en": "He is very creative in art.",
+        "example_sentence_vi": "Anh ấy rất sáng tạo trong nghệ thuật.",
+        "image": "assets/images/creative.webp",
+        "alt": "Image for creative"
+      },
+      {
+        "english_word": "friendly",
+        "pronunciation": "/ˈfrendli/",
+        "vietnamese_meaning": "(adj): thân thiện",
+        "example_sentence_en": "She is friendly to everyone.",
+        "example_sentence_vi": "Cô ấy thân thiện với mọi người.",
+        "image": "assets/images/friendly.webp",
+        "alt": "Image for friendly"
+      },
+      {
+        "english_word": "funny",
+        "pronunciation": "/ˈfʌni/",
+        "vietnamese_meaning": "(adj): vui tính, hài hước",
+        "example_sentence_en": "He tells funny stories.",
+        "example_sentence_vi": "Anh ấy kể những câu chuyện hài hước.",
+        "image": "assets/images/funny.webp",
+        "alt": "Image for funny"
+      },
+      {
+        "english_word": "hard-working",
+        "pronunciation": "/ˌhɑːd ˈwɜːkɪŋ/",
+        "vietnamese_meaning": "(adj): chăm chỉ",
+        "example_sentence_en": "She is a hard-working student.",
+        "example_sentence_vi": "Cô ấy là một học sinh chăm chỉ.",
+        "image": "assets/images/hard-working.webp",
+        "alt": "Image for hard-working"
+      },
+      {
+        "english_word": "kind",
+        "pronunciation": "/kaɪnd/",
+        "vietnamese_meaning": "(adj): tốt bụng",
+        "example_sentence_en": "He is very kind to animals.",
+        "example_sentence_vi": "Anh ấy rất tốt bụng với động vật.",
+        "image": "assets/images/kind.webp",
+        "alt": "Image for kind"
+      },
+      {
+        "english_word": "loving",
+        "pronunciation": "/ˈlʌvɪŋ/",
+        "vietnamese_meaning": "(adj): giàu tình cảm",
+        "example_sentence_en": "She is a loving sister.",
+        "example_sentence_vi": "Cô ấy là một người chị giàu tình cảm.",
+        "image": "assets/images/loving.webp",
+        "alt": "Image for loving"
+      },
+      {
+        "english_word": "active",
+        "pronunciation": "/ˈæktɪv/",
+        "vietnamese_meaning": "(adj): năng động",
+        "example_sentence_en": "He is very active in class.",
+        "example_sentence_vi": "Cậu ấy rất năng động trong lớp.",
+        "image": "assets/images/active.webp",
+        "alt": "Image for active"
+      },
+      {
+        "english_word": "shy",
+        "pronunciation": "/ʃaɪ/",
+        "vietnamese_meaning": "(adj): nhút nhát",
+        "example_sentence_en": "She is shy in front of strangers.",
+        "example_sentence_vi": "Cô ấy nhút nhát trước người lạ.",
+        "image": "assets/images/shy.webp",
+        "alt": "Image for shy"
+      },
+      {
+        "english_word": "sporty",
+        "pronunciation": "/ˈspɔːti/",
+        "vietnamese_meaning": "(adj): có tính chất thể thao",
+        "example_sentence_en": "He is sporty and plays football.",
+        "example_sentence_vi": "Cậu ấy yêu thể thao và chơi bóng đá.",
+        "image": "assets/images/sporty.webp",
+        "alt": "Image for sporty"
+      },
+      {
+        "english_word": "careful",
+        "pronunciation": "/ˈkeəfl/",
+        "vietnamese_meaning": "(adj): cẩn thận",
+        "example_sentence_en": "Be careful when crossing the street.",
+        "example_sentence_vi": "Hãy cẩn thận khi qua đường.",
+        "image": "assets/images/careful.webp",
+        "alt": "Image for careful"
+      },
+      {
+        "english_word": "honest",
+        "pronunciation": "/ˈɒnɪst/",
+        "vietnamese_meaning": "(adj): trung thực",
+        "example_sentence_en": "She is honest and never lies.",
+        "example_sentence_vi": "Cô ấy trung thực và không bao giờ nói dối.",
+        "image": "assets/images/honest.webp",
+        "alt": "Image for honest"
+      },
+      {
+        "english_word": "patient",
+        "pronunciation": "/ˈpeɪʃnt/",
+        "vietnamese_meaning": "(adj): kiên nhẫn",
+        "example_sentence_en": "He is patient with children.",
+        "example_sentence_vi": "Anh ấy kiên nhẫn với trẻ em.",
+        "image": "assets/images/patient.webp",
+        "alt": "Image for patient"
+      },
+      {
+        "english_word": "generous",
+        "pronunciation": "/ˈdʒenərəs/",
+        "vietnamese_meaning": "(adj): hào phóng",
+        "example_sentence_en": "She is generous and often helps others.",
+        "example_sentence_vi": "Cô ấy hào phóng và thường giúp đỡ người khác.",
+        "image": "assets/images/generous.webp",
+        "alt": "Image for generous"
+      }
+    ]
+  },
+  {
+    "group": "Food and Drinks",
+    "words": [
+      {
+        "english_word": "biscuits",
+        "pronunciation": "/ˈbɪskɪts/",
+        "vietnamese_meaning": "(n): bánh quy",
+        "example_sentence_en": "I like eating biscuits with tea.",
+        "example_sentence_vi": "Tôi thích ăn bánh quy với trà.",
+        "image": "assets/images/biscuits.webp",
+        "alt": "Image for biscuits"
+      },
+      {
+        "english_word": "cake",
+        "pronunciation": "/keɪk/",
+        "vietnamese_meaning": "(n): bánh ngọt",
+        "example_sentence_en": "She made a chocolate cake.",
+        "example_sentence_vi": "Cô ấy làm một chiếc bánh sô-cô-la.",
+        "image": "assets/images/cake.webp",
+        "alt": "Image for cake"
+      },
+      {
+        "english_word": "nuts",
+        "pronunciation": "/nʌts/",
+        "vietnamese_meaning": "(n): các loại hạt",
+        "example_sentence_en": "Nuts are good for your health.",
+        "example_sentence_vi": "Các loại hạt tốt cho sức khỏe của bạn.",
+        "image": "assets/images/nuts.webp",
+        "alt": "Image for nuts"
+      },
+      {
+        "english_word": "sandwich",
+        "pronunciation": "/ˈsænwɪtʃ/",
+        "vietnamese_meaning": "(n): bánh sandwich",
+        "example_sentence_en": "I have a sandwich for lunch.",
+        "example_sentence_vi": "Tôi ăn bánh sandwich vào bữa trưa.",
+        "image": "assets/images/sandwich.webp",
+        "alt": "Image for sandwich"
+      }
+    ]
+  },
+  {
+    "group": "Places & Events",
+    "words": [
+      {
+        "english_word": "summer camp",
+        "pronunciation": "/ˈsʌmə kæmp/",
+        "vietnamese_meaning": "(n): trại hè",
+        "example_sentence_en": "We go to summer camp every year.",
+        "example_sentence_vi": "Chúng tôi đi trại hè mỗi năm.",
+        "image": "assets/images/summer-camp.webp",
+        "alt": "Image for summer camp"
+      },
+      {
+        "english_word": "picnic",
+        "pronunciation": "/ˈpɪknɪk/",
+        "vietnamese_meaning": "(n): dã ngoại",
+        "example_sentence_en": "Let's have a picnic in the park.",
+        "example_sentence_vi": "Hãy đi dã ngoại ở công viên.",
+        "image": "assets/images/picnic.webp",
+        "alt": "Image for picnic"
+      },
+      {
+        "english_word": "field trip",
+        "pronunciation": "/ˈfiːld trɪp/",
+        "vietnamese_meaning": "(n): chuyến đi thực tế",
+        "example_sentence_en": "Our class will have a field trip tomorrow.",
+        "example_sentence_vi": "Lớp chúng tôi sẽ có chuyến đi thực tế vào ngày mai.",
+        "image": "assets/images/field-trip.webp",
+        "alt": "Image for field trip"
+      },
+      {
+        "english_word": "school fair",
+        "pronunciation": "/skuːl feə(r)/",
+        "vietnamese_meaning": "(n): hội chợ trường học",
+        "example_sentence_en": "The school fair is very exciting.",
+        "example_sentence_vi": "Hội chợ trường học rất thú vị.",
+        "image": "assets/images/school-fair.webp",
+        "alt": "Image for school fair"
+      }
+    ]
+  },
+  {
+    "group": "Skills",
+    "words": [
+      {
+        "english_word": "creativity",
+        "pronunciation": "/ˌkriːeɪˈtɪvəti/",
+        "vietnamese_meaning": "(n): sự sáng tạo",
+        "example_sentence_en": "Creativity is important in art.",
+        "example_sentence_vi": "Sự sáng tạo rất quan trọng trong nghệ thuật.",
+        "image": "assets/images/creativity.webp",
+        "alt": "Image for creativity"
+      },
+      {
+        "english_word": "leadership",
+        "pronunciation": "/ˈliːdəʃɪp/",
+        "vietnamese_meaning": "(n): khả năng lãnh đạo",
+        "example_sentence_en": "She has good leadership skills.",
+        "example_sentence_vi": "Cô ấy có kỹ năng lãnh đạo tốt.",
+        "image": "assets/images/leadership.webp",
+        "alt": "Image for leadership"
+      },
+      {
+        "english_word": "life skills",
+        "pronunciation": "/laɪf skɪlz/",
+        "vietnamese_meaning": "(n): kỹ năng sống",
+        "example_sentence_en": "Life skills help us solve problems.",
+        "example_sentence_vi": "Kỹ năng sống giúp chúng ta giải quyết vấn đề.",
+        "image": "assets/images/life-skills.webp",
+        "alt": "Image for life skills"
+      },
+      {
+        "english_word": "teamwork",
+        "pronunciation": "/ˈtiːmwɜːk/",
+        "vietnamese_meaning": "(n): làm việc nhóm",
+        "example_sentence_en": "Teamwork is important in sports.",
+        "example_sentence_vi": "Làm việc nhóm rất quan trọng trong thể thao.",
+        "image": "assets/images/teamwork.webp",
+        "alt": "Image for teamwork"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "comic book",
+        "pronunciation": "/ˈkɒmɪk bʊk/",
+        "vietnamese_meaning": "(n): truyện tranh",
+        "example_sentence_en": "I like reading comic books.",
+        "example_sentence_vi": "Tôi thích đọc truyện tranh.",
+        "image": "assets/images/comic-book.webp",
+        "alt": "Image for comic book"
+      },
+      {
+        "english_word": "magazine",
+        "pronunciation": "/ˌmæɡəˈziːn/",
+        "vietnamese_meaning": "(n): tạp chí",
+        "example_sentence_en": "She buys a magazine every week.",
+        "example_sentence_vi": "Cô ấy mua tạp chí mỗi tuần.",
+        "image": "assets/images/magazine.webp",
+        "alt": "Image for magazine"
+      },
+      {
+        "english_word": "yearbook",
+        "pronunciation": "/ˈjɪəbʊk/",
+        "vietnamese_meaning": "(n): kỷ yếu",
+        "example_sentence_en": "Our class has a yearbook.",
+        "example_sentence_vi": "Lớp chúng tôi có một cuốn kỷ yếu.",
+        "image": "assets/images/yearbook.webp",
+        "alt": "Image for yearbook"
+      },
+      {
+        "english_word": "email",
+        "pronunciation": "/ˈiːmeɪl/",
+        "vietnamese_meaning": "(n): thư điện tử",
+        "example_sentence_en": "I send an email to my friend.",
+        "example_sentence_vi": "Tôi gửi thư điện tử cho bạn tôi.",
+        "image": "assets/images/email.webp",
+        "alt": "Image for email"
+      },
+      {
+        "english_word": "letter",
+        "pronunciation": "/ˈletə(r)/",
+        "vietnamese_meaning": "(n): lá thư",
+        "example_sentence_en": "She writes a letter to her grandmother.",
+        "example_sentence_vi": "Cô ấy viết thư cho bà.",
+        "image": "assets/images/letter.webp",
+        "alt": "Image for letter"
+      },
+      {
+        "english_word": "sheet of paper",
+        "pronunciation": "/ʃiːt əv ˈpeɪpə(r)/",
+        "vietnamese_meaning": "(n): tờ giấy",
+        "example_sentence_en": "Please give me a sheet of paper.",
+        "example_sentence_vi": "Làm ơn đưa tôi một tờ giấy.",
+        "image": "assets/images/sheet-of-paper.webp",
+        "alt": "Image for sheet of paper"
+      },
+      {
+        "english_word": "bookshop",
+        "pronunciation": "/ˈbʊkʃɒp/",
+        "vietnamese_meaning": "(n): hiệu sách",
+        "example_sentence_en": "I buy books at the bookshop.",
+        "example_sentence_vi": "Tôi mua sách ở hiệu sách.",
+        "image": "assets/images/bookshop.webp",
+        "alt": "Image for bookshop"
+      },
+      {
+        "english_word": "glasses",
+        "pronunciation": "/ˈɡlɑːsɪz/",
+        "vietnamese_meaning": "(n): kính mắt",
+        "example_sentence_en": "He wears glasses to see better.",
+        "example_sentence_vi": "Anh ấy đeo kính để nhìn rõ hơn.",
+        "image": "assets/images/glasses.webp",
+        "alt": "Image for glasses"
+      }
+    ]
+  }
+]

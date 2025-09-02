@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS6 Unit 1: School Vocabulary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="../assets/js/head.js"></script>
+
+    <!-- Game Scripts -->
+    <script src="../assets/games/game-utils.js"></script>
+    <script src="../assets/games/game-manager.js"></script>
+    <script src="../assets/games/matching-game.js"></script>
+    <script src="../assets/games/memory-game.js"></script>
+    <script src="../assets/games/multiple-choice-en-vi-game.js"></script>
+    <script src="../assets/games/multiple-choice-vi-en-game.js"></script>
+    <script src="../assets/games/picture-choice-en-game.js"></script>
+    <script src="../assets/games/picture-typing-en-game.js"></script>
+    <script src="../assets/games/anagram-game.js"></script>
+    <script src="../assets/games/unjumble-game.js"></script>
+    <script src="../assets/games/listening-typing-en-game.js"></script>
+    <script src="../assets/games/image-reveal-choice-game.js"></script>
+    <script src="../assets/games/flashcards-game.js"></script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body
+    class="bg-blue-50 bg-[url('https://cdn.photoroom.com/v2/image-cache?path=gs://background-7ef44.appspot.com/backgrounds_v3/nice/31_nice.jpg')] bg-cover bg-center min-h-screen flex items-center justify-center p-1 sm:p-2">
+
+    <div id="loading" class="loading">
+        <div>
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+            Đang tải từ vựng...
+        </div>
+    </div>
+
+    <div id="main-content" class="relative w-full max-w-6xl h-[97vh] mx-auto" style="display: none;">
+        <!-- Slide counter -->
+        <div id="slide-navigation"
+            class="absolute bottom-2 sm:bottom-full sm:top-7 right-2 z-50 flex items-center gap-2">
+            <button id="prev-slide-btn" onclick="showSlide(currentSlide - 1)"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="next-slide-btn" onclick="showSlide(currentSlide + 1)"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button id="outline-btn" onclick="toggleOutline()"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <button id="voice-btn" onclick="openVoicePopup()"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80"
+                title="Chọn giọng đọc">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M11 5a4 4 0 0 1 8 0v6a4 4 0 0 1-8 0V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 11v1a7 7 0 1 1-14 0v-1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div id="slide-counter-countainer"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs"
+                style="font-size: 0.5rem;">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div id="outlineContent" class="outline-content">
+                <!-- Outline content will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div id="slides-container" class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Slides will be dynamically generated here -->
+        </div>
+    </div>
+    <script src="../assets/js/app.js"></script>
+    <script>
+        let vocabularyData = [];
+        let currentSlide = 0;
+        let slides = [];
+        let totalSlides = 0;
+        let gameManager = null;
+
+        function createTitleSlide() {
+            const slide = document.createElement('div');
+            slide.className = 'slide justify-center content-box px-5 py-2 pt-10 rounded-2xl w-full h-full';
+
+            slide.innerHTML = `
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-300 text-xl md:text-2xl font-bold px-6 py-3 rounded-full mb-3 shadow-lg floating text-white">
+                        GS6 - Unit 6 - Our Tet Holiday
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <!--
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000"
+                                alt="School Learning" class="object-cover h-52 rounded-xl floating">
+                        </div>
+                        -->
+                        <div class="mt-4 flex flex-col items-center w-full floating text-lg sm:text-2xl ">
+                            <div class="bg-white bg-opacity-80 rounded-xl shadow-lg px-6 py-5 max-w-2xl">
+                                <h2 class="font-bold text-indigo-700 mb-3">Lesson Objectives</h2>
+                                <ul class="text-gray-700 text-left list-disc pl-6 space-y-2">
+                                    <li>Understand and remember vocabulary on the topic.</li>
+                                    <li>Pronounce vocabulary correctly and use them in simple sentences.</li>
+                                    <li>Apply vocabulary in interactive games to reinforce knowledge.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            return slide;
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+    </script>
+</body>
+
+</html>

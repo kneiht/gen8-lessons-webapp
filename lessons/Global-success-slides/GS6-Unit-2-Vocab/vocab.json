@@ -1,0 +1,716 @@
+[
+  {
+    "group": "Family Members",
+    "words": [
+      {
+        "english_word": "grandparents",
+        "pronunciation": "/ˈɡrænpeərənts/",
+        "vietnamese_meaning": "(n): ông bà",
+        "example_sentence_en": "I visit my grandparents every weekend.",
+        "example_sentence_vi": "Tôi thăm ông bà của mình mỗi cuối tuần.",
+        "image": "assets/images/grandparents.webp",
+        "alt": "Image for grandparents"
+      },
+      {
+        "english_word": "grandmother",
+        "pronunciation": "/ˈɡrænˌmʌðər/",
+        "vietnamese_meaning": "(n): bà",
+        "example_sentence_en": "My grandmother makes delicious cakes.",
+        "example_sentence_vi": "Bà của tôi làm bánh rất ngon.",
+        "image": "assets/images/grandmother.webp",
+        "alt": "Image for grandmother"
+      },
+      {
+        "english_word": "grandfather",
+        "pronunciation": "/ˈɡrænˌfɑːðər/",
+        "vietnamese_meaning": "(n): ông",
+        "example_sentence_en": "My grandfather tells me stories about his childhood.",
+        "example_sentence_vi": "Ông của tôi kể cho tôi nghe những câu chuyện về thời thơ ấu của ông.",
+        "image": "assets/images/grandfather.webp",
+        "alt": "Image for grandfather"
+      },
+      {
+        "english_word": "parents",
+        "pronunciation": "/ˈpeərənts/",
+        "vietnamese_meaning": "(n): bố mẹ",
+        "example_sentence_en": "My parents work very hard to support our family.",
+        "example_sentence_vi": "Bố mẹ tôi làm việc rất chăm chỉ để nuôi gia đình.",
+        "image": "assets/images/parents.webp",
+        "alt": "Image for parents"
+      },
+      {
+        "english_word": "father",
+        "pronunciation": "/ˈfɑːðər/",
+        "vietnamese_meaning": "(n): bố",
+        "example_sentence_en": "My father drives me to school every morning.",
+        "example_sentence_vi": "Bố tôi đưa tôi đến trường mỗi sáng.",
+        "image": "assets/images/father.webp",
+        "alt": "Image for father"
+      },
+      {
+        "english_word": "mother",
+        "pronunciation": "/ˈmʌðər/",
+        "vietnamese_meaning": "(n): mẹ",
+        "example_sentence_en": "My mother cooks dinner for our family every evening.",
+        "example_sentence_vi": "Mẹ tôi nấu bữa tối cho gia đình mỗi tối.",
+        "image": "assets/images/mother.webp",
+        "alt": "Image for mother"
+      },
+      {
+        "english_word": "children",
+        "pronunciation": "/ˈtʃɪldrən/",
+        "vietnamese_meaning": "(n): trẻ em, con cái",
+        "example_sentence_en": "The children play in the garden after school.",
+        "example_sentence_vi": "Những đứa trẻ chơi trong vườn sau giờ học.",
+        "image": "assets/images/children.webp",
+        "alt": "Image for children"
+      },
+      {
+        "english_word": "daughter",
+        "pronunciation": "/ˈdɔːtər/",
+        "vietnamese_meaning": "(n): con gái",
+        "example_sentence_en": "My daughter loves to read books.",
+        "example_sentence_vi": "Con gái tôi thích đọc sách.",
+        "image": "assets/images/daughter.webp",
+        "alt": "Image for daughter"
+      },
+      {
+        "english_word": "son",
+        "pronunciation": "/sʌn/",
+        "vietnamese_meaning": "(n): con trai",
+        "example_sentence_en": "My son plays football every weekend.",
+        "example_sentence_vi": "Con trai tôi chơi bóng đá mỗi cuối tuần.",
+        "image": "assets/images/son.webp",
+        "alt": "Image for son"
+      },
+      {
+        "english_word": "sister",
+        "pronunciation": "/ˈsɪstər/",
+        "vietnamese_meaning": "(n): chị/em gái",
+        "example_sentence_en": "My sister helps me with my homework.",
+        "example_sentence_vi": "Chị tôi giúp tôi làm bài tập về nhà.",
+        "image": "assets/images/sister.webp",
+        "alt": "Image for sister"
+      },
+      {
+        "english_word": "brother",
+        "pronunciation": "/ˈbrʌðər/",
+        "vietnamese_meaning": "(n): anh/em trai",
+        "example_sentence_en": "My brother and I share a bedroom.",
+        "example_sentence_vi": "Anh trai tôi và tôi chia sẻ một phòng ngủ.",
+        "image": "assets/images/brother.webp",
+        "alt": "Image for brother"
+      },
+      {
+        "english_word": "aunt",
+        "pronunciation": "/ɑːnt/",
+        "vietnamese_meaning": "(n): cô/dì",
+        "example_sentence_en": "My aunt lives in the city centre.",
+        "example_sentence_vi": "Cô tôi sống ở trung tâm thành phố.",
+        "image": "assets/images/aunt.webp",
+        "alt": "Image for aunt"
+      },
+      {
+        "english_word": "uncle",
+        "pronunciation": "/ˈʌŋkl/",
+        "vietnamese_meaning": "(n): chú/bác",
+        "example_sentence_en": "My uncle works in a hospital.",
+        "example_sentence_vi": "Chú tôi làm việc trong bệnh viện.",
+        "image": "assets/images/uncle.webp",
+        "alt": "Image for uncle"
+      },
+      {
+        "english_word": "cousin",
+        "pronunciation": "/ˈkʌzn/",
+        "vietnamese_meaning": "(n): anh/chị/em họ",
+        "example_sentence_en": "I play with my cousin every weekend.",
+        "example_sentence_vi": "Tôi chơi với anh họ của tôi mỗi cuối tuần.",
+        "image": "assets/images/cousin.webp",
+        "alt": "Image for cousin"
+      },
+      {
+        "english_word": "niece",
+        "pronunciation": "/niːs/",
+        "vietnamese_meaning": "(n): cháu gái",
+        "example_sentence_en": "My niece is very clever.",
+        "example_sentence_vi": "Cháu gái tôi rất thông minh.",
+        "image": "assets/images/niece.webp",
+        "alt": "Image for niece"
+      },
+      {
+        "english_word": "nephew",
+        "pronunciation": "/ˈnefjuː/",
+        "vietnamese_meaning": "(n): cháu trai",
+        "example_sentence_en": "My nephew loves playing with toys.",
+        "example_sentence_vi": "Cháu trai tôi thích chơi với đồ chơi.",
+        "image": "assets/images/nephew.webp",
+        "alt": "Image for nephew"
+      }
+    ]
+  },
+  {
+    "group": "Types of Houses",
+    "words": [
+      {
+        "english_word": "town house",
+        "pronunciation": "/taʊn haʊs/",
+        "vietnamese_meaning": "(n): nhà phố",
+        "example_sentence_en": "I live in a town house in the city centre.",
+        "example_sentence_vi": "Tôi sống trong một ngôi nhà phố ở trung tâm thành phố.",
+        "image": "assets/images/town-house.webp",
+        "alt": "Image for town house"
+      },
+      {
+        "english_word": "country house",
+        "pronunciation": "/ˈkʌntri haʊs/",
+        "vietnamese_meaning": "(n): nhà ở nông thôn",
+        "example_sentence_en": "My grandparents live in a beautiful country house.",
+        "example_sentence_vi": "Ông bà tôi sống trong một ngôi nhà nông thôn đẹp.",
+        "image": "assets/images/country-house.webp",
+        "alt": "Image for country house"
+      },
+      {
+        "english_word": "flat",
+        "pronunciation": "/flæt/",
+        "vietnamese_meaning": "(n): căn hộ (Anh Anh)",
+        "example_sentence_en": "We are moving to a new flat next month.",
+        "example_sentence_vi": "Chúng tôi sẽ chuyển đến một căn hộ mới vào tháng tới.",
+        "image": "assets/images/flat.webp",
+        "alt": "Image for flat"
+      },
+      {
+        "english_word": "apartment",
+        "pronunciation": "/əˈpɑːtmənt/",
+        "vietnamese_meaning": "(n): căn hộ (Anh Mỹ)",
+        "example_sentence_en": "My aunt lives in a small apartment.",
+        "example_sentence_vi": "Cô tôi sống trong một căn hộ nhỏ.",
+        "image": "assets/images/apartment.webp",
+        "alt": "Image for apartment"
+      }
+    ]
+  },
+  {
+    "group": "Rooms and Parts of a House",
+    "words": [
+      {
+        "english_word": "living room",
+        "pronunciation": "/ˈlɪvɪŋ ruːm/",
+        "vietnamese_meaning": "(n): phòng khách",
+        "example_sentence_en": "We watch television in the living room.",
+        "example_sentence_vi": "Chúng tôi xem tivi trong phòng khách.",
+        "image": "assets/images/living-room.webp",
+        "alt": "Image for living room"
+      },
+      {
+        "english_word": "bedroom",
+        "pronunciation": "/ˈbedruːm/",
+        "vietnamese_meaning": "(n): phòng ngủ",
+        "example_sentence_en": "I sleep in my bedroom every night.",
+        "example_sentence_vi": "Tôi ngủ trong phòng ngủ của mình mỗi đêm.",
+        "image": "assets/images/bedroom.webp",
+        "alt": "Image for bedroom"
+      },
+      {
+        "english_word": "kitchen",
+        "pronunciation": "/ˈkɪtʃɪn/",
+        "vietnamese_meaning": "(n): nhà bếp",
+        "example_sentence_en": "My mother cooks in the kitchen.",
+        "example_sentence_vi": "Mẹ tôi nấu ăn trong nhà bếp.",
+        "image": "assets/images/kitchen.webp",
+        "alt": "Image for kitchen"
+      },
+      {
+        "english_word": "bathroom",
+        "pronunciation": "/ˈbɑːθruːm/",
+        "vietnamese_meaning": "(n): phòng tắm",
+        "example_sentence_en": "I take a shower in the bathroom every morning.",
+        "example_sentence_vi": "Tôi tắm trong phòng tắm mỗi sáng.",
+        "image": "assets/images/bathroom.webp",
+        "alt": "Image for bathroom"
+      },
+      {
+        "english_word": "hall",
+        "pronunciation": "/hɔːl/",
+        "vietnamese_meaning": "(n): hành lang",
+        "example_sentence_en": "We hang our coats in the hall.",
+        "example_sentence_vi": "Chúng tôi treo áo khoác trong hành lang.",
+        "image": "assets/images/hall.webp",
+        "alt": "Image for hall"
+      },
+      {
+        "english_word": "dining room",
+        "pronunciation": "/ˈdaɪnɪŋ ruːm/",
+        "vietnamese_meaning": "(n): phòng ăn",
+        "example_sentence_en": "We eat dinner in the dining room.",
+        "example_sentence_vi": "Chúng tôi ăn tối trong phòng ăn.",
+        "image": "assets/images/dining-room.webp",
+        "alt": "Image for dining room"
+      },
+      {
+        "english_word": "window",
+        "pronunciation": "/ˈwɪndəʊ/",
+        "vietnamese_meaning": "(n): cửa sổ",
+        "example_sentence_en": "I open the window to let fresh air in.",
+        "example_sentence_vi": "Tôi mở cửa sổ để cho không khí trong lành vào.",
+        "image": "assets/images/window.webp",
+        "alt": "Image for window"
+      },
+      {
+        "english_word": "door",
+        "pronunciation": "/dɔːr/",
+        "vietnamese_meaning": "(n): cửa",
+        "example_sentence_en": "Please close the door when you leave.",
+        "example_sentence_vi": "Vui lòng đóng cửa khi bạn rời đi.",
+        "image": "assets/images/door.webp",
+        "alt": "Image for door"
+      }
+    ]
+  },
+  {
+    "group": "Furniture and Household Items",
+    "words": [
+      {
+        "english_word": "sofa",
+        "pronunciation": "/ˈsəʊfə/",
+        "vietnamese_meaning": "(n): ghế sofa",
+        "example_sentence_en": "We sit on the sofa to watch television.",
+        "example_sentence_vi": "Chúng tôi ngồi trên ghế sofa để xem tivi.",
+        "image": "assets/images/sofa.webp",
+        "alt": "Image for sofa"
+      },
+      {
+        "english_word": "television",
+        "pronunciation": "/ˈtelɪvɪʒn/",
+        "vietnamese_meaning": "(n): tivi",
+        "example_sentence_en": "There is a television in the living room.",
+        "example_sentence_vi": "Có một chiếc tivi trong phòng khách.",
+        "image": "assets/images/television.webp",
+        "alt": "Image for television"
+      },
+      {
+        "english_word": "lamp",
+        "pronunciation": "/læmp/",
+        "vietnamese_meaning": "(n): đèn",
+        "example_sentence_en": "I turn on the lamp to read books.",
+        "example_sentence_vi": "Tôi bật đèn để đọc sách.",
+        "image": "assets/images/lamp.webp",
+        "alt": "Image for lamp"
+      },
+      {
+        "english_word": "cupboard",
+        "pronunciation": "/ˈkʌbəd/",
+        "vietnamese_meaning": "(n): tủ",
+        "example_sentence_en": "We keep plates in the cupboard.",
+        "example_sentence_vi": "Chúng tôi cất đĩa trong tủ.",
+        "image": "assets/images/cupboard.webp",
+        "alt": "Image for cupboard"
+      },
+      {
+        "english_word": "sink",
+        "pronunciation": "/sɪŋk/",
+        "vietnamese_meaning": "(n): bồn rửa",
+        "example_sentence_en": "I wash dishes in the sink.",
+        "example_sentence_vi": "Tôi rửa bát trong bồn rửa.",
+        "image": "assets/images/sink.webp",
+        "alt": "Image for sink"
+      },
+      {
+        "english_word": "dishwasher",
+        "pronunciation": "/ˈdɪʃwɒʃər/",
+        "vietnamese_meaning": "(n): máy rửa bát",
+        "example_sentence_en": "We put dirty dishes in the dishwasher.",
+        "example_sentence_vi": "Chúng tôi đặt bát đĩa bẩn vào máy rửa bát.",
+        "image": "assets/images/dishwasher.webp",
+        "alt": "Image for dishwasher"
+      },
+      {
+        "english_word": "fridge",
+        "pronunciation": "/frɪdʒ/",
+        "vietnamese_meaning": "(n): tủ lạnh",
+        "example_sentence_en": "We keep food fresh in the fridge.",
+        "example_sentence_vi": "Chúng tôi giữ thức ăn tươi trong tủ lạnh.",
+        "image": "assets/images/fridge.webp",
+        "alt": "Image for fridge"
+      },
+      {
+        "english_word": "cooker",
+        "pronunciation": "/ˈkʊkər/",
+        "vietnamese_meaning": "(n): bếp",
+        "example_sentence_en": "My mother cooks rice on the cooker.",
+        "example_sentence_vi": "Mẹ tôi nấu cơm trên bếp.",
+        "image": "assets/images/cooker.webp",
+        "alt": "Image for cooker"
+      },
+      {
+        "english_word": "shower",
+        "pronunciation": "/ˈʃaʊər/",
+        "vietnamese_meaning": "(n): vòi hoa sen",
+        "example_sentence_en": "I take a shower every morning.",
+        "example_sentence_vi": "Tôi tắm vòi hoa sen mỗi sáng.",
+        "image": "assets/images/shower.webp",
+        "alt": "Image for shower"
+      },
+      {
+        "english_word": "chest of drawers",
+        "pronunciation": "/tʃest əv drɔːz/",
+        "vietnamese_meaning": "(n): tủ ngăn kéo",
+        "example_sentence_en": "I keep my clothes in the chest of drawers.",
+        "example_sentence_vi": "Tôi cất quần áo trong tủ ngăn kéo.",
+        "image": "assets/images/chest-of-drawers.webp",
+        "alt": "Image for chest of drawers"
+      },
+      {
+        "english_word": "toilet",
+        "pronunciation": "/ˈtɔɪlət/",
+        "vietnamese_meaning": "(n): nhà vệ sinh",
+        "example_sentence_en": "The toilet is in the bathroom.",
+        "example_sentence_vi": "Nhà vệ sinh ở trong phòng tắm.",
+        "image": "assets/images/toilet.webp",
+        "alt": "Image for toilet"
+      },
+      {
+        "english_word": "picture",
+        "pronunciation": "/ˈpɪktʃər/",
+        "vietnamese_meaning": "(n): bức tranh",
+        "example_sentence_en": "There is a beautiful picture on the wall.",
+        "example_sentence_vi": "Có một bức tranh đẹp trên tường.",
+        "image": "assets/images/picture.webp",
+        "alt": "Image for picture"
+      },
+      {
+        "english_word": "bowls",
+        "pronunciation": "/bəʊlz/",
+        "vietnamese_meaning": "(n): bát",
+        "example_sentence_en": "We eat soup from bowls.",
+        "example_sentence_vi": "Chúng tôi ăn súp từ bát.",
+        "image": "assets/images/bowls.webp",
+        "alt": "Image for bowls"
+      },
+      {
+        "english_word": "chopsticks",
+        "pronunciation": "/ˈtʃɒpstɪks/",
+        "vietnamese_meaning": "(n): đũa",
+        "example_sentence_en": "We use chopsticks to eat rice.",
+        "example_sentence_vi": "Chúng tôi dùng đũa để ăn cơm.",
+        "image": "assets/images/chopsticks.webp",
+        "alt": "Image for chopsticks"
+      },
+      {
+        "english_word": "table",
+        "pronunciation": "/ˈteɪbl/",
+        "vietnamese_meaning": "(n): bàn",
+        "example_sentence_en": "We eat dinner at the table.",
+        "example_sentence_vi": "Chúng tôi ăn tối ở bàn.",
+        "image": "assets/images/table.webp",
+        "alt": "Image for table"
+      },
+      {
+        "english_word": "chair",
+        "pronunciation": "/tʃeər/",
+        "vietnamese_meaning": "(n): ghế",
+        "example_sentence_en": "I sit on a chair at the table.",
+        "example_sentence_vi": "Tôi ngồi trên ghế ở bàn.",
+        "image": "assets/images/chair.webp",
+        "alt": "Image for chair"
+      },
+      {
+        "english_word": "bed",
+        "pronunciation": "/bed/",
+        "vietnamese_meaning": "(n): giường",
+        "example_sentence_en": "I sleep in my bed every night.",
+        "example_sentence_vi": "Tôi ngủ trên giường mỗi đêm.",
+        "image": "assets/images/bed.webp",
+        "alt": "Image for bed"
+      },
+      {
+        "english_word": "desk",
+        "pronunciation": "/desk/",
+        "vietnamese_meaning": "(n): bàn học",
+        "example_sentence_en": "I do my homework at my desk.",
+        "example_sentence_vi": "Tôi làm bài tập về nhà ở bàn học.",
+        "image": "assets/images/desk.webp",
+        "alt": "Image for desk"
+      },
+      {
+        "english_word": "wardrobe",
+        "pronunciation": "/ˈwɔːdrəʊb/",
+        "vietnamese_meaning": "(n): tủ quần áo",
+        "example_sentence_en": "I hang my clothes in the wardrobe.",
+        "example_sentence_vi": "Tôi treo quần áo trong tủ quần áo.",
+        "image": "assets/images/wardrobe.webp",
+        "alt": "Image for wardrobe"
+      },
+      {
+        "english_word": "bookshelf",
+        "pronunciation": "/ˈbʊkʃelf/",
+        "vietnamese_meaning": "(n): giá sách",
+        "example_sentence_en": "I put my books on the bookshelf.",
+        "example_sentence_vi": "Tôi đặt sách trên giá sách.",
+        "image": "assets/images/bookshelf.webp",
+        "alt": "Image for bookshelf"
+      },
+      {
+        "english_word": "clock",
+        "pronunciation": "/klɒk/",
+        "vietnamese_meaning": "(n): đồng hồ",
+        "example_sentence_en": "I look at the clock to check the time.",
+        "example_sentence_vi": "Tôi nhìn đồng hồ để kiểm tra thời gian.",
+        "image": "assets/images/clock.webp",
+        "alt": "Image for clock"
+      },
+      {
+        "english_word": "shelf",
+        "pronunciation": "/ʃelf/",
+        "vietnamese_meaning": "(n): kệ",
+        "example_sentence_en": "I put my toys on the shelf.",
+        "example_sentence_vi": "Tôi đặt đồ chơi trên kệ.",
+        "image": "assets/images/shelf.webp",
+        "alt": "Image for shelf"
+      },
+      {
+        "english_word": "computer",
+        "pronunciation": "/kəmˈpjuːtər/",
+        "vietnamese_meaning": "(n): máy tính",
+        "example_sentence_en": "I use the computer to do my homework.",
+        "example_sentence_vi": "Tôi sử dụng máy tính để làm bài tập về nhà.",
+        "image": "assets/images/computer.webp",
+        "alt": "Image for computer"
+      },
+      {
+        "english_word": "motorbike",
+        "pronunciation": "/ˈməʊtəbaɪk/",
+        "vietnamese_meaning": "(n): xe máy",
+        "example_sentence_en": "My father rides a motorbike to work.",
+        "example_sentence_vi": "Bố tôi đi xe máy đến nơi làm việc.",
+        "image": "assets/images/motorbike.webp",
+        "alt": "Image for motorbike"
+      },
+      {
+        "english_word": "school bag",
+        "pronunciation": "/skuːl bæɡ/",
+        "vietnamese_meaning": "(n): cặp sách",
+        "example_sentence_en": "I carry my books in my school bag.",
+        "example_sentence_vi": "Tôi mang sách trong cặp sách.",
+        "image": "assets/images/school-bag.webp",
+        "alt": "Image for school bag"
+      },
+      {
+        "english_word": "pillow",
+        "pronunciation": "/ˈpɪləʊ/",
+        "vietnamese_meaning": "(n): gối",
+        "example_sentence_en": "I sleep with a soft pillow.",
+        "example_sentence_vi": "Tôi ngủ với một chiếc gối mềm.",
+        "image": "assets/images/pillow.webp",
+        "alt": "Image for pillow"
+      },
+      {
+        "english_word": "cap",
+        "pronunciation": "/kæp/",
+        "vietnamese_meaning": "(n): mũ lưỡi trai",
+        "example_sentence_en": "I wear a cap when I go outside.",
+        "example_sentence_vi": "Tôi đội mũ lưỡi trai khi ra ngoài.",
+        "image": "assets/images/cap.webp",
+        "alt": "Image for cap"
+      },
+      {
+        "english_word": "photo",
+        "pronunciation": "/ˈfəʊtəʊ/",
+        "vietnamese_meaning": "(n): ảnh",
+        "example_sentence_en": "I take a photo of my family.",
+        "example_sentence_vi": "Tôi chụp ảnh gia đình.",
+        "image": "assets/images/photo.webp",
+        "alt": "Image for photo"
+      }
+    ]
+  },
+  {
+    "group": "Actions",
+    "words": [
+      {
+        "english_word": "live",
+        "pronunciation": "/lɪv/",
+        "vietnamese_meaning": "(v): sống",
+        "example_sentence_en": "I live in a town house.",
+        "example_sentence_vi": "Tôi sống trong một ngôi nhà phố.",
+        "image": "assets/images/live.webp",
+        "alt": "Image for live"
+      },
+      {
+        "english_word": "move",
+        "pronunciation": "/muːv/",
+        "vietnamese_meaning": "(v): di chuyển, chuyển nhà",
+        "example_sentence_en": "We are moving to a new house next month.",
+        "example_sentence_vi": "Chúng tôi sẽ chuyển đến một ngôi nhà mới vào tháng tới.",
+        "image": "assets/images/move.webp",
+        "alt": "Image for move"
+      },
+      {
+        "english_word": "buy",
+        "pronunciation": "/baɪ/",
+        "vietnamese_meaning": "(v): mua",
+        "example_sentence_en": "My parents buy food at the market.",
+        "example_sentence_vi": "Bố mẹ tôi mua thức ăn ở chợ.",
+        "image": "assets/images/buy.webp",
+        "alt": "Image for buy"
+      },
+      {
+        "english_word": "put",
+        "pronunciation": "/pʊt/",
+        "vietnamese_meaning": "(v): đặt, để",
+        "example_sentence_en": "I put my books on the desk.",
+        "example_sentence_vi": "Tôi đặt sách trên bàn học.",
+        "image": "assets/images/put.webp",
+        "alt": "Image for put"
+      },
+      {
+        "english_word": "stay",
+        "pronunciation": "/steɪ/",
+        "vietnamese_meaning": "(v): ở lại",
+        "example_sentence_en": "I stay at home on weekends.",
+        "example_sentence_vi": "Tôi ở nhà vào cuối tuần.",
+        "image": "assets/images/stay.webp",
+        "alt": "Image for stay"
+      },
+      {
+        "english_word": "visit",
+        "pronunciation": "/ˈvɪzɪt/",
+        "vietnamese_meaning": "(v): thăm",
+        "example_sentence_en": "I visit my grandparents every weekend.",
+        "example_sentence_vi": "Tôi thăm ông bà mỗi cuối tuần.",
+        "image": "assets/images/visit.webp",
+        "alt": "Image for visit"
+      },
+      {
+        "english_word": "decorate",
+        "pronunciation": "/ˈdekəreɪt/",
+        "vietnamese_meaning": "(v): trang trí",
+        "example_sentence_en": "We decorate our house for Christmas.",
+        "example_sentence_vi": "Chúng tôi trang trí nhà cho Giáng sinh.",
+        "image": "assets/images/decorate.webp",
+        "alt": "Image for decorate"
+      },
+      {
+        "english_word": "listen to music",
+        "pronunciation": "/ˈlɪsn tuː ˈmjuːzɪk/",
+        "vietnamese_meaning": "(v): nghe nhạc",
+        "example_sentence_en": "I listen to music in my bedroom.",
+        "example_sentence_vi": "Tôi nghe nhạc trong phòng ngủ.",
+        "image": "assets/images/listen-to-music.webp",
+        "alt": "Image for listen to music"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "big",
+        "pronunciation": "/bɪɡ/",
+        "vietnamese_meaning": "(adj): to, lớn",
+        "example_sentence_en": "My house is very big.",
+        "example_sentence_vi": "Nhà tôi rất lớn.",
+        "image": "assets/images/big.webp",
+        "alt": "Image for big"
+      },
+      {
+        "english_word": "small",
+        "pronunciation": "/smɔːl/",
+        "vietnamese_meaning": "(adj): nhỏ",
+        "example_sentence_en": "My bedroom is small but comfortable.",
+        "example_sentence_vi": "Phòng ngủ của tôi nhỏ nhưng thoải mái.",
+        "image": "assets/images/small.webp",
+        "alt": "Image for small"
+      },
+      {
+        "english_word": "beautiful",
+        "pronunciation": "/ˈbjuːtɪfl/",
+        "vietnamese_meaning": "(adj): đẹp",
+        "example_sentence_en": "Our garden is very beautiful.",
+        "example_sentence_vi": "Vườn của chúng tôi rất đẹp.",
+        "image": "assets/images/beautiful.webp",
+        "alt": "Image for beautiful"
+      },
+      {
+        "english_word": "strange",
+        "pronunciation": "/streɪndʒ/",
+        "vietnamese_meaning": "(adj): lạ",
+        "example_sentence_en": "This is a strange house.",
+        "example_sentence_vi": "Đây là một ngôi nhà lạ.",
+        "image": "assets/images/strange.webp",
+        "alt": "Image for strange"
+      },
+      {
+        "english_word": "great",
+        "pronunciation": "/ɡreɪt/",
+        "vietnamese_meaning": "(adj): tuyệt vời",
+        "example_sentence_en": "My new house is great!",
+        "example_sentence_vi": "Ngôi nhà mới của tôi thật tuyệt vời!",
+        "image": "assets/images/great.webp",
+        "alt": "Image for great"
+      },
+      {
+        "english_word": "email",
+        "pronunciation": "/ˈiːmeɪl/",
+        "vietnamese_meaning": "(n): thư điện tử",
+        "example_sentence_en": "I send an email to my friend.",
+        "example_sentence_vi": "Tôi gửi thư điện tử cho bạn.",
+        "image": "assets/images/email.webp",
+        "alt": "Image for email"
+      },
+      {
+        "english_word": "letter",
+        "pronunciation": "/ˈletər/",
+        "vietnamese_meaning": "(n): lá thư",
+        "example_sentence_en": "I write a letter to my grandmother.",
+        "example_sentence_vi": "Tôi viết thư cho bà.",
+        "image": "assets/images/letter.webp",
+        "alt": "Image for letter"
+      },
+      {
+        "english_word": "favourite",
+        "pronunciation": "/ˈfeɪvərɪt/",
+        "vietnamese_meaning": "(adj): yêu thích",
+        "example_sentence_en": "This is my favourite room in the house.",
+        "example_sentence_vi": "Đây là căn phòng yêu thích của tôi trong nhà.",
+        "image": "assets/images/favourite.webp",
+        "alt": "Image for favourite"
+      },
+      {
+        "english_word": "shape",
+        "pronunciation": "/ʃeɪp/",
+        "vietnamese_meaning": "(n): hình dạng",
+        "example_sentence_en": "The table has a round shape.",
+        "example_sentence_vi": "Chiếc bàn có hình dạng tròn.",
+        "image": "assets/images/shape.webp",
+        "alt": "Image for shape"
+      },
+      {
+        "english_word": "department store",
+        "pronunciation": "/dɪˈpɑːtmənt stɔːr/",
+        "vietnamese_meaning": "(n): cửa hàng bách hóa",
+        "example_sentence_en": "We buy furniture at the department store.",
+        "example_sentence_vi": "Chúng tôi mua đồ nội thất ở cửa hàng bách hóa.",
+        "image": "assets/images/department-store.webp",
+        "alt": "Image for department store"
+      },
+      {
+        "english_word": "garden",
+        "pronunciation": "/ˈɡɑːdn/",
+        "vietnamese_meaning": "(n): vườn",
+        "example_sentence_en": "We plant flowers in the garden.",
+        "example_sentence_vi": "Chúng tôi trồng hoa trong vườn.",
+        "image": "assets/images/garden.webp",
+        "alt": "Image for garden"
+      },
+      {
+        "english_word": "hotel",
+        "pronunciation": "/həʊˈtel/",
+        "vietnamese_meaning": "(n): khách sạn",
+        "example_sentence_en": "We stay in a hotel when we travel.",
+        "example_sentence_vi": "Chúng tôi ở khách sạn khi đi du lịch.",
+        "image": "assets/images/hotel.webp",
+        "alt": "Image for hotel"
+      }
+    ]
+  }
+]

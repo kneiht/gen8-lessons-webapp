@@ -1,5 +1,9 @@
 {
   "categories": {
+    "Global-success-slides": {
+      "name": "Global Success Slides",
+      "icon": "https://example.com/icons/folder.png"
+    },
     "slides": {
       "name": "Slides",
       "icon": "https://cdn-icons-png.flaticon.com/512/11473/11473512.png"
@@ -11,13 +15,51 @@
     "tests": {
       "name": "Tests",
       "icon": "https://cdn-icons-png.flaticon.com/512/9913/9913544.png"
-    },
-    "GS6-slides": {
-      "name": "Gs6 Slides",
-      "icon": "https://example.com/icons/folder.png"
     }
   },
   "lessons": {
+    "Global-success-slides/GS6-Unit-2-Vocab": {
+      "path": "Global-success-slides/GS6-Unit-2-Vocab",
+      "title": "Global Success 6 - Unit 2 - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS6-Unit-3-Vocab": {
+      "path": "Global-success-slides/GS6-Unit-3-Vocab",
+      "title": "Global Success 6 - Unit 3 - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS6-Unit-4-Vocab": {
+      "path": "Global-success-slides/GS6-Unit-4-Vocab",
+      "title": "Global Success 6 - Unit 5 - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS6-Unit-5-Vocab": {
+      "path": "Global-success-slides/GS6-Unit-5-Vocab",
+      "title": "Global Success 6 - Unit 1 - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS6-Unit-6-Vocab": {
+      "path": "Global-success-slides/GS6-Unit-6-Vocab",
+      "title": "Global Success 6 - Unit 6 - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS6-Unit-1-Vocab": {
+      "path": "Global-success-slides/GS6-Unit-1-Vocab",
+      "title": "Global Success 6 - Unit 1 - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
     "slides/pre-gs6-personal-pronouns": {
       "path": "slides/pre-gs6-personal-pronouns",
       "title": "Pre GS6 - Personal Pronouns (Đại từ nhân xưng)",
@@ -1123,13 +1165,6 @@
       "author": "Gen8",
       "description": "Bài test Pre GS6 1, Danh từ, đại từ, mạo từ, some/any",
       "category": "tests"
-    },
-    "GS6-slides/unit-1-vocab": {
-      "path": "GS6-slides/unit-1-vocab",
-      "title": "Global Success 6 - Unit 1 - Vocab",
-      "author": "Gen8",
-      "description": "",
-      "category": "GS6-slides"
     }
   }
 }

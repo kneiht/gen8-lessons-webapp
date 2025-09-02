@@ -1,0 +1,679 @@
+[
+  {
+    "group": "Places",
+    "words": [
+      {
+        "english_word": "neighbourhood",
+        "pronunciation": "/ˈneɪbəhʊd/",
+        "vietnamese_meaning": "(n): khu vực lân cận, khu phố",
+        "example_sentence_en": "My neighbourhood is very quiet and friendly.",
+        "example_sentence_vi": "Khu phố của tôi rất yên tĩnh và thân thiện.",
+        "image": "assets/images/neighbourhood.webp",
+        "alt": "Image for neighbourhood"
+      },
+      {
+        "english_word": "square",
+        "pronunciation": "/skweə(r)/",
+        "vietnamese_meaning": "(n): quảng trường",
+        "example_sentence_en": "The children are playing in the town square.",
+        "example_sentence_vi": "Những đứa trẻ đang chơi ở quảng trường thị trấn.",
+        "image": "assets/images/square.webp",
+        "alt": "Image for square"
+      },
+      {
+        "english_word": "art gallery",
+        "pronunciation": "/ɑːt ˈɡæləri/",
+        "vietnamese_meaning": "(n): phòng trưng bày nghệ thuật",
+        "example_sentence_en": "We visited the art gallery to see the new exhibition.",
+        "example_sentence_vi": "Chúng tôi đã đến phòng trưng bày nghệ thuật để xem triển lãm mới.",
+        "image": "assets/images/art-gallery.webp",
+        "alt": "Image for art gallery"
+      },
+      {
+        "english_word": "cathedral",
+        "pronunciation": "/kəˈθiːdrəl/",
+        "vietnamese_meaning": "(n): nhà thờ lớn, thánh đường",
+        "example_sentence_en": "The cathedral is the tallest building in the city.",
+        "example_sentence_vi": "Nhà thờ lớn là tòa nhà cao nhất trong thành phố.",
+        "image": "assets/images/cathedral.webp",
+        "alt": "Image for cathedral"
+      },
+      {
+        "english_word": "temple",
+        "pronunciation": "/ˈtempl/",
+        "vietnamese_meaning": "(n): đền, miếu",
+        "example_sentence_en": "They go to the temple every weekend.",
+        "example_sentence_vi": "Họ đi đến đền vào mỗi cuối tuần.",
+        "image": "assets/images/temple.webp",
+        "alt": "Image for temple"
+      },
+      {
+        "english_word": "pagoda",
+        "pronunciation": "/pəˈɡəʊdə/",
+        "vietnamese_meaning": "(n): chùa",
+        "example_sentence_en": "The pagoda is famous for its beautiful architecture.",
+        "example_sentence_vi": "Ngôi chùa nổi tiếng với kiến trúc đẹp.",
+        "image": "assets/images/pagoda.webp",
+        "alt": "Image for pagoda"
+      },
+      {
+        "english_word": "museum",
+        "pronunciation": "/mjuˈziːəm/",
+        "vietnamese_meaning": "(n): bảo tàng",
+        "example_sentence_en": "We learned a lot at the history museum.",
+        "example_sentence_vi": "Chúng tôi đã học được nhiều điều ở bảo tàng lịch sử.",
+        "image": "assets/images/museum.webp",
+        "alt": "Image for museum"
+      },
+      {
+        "english_word": "railway station",
+        "pronunciation": "/ˈreɪlweɪ ˈsteɪʃn/",
+        "vietnamese_meaning": "(n): nhà ga xe lửa",
+        "example_sentence_en": "The train leaves from the railway station at 8 a.m.",
+        "example_sentence_vi": "Tàu rời nhà ga xe lửa lúc 8 giờ sáng.",
+        "image": "assets/images/railway-station.webp",
+        "alt": "Image for railway station"
+      },
+      {
+        "english_word": "cinema",
+        "pronunciation": "/ˈsɪnəmə/",
+        "vietnamese_meaning": "(n): rạp chiếu phim",
+        "example_sentence_en": "Let's go to the cinema this weekend.",
+        "example_sentence_vi": "Cuối tuần này chúng ta đi rạp chiếu phim nhé.",
+        "image": "assets/images/cinema.webp",
+        "alt": "Image for cinema"
+      },
+      {
+        "english_word": "post office",
+        "pronunciation": "/ˈpəʊst ɒfɪs/",
+        "vietnamese_meaning": "(n): bưu điện",
+        "example_sentence_en": "She sent a letter at the post office.",
+        "example_sentence_vi": "Cô ấy đã gửi thư ở bưu điện.",
+        "image": "assets/images/post-office.webp",
+        "alt": "Image for post office"
+      },
+      {
+        "english_word": "market",
+        "pronunciation": "/ˈmɑːkɪt/",
+        "vietnamese_meaning": "(n): chợ",
+        "example_sentence_en": "My mother buys vegetables at the market.",
+        "example_sentence_vi": "Mẹ tôi mua rau ở chợ.",
+        "image": "assets/images/market.webp",
+        "alt": "Image for market"
+      },
+      {
+        "english_word": "village market",
+        "pronunciation": "/ˈvɪlɪdʒ ˈmɑːkɪt/",
+        "vietnamese_meaning": "(n): chợ làng",
+        "example_sentence_en": "The village market is open every Sunday.",
+        "example_sentence_vi": "Chợ làng mở cửa vào mỗi Chủ nhật.",
+        "image": "assets/images/village-market.webp",
+        "alt": "Image for village market"
+      },
+      {
+        "english_word": "corner shop",
+        "pronunciation": "/ˈkɔːnə ʃɒp/",
+        "vietnamese_meaning": "(n): cửa hàng nhỏ ở góc phố",
+        "example_sentence_en": "I often buy snacks at the corner shop.",
+        "example_sentence_vi": "Tôi thường mua đồ ăn vặt ở cửa hàng góc phố.",
+        "image": "assets/images/corner-shop.webp",
+        "alt": "Image for corner shop"
+      },
+      {
+        "english_word": "shop",
+        "pronunciation": "/ʃɒp/",
+        "vietnamese_meaning": "(n): các cửa hàng",
+        "example_sentence_en": "There are many shop in the city centre.",
+        "example_sentence_vi": "Có nhiều cửa hàng ở trung tâm thành phố.",
+        "image": "assets/images/shop.webp",
+        "alt": "Image for shop"
+      },
+      {
+        "english_word": "restaurant",
+        "pronunciation": "/ˈrestərɒnt/",
+        "vietnamese_meaning": "(n): nhà hàng",
+        "example_sentence_en": "We have dinner at different restaurants every week.",
+        "example_sentence_vi": "Chúng tôi ăn tối ở các nhà hàng khác nhau mỗi tuần.",
+        "image": "assets/images/restaurant.webp",
+        "alt": "Image for restaurant"
+      },
+      {
+        "english_word": "factory",
+        "pronunciation": "/ˈfæktri/",
+        "vietnamese_meaning": "(n): nhà máy",
+        "example_sentence_en": "There are several factories near the river.",
+        "example_sentence_vi": "Có một số nhà máy gần con sông.",
+        "image": "assets/images/factory.webp",
+        "alt": "Image for factory"
+      },
+      {
+        "english_word": "office",
+        "pronunciation": "/ˈɒfɪs/",
+        "vietnamese_meaning": "(n): văn phòng",
+        "example_sentence_en": "My father works in an office.",
+        "example_sentence_vi": "Bố tôi làm việc ở văn phòng.",
+        "image": "assets/images/office.webp",
+        "alt": "Image for office"
+      },
+      {
+        "english_word": "building",
+        "pronunciation": "/ˈbɪldɪŋ/",
+        "vietnamese_meaning": "(n): tòa nhà",
+        "example_sentence_en": "That building is very modern.",
+        "example_sentence_vi": "Tòa nhà đó rất hiện đại.",
+        "image": "assets/images/building.webp",
+        "alt": "Image for building"
+      },
+      {
+        "english_word": "suburbs",
+        "pronunciation": "/ˈsʌbɜːbz/",
+        "vietnamese_meaning": "(n): vùng ngoại ô",
+        "example_sentence_en": "They live in the suburbs of the city.",
+        "example_sentence_vi": "Họ sống ở vùng ngoại ô của thành phố.",
+        "image": "assets/images/suburbs.webp",
+        "alt": "Image for suburbs"
+      },
+      {
+        "english_word": "centre",
+        "pronunciation": "/ˈsentə(r)/",
+        "vietnamese_meaning": "(n): trung tâm",
+        "example_sentence_en": "The shopping centre is always crowded.",
+        "example_sentence_vi": "Trung tâm mua sắm luôn đông đúc.",
+        "image": "assets/images/centre.webp",
+        "alt": "Image for centre"
+      },
+      {
+        "english_word": "countryside",
+        "pronunciation": "/ˈkʌntrisaɪd/",
+        "vietnamese_meaning": "(n): vùng nông thôn",
+        "example_sentence_en": "Life in the countryside is peaceful.",
+        "example_sentence_vi": "Cuộc sống ở nông thôn rất yên bình.",
+        "image": "assets/images/countryside.webp",
+        "alt": "Image for countryside"
+      },
+      {
+        "english_word": "street",
+        "pronunciation": "/striːt/",
+        "vietnamese_meaning": "(n): đường phố",
+        "example_sentence_en": "The street is busy in the morning.",
+        "example_sentence_vi": "Đường phố rất đông vào buổi sáng.",
+        "image": "assets/images/street.webp",
+        "alt": "Image for street"
+      }
+    ]
+  },
+  {
+    "group": "Directions",
+    "words": [
+      {
+        "english_word": "cross the road",
+        "pronunciation": "/krɒs ðə rəʊd/",
+        "vietnamese_meaning": "(v): băng qua đường",
+        "example_sentence_en": "Always look both ways before you cross the road.",
+        "example_sentence_vi": "Luôn nhìn cả hai phía trước khi băng qua đường.",
+        "image": "assets/images/cross-the-road.webp",
+        "alt": "Image for cross the road"
+      },
+      {
+        "english_word": "turn left",
+        "pronunciation": "/tɜːn left/",
+        "vietnamese_meaning": "(v): rẽ trái",
+        "example_sentence_en": "Turn left at the traffic lights.",
+        "example_sentence_vi": "Rẽ trái ở đèn giao thông.",
+        "image": "assets/images/turn-left.webp",
+        "alt": "Image for turn left"
+      },
+      {
+        "english_word": "turn right",
+        "pronunciation": "/tɜːn raɪt/",
+        "vietnamese_meaning": "(v): rẽ phải",
+        "example_sentence_en": "Turn right at the next corner.",
+        "example_sentence_vi": "Rẽ phải ở góc tiếp theo.",
+        "image": "assets/images/turn-right.webp",
+        "alt": "Image for turn right"
+      },
+      {
+        "english_word": "go straight",
+        "pronunciation": "/ɡəʊ streɪt/",
+        "vietnamese_meaning": "(v): đi thẳng",
+        "example_sentence_en": "Go straight and you will see the school.",
+        "example_sentence_vi": "Đi thẳng và bạn sẽ thấy trường học.",
+        "image": "assets/images/go-straight.webp",
+        "alt": "Image for go straight"
+      },
+      {
+        "english_word": "turning",
+        "pronunciation": "/ˈtɜːnɪŋ/",
+        "vietnamese_meaning": "(n): ngã rẽ",
+        "example_sentence_en": "Take the second turning on the right.",
+        "example_sentence_vi": "Rẽ vào ngã rẽ thứ hai bên phải.",
+        "image": "assets/images/turning.webp",
+        "alt": "Image for turning"
+      },
+      {
+        "english_word": "go along",
+        "pronunciation": "/ɡəʊ əˈlɒŋ/",
+        "vietnamese_meaning": "(v): đi dọc theo",
+        "example_sentence_en": "Go along this street for 200 meters.",
+        "example_sentence_vi": "Đi dọc theo con đường này 200 mét.",
+        "image": "assets/images/go-along.webp",
+        "alt": "Image for go along"
+      },
+      {
+        "english_word": "go out of",
+        "pronunciation": "/ɡəʊ aʊt ɒv/",
+        "vietnamese_meaning": "(v): đi ra khỏi",
+        "example_sentence_en": "Go out of the building and turn left.",
+        "example_sentence_vi": "Đi ra khỏi tòa nhà và rẽ trái.",
+        "image": "assets/images/go-out-of.webp",
+        "alt": "Image for go out of"
+      },
+      {
+        "english_word": "get lost",
+        "pronunciation": "/ɡet lɒst/",
+        "vietnamese_meaning": "(v): bị lạc",
+        "example_sentence_en": "I often get lost in big cities.",
+        "example_sentence_vi": "Tôi thường bị lạc ở các thành phố lớn.",
+        "image": "assets/images/get-lost.webp",
+        "alt": "Image for get lost"
+      },
+      {
+        "english_word": "ask the way",
+        "pronunciation": "/ɑːsk ðə weɪ/",
+        "vietnamese_meaning": "(v): hỏi đường",
+        "example_sentence_en": "You can ask the way if you don't know.",
+        "example_sentence_vi": "Bạn có thể hỏi đường nếu không biết.",
+        "image": "assets/images/ask-the-way.webp",
+        "alt": "Image for ask the way"
+      },
+      {
+        "english_word": "show the way",
+        "pronunciation": "/ʃəʊ ðə weɪ/",
+        "vietnamese_meaning": "(v): chỉ đường",
+        "example_sentence_en": "Can you show me the way to the station?",
+        "example_sentence_vi": "Bạn có thể chỉ đường cho tôi đến nhà ga không?",
+        "image": "assets/images/show-the-way.webp",
+        "alt": "Image for show the way"
+      },
+      {
+        "english_word": "near",
+        "pronunciation": "/nɪə(r)/",
+        "vietnamese_meaning": "(adj): gần",
+        "example_sentence_en": "The school is near my house.",
+        "example_sentence_vi": "Trường học gần nhà tôi.",
+        "image": "assets/images/near.webp",
+        "alt": "Image for near"
+      },
+      {
+        "english_word": "faraway",
+        "pronunciation": "/ˈfɑːrəweɪ/",
+        "vietnamese_meaning": "(adj): xa, xa xôi",
+        "example_sentence_en": "My grandparents live in a faraway village.",
+        "example_sentence_vi": "Ông bà tôi sống ở một ngôi làng xa xôi.",
+        "image": "assets/images/faraway.webp",
+        "alt": "Image for faraway"
+      }
+    ]
+  },
+  {
+    "group": "Describing Words",
+    "words": [
+      {
+        "english_word": "beautiful",
+        "pronunciation": "/ˈbjuːtɪfl/",
+        "vietnamese_meaning": "(adj): đẹp",
+        "example_sentence_en": "The park is very beautiful in spring.",
+        "example_sentence_vi": "Công viên rất đẹp vào mùa xuân.",
+        "image": "assets/images/beautiful.webp",
+        "alt": "Image for beautiful"
+      },
+      {
+        "english_word": "quiet",
+        "pronunciation": "/ˈkwaɪət/",
+        "vietnamese_meaning": "(adj): yên tĩnh",
+        "example_sentence_en": "This is a quiet neighbourhood.",
+        "example_sentence_vi": "Đây là một khu phố yên tĩnh.",
+        "image": "assets/images/quiet.webp",
+        "alt": "Image for quiet"
+      },
+      {
+        "english_word": "noisy",
+        "pronunciation": "/ˈnɔɪzi/",
+        "vietnamese_meaning": "(adj): ồn ào",
+        "example_sentence_en": "The street is very noisy at night.",
+        "example_sentence_vi": "Đường phố rất ồn ào vào ban đêm.",
+        "image": "assets/images/noisy.webp",
+        "alt": "Image for noisy"
+      },
+      {
+        "english_word": "crowded",
+        "pronunciation": "/ˈkraʊdɪd/",
+        "vietnamese_meaning": "(adj): đông đúc",
+        "example_sentence_en": "The market is crowded on weekends.",
+        "example_sentence_vi": "Chợ rất đông vào cuối tuần.",
+        "image": "assets/images/crowded.webp",
+        "alt": "Image for crowded"
+      },
+      {
+        "english_word": "peaceful",
+        "pronunciation": "/ˈpiːsfl/",
+        "vietnamese_meaning": "(adj): yên bình",
+        "example_sentence_en": "The countryside is peaceful.",
+        "example_sentence_vi": "Vùng nông thôn rất yên bình.",
+        "image": "assets/images/peaceful.webp",
+        "alt": "Image for peaceful"
+      },
+      {
+        "english_word": "boring",
+        "pronunciation": "/ˈbɔːrɪŋ/",
+        "vietnamese_meaning": "(adj): nhàm chán",
+        "example_sentence_en": "The lesson is boring.",
+        "example_sentence_vi": "Bài học thật nhàm chán.",
+        "image": "assets/images/boring.webp",
+        "alt": "Image for boring"
+      },
+      {
+        "english_word": "modern",
+        "pronunciation": "/ˈmɒdn/",
+        "vietnamese_meaning": "(adj): hiện đại",
+        "example_sentence_en": "This is a modern building.",
+        "example_sentence_vi": "Đây là một tòa nhà hiện đại.",
+        "image": "assets/images/modern.webp",
+        "alt": "Image for modern"
+      },
+      {
+        "english_word": "busy",
+        "pronunciation": "/ˈbɪzi/",
+        "vietnamese_meaning": "(adj): bận rộn, đông đúc",
+        "example_sentence_en": "The street is busy in the morning.",
+        "example_sentence_vi": "Đường phố rất đông vào buổi sáng.",
+        "image": "assets/images/busy.webp",
+        "alt": "Image for busy"
+      },
+      {
+        "english_word": "exciting",
+        "pronunciation": "/ɪkˈsaɪtɪŋ/",
+        "vietnamese_meaning": "(adj): hào hứng",
+        "example_sentence_en": "The city is exciting at night.",
+        "example_sentence_vi": "Thành phố rất thú vị vào ban đêm.",
+        "image": "assets/images/exciting.webp",
+        "alt": "Image for exciting"
+      },
+      {
+        "english_word": "cheap",
+        "pronunciation": "/tʃiːp/",
+        "vietnamese_meaning": "(adj): rẻ",
+        "example_sentence_en": "The food here is cheap.",
+        "example_sentence_vi": "Đồ ăn ở đây rất rẻ.",
+        "image": "assets/images/cheap.webp",
+        "alt": "Image for cheap"
+      },
+      {
+        "english_word": "expensive",
+        "pronunciation": "/ɪkˈspensɪv/",
+        "vietnamese_meaning": "(adj): đắt",
+        "example_sentence_en": "This restaurant is expensive.",
+        "example_sentence_vi": "Nhà hàng này đắt.",
+        "image": "assets/images/expensive.webp",
+        "alt": "Image for expensive"
+      },
+      {
+        "english_word": "clean",
+        "pronunciation": "/kliːn/",
+        "vietnamese_meaning": "(adj): sạch sẽ",
+        "example_sentence_en": "The streets are clean.",
+        "example_sentence_vi": "Đường phố sạch sẽ.",
+        "image": "assets/images/clean.webp",
+        "alt": "Image for clean"
+      },
+      {
+        "english_word": "dirty",
+        "pronunciation": "/ˈdɜːti/",
+        "vietnamese_meaning": "(adj): bẩn",
+        "example_sentence_en": "The air is dirty in big cities.",
+        "example_sentence_vi": "Không khí ở các thành phố lớn bị ô nhiễm.",
+        "image": "assets/images/dirty.webp",
+        "alt": "Image for dirty"
+      },
+      {
+        "english_word": "convenient",
+        "pronunciation": "/kənˈviːniənt/",
+        "vietnamese_meaning": "(adj): tiện lợi",
+        "example_sentence_en": "It is convenient to live near the market.",
+        "example_sentence_vi": "Sống gần chợ rất tiện lợi.",
+        "image": "assets/images/convenient.webp",
+        "alt": "Image for convenient"
+      },
+      {
+        "english_word": "friendly",
+        "pronunciation": "/ˈfrendli/",
+        "vietnamese_meaning": "(adj): thân thiện",
+        "example_sentence_en": "The people here are friendly.",
+        "example_sentence_vi": "Người dân ở đây rất thân thiện.",
+        "image": "assets/images/friendly.webp",
+        "alt": "Image for friendly"
+      },
+      {
+        "english_word": "lively",
+        "pronunciation": "/ˈlaɪvli/",
+        "vietnamese_meaning": "(adj): sôi động",
+        "example_sentence_en": "The festival is lively and fun.",
+        "example_sentence_vi": "Lễ hội rất sôi động và vui vẻ.",
+        "image": "assets/images/lively.webp",
+        "alt": "Image for lively"
+      },
+      {
+        "english_word": "pretty",
+        "pronunciation": "/ˈprɪti/",
+        "vietnamese_meaning": "(adj): xinh đẹp",
+        "example_sentence_en": "She lives in a pretty house.",
+        "example_sentence_vi": "Cô ấy sống trong một ngôi nhà xinh đẹp.",
+        "image": "assets/images/pretty.webp",
+        "alt": "Image for pretty"
+      },
+      {
+        "english_word": "fantastic",
+        "pronunciation": "/fænˈtæstɪk/",
+        "vietnamese_meaning": "(adj): tuyệt vời",
+        "example_sentence_en": "The view from the mountain is fantastic.",
+        "example_sentence_vi": "Quang cảnh từ trên núi thật tuyệt vời.",
+        "image": "assets/images/fantastic.webp",
+        "alt": "Image for fantastic"
+      },
+      {
+        "english_word": "wide",
+        "pronunciation": "/waɪd/",
+        "vietnamese_meaning": "(adj): rộng",
+        "example_sentence_en": "The street is wide and clean.",
+        "example_sentence_vi": "Con đường rộng và sạch sẽ.",
+        "image": "assets/images/wide.webp",
+        "alt": "Image for wide"
+      },
+      {
+        "english_word": "delicious",
+        "pronunciation": "/dɪˈlɪʃəs/",
+        "vietnamese_meaning": "(adj): ngon",
+        "example_sentence_en": "The seafood here is delicious.",
+        "example_sentence_vi": "Hải sản ở đây rất ngon.",
+        "image": "assets/images/delicious.webp",
+        "alt": "Image for delicious"
+      },
+      {
+        "english_word": "heavy",
+        "pronunciation": "/ˈhevi/",
+        "vietnamese_meaning": "(adj): nặng",
+        "example_sentence_en": "The traffic is heavy in the morning.",
+        "example_sentence_vi": "Giao thông rất đông vào buổi sáng.",
+        "image": "assets/images/heavy.webp",
+        "alt": "Image for heavy"
+      },
+      {
+        "english_word": "large",
+        "pronunciation": "/lɑːdʒ/",
+        "vietnamese_meaning": "(adj): lớn",
+        "example_sentence_en": "The park is large and beautiful.",
+        "example_sentence_vi": "Công viên lớn và đẹp.",
+        "image": "assets/images/large.webp",
+        "alt": "Image for large"
+      },
+      {
+        "english_word": "helpful",
+        "pronunciation": "/ˈhelpfl/",
+        "vietnamese_meaning": "(adj): hữu ích, hay giúp đỡ",
+        "example_sentence_en": "The staff are very helpful.",
+        "example_sentence_vi": "Nhân viên rất nhiệt tình giúp đỡ.",
+        "image": "assets/images/helpful.webp",
+        "alt": "Image for helpful"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "partner",
+        "pronunciation": "/ˈpɑːtnə(r)/",
+        "vietnamese_meaning": "(n): bạn đồng hành, đối tác",
+        "example_sentence_en": "Work with your partner to finish the task.",
+        "example_sentence_vi": "Làm việc với bạn đồng hành để hoàn thành nhiệm vụ.",
+        "image": "assets/images/partner.webp",
+        "alt": "Image for partner"
+      },
+      {
+        "english_word": "neighbour",
+        "pronunciation": "/ˈneɪbə(r)/",
+        "vietnamese_meaning": "(n): hàng xóm",
+        "example_sentence_en": "My neighbour is very friendly.",
+        "example_sentence_vi": "Hàng xóm của tôi rất thân thiện.",
+        "image": "assets/images/neighbour.webp",
+        "alt": "Image for neighbour"
+      },
+      {
+        "english_word": "outdoor activity",
+        "pronunciation": "/ˈaʊtdɔːr ækˈtɪvəti/",
+        "vietnamese_meaning": "(n): hoạt động ngoài trời",
+        "example_sentence_en": "Cycling is a popular outdoor activity.",
+        "example_sentence_vi": "Đạp xe là một hoạt động ngoài trời phổ biến.",
+        "image": "assets/images/outdoor-activity.webp",
+        "alt": "Image for outdoor activity"
+      },
+      {
+        "english_word": "tour",
+        "pronunciation": "/tʊə(r)/",
+        "vietnamese_meaning": "(n): chuyến du lịch",
+        "example_sentence_en": "We went on a city tour last weekend.",
+        "example_sentence_vi": "Chúng tôi đã đi tham quan thành phố cuối tuần trước.",
+        "image": "assets/images/tour.webp",
+        "alt": "Image for tour"
+      },
+      {
+        "english_word": "workshop",
+        "pronunciation": "/ˈwɜːkʃɒp/",
+        "vietnamese_meaning": "(n): hội thảo, xưởng",
+        "example_sentence_en": "She attended a painting workshop.",
+        "example_sentence_vi": "Cô ấy đã tham gia một hội thảo vẽ tranh.",
+        "image": "assets/images/workshop.webp",
+        "alt": "Image for workshop"
+      },
+      {
+        "english_word": "swap",
+        "pronunciation": "/swɒp/",
+        "vietnamese_meaning": "(v): trao đổi",
+        "example_sentence_en": "Let's swap seats for a better view.",
+        "example_sentence_vi": "Hãy đổi chỗ để có góc nhìn tốt hơn.",
+        "image": "assets/images/swap.webp",
+        "alt": "Image for swap"
+      },
+      {
+        "english_word": "arrive",
+        "pronunciation": "/əˈraɪv/",
+        "vietnamese_meaning": "(v): đến nơi",
+        "example_sentence_en": "We will arrive at the station at 9 a.m.",
+        "example_sentence_vi": "Chúng tôi sẽ đến nhà ga lúc 9 giờ sáng.",
+        "image": "assets/images/arrive.webp",
+        "alt": "Image for arrive"
+      },
+      {
+        "english_word": "decide",
+        "pronunciation": "/dɪˈsaɪd/",
+        "vietnamese_meaning": "(v): quyết định",
+        "example_sentence_en": "They decide to visit the museum.",
+        "example_sentence_vi": "Họ quyết định đi thăm bảo tàng.",
+        "image": "assets/images/decide.webp",
+        "alt": "Image for decide"
+      },
+      {
+        "english_word": "grow",
+        "pronunciation": "/ɡrəʊ/",
+        "vietnamese_meaning": "(v): trồng, phát triển",
+        "example_sentence_en": "Farmers grow rice in the countryside.",
+        "example_sentence_vi": "Nông dân trồng lúa ở nông thôn.",
+        "image": "assets/images/grow.webp",
+        "alt": "Image for grow"
+      },
+      {
+        "english_word": "weather",
+        "pronunciation": "/ˈweðə(r)/",
+        "vietnamese_meaning": "(n): thời tiết",
+        "example_sentence_en": "The weather is fine today.",
+        "example_sentence_vi": "Thời tiết hôm nay đẹp.",
+        "image": "assets/images/weather.webp",
+        "alt": "Image for weather"
+      },
+      {
+        "english_word": "traffic",
+        "pronunciation": "/ˈtræfɪk/",
+        "vietnamese_meaning": "(n): giao thông",
+        "example_sentence_en": "The traffic is heavy in the city.",
+        "example_sentence_vi": "Giao thông ở thành phố rất đông.",
+        "image": "assets/images/traffic.webp",
+        "alt": "Image for traffic"
+      },
+      {
+        "english_word": "seafood",
+        "pronunciation": "/ˈsiːfuːd/",
+        "vietnamese_meaning": "(n): hải sản",
+        "example_sentence_en": "Da Nang is famous for its seafood.",
+        "example_sentence_vi": "Đà Nẵng nổi tiếng với hải sản.",
+        "image": "assets/images/seafood.webp",
+        "alt": "Image for seafood"
+      },
+      {
+        "english_word": "present",
+        "pronunciation": "/ˈpreznt/",
+        "vietnamese_meaning": "(n): món quà, hiện tại",
+        "example_sentence_en": "She gave me a present for my birthday.",
+        "example_sentence_vi": "Cô ấy tặng tôi một món quà nhân dịp sinh nhật.",
+        "image": "assets/images/present.webp",
+        "alt": "Image for present"
+      },
+      {
+        "english_word": "air",
+        "pronunciation": "/eə(r)/",
+        "vietnamese_meaning": "(n): không khí",
+        "example_sentence_en": "The air is fresh in the countryside.",
+        "example_sentence_vi": "Không khí ở nông thôn rất trong lành.",
+        "image": "assets/images/air.webp",
+        "alt": "Image for air"
+      },
+      {
+        "english_word": "culture",
+        "pronunciation": "/ˈkʌltʃə(r)/",
+        "vietnamese_meaning": "(n): văn hóa",
+        "example_sentence_en": "We should learn about local culture.",
+        "example_sentence_vi": "Chúng ta nên tìm hiểu về văn hóa địa phương.",
+        "image": "assets/images/culture.webp",
+        "alt": "Image for culture"
+      },
+      {
+        "english_word": "excited",
+        "pronunciation": "/ɪkˈsaɪtɪd/",
+        "vietnamese_meaning": "(adj): hào hứng",
+        "example_sentence_en": "The children are excited about the trip.",
+        "example_sentence_vi": "Những đứa trẻ rất hào hứng về chuyến đi.",
+        "image": "assets/images/excited.webp",
+        "alt": "Image for excited"
+      }
+    ]
+  }
+]

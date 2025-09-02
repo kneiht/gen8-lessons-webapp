@@ -1,0 +1,834 @@
+[
+  {
+    "group": "Nature and Scenery",
+    "words": [
+      {
+        "english_word": "natural wonder",
+        "pronunciation": "/ˈnætʃrəl ˈwʌndər/",
+        "vietnamese_meaning": "(n): kỳ quan thiên nhiên",
+        "example_sentence_en": "Ha Long Bay is a famous natural wonder in Viet Nam.",
+        "example_sentence_vi": "Vịnh Hạ Long là một kỳ quan thiên nhiên nổi tiếng ở Việt Nam.",
+        "image": "assets/images/natural-wonder.webp",
+        "alt": "Image for natural wonder"
+      },
+      {
+        "english_word": "scenery",
+        "pronunciation": "/ˈsiːnəri/",
+        "vietnamese_meaning": "(n): phong cảnh",
+        "example_sentence_en": "The scenery in the mountains is beautiful.",
+        "example_sentence_vi": "Phong cảnh ở vùng núi rất đẹp.",
+        "image": "assets/images/scenery.webp",
+        "alt": "Image for scenery"
+      },
+      {
+        "english_word": "landscape",
+        "pronunciation": "/ˈlændskeɪp/",
+        "vietnamese_meaning": "(n): cảnh quan",
+        "example_sentence_en": "The landscape of the national park is amazing.",
+        "example_sentence_vi": "Cảnh quan của vườn quốc gia thật tuyệt vời.",
+        "image": "assets/images/landscape.webp",
+        "alt": "Image for landscape"
+      },
+      {
+        "english_word": "mountain",
+        "pronunciation": "/ˈmaʊntən/",
+        "vietnamese_meaning": "(n): núi",
+        "example_sentence_en": "Fansipan is the highest mountain in Viet Nam.",
+        "example_sentence_vi": "Fansipan là ngọn núi cao nhất Việt Nam.",
+        "image": "assets/images/mountain.webp",
+        "alt": "Image for mountain"
+      },
+      {
+        "english_word": "mountain range",
+        "pronunciation": "/ˈmaʊntən reɪndʒ/",
+        "vietnamese_meaning": "(n): dãy núi",
+        "example_sentence_en": "The Himalayas is a famous mountain range.",
+        "example_sentence_vi": "Himalaya là một dãy núi nổi tiếng.",
+        "image": "assets/images/mountain-range.webp",
+        "alt": "Image for mountain range"
+      },
+      {
+        "english_word": "river",
+        "pronunciation": "/ˈrɪvər/",
+        "vietnamese_meaning": "(n): sông",
+        "example_sentence_en": "The Mekong is a long river in Asia.",
+        "example_sentence_vi": "Mê Kông là một con sông dài ở châu Á.",
+        "image": "assets/images/river.webp",
+        "alt": "Image for river"
+      },
+      {
+        "english_word": "waterfall",
+        "pronunciation": "/ˈwɔːtəfɔːl/",
+        "vietnamese_meaning": "(n): thác nước",
+        "example_sentence_en": "Ban Gioc is the most beautiful waterfall in Viet Nam.",
+        "example_sentence_vi": "Bản Giốc là thác nước đẹp nhất Việt Nam.",
+        "image": "assets/images/waterfall.webp",
+        "alt": "Image for waterfall"
+      },
+      {
+        "english_word": "forest",
+        "pronunciation": "/ˈfɒrɪst/",
+        "vietnamese_meaning": "(n): rừng",
+        "example_sentence_en": "We walked through the forest to see wild animals.",
+        "example_sentence_vi": "Chúng tôi đi bộ qua rừng để xem động vật hoang dã.",
+        "image": "assets/images/forest.webp",
+        "alt": "Image for forest"
+      },
+      {
+        "english_word": "cave",
+        "pronunciation": "/keɪv/",
+        "vietnamese_meaning": "(n): hang động",
+        "example_sentence_en": "Son Doong is the largest cave in the world.",
+        "example_sentence_vi": "Sơn Đoòng là hang động lớn nhất thế giới.",
+        "image": "assets/images/cave.webp",
+        "alt": "Image for cave"
+      },
+      {
+        "english_word": "desert",
+        "pronunciation": "/ˈdezərt/",
+        "vietnamese_meaning": "(n): sa mạc",
+        "example_sentence_en": "The Sahara is a very hot desert.",
+        "example_sentence_vi": "Sahara là một sa mạc rất nóng.",
+        "image": "assets/images/desert.webp",
+        "alt": "Image for desert"
+      },
+      {
+        "english_word": "island",
+        "pronunciation": "/ˈaɪlənd/",
+        "vietnamese_meaning": "(n): đảo",
+        "example_sentence_en": "Phu Quoc is a beautiful island in Viet Nam.",
+        "example_sentence_vi": "Phú Quốc là một hòn đảo đẹp ở Việt Nam.",
+        "image": "assets/images/island.webp",
+        "alt": "Image for island"
+      },
+      {
+        "english_word": "bay",
+        "pronunciation": "/beɪ/",
+        "vietnamese_meaning": "(n): vịnh",
+        "example_sentence_en": "Ha Long Bay has many islands.",
+        "example_sentence_vi": "Vịnh Hạ Long có nhiều hòn đảo.",
+        "image": "assets/images/bay.webp",
+        "alt": "Image for bay"
+      },
+      {
+        "english_word": "sand dune",
+        "pronunciation": "/ˈsænd duːn/",
+        "vietnamese_meaning": "(n): đồi cát",
+        "example_sentence_en": "Mui Ne is famous for its sand dunes.",
+        "example_sentence_vi": "Mũi Né nổi tiếng với những đồi cát.",
+        "image": "assets/images/sand-dune.webp",
+        "alt": "Image for sand dune"
+      },
+      {
+        "english_word": "rock column",
+        "pronunciation": "/rɒk ˈkɒləm/",
+        "vietnamese_meaning": "(n): cột đá",
+        "example_sentence_en": "Ganh Da Dia has many rock columns.",
+        "example_sentence_vi": "Gành Đá Đĩa có nhiều cột đá.",
+        "image": "assets/images/rock-column.webp",
+        "alt": "Image for rock column"
+      },
+      {
+        "english_word": "slope",
+        "pronunciation": "/sləʊp/",
+        "vietnamese_meaning": "(n): sườn dốc",
+        "example_sentence_en": "The road goes up a steep slope.",
+        "example_sentence_vi": "Con đường đi lên một sườn dốc cao.",
+        "image": "assets/images/slope.webp",
+        "alt": "Image for slope"
+      },
+      {
+        "english_word": "national park",
+        "pronunciation": "/ˈnæʃnəl pɑːk/",
+        "vietnamese_meaning": "(n): vườn quốc gia",
+        "example_sentence_en": "Cuc Phuong is a famous national park.",
+        "example_sentence_vi": "Cúc Phương là một vườn quốc gia nổi tiếng.",
+        "image": "assets/images/national-park.webp",
+        "alt": "Image for national park"
+      }
+    ]
+  },
+  {
+    "group": "Items and Equipment",
+    "words": [
+      {
+        "english_word": "compass",
+        "pronunciation": "/ˈkʌmpəs/",
+        "vietnamese_meaning": "(n): la bàn",
+        "example_sentence_en": "We use a compass to find the right direction.",
+        "example_sentence_vi": "Chúng tôi dùng la bàn để tìm hướng đúng.",
+        "image": "assets/images/compass-direction.webp",
+        "alt": "Image for compass"
+      },
+      {
+        "english_word": "suncream",
+        "pronunciation": "/ˈsʌnkriːm/",
+        "vietnamese_meaning": "(n): kem chống nắng",
+        "example_sentence_en": "Remember to put on suncream before going outside.",
+        "example_sentence_vi": "Nhớ bôi kem chống nắng trước khi ra ngoài.",
+        "image": "assets/images/suncream.webp",
+        "alt": "Image for suncream"
+      },
+      {
+        "english_word": "sleeping bag",
+        "pronunciation": "/ˈsliːpɪŋ bæɡ/",
+        "vietnamese_meaning": "(n): túi ngủ",
+        "example_sentence_en": "I bring a sleeping bag when I go camping.",
+        "example_sentence_vi": "Tôi mang túi ngủ khi đi cắm trại.",
+        "image": "assets/images/sleeping-bag.webp",
+        "alt": "Image for sleeping bag"
+      },
+      {
+        "english_word": "plaster",
+        "pronunciation": "/ˈplɑːstə(r)/",
+        "vietnamese_meaning": "(n): băng dán cá nhân",
+        "example_sentence_en": "I need a plaster for my cut finger.",
+        "example_sentence_vi": "Tôi cần một miếng băng dán cá nhân cho ngón tay bị đứt.",
+        "image": "assets/images/plaster.webp",
+        "alt": "Image for plaster"
+      },
+      {
+        "english_word": "scissors",
+        "pronunciation": "/ˈsɪzəz/",
+        "vietnamese_meaning": "(n): cái kéo",
+        "example_sentence_en": "Use scissors to cut the paper.",
+        "example_sentence_vi": "Dùng kéo để cắt giấy.",
+        "image": "assets/images/scissors.webp",
+        "alt": "Image for scissors"
+      },
+      {
+        "english_word": "waterproof coat",
+        "pronunciation": "/ˈwɔːtəpruːf kəʊt/",
+        "vietnamese_meaning": "(n): áo khoác chống nước",
+        "example_sentence_en": "A waterproof coat is useful in rainy weather.",
+        "example_sentence_vi": "Áo khoác chống nước rất hữu ích khi trời mưa.",
+        "image": "assets/images/waterproof-coat.webp",
+        "alt": "Image for waterproof coat"
+      },
+      {
+        "english_word": "clothes",
+        "pronunciation": "/kləʊðz/",
+        "vietnamese_meaning": "(n): quần áo",
+        "example_sentence_en": "Pack your clothes for the trip.",
+        "example_sentence_vi": "Hãy đóng gói quần áo cho chuyến đi.",
+        "image": "assets/images/clothes.webp",
+        "alt": "Image for clothes"
+      },
+      {
+        "english_word": "shorts",
+        "pronunciation": "/ʃɔːts/",
+        "vietnamese_meaning": "(n): quần soóc",
+        "example_sentence_en": "I wear shorts in hot weather.",
+        "example_sentence_vi": "Tôi mặc quần soóc khi trời nóng.",
+        "image": "assets/images/shorts.webp",
+        "alt": "Image for shorts"
+      },
+      {
+        "english_word": "T-shirts",
+        "pronunciation": "/ˈtiː ʃɜːts/",
+        "vietnamese_meaning": "(n): áo phông",
+        "example_sentence_en": "T-shirts are comfortable for travel.",
+        "example_sentence_vi": "Áo phông rất thoải mái khi đi du lịch.",
+        "image": "assets/images/t-shirts.webp",
+        "alt": "Image for T-shirts"
+      },
+      {
+        "english_word": "mobile phone",
+        "pronunciation": "/ˈməʊbaɪl fəʊn/",
+        "vietnamese_meaning": "(n): điện thoại di động",
+        "example_sentence_en": "Don't forget your mobile phone.",
+        "example_sentence_vi": "Đừng quên điện thoại di động của bạn.",
+        "image": "assets/images/mobile-phone.webp",
+        "alt": "Image for mobile phone"
+      },
+      {
+        "english_word": "luggage",
+        "pronunciation": "/ˈlʌɡɪdʒ/",
+        "vietnamese_meaning": "(n): hành lý",
+        "example_sentence_en": "How many pieces of luggage do you have?",
+        "example_sentence_vi": "Bạn có bao nhiêu kiện hành lý?",
+        "image": "assets/images/luggage.webp",
+        "alt": "Image for luggage"
+      },
+      {
+        "english_word": "candle",
+        "pronunciation": "/ˈkændl/",
+        "vietnamese_meaning": "(n): nến",
+        "example_sentence_en": "We use a candle when the power goes out.",
+        "example_sentence_vi": "Chúng tôi dùng nến khi mất điện.",
+        "image": "assets/images/candle.webp",
+        "alt": "Image for candle"
+      }
+    ]
+  },
+  {
+    "group": "Describing Words",
+    "words": [
+      {
+        "english_word": "amazing",
+        "pronunciation": "/əˈmeɪzɪŋ/",
+        "vietnamese_meaning": "(adj): tuyệt vời, kinh ngạc",
+        "example_sentence_en": "The view from the top is amazing.",
+        "example_sentence_vi": "Quang cảnh từ trên đỉnh thật tuyệt vời.",
+        "image": "assets/images/amazing.webp",
+        "alt": "Image for amazing"
+      },
+      {
+        "english_word": "wonderful",
+        "pronunciation": "/ˈwʌndəfl/",
+        "vietnamese_meaning": "(adj): tuyệt vời",
+        "example_sentence_en": "We had a wonderful holiday.",
+        "example_sentence_vi": "Chúng tôi đã có một kỳ nghỉ tuyệt vời.",
+        "image": "assets/images/wonderful.webp",
+        "alt": "Image for wonderful"
+      },
+      {
+        "english_word": "charming",
+        "pronunciation": "/ˈtʃɑːmɪŋ/",
+        "vietnamese_meaning": "(adj): duyên dáng, quyến rũ",
+        "example_sentence_en": "The village is very charming.",
+        "example_sentence_vi": "Ngôi làng rất duyên dáng.",
+        "image": "assets/images/charming.webp",
+        "alt": "Image for charming"
+      },
+      {
+        "english_word": "beautiful",
+        "pronunciation": "/ˈbjuːtɪfl/",
+        "vietnamese_meaning": "(adj): đẹp",
+        "example_sentence_en": "The beach is beautiful at sunset.",
+        "example_sentence_vi": "Bãi biển rất đẹp vào lúc hoàng hôn.",
+        "image": "assets/images/beautiful.webp",
+        "alt": "Image for beautiful"
+      },
+      {
+        "english_word": "popular",
+        "pronunciation": "/ˈpɒpjələ(r)/",
+        "vietnamese_meaning": "(adj): phổ biến",
+        "example_sentence_en": "This is a popular tourist attraction.",
+        "example_sentence_vi": "Đây là một điểm du lịch phổ biến.",
+        "image": "assets/images/popular.webp",
+        "alt": "Image for popular"
+      },
+      {
+        "english_word": "special",
+        "pronunciation": "/ˈspeʃl/",
+        "vietnamese_meaning": "(adj): đặc biệt",
+        "example_sentence_en": "This place is very special to me.",
+        "example_sentence_vi": "Nơi này rất đặc biệt với tôi.",
+        "image": "assets/images/special.webp",
+        "alt": "Image for special"
+      },
+      {
+        "english_word": "interesting",
+        "pronunciation": "/ˈɪntrəstɪŋ/",
+        "vietnamese_meaning": "(adj): thú vị",
+        "example_sentence_en": "The museum is interesting for children.",
+        "example_sentence_vi": "Bảo tàng rất thú vị đối với trẻ em.",
+        "image": "assets/images/interesting.webp",
+        "alt": "Image for interesting"
+      },
+      {
+        "english_word": "exciting",
+        "pronunciation": "/ɪkˈsaɪtɪŋ/",
+        "vietnamese_meaning": "(adj): hào hứng, thú vị",
+        "example_sentence_en": "The trip was very exciting.",
+        "example_sentence_vi": "Chuyến đi rất hào hứng.",
+        "image": "assets/images/exciting.webp",
+        "alt": "Image for exciting"
+      },
+      {
+        "english_word": "different",
+        "pronunciation": "/ˈdɪfrənt/",
+        "vietnamese_meaning": "(adj): khác biệt",
+        "example_sentence_en": "The two islands are very different.",
+        "example_sentence_vi": "Hai hòn đảo rất khác nhau.",
+        "image": "assets/images/different.webp",
+        "alt": "Image for different"
+      },
+      {
+        "english_word": "man-made",
+        "pronunciation": "/ˌmæn ˈmeɪd/",
+        "vietnamese_meaning": "(adj): nhân tạo",
+        "example_sentence_en": "This lake is man-made.",
+        "example_sentence_vi": "Hồ này là nhân tạo.",
+        "image": "assets/images/man-made.webp",
+        "alt": "Image for man-made"
+      },
+      {
+        "english_word": "necessary",
+        "pronunciation": "/ˈnesəsəri/",
+        "vietnamese_meaning": "(adj): cần thiết",
+        "example_sentence_en": "Bring only the necessary items.",
+        "example_sentence_vi": "Chỉ mang theo những vật dụng cần thiết.",
+        "image": "assets/images/necessary.webp",
+        "alt": "Image for necessary"
+      },
+      {
+        "english_word": "important",
+        "pronunciation": "/ɪmˈpɔːtənt/",
+        "vietnamese_meaning": "(adj): quan trọng",
+        "example_sentence_en": "It is important to follow the rules.",
+        "example_sentence_vi": "Việc tuân thủ các quy tắc là quan trọng.",
+        "image": "assets/images/important.webp",
+        "alt": "Image for important"
+      },
+      {
+        "english_word": "dangerous",
+        "pronunciation": "/ˈdeɪndʒərəs/",
+        "vietnamese_meaning": "(adj): nguy hiểm",
+        "example_sentence_en": "It is dangerous to swim alone.",
+        "example_sentence_vi": "Bơi một mình rất nguy hiểm.",
+        "image": "assets/images/dangerous.webp",
+        "alt": "Image for dangerous"
+      },
+      {
+        "english_word": "famous",
+        "pronunciation": "/ˈfeɪməs/",
+        "vietnamese_meaning": "(adj): nổi tiếng",
+        "example_sentence_en": "Ha Long Bay is famous for its beauty.",
+        "example_sentence_vi": "Vịnh Hạ Long nổi tiếng vì vẻ đẹp của nó.",
+        "image": "assets/images/famous.webp",
+        "alt": "Image for famous"
+      },
+      {
+        "english_word": "natural",
+        "pronunciation": "/ˈnætʃrəl/",
+        "vietnamese_meaning": "(adj): tự nhiên",
+        "example_sentence_en": "This is a natural lake.",
+        "example_sentence_vi": "Đây là một hồ tự nhiên.",
+        "image": "assets/images/natural.webp",
+        "alt": "Image for natural"
+      }
+    ]
+  },
+  {
+    "group": "Weather",
+    "words": [
+      {
+        "english_word": "rainy",
+        "pronunciation": "/ˈreɪni/",
+        "vietnamese_meaning": "(adj): có mưa",
+        "example_sentence_en": "It is often rainy in summer.",
+        "example_sentence_vi": "Trời thường có mưa vào mùa hè.",
+        "image": "assets/images/rainy.webp",
+        "alt": "Image for rainy"
+      },
+      {
+        "english_word": "sunny",
+        "pronunciation": "/ˈsʌni/",
+        "vietnamese_meaning": "(adj): nắng",
+        "example_sentence_en": "It is sunny today.",
+        "example_sentence_vi": "Hôm nay trời nắng.",
+        "image": "assets/images/sunny.webp",
+        "alt": "Image for sunny"
+      },
+      {
+        "english_word": "dry",
+        "pronunciation": "/draɪ/",
+        "vietnamese_meaning": "(adj): khô",
+        "example_sentence_en": "The desert is very dry.",
+        "example_sentence_vi": "Sa mạc rất khô.",
+        "image": "assets/images/dry.webp",
+        "alt": "Image for dry"
+      },
+      {
+        "english_word": "warm",
+        "pronunciation": "/wɔːm/",
+        "vietnamese_meaning": "(adj): ấm áp",
+        "example_sentence_en": "The weather is warm in spring.",
+        "example_sentence_vi": "Thời tiết ấm áp vào mùa xuân.",
+        "image": "assets/images/warm.webp",
+        "alt": "Image for warm"
+      }
+    ]
+  },
+  {
+    "group": "Activities",
+    "words": [
+      {
+        "english_word": "play water sport",
+        "pronunciation": "/pleɪ ˈwɔːtə spɔːt/",
+        "vietnamese_meaning": "(v): chơi thể thao dưới nước",
+        "example_sentence_en": "We play water sport at the beach.",
+        "example_sentence_vi": "Chúng tôi chơi thể thao dưới nước ở bãi biển.",
+        "image": "assets/images/play-water-sport.webp",
+        "alt": "Image for play water sport"
+      },
+      {
+        "english_word": "play musical instrument",
+        "pronunciation": "/pleɪ ˈmjuːzɪkl ˈɪnstrəmənt/",
+        "vietnamese_meaning": "(v): chơi nhạc cụ",
+        "example_sentence_en": "She can play a musical instrument.",
+        "example_sentence_vi": "Cô ấy có thể chơi nhạc cụ.",
+        "image": "assets/images/play-musical-instrument.webp",
+        "alt": "Image for play musical instrument"
+      },
+      {
+        "english_word": "go camping",
+        "pronunciation": "/ɡəʊ ˈkæmpɪŋ/",
+        "vietnamese_meaning": "(v): đi cắm trại",
+        "example_sentence_en": "We go camping every summer.",
+        "example_sentence_vi": "Chúng tôi đi cắm trại mỗi mùa hè.",
+        "image": "assets/images/go-camping.webp",
+        "alt": "Image for go camping"
+      },
+      {
+        "english_word": "go hiking",
+        "pronunciation": "/ɡəʊ ˈhaɪkɪŋ/",
+        "vietnamese_meaning": "(v): đi bộ đường dài",
+        "example_sentence_en": "Let's go hiking in the forest.",
+        "example_sentence_vi": "Hãy đi bộ đường dài trong rừng.",
+        "image": "assets/images/go-hiking.webp",
+        "alt": "Image for go hiking"
+      },
+      {
+        "english_word": "ride a bike",
+        "pronunciation": "/raɪd ə baɪk/",
+        "vietnamese_meaning": "(v): đi xe đạp",
+        "example_sentence_en": "I ride a bike to school.",
+        "example_sentence_vi": "Tôi đi xe đạp đến trường.",
+        "image": "assets/images/ride-a-bike.webp",
+        "alt": "Image for ride a bike"
+      },
+      {
+        "english_word": "fly kites",
+        "pronunciation": "/flaɪ kaɪts/",
+        "vietnamese_meaning": "(v): thả diều",
+        "example_sentence_en": "Children like to fly kites in the field.",
+        "example_sentence_vi": "Trẻ em thích thả diều trên cánh đồng.",
+        "image": "assets/images/fly-kites.webp",
+        "alt": "Image for fly kites"
+      },
+      {
+        "english_word": "enjoy seafood",
+        "pronunciation": "/ɪnˈdʒɔɪ ˈsiːfuːd/",
+        "vietnamese_meaning": "(v): thưởng thức hải sản",
+        "example_sentence_en": "We enjoy seafood at the beach.",
+        "example_sentence_vi": "Chúng tôi thưởng thức hải sản ở bãi biển.",
+        "image": "assets/images/enjoy-seafood.webp",
+        "alt": "Image for enjoy seafood"
+      },
+      {
+        "english_word": "visit",
+        "pronunciation": "/ˈvɪzɪt/",
+        "vietnamese_meaning": "(v): thăm, tham quan",
+        "example_sentence_en": "We visit the museum every year.",
+        "example_sentence_vi": "Chúng tôi tham quan bảo tàng mỗi năm.",
+        "image": "assets/images/visit.webp",
+        "alt": "Image for visit"
+      },
+      {
+        "english_word": "explore",
+        "pronunciation": "/ɪkˈsplɔːr/",
+        "vietnamese_meaning": "(v): khám phá",
+        "example_sentence_en": "Let's explore the cave together.",
+        "example_sentence_vi": "Hãy cùng nhau khám phá hang động.",
+        "image": "assets/images/explore.webp",
+        "alt": "Image for explore"
+      },
+      {
+        "english_word": "travel",
+        "pronunciation": "/ˈtrævl/",
+        "vietnamese_meaning": "(v): du lịch, đi lại",
+        "example_sentence_en": "I love to travel to new places.",
+        "example_sentence_vi": "Tôi thích du lịch đến những nơi mới.",
+        "image": "assets/images/travel.webp",
+        "alt": "Image for travel"
+      },
+      {
+        "english_word": "picnic",
+        "pronunciation": "/ˈpɪknɪk/",
+        "vietnamese_meaning": "(n, v): dã ngoại",
+        "example_sentence_en": "We have a picnic in the park.",
+        "example_sentence_vi": "Chúng tôi đi dã ngoại ở công viên.",
+        "image": "assets/images/picnic.webp",
+        "alt": "Image for picnic"
+      }
+    ]
+  },
+  {
+    "group": "Places and Transportation",
+    "words": [
+      {
+        "english_word": "fishing village",
+        "pronunciation": "/ˈfɪʃɪŋ ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng chài",
+        "example_sentence_en": "We visited a fishing village by the sea.",
+        "example_sentence_vi": "Chúng tôi đã thăm một làng chài bên biển.",
+        "image": "assets/images/fishing-village.webp",
+        "alt": "Image for fishing village"
+      },
+      {
+        "english_word": "market",
+        "pronunciation": "/ˈmɑːkɪt/",
+        "vietnamese_meaning": "(n): chợ",
+        "example_sentence_en": "My mother buys food at the market.",
+        "example_sentence_vi": "Mẹ tôi mua thức ăn ở chợ.",
+        "image": "assets/images/market.webp",
+        "alt": "Image for market"
+      },
+      {
+        "english_word": "museum",
+        "pronunciation": "/mjuˈziːəm/",
+        "vietnamese_meaning": "(n): bảo tàng",
+        "example_sentence_en": "The museum is interesting for students.",
+        "example_sentence_vi": "Bảo tàng rất thú vị cho học sinh.",
+        "image": "assets/images/museum.webp",
+        "alt": "Image for museum"
+      },
+      {
+        "english_word": "tourist attraction",
+        "pronunciation": "/ˈtʊərɪst əˈtrækʃn/",
+        "vietnamese_meaning": "(n): điểm du lịch",
+        "example_sentence_en": "Ha Long Bay is a famous tourist attraction.",
+        "example_sentence_vi": "Vịnh Hạ Long là một điểm du lịch nổi tiếng.",
+        "image": "assets/images/tourist-attraction.webp",
+        "alt": "Image for tourist attraction"
+      },
+      {
+        "english_word": "canteen",
+        "pronunciation": "/kænˈtiːn/",
+        "vietnamese_meaning": "(n): căng tin",
+        "example_sentence_en": "We have lunch in the school canteen.",
+        "example_sentence_vi": "Chúng tôi ăn trưa ở căng tin trường.",
+        "image": "assets/images/canteen.webp",
+        "alt": "Image for canteen"
+      },
+      {
+        "english_word": "area",
+        "pronunciation": "/ˈeəriə/",
+        "vietnamese_meaning": "(n): khu vực",
+        "example_sentence_en": "This area is famous for its scenery.",
+        "example_sentence_vi": "Khu vực này nổi tiếng với phong cảnh.",
+        "image": "assets/images/area.webp",
+        "alt": "Image for area"
+      },
+      {
+        "english_word": "camping site",
+        "pronunciation": "/ˈkæmpɪŋ saɪt/",
+        "vietnamese_meaning": "(n): khu cắm trại",
+        "example_sentence_en": "We set up our tent at the camping site.",
+        "example_sentence_vi": "Chúng tôi dựng lều ở khu cắm trại.",
+        "image": "assets/images/camping-site.webp",
+        "alt": "Image for camping site"
+      },
+      {
+        "english_word": "road",
+        "pronunciation": "/rəʊd/",
+        "vietnamese_meaning": "(n): con đường",
+        "example_sentence_en": "The road to the village is very long.",
+        "example_sentence_vi": "Con đường đến làng rất dài.",
+        "image": "assets/images/road.webp",
+        "alt": "Image for road"
+      },
+      {
+        "english_word": "train",
+        "pronunciation": "/treɪn/",
+        "vietnamese_meaning": "(n): tàu hỏa",
+        "example_sentence_en": "We travel by train to Hanoi.",
+        "example_sentence_vi": "Chúng tôi đi Hà Nội bằng tàu hỏa.",
+        "image": "assets/images/train.webp",
+        "alt": "Image for train"
+      },
+      {
+        "english_word": "boat",
+        "pronunciation": "/bəʊt/",
+        "vietnamese_meaning": "(n): thuyền",
+        "example_sentence_en": "We took a boat to the island.",
+        "example_sentence_vi": "Chúng tôi đi thuyền ra đảo.",
+        "image": "assets/images/boat.webp",
+        "alt": "Image for boat"
+      }
+    ]
+  },
+  {
+    "group": "Food and Ingredients",
+    "words": [
+      {
+        "english_word": "butter",
+        "pronunciation": "/ˈbʌtə(r)/",
+        "vietnamese_meaning": "(n): bơ",
+        "example_sentence_en": "She puts butter on her bread.",
+        "example_sentence_vi": "Cô ấy phết bơ lên bánh mì.",
+        "image": "assets/images/butter.webp",
+        "alt": "Image for butter"
+      },
+      {
+        "english_word": "milk",
+        "pronunciation": "/mɪlk/",
+        "vietnamese_meaning": "(n): sữa",
+        "example_sentence_en": "I drink milk every morning.",
+        "example_sentence_vi": "Tôi uống sữa mỗi sáng.",
+        "image": "assets/images/milk.webp",
+        "alt": "Image for milk"
+      },
+      {
+        "english_word": "sugar",
+        "pronunciation": "/ˈʃʊɡə(r)/",
+        "vietnamese_meaning": "(n): đường",
+        "example_sentence_en": "Do you want sugar in your tea?",
+        "example_sentence_vi": "Bạn có muốn đường trong trà không?",
+        "image": "assets/images/sugar.webp",
+        "alt": "Image for sugar"
+      },
+      {
+        "english_word": "chocolate",
+        "pronunciation": "/ˈtʃɒklət/",
+        "vietnamese_meaning": "(n): sô cô la",
+        "example_sentence_en": "Chocolate is my favorite sweet.",
+        "example_sentence_vi": "Sô cô la là món ngọt yêu thích của tôi.",
+        "image": "assets/images/chocolate.webp",
+        "alt": "Image for chocolate"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "sell",
+        "pronunciation": "/sel/",
+        "vietnamese_meaning": "(v): bán",
+        "example_sentence_en": "They sell souvenirs at the market.",
+        "example_sentence_vi": "Họ bán đồ lưu niệm ở chợ.",
+        "image": "assets/images/sell.webp",
+        "alt": "Image for sell"
+      },
+      {
+        "english_word": "litter",
+        "pronunciation": "/ˈlɪtə(r)/",
+        "vietnamese_meaning": "(v): xả rác",
+        "example_sentence_en": "Do not litter in the park.",
+        "example_sentence_vi": "Không được xả rác trong công viên.",
+        "image": "assets/images/litter.webp",
+        "alt": "Image for litter"
+      },
+      {
+        "english_word": "follow",
+        "pronunciation": "/ˈfɒləʊ/",
+        "vietnamese_meaning": "(v): theo sau, tuân theo",
+        "example_sentence_en": "You must follow the rules.",
+        "example_sentence_vi": "Bạn phải tuân theo các quy tắc.",
+        "image": "assets/images/follow.webp",
+        "alt": "Image for follow"
+      },
+      {
+        "english_word": "tell the truth",
+        "pronunciation": "/tel ðə truːθ/",
+        "vietnamese_meaning": "(v): nói sự thật",
+        "example_sentence_en": "Always tell the truth.",
+        "example_sentence_vi": "Luôn luôn nói sự thật.",
+        "image": "assets/images/tell-the-truth.webp",
+        "alt": "Image for tell the truth"
+      },
+      {
+        "english_word": "practise",
+        "pronunciation": "/ˈpræktɪs/",
+        "vietnamese_meaning": "(v): luyện tập",
+        "example_sentence_en": "You should practise English every day.",
+        "example_sentence_vi": "Bạn nên luyện tập tiếng Anh mỗi ngày.",
+        "image": "assets/images/practise.webp",
+        "alt": "Image for practise"
+      },
+      {
+        "english_word": "arrive",
+        "pronunciation": "/əˈraɪv/",
+        "vietnamese_meaning": "(v): đến nơi",
+        "example_sentence_en": "We arrive at the hotel at 2 p.m.",
+        "example_sentence_vi": "Chúng tôi đến khách sạn lúc 2 giờ chiều.",
+        "image": "assets/images/arrive.webp",
+        "alt": "Image for arrive"
+      },
+      {
+        "english_word": "pick flowers",
+        "pronunciation": "/pɪk ˈflaʊəz/",
+        "vietnamese_meaning": "(v): hái hoa",
+        "example_sentence_en": "Do not pick flowers in the park.",
+        "example_sentence_vi": "Không được hái hoa trong công viên.",
+        "image": "assets/images/pick-flowers.webp",
+        "alt": "Image for pick flowers"
+      },
+      {
+        "english_word": "leave",
+        "pronunciation": "/liːv/",
+        "vietnamese_meaning": "(v): rời khỏi",
+        "example_sentence_en": "We leave the hotel at 8 a.m.",
+        "example_sentence_vi": "Chúng tôi rời khách sạn lúc 8 giờ sáng.",
+        "image": "assets/images/leave.webp",
+        "alt": "Image for leave"
+      },
+      {
+        "english_word": "make noise",
+        "pronunciation": "/meɪk nɔɪz/",
+        "vietnamese_meaning": "(v): làm ồn",
+        "example_sentence_en": "Don't make noise in the library.",
+        "example_sentence_vi": "Không được làm ồn trong thư viện.",
+        "image": "assets/images/make-noise.webp",
+        "alt": "Image for make noise"
+      },
+      {
+        "english_word": "tourist",
+        "pronunciation": "/ˈtʊərɪst/",
+        "vietnamese_meaning": "(n): khách du lịch",
+        "example_sentence_en": "Many tourists visit Ha Long Bay every year.",
+        "example_sentence_vi": "Nhiều khách du lịch đến thăm Vịnh Hạ Long mỗi năm.",
+        "image": "assets/images/tourist.webp",
+        "alt": "Image for tourist"
+      },
+      {
+        "english_word": "guide",
+        "pronunciation": "/ɡaɪd/",
+        "vietnamese_meaning": "(n): hướng dẫn viên",
+        "example_sentence_en": "Our guide showed us around the city.",
+        "example_sentence_vi": "Hướng dẫn viên đã dẫn chúng tôi đi tham quan thành phố.",
+        "image": "assets/images/guide.webp",
+        "alt": "Image for guide"
+      },
+      {
+        "english_word": "Geography",
+        "pronunciation": "/dʒiˈɒɡrəfi/",
+        "vietnamese_meaning": "(n): địa lý",
+        "example_sentence_en": "We study Geography at school.",
+        "example_sentence_vi": "Chúng tôi học môn Địa lý ở trường.",
+        "image": "assets/images/geography.webp",
+        "alt": "Image for Geography"
+      },
+      {
+        "english_word": "item",
+        "pronunciation": "/ˈaɪtəm/",
+        "vietnamese_meaning": "(n): vật dụng",
+        "example_sentence_en": "What items do you need for the trip?",
+        "example_sentence_vi": "Bạn cần những vật dụng gì cho chuyến đi?",
+        "image": "assets/images/item.webp",
+        "alt": "Image for item"
+      },
+      {
+        "english_word": "shape",
+        "pronunciation": "/ʃeɪp/",
+        "vietnamese_meaning": "(n): hình dạng",
+        "example_sentence_en": "The rock has a strange shape.",
+        "example_sentence_vi": "Hòn đá có hình dạng lạ.",
+        "image": "assets/images/shape.webp",
+        "alt": "Image for shape"
+      },
+      {
+        "english_word": "size",
+        "pronunciation": "/saɪz/",
+        "vietnamese_meaning": "(n): kích thước",
+        "example_sentence_en": "The cave is large in size.",
+        "example_sentence_vi": "Hang động có kích thước lớn.",
+        "image": "assets/images/size.webp",
+        "alt": "Image for size"
+      },
+      {
+        "english_word": "overnight",
+        "pronunciation": "/ˌəʊvəˈnaɪt/",
+        "vietnamese_meaning": "(adv): qua đêm",
+        "example_sentence_en": "We stayed overnight at the camping site.",
+        "example_sentence_vi": "Chúng tôi ở lại qua đêm tại khu cắm trại.",
+        "image": "assets/images/overnight.webp",
+        "alt": "Image for overnight"
+      }
+    ]
+  }
+]

@@ -1,0 +1,575 @@
+[
+  {
+    "group": "New Year Celebrations",
+    "words": [
+      {
+        "english_word": "Tet",
+        "pronunciation": "/tet/",
+        "vietnamese_meaning": "(n): Tết",
+        "example_sentence_en": "Tet is the most important holiday in Vietnam.",
+        "example_sentence_vi": "Tết là ngày lễ quan trọng nhất ở Việt Nam.",
+        "image": "assets/images/tet.webp",
+        "alt": "Image for Tet"
+      },
+      {
+        "english_word": "Tet holiday",
+        "pronunciation": "/tet ˈhɒlɪdeɪ/",
+        "vietnamese_meaning": "(n): kỳ nghỉ Tết",
+        "example_sentence_en": "We have a long Tet holiday every year.",
+        "example_sentence_vi": "Chúng tôi có kỳ nghỉ Tết dài mỗi năm.",
+        "image": "assets/images/tet-holiday.webp",
+        "alt": "Image for Tet holiday"
+      },
+      {
+        "english_word": "lucky money",
+        "pronunciation": "/ˈlʌki ˈmʌni/",
+        "vietnamese_meaning": "(n): tiền lì xì",
+        "example_sentence_en": "Children receive lucky money during Tet.",
+        "example_sentence_vi": "Trẻ em nhận tiền lì xì trong dịp Tết.",
+        "image": "assets/images/lucky-money.webp",
+        "alt": "Image for lucky money"
+      },
+      {
+        "english_word": "family gathering",
+        "pronunciation": "/ˈfæmɪli ˈɡæðərɪŋ/",
+        "vietnamese_meaning": "(n): sum họp gia đình",
+        "example_sentence_en": "Tet is a time for family gatherings.",
+        "example_sentence_vi": "Tết là thời gian để sum họp gia đình.",
+        "image": "assets/images/family-gathering.webp",
+        "alt": "Image for family gathering"
+      },
+      {
+        "english_word": "peach flower",
+        "pronunciation": "/piːtʃ ˈflaʊə(r)/",
+        "vietnamese_meaning": "(n): hoa đào",
+        "example_sentence_en": "We decorate our house with peach flowers.",
+        "example_sentence_vi": "Chúng tôi trang trí nhà bằng hoa đào.",
+        "image": "assets/images/peach-flower.webp",
+        "alt": "Image for peach flower"
+      },
+      {
+        "english_word": "special food",
+        "pronunciation": "/ˈspeʃl fuːd/",
+        "vietnamese_meaning": "(n): thức ăn đặc biệt",
+        "example_sentence_en": "We eat special food during Tet.",
+        "example_sentence_vi": "Chúng tôi ăn thức ăn đặc biệt trong dịp Tết.",
+        "image": "assets/images/special-food.webp",
+        "alt": "Image for special food"
+      },
+      {
+        "english_word": "traditional game",
+        "pronunciation": "/trəˈdɪʃənl ɡeɪm/",
+        "vietnamese_meaning": "(n): trò chơi truyền thống",
+        "example_sentence_en": "We play traditional games during Tet.",
+        "example_sentence_vi": "Chúng tôi chơi trò chơi truyền thống trong dịp Tết.",
+        "image": "assets/images/traditional-game.webp",
+        "alt": "Image for traditional game"
+      },
+      {
+        "english_word": "human chess",
+        "pronunciation": "/ˈhjuːmən tʃes/",
+        "vietnamese_meaning": "(n): cờ người",
+        "example_sentence_en": "Human chess is a popular game during Tet.",
+        "example_sentence_vi": "Cờ người là trò chơi phổ biến trong dịp Tết.",
+        "image": "assets/images/human-chess.webp",
+        "alt": "Image for human chess"
+      },
+      {
+        "english_word": "make a wish",
+        "pronunciation": "/meɪk ə wɪʃ/",
+        "vietnamese_meaning": "(v): ước nguyện",
+        "example_sentence_en": "We make a wish for the new year.",
+        "example_sentence_vi": "Chúng tôi ước nguyện cho năm mới.",
+        "image": "assets/images/make-a-wish.webp",
+        "alt": "Image for make a wish"
+      },
+      {
+        "english_word": "good luck",
+        "pronunciation": "/ɡʊd lʌk/",
+        "vietnamese_meaning": "(n): may mắn",
+        "example_sentence_en": "We wish each other good luck for the new year.",
+        "example_sentence_vi": "Chúng tôi chúc nhau may mắn cho năm mới.",
+        "image": "assets/images/good-luck.webp",
+        "alt": "Image for good luck"
+      },
+      {
+        "english_word": "bad luck",
+        "pronunciation": "/bæd lʌk/",
+        "vietnamese_meaning": "(n): xui xẻo",
+        "example_sentence_en": "We try to avoid bad luck during Tet.",
+        "example_sentence_vi": "Chúng tôi cố gắng tránh xui xẻo trong dịp Tết.",
+        "image": "assets/images/bad-luck.webp",
+        "alt": "Image for bad luck"
+      },
+      {
+        "english_word": "red envelope",
+        "pronunciation": "/red ˈenvələʊp/",
+        "vietnamese_meaning": "(n): bao lì xì",
+        "example_sentence_en": "Lucky money is given in red envelopes.",
+        "example_sentence_vi": "Tiền lì xì được đặt trong bao lì xì.",
+        "image": "assets/images/red-envelope.webp",
+        "alt": "Image for red envelope"
+      },
+      {
+        "english_word": "mochi rice cake",
+        "pronunciation": "/ˈməʊtʃi raɪs keɪk/",
+        "vietnamese_meaning": "(n): bánh mochi",
+        "example_sentence_en": "We eat mochi rice cake during New Year.",
+        "example_sentence_vi": "Chúng tôi ăn bánh mochi trong dịp năm mới.",
+        "image": "assets/images/mochi-rice-cake.webp",
+        "alt": "Image for mochi rice cake"
+      },
+      {
+        "english_word": "ring bells",
+        "pronunciation": "/rɪŋ belz/",
+        "vietnamese_meaning": "(v): rung chuông",
+        "example_sentence_en": "We ring bells to welcome the new year.",
+        "example_sentence_vi": "Chúng tôi rung chuông để chào đón năm mới.",
+        "image": "assets/images/ring-bells.webp",
+        "alt": "Image for ring bells"
+      },
+      {
+        "english_word": "watch fireworks",
+        "pronunciation": "/wɒtʃ ˈfaɪəwɜːks/",
+        "vietnamese_meaning": "(v): xem pháo hoa",
+        "example_sentence_en": "We watch fireworks on New Year's Eve.",
+        "example_sentence_vi": "Chúng tôi xem pháo hoa vào đêm giao thừa.",
+        "image": "assets/images/watch-fireworks.webp",
+        "alt": "Image for watch fireworks"
+      },
+      {
+        "english_word": "dress beautifully",
+        "pronunciation": "/dres ˈbjuːtɪfəli/",
+        "vietnamese_meaning": "(v): ăn mặc đẹp",
+        "example_sentence_en": "We dress beautifully for Tet celebrations.",
+        "example_sentence_vi": "Chúng tôi ăn mặc đẹp cho lễ Tết.",
+        "image": "assets/images/dress-beautifully.webp",
+        "alt": "Image for dress beautifully"
+      },
+      {
+        "english_word": "go out and have fun",
+        "pronunciation": "/ɡəʊ aʊt ənd hæv fʌn/",
+        "vietnamese_meaning": "(v): đi ra ngoài chơi",
+        "example_sentence_en": "We go out and have fun during Tet.",
+        "example_sentence_vi": "Chúng tôi đi ra ngoài chơi trong dịp Tết.",
+        "image": "assets/images/go-out-and-have-fun.webp",
+        "alt": "Image for go out and have fun"
+      },
+      {
+        "english_word": "happy moment",
+        "pronunciation": "/ˈhæpi ˈməʊmənt/",
+        "vietnamese_meaning": "(n): khoảnh khắc hạnh phúc",
+        "example_sentence_en": "Tet brings many happy moments.",
+        "example_sentence_vi": "Tết mang đến nhiều khoảnh khắc hạnh phúc.",
+        "image": "assets/images/happy-moment.webp",
+        "alt": "Image for happy moment"
+      },
+      {
+        "english_word": "success",
+        "pronunciation": "/səkˈses/",
+        "vietnamese_meaning": "(n): thành công",
+        "example_sentence_en": "We wish for success in the new year.",
+        "example_sentence_vi": "Chúng tôi ước mong thành công trong năm mới.",
+        "image": "assets/images/success.webp",
+        "alt": "Image for success"
+      },
+      {
+        "english_word": "happiness",
+        "pronunciation": "/ˈhæpinəs/",
+        "vietnamese_meaning": "(n): hạnh phúc",
+        "example_sentence_en": "Tet brings happiness to everyone.",
+        "example_sentence_vi": "Tết mang hạnh phúc đến cho mọi người.",
+        "image": "assets/images/happiness.webp",
+        "alt": "Image for happiness"
+      },
+      {
+        "english_word": "laughter",
+        "pronunciation": "/ˈlɑːftə(r)/",
+        "vietnamese_meaning": "(n): tiếng cười",
+        "example_sentence_en": "There is much laughter during Tet.",
+        "example_sentence_vi": "Có nhiều tiếng cười trong dịp Tết.",
+        "image": "assets/images/laughter.webp",
+        "alt": "Image for laughter"
+      },
+      {
+        "english_word": "cheers",
+        "pronunciation": "/tʃɪəz/",
+        "vietnamese_meaning": "(n): lời chúc",
+        "example_sentence_en": "We say cheers to celebrate the new year.",
+        "example_sentence_vi": "Chúng tôi nói lời chúc để chúc mừng năm mới.",
+        "image": "assets/images/cheers.webp",
+        "alt": "Image for cheers"
+      },
+      {
+        "english_word": "health",
+        "pronunciation": "/helθ/",
+        "vietnamese_meaning": "(n): sức khỏe",
+        "example_sentence_en": "We wish for good health in the new year.",
+        "example_sentence_vi": "Chúng tôi ước mong sức khỏe tốt trong năm mới.",
+        "image": "assets/images/health.webp",
+        "alt": "Image for health"
+      },
+      {
+        "english_word": "past year",
+        "pronunciation": "/pɑːst jɪə(r)/",
+        "vietnamese_meaning": "(n): năm cũ",
+        "example_sentence_en": "We say goodbye to the past year.",
+        "example_sentence_vi": "Chúng tôi nói lời tạm biệt năm cũ.",
+        "image": "assets/images/past-year.webp",
+        "alt": "Image for past year"
+      },
+      {
+        "english_word": "relative",
+        "pronunciation": "/ˈrelətɪv/",
+        "vietnamese_meaning": "(n): họ hàng",
+        "example_sentence_en": "We visit our relatives during Tet.",
+        "example_sentence_vi": "Chúng tôi thăm họ hàng trong dịp Tết.",
+        "image": "assets/images/relative.webp",
+        "alt": "Image for relative"
+      },
+      {
+        "english_word": "temple",
+        "pronunciation": "/ˈtempl/",
+        "vietnamese_meaning": "(n): đền chùa",
+        "example_sentence_en": "We visit the temple to pray.",
+        "example_sentence_vi": "Chúng tôi thăm đền chùa để cầu nguyện.",
+        "image": "assets/images/temple.webp",
+        "alt": "Image for temple"
+      },
+      {
+        "english_word": "midnight",
+        "pronunciation": "/ˈmɪdnaɪt/",
+        "vietnamese_meaning": "(n): nửa đêm",
+        "example_sentence_en": "We celebrate at midnight on New Year's Eve.",
+        "example_sentence_vi": "Chúng tôi ăn mừng lúc nửa đêm vào đêm giao thừa.",
+        "image": "assets/images/midnight.webp",
+        "alt": "Image for midnight"
+      },
+      {
+        "english_word": "custom",
+        "pronunciation": "/ˈkʌstəm/",
+        "vietnamese_meaning": "(n): phong tục",
+        "example_sentence_en": "We follow traditional customs during Tet.",
+        "example_sentence_vi": "Chúng tôi theo phong tục truyền thống trong dịp Tết.",
+        "image": "assets/images/custom.webp",
+        "alt": "Image for custom"
+      },
+      {
+        "english_word": "decorate",
+        "pronunciation": "/ˈdekəreɪt/",
+        "vietnamese_meaning": "(v): trang trí",
+        "example_sentence_en": "We decorate our house for Tet.",
+        "example_sentence_vi": "Chúng tôi trang trí nhà cho Tết.",
+        "image": "assets/images/decorate.webp",
+        "alt": "Image for decorate"
+      },
+      {
+        "english_word": "clean furniture",
+        "pronunciation": "/kliːn ˈfɜːnɪtʃə(r)/",
+        "vietnamese_meaning": "(v): lau chùi đồ đạc",
+        "example_sentence_en": "We clean furniture before Tet.",
+        "example_sentence_vi": "Chúng tôi lau chùi đồ đạc trước Tết.",
+        "image": "assets/images/clean-furniture.webp",
+        "alt": "Image for clean furniture"
+      },
+      {
+        "english_word": "celebrate",
+        "pronunciation": "/ˈselɪbreɪt/",
+        "vietnamese_meaning": "(v): ăn mừng",
+        "example_sentence_en": "We celebrate Tet with our family.",
+        "example_sentence_vi": "Chúng tôi ăn mừng Tết với gia đình.",
+        "image": "assets/images/celebrate.webp",
+        "alt": "Image for celebrate"
+      }
+    ]
+  },
+  {
+    "group": "Countries",
+    "words": [
+      {
+        "english_word": "Thailand",
+        "pronunciation": "/ˈtaɪlænd/",
+        "vietnamese_meaning": "(n): Thái Lan",
+        "example_sentence_en": "Thailand is a beautiful country in Southeast Asia.",
+        "example_sentence_vi": "Thái Lan là một đất nước đẹp ở Đông Nam Á.",
+        "image": "assets/images/thailand.webp",
+        "alt": "Image for Thailand"
+      },
+      {
+        "english_word": "Japan",
+        "pronunciation": "/dʒəˈpæn/",
+        "vietnamese_meaning": "(n): Nhật Bản",
+        "example_sentence_en": "Japan is famous for its technology.",
+        "example_sentence_vi": "Nhật Bản nổi tiếng về công nghệ.",
+        "image": "assets/images/japan.webp",
+        "alt": "Image for Japan"
+      },
+      {
+        "english_word": "The USA",
+        "pronunciation": "/ðə juː es ˈeɪ/",
+        "vietnamese_meaning": "(n): Hoa Kỳ",
+        "example_sentence_en": "The USA is a large country in North America.",
+        "example_sentence_vi": "Hoa Kỳ là một đất nước lớn ở Bắc Mỹ.",
+        "image": "assets/images/the-usa.webp",
+        "alt": "Image for The USA"
+      },
+      {
+        "english_word": "Russia",
+        "pronunciation": "/ˈrʌʃə/",
+        "vietnamese_meaning": "(n): Nga",
+        "example_sentence_en": "Russia is the largest country in the world.",
+        "example_sentence_vi": "Nga là đất nước lớn nhất thế giới.",
+        "image": "assets/images/russia.webp",
+        "alt": "Image for Russia"
+      },
+      {
+        "english_word": "Spain",
+        "pronunciation": "/speɪn/",
+        "vietnamese_meaning": "(n): Tây Ban Nha",
+        "example_sentence_en": "Spain is famous for its food and culture.",
+        "example_sentence_vi": "Tây Ban Nha nổi tiếng về ẩm thực và văn hóa.",
+        "image": "assets/images/spain.webp",
+        "alt": "Image for Spain"
+      },
+      {
+        "english_word": "Switzerland",
+        "pronunciation": "/ˈswɪtsələnd/",
+        "vietnamese_meaning": "(n): Thụy Sĩ",
+        "example_sentence_en": "Switzerland is known for its mountains.",
+        "example_sentence_vi": "Thụy Sĩ nổi tiếng về núi non.",
+        "image": "assets/images/switzerland.webp",
+        "alt": "Image for Switzerland"
+      },
+      {
+        "english_word": "Romania",
+        "pronunciation": "/rəʊˈmeɪniə/",
+        "vietnamese_meaning": "(n): Romania",
+        "example_sentence_en": "Romania is a country in Eastern Europe.",
+        "example_sentence_vi": "Romania là một đất nước ở Đông Âu.",
+        "image": "assets/images/romania.webp",
+        "alt": "Image for Romania"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "cucumber",
+        "pronunciation": "/ˈkjuːkʌmbə(r)/",
+        "vietnamese_meaning": "(n): dưa chuột",
+        "example_sentence_en": "I like to eat cucumber in salads.",
+        "example_sentence_vi": "Tôi thích ăn dưa chuột trong salad.",
+        "image": "assets/images/cucumber.webp",
+        "alt": "Image for cucumber"
+      },
+      {
+        "english_word": "cheese",
+        "pronunciation": "/tʃiːz/",
+        "vietnamese_meaning": "(n): pho mát",
+        "example_sentence_en": "I like cheese on my pizza.",
+        "example_sentence_vi": "Tôi thích pho mát trên bánh pizza.",
+        "image": "assets/images/cheese.webp",
+        "alt": "Image for cheese"
+      },
+      {
+        "english_word": "picture",
+        "pronunciation": "/ˈpɪktʃə(r)/",
+        "vietnamese_meaning": "(n): bức tranh",
+        "example_sentence_en": "I draw a picture of my family.",
+        "example_sentence_vi": "Tôi vẽ một bức tranh về gia đình.",
+        "image": "assets/images/picture.webp",
+        "alt": "Image for picture"
+      },
+      {
+        "english_word": "balloon",
+        "pronunciation": "/bəˈluːn/",
+        "vietnamese_meaning": "(n): quả bóng bay",
+        "example_sentence_en": "We blow up balloons for the party.",
+        "example_sentence_vi": "Chúng tôi thổi bóng bay cho bữa tiệc.",
+        "image": "assets/images/balloon.webp",
+        "alt": "Image for balloon"
+      },
+      {
+        "english_word": "magazine",
+        "pronunciation": "/ˌmæɡəˈziːn/",
+        "vietnamese_meaning": "(n): tạp chí",
+        "example_sentence_en": "I read a magazine about animals.",
+        "example_sentence_vi": "Tôi đọc tạp chí về động vật.",
+        "image": "assets/images/magazine.webp",
+        "alt": "Image for magazine"
+      },
+      {
+        "english_word": "colour pencil",
+        "pronunciation": "/ˈkʌlə(r) ˈpensl/",
+        "vietnamese_meaning": "(n): bút chì màu",
+        "example_sentence_en": "I use colour pencils to draw pictures.",
+        "example_sentence_vi": "Tôi dùng bút chì màu để vẽ tranh.",
+        "image": "assets/images/colour-pencil.webp",
+        "alt": "Image for colour pencil"
+      },
+      {
+        "english_word": "sunlight",
+        "pronunciation": "/ˈsʌnlaɪt/",
+        "vietnamese_meaning": "(n): ánh nắng mặt trời",
+        "example_sentence_en": "The sunlight makes the room bright.",
+        "example_sentence_vi": "Ánh nắng mặt trời làm căn phòng sáng.",
+        "image": "assets/images/sunlight.webp",
+        "alt": "Image for sunlight"
+      },
+      {
+        "english_word": "coin",
+        "pronunciation": "/kɔɪn/",
+        "vietnamese_meaning": "(n): đồng xu",
+        "example_sentence_en": "I have a coin in my pocket.",
+        "example_sentence_vi": "Tôi có một đồng xu trong túi.",
+        "image": "assets/images/coin.webp",
+        "alt": "Image for coin"
+      },
+      {
+        "english_word": "salt",
+        "pronunciation": "/sɔːlt/",
+        "vietnamese_meaning": "(n): muối",
+        "example_sentence_en": "We add salt to make food taste better.",
+        "example_sentence_vi": "Chúng tôi thêm muối để làm thức ăn ngon hơn.",
+        "image": "assets/images/salt.webp",
+        "alt": "Image for salt"
+      },
+      {
+        "english_word": "shy",
+        "pronunciation": "/ʃaɪ/",
+        "vietnamese_meaning": "(adj): nhút nhát",
+        "example_sentence_en": "The new student is shy and quiet.",
+        "example_sentence_vi": "Học sinh mới nhút nhát và im lặng.",
+        "image": "assets/images/shy.webp",
+        "alt": "Image for shy"
+      },
+      {
+        "english_word": "smile",
+        "pronunciation": "/smaɪl/",
+        "vietnamese_meaning": "(n/v): nụ cười/cười",
+        "example_sentence_en": "She has a beautiful smile.",
+        "example_sentence_vi": "Cô ấy có nụ cười đẹp.",
+        "image": "assets/images/smile.webp",
+        "alt": "Image for smile"
+      },
+      {
+        "english_word": "poor",
+        "pronunciation": "/pɔː(r)/",
+        "vietnamese_meaning": "(adj): nghèo",
+        "example_sentence_en": "We help poor people in our community.",
+        "example_sentence_vi": "Chúng tôi giúp đỡ người nghèo trong cộng đồng.",
+        "image": "assets/images/poor.webp",
+        "alt": "Image for poor"
+      },
+      {
+        "english_word": "clock strikes",
+        "pronunciation": "/klɒk straɪks/",
+        "vietnamese_meaning": "(v): đồng hồ điểm",
+        "example_sentence_en": "The clock strikes twelve at midnight.",
+        "example_sentence_vi": "Đồng hồ điểm mười hai lúc nửa đêm.",
+        "image": "assets/images/clock-strikes.webp",
+        "alt": "Image for clock strikes"
+      },
+      {
+        "english_word": "visit",
+        "pronunciation": "/ˈvɪzɪt/",
+        "vietnamese_meaning": "(v): thăm",
+        "example_sentence_en": "We visit our grandparents during Tet.",
+        "example_sentence_vi": "Chúng tôi thăm ông bà trong dịp Tết.",
+        "image": "assets/images/visit.webp",
+        "alt": "Image for visit"
+      },
+      {
+        "english_word": "cook",
+        "pronunciation": "/kʊk/",
+        "vietnamese_meaning": "(v): nấu ăn",
+        "example_sentence_en": "My mother cooks special food for Tet.",
+        "example_sentence_vi": "Mẹ tôi nấu thức ăn đặc biệt cho Tết.",
+        "image": "assets/images/cook.webp",
+        "alt": "Image for cook"
+      },
+      {
+        "english_word": "plant",
+        "pronunciation": "/plɑːnt/",
+        "vietnamese_meaning": "(v): trồng",
+        "example_sentence_en": "We plant flowers in our garden.",
+        "example_sentence_vi": "Chúng tôi trồng hoa trong vườn.",
+        "image": "assets/images/plant.webp",
+        "alt": "Image for plant"
+      },
+      {
+        "english_word": "behave well",
+        "pronunciation": "/bɪˈheɪv wel/",
+        "vietnamese_meaning": "(v): cư xử tốt",
+        "example_sentence_en": "Children should behave well during Tet.",
+        "example_sentence_vi": "Trẻ em nên cư xử tốt trong dịp Tết.",
+        "image": "assets/images/behave-well.webp",
+        "alt": "Image for behave well"
+      },
+      {
+        "english_word": "knock",
+        "pronunciation": "/nɒk/",
+        "vietnamese_meaning": "(v): gõ cửa",
+        "example_sentence_en": "We knock on the door before entering.",
+        "example_sentence_vi": "Chúng tôi gõ cửa trước khi vào.",
+        "image": "assets/images/knock.webp",
+        "alt": "Image for knock"
+      },
+      {
+        "english_word": "help with housework",
+        "pronunciation": "/help wɪð ˈhaʊswɜːk/",
+        "vietnamese_meaning": "(v): giúp việc nhà",
+        "example_sentence_en": "Children should help with housework.",
+        "example_sentence_vi": "Trẻ em nên giúp việc nhà.",
+        "image": "assets/images/help-with-housework.webp",
+        "alt": "Image for help with housework"
+      },
+      {
+        "english_word": "fight",
+        "pronunciation": "/faɪt/",
+        "vietnamese_meaning": "(v): đánh nhau",
+        "example_sentence_en": "We should not fight with our friends.",
+        "example_sentence_vi": "Chúng tôi không nên đánh nhau với bạn bè.",
+        "image": "assets/images/fight.webp",
+        "alt": "Image for fight"
+      },
+      {
+        "english_word": "invite",
+        "pronunciation": "/ɪnˈvaɪt/",
+        "vietnamese_meaning": "(v): mời",
+        "example_sentence_en": "We invite our friends to our house.",
+        "example_sentence_vi": "Chúng tôi mời bạn bè đến nhà.",
+        "image": "assets/images/invite.webp",
+        "alt": "Image for invite"
+      },
+      {
+        "english_word": "ask for permission",
+        "pronunciation": "/ɑːsk fə(r) pəˈmɪʃn/",
+        "vietnamese_meaning": "(v): xin phép",
+        "example_sentence_en": "Children should ask for permission before going out.",
+        "example_sentence_vi": "Trẻ em nên xin phép trước khi đi chơi.",
+        "image": "assets/images/ask-for-permission.webp",
+        "alt": "Image for ask for permission"
+      },
+      {
+        "english_word": "make noise",
+        "pronunciation": "/meɪk nɔɪz/",
+        "vietnamese_meaning": "(v): làm ồn",
+        "example_sentence_en": "We should not make noise at night.",
+        "example_sentence_vi": "Chúng tôi không nên làm ồn vào ban đêm.",
+        "image": "assets/images/make-noise.webp",
+        "alt": "Image for make noise"
+      },
+      {
+        "english_word": "bathe",
+        "pronunciation": "/beɪð/",
+        "vietnamese_meaning": "(v): tắm",
+        "example_sentence_en": "We bathe every day to stay clean.",
+        "example_sentence_vi": "Chúng tôi tắm mỗi ngày để giữ sạch sẽ.",
+        "image": "assets/images/bathe.webp",
+        "alt": "Image for bathe"
+      }
+    ]
+  }
+]
