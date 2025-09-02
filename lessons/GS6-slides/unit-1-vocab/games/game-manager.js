@@ -150,19 +150,13 @@ class GameManager {
             this.currentGameSlide.style.display = 'none';
             this.currentGameSlide.classList.remove('active');
         }
-
-        
-        // Hiển thị tất cả slides
-        const allSlides = slidesContainer.querySelectorAll('.slide');
-        allSlides.forEach(slide => {
-            slide.style.display = '';
-        });
         
 
         // Hiển thị lại slide chọn game
         const gameSelectionSlide = document.getElementById('game-selection-slide');
         if (gameSelectionSlide) {
             gameSelectionSlide.classList.add('active');
+            gameSelectionSlide.style.display = '';
         }
 
         // Hiển thị lại slide navigation

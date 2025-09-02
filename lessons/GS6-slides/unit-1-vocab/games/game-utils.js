@@ -260,49 +260,62 @@ class UIComponents {
             restartText = '🔄 Restart'
         } = options;
 
-        let controlsHTML = '<div class="grid grid-cols-3 gap-2 my-2 sm:flex sm:justify-center sm:gap-4">';
-        
-        if (showTimer) {
-            controlsHTML += `
-                <div id="timer-${gameId}" 
-                    class="bg-yellow-100 text-yellow-700 font-bold px-3 py-1.5 rounded-full shadow-lg text-center text-sm w-full sm:w-28"
-                    style="display: none;">
-                    ⏱️ <span id="timer-value-${gameId}">00:00</span>
-                </div>
-            `;
-        }
-        
-        if (showScore) {
-            controlsHTML += `
-                <div id="score-${gameId}" 
-                    class="bg-purple-100 text-purple-700 font-bold px-3 py-1.5 rounded-full shadow-lg text-center text-sm w-full sm:w-28"
-                    style="display: none;">
-                    🎯 <span id="score-value-${gameId}">0/${maxScore}</span>
-                </div>
-            `;
-        }
-        
-        if (showStart) {
-            controlsHTML += `
-                <button id="start-btn-${gameId}" 
-                    class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-1.5 rounded-full shadow-lg transition-all duration-200 text-sm w-full sm:w-auto">
-                    ${startText}
-                </button>
-            `;
-        }
-        
-        if (showRestart) {
-            controlsHTML += `
-                <button id="restart-btn-${gameId}" 
-                    class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-4 py-1.5 rounded-full shadow-lg transition-all duration-200 text-sm w-full sm:w-auto"
-                    style="display: none;">
-                    ${restartText}
-                </button>
-            `;
-        }
-        
-        controlsHTML += '</div>';
-        return controlsHTML;
+    // Wrapper: column on mobile (two rows), row on desktop
+    let controlsHTML = `
+    <div class="w-full my-2 flex flex-col sm:flex-row sm:justify-center gap-3 sm:gap-4 items-stretch">
+    `;
+
+    // Stats group (row 1 on mobile, left side on desktop)
+    controlsHTML += `
+    <div class="w-full sm:w-auto flex flex-row  gap-2 sm:gap-4 justify-stretch sm:justify-start">
+    `;
+    if (showTimer) {
+    controlsHTML += `
+        <div id="timer-${gameId}" 
+        class="bg-yellow-100 text-yellow-700 font-bold px-3 py-1.5 rounded-full shadow-lg text-center text-sm w-full sm:w-28"
+        style="display: none;">
+        ⏱️ <span id="timer-value-${gameId}">00:00</span>
+        </div>
+    `;
+    }
+    if (showScore) {
+    controlsHTML += `
+        <div id="score-${gameId}" 
+        class="bg-purple-100 text-purple-700 font-bold px-3 py-1.5 rounded-full shadow-lg text-center text-sm w-full sm:w-28"
+        style="display: none;">
+        🎯 <span id="score-value-${gameId}">0/${maxScore}</span>
+        </div>
+    `;
+    }
+    controlsHTML += `</div>`;
+
+    // Actions group (row 2 on mobile, right side on desktop)
+    controlsHTML += `
+    <div class="w-full sm:w-auto flex flex-row gap-2 sm:gap-4 justify-stretch sm:justify-end">
+    `;
+    if (showStart) {
+    controlsHTML += `
+        <button id="start-btn-${gameId}" 
+        class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-1.5 rounded-full shadow-lg transition-all duration-200 text-sm w-full sm:w-auto">
+        ${startText}
+        </button>
+    `;
+    }
+    if (showRestart) {
+    controlsHTML += `
+        <button id="restart-btn-${gameId}" 
+        class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-4 py-1.5 rounded-full shadow-lg transition-all duration-200 text-sm w-full sm:w-auto"
+        style="display: none;">
+        ${restartText}
+        </button>
+    `;
+    }
+    controlsHTML += `</div>`;
+
+    // End wrapper
+    controlsHTML += `</div>`;
+    return controlsHTML;
+
     }
 
     /**

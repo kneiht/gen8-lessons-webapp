@@ -5,7 +5,7 @@
 
 class MatchingGame extends GameBase {
     constructor() {
-        super('Matching Game', 2);
+        super('Matching Game', 6);
         this.selectedCards = [];
         this.matchedPairs = [];
         this.gameData = [];
@@ -50,7 +50,9 @@ class MatchingGame extends GameBase {
         this.setupEventListeners(slide);
         
         // Show instruction popup when game loads
-        setTimeout(() => this.showInstruction(), 500);
+        const title = 'How to play';
+        const description = 'Match the English word with its Vietnamese meaning';
+        setTimeout(() => this.showInstruction(title, description), 500);
         
         return slide;
     }
