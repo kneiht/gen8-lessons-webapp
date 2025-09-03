@@ -1,0 +1,441 @@
+[
+  {
+    "group": "Dishes and Foods",
+    "words": [
+      {
+        "english_word": "apple pie",
+        "pronunciation": "/ˈæpl paɪ/",
+        "vietnamese_meaning": "(n): bánh táo",
+        "example_sentence_en": "This is a apple pie.",
+        "example_sentence_vi": "Đây là bánh táo.",
+        "image": "assets/images/apple-pie.webp",
+        "alt": "Image for apple pie"
+      },
+      {
+        "english_word": "beef noodle soup",
+        "pronunciation": "/biːf ˈnuːdl suːp/",
+        "vietnamese_meaning": "(n): phở bò",
+        "example_sentence_en": "This is a beef noodle soup.",
+        "example_sentence_vi": "Đây là phở bò.",
+        "image": "assets/images/beef-noodle-soup.webp",
+        "alt": "Image for beef noodle soup"
+      },
+      {
+        "english_word": "eel soup",
+        "pronunciation": "/iːl suːp/",
+        "vietnamese_meaning": "(n): súp lươn",
+        "example_sentence_en": "This is a eel soup.",
+        "example_sentence_vi": "Đây là súp lươn.",
+        "image": "assets/images/eel-soup.webp",
+        "alt": "Image for eel soup"
+      },
+      {
+        "english_word": "fried tofu",
+        "pronunciation": "/fraɪd ˈtəʊfuː/",
+        "vietnamese_meaning": "(n): đậu phụ rán",
+        "example_sentence_en": "This is a fried tofu.",
+        "example_sentence_vi": "Đây là đậu phụ rán.",
+        "image": "assets/images/fried-tofu.webp",
+        "alt": "Image for fried tofu"
+      },
+      {
+        "english_word": "fried vegetables",
+        "pronunciation": "/fraɪd ˈvedʒtəblz/",
+        "vietnamese_meaning": "(n): rau xào",
+        "example_sentence_en": "These are fried vegetables.",
+        "example_sentence_vi": "Đây là rau xào.",
+        "image": "assets/images/fried-vegetables.webp",
+        "alt": "Image for fried vegetables"
+      },
+      {
+        "english_word": "omelette",
+        "pronunciation": "/ˈɒmlət/",
+        "vietnamese_meaning": "(n): trứng tráng",
+        "example_sentence_en": "This is a omelette.",
+        "example_sentence_vi": "Đây là trứng tráng.",
+        "image": "assets/images/omelette.webp",
+        "alt": "Image for omelette"
+      },
+      {
+        "english_word": "pancake",
+        "pronunciation": "/ˈpænkeɪk/",
+        "vietnamese_meaning": "(n): bánh kếp",
+        "example_sentence_en": "This is a pancake.",
+        "example_sentence_vi": "Đây là bánh kếp.",
+        "image": "assets/images/pancake.webp",
+        "alt": "Image for pancake"
+      },
+      {
+        "english_word": "pork",
+        "pronunciation": "/pɔːk/",
+        "vietnamese_meaning": "(n): thịt lợn",
+        "example_sentence_en": "I like pork.",
+        "example_sentence_vi": "Tôi thích thịt lợn.",
+        "image": "assets/images/pork.webp",
+        "alt": "Image for pork"
+      },
+      {
+        "english_word": "rice",
+        "pronunciation": "/raɪs/",
+        "vietnamese_meaning": "(n): cơm",
+        "example_sentence_en": "I like rice.",
+        "example_sentence_vi": "Tôi thích cơm.",
+        "image": "assets/images/rice.webp",
+        "alt": "Image for rice"
+      },
+      {
+        "english_word": "roast chicken",
+        "pronunciation": "/rəʊst ˈtʃɪkɪn/",
+        "vietnamese_meaning": "(n): gà quay",
+        "example_sentence_en": "This is a roast chicken.",
+        "example_sentence_vi": "Đây là gà quay.",
+        "image": "assets/images/roast-chicken.webp",
+        "alt": "Image for roast chicken"
+      },
+      {
+        "english_word": "spring roll",
+        "pronunciation": "/sprɪŋ rəʊl/",
+        "vietnamese_meaning": "(n): chả giò",
+        "example_sentence_en": "I like spring roll.",
+        "example_sentence_vi": "Tôi thích chả giò.",
+        "image": "assets/images/spring-roll.webp",
+        "alt": "Image for spring roll"
+      },
+      {
+        "english_word": "toast",
+        "pronunciation": "/təʊst/",
+        "vietnamese_meaning": "(n): bánh mì nướng",
+        "example_sentence_en": "This is a toast.",
+        "example_sentence_vi": "Đây là bánh mì nướng.",
+        "image": "assets/images/toast.webp",
+        "alt": "Image for toast"
+      }
+    ]
+  },
+  {
+    "group": "Drinks",
+    "words": [
+      {
+        "english_word": "green tea",
+        "pronunciation": "/ɡriːn tiː/",
+        "vietnamese_meaning": "(n): trà xanh",
+        "example_sentence_en": "This is a green tea.",
+        "example_sentence_vi": "Đây là trà xanh.",
+        "image": "assets/images/green-tea.webp",
+        "alt": "Image for green tea"
+      },
+      {
+        "english_word": "juice",
+        "pronunciation": "/dʒuːs/",
+        "vietnamese_meaning": "(n): nước ép",
+        "example_sentence_en": "I like juice.",
+        "example_sentence_vi": "Tôi thích nước ép.",
+        "image": "assets/images/juice.webp",
+        "alt": "Image for juice"
+      },
+      {
+        "english_word": "lemonade",
+        "pronunciation": "/ˌleməˈneɪd/",
+        "vietnamese_meaning": "(n): nước chanh",
+        "example_sentence_en": "I like lemonade.",
+        "example_sentence_vi": "Tôi thích nước chanh.",
+        "image": "assets/images/lemonade.webp",
+        "alt": "Image for lemonade"
+      },
+      {
+        "english_word": "mineral water",
+        "pronunciation": "/ˈmɪnərəl ˈwɔːtə/",
+        "vietnamese_meaning": "(n): nước khoáng",
+        "example_sentence_en": "I like mineral water.",
+        "example_sentence_vi": "Tôi thích nước khoáng.",
+        "image": "assets/images/mineral-water.webp",
+        "alt": "Image for mineral water"
+      }
+    ]
+  },
+  {
+    "group": "Ingredients",
+    "words": [
+      {
+        "english_word": "apple",
+        "pronunciation": "/ˈæpl/",
+        "vietnamese_meaning": "(n): táo",
+        "example_sentence_en": "This is a apple.",
+        "example_sentence_vi": "Đây là táo.",
+        "image": "assets/images/apple.webp",
+        "alt": "Image for apple"
+      },
+      {
+        "english_word": "beef",
+        "pronunciation": "/biːf/",
+        "vietnamese_meaning": "(n): thịt bò",
+        "example_sentence_en": "I like beef.",
+        "example_sentence_vi": "Tôi thích thịt bò.",
+        "image": "assets/images/beef.webp",
+        "alt": "Image for beef"
+      },
+      {
+        "english_word": "butter",
+        "pronunciation": "/ˈbʌtə/",
+        "vietnamese_meaning": "(n): bơ",
+        "example_sentence_en": "I like butter.",
+        "example_sentence_vi": "Tôi thích bơ.",
+        "image": "assets/images/butter.webp",
+        "alt": "Image for butter"
+      },
+      {
+        "english_word": "chicken",
+        "pronunciation": "/ˈtʃɪkɪn/",
+        "vietnamese_meaning": "(n): thịt gà",
+        "example_sentence_en": "I like chicken.",
+        "example_sentence_vi": "Tôi thích thịt gà.",
+        "image": "assets/images/chicken.webp",
+        "alt": "Image for chicken"
+      },
+      {
+        "english_word": "egg",
+        "pronunciation": "/eɡ/",
+        "vietnamese_meaning": "(n): trứng",
+        "example_sentence_en": "This is a egg.",
+        "example_sentence_vi": "Đây là trứng.",
+        "image": "assets/images/egg.webp",
+        "alt": "Image for egg"
+      },
+      {
+        "english_word": "fish",
+        "pronunciation": "/fɪʃ/",
+        "vietnamese_meaning": "(n): cá",
+        "example_sentence_en": "I like fish.",
+        "example_sentence_vi": "Tôi thích cá.",
+        "image": "assets/images/fish.webp",
+        "alt": "Image for fish"
+      },
+      {
+        "english_word": "fish sauce",
+        "pronunciation": "/fɪʃ sɔːs/",
+        "vietnamese_meaning": "(n): nước mắm",
+        "example_sentence_en": "This is a fish sauce.",
+        "example_sentence_vi": "Đây là nước mắm.",
+        "image": "assets/images/fish-sauce.webp",
+        "alt": "Image for fish sauce"
+      },
+      {
+        "english_word": "flour",
+        "pronunciation": "/ˈflaʊə/",
+        "vietnamese_meaning": "(n): bột mì",
+        "example_sentence_en": "This is a flour.",
+        "example_sentence_vi": "Đây là bột mì.",
+        "image": "assets/images/flour.webp",
+        "alt": "Image for flour"
+      },
+      {
+        "english_word": "milk",
+        "pronunciation": "/mɪlk/",
+        "vietnamese_meaning": "(n): sữa",
+        "example_sentence_en": "I like milk.",
+        "example_sentence_vi": "Tôi thích sữa.",
+        "image": "assets/images/milk.webp",
+        "alt": "Image for milk"
+      },
+      {
+        "english_word": "onion",
+        "pronunciation": "/ˈʌnjən/",
+        "vietnamese_meaning": "(n): hành tây",
+        "example_sentence_en": "This is a onion.",
+        "example_sentence_vi": "Đây là hành tây.",
+        "image": "assets/images/onion.webp",
+        "alt": "Image for onion"
+      },
+      {
+        "english_word": "pepper",
+        "pronunciation": "/ˈpepə/",
+        "vietnamese_meaning": "(n): hạt tiêu",
+        "example_sentence_en": "This is a pepper.",
+        "example_sentence_vi": "Đây là hạt tiêu.",
+        "image": "assets/images/pepper.webp",
+        "alt": "Image for pepper"
+      },
+      {
+        "english_word": "recipe",
+        "pronunciation": "/ˈresɪpi/",
+        "vietnamese_meaning": "(n): công thức làm món ăn",
+        "example_sentence_en": "This is a recipe.",
+        "example_sentence_vi": "Đây là công thức làm món ăn.",
+        "image": "assets/images/recipe.webp",
+        "alt": "Image for recipe"
+      },
+      {
+        "english_word": "salt",
+        "pronunciation": "/sɔːlt/",
+        "vietnamese_meaning": "(n): muối",
+        "example_sentence_en": "I like salt.",
+        "example_sentence_vi": "Tôi thích muối.",
+        "image": "assets/images/salt.webp",
+        "alt": "Image for salt"
+      },
+      {
+        "english_word": "shrimp",
+        "pronunciation": "/ʃrɪmp/",
+        "vietnamese_meaning": "(n): tôm",
+        "example_sentence_en": "This is a shrimp.",
+        "example_sentence_vi": "Đây là tôm.",
+        "image": "assets/images/shrimp.webp",
+        "alt": "Image for shrimp"
+      },
+      {
+        "english_word": "sugar",
+        "pronunciation": "/ˈʃʊɡə/",
+        "vietnamese_meaning": "(n): đường",
+        "example_sentence_en": "I like sugar.",
+        "example_sentence_vi": "Tôi thích đường.",
+        "image": "assets/images/sugar.webp",
+        "alt": "Image for sugar"
+      },
+      {
+        "english_word": "tomato",
+        "pronunciation": "/təˈmɑːtəʊ/",
+        "vietnamese_meaning": "(n): cà chua",
+        "example_sentence_en": "This is a tomato.",
+        "example_sentence_vi": "Đây là cà chua.",
+        "image": "assets/images/tomato.webp",
+        "alt": "Image for tomato"
+      }
+    ]
+  },
+  {
+    "group": "Measurements and Quantities",
+    "words": [
+      {
+        "english_word": "gram (g)",
+        "pronunciation": "/ɡræm/",
+        "vietnamese_meaning": "(n): gam",
+        "example_sentence_en": "This is a gram (g).",
+        "example_sentence_vi": "Đây là gam.",
+        "image": "assets/images/gram-g.webp",
+        "alt": "Image for gram (g)"
+      },
+      {
+        "english_word": "kilo (kg)",
+        "pronunciation": "/ˈkiːləʊ/",
+        "vietnamese_meaning": "(n): kilôgam",
+        "example_sentence_en": "This is a kilo (kg).",
+        "example_sentence_vi": "Đây là kilôgam.",
+        "image": "assets/images/kilo-kg.webp",
+        "alt": "Image for kilo (kg)"
+      },
+      {
+        "english_word": "litre (l)",
+        "pronunciation": "/ˈliːtə/",
+        "vietnamese_meaning": "(n): lít",
+        "example_sentence_en": "This is a litre (l).",
+        "example_sentence_vi": "Đây là lít.",
+        "image": "assets/images/litre-l.webp",
+        "alt": "Image for litre (l)"
+      },
+      {
+        "english_word": "millilitre (ml)",
+        "pronunciation": "/ˈmɪlɪliːtə/",
+        "vietnamese_meaning": "(n): mililít",
+        "example_sentence_en": "This is a millilitre (ml).",
+        "example_sentence_vi": "Đây là mililít.",
+        "image": "assets/images/millilitre-ml.webp",
+        "alt": "Image for millilitre (ml)"
+      },
+      {
+        "english_word": "tablespoon (tbsp)",
+        "pronunciation": "/ˈteɪblspuːn/",
+        "vietnamese_meaning": "(n): thìa canh",
+        "example_sentence_en": "This is a tablespoon (tbsp).",
+        "example_sentence_vi": "Đây là thìa canh.",
+        "image": "assets/images/tablespoon-tbsp.webp",
+        "alt": "Image for tablespoon (tbsp)"
+      },
+      {
+        "english_word": "teaspoon (tsp)",
+        "pronunciation": "/ˈtiːspuːn/",
+        "vietnamese_meaning": "(n): thìa cà phê",
+        "example_sentence_en": "This is a teaspoon (tsp).",
+        "example_sentence_vi": "Đây là thìa cà phê.",
+        "image": "assets/images/teaspoon-tsp.webp",
+        "alt": "Image for teaspoon (tsp)"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "boil",
+        "pronunciation": "/bɔɪl/",
+        "vietnamese_meaning": "(v): đun sôi",
+        "example_sentence_en": "I boil every day.",
+        "example_sentence_vi": "Tôi thường đun sôi.",
+        "image": "assets/images/boil.webp",
+        "alt": "Image for boil"
+      },
+      {
+        "english_word": "boneless",
+        "pronunciation": "/ˈbəʊnləs/",
+        "vietnamese_meaning": "(adj): không xương",
+        "example_sentence_en": "It is boneless.",
+        "example_sentence_vi": "Nó rất không xương.",
+        "image": "assets/images/boneless.webp",
+        "alt": "Image for boneless"
+      },
+      {
+        "english_word": "bowl",
+        "pronunciation": "/bəʊl/",
+        "vietnamese_meaning": "(n): bát",
+        "example_sentence_en": "This is a bowl.",
+        "example_sentence_vi": "Đây là bát.",
+        "image": "assets/images/bowl.webp",
+        "alt": "Image for bowl"
+      },
+      {
+        "english_word": "broth",
+        "pronunciation": "/brɒθ/",
+        "vietnamese_meaning": "(n): nước dùng",
+        "example_sentence_en": "I like broth.",
+        "example_sentence_vi": "Tôi thích nước dùng.",
+        "image": "assets/images/broth.webp",
+        "alt": "Image for broth"
+      },
+      {
+        "english_word": "mealtime",
+        "pronunciation": "/ˈmiːltaɪm/",
+        "vietnamese_meaning": "(n): giờ ăn",
+        "example_sentence_en": "I like mealtime.",
+        "example_sentence_vi": "Tôi thích giờ ăn.",
+        "image": "assets/images/mealtime.webp",
+        "alt": "Image for mealtime"
+      },
+      {
+        "english_word": "slice",
+        "pronunciation": "/slaɪs/",
+        "vietnamese_meaning": "(n): lát mỏng",
+        "example_sentence_en": "This is a slice.",
+        "example_sentence_vi": "Đây là lát mỏng.",
+        "image": "assets/images/slice.webp",
+        "alt": "Image for slice"
+      },
+      {
+        "english_word": "stewing",
+        "pronunciation": "/ˈstjuːɪŋ/",
+        "vietnamese_meaning": "(n): sự hầm/ninh",
+        "example_sentence_en": "I like stewing.",
+        "example_sentence_vi": "Tôi thích sự hầm/ninh.",
+        "image": "assets/images/stewing.webp",
+        "alt": "Image for stewing"
+      },
+      {
+        "english_word": "taste",
+        "pronunciation": "/teɪst/",
+        "vietnamese_meaning": "(n): hương vị",
+        "example_sentence_en": "This is a taste.",
+        "example_sentence_vi": "Đây là hương vị.",
+        "image": "assets/images/taste.webp",
+        "alt": "Image for taste"
+      }
+    ]
+  }
+]

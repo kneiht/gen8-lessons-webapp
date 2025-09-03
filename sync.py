@@ -194,6 +194,7 @@ def get_category_icon(category):
     # Placeholder URLs. You will need to replace these with actual Flaticon image URLs.
     # Example: "https://cdn-icons-png.flaticon.com/512/1046/1046648.png"
     icons = {
+        'Global-success-slides': 'https://cdn-icons-png.flaticon.com/512/11473/11473512.png',
         'worksheets': 'https://cdn-icons-png.flaticon.com/512/2991/2991108.png',
         'tests': 'https://cdn-icons-png.flaticon.com/512/9913/9913544.png',
         'slides': 'https://cdn-icons-png.flaticon.com/512/11473/11473512.png',

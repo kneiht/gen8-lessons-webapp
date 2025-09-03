@@ -1,0 +1,504 @@
+[
+  {
+    "group": "Actions",
+    "words": [
+      {
+        "english_word": "clean",
+        "pronunciation": "/kliːn/",
+        "vietnamese_meaning": "(v): dọn dẹp, làm sạch",
+        "example_sentence_en": "I clean every day.",
+        "example_sentence_vi": "Tôi thường dọn dẹp.",
+        "image": "assets/images/clean.webp",
+        "alt": "Image for clean"
+      },
+      {
+        "english_word": "develop",
+        "pronunciation": "/dɪˈveləp/",
+        "vietnamese_meaning": "(v): phát triển",
+        "example_sentence_en": "I develop every day.",
+        "example_sentence_vi": "Tôi thường phát triển.",
+        "image": "assets/images/develop.webp",
+        "alt": "Image for develop"
+      },
+      {
+        "english_word": "donate",
+        "pronunciation": "/dəʊˈneɪt/",
+        "vietnamese_meaning": "(v): quyên góp, tặng",
+        "example_sentence_en": "I donate every day.",
+        "example_sentence_vi": "Tôi thường quyên góp.",
+        "image": "assets/images/donate.webp",
+        "alt": "Image for donate"
+      },
+      {
+        "english_word": "exchange",
+        "pronunciation": "/ɪksˈtʃeɪndʒ/",
+        "vietnamese_meaning": "(v): trao đổi",
+        "example_sentence_en": "I exchange every day.",
+        "example_sentence_vi": "Tôi thường trao đổi.",
+        "image": "assets/images/exchange.webp",
+        "alt": "Image for exchange"
+      },
+      {
+        "english_word": "feed",
+        "pronunciation": "/fiːd/",
+        "vietnamese_meaning": "(v): cho ăn",
+        "example_sentence_en": "I feed every day.",
+        "example_sentence_vi": "Tôi thường cho ăn.",
+        "image": "assets/images/feed.webp",
+        "alt": "Image for feed"
+      },
+      {
+        "english_word": "grow",
+        "pronunciation": "/ɡrəʊ/",
+        "vietnamese_meaning": "(v): trồng, phát triển",
+        "example_sentence_en": "I grow every day.",
+        "example_sentence_vi": "Tôi thường trồng.",
+        "image": "assets/images/grow.webp",
+        "alt": "Image for grow"
+      },
+      {
+        "english_word": "join",
+        "pronunciation": "/dʒɔɪn/",
+        "vietnamese_meaning": "(v): tham gia",
+        "example_sentence_en": "I join every day.",
+        "example_sentence_vi": "Tôi thường tham gia.",
+        "image": "assets/images/join.webp",
+        "alt": "Image for join"
+      },
+      {
+        "english_word": "look after",
+        "pronunciation": "/lʊk ˈɑːftər/",
+        "vietnamese_meaning": "(v): chăm sóc",
+        "example_sentence_en": "I look after every day.",
+        "example_sentence_vi": "Tôi thường chăm sóc.",
+        "image": "assets/images/look-after.webp",
+        "alt": "Image for look after"
+      },
+      {
+        "english_word": "pick up",
+        "pronunciation": "/pɪk ʌp/",
+        "vietnamese_meaning": "(v): nhặt lên, thu gom",
+        "example_sentence_en": "I pick up every day.",
+        "example_sentence_vi": "Tôi thường nhặt lên.",
+        "image": "assets/images/pick-up.webp",
+        "alt": "Image for pick up"
+      },
+      {
+        "english_word": "plant",
+        "pronunciation": "/plɑːnt/",
+        "vietnamese_meaning": "(v): trồng (cây)",
+        "example_sentence_en": "I plant every day.",
+        "example_sentence_vi": "Tôi thường trồng (cây).",
+        "image": "assets/images/plant.webp",
+        "alt": "Image for plant"
+      },
+      {
+        "english_word": "protect",
+        "pronunciation": "/prəˈtekt/",
+        "vietnamese_meaning": "(v): bảo vệ",
+        "example_sentence_en": "I protect every day.",
+        "example_sentence_vi": "Tôi thường bảo vệ.",
+        "image": "assets/images/protect.webp",
+        "alt": "Image for protect"
+      },
+      {
+        "english_word": "provide",
+        "pronunciation": "/prəˈvaɪd/",
+        "vietnamese_meaning": "(v): cung cấp",
+        "example_sentence_en": "I provide every day.",
+        "example_sentence_vi": "Tôi thường cung cấp.",
+        "image": "assets/images/provide.webp",
+        "alt": "Image for provide"
+      },
+      {
+        "english_word": "raise money",
+        "pronunciation": "/reɪz ˈmʌni/",
+        "vietnamese_meaning": "(v): gây quỹ, quyên tiền",
+        "example_sentence_en": "I raise money every day.",
+        "example_sentence_vi": "Tôi thường gây quỹ.",
+        "image": "assets/images/raise-money.webp",
+        "alt": "Image for raise money"
+      },
+      {
+        "english_word": "receive",
+        "pronunciation": "/rɪˈsiːv/",
+        "vietnamese_meaning": "(v): nhận",
+        "example_sentence_en": "I receive every day.",
+        "example_sentence_vi": "Tôi thường nhận.",
+        "image": "assets/images/receive.webp",
+        "alt": "Image for receive"
+      },
+      {
+        "english_word": "recycle",
+        "pronunciation": "/ˌriːˈsaɪkəl/",
+        "vietnamese_meaning": "(v): tái chế",
+        "example_sentence_en": "I recycle every day.",
+        "example_sentence_vi": "Tôi thường tái chế.",
+        "image": "assets/images/recycle.webp",
+        "alt": "Image for recycle"
+      },
+      {
+        "english_word": "reuse",
+        "pronunciation": "/ˌriːˈjuːz/",
+        "vietnamese_meaning": "(v): tái sử dụng",
+        "example_sentence_en": "I reuse every day.",
+        "example_sentence_vi": "Tôi thường tái sử dụng.",
+        "image": "assets/images/reuse.webp",
+        "alt": "Image for reuse"
+      },
+      {
+        "english_word": "set up",
+        "pronunciation": "/set ʌp/",
+        "vietnamese_meaning": "(v): thành lập, thiết lập",
+        "example_sentence_en": "I set up every day.",
+        "example_sentence_vi": "Tôi thường thành lập.",
+        "image": "assets/images/set-up.webp",
+        "alt": "Image for set up"
+      },
+      {
+        "english_word": "tutor",
+        "pronunciation": "/ˈtʃuːtər/",
+        "vietnamese_meaning": "(v): dạy kèm",
+        "example_sentence_en": "I tutor every day.",
+        "example_sentence_vi": "Tôi thường dạy kèm.",
+        "image": "assets/images/tutor.webp",
+        "alt": "Image for tutor"
+      },
+      {
+        "english_word": "volunteer",
+        "pronunciation": "/ˌvɒlənˈtɪər/",
+        "vietnamese_meaning": "(v): tình nguyện",
+        "example_sentence_en": "I volunteer every day.",
+        "example_sentence_vi": "Tôi thường tình nguyện.",
+        "image": "assets/images/volunteer.webp",
+        "alt": "Image for volunteer"
+      },
+      {
+        "english_word": "water",
+        "pronunciation": "/ˈwɔːtər/",
+        "vietnamese_meaning": "(v): tưới nước",
+        "example_sentence_en": "I water every day.",
+        "example_sentence_vi": "Tôi thường tưới nước.",
+        "image": "assets/images/water.webp",
+        "alt": "Image for water"
+      }
+    ]
+  },
+  {
+    "group": "Places & Locations",
+    "words": [
+      {
+        "english_word": "community library",
+        "pronunciation": "/kəˈmjuːnɪti ˈlaɪbrəri/",
+        "vietnamese_meaning": "(n): thư viện cộng đồng",
+        "example_sentence_en": "This is a community library.",
+        "example_sentence_vi": "Đây là thư viện cộng đồng.",
+        "image": "assets/images/community-library.webp",
+        "alt": "Image for community library"
+      },
+      {
+        "english_word": "environment",
+        "pronunciation": "/ɪnˈvaɪrənmənt/",
+        "vietnamese_meaning": "(n): môi trường",
+        "example_sentence_en": "This is a environment.",
+        "example_sentence_vi": "Đây là môi trường.",
+        "image": "assets/images/environment.webp",
+        "alt": "Image for environment"
+      },
+      {
+        "english_word": "flooded area",
+        "pronunciation": "/ˈflʌdɪd ˈeəriə/",
+        "vietnamese_meaning": "(n): khu vực bị ngập lụt",
+        "example_sentence_en": "This is a flooded area.",
+        "example_sentence_vi": "Đây là khu vực bị ngập lụt.",
+        "image": "assets/images/flooded-area.webp",
+        "alt": "Image for flooded area"
+      },
+      {
+        "english_word": "mountainous area",
+        "pronunciation": "/ˈmaʊntɪnəs ˈeəriə/",
+        "vietnamese_meaning": "(n): vùng núi",
+        "example_sentence_en": "This is a mountainous area.",
+        "example_sentence_vi": "Đây là vùng núi.",
+        "image": "assets/images/mountainous-area.webp",
+        "alt": "Image for mountainous area"
+      },
+      {
+        "english_word": "nursing home",
+        "pronunciation": "/ˈnɜːsɪŋ həʊm/",
+        "vietnamese_meaning": "(n): viện dưỡng lão",
+        "example_sentence_en": "I like nursing home.",
+        "example_sentence_vi": "Tôi thích viện dưỡng lão.",
+        "image": "assets/images/nursing-home.webp",
+        "alt": "Image for nursing home"
+      },
+      {
+        "english_word": "orphanage",
+        "pronunciation": "/ˈɔːfənɪdʒ/",
+        "vietnamese_meaning": "(n): trại trẻ mồ côi",
+        "example_sentence_en": "This is a orphanage.",
+        "example_sentence_vi": "Đây là trại trẻ mồ côi.",
+        "image": "assets/images/orphanage.webp",
+        "alt": "Image for orphanage"
+      },
+      {
+        "english_word": "playground",
+        "pronunciation": "/ˈpleɪɡraʊnd/",
+        "vietnamese_meaning": "(n): sân chơi",
+        "example_sentence_en": "This is a playground.",
+        "example_sentence_vi": "Đây là sân chơi.",
+        "image": "assets/images/playground.webp",
+        "alt": "Image for playground"
+      },
+      {
+        "english_word": "rural area",
+        "pronunciation": "/ˈrʊərəl ˈeəriə/",
+        "vietnamese_meaning": "(n): vùng nông thôn",
+        "example_sentence_en": "This is a rural area.",
+        "example_sentence_vi": "Đây là vùng nông thôn.",
+        "image": "assets/images/rural-area.webp",
+        "alt": "Image for rural area"
+      }
+    ]
+  },
+  {
+    "group": "People & Groups",
+    "words": [
+      {
+        "english_word": "community",
+        "pronunciation": "/kəˈmjuːnɪti/",
+        "vietnamese_meaning": "(n): cộng đồng",
+        "example_sentence_en": "This is a community.",
+        "example_sentence_vi": "Đây là cộng đồng.",
+        "image": "assets/images/community.webp",
+        "alt": "Image for community"
+      },
+      {
+        "english_word": "elderly",
+        "pronunciation": "/ˈeldəli/",
+        "vietnamese_meaning": "(n, adj): người già; già",
+        "example_sentence_en": "This is a elderly.",
+        "example_sentence_vi": "Đây là người già; già.",
+        "image": "assets/images/elderly.webp",
+        "alt": "Image for elderly"
+      },
+      {
+        "english_word": "homeless",
+        "pronunciation": "/ˈhəʊmləs/",
+        "vietnamese_meaning": "(n, adj): người vô gia cư; vô gia cư",
+        "example_sentence_en": "This is a homeless.",
+        "example_sentence_vi": "Đây là người vô gia cư; vô gia cư.",
+        "image": "assets/images/homeless.webp",
+        "alt": "Image for homeless"
+      },
+      {
+        "english_word": "ill",
+        "pronunciation": "/ɪl/",
+        "vietnamese_meaning": "(adj): ốm, bệnh",
+        "example_sentence_en": "It is ill.",
+        "example_sentence_vi": "Nó rất ốm.",
+        "image": "assets/images/ill.webp",
+        "alt": "Image for ill"
+      },
+      {
+        "english_word": "old people",
+        "pronunciation": "/əʊld ˈpiːpl/",
+        "vietnamese_meaning": "(n): người già",
+        "example_sentence_en": "This is a old people.",
+        "example_sentence_vi": "Đây là người già.",
+        "image": "assets/images/old-people.webp",
+        "alt": "Image for old people"
+      },
+      {
+        "english_word": "patient",
+        "pronunciation": "/ˈpeɪʃənt/",
+        "vietnamese_meaning": "(n): bệnh nhân",
+        "example_sentence_en": "This is a patient.",
+        "example_sentence_vi": "Đây là bệnh nhân.",
+        "image": "assets/images/patient.webp",
+        "alt": "Image for patient"
+      },
+      {
+        "english_word": "street children",
+        "pronunciation": "/striːt ˈtʃɪldrən/",
+        "vietnamese_meaning": "(n): trẻ em đường phố",
+        "example_sentence_en": "This is a street children.",
+        "example_sentence_vi": "Đây là trẻ em đường phố.",
+        "image": "assets/images/street-children.webp",
+        "alt": "Image for street children"
+      }
+    ]
+  },
+  {
+    "group": "Objects & Materials",
+    "words": [
+      {
+        "english_word": "bottle",
+        "pronunciation": "/ˈbɒtəl/",
+        "vietnamese_meaning": "(n): chai, lọ",
+        "example_sentence_en": "This is a bottle.",
+        "example_sentence_vi": "Đây là chai.",
+        "image": "assets/images/bottle.webp",
+        "alt": "Image for bottle"
+      },
+      {
+        "english_word": "clothes",
+        "pronunciation": "/kləʊðz/",
+        "vietnamese_meaning": "(n): quần áo",
+        "example_sentence_en": "These are clothes.",
+        "example_sentence_vi": "Đây là quần áo.",
+        "image": "assets/images/clothes.webp",
+        "alt": "Image for clothes"
+      },
+      {
+        "english_word": "gloves",
+        "pronunciation": "/ɡlʌvz/",
+        "vietnamese_meaning": "(n): găng tay",
+        "example_sentence_en": "These are gloves.",
+        "example_sentence_vi": "Đây là găng tay.",
+        "image": "assets/images/gloves.webp",
+        "alt": "Image for gloves"
+      },
+      {
+        "english_word": "litter",
+        "pronunciation": "/ˈlɪtər/",
+        "vietnamese_meaning": "(n): rác (vứt bừa bãi)",
+        "example_sentence_en": "I like litter.",
+        "example_sentence_vi": "Tôi thích rác (vứt bừa bãi).",
+        "image": "assets/images/litter.webp",
+        "alt": "Image for litter"
+      },
+      {
+        "english_word": "plastic",
+        "pronunciation": "/ˈplæstɪk/",
+        "vietnamese_meaning": "(n): nhựa",
+        "example_sentence_en": "This is a plastic.",
+        "example_sentence_vi": "Đây là nhựa.",
+        "image": "assets/images/plastic.webp",
+        "alt": "Image for plastic"
+      },
+      {
+        "english_word": "postcard",
+        "pronunciation": "/ˈpəʊstkɑːd/",
+        "vietnamese_meaning": "(n): bưu thiếp",
+        "example_sentence_en": "This is a postcard.",
+        "example_sentence_vi": "Đây là bưu thiếp.",
+        "image": "assets/images/postcard.webp",
+        "alt": "Image for postcard"
+      },
+      {
+        "english_word": "poster",
+        "pronunciation": "/ˈpəʊstər/",
+        "vietnamese_meaning": "(n): áp phích, tờ quảng cáo",
+        "example_sentence_en": "This is a poster.",
+        "example_sentence_vi": "Đây là áp phích.",
+        "image": "assets/images/poster.webp",
+        "alt": "Image for poster"
+      },
+      {
+        "english_word": "rubbish",
+        "pronunciation": "/ˈrʌbɪʃ/",
+        "vietnamese_meaning": "(n): rác",
+        "example_sentence_en": "I like rubbish.",
+        "example_sentence_vi": "Tôi thích rác.",
+        "image": "assets/images/rubbish.webp",
+        "alt": "Image for rubbish"
+      },
+      {
+        "english_word": "thank-you card",
+        "pronunciation": "/ˈθæŋk juː kɑːd/",
+        "vietnamese_meaning": "(n): thiệp cảm ơn",
+        "example_sentence_en": "This is a thank-you card.",
+        "example_sentence_vi": "Đây là thiệp cảm ơn.",
+        "image": "assets/images/thank-you-card.webp",
+        "alt": "Image for thank-you card"
+      },
+      {
+        "english_word": "textbook",
+        "pronunciation": "/ˈtekstbʊk/",
+        "vietnamese_meaning": "(n): sách giáo khoa",
+        "example_sentence_en": "This is a textbook.",
+        "example_sentence_vi": "Đây là sách giáo khoa.",
+        "image": "assets/images/textbook.webp",
+        "alt": "Image for textbook"
+      },
+      {
+        "english_word": "used paper",
+        "pronunciation": "/juːzd ˈpeɪpər/",
+        "vietnamese_meaning": "(n): giấy đã qua sử dụng",
+        "example_sentence_en": "This is a used paper.",
+        "example_sentence_vi": "Đây là giấy đã qua sử dụng.",
+        "image": "assets/images/used-paper.webp",
+        "alt": "Image for used paper"
+      },
+      {
+        "english_word": "vegetable",
+        "pronunciation": "/ˈvedʒtəbəl/",
+        "vietnamese_meaning": "(n): rau củ",
+        "example_sentence_en": "This is a vegetable.",
+        "example_sentence_vi": "Đây là rau củ.",
+        "image": "assets/images/vegetable.webp",
+        "alt": "Image for vegetable"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "community service",
+        "pronunciation": "/kəˌmjuːnəti ˈsɜːvɪs/",
+        "vietnamese_meaning": "(n): dịch vụ cộng đồng",
+        "example_sentence_en": "This is a community service.",
+        "example_sentence_vi": "Đây là dịch vụ cộng đồng.",
+        "image": "assets/images/community-service.webp",
+        "alt": "Image for community service"
+      },
+      {
+        "english_word": "lonely",
+        "pronunciation": "/ˈləʊnli/",
+        "vietnamese_meaning": "(adj): cô đơn",
+        "example_sentence_en": "It is lonely.",
+        "example_sentence_vi": "Nó rất cô đơn.",
+        "image": "assets/images/lonely.webp",
+        "alt": "Image for lonely"
+      },
+      {
+        "english_word": "project",
+        "pronunciation": "/ˈprɒdʒekt/",
+        "vietnamese_meaning": "(n): dự án",
+        "example_sentence_en": "This is a project.",
+        "example_sentence_vi": "Đây là dự án.",
+        "image": "assets/images/project.webp",
+        "alt": "Image for project"
+      },
+      {
+        "english_word": "proud",
+        "pronunciation": "/praʊd/",
+        "vietnamese_meaning": "(adj): tự hào",
+        "example_sentence_en": "It is proud.",
+        "example_sentence_vi": "Nó rất tự hào.",
+        "image": "assets/images/proud.webp",
+        "alt": "Image for proud"
+      },
+      {
+        "english_word": "teenager",
+        "pronunciation": "/ˈtiːneɪdʒə/",
+        "vietnamese_meaning": "(n): thanh thiếu niên",
+        "example_sentence_en": "This is a teenager.",
+        "example_sentence_vi": "Đây là thanh thiếu niên.",
+        "image": "assets/images/teenager.webp",
+        "alt": "Image for teenager"
+      },
+      {
+        "english_word": "useful",
+        "pronunciation": "/ˈjuːsfəl/",
+        "vietnamese_meaning": "(adj): hữu ích",
+        "example_sentence_en": "It is useful.",
+        "example_sentence_vi": "Nó rất hữu ích.",
+        "image": "assets/images/useful.webp",
+        "alt": "Image for useful"
+      }
+    ]
+  }
+]
