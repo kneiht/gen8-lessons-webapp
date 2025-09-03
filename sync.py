@@ -199,7 +199,7 @@ def get_category_icon(category):
         'tests': 'https://cdn-icons-png.flaticon.com/512/9913/9913544.png',
         'slides': 'https://cdn-icons-png.flaticon.com/512/11473/11473512.png',
     }
-    return icons.get(category_lower, 'https://example.com/icons/folder.png')
+    return icons.get(category_lower, 'https://cdn-icons-png.flaticon.com/512/11473/11473512.png')
 
 def collect_lesson_info(lessons_dir):
     lessons_info = {
