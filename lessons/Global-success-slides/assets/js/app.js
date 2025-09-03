@@ -115,7 +115,7 @@ function createVocabularyCard(word) {
     // Try to get image from local images folder first, fallback to original path
     const imagePath = getImagePath(word.image);
     return `
-        <div class="vocab-card bg-white px-4 py-6 rounded-xl shadow-md w-1/2 h-full flex flex-col justify-between">
+        <div class="vocab-card bg-white px-4 py-6 rounded-xl shadow-md w-full md:w-1/2 h-full flex flex-col justify-between">
             <div class="relative w-full flex-1 border border-1 border-blue-200" style="background-image: url('${imagePath}'); background-size: cover; background-position: center; border-radius: 0.75rem;">
                 <div class="absolute bottom-2 left-0 right-0 flex flex-col items-center">
                     <span class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 text-md sm:text-2xl font-bold px-3 py-1 rounded-full mb-1">
