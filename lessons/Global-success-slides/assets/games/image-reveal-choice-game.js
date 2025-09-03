@@ -210,7 +210,7 @@ class ImageRevealChoiceGame extends GameBase {
         if (selected === q.correct) {
             this.score++;
             choiceEl.classList.add('correct');
-            feedback.innerHTML = `<span class="text-green-600 font-semibold">✅ Chính xác! +${gained} điểm phụ</span>`;
+            feedback.innerHTML = `<span class="text-green-600 font-semibold">✅ Chính xác! +${gained} điểm</span>`;
         } else {
             choiceEl.classList.add('wrong');
             // Highlight correct

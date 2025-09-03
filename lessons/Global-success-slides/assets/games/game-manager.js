@@ -106,6 +106,40 @@ class GameManager {
     }
 
     /**
+     * Chọn và hiển thị game tổng hợp
+     */
+    selectComprehensiveGame(gameName, allWords) {
+        const gameInstance = this.gameInstances[gameName];
+        
+        if (!gameInstance) {
+            console.error(`Game ${gameName} not found`);
+            return;
+        }
+        
+        // Tạo slide game với toàn bộ từ vựng
+        // Sử dụng tối đa 20 từ vựng để tránh quá tải
+        const maxWordsForComprehensive = Math.min(allWords.length);
+        const selectedWords = GameUtils.selectRandomWords(allWords, maxWordsForComprehensive);
+        
+        const gameSlide = gameInstance.createSlide(selectedWords, 'Comprehensive Review');
+        
+        if (!gameSlide) {
+            console.error(`Could not create comprehensive slide for ${gameName}`);
+            return;
+        }
+
+        // Thêm nút "Thoát game" vào slide
+        this.addExitButton(gameSlide, 'Comprehensive Review');
+
+        // Ẩn slide navigation và hiển thị game
+        this.disableSlideNavigation();
+        this.showGameSlide(gameSlide);
+        
+        this.currentGameSlide = gameSlide;
+        this.isInGame = true;
+    }
+
+    /**
      * Thêm nút thoát game vào slide
      */
     addExitButton(gameSlide, categoryName) {
@@ -128,15 +162,11 @@ class GameManager {
      */
     showGameSlide(gameSlide) {
         const slidesContainer = document.getElementById('slides-container');
-        const currentSlideElement = slidesContainer.querySelector('.slide.active');
-        
-        if (currentSlideElement) {
-            currentSlideElement.classList.remove('active');
-        }
         
         // Ẩn tất cả slides
         const allSlides = slidesContainer.querySelectorAll('.slide');
         allSlides.forEach(slide => {
+            slide.classList.remove('active');
             slide.style.display = 'none';
         });
         
@@ -161,21 +191,19 @@ class GameManager {
             this.currentGameSlide.style.display = 'none';
             this.currentGameSlide.classList.remove('active');
         }
-        
-        // Hiển thị lại slide chọn game
-        // Find the current game selection slide by id (with current category)
-        const gameSelectionSlide = document.getElementById(`game-selection-slide-${sluggify(categoryName)}`);
-        console.log(gameSelectionSlide);
-        if (gameSelectionSlide) {
-            gameSelectionSlide.classList.add('active');
-            gameSelectionSlide.style.display = '';
-        }
+
+        this.currentGameSlide = null;
+        this.isInGame = false;
+
+        // Get slide
+        const url = new URL(window.location.href);
+        let slideNumber = parseInt(url.searchParams.get('slide'));
+        console.log(slideNumber);
+        window.showSlide(slideNumber-1)
 
         // Hiển thị lại slide navigation
         this.enableSlideNavigation();
-        
-        this.currentGameSlide = null;
-        this.isInGame = false;
+    
     }
 
     /**
@@ -205,7 +233,7 @@ class GameManager {
         const prevBtn = document.getElementById('prev-slide-btn');
         const nextBtn = document.getElementById('next-slide-btn');
         const outlineBtn = document.getElementById('outline-btn');
-        const voiceBtn = document.getElementById('voice-btn');
+        const voiceBtn = document.getElementById('settings-btn');
         const slideCounter = document.getElementById('slide-counter-countainer');
         
         if (prevBtn) prevBtn.style.display = 'none';
@@ -222,7 +250,7 @@ class GameManager {
         const prevBtn = document.getElementById('prev-slide-btn');
         const nextBtn = document.getElementById('next-slide-btn');
         const outlineBtn = document.getElementById('outline-btn');
-        const voiceBtn = document.getElementById('voice-btn');
+        const voiceBtn = document.getElementById('settings-btn');
         const slideCounter = document.getElementById('slide-counter-countainer');
         
         if (prevBtn) prevBtn.style.display = 'flex';
@@ -237,6 +265,52 @@ class GameManager {
      */
     createGameSlide(categoryWords, categoryName) {
         return this.createGameSelectionSlide(categoryWords, categoryName);
+    }
+
+    /**
+     * Tạo slide game tổng hợp với toàn bộ từ vựng
+     */
+    createComprehensiveGameSlide(allWords) {
+        const slide = document.createElement('div');
+        slide.className = 'slide content-box px-2 py-2 rounded-2xl w-full h-full';
+        slide.id = 'comprehensive-game-slide';
+        
+        const gameButtons = this.games.map(gameName => {
+            const gameInstance = this.gameInstances[gameName];
+            const gameInfo = gameInstance.getGameInfo ? gameInstance.getGameInfo() : { name: gameName, description: 'Interactive game' };
+            
+            return `
+                <div class="game-option bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105"
+                     onclick="gameManager.selectComprehensiveGame('${gameName}', ${JSON.stringify(allWords).replace(/"/g, '&quot;')})">
+                    <div class="p-6 text-center">
+                        <div class="text-4xl mb-3">${gameInfo.icon || '🎮'}</div>
+                        <h3 class="text-lg md:text-xl font-bold text-indigo-700 mb-2" style="line-height: 1.3;">${gameInfo.name}</h3>
+                        <p class="text-gray-600 text-sm">${gameInfo.description}</p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        slide.innerHTML = `
+            <div class="flex flex-col items-center justify-start h-full overflow-y-hidden">
+                <h2 class="text-md md:text-xl font-bold text-indigo-700 text-center" style="line-height: 1.3;">
+                    <span>Final Challenge</span>
+                </h2>
+                <div class="text-center text-sm md:text-xl">
+                    <p class="text-gray-600 mb-2">
+                        Luyện tập với ${allWords.length} từ đã học!
+                    </p>
+                    <p class="text-gray-500 text-xs">
+                        Chọn một game để thực hiện thách với tất cả từ vựng
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-4xl overflow-y-auto px-2">
+                    ${gameButtons}
+                </div>
+            </div>
+        `;
+
+        return slide;
     }
 
     /**

@@ -20,42 +20,112 @@
   "lessons": {
     "Global-success-slides/GS6-Unit-2-Vocab": {
       "path": "Global-success-slides/GS6-Unit-2-Vocab",
-      "title": "Global Success 6 - Unit 2 - Vocab",
+      "title": "Global Success 6 - Unit 2 - My House - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS8-Unit-1-Vocab": {
+      "path": "Global-success-slides/GS8-Unit-1-Vocab",
+      "title": "Global Success 8 - Unit 1 - Hobbies - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS7-Unit-1-Vocab": {
+      "path": "Global-success-slides/GS7-Unit-1-Vocab",
+      "title": "Global Success 7 - Unit 1 - Leisure Time - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS8-Unit-6-Vocab": {
+      "path": "Global-success-slides/GS8-Unit-6-Vocab",
+      "title": "Global Success 8 - Unit 6 - A visit to a school - Vocab",
       "author": "Gen8",
       "description": "",
       "category": "Global-success-slides"
     },
     "Global-success-slides/GS6-Unit-3-Vocab": {
       "path": "Global-success-slides/GS6-Unit-3-Vocab",
-      "title": "Global Success 6 - Unit 3 - Vocab",
+      "title": "Global Success 6 - Unit 3 - My Friends - Vocab",
       "author": "Gen8",
       "description": "",
       "category": "Global-success-slides"
     },
     "Global-success-slides/GS6-Unit-4-Vocab": {
       "path": "Global-success-slides/GS6-Unit-4-Vocab",
-      "title": "Global Success 6 - Unit 5 - Vocab",
+      "title": "Global Success 6 - Unit 4 - My Neighbourhood - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS8-Unit-2-Vocab": {
+      "path": "Global-success-slides/GS8-Unit-2-Vocab",
+      "title": "Global Success 8 - Unit 2 - Healthy living - Vocab",
       "author": "Gen8",
       "description": "",
       "category": "Global-success-slides"
     },
     "Global-success-slides/GS6-Unit-5-Vocab": {
       "path": "Global-success-slides/GS6-Unit-5-Vocab",
-      "title": "Global Success 6 - Unit 1 - Vocab",
+      "title": "Global Success 6 - Unit 5 - Natural Wonders of Viet Nam - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS7-Unit-6-Vocab": {
+      "path": "Global-success-slides/GS7-Unit-6-Vocab",
+      "title": "Global Success 7 - Unit 6 - Lifestyles - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS7-Unit-2-Vocab": {
+      "path": "Global-success-slides/GS7-Unit-2-Vocab",
+      "title": "Global Success 7 - Unit 2 - Life in the Countryside - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS8-Unit-4-Vocab": {
+      "path": "Global-success-slides/GS8-Unit-4-Vocab",
+      "title": "Global Success 8 - Unit 4 - Music and Arts - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS8-Unit-3-Vocab": {
+      "path": "Global-success-slides/GS8-Unit-3-Vocab",
+      "title": "Global Success 8 - Unit 3 - Community service - Vocab",
       "author": "Gen8",
       "description": "",
       "category": "Global-success-slides"
     },
     "Global-success-slides/GS6-Unit-6-Vocab": {
       "path": "Global-success-slides/GS6-Unit-6-Vocab",
-      "title": "Global Success 6 - Unit 6 - Vocab",
+      "title": "Global Success 6 - Unit 6 - Our Tet Holiday - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS7-Unit-4-Vocab": {
+      "path": "Global-success-slides/GS7-Unit-4-Vocab",
+      "title": "Global Success 7 - Unit 4 - Ethnic Groups of Vietnam - Vocab",
       "author": "Gen8",
       "description": "",
       "category": "Global-success-slides"
     },
     "Global-success-slides/GS6-Unit-1-Vocab": {
       "path": "Global-success-slides/GS6-Unit-1-Vocab",
-      "title": "Global Success 6 - Unit 1 - Vocab",
+      "title": "Global Success 6 - Unit 1 - My New School - Vocab",
+      "author": "Gen8",
+      "description": "",
+      "category": "Global-success-slides"
+    },
+    "Global-success-slides/GS8-Unit-5-Vocab": {
+      "path": "Global-success-slides/GS8-Unit-5-Vocab",
+      "title": "Global Success 8 - Unit 5 - Food and drink - Vocab",
       "author": "Gen8",
       "description": "",
       "category": "Global-success-slides"

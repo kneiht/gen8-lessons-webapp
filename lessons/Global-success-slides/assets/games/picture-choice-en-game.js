@@ -136,9 +136,9 @@ class PictureChoiceEnGame extends GameBase {
                     <div class="text-center mb-0 lg:mb-0 lg:mr-8 flex-shrink-0">
                         <div class="rounded-xl border border-blue-200 overflow-hidden w-[340px] h-[220px] bg-gray-100" style="background-image:url('${imagePath}'); background-size: cover; background-position: center;"></div>
                     </div>
-                    <div class="flex flex-col space-y-3 w-full max-w-md">
+                    <div class="flex flex-col space-y-2 w-full max-w-md">
                         ${question.options.map((option, index) => `
-                            <div class="choice-option bg-gray-50 border-2 border-gray-200 rounded-lg p-3 md:p-4 cursor-pointer text-center"
+                            <div class="choice-option bg-gray-50 border-2 border-gray-200 rounded-lg p-2 md:p-3 cursor-pointer text-center" 
                                  data-option="${option}" data-index="${index}">
                                 <span class="font-semibold text-gray-800">${option}</span>
                             </div>

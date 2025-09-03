@@ -1,0 +1,555 @@
+[
+  {
+    "group": "Leisure Activities",
+    "words": [
+      {
+        "english_word": "cooking",
+        "pronunciation": "/ˈkʊkɪŋ/",
+        "vietnamese_meaning": "(n): nấu ăn",
+        "example_sentence_en": "I enjoy cooking with my family on weekends.",
+        "example_sentence_vi": "Tôi thích nấu ăn với gia đình vào cuối tuần.",
+        "image": "assets/images/cooking.webp",
+        "alt": "Image for cooking"
+      },
+      {
+        "english_word": "costume",
+        "pronunciation": "/ˈkɒstjuːm/",
+        "vietnamese_meaning": "(n): trang phục, hóa trang",
+        "example_sentence_en": "She wore a beautiful costume for the party.",
+        "example_sentence_vi": "Cô ấy mặc một bộ trang phục đẹp cho bữa tiệc.",
+        "image": "assets/images/costume.webp",
+        "alt": "Image for costume"
+      },
+      {
+        "english_word": "DIY",
+        "pronunciation": "/ˌdiː aɪ ˈwaɪ/",
+        "vietnamese_meaning": "(n): tự làm",
+        "example_sentence_en": "DIY projects are very popular these days.",
+        "example_sentence_vi": "Các dự án tự làm rất phổ biến ngày nay.",
+        "image": "assets/images/diy.webp",
+        "alt": "Image for DIY"
+      },
+      {
+        "english_word": "dollhouse",
+        "pronunciation": "/ˈdɒlhaʊs/",
+        "vietnamese_meaning": "(n): nhà búp bê",
+        "example_sentence_en": "My sister loves playing with her dollhouse.",
+        "example_sentence_vi": "Em gái tôi thích chơi với nhà búp bê của cô ấy.",
+        "image": "assets/images/dollhouse.webp",
+        "alt": "Image for dollhouse"
+      },
+      {
+        "english_word": "dress",
+        "pronunciation": "/dres/",
+        "vietnamese_meaning": "(n): váy",
+        "example_sentence_en": "She bought a new dress for the wedding.",
+        "example_sentence_vi": "Cô ấy mua một chiếc váy mới cho đám cưới.",
+        "image": "assets/images/dress.webp",
+        "alt": "Image for dress"
+      },
+      {
+        "english_word": "fold",
+        "pronunciation": "/fəʊld/",
+        "vietnamese_meaning": "(v): gấp, gập",
+        "example_sentence_en": "Please fold your clothes before putting them away.",
+        "example_sentence_vi": "Hãy gấp quần áo trước khi cất chúng đi.",
+        "image": "assets/images/fold.webp",
+        "alt": "Image for fold"
+      },
+      {
+        "english_word": "ingredient",
+        "pronunciation": "/ɪnˈɡriːdiənt/",
+        "vietnamese_meaning": "(n): nguyên liệu",
+        "example_sentence_en": "We need to buy all the ingredients for the cake.",
+        "example_sentence_vi": "Chúng ta cần mua tất cả nguyên liệu cho bánh.",
+        "image": "assets/images/ingredient.webp",
+        "alt": "Image for ingredient"
+      },
+      {
+        "english_word": "knitting",
+        "pronunciation": "/ˈnɪtɪŋ/",
+        "vietnamese_meaning": "(n): đan len",
+        "example_sentence_en": "My grandmother taught me knitting when I was young.",
+        "example_sentence_vi": "Bà tôi dạy tôi đan len khi tôi còn nhỏ.",
+        "image": "assets/images/knitting.webp",
+        "alt": "Image for knitting"
+      },
+      {
+        "english_word": "origami",
+        "pronunciation": "/ˌɒrɪˈɡɑːmi/",
+        "vietnamese_meaning": "(n): nghệ thuật gấp giấy Nhật Bản",
+        "example_sentence_en": "Origami is a traditional Japanese art form.",
+        "example_sentence_vi": "Origami là một nghệ thuật truyền thống của Nhật Bản.",
+        "image": "assets/images/origami.webp",
+        "alt": "Image for origami"
+      },
+      {
+        "english_word": "paper flower",
+        "pronunciation": "/ˈpeɪpə ˈflaʊə/",
+        "vietnamese_meaning": "(n): hoa giấy",
+        "example_sentence_en": "She made beautiful paper flowers for decoration.",
+        "example_sentence_vi": "Cô ấy làm những bông hoa giấy đẹp để trang trí.",
+        "image": "assets/images/paper-flower.webp",
+        "alt": "Image for paper flower"
+      },
+      {
+        "english_word": "puzzle",
+        "pronunciation": "/ˈpʌzl/",
+        "vietnamese_meaning": "(n): trò chơi câu đố / giải đố",
+        "example_sentence_en": "We spent hours solving the jigsaw puzzle.",
+        "example_sentence_vi": "Chúng tôi dành hàng giờ để giải trò chơi ghép hình.",
+        "image": "assets/images/puzzle.webp",
+        "alt": "Image for puzzle"
+      },
+      {
+        "english_word": "recipe",
+        "pronunciation": "/ˈresɪpi/",
+        "vietnamese_meaning": "(n): công thức nấu ăn",
+        "example_sentence_en": "This recipe makes the best chocolate cake.",
+        "example_sentence_vi": "Công thức này làm ra chiếc bánh sô cô la ngon nhất.",
+        "image": "assets/images/recipe.webp",
+        "alt": "Image for recipe"
+      }
+    ]
+  },
+  {
+    "group": "Sports & Physical Activities",
+    "words": [
+      {
+        "english_word": "badminton",
+        "pronunciation": "/ˈbædmɪntən/",
+        "vietnamese_meaning": "(n): cầu lông",
+        "example_sentence_en": "We play badminton every weekend.",
+        "example_sentence_vi": "Chúng tôi chơi cầu lông mỗi cuối tuần.",
+        "image": "assets/images/badminton.webp",
+        "alt": "Image for badminton"
+      },
+      {
+        "english_word": "balance",
+        "pronunciation": "/ˈbæləns/",
+        "vietnamese_meaning": "(n): thăng bằng",
+        "example_sentence_en": "Yoga helps improve your balance.",
+        "example_sentence_vi": "Yoga giúp cải thiện sự thăng bằng của bạn.",
+        "image": "assets/images/balance.webp",
+        "alt": "Image for balance"
+      },
+      {
+        "english_word": "cycling",
+        "pronunciation": "/ˈsaɪklɪŋ/",
+        "vietnamese_meaning": "(n): đạp xe",
+        "example_sentence_en": "Cycling is good for your health and the environment.",
+        "example_sentence_vi": "Đạp xe tốt cho sức khỏe và môi trường.",
+        "image": "assets/images/cycling.webp",
+        "alt": "Image for cycling"
+      },
+      {
+        "english_word": "muscle strength",
+        "pronunciation": "/ˈmʌsl streŋθ/",
+        "vietnamese_meaning": "(n): sức mạnh cơ bắp",
+        "example_sentence_en": "Weight training builds muscle strength.",
+        "example_sentence_vi": "Tập tạ xây dựng sức mạnh cơ bắp.",
+        "image": "assets/images/muscle-strength.webp",
+        "alt": "Image for muscle strength"
+      },
+      {
+        "english_word": "skateboarding",
+        "pronunciation": "/ˈskeɪtbɔːdɪŋ/",
+        "vietnamese_meaning": "(n): trượt ván",
+        "example_sentence_en": "He loves to go skateboarding in the park.",
+        "example_sentence_vi": "Anh ấy thích trượt ván trong công viên.",
+        "image": "assets/images/skateboard.webp",
+        "alt": "Image for skateboard"
+      },
+      {
+        "english_word": "snowboarding",
+        "pronunciation": "/ˈsnəʊbɔːdɪŋ/",
+        "vietnamese_meaning": "(n): trượt tuyết",
+        "example_sentence_en": "Snowboarding is popular in winter resorts.",
+        "example_sentence_vi": "Trượt tuyết phổ biến ở các khu nghỉ mát mùa đông.",
+        "image": "assets/images/snowboarding.webp",
+        "alt": "Image for snowboarding"
+      },
+      {
+        "english_word": "sport",
+        "pronunciation": "/spɔːt/",
+        "vietnamese_meaning": "(n): thể thao",
+        "example_sentence_en": "Football is the most popular sport in the world.",
+        "example_sentence_vi": "Bóng đá là môn thể thao phổ biến nhất thế giới.",
+        "image": "assets/images/sport.webp",
+        "alt": "Image for sport"
+      },
+      {
+        "english_word": "volleyball",
+        "pronunciation": "/ˈvɒlibɔːl/",
+        "vietnamese_meaning": "(n): bóng chuyền",
+        "example_sentence_en": "The volleyball team won the championship.",
+        "example_sentence_vi": "Đội bóng chuyền đã thắng giải vô địch.",
+        "image": "assets/images/volleyball.webp",
+        "alt": "Image for volleyball"
+      }
+    ]
+  },
+  {
+    "group": "Social Activities",
+    "words": [
+      {
+        "english_word": "comedy",
+        "pronunciation": "/ˈkɒmədi/",
+        "vietnamese_meaning": "(n): phim hài",
+        "example_sentence_en": "We watched a comedy movie last night.",
+        "example_sentence_vi": "Chúng tôi xem một bộ phim hài tối qua.",
+        "image": "assets/images/comedy.webp",
+        "alt": "Image for comedy"
+      },
+      {
+        "english_word": "contest",
+        "pronunciation": "/ˈkɒntest/",
+        "vietnamese_meaning": "(n): cuộc thi",
+        "example_sentence_en": "She won first prize in the singing contest.",
+        "example_sentence_vi": "Cô ấy thắng giải nhất trong cuộc thi hát.",
+        "image": "assets/images/contest.webp",
+        "alt": "Image for contest"
+      },
+      {
+        "english_word": "hang out",
+        "pronunciation": "/hæŋ aʊt/",
+        "vietnamese_meaning": "(v): đi chơi, gặp gỡ",
+        "example_sentence_en": "We like to hang out at the mall on weekends.",
+        "example_sentence_vi": "Chúng tôi thích đi chơi ở trung tâm thương mại vào cuối tuần.",
+        "image": "assets/images/hang-out.webp",
+        "alt": "Image for hang out"
+      },
+      {
+        "english_word": "interview",
+        "pronunciation": "/ˈɪntəvjuː/",
+        "vietnamese_meaning": "(n): cuộc phỏng vấn",
+        "example_sentence_en": "He has a job interview tomorrow.",
+        "example_sentence_vi": "Anh ấy có cuộc phỏng vấn việc làm ngày mai.",
+        "image": "assets/images/interview.webp",
+        "alt": "Image for interview"
+      },
+      {
+        "english_word": "invitation",
+        "pronunciation": "/ˌɪnvɪˈteɪʃn/",
+        "vietnamese_meaning": "(n): lời mời",
+        "example_sentence_en": "I received an invitation to the party.",
+        "example_sentence_vi": "Tôi nhận được lời mời đến bữa tiệc.",
+        "image": "assets/images/invitation.webp",
+        "alt": "Image for invitation"
+      },
+      {
+        "english_word": "neighbour",
+        "pronunciation": "/ˈneɪbə/",
+        "vietnamese_meaning": "(n): hàng xóm",
+        "example_sentence_en": "Our neighbours are very friendly.",
+        "example_sentence_vi": "Hàng xóm của chúng tôi rất thân thiện.",
+        "image": "assets/images/neighbour.webp",
+        "alt": "Image for neighbour"
+      },
+      {
+        "english_word": "penfriend",
+        "pronunciation": "/ˈpenfrend/",
+        "vietnamese_meaning": "(n): bạn qua thư",
+        "example_sentence_en": "I have a penfriend from Australia.",
+        "example_sentence_vi": "Tôi có một người bạn qua thư từ Australia.",
+        "image": "assets/images/penfriend.webp",
+        "alt": "Image for penfriend"
+      },
+      {
+        "english_word": "prize",
+        "pronunciation": "/praɪz/",
+        "vietnamese_meaning": "(n): giải thưởng",
+        "example_sentence_en": "She won a prize for her excellent work.",
+        "example_sentence_vi": "Cô ấy thắng giải thưởng cho công việc xuất sắc.",
+        "image": "assets/images/prize.webp",
+        "alt": "Image for prize"
+      }
+    ]
+  },
+  {
+    "group": "Technology & Communication",
+    "words": [
+      {
+        "english_word": "computer skills",
+        "pronunciation": "/kəmˈpjuːtə skɪlz/",
+        "vietnamese_meaning": "(n): kỹ năng máy tính",
+        "example_sentence_en": "Computer skills are essential in today's job market.",
+        "example_sentence_vi": "Kỹ năng máy tính rất cần thiết trong thị trường việc làm ngày nay.",
+        "image": "assets/images/computer-skills.webp",
+        "alt": "Image for computer skills"
+      },
+      {
+        "english_word": "email",
+        "pronunciation": "/ˈiːmeɪl/",
+        "vietnamese_meaning": "(n): thư điện tử",
+        "example_sentence_en": "I'll send you an email with the details.",
+        "example_sentence_vi": "Tôi sẽ gửi cho bạn một email với chi tiết.",
+        "image": "assets/images/email.webp",
+        "alt": "Image for email"
+      },
+      {
+        "english_word": "message",
+        "pronunciation": "/ˈmesɪdʒ/",
+        "vietnamese_meaning": "(v): nhắn tin",
+        "example_sentence_en": "I'll message you when I arrive.",
+        "example_sentence_vi": "Tôi sẽ nhắn tin cho bạn khi tôi đến.",
+        "image": "assets/images/message.webp",
+        "alt": "Image for message"
+      },
+      {
+        "english_word": "surf the net",
+        "pronunciation": "/ˈsɜːf ðə net/",
+        "vietnamese_meaning": "(v): lướt mạng",
+        "example_sentence_en": "I like to surf the net in my free time.",
+        "example_sentence_vi": "Tôi thích lướt mạng trong thời gian rảnh.",
+        "image": "assets/images/surf-the-net.webp",
+        "alt": "Image for surf the net"
+      }
+    ]
+  },
+  {
+    "group": "Time",
+    "words": [
+      {
+        "english_word": "free time",
+        "pronunciation": "/friː taɪm/",
+        "vietnamese_meaning": "(n): thời gian tự do",
+        "example_sentence_en": "I spend my free time reading books.",
+        "example_sentence_vi": "Tôi dành thời gian tự do để đọc sách.",
+        "image": "assets/images/free-time.webp",
+        "alt": "Image for free time"
+      },
+      {
+        "english_word": "leisure time",
+        "pronunciation": "/ˈleʒə taɪm/",
+        "vietnamese_meaning": "(n): thời gian rảnh rỗi",
+        "example_sentence_en": "Leisure time is important for relaxation.",
+        "example_sentence_vi": "Thời gian rảnh rỗi quan trọng để thư giãn.",
+        "image": "assets/images/leisure-time.webp",
+        "alt": "Image for leisure time"
+      },
+      {
+        "english_word": "occasion",
+        "pronunciation": "/əˈkeɪʒn/",
+        "vietnamese_meaning": "(n): dịp, cơ hội",
+        "example_sentence_en": "This is a special occasion for celebration.",
+        "example_sentence_vi": "Đây là một dịp đặc biệt để ăn mừng.",
+        "image": "assets/images/occasion.webp",
+        "alt": "Image for occasion"
+      },
+      {
+        "english_word": "spare time",
+        "pronunciation": "/speə taɪm/",
+        "vietnamese_meaning": "(n): thời gian rảnh",
+        "example_sentence_en": "I use my spare time to learn new skills.",
+        "example_sentence_vi": "Tôi sử dụng thời gian rảnh để học kỹ năng mới.",
+        "image": "assets/images/spare-time.webp",
+        "alt": "Image for spare time"
+      }
+    ]
+  },
+  {
+    "group": "Health",
+    "words": [
+      {
+        "english_word": "creativity",
+        "pronunciation": "/ˌkriːeɪˈtɪvəti/",
+        "vietnamese_meaning": "(n): sự sáng tạo",
+        "example_sentence_en": "Art classes help develop creativity.",
+        "example_sentence_vi": "Các lớp học nghệ thuật giúp phát triển sự sáng tạo.",
+        "image": "assets/images/creativity.webp",
+        "alt": "Image for creativity"
+      },
+      {
+        "english_word": "memory",
+        "pronunciation": "/ˈmeməri/",
+        "vietnamese_meaning": "(n): trí nhớ",
+        "example_sentence_en": "Playing chess improves memory.",
+        "example_sentence_vi": "Chơi cờ vua cải thiện trí nhớ.",
+        "image": "assets/images/memory.webp",
+        "alt": "Image for memory"
+      },
+      {
+        "english_word": "mental exercise",
+        "pronunciation": "/ˈmentl ˈeksəsaɪz/",
+        "vietnamese_meaning": "(n): bài tập trí não",
+        "example_sentence_en": "Reading is a good mental exercise.",
+        "example_sentence_vi": "Đọc sách là một bài tập trí não tốt.",
+        "image": "assets/images/mental-exercise.webp",
+        "alt": "Image for mental exercise"
+      },
+      {
+        "english_word": "overall health",
+        "pronunciation": "/ˈəʊvərɔːl helθ/",
+        "vietnamese_meaning": "(n): sức khỏe tổng thể",
+        "example_sentence_en": "Exercise improves overall health.",
+        "example_sentence_vi": "Tập thể dục cải thiện sức khỏe tổng thể.",
+        "image": "assets/images/overall-health.webp",
+        "alt": "Image for overall health"
+      },
+      {
+        "english_word": "physical health",
+        "pronunciation": "/ˈfɪzɪkl helθ/",
+        "vietnamese_meaning": "(n): sức khỏe thể chất",
+        "example_sentence_en": "Regular exercise maintains physical health.",
+        "example_sentence_vi": "Tập thể dục thường xuyên duy trì sức khỏe thể chất.",
+        "image": "assets/images/physical-health.webp",
+        "alt": "Image for physical health"
+      },
+      {
+        "english_word": "reduce stress",
+        "pronunciation": "/rɪˈdjuːs stres/",
+        "vietnamese_meaning": "(v): giảm căng thẳng",
+        "example_sentence_en": "Meditation helps reduce stress.",
+        "example_sentence_vi": "Thiền giúp giảm căng thẳng.",
+        "image": "assets/images/reduce-stress.webp",
+        "alt": "Image for reduce stress"
+      },
+      {
+        "english_word": "relax",
+        "pronunciation": "/rɪˈlæks/",
+        "vietnamese_meaning": "(v): thư giãn",
+        "example_sentence_en": "I like to relax by listening to music.",
+        "example_sentence_vi": "Tôi thích thư giãn bằng cách nghe nhạc.",
+        "image": "assets/images/relax.webp",
+        "alt": "Image for relax"
+      }
+    ]
+  },
+  {
+    "group": "Places & Environment",
+    "words": [
+      {
+        "english_word": "fresh air",
+        "pronunciation": "/freʃ eə/",
+        "vietnamese_meaning": "(n): không khí trong lành",
+        "example_sentence_en": "Walking in the park gives you fresh air.",
+        "example_sentence_vi": "Đi bộ trong công viên cho bạn không khí trong lành.",
+        "image": "assets/images/fresh-air.webp",
+        "alt": "Image for fresh air"
+      },
+      {
+        "english_word": "nearby",
+        "pronunciation": "/ˌnɪəˈbaɪ/",
+        "vietnamese_meaning": "(adj): gần đó",
+        "example_sentence_en": "There's a good restaurant nearby.",
+        "example_sentence_vi": "Có một nhà hàng tốt gần đó.",
+        "image": "assets/images/nearby.webp",
+        "alt": "Image for nearby"
+      },
+      {
+        "english_word": "outdoors",
+        "pronunciation": "/ˌaʊtˈdɔːz/",
+        "vietnamese_meaning": "(n): ngoài trời",
+        "example_sentence_en": "We love spending time outdoors.",
+        "example_sentence_vi": "Chúng tôi thích dành thời gian ngoài trời.",
+        "image": "assets/images/outdoors.webp",
+        "alt": "Image for outdoors"
+      },
+      {
+        "english_word": "park",
+        "pronunciation": "/pɑːk/",
+        "vietnamese_meaning": "(n): công viên",
+        "example_sentence_en": "Children love playing in the park.",
+        "example_sentence_vi": "Trẻ em thích chơi trong công viên.",
+        "image": "assets/images/park.webp",
+        "alt": "Image for park"
+      },
+      {
+        "english_word": "ski resort",
+        "pronunciation": "/skiː rɪˈzɔːt/",
+        "vietnamese_meaning": "(n): khu trượt tuyết",
+        "example_sentence_en": "We went to a ski resort for winter vacation.",
+        "example_sentence_vi": "Chúng tôi đến khu trượt tuyết cho kỳ nghỉ đông.",
+        "image": "assets/images/ski-resort.webp",
+        "alt": "Image for ski resort"
+      },
+      {
+        "english_word": "village",
+        "pronunciation": "/ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng",
+        "example_sentence_en": "My grandparents live in a small village.",
+        "example_sentence_vi": "Ông bà tôi sống trong một ngôi làng nhỏ.",
+        "image": "assets/images/village.webp",
+        "alt": "Image for village"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "connect",
+        "pronunciation": "/kəˈnekt/",
+        "vietnamese_meaning": "(v): kết nối",
+        "example_sentence_en": "Social media helps us connect with friends.",
+        "example_sentence_vi": "Mạng xã hội giúp chúng ta kết nối với bạn bè.",
+        "image": "assets/images/connect.webp",
+        "alt": "Image for connect"
+      },
+      {
+        "english_word": "cruel",
+        "pronunciation": "/kruːəl/",
+        "vietnamese_meaning": "(adj): độc ác",
+        "example_sentence_en": "It's cruel to treat animals badly.",
+        "example_sentence_vi": "Thật độc ác khi đối xử tệ với động vật.",
+        "image": "assets/images/cruel.webp",
+        "alt": "Image for cruel"
+      },
+      {
+        "english_word": "harm",
+        "pronunciation": "/hɑːm/",
+        "vietnamese_meaning": "(v): làm hại",
+        "example_sentence_en": "Smoking can harm your health.",
+        "example_sentence_vi": "Hút thuốc có thể làm hại sức khỏe của bạn.",
+        "image": "assets/images/harm.webp",
+        "alt": "Image for harm"
+      },
+      {
+        "english_word": "improve",
+        "pronunciation": "/ɪmˈpruːv/",
+        "vietnamese_meaning": "(v): cải thiện",
+        "example_sentence_en": "Practice helps improve your skills.",
+        "example_sentence_vi": "Luyện tập giúp cải thiện kỹ năng của bạn.",
+        "image": "assets/images/improve.webp",
+        "alt": "Image for improve"
+      },
+      {
+        "english_word": "keep in touch",
+        "pronunciation": "/kiːp ɪn tʌtʃ/",
+        "vietnamese_meaning": "(v): giữ liên lạc",
+        "example_sentence_en": "We keep in touch through social media.",
+        "example_sentence_vi": "Chúng tôi giữ liên lạc qua mạng xã hội.",
+        "image": "assets/images/keep-in-touch.webp",
+        "alt": "Image for keep in touch"
+      },
+      {
+        "english_word": "kit",
+        "pronunciation": "/kɪt/",
+        "vietnamese_meaning": "(n): bộ dụng cụ",
+        "example_sentence_en": "I bought a first aid kit for emergencies.",
+        "example_sentence_vi": "Tôi mua một bộ dụng cụ sơ cứu cho trường hợp khẩn cấp.",
+        "image": "assets/images/kit.webp",
+        "alt": "Image for kit"
+      },
+      {
+        "english_word": "prepare",
+        "pronunciation": "/prɪˈpeə/",
+        "vietnamese_meaning": "(v): chuẩn bị",
+        "example_sentence_en": "We need to prepare for the exam.",
+        "example_sentence_vi": "Chúng ta cần chuẩn bị cho kỳ thi.",
+        "image": "assets/images/prepare.webp",
+        "alt": "Image for prepare"
+      },
+      {
+        "english_word": "save money",
+        "pronunciation": "/seɪv ˈmʌni/",
+        "vietnamese_meaning": "(v): tiết kiệm tiền",
+        "example_sentence_en": "It's important to save money for the future.",
+        "example_sentence_vi": "Việc tiết kiệm tiền cho tương lai rất quan trọng.",
+        "image": "assets/images/save-money.webp",
+        "alt": "Image for save money"
+      }
+    ]
+  }
+]

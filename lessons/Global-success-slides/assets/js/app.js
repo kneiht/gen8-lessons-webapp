@@ -73,6 +73,17 @@ function generateSlides() {
         }
     });
 
+    // Add final comprehensive game slide with all vocabulary
+    try {
+        const allWords = vocabularyData.flatMap(group => group.words);
+        const comprehensiveGameSlide = gameManager.createComprehensiveGameSlide(allWords);
+        if (comprehensiveGameSlide) {
+            slidesContainer.appendChild(comprehensiveGameSlide);
+        }
+    } catch (error) {
+        console.warn('Could not create comprehensive game slide:', error);
+    }
+
     // Update slides array and counter
     slides = slidesContainer.querySelectorAll('.slide');
     totalSlides = slides.length;
@@ -90,8 +101,8 @@ function createVocabularySlide(words, groupTitle, partIndex) {
 
     slide.innerHTML = ` 
         <h2 class="text-lg md:text-2xl font-bold category-title mb-1 sm:mb-3 text-center">${title}</h2>
-        <div class="w-full h-full flex-1 overflow-y-scroll">
-            <div class="flex flex-col md:flex-row gap-3 w-full h-full items-start">
+        <div class="w-full h-full flex-1 overflow-y-scroll-auto">
+            <div class="flex flex-col md:flex-row gap-3 w-full h-full items-start justify-center">
                 ${visibleWords.map(word => createVocabularyCard(word)).join('')}
             </div>
         </div>
@@ -104,7 +115,7 @@ function createVocabularyCard(word) {
     // Try to get image from local images folder first, fallback to original path
     const imagePath = getImagePath(word.image);
     return `
-        <div class="vocab-card bg-white px-4 py-6 rounded-xl shadow-md w-full h-full flex flex-col justify-between">
+        <div class="vocab-card bg-white px-4 py-6 rounded-xl shadow-md w-1/2 h-full flex flex-col justify-between">
             <div class="relative w-full flex-1 border border-1 border-blue-200" style="background-image: url('${imagePath}'); background-size: cover; background-position: center; border-radius: 0.75rem;">
                 <div class="absolute bottom-2 left-0 right-0 flex flex-col items-center">
                     <span class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 text-md sm:text-2xl font-bold px-3 py-1 rounded-full mb-1">

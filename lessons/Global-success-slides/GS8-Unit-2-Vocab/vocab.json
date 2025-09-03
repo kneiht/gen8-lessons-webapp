@@ -1,0 +1,604 @@
+[
+  {
+    "group": "Farming and Agriculture",
+    "words": [
+      {
+        "english_word": "combine harvester",
+        "pronunciation": "/kəmˈbaɪn ˈhɑːvɪstə(r)/",
+        "vietnamese_meaning": "(n): máy gặt đập liên hợp",
+        "example_sentence_en": "The combine harvester makes farming much more efficient.",
+        "example_sentence_vi": "Máy gặt đập liên hợp làm cho nông nghiệp hiệu quả hơn nhiều.",
+        "image": "assets/images/combine-harvester.webp",
+        "alt": "Image for combine harvester"
+      },
+      {
+        "english_word": "crop",
+        "pronunciation": "/krɒp/",
+        "vietnamese_meaning": "(n): vụ, mùa",
+        "example_sentence_en": "Rice is the main crop in this region.",
+        "example_sentence_vi": "Lúa là vụ mùa chính ở vùng này.",
+        "image": "assets/images/crop.webp",
+        "alt": "Image for crop"
+      },
+      {
+        "english_word": "cultivate",
+        "pronunciation": "/ˈkʌltɪveɪt/",
+        "vietnamese_meaning": "(v): trồng trọt, canh tác",
+        "example_sentence_en": "Farmers cultivate the land to grow food.",
+        "example_sentence_vi": "Nông dân canh tác đất để trồng lương thực.",
+        "image": "assets/images/cultivate.webp",
+        "alt": "Image for cultivate"
+      },
+      {
+        "english_word": "dry",
+        "pronunciation": "/draɪ/",
+        "vietnamese_meaning": "(v): phơi khô",
+        "example_sentence_en": "We dry the rice in the sun after harvesting.",
+        "example_sentence_vi": "Chúng tôi phơi khô lúa dưới nắng sau khi thu hoạch.",
+        "image": "assets/images/dry.webp",
+        "alt": "Image for dry"
+      },
+      {
+        "english_word": "harvest",
+        "pronunciation": "/ˈhɑːvɪst/",
+        "vietnamese_meaning": "(n,v): mùa gặt, thu hoạch",
+        "example_sentence_en": "The harvest season is very busy for farmers.",
+        "example_sentence_vi": "Mùa gặt rất bận rộn cho nông dân.",
+        "image": "assets/images/harvest.webp",
+        "alt": "Image for harvest"
+      },
+      {
+        "english_word": "harvest time",
+        "pronunciation": "/ˈhɑːvɪst taɪm/",
+        "vietnamese_meaning": "(n): mùa thu hoạch",
+        "example_sentence_en": "Harvest time is the most important period for farmers.",
+        "example_sentence_vi": "Mùa thu hoạch là thời kỳ quan trọng nhất cho nông dân.",
+        "image": "assets/images/harvest-time.webp",
+        "alt": "Image for harvest time"
+      },
+      {
+        "english_word": "load",
+        "pronunciation": "/ləʊd/",
+        "vietnamese_meaning": "(v): chất hàng",
+        "example_sentence_en": "Workers load the rice onto trucks.",
+        "example_sentence_vi": "Công nhân chất lúa lên xe tải.",
+        "image": "assets/images/load.webp",
+        "alt": "Image for load"
+      },
+      {
+        "english_word": "orchard",
+        "pronunciation": "/ˈɔːtʃəd/",
+        "vietnamese_meaning": "(n): vườn cây ăn quả",
+        "example_sentence_en": "The orchard is full of apple trees.",
+        "example_sentence_vi": "Vườn cây ăn quả đầy cây táo.",
+        "image": "assets/images/orchard.webp",
+        "alt": "Image for orchard"
+      },
+      {
+        "english_word": "paddy field",
+        "pronunciation": "/ˈpædi fiːld/",
+        "vietnamese_meaning": "(n): ruộng lúa",
+        "example_sentence_en": "The paddy fields are green with young rice plants.",
+        "example_sentence_vi": "Ruộng lúa xanh với những cây lúa non.",
+        "image": "assets/images/paddy-field.webp",
+        "alt": "Image for paddy field"
+      },
+      {
+        "english_word": "pick",
+        "pronunciation": "/pɪk/",
+        "vietnamese_meaning": "(v): hái, thu hoạch",
+        "example_sentence_en": "We pick fruits from the trees in autumn.",
+        "example_sentence_vi": "Chúng tôi hái trái cây từ cây vào mùa thu.",
+        "image": "assets/images/pick.webp",
+        "alt": "Image for pick"
+      },
+      {
+        "english_word": "plough",
+        "pronunciation": "/plaʊ/",
+        "vietnamese_meaning": "(v): cày ruộng",
+        "example_sentence_en": "Farmers plough the fields before planting.",
+        "example_sentence_vi": "Nông dân cày ruộng trước khi trồng.",
+        "image": "assets/images/plough.webp",
+        "alt": "Image for plough"
+      },
+      {
+        "english_word": "unload",
+        "pronunciation": "/ʌnˈləʊd/",
+        "vietnamese_meaning": "(v): dỡ hàng",
+        "example_sentence_en": "Workers unload the rice from the trucks.",
+        "example_sentence_vi": "Công nhân dỡ lúa từ xe tải.",
+        "image": "assets/images/unload.webp",
+        "alt": "Image for unload"
+      }
+    ]
+  },
+  {
+    "group": "Animals and Livestock",
+    "words": [
+      {
+        "english_word": "buffalo",
+        "pronunciation": "/ˈbʌfələʊ/",
+        "vietnamese_meaning": "(n): trâu",
+        "example_sentence_en": "Buffaloes help farmers plough the fields.",
+        "example_sentence_vi": "Trâu giúp nông dân cày ruộng.",
+        "image": "assets/images/buffalo.webp",
+        "alt": "Image for buffalo"
+      },
+      {
+        "english_word": "cattle",
+        "pronunciation": "/ˈkætl/",
+        "vietnamese_meaning": "(n): gia súc",
+        "example_sentence_en": "The cattle graze in the green fields.",
+        "example_sentence_vi": "Gia súc gặm cỏ trên những cánh đồng xanh.",
+        "image": "assets/images/cattle.webp",
+        "alt": "Image for cattle"
+      },
+      {
+        "english_word": "feed",
+        "pronunciation": "/fiːd/",
+        "vietnamese_meaning": "(v): cho ăn",
+        "example_sentence_en": "Farmers feed their animals twice a day.",
+        "example_sentence_vi": "Nông dân cho động vật ăn hai lần một ngày.",
+        "image": "assets/images/feed.webp",
+        "alt": "Image for feed"
+      },
+      {
+        "english_word": "herd",
+        "pronunciation": "/hɜːd/",
+        "vietnamese_meaning": "(v): chăn thả",
+        "example_sentence_en": "Shepherds herd their sheep in the mountains.",
+        "example_sentence_vi": "Người chăn cừu chăn thả cừu trên núi.",
+        "image": "assets/images/herd.webp",
+        "alt": "Image for herd"
+      },
+      {
+        "english_word": "milk",
+        "pronunciation": "/mɪlk/",
+        "vietnamese_meaning": "(v): vắt sữa",
+        "example_sentence_en": "Farmers milk cows every morning.",
+        "example_sentence_vi": "Nông dân vắt sữa bò mỗi sáng.",
+        "image": "assets/images/milk.webp",
+        "alt": "Image for milk"
+      },
+      {
+        "english_word": "pig",
+        "pronunciation": "/pɪɡ/",
+        "vietnamese_meaning": "(n): heo, lợn",
+        "example_sentence_en": "Pigs are raised for their meat.",
+        "example_sentence_vi": "Heo được nuôi để lấy thịt.",
+        "image": "assets/images/pig.webp",
+        "alt": "Image for pig"
+      },
+      {
+        "english_word": "poultry",
+        "pronunciation": "/ˈpəʊltri/",
+        "vietnamese_meaning": "(n): gia cầm",
+        "example_sentence_en": "Poultry includes chickens, ducks, and turkeys.",
+        "example_sentence_vi": "Gia cầm bao gồm gà, vịt và gà tây.",
+        "image": "assets/images/poultry.webp",
+        "alt": "Image for poultry"
+      },
+      {
+        "english_word": "raise",
+        "pronunciation": "/reɪz/",
+        "vietnamese_meaning": "(v): chăn nuôi",
+        "example_sentence_en": "Farmers raise various animals on their farms.",
+        "example_sentence_vi": "Nông dân chăn nuôi nhiều loại động vật trên trang trại.",
+        "image": "assets/images/raise.webp",
+        "alt": "Image for raise"
+      }
+    ]
+  },
+  {
+    "group": "Geography and Environment",
+    "words": [
+      {
+        "english_word": "canal",
+        "pronunciation": "/kəˈnæl/",
+        "vietnamese_meaning": "(n): kênh đào",
+        "example_sentence_en": "The canal provides water for irrigation.",
+        "example_sentence_vi": "Kênh đào cung cấp nước cho tưới tiêu.",
+        "image": "assets/images/canal.webp",
+        "alt": "Image for canal"
+      },
+      {
+        "english_word": "cottage",
+        "pronunciation": "/ˈkɒtɪdʒ/",
+        "vietnamese_meaning": "(n): nhà tranh",
+        "example_sentence_en": "The old cottage has a beautiful garden.",
+        "example_sentence_vi": "Ngôi nhà tranh cũ có một khu vườn đẹp.",
+        "image": "assets/images/cottage.webp",
+        "alt": "Image for cottage"
+      },
+      {
+        "english_word": "countryside",
+        "pronunciation": "/ˈkʌntrisaɪd/",
+        "vietnamese_meaning": "(n): nông thôn, miền quê",
+        "example_sentence_en": "The countryside is peaceful and beautiful.",
+        "example_sentence_vi": "Nông thôn yên bình và đẹp.",
+        "image": "assets/images/countryside.webp",
+        "alt": "Image for countryside"
+      },
+      {
+        "english_word": "field",
+        "pronunciation": "/fiːld/",
+        "vietnamese_meaning": "(n): cánh đồng",
+        "example_sentence_en": "The fields are covered with golden rice.",
+        "example_sentence_vi": "Cánh đồng phủ đầy lúa vàng.",
+        "image": "assets/images/field.webp",
+        "alt": "Image for field"
+      },
+      {
+        "english_word": "peaceful",
+        "pronunciation": "/ˈpiːsfl/",
+        "vietnamese_meaning": "(adj): yên bình",
+        "example_sentence_en": "The village is very peaceful in the morning.",
+        "example_sentence_vi": "Làng rất yên bình vào buổi sáng.",
+        "image": "assets/images/peaceful.webp",
+        "alt": "Image for peaceful"
+      },
+      {
+        "english_word": "picturesque",
+        "pronunciation": "/ˌpɪktʃəˈresk/",
+        "vietnamese_meaning": "(adj): đẹp như tranh",
+        "example_sentence_en": "The countryside is picturesque with green hills.",
+        "example_sentence_vi": "Nông thôn đẹp như tranh với những ngọn đồi xanh.",
+        "image": "assets/images/picturesque.webp",
+        "alt": "Image for picturesque"
+      },
+      {
+        "english_word": "pond",
+        "pronunciation": "/pɒnd/",
+        "vietnamese_meaning": "(n): ao",
+        "example_sentence_en": "Children like to swim in the pond.",
+        "example_sentence_vi": "Trẻ em thích bơi trong ao.",
+        "image": "assets/images/pond.webp",
+        "alt": "Image for pond"
+      },
+      {
+        "english_word": "scenery",
+        "pronunciation": "/ˈsiːnəri/",
+        "vietnamese_meaning": "(n): cảnh quan",
+        "example_sentence_en": "The scenery here is absolutely beautiful.",
+        "example_sentence_vi": "Cảnh quan ở đây thực sự đẹp.",
+        "image": "assets/images/scenery.webp",
+        "alt": "Image for scenery"
+      },
+      {
+        "english_word": "stretch",
+        "pronunciation": "/stretʃ/",
+        "vietnamese_meaning": "(v): trải dài",
+        "example_sentence_en": "The rice fields stretch for miles.",
+        "example_sentence_vi": "Ruộng lúa trải dài hàng dặm.",
+        "image": "assets/images/stretch.webp",
+        "alt": "Image for stretch"
+      },
+      {
+        "english_word": "surrounded",
+        "pronunciation": "/səˈraʊndɪd/",
+        "vietnamese_meaning": "(adj): được bao quanh",
+        "example_sentence_en": "The village is surrounded by mountains.",
+        "example_sentence_vi": "Làng được bao quanh bởi núi.",
+        "image": "assets/images/surrounded.webp",
+        "alt": "Image for surrounded"
+      },
+      {
+        "english_word": "vast",
+        "pronunciation": "/vɑːst/",
+        "vietnamese_meaning": "(adj): rộng lớn, bao la",
+        "example_sentence_en": "The vast fields seem endless.",
+        "example_sentence_vi": "Những cánh đồng rộng lớn có vẻ vô tận.",
+        "image": "assets/images/vast.webp",
+        "alt": "Image for vast"
+      },
+      {
+        "english_word": "village",
+        "pronunciation": "/ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng",
+        "example_sentence_en": "The village has about 500 people.",
+        "example_sentence_vi": "Làng có khoảng 500 người.",
+        "image": "assets/images/village.webp",
+        "alt": "Image for village"
+      }
+    ]
+  },
+  {
+    "group": "Activities and Lifestyle",
+    "words": [
+      {
+        "english_word": "bamboo dancing",
+        "pronunciation": "/bæmˈbuː ˈdɑːnsɪŋ/",
+        "vietnamese_meaning": "(n): nhảy sạp",
+        "example_sentence_en": "Bamboo dancing is a traditional Vietnamese dance.",
+        "example_sentence_vi": "Nhảy sạp là một điệu múa truyền thống của Việt Nam.",
+        "image": "assets/images/bamboo-dancing.webp",
+        "alt": "Image for bamboo dancing"
+      },
+      {
+        "english_word": "catch fish",
+        "pronunciation": "/kætʃ fɪʃ/",
+        "vietnamese_meaning": "(v): bắt cá",
+        "example_sentence_en": "Fishermen catch fish in the river.",
+        "example_sentence_vi": "Ngư dân bắt cá trên sông.",
+        "image": "assets/images/catch-fish.webp",
+        "alt": "Image for catch fish"
+      },
+      {
+        "english_word": "chat",
+        "pronunciation": "/tʃæt/",
+        "vietnamese_meaning": "(v): trò chuyện",
+        "example_sentence_en": "We like to chat with our neighbours.",
+        "example_sentence_vi": "Chúng tôi thích trò chuyện với hàng xóm.",
+        "image": "assets/images/chat.webp",
+        "alt": "Image for chat"
+      },
+      {
+        "english_word": "chess",
+        "pronunciation": "/tʃes/",
+        "vietnamese_meaning": "(n): cờ vua",
+        "example_sentence_en": "Old men often play chess in the park.",
+        "example_sentence_vi": "Người già thường chơi cờ vua trong công viên.",
+        "image": "assets/images/chess.webp",
+        "alt": "Image for chess"
+      },
+      {
+        "english_word": "collect",
+        "pronunciation": "/kəˈlekt/",
+        "vietnamese_meaning": "(v): thu thập",
+        "example_sentence_en": "Children collect shells on the beach.",
+        "example_sentence_vi": "Trẻ em thu thập vỏ sò trên bãi biển.",
+        "image": "assets/images/collect.webp",
+        "alt": "Image for collect"
+      },
+      {
+        "english_word": "dragon-snake",
+        "pronunciation": "/ˈdræɡən sneɪk/",
+        "vietnamese_meaning": "(n): rồng rắn lên mây",
+        "example_sentence_en": "Dragon-snake is a traditional Vietnamese game.",
+        "example_sentence_vi": "Rồng rắn lên mây là trò chơi truyền thống Việt Nam.",
+        "image": "assets/images/dragon-snake.webp",
+        "alt": "Image for dragon-snake"
+      },
+      {
+        "english_word": "fishing",
+        "pronunciation": "/ˈfɪʃɪŋ/",
+        "vietnamese_meaning": "(n): đi câu cá",
+        "example_sentence_en": "Fishing is a popular hobby in the countryside.",
+        "example_sentence_vi": "Câu cá là sở thích phổ biến ở nông thôn.",
+        "image": "assets/images/fishing.webp",
+        "alt": "Image for fishing"
+      },
+      {
+        "english_word": "fly kites",
+        "pronunciation": "/flaɪ kaɪts/",
+        "vietnamese_meaning": "(v): thả diều",
+        "example_sentence_en": "Children love to fly kites in the open fields.",
+        "example_sentence_vi": "Trẻ em thích thả diều trên cánh đồng rộng.",
+        "image": "assets/images/fly-kites.webp",
+        "alt": "Image for fly kites"
+      },
+      {
+        "english_word": "folk song",
+        "pronunciation": "/fəʊk sɒŋ/",
+        "vietnamese_meaning": "(n): dân ca",
+        "example_sentence_en": "Folk songs tell stories about rural life.",
+        "example_sentence_vi": "Dân ca kể những câu chuyện về cuộc sống nông thôn.",
+        "image": "assets/images/folk-song.webp",
+        "alt": "Image for folk song"
+      },
+      {
+        "english_word": "gather",
+        "pronunciation": "/ˈɡæðə(r)/",
+        "vietnamese_meaning": "(v): tụ tập",
+        "example_sentence_en": "Villagers gather in the communal house for meetings.",
+        "example_sentence_vi": "Dân làng tụ tập ở nhà rông để họp.",
+        "image": "assets/images/gather.webp",
+        "alt": "Image for gather"
+      },
+      {
+        "english_word": "traditional games",
+        "pronunciation": "/trəˈdɪʃənl ɡeɪmz/",
+        "vietnamese_meaning": "(n): trò chơi truyền thống",
+        "example_sentence_en": "Traditional games are played during festivals.",
+        "example_sentence_vi": "Trò chơi truyền thống được chơi trong các lễ hội.",
+        "image": "assets/images/traditional-games.webp",
+        "alt": "Image for traditional games"
+      }
+    ]
+  },
+  {
+    "group": "People and Social Relationships",
+    "words": [
+      {
+        "english_word": "farmer",
+        "pronunciation": "/ˈfɑːmə(r)/",
+        "vietnamese_meaning": "(n): nông dân",
+        "example_sentence_en": "Farmers work hard to grow food for everyone.",
+        "example_sentence_vi": "Nông dân làm việc chăm chỉ để trồng lương thực cho mọi người.",
+        "image": "assets/images/farmer.webp",
+        "alt": "Image for farmer"
+      },
+      {
+        "english_word": "friendly",
+        "pronunciation": "/ˈfrendli/",
+        "vietnamese_meaning": "(adj): thân thiện",
+        "example_sentence_en": "Country people are very friendly.",
+        "example_sentence_vi": "Người nông thôn rất thân thiện.",
+        "image": "assets/images/friendly.webp",
+        "alt": "Image for friendly"
+      },
+      {
+        "english_word": "hard-working",
+        "pronunciation": "/hɑːd ˈwɜːkɪŋ/",
+        "vietnamese_meaning": "(adj): chăm chỉ",
+        "example_sentence_en": "Farmers are hard-working people.",
+        "example_sentence_vi": "Nông dân là những người chăm chỉ.",
+        "image": "assets/images/hard-working.webp",
+        "alt": "Image for hard-working"
+      },
+      {
+        "english_word": "hospitable",
+        "pronunciation": "/hɒˈspɪtəbl/",
+        "vietnamese_meaning": "(adj): mến khách, hiếu khách",
+        "example_sentence_en": "Vietnamese people are very hospitable.",
+        "example_sentence_vi": "Người Việt Nam rất hiếu khách.",
+        "image": "assets/images/hospitable.webp",
+        "alt": "Image for hospitable"
+      },
+      {
+        "english_word": "villager",
+        "pronunciation": "/ˈvɪlɪdʒə(r)/",
+        "vietnamese_meaning": "(n): dân làng",
+        "example_sentence_en": "Villagers help each other in times of need.",
+        "example_sentence_vi": "Dân làng giúp đỡ lẫn nhau khi cần thiết.",
+        "image": "assets/images/villager.webp",
+        "alt": "Image for villager"
+      },
+      {
+        "english_word": "well-trained",
+        "pronunciation": "/wel treɪnd/",
+        "vietnamese_meaning": "(adj): được đào tạo tốt",
+        "example_sentence_en": "The well-trained workers are very efficient.",
+        "example_sentence_vi": "Những công nhân được đào tạo tốt rất hiệu quả.",
+        "image": "assets/images/well-trained.webp",
+        "alt": "Image for well-trained"
+      }
+    ]
+  },
+  {
+    "group": "Structures and Buildings",
+    "words": [
+      {
+        "english_word": "church",
+        "pronunciation": "/tʃɜːtʃ/",
+        "vietnamese_meaning": "(n): nhà thờ",
+        "example_sentence_en": "The church is the oldest building in the village.",
+        "example_sentence_vi": "Nhà thờ là tòa nhà cổ nhất trong làng.",
+        "image": "assets/images/church.webp",
+        "alt": "Image for church"
+      },
+      {
+        "english_word": "lighthouse",
+        "pronunciation": "/ˈlaɪthaʊs/",
+        "vietnamese_meaning": "(n): ngọn hải đăng",
+        "example_sentence_en": "The lighthouse guides ships safely to shore.",
+        "example_sentence_vi": "Ngọn hải đăng dẫn tàu an toàn vào bờ.",
+        "image": "assets/images/lighthouse.webp",
+        "alt": "Image for lighthouse"
+      },
+      {
+        "english_word": "museum",
+        "pronunciation": "/mjuˈziːəm/",
+        "vietnamese_meaning": "(n): bảo tàng",
+        "example_sentence_en": "The museum displays local history and culture.",
+        "example_sentence_vi": "Bảo tàng trưng bày lịch sử và văn hóa địa phương.",
+        "image": "assets/images/museum.webp",
+        "alt": "Image for museum"
+      },
+      {
+        "english_word": "pagoda",
+        "pronunciation": "/pəˈɡəʊdə/",
+        "vietnamese_meaning": "(n): chùa",
+        "example_sentence_en": "The pagoda is a place of worship and meditation.",
+        "example_sentence_vi": "Chùa là nơi thờ cúng và thiền định.",
+        "image": "assets/images/pagoda.webp",
+        "alt": "Image for pagoda"
+      },
+      {
+        "english_word": "temple",
+        "pronunciation": "/ˈtempl/",
+        "vietnamese_meaning": "(n): chùa, đền",
+        "example_sentence_en": "The temple is visited by many tourists.",
+        "example_sentence_vi": "Đền được nhiều du khách thăm viếng.",
+        "image": "assets/images/temple.webp",
+        "alt": "Image for temple"
+      },
+      {
+        "english_word": "traditional house",
+        "pronunciation": "/trəˈdɪʃənl haʊs/",
+        "vietnamese_meaning": "(n): nhà truyền thống",
+        "example_sentence_en": "Traditional houses are made of natural materials.",
+        "example_sentence_vi": "Nhà truyền thống được làm từ vật liệu tự nhiên.",
+        "image": "assets/images/traditional-house.webp",
+        "alt": "Image for traditional house"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "comfortable",
+        "pronunciation": "/ˈkʌmftəbl/",
+        "vietnamese_meaning": "(adj): thoải mái",
+        "example_sentence_en": "The countryside is very comfortable to live in.",
+        "example_sentence_vi": "Nông thôn rất thoải mái để sinh sống.",
+        "image": "assets/images/comfortable.webp",
+        "alt": "Image for comfortable"
+      },
+      {
+        "english_word": "compliment",
+        "pronunciation": "/ˈkɒmplɪmənt/",
+        "vietnamese_meaning": "(n): lời khen",
+        "example_sentence_en": "She received many compliments on her cooking.",
+        "example_sentence_vi": "Cô ấy nhận được nhiều lời khen về món ăn.",
+        "image": "assets/images/compliment.webp",
+        "alt": "Image for compliment"
+      },
+      {
+        "english_word": "envy",
+        "pronunciation": "/ˈenvi/",
+        "vietnamese_meaning": "(v): ghen tị, đố kỵ",
+        "example_sentence_en": "Some people envy the peaceful life in the countryside.",
+        "example_sentence_vi": "Một số người ghen tị với cuộc sống yên bình ở nông thôn.",
+        "image": "assets/images/envy.webp",
+        "alt": "Image for envy"
+      },
+      {
+        "english_word": "ferry",
+        "pronunciation": "/ˈferi/",
+        "vietnamese_meaning": "(n): phà",
+        "example_sentence_en": "We take the ferry to cross the river.",
+        "example_sentence_vi": "Chúng tôi đi phà để qua sông.",
+        "image": "assets/images/ferry.webp",
+        "alt": "Image for ferry"
+      },
+      {
+        "english_word": "fortunate",
+        "pronunciation": "/ˈfɔːtʃənət/",
+        "vietnamese_meaning": "(adj): may mắn",
+        "example_sentence_en": "We are fortunate to live in such a beautiful place.",
+        "example_sentence_vi": "Chúng tôi may mắn được sống ở một nơi đẹp như vậy.",
+        "image": "assets/images/fortunate.webp",
+        "alt": "Image for fortunate"
+      },
+      {
+        "english_word": "specialty",
+        "pronunciation": "/ˈspeʃəlti/",
+        "vietnamese_meaning": "(n): đặc sản",
+        "example_sentence_en": "This region is famous for its local specialties.",
+        "example_sentence_vi": "Vùng này nổi tiếng với các đặc sản địa phương.",
+        "image": "assets/images/specialty.webp",
+        "alt": "Image for specialty"
+      },
+      {
+        "english_word": "tan",
+        "pronunciation": "/tæn/",
+        "vietnamese_meaning": "(n): da rám nắng",
+        "example_sentence_en": "Farmers often have a tan from working in the sun.",
+        "example_sentence_vi": "Nông dân thường có da rám nắng do làm việc dưới nắng.",
+        "image": "assets/images/tan.webp",
+        "alt": "Image for tan"
+      },
+      {
+        "english_word": "truck",
+        "pronunciation": "/trʌk/",
+        "vietnamese_meaning": "(n): xe tải",
+        "example_sentence_en": "Trucks transport goods from the countryside to the city.",
+        "example_sentence_vi": "Xe tải vận chuyển hàng hóa từ nông thôn ra thành phố.",
+        "image": "assets/images/truck.webp",
+        "alt": "Image for truck"
+      }
+    ]
+  }
+]

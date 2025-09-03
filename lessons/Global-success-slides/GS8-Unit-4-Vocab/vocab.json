@@ -1,0 +1,655 @@
+[
+  {
+    "group": "Ethnic Groups",
+    "words": [
+      {
+        "english_word": "ethnic",
+        "pronunciation": "/ˈeθnɪk/",
+        "vietnamese_meaning": "(adj): (thuộc) dân tộc",
+        "example_sentence_en": "Vietnam has many ethnic minority groups.",
+        "example_sentence_vi": "Việt Nam có nhiều nhóm dân tộc thiểu số.",
+        "image": "assets/images/ethnic.webp",
+        "alt": "Image for ethnic"
+      },
+      {
+        "english_word": "minority",
+        "pronunciation": "/maɪˈnɒrəti/",
+        "vietnamese_meaning": "(n): dân tộc thiểu số",
+        "example_sentence_en": "Ethnic minorities have their own unique cultures.",
+        "example_sentence_vi": "Các dân tộc thiểu số có văn hóa độc đáo riêng.",
+        "image": "assets/images/minority.webp",
+        "alt": "Image for minority"
+      }
+    ]
+  },
+  {
+    "group": "Traditional Housing and Architecture",
+    "words": [
+      {
+        "english_word": "bamboo house",
+        "pronunciation": "/bæmˈbuː haʊs/",
+        "vietnamese_meaning": "(n): nhà tre",
+        "example_sentence_en": "Many ethnic groups live in bamboo houses.",
+        "example_sentence_vi": "Nhiều dân tộc thiểu số sống trong nhà tre.",
+        "image": "assets/images/bamboo-house.webp",
+        "alt": "Image for bamboo house"
+      },
+      {
+        "english_word": "communal house",
+        "pronunciation": "/kəˈmjuːnəl haʊs/",
+        "vietnamese_meaning": "(n): nhà rông, nhà sinh hoạt cộng đồng",
+        "example_sentence_en": "The communal house is the center of village activities.",
+        "example_sentence_vi": "Nhà rông là trung tâm các hoạt động của làng.",
+        "image": "assets/images/communal-house.webp",
+        "alt": "Image for communal house"
+      },
+      {
+        "english_word": "kitchen",
+        "pronunciation": "/ˈkɪtʃɪn/",
+        "vietnamese_meaning": "(n): nhà bếp",
+        "example_sentence_en": "The kitchen is usually separate from the main house.",
+        "example_sentence_vi": "Nhà bếp thường tách biệt với ngôi nhà chính.",
+        "image": "assets/images/kitchen.webp",
+        "alt": "Image for kitchen"
+      },
+      {
+        "english_word": "natural material",
+        "pronunciation": "/ˈnætʃərəl məˈtɪəriəl/",
+        "vietnamese_meaning": "(n): vật liệu tự nhiên",
+        "example_sentence_en": "Traditional houses are built with natural materials.",
+        "example_sentence_vi": "Những ngôi nhà truyền thống được xây dựng bằng vật liệu tự nhiên.",
+        "image": "assets/images/natural-material.webp",
+        "alt": "Image for natural material"
+      },
+      {
+        "english_word": "open fire",
+        "pronunciation": "/ˈəʊpən faɪə/",
+        "vietnamese_meaning": "(n): lửa trời",
+        "example_sentence_en": "They cook their meals over an open fire.",
+        "example_sentence_vi": "Họ nấu ăn trên lửa trời.",
+        "image": "assets/images/open-fire.webp",
+        "alt": "Image for open fire"
+      },
+      {
+        "english_word": "overlook",
+        "pronunciation": "/ˌəʊvəˈlʊk/",
+        "vietnamese_meaning": "(v): nhìn ra, hướng về",
+        "example_sentence_en": "The house overlooks the beautiful valley.",
+        "example_sentence_vi": "Ngôi nhà nhìn ra thung lũng tuyệt đẹp.",
+        "image": "assets/images/overlook.webp",
+        "alt": "Image for overlook"
+      },
+      {
+        "english_word": "post",
+        "pronunciation": "/pəʊst/",
+        "vietnamese_meaning": "(n): cột trụ",
+        "example_sentence_en": "The roof is supported by wooden posts.",
+        "example_sentence_vi": "Mái nhà được đỡ bằng những cột trụ gỗ.",
+        "image": "assets/images/post-cot-tru.webp",
+        "alt": "Image for post"
+      },
+      {
+        "english_word": "Rong house",
+        "pronunciation": "/rɒŋ haʊs/",
+        "vietnamese_meaning": "(n): nhà Rông",
+        "example_sentence_en": "The Rong house is a traditional communal building.",
+        "example_sentence_vi": "Nhà Rông là công trình cộng đồng truyền thống.",
+        "image": "assets/images/rong-house.webp",
+        "alt": "Image for Rong house"
+      },
+      {
+        "english_word": "staircase",
+        "pronunciation": "/ˈsteəkeɪs/",
+        "vietnamese_meaning": "(n): cầu thang",
+        "example_sentence_en": "A wooden staircase leads to the main floor.",
+        "example_sentence_vi": "Cầu thang gỗ dẫn lên tầng chính.",
+        "image": "assets/images/staircase.webp",
+        "alt": "Image for staircase"
+      },
+      {
+        "english_word": "stilt house",
+        "pronunciation": "/stɪlt haʊs/",
+        "vietnamese_meaning": "(n): nhà sàn",
+        "example_sentence_en": "Stilt houses protect people from floods and animals.",
+        "example_sentence_vi": "Nhà sàn bảo vệ mọi người khỏi lũ lụt và động vật.",
+        "image": "assets/images/stilt-house.webp",
+        "alt": "Image for stilt house"
+      }
+    ]
+  },
+  {
+    "group": "Cultural Activities and Traditions",
+    "words": [
+      {
+        "english_word": "costume",
+        "pronunciation": "/ˈkɒstjuːm/",
+        "vietnamese_meaning": "(n): trang phục",
+        "example_sentence_en": "Each ethnic group has its own traditional costume.",
+        "example_sentence_vi": "Mỗi dân tộc có trang phục truyền thống riêng.",
+        "image": "assets/images/costume.webp",
+        "alt": "Image for costume"
+      },
+      {
+        "english_word": "culture",
+        "pronunciation": "/ˈkʌltʃə/",
+        "vietnamese_meaning": "(n): văn hóa",
+        "example_sentence_en": "Vietnamese culture is rich and diverse.",
+        "example_sentence_vi": "Văn hóa Việt Nam phong phú và đa dạng.",
+        "image": "assets/images/culture.webp",
+        "alt": "Image for culture"
+      },
+      {
+        "english_word": "festival",
+        "pronunciation": "/ˈfestɪvəl/",
+        "vietnamese_meaning": "(n): lễ hội",
+        "example_sentence_en": "The harvest festival is celebrated every autumn.",
+        "example_sentence_vi": "Lễ hội thu hoạch được tổ chức hàng năm vào mùa thu.",
+        "image": "assets/images/festival.webp",
+        "alt": "Image for festival"
+      },
+      {
+        "english_word": "folk",
+        "pronunciation": "/fəʊk/",
+        "vietnamese_meaning": "(adj): thuộc về dân gian, truyền thống",
+        "example_sentence_en": "Folk songs tell stories of the past.",
+        "example_sentence_vi": "Những bài hát dân gian kể lại những câu chuyện quá khứ.",
+        "image": "assets/images/folk.webp",
+        "alt": "Image for folk"
+      },
+      {
+        "english_word": "gathering",
+        "pronunciation": "/ˈɡæðərɪŋ/",
+        "vietnamese_meaning": "(n): sự tụ tập, họp mặt",
+        "example_sentence_en": "The village gathering happens every month.",
+        "example_sentence_vi": "Cuộc họp mặt của làng diễn ra hàng tháng.",
+        "image": "assets/images/gathering.webp",
+        "alt": "Image for gathering"
+      },
+      {
+        "english_word": "tradition",
+        "pronunciation": "/trəˈdɪʃən/",
+        "vietnamese_meaning": "(n): truyền thống",
+        "example_sentence_en": "We should preserve our cultural traditions.",
+        "example_sentence_vi": "Chúng ta nên bảo tồn các truyền thống văn hóa.",
+        "image": "assets/images/tradition.webp",
+        "alt": "Image for tradition"
+      },
+      {
+        "english_word": "unique feature",
+        "pronunciation": "/juˈniːk ˈfiːtʃə/",
+        "vietnamese_meaning": "(n): đặc điểm độc đáo",
+        "example_sentence_en": "The unique features of each culture make them special.",
+        "example_sentence_vi": "Những đặc điểm độc đáo của mỗi nền văn hóa làm cho chúng trở nên đặc biệt.",
+        "image": "assets/images/unique-feature.webp",
+        "alt": "Image for unique feature"
+      }
+    ]
+  },
+  {
+    "group": "Music and Instruments",
+    "words": [
+      {
+        "english_word": "bamboo flute",
+        "pronunciation": "/bæmˈbuː fluːt/",
+        "vietnamese_meaning": "(n): sáo tre",
+        "example_sentence_en": "The bamboo flute produces beautiful melodies.",
+        "example_sentence_vi": "Sáo tre tạo ra những giai điệu tuyệt đẹp.",
+        "image": "assets/images/bamboo-flute.webp",
+        "alt": "Image for bamboo flute"
+      },
+      {
+        "english_word": "flute",
+        "pronunciation": "/fluːt/",
+        "vietnamese_meaning": "(n): cái sáo (nhạc cụ)",
+        "example_sentence_en": "She plays the flute very well.",
+        "example_sentence_vi": "Cô ấy thổi sáo rất hay.",
+        "image": "assets/images/flute.webp",
+        "alt": "Image for flute"
+      },
+      {
+        "english_word": "gong",
+        "pronunciation": "/ɡɒŋ/",
+        "vietnamese_meaning": "(n): cái cồng, cái chiêng",
+        "example_sentence_en": "The gong is used in traditional ceremonies.",
+        "example_sentence_vi": "Cồng được sử dụng trong các nghi lễ truyền thống.",
+        "image": "assets/images/gong.webp",
+        "alt": "Image for gong"
+      },
+      {
+        "english_word": "musical",
+        "pronunciation": "/ˈmjuːzɪkəl/",
+        "vietnamese_meaning": "(adj): thuộc về âm nhạc",
+        "example_sentence_en": "She has great musical talent.",
+        "example_sentence_vi": "Cô ấy có tài năng âm nhạc tuyệt vời.",
+        "image": "assets/images/musical.webp",
+        "alt": "Image for musical"
+      },
+      {
+        "english_word": "musical instrument",
+        "pronunciation": "/ˈmjuːzɪkəl ˈɪnstrəmənt/",
+        "vietnamese_meaning": "(n): nhạc cụ",
+        "example_sentence_en": "Traditional musical instruments are very important in festivals.",
+        "example_sentence_vi": "Nhạc cụ truyền thống rất quan trọng trong các lễ hội.",
+        "image": "assets/images/musical-instrument.webp",
+        "alt": "Image for musical instrument"
+      }
+    ]
+  },
+  {
+    "group": "Food and Cooking",
+    "words": [
+      {
+        "english_word": "five-colour",
+        "pronunciation": "/faɪv ˈkʌlə/",
+        "vietnamese_meaning": "(adj): ngũ sắc",
+        "example_sentence_en": "Five-colour sticky rice is a special dish.",
+        "example_sentence_vi": "Xôi ngũ sắc là món ăn đặc biệt.",
+        "image": "assets/images/five-colour.webp",
+        "alt": "Image for five-colour"
+      },
+      {
+        "english_word": "meal",
+        "pronunciation": "/miːl/",
+        "vietnamese_meaning": "(n): bữa ăn",
+        "example_sentence_en": "The family gathers for meals together.",
+        "example_sentence_vi": "Gia đình tụ tập ăn cơm cùng nhau.",
+        "image": "assets/images/meal.webp",
+        "alt": "Image for meal"
+      },
+      {
+        "english_word": "prepare food",
+        "pronunciation": "/prɪˈpeə fuːd/",
+        "vietnamese_meaning": "(v): chuẩn bị thức ăn",
+        "example_sentence_en": "Women prepare food for the festival.",
+        "example_sentence_vi": "Phụ nữ chuẩn bị thức ăn cho lễ hội.",
+        "image": "assets/images/prepare-food.webp",
+        "alt": "Image for prepare food"
+      },
+      {
+        "english_word": "sticky rice",
+        "pronunciation": "/ˈstɪki raɪs/",
+        "vietnamese_meaning": "(n): xôi",
+        "example_sentence_en": "Sticky rice is a traditional Vietnamese food.",
+        "example_sentence_vi": "Xôi là món ăn truyền thống của Việt Nam.",
+        "image": "assets/images/sticky-rice.webp",
+        "alt": "Image for sticky rice"
+      }
+    ]
+  },
+  {
+    "group": "Farming and Agriculture",
+    "words": [
+      {
+        "english_word": "crop",
+        "pronunciation": "/krɒp/",
+        "vietnamese_meaning": "(n): vụ mùa, vụ trồng trọt",
+        "example_sentence_en": "Rice is the main crop in this region.",
+        "example_sentence_vi": "Lúa là vụ mùa chính ở vùng này.",
+        "image": "assets/images/crop.webp",
+        "alt": "Image for crop"
+      },
+      {
+        "english_word": "farming",
+        "pronunciation": "/ˈfɑːmɪŋ/",
+        "vietnamese_meaning": "(n): nghề nông",
+        "example_sentence_en": "Farming is the main occupation in rural areas.",
+        "example_sentence_vi": "Nông nghiệp là nghề chính ở vùng nông thôn.",
+        "image": "assets/images/farming.webp",
+        "alt": "Image for farming"
+      },
+      {
+        "english_word": "gardening",
+        "pronunciation": "/ˈɡɑːdənɪŋ/",
+        "vietnamese_meaning": "(n): làm vườn",
+        "example_sentence_en": "Gardening provides fresh vegetables for the family.",
+        "example_sentence_vi": "Làm vườn cung cấp rau xanh tươi cho gia đình.",
+        "image": "assets/images/gardening.webp",
+        "alt": "Image for gardening"
+      },
+      {
+        "english_word": "harvest",
+        "pronunciation": "/ˈhɑːvɪst/",
+        "vietnamese_meaning": "(n, v): vụ mùa, thu hoạch",
+        "example_sentence_en": "The harvest season is very busy for farmers.",
+        "example_sentence_vi": "Mùa thu hoạch rất bận rộn cho nông dân.",
+        "image": "assets/images/harvest.webp",
+        "alt": "Image for harvest"
+      },
+      {
+        "english_word": "livestock",
+        "pronunciation": "/ˈlaɪvstɒk/",
+        "vietnamese_meaning": "(n): gia súc",
+        "example_sentence_en": "They raise livestock for their living.",
+        "example_sentence_vi": "Họ chăn nuôi gia súc để kiếm sống.",
+        "image": "assets/images/livestock.webp",
+        "alt": "Image for livestock"
+      },
+      {
+        "english_word": "plantation",
+        "pronunciation": "/plænˈteɪʃən/",
+        "vietnamese_meaning": "(n): đồn điền",
+        "example_sentence_en": "The coffee plantation covers many hectares.",
+        "example_sentence_vi": "Đồn điền cà phê trải rộng nhiều hecta.",
+        "image": "assets/images/plantation.webp",
+        "alt": "Image for plantation"
+      },
+      {
+        "english_word": "raise",
+        "pronunciation": "/reɪz/",
+        "vietnamese_meaning": "(v): chăn nuôi",
+        "example_sentence_en": "Farmers raise cattle and pigs on their farms.",
+        "example_sentence_vi": "Nông dân chăn nuôi bò và heo trong trang trại.",
+        "image": "assets/images/raise.webp",
+        "alt": "Image for raise"
+      },
+      {
+        "english_word": "rice field",
+        "pronunciation": "/raɪs fiːld/",
+        "vietnamese_meaning": "(n): cánh đồng lúa",
+        "example_sentence_en": "The rice fields are green in the growing season.",
+        "example_sentence_vi": "Cánh đồng lúa xanh trong mùa sinh trưởng.",
+        "image": "assets/images/rice-field.webp",
+        "alt": "Image for rice field"
+      },
+      {
+        "english_word": "soil",
+        "pronunciation": "/sɔɪl/",
+        "vietnamese_meaning": "(n): đất trồng",
+        "example_sentence_en": "The soil here is very fertile for crops.",
+        "example_sentence_vi": "Đất ở đây rất màu mỡ cho cây trồng.",
+        "image": "assets/images/soil.webp",
+        "alt": "Image for soil"
+      },
+      {
+        "english_word": "terraced field",
+        "pronunciation": "/ˈterəst fiːld/",
+        "vietnamese_meaning": "(n): ruộng bậc thang",
+        "example_sentence_en": "Terraced fields are common in mountainous areas.",
+        "example_sentence_vi": "Ruộng bậc thang phổ biến ở vùng núi.",
+        "image": "assets/images/terraced-field.webp",
+        "alt": "Image for terraced field"
+      }
+    ]
+  },
+  {
+    "group": "Daily Life",
+    "words": [
+      {
+        "english_word": "fishing",
+        "pronunciation": "/ˈfɪʃɪŋ/",
+        "vietnamese_meaning": "(n): đánh cá",
+        "example_sentence_en": "Fishing is an important activity near rivers and lakes.",
+        "example_sentence_vi": "Đánh cá là hoạt động quan trọng gần sông và hồ.",
+        "image": "assets/images/fishing.webp",
+        "alt": "Image for fishing"
+      },
+      {
+        "english_word": "hunting",
+        "pronunciation": "/ˈhʌntɪŋ/",
+        "vietnamese_meaning": "(n): săn bắn",
+        "example_sentence_en": "Hunting is a traditional way to get food in the forest.",
+        "example_sentence_vi": "Săn bắn là cách truyền thống để kiếm thức ăn trong rừng.",
+        "image": "assets/images/hunting.webp",
+        "alt": "Image for hunting"
+      },
+      {
+        "english_word": "lifestyle",
+        "pronunciation": "/ˈlaɪfstaɪl/",
+        "vietnamese_meaning": "(n): lối sống",
+        "example_sentence_en": "Their lifestyle is closely connected to nature.",
+        "example_sentence_vi": "Lối sống của họ gắn bó mật thiết với thiên nhiên.",
+        "image": "assets/images/lifestyle.webp",
+        "alt": "Image for lifestyle"
+      },
+      {
+        "english_word": "look after",
+        "pronunciation": "/lʊk ˈɑːftə/",
+        "vietnamese_meaning": "(v): chăm sóc",
+        "example_sentence_en": "Children help look after the animals.",
+        "example_sentence_vi": "Trẻ em giúp chăm sóc động vật.",
+        "image": "assets/images/look-after.webp",
+        "alt": "Image for look after"
+      },
+      {
+        "english_word": "peaceful",
+        "pronunciation": "/ˈpiːsfəl/",
+        "vietnamese_meaning": "(adj): yên bình",
+        "example_sentence_en": "Life in the village is peaceful and quiet.",
+        "example_sentence_vi": "Cuộc sống ở làng yên bình và tĩnh lặng.",
+        "image": "assets/images/peaceful.webp",
+        "alt": "Image for peaceful"
+      },
+      {
+        "english_word": "population",
+        "pronunciation": "/ˌpɒpjəˈleɪʃən/",
+        "vietnamese_meaning": "(n): dân số",
+        "example_sentence_en": "The population of ethnic minorities is growing.",
+        "example_sentence_vi": "Dân số các dân tộc thiểu số đang tăng lên.",
+        "image": "assets/images/population.webp",
+        "alt": "Image for population"
+      },
+      {
+        "english_word": "village",
+        "pronunciation": "/ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng",
+        "example_sentence_en": "Each village has its own customs and traditions.",
+        "example_sentence_vi": "Mỗi làng có phong tục và truyền thống riêng.",
+        "image": "assets/images/village.webp",
+        "alt": "Image for village"
+      },
+      {
+        "english_word": "weave",
+        "pronunciation": "/wiːv/",
+        "vietnamese_meaning": "(v): dệt, đan, kết lại",
+        "example_sentence_en": "Women weave beautiful cloth on traditional looms.",
+        "example_sentence_vi": "Phụ nữ dệt vải đẹp trên khung cửi truyền thống.",
+        "image": "assets/images/weave.webp",
+        "alt": "Image for weave"
+      }
+    ]
+  },
+  {
+    "group": "Geography and Environment",
+    "words": [
+      {
+        "english_word": "close to nature",
+        "pronunciation": "/kləʊs tə ˈneɪtʃə/",
+        "vietnamese_meaning": "(adj): gần gũi với thiên nhiên",
+        "example_sentence_en": "Their way of life is close to nature.",
+        "example_sentence_vi": "Lối sống của họ gần gũi với thiên nhiên.",
+        "image": "assets/images/close-to-nature.webp",
+        "alt": "Image for close to nature"
+      },
+      {
+        "english_word": "field",
+        "pronunciation": "/fiːld/",
+        "vietnamese_meaning": "(n): cánh đồng",
+        "example_sentence_en": "The fields are golden during harvest time.",
+        "example_sentence_vi": "Cánh đồng vàng óng vào mùa thu hoạch.",
+        "image": "assets/images/field.webp",
+        "alt": "Image for field"
+      },
+      {
+        "english_word": "forest",
+        "pronunciation": "/ˈfɒrɪst/",
+        "vietnamese_meaning": "(n): rừng",
+        "example_sentence_en": "The forest provides many resources for the villagers.",
+        "example_sentence_vi": "Rừng cung cấp nhiều tài nguyên cho dân làng.",
+        "image": "assets/images/forest.webp",
+        "alt": "Image for forest"
+      },
+      {
+        "english_word": "ground",
+        "pronunciation": "/ɡraʊnd/",
+        "vietnamese_meaning": "(n): mặt đất",
+        "example_sentence_en": "Children play games on the ground.",
+        "example_sentence_vi": "Trẻ em chơi trò chơi trên mặt đất.",
+        "image": "assets/images/ground.webp",
+        "alt": "Image for ground"
+      },
+      {
+        "english_word": "highland",
+        "pronunciation": "/ˈhaɪlənd/",
+        "vietnamese_meaning": "(n): vùng cao nguyên",
+        "example_sentence_en": "Many ethnic minorities live in the highland areas.",
+        "example_sentence_vi": "Nhiều dân tộc thiểu số sống ở vùng cao nguyên.",
+        "image": "assets/images/highland.webp",
+        "alt": "Image for highland"
+      },
+      {
+        "english_word": "lowland",
+        "pronunciation": "/ˈləʊlənd/",
+        "vietnamese_meaning": "(n): vùng thấp",
+        "example_sentence_en": "Rice grows well in the lowland areas.",
+        "example_sentence_vi": "Lúa phát triển tốt ở vùng đất thấp.",
+        "image": "assets/images/lowland.webp",
+        "alt": "Image for lowland"
+      },
+      {
+        "english_word": "mountain",
+        "pronunciation": "/ˈmaʊntɪn/",
+        "vietnamese_meaning": "(n): núi",
+        "example_sentence_en": "The mountain villages are very remote.",
+        "example_sentence_vi": "Các làng trên núi rất xa xôi.",
+        "image": "assets/images/mountain.webp",
+        "alt": "Image for mountain"
+      },
+      {
+        "english_word": "nature",
+        "pronunciation": "/ˈneɪtʃə/",
+        "vietnamese_meaning": "(n): thiên nhiên",
+        "example_sentence_en": "We must protect nature for future generations.",
+        "example_sentence_vi": "Chúng ta phải bảo vệ thiên nhiên cho các thế hệ tương lai.",
+        "image": "assets/images/nature.webp",
+        "alt": "Image for nature"
+      }
+    ]
+  },
+  {
+    "group": "Materials and Objects",
+    "words": [
+      {
+        "english_word": "ash",
+        "pronunciation": "/æʃ/",
+        "vietnamese_meaning": "(n): tro",
+        "example_sentence_en": "Ash from the fire is used as fertilizer.",
+        "example_sentence_vi": "Tro từ lửa được sử dụng làm phân bón.",
+        "image": "assets/images/ash.webp",
+        "alt": "Image for ash"
+      },
+      {
+        "english_word": "bamboo",
+        "pronunciation": "/bæmˈbuː/",
+        "vietnamese_meaning": "(n): tre",
+        "example_sentence_en": "Bamboo is used to build houses and make furniture.",
+        "example_sentence_vi": "Tre được dùng để xây nhà và làm đồ nội thất.",
+        "image": "assets/images/bamboo.webp",
+        "alt": "Image for bamboo"
+      },
+      {
+        "english_word": "leaves",
+        "pronunciation": "/liːvz/",
+        "vietnamese_meaning": "(n): lá cây",
+        "example_sentence_en": "Banana leaves are used to wrap food.",
+        "example_sentence_vi": "Lá chuối được dùng để gói thức ăn.",
+        "image": "assets/images/leaves.webp",
+        "alt": "Image for leaves"
+      },
+      {
+        "english_word": "statue",
+        "pronunciation": "/ˈstætʃuː/",
+        "vietnamese_meaning": "(n): tượng",
+        "example_sentence_en": "There is a wooden statue in the village temple.",
+        "example_sentence_vi": "Có một pho tượng gỗ trong đình làng.",
+        "image": "assets/images/statue.webp",
+        "alt": "Image for statue"
+      },
+      {
+        "english_word": "wood",
+        "pronunciation": "/wʊd/",
+        "vietnamese_meaning": "(n): gỗ",
+        "example_sentence_en": "Wood is the main building material in rural areas.",
+        "example_sentence_vi": "Gỗ là vật liệu xây dựng chính ở vùng nông thôn.",
+        "image": "assets/images/wood.webp",
+        "alt": "Image for wood"
+      },
+      {
+        "english_word": "wooden",
+        "pronunciation": "/ˈwʊdən/",
+        "vietnamese_meaning": "(adj): bằng gỗ",
+        "example_sentence_en": "The wooden furniture is handmade by local craftsmen.",
+        "example_sentence_vi": "Đồ nội thất gỗ được làm thủ công bởi thợ địa phương.",
+        "image": "assets/images/wooden.webp",
+        "alt": "Image for wooden"
+      },
+      {
+        "english_word": "wooden statue",
+        "pronunciation": "/ˈwʊdən ˈstætjuː/",
+        "vietnamese_meaning": "(n): tượng gỗ",
+        "example_sentence_en": "The wooden statue represents their ancestors.",
+        "example_sentence_vi": "Tượng gỗ tượng trưng cho tổ tiên của họ.",
+        "image": "assets/images/wooden-statue.webp",
+        "alt": "Image for wooden statue"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "brochure",
+        "pronunciation": "/ˈbrəʊʃə/",
+        "vietnamese_meaning": "(n): tài liệu quảng cáo",
+        "example_sentence_en": "The tourism brochure shows beautiful ethnic villages.",
+        "example_sentence_vi": "Tài liệu du lịch giới thiệu những làng dân tộc đẹp.",
+        "image": "assets/images/brochure.webp",
+        "alt": "Image for brochure"
+      },
+      {
+        "english_word": "ceremony",
+        "pronunciation": "/ˈserəməni/",
+        "vietnamese_meaning": "(n): lễ nghi",
+        "example_sentence_en": "The wedding ceremony follows ancient traditions.",
+        "example_sentence_vi": "Lễ nghi cưới theo truyền thống cổ xưa.",
+        "image": "assets/images/ceremony.webp",
+        "alt": "Image for ceremony"
+      },
+      {
+        "english_word": "guest",
+        "pronunciation": "/ɡest/",
+        "vietnamese_meaning": "(n): khách",
+        "example_sentence_en": "Guests are always welcomed with traditional hospitality.",
+        "example_sentence_vi": "Khách luôn được chào đón với lòng hiếu khách truyền thống.",
+        "image": "assets/images/guest.webp",
+        "alt": "Image for guest"
+      },
+      {
+        "english_word": "heart",
+        "pronunciation": "/hɑːt/",
+        "vietnamese_meaning": "(n): trung tâm, trái tim",
+        "example_sentence_en": "The communal house is the heart of the village.",
+        "example_sentence_vi": "Nhà rông là trung tâm của làng.",
+        "image": "assets/images/heart.webp",
+        "alt": "Image for heart"
+      },
+      {
+        "english_word": "role",
+        "pronunciation": "/rəʊl/",
+        "vietnamese_meaning": "(n): vai trò",
+        "example_sentence_en": "Elders play an important role in the community.",
+        "example_sentence_vi": "Những người cao tuổi đóng vai trò quan trọng trong cộng đồng.",
+        "image": "assets/images/role.webp",
+        "alt": "Image for role"
+      },
+      {
+        "english_word": "service",
+        "pronunciation": "/ˈsɜːvɪs/",
+        "vietnamese_meaning": "(n): dịch vụ",
+        "example_sentence_en": "Tourism services help preserve ethnic cultures.",
+        "example_sentence_vi": "Dịch vụ du lịch giúp bảo tồn văn hóa dân tộc.",
+        "image": "assets/images/service.webp",
+        "alt": "Image for service"
+      }
+    ]
+  }
+]

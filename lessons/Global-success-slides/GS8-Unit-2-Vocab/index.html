@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS8 Unit 2: Healthy living</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="../assets/js/head.js"></script>
+
+    <!-- Game Scripts -->
+    <script src="../assets/games/game-utils.js"></script>
+    <script src="../assets/games/game-manager.js"></script>
+    <script src="../assets/games/matching-game.js"></script>
+    <script src="../assets/games/memory-game.js"></script>
+    <script src="../assets/games/multiple-choice-en-vi-game.js"></script>
+    <script src="../assets/games/multiple-choice-vi-en-game.js"></script>
+    <script src="../assets/games/picture-choice-en-game.js"></script>
+    <script src="../assets/games/picture-typing-en-game.js"></script>
+    <script src="../assets/games/anagram-game.js"></script>
+    <script src="../assets/games/unjumble-game.js"></script>
+    <script src="../assets/games/listening-typing-en-game.js"></script>
+    <script src="../assets/games/image-reveal-choice-game.js"></script>
+    <script src="../assets/games/flashcards-game.js"></script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body
+    class="bg-blue-50 bg-[url('../assets/backgrounds/bg.webp')] bg-cover bg-center min-h-screen flex items-center justify-center p-1 sm:p-2">
+
+    <div id="loading" class="loading">
+        <div>
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+            Đang tải từ vựng...
+        </div>
+    </div>
+
+    <div id="main-content" class="relative w-full max-w-6xl h-[97vh] mx-auto" style="display: none;">
+        <!-- Slide counter -->
+        <div id="slide-navigation"
+            class="absolute bottom-2 sm:bottom-full sm:top-7 right-2 z-50 flex items-center gap-2">
+            <button id="prev-slide-btn" onclick="showSlide(currentSlide - 1)"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="next-slide-btn" onclick="showSlide(currentSlide + 1)"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+            <button id="outline-btn" onclick="toggleOutline()"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <button id="settings-btn" onclick="openSettingsPopup()"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80"
+                title="Settings">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7zm7.03-2.11l-1.06-.18a6.02 6.02 0 0 0 0-2.42l1.06-.18a1 1 0 0 0 .78-1.28l-.25-.87a1 1 0 0 0-1.21-.68l-1.05.3a6.04 6.04 0 0 0-1.4-1.4l.3-1.05a1 1 0 0 0-.68-1.21l-.87-.25a1 1 0 0 0-1.28.78l-.18 1.06a6.02 6.02 0 0 0-2.42 0l-.18-1.06a1 1 0 0 0-1.28-.78l-.87.25a1 1 0 0 0-.68 1.21l.3 1.05a6.04 6.04 0 0 0-1.4 1.4l-1.05-.3a1 1 0 0 0-1.21.68l-.25.87a1 1 0 0 0 .78 1.28l1.06.18a6.02 6.02 0 0 0 0 2.42l-1.06.18a1 1 0 0 0-.78 1.28l.25.87a1 1 0 0 0 1.21.68l1.05-.3a6.04 6.04 0 0 0 1.4 1.4l-.3 1.05a1 1 0 0 0 .68 1.21l.87.25a1 1 0 0 0 1.28-.78l.18-1.06a6.02 6.02 0 0 0 2.42 0l.18 1.06a1 1 0 0 0 1.28.78l.87-.25a1 1 0 0 0 .68-1.21l-.3-1.05a6.04 6.04 0 0 0 1.4-1.4l1.05.3a1 1 0 0 0 1.21-.68l.25-.87a1 1 0 0 0-.78-1.28z" />
+                                    </svg>
+            </button>
+            <div id="slide-counter-countainer"
+                class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs"
+                style="font-size: 0.5rem;">
+                <span id="slide-counter"></span>
+            </div>
+        </div>
+
+        <!-- Outline Modal -->
+        <div id="outlineModal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+            <div id="outlineContent" class="outline-content">
+                <!-- Outline content will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- Slides container -->
+        <div id="slides-container" class="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Slides will be dynamically generated here -->
+        </div>
+    </div>
+    <script src="../assets/js/app.js"></script>
+    <script>
+        let vocabularyData = [];
+        let currentSlide = 0;
+        let slides = [];
+        let totalSlides = 0;
+        let gameManager = null;
+
+        function createTitleSlide() {
+            const slide = document.createElement('div');
+            slide.className = 'slide justify-center content-box px-5 py-2 pt-10 rounded-2xl w-full h-full';
+
+            slide.innerHTML = `
+                <div class="flex flex-col items-center justify-start h-full text-center">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-300 text-xl md:text-2xl font-bold px-6 py-3 rounded-full mb-3 shadow-lg floating text-white">
+                        GS8 - Unit 2 - Healthy living
+                    </div>
+                    <div class="flex flex-col items-center justify-center gap-2">
+                        <!--
+                        <div class="mt-6 flex justify-center">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000"
+                                alt="School Learning" class="object-cover h-52 rounded-xl floating">
+                        </div>
+                        -->
+                        <div class="mt-4 flex flex-col items-center w-full floating text-lg sm:text-2xl ">
+                            <div class="bg-white bg-opacity-80 rounded-xl shadow-lg px-6 py-5 max-w-2xl">
+                                <h2 class="font-bold text-indigo-700 mb-3">Lesson Objectives</h2>
+                                <ul class="text-gray-700 text-left list-disc pl-6 space-y-2">
+                                    <li>Understand and remember vocabulary on the topic.</li>
+                                    <li>Pronounce vocabulary correctly and use them in simple sentences.</li>
+                                    <li>Apply vocabulary in interactive games to reinforce knowledge.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Final Challenge Button -->
+                        <div class="flex justify-center">
+                            <button onclick="goToFinalChallenge()" 
+                                    class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-2 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg md:text-xl floating">
+                                🎯 Go to Final Challenge
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            `;
+            return slide;
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('outlineModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                toggleOutline();
+            }
+        });
+
+        // Function to go to final challenge (comprehensive game slide)
+        function goToFinalChallenge() {
+            if (totalSlides > 0) {
+                showSlide(totalSlides - 1); // Go to the last slide (comprehensive game)
+            } else {
+                console.log('Slides not yet loaded');
+            }
+        }
+    </script>
+</body>
+
+</html>

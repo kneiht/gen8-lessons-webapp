@@ -1,0 +1,734 @@
+[
+  {
+    "group": "School Clubs and Activities",
+    "words": [
+      {
+        "english_word": "arts and crafts",
+        "pronunciation": "/ɑːts ənd krɑːfts/",
+        "vietnamese_meaning": "(n): thủ công mỹ nghệ",
+        "example_sentence_en": "I enjoy doing arts and crafts in my free time.",
+        "example_sentence_vi": "Tôi thích làm đồ thủ công mỹ nghệ trong thời gian rảnh.",
+        "image": "assets/images/arts-and-crafts.webp",
+        "alt": "Image for arts and crafts"
+      },
+      {
+        "english_word": "badminton",
+        "pronunciation": "/ˈbædmɪntən/",
+        "vietnamese_meaning": "(n): cầu lông",
+        "example_sentence_en": "We play badminton every Saturday afternoon.",
+        "example_sentence_vi": "Chúng tôi chơi cầu lông mỗi chiều thứ bảy.",
+        "image": "assets/images/badminton.webp",
+        "alt": "Image for badminton"
+      },
+      {
+        "english_word": "chess",
+        "pronunciation": "/tʃes/",
+        "vietnamese_meaning": "(n): cờ vua",
+        "example_sentence_en": "Playing chess helps improve logical thinking.",
+        "example_sentence_vi": "Chơi cờ vua giúp cải thiện tư duy logic.",
+        "image": "assets/images/chess.webp",
+        "alt": "Image for chess"
+      },
+      {
+        "english_word": "coach",
+        "pronunciation": "/kəʊtʃ/",
+        "vietnamese_meaning": "(n): huấn luyện viên",
+        "example_sentence_en": "Our football coach is very experienced.",
+        "example_sentence_vi": "Huấn luyện viên bóng đá của chúng tôi rất có kinh nghiệm.",
+        "image": "assets/images/coach.webp",
+        "alt": "Image for coach"
+      },
+      {
+        "english_word": "community service",
+        "pronunciation": "/kəˈmjuːnəti ˈsɜːvɪs/",
+        "vietnamese_meaning": "(n): dịch vụ cộng đồng",
+        "example_sentence_en": "Students participate in community service projects.",
+        "example_sentence_vi": "Học sinh tham gia các dự án dịch vụ cộng đồng.",
+        "image": "assets/images/community-service.webp",
+        "alt": "Image for community service"
+      },
+      {
+        "english_word": "competition",
+        "pronunciation": "/ˌkɒmpəˈtɪʃən/",
+        "vietnamese_meaning": "(n): cuộc thi",
+        "example_sentence_en": "The school holds a math competition every year.",
+        "example_sentence_vi": "Trường tổ chức cuộc thi toán học hàng năm.",
+        "image": "assets/images/competition.webp",
+        "alt": "Image for competition"
+      },
+      {
+        "english_word": "join",
+        "pronunciation": "/dʒɔɪn/",
+        "vietnamese_meaning": "(v): gia nhập",
+        "example_sentence_en": "I want to join the drama club this semester.",
+        "example_sentence_vi": "Tôi muốn gia nhập câu lạc bộ kịch học kỳ này.",
+        "image": "assets/images/join.webp",
+        "alt": "Image for join"
+      },
+      {
+        "english_word": "language",
+        "pronunciation": "/ˈlæŋɡwɪdʒ/",
+        "vietnamese_meaning": "(n): ngôn ngữ",
+        "example_sentence_en": "Learning a new language takes time and practice.",
+        "example_sentence_vi": "Học một ngôn ngữ mới cần thời gian và luyện tập.",
+        "image": "assets/images/language.webp",
+        "alt": "Image for language"
+      },
+      {
+        "english_word": "leader",
+        "pronunciation": "/ˈliːdə(r)/",
+        "vietnamese_meaning": "(n): trưởng nhóm",
+        "example_sentence_en": "She is a natural leader in our group project.",
+        "example_sentence_vi": "Cô ấy là một trưởng nhóm bẩm sinh trong dự án của chúng tôi.",
+        "image": "assets/images/leader.webp",
+        "alt": "Image for leader"
+      },
+      {
+        "english_word": "member",
+        "pronunciation": "/ˈmembə(r)/",
+        "vietnamese_meaning": "(n): thành viên",
+        "example_sentence_en": "Every member of the team has an important role.",
+        "example_sentence_vi": "Mỗi thành viên trong đội đều có vai trò quan trọng.",
+        "image": "assets/images/member.webp",
+        "alt": "Image for member"
+      },
+      {
+        "english_word": "painting",
+        "pronunciation": "/ˈpeɪntɪŋ/",
+        "vietnamese_meaning": "(n): hội họa",
+        "example_sentence_en": "She has a talent for painting landscapes.",
+        "example_sentence_vi": "Cô ấy có tài năng vẽ tranh phong cảnh.",
+        "image": "assets/images/painting.webp",
+        "alt": "Image for painting"
+      },
+      {
+        "english_word": "participate",
+        "pronunciation": "/pɑːˈtɪsɪpeɪt/",
+        "vietnamese_meaning": "(v): tham gia",
+        "example_sentence_en": "All students can participate in the school festival.",
+        "example_sentence_vi": "Tất cả học sinh có thể tham gia lễ hội trường học.",
+        "image": "assets/images/participate.webp",
+        "alt": "Image for participate"
+      },
+      {
+        "english_word": "sports",
+        "pronunciation": "/spɔːts/",
+        "vietnamese_meaning": "(n): thể thao",
+        "example_sentence_en": "Regular sports activities keep us healthy.",
+        "example_sentence_vi": "Các hoạt động thể thao thường xuyên giúp chúng ta khỏe mạnh.",
+        "image": "assets/images/sports.webp",
+        "alt": "Image for sports"
+      },
+      {
+        "english_word": "teamwork",
+        "pronunciation": "/ˈtiːmwɜːk/",
+        "vietnamese_meaning": "(n): làm việc nhóm",
+        "example_sentence_en": "Good teamwork is essential for project success.",
+        "example_sentence_vi": "Tinh thần đồng đội tốt là cần thiết cho thành công của dự án.",
+        "image": "assets/images/teamwork.webp",
+        "alt": "Image for teamwork"
+      },
+      {
+        "english_word": "tournament",
+        "pronunciation": "/ˈtʊənəmənt/",
+        "vietnamese_meaning": "(n): giải đấu",
+        "example_sentence_en": "Our school won the inter-school basketball tournament.",
+        "example_sentence_vi": "Trường chúng tôi đã thắng giải đấu bóng rổ liên trường.",
+        "image": "assets/images/tournament.webp",
+        "alt": "Image for tournament"
+      }
+    ]
+  },
+  {
+    "group": "Social Media and Technology",
+    "words": [
+      {
+        "english_word": "account",
+        "pronunciation": "/əˈkaʊnt/",
+        "vietnamese_meaning": "(n): tài khoản",
+        "example_sentence_en": "I created a new account on the social media platform.",
+        "example_sentence_vi": "Tôi đã tạo một tài khoản mới trên nền tảng mạng xã hội.",
+        "image": "assets/images/account.webp",
+        "alt": "Image for account"
+      },
+      {
+        "english_word": "browse",
+        "pronunciation": "/braʊz/",
+        "vietnamese_meaning": "(v): duyệt web",
+        "example_sentence_en": "I like to browse the internet for news and information.",
+        "example_sentence_vi": "Tôi thích duyệt internet để tìm tin tức và thông tin.",
+        "image": "assets/images/browse.webp",
+        "alt": "Image for browse"
+      },
+      {
+        "english_word": "connect",
+        "pronunciation": "/kəˈnekt/",
+        "vietnamese_meaning": "(v): kết nối",
+        "example_sentence_en": "Social media helps us connect with friends worldwide.",
+        "example_sentence_vi": "Mạng xã hội giúp chúng ta kết nối với bạn bè trên toàn thế giới.",
+        "image": "assets/images/connect.webp",
+        "alt": "Image for connect"
+      },
+      {
+        "english_word": "forum",
+        "pronunciation": "/ˈfɔːrəm/",
+        "vietnamese_meaning": "(n): diễn đàn",
+        "example_sentence_en": "The online forum is a great place to share ideas.",
+        "example_sentence_vi": "Diễn đàn trực tuyến là nơi tuyệt vời để chia sẻ ý tưởng.",
+        "image": "assets/images/forum.webp",
+        "alt": "Image for forum"
+      },
+      {
+        "english_word": "log on",
+        "pronunciation": "/lɒɡ ɒn/",
+        "vietnamese_meaning": "(v): đăng nhập",
+        "example_sentence_en": "I need to log on to check my messages.",
+        "example_sentence_vi": "Tôi cần đăng nhập để kiểm tra tin nhắn của mình.",
+        "image": "assets/images/log-on.webp",
+        "alt": "Image for log on"
+      },
+      {
+        "english_word": "notification",
+        "pronunciation": "/ˌnəʊtɪfɪˈkeɪʃən/",
+        "vietnamese_meaning": "(n): thông báo",
+        "example_sentence_en": "I received a notification about the upcoming event.",
+        "example_sentence_vi": "Tôi nhận được thông báo về sự kiện sắp tới.",
+        "image": "assets/images/notification.webp",
+        "alt": "Image for notification"
+      },
+      {
+        "english_word": "picture",
+        "pronunciation": "/ˈpɪktʃə(r)/",
+        "vietnamese_meaning": "(n): hình ảnh",
+        "example_sentence_en": "She posted a beautiful picture of the sunset.",
+        "example_sentence_vi": "Cô ấy đăng một bức ảnh hoàng hôn tuyệt đẹp.",
+        "image": "assets/images/picture.webp",
+        "alt": "Image for picture"
+      },
+      {
+        "english_word": "post",
+        "pronunciation": "/pəʊst/",
+        "vietnamese_meaning": "(v): đăng bài",
+        "example_sentence_en": "I will post the photos from our trip tomorrow.",
+        "example_sentence_vi": "Tôi sẽ đăng những bức ảnh từ chuyến đi của chúng ta vào ngày mai.",
+        "image": "assets/images/post.webp",
+        "alt": "Image for post"
+      },
+      {
+        "english_word": "share",
+        "pronunciation": "/ʃeə(r)/",
+        "vietnamese_meaning": "(v): chia sẻ",
+        "example_sentence_en": "Please share this important information with your friends.",
+        "example_sentence_vi": "Hãy chia sẻ thông tin quan trọng này với bạn bè của bạn.",
+        "image": "assets/images/share.webp",
+        "alt": "Image for share"
+      },
+      {
+        "english_word": "smartphone",
+        "pronunciation": "/ˈsmɑːtfəʊn/",
+        "vietnamese_meaning": "(n): điện thoại thông minh",
+        "example_sentence_en": "My smartphone has many useful applications.",
+        "example_sentence_vi": "Điện thoại thông minh của tôi có nhiều ứng dụng hữu ích.",
+        "image": "assets/images/smartphone.webp",
+        "alt": "Image for smartphone"
+      },
+      {
+        "english_word": "social media",
+        "pronunciation": "/ˈsəʊʃəl ˈmiːdiə/",
+        "vietnamese_meaning": "(n): mạng xã hội",
+        "example_sentence_en": "Social media plays a big role in teenagers' lives.",
+        "example_sentence_vi": "Mạng xã hội đóng vai trò lớn trong cuộc sống của thanh thiếu niên.",
+        "image": "assets/images/social-media.webp",
+        "alt": "Image for social media"
+      },
+      {
+        "english_word": "update",
+        "pronunciation": "/ˌʌpˈdeɪt/",
+        "vietnamese_meaning": "(v): cập nhật",
+        "example_sentence_en": "Remember to update your profile information regularly.",
+        "example_sentence_vi": "Nhớ cập nhật thông tin hồ sơ của bạn thường xuyên.",
+        "image": "assets/images/update.webp",
+        "alt": "Image for update"
+      },
+      {
+        "english_word": "upload",
+        "pronunciation": "/ˌʌpˈləʊd/",
+        "vietnamese_meaning": "(v): tải lên",
+        "example_sentence_en": "I will upload the video to our class channel.",
+        "example_sentence_vi": "Tôi sẽ tải video lên kênh lớp học của chúng ta.",
+        "image": "assets/images/upload.webp",
+        "alt": "Image for upload"
+      },
+      {
+        "english_word": "user-friendly",
+        "pronunciation": "/ˈjuːzə(r) ˈfrendli/",
+        "vietnamese_meaning": "(adj): thân thiện với người dùng",
+        "example_sentence_en": "This app has a very user-friendly interface.",
+        "example_sentence_vi": "Ứng dụng này có giao diện rất thân thiện với người dùng.",
+        "image": "assets/images/user-friendly.webp",
+        "alt": "Image for user-friendly"
+      },
+      {
+        "english_word": "video",
+        "pronunciation": "/ˈvɪdiəʊ/",
+        "vietnamese_meaning": "(n): video",
+        "example_sentence_en": "The teacher uses educational videos in class.",
+        "example_sentence_vi": "Giáo viên sử dụng video giáo dục trong lớp.",
+        "image": "assets/images/video.webp",
+        "alt": "Image for video"
+      },
+      {
+        "english_word": "website",
+        "pronunciation": "/ˈwebsaɪt/",
+        "vietnamese_meaning": "(n): trang web",
+        "example_sentence_en": "Our school has a new website with useful information.",
+        "example_sentence_vi": "Trường chúng tôi có một trang web mới với thông tin hữu ích.",
+        "image": "assets/images/website.webp",
+        "alt": "Image for website"
+      }
+    ]
+  },
+  {
+    "group": "Teen Stress and Pressure",
+    "words": [
+      {
+        "english_word": "bully",
+        "pronunciation": "/ˈbʊli/",
+        "vietnamese_meaning": "(n, v): kẻ bắt nạt; bắt nạt",
+        "example_sentence_en": "It's important to report bullying behavior to teachers.",
+        "example_sentence_vi": "Việc báo cáo hành vi bắt nạt cho giáo viên là rất quan trọng.",
+        "image": "assets/images/bully.webp",
+        "alt": "Image for bully"
+      },
+      {
+        "english_word": "concentrate",
+        "pronunciation": "/ˈkɒnsntreɪt/",
+        "vietnamese_meaning": "(v): tập trung",
+        "example_sentence_en": "I find it hard to concentrate when there's too much noise.",
+        "example_sentence_vi": "Tôi thấy khó tập trung khi có quá nhiều tiếng ồn.",
+        "image": "assets/images/concentrate.webp",
+        "alt": "Image for concentrate"
+      },
+      {
+        "english_word": "deal with",
+        "pronunciation": "/diːl wɪð/",
+        "vietnamese_meaning": "(v): đối phó với",
+        "example_sentence_en": "Learning to deal with stress is an important life skill.",
+        "example_sentence_vi": "Học cách đối phó với căng thẳng là một kỹ năng sống quan trọng.",
+        "image": "assets/images/deal-with.webp",
+        "alt": "Image for deal with"
+      },
+      {
+        "english_word": "expectation",
+        "pronunciation": "/ˌekspekˈteɪʃən/",
+        "vietnamese_meaning": "(n): kỳ vọng",
+        "example_sentence_en": "Parents sometimes have high expectations for their children.",
+        "example_sentence_vi": "Cha mẹ đôi khi có kỳ vọng cao đối với con em mình.",
+        "image": "assets/images/expectation.webp",
+        "alt": "Image for expectation"
+      },
+      {
+        "english_word": "focused",
+        "pronunciation": "/ˈfəʊkəst/",
+        "vietnamese_meaning": "(adj): tập trung",
+        "example_sentence_en": "Stay focused on your goals and work hard to achieve them.",
+        "example_sentence_vi": "Hãy tập trung vào mục tiêu của bạn và làm việc chăm chỉ để đạt được chúng.",
+        "image": "assets/images/focused.webp",
+        "alt": "Image for focused"
+      },
+      {
+        "english_word": "mature",
+        "pronunciation": "/məˈtjʊə(r)/",
+        "vietnamese_meaning": "(adj): trưởng thành",
+        "example_sentence_en": "She handles problems in a very mature way.",
+        "example_sentence_vi": "Cô ấy giải quyết vấn đề một cách rất trưởng thành.",
+        "image": "assets/images/mature.webp",
+        "alt": "Image for mature"
+      },
+      {
+        "english_word": "parental pressure",
+        "pronunciation": "/pəˈrentəl ˈpreʃə(r)/",
+        "vietnamese_meaning": "(n): áp lực từ cha mẹ",
+        "example_sentence_en": "Some students struggle with parental pressure to succeed.",
+        "example_sentence_vi": "Một số học sinh gặp khó khăn với áp lực từ cha mẹ về việc thành công.",
+        "image": "assets/images/parental-pressure.webp",
+        "alt": "Image for parental pressure"
+      },
+      {
+        "english_word": "peer pressure",
+        "pronunciation": "/pɪə(r) ˈpreʃə(r)/",
+        "vietnamese_meaning": "(n): áp lực từ bạn bè",
+        "example_sentence_en": "Teenagers often experience peer pressure to fit in with their friends.",
+        "example_sentence_vi": "Thanh thiếu niên thường trải qua áp lực từ bạn bè để hòa nhập với nhóm.",
+        "image": "assets/images/peer-pressure.webp",
+        "alt": "Image for peer pressure"
+      },
+      {
+        "english_word": "pressure",
+        "pronunciation": "/ˈpreʃə(r)/",
+        "vietnamese_meaning": "(n): áp lực",
+        "example_sentence_en": "Academic pressure can affect students' mental health.",
+        "example_sentence_vi": "Áp lực học tập có thể ảnh hưởng đến sức khỏe tinh thần của học sinh.",
+        "image": "assets/images/pressure.webp",
+        "alt": "Image for pressure"
+      },
+      {
+        "english_word": "schoolwork",
+        "pronunciation": "/ˈskuːlwɜːk/",
+        "vietnamese_meaning": "(n): bài tập ở trường",
+        "example_sentence_en": "I need to finish my schoolwork before going out with friends.",
+        "example_sentence_vi": "Tôi cần hoàn thành bài tập ở trường trước khi đi chơi với bạn bè.",
+        "image": "assets/images/schoolwork.webp",
+        "alt": "Image for schoolwork"
+      },
+      {
+        "english_word": "solution",
+        "pronunciation": "/səˈluːʃən/",
+        "vietnamese_meaning": "(n): giải pháp",
+        "example_sentence_en": "We need to find a solution to this problem quickly.",
+        "example_sentence_vi": "Chúng ta cần tìm giải pháp cho vấn đề này một cách nhanh chóng.",
+        "image": "assets/images/solution.webp",
+        "alt": "Image for solution"
+      },
+      {
+        "english_word": "stress",
+        "pronunciation": "/stres/",
+        "vietnamese_meaning": "(n): sự căng thẳng",
+        "example_sentence_en": "Too much stress can be harmful to your health.",
+        "example_sentence_vi": "Quá nhiều căng thẳng có thể có hại cho sức khỏe của bạn.",
+        "image": "assets/images/stress.webp",
+        "alt": "Image for stress"
+      },
+      {
+        "english_word": "stressed",
+        "pronunciation": "/strest/",
+        "vietnamese_meaning": "(adj): bị căng thẳng",
+        "example_sentence_en": "I feel stressed when I have too many assignments to complete.",
+        "example_sentence_vi": "Tôi cảm thấy căng thẳng khi có quá nhiều bài tập phải hoàn thành.",
+        "image": "assets/images/stressed.webp",
+        "alt": "Image for stressed"
+      },
+      {
+        "english_word": "stressful",
+        "pronunciation": "/ˈstresfəl/",
+        "vietnamese_meaning": "(adj): căng thẳng",
+        "example_sentence_en": "Exam periods are always stressful for students.",
+        "example_sentence_vi": "Thời kỳ thi cử luôn căng thẳng đối với học sinh.",
+        "image": "assets/images/stressful.webp",
+        "alt": "Image for stressful"
+      }
+    ]
+  },
+  {
+    "group": "School Life",
+    "words": [
+      {
+        "english_word": "activity",
+        "pronunciation": "/ækˈtɪvəti/",
+        "vietnamese_meaning": "(n): hoạt động",
+        "example_sentence_en": "Our school organizes many extracurricular activities.",
+        "example_sentence_vi": "Trường chúng tôi tổ chức nhiều hoạt động ngoại khóa.",
+        "image": "assets/images/activity.webp",
+        "alt": "Image for activity"
+      },
+      {
+        "english_word": "classmate",
+        "pronunciation": "/ˈklɑːsmeɪt/",
+        "vietnamese_meaning": "(n): bạn cùng lớp",
+        "example_sentence_en": "I study with my classmates for the upcoming test.",
+        "example_sentence_vi": "Tôi học cùng với các bạn cùng lớp để chuẩn bị cho bài kiểm tra sắp tới.",
+        "image": "assets/images/classmate.webp",
+        "alt": "Image for classmate"
+      },
+      {
+        "english_word": "exam",
+        "pronunciation": "/ɪɡˈzæm/",
+        "vietnamese_meaning": "(n): kỳ thi",
+        "example_sentence_en": "The final exam will cover all the topics we studied.",
+        "example_sentence_vi": "Kỳ thi cuối kỳ sẽ bao gồm tất cả các chủ đề chúng ta đã học.",
+        "image": "assets/images/exam.webp",
+        "alt": "Image for exam"
+      },
+      {
+        "english_word": "homework",
+        "pronunciation": "/ˈhəʊmwɜːk/",
+        "vietnamese_meaning": "(n): bài tập về nhà",
+        "example_sentence_en": "I always do my homework right after school.",
+        "example_sentence_vi": "Tôi luôn làm bài tập về nhà ngay sau khi tan học.",
+        "image": "assets/images/homework.webp",
+        "alt": "Image for homework"
+      },
+      {
+        "english_word": "lesson",
+        "pronunciation": "/ˈlesən/",
+        "vietnamese_meaning": "(n): bài học",
+        "example_sentence_en": "Today's lesson was about environmental protection.",
+        "example_sentence_vi": "Bài học hôm nay là về bảo vệ môi trường.",
+        "image": "assets/images/lesson.webp",
+        "alt": "Image for lesson"
+      },
+      {
+        "english_word": "manage",
+        "pronunciation": "/ˈmænɪdʒ/",
+        "vietnamese_meaning": "(v): quản lý",
+        "example_sentence_en": "It's important to manage your time effectively as a student.",
+        "example_sentence_vi": "Việc quản lý thời gian hiệu quả là quan trọng đối với học sinh.",
+        "image": "assets/images/manage.webp",
+        "alt": "Image for manage"
+      },
+      {
+        "english_word": "midterm",
+        "pronunciation": "/ˈmɪdtɜːm/",
+        "vietnamese_meaning": "(n): giữa kỳ",
+        "example_sentence_en": "The midterm results will be announced next week.",
+        "example_sentence_vi": "Kết quả thi giữa kỳ sẽ được công bố vào tuần tới.",
+        "image": "assets/images/midterm.webp",
+        "alt": "Image for midterm"
+      },
+      {
+        "english_word": "prepare",
+        "pronunciation": "/prɪˈpeə(r)/",
+        "vietnamese_meaning": "(v): chuẩn bị",
+        "example_sentence_en": "I need to prepare well for the presentation tomorrow.",
+        "example_sentence_vi": "Tôi cần chuẩn bị kỹ cho buổi thuyết trình ngày mai.",
+        "image": "assets/images/prepare.webp",
+        "alt": "Image for prepare"
+      },
+      {
+        "english_word": "project",
+        "pronunciation": "/ˈprɒdʒekt/",
+        "vietnamese_meaning": "(n): dự án",
+        "example_sentence_en": "Our group project focuses on renewable energy.",
+        "example_sentence_vi": "Dự án nhóm của chúng tôi tập trung vào năng lượng tái tạo.",
+        "image": "assets/images/project.webp",
+        "alt": "Image for project"
+      },
+      {
+        "english_word": "skill",
+        "pronunciation": "/skɪl/",
+        "vietnamese_meaning": "(n): kỹ năng",
+        "example_sentence_en": "Communication skills are essential for success.",
+        "example_sentence_vi": "Kỹ năng giao tiếp là cần thiết cho thành công.",
+        "image": "assets/images/skill.webp",
+        "alt": "Image for skill"
+      },
+      {
+        "english_word": "teenager",
+        "pronunciation": "/ˈtiːneɪdʒə(r)/",
+        "vietnamese_meaning": "(n): thiếu niên",
+        "example_sentence_en": "Teenagers face many challenges during their school years.",
+        "example_sentence_vi": "Thiếu niên đối mặt với nhiều thách thức trong những năm học.",
+        "image": "assets/images/teenager.webp",
+        "alt": "Image for teenager"
+      }
+    ]
+  },
+  {
+    "group": "Personality Traits and Moods",
+    "words": [
+      {
+        "english_word": "active",
+        "pronunciation": "/ˈæktɪv/",
+        "vietnamese_meaning": "(adj): năng động",
+        "example_sentence_en": "She is very active in school sports and clubs.",
+        "example_sentence_vi": "Cô ấy rất năng động trong các môn thể thao và câu lạc bộ của trường.",
+        "image": "assets/images/active.webp",
+        "alt": "Image for active"
+      },
+      {
+        "english_word": "calm",
+        "pronunciation": "/kɑːm/",
+        "vietnamese_meaning": "(adj): bình tĩnh",
+        "example_sentence_en": "Try to stay calm during the exam.",
+        "example_sentence_vi": "Hãy cố gắng giữ bình tĩnh trong khi thi.",
+        "image": "assets/images/calm.webp",
+        "alt": "Image for calm"
+      },
+      {
+        "english_word": "creative",
+        "pronunciation": "/kriˈeɪtɪv/",
+        "vietnamese_meaning": "(adj): sáng tạo",
+        "example_sentence_en": "Art class helps students become more creative.",
+        "example_sentence_vi": "Lớp học mỹ thuật giúp học sinh trở nên sáng tạo hơn.",
+        "image": "assets/images/creative.webp",
+        "alt": "Image for creative"
+      },
+      {
+        "english_word": "curious",
+        "pronunciation": "/ˈkjʊəriəs/",
+        "vietnamese_meaning": "(adj): tò mò",
+        "example_sentence_en": "Children are naturally curious about the world around them.",
+        "example_sentence_vi": "Trẻ em tự nhiên tò mò về thế giới xung quanh chúng.",
+        "image": "assets/images/curious.webp",
+        "alt": "Image for curious"
+      },
+      {
+        "english_word": "enjoyable",
+        "pronunciation": "/ɪnˈdʒɔɪəbl/",
+        "vietnamese_meaning": "(adj): thú vị",
+        "example_sentence_en": "The field trip was very enjoyable for all students.",
+        "example_sentence_vi": "Chuyến dã ngoại rất thú vị đối với tất cả học sinh.",
+        "image": "assets/images/enjoyable.webp",
+        "alt": "Image for enjoyable"
+      },
+      {
+        "english_word": "lonely",
+        "pronunciation": "/ˈləʊnli/",
+        "vietnamese_meaning": "(adj): cô đơn",
+        "example_sentence_en": "New students sometimes feel lonely at first.",
+        "example_sentence_vi": "Học sinh mới đôi khi cảm thấy cô đơn lúc đầu.",
+        "image": "assets/images/lonely.webp",
+        "alt": "Image for lonely"
+      },
+      {
+        "english_word": "noisy",
+        "pronunciation": "/ˈnɔɪzi/",
+        "vietnamese_meaning": "(adj): ồn ào",
+        "example_sentence_en": "The cafeteria is quite noisy during lunch break.",
+        "example_sentence_vi": "Căng tin khá ồn ào trong giờ nghỉ trưa.",
+        "image": "assets/images/noisy.webp",
+        "alt": "Image for noisy"
+      },
+      {
+        "english_word": "professional",
+        "pronunciation": "/prəˈfeʃənəl/",
+        "vietnamese_meaning": "(adj): chuyên nghiệp",
+        "example_sentence_en": "Our teacher gives very professional advice about career choices.",
+        "example_sentence_vi": "Giáo viên của chúng tôi đưa ra lời khuyên rất chuyên nghiệp về lựa chọn nghề nghiệp.",
+        "image": "assets/images/professional.webp",
+        "alt": "Image for professional"
+      },
+      {
+        "english_word": "relaxed",
+        "pronunciation": "/rɪˈlækst/",
+        "vietnamese_meaning": "(adj): thư giãn",
+        "example_sentence_en": "I feel relaxed when I listen to music.",
+        "example_sentence_vi": "Tôi cảm thấy thư giãn khi nghe nhạc.",
+        "image": "assets/images/relaxed.webp",
+        "alt": "Image for relaxed"
+      },
+      {
+        "english_word": "relaxing",
+        "pronunciation": "/rɪˈlæksɪŋ/",
+        "vietnamese_meaning": "(adj): thư giãn",
+        "example_sentence_en": "Reading books is a relaxing activity after school.",
+        "example_sentence_vi": "Đọc sách là hoạt động thư giãn sau giờ học.",
+        "image": "assets/images/relaxing.webp",
+        "alt": "Image for relaxing"
+      },
+      {
+        "english_word": "sad",
+        "pronunciation": "/sæd/",
+        "vietnamese_meaning": "(adj): buồn",
+        "example_sentence_en": "She felt sad when her best friend moved to another city.",
+        "example_sentence_vi": "Cô ấy cảm thấy buồn khi người bạn thân nhất chuyển đến thành phố khác.",
+        "image": "assets/images/sad.webp",
+        "alt": "Image for sad"
+      },
+      {
+        "english_word": "sensitive",
+        "pronunciation": "/ˈsensətɪv/",
+        "vietnamese_meaning": "(adj): nhạy cảm",
+        "example_sentence_en": "He is very sensitive to other people's feelings.",
+        "example_sentence_vi": "Anh ấy rất nhạy cảm với cảm xúc của người khác.",
+        "image": "assets/images/sensitive.webp",
+        "alt": "Image for sensitive"
+      },
+      {
+        "english_word": "smart",
+        "pronunciation": "/smɑːt/",
+        "vietnamese_meaning": "(adj): thông minh",
+        "example_sentence_en": "She is smart and always gets good grades.",
+        "example_sentence_vi": "Cô ấy thông minh và luôn đạt điểm tốt.",
+        "image": "assets/images/smart.webp",
+        "alt": "Image for smart"
+      },
+      {
+        "english_word": "talkative",
+        "pronunciation": "/ˈtɔːkətɪv/",
+        "vietnamese_meaning": "(adj): nói nhiều",
+        "example_sentence_en": "My talkative friend makes the class more lively.",
+        "example_sentence_vi": "Người bạn hay nói của tôi làm cho lớp học sôi động hơn.",
+        "image": "assets/images/talkative.webp",
+        "alt": "Image for talkative"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "annoy",
+        "pronunciation": "/əˈnɔɪ/",
+        "vietnamese_meaning": "(v): làm phiền",
+        "example_sentence_en": "Loud music can annoy people who are trying to study.",
+        "example_sentence_vi": "Nhạc lớn có thể làm phiền những người đang cố gắng học.",
+        "image": "assets/images/annoy.webp",
+        "alt": "Image for annoy"
+      },
+      {
+        "english_word": "avoid",
+        "pronunciation": "/əˈvɔɪd/",
+        "vietnamese_meaning": "(v): tránh",
+        "example_sentence_en": "Students should avoid staying up too late before exams.",
+        "example_sentence_vi": "Học sinh nên tránh thức khuya trước kỳ thi.",
+        "image": "assets/images/avoid.webp",
+        "alt": "Image for avoid"
+      },
+      {
+        "english_word": "choice",
+        "pronunciation": "/tʃɔɪs/",
+        "vietnamese_meaning": "(n): sự lựa chọn",
+        "example_sentence_en": "Choosing the right subjects is an important choice for your future.",
+        "example_sentence_vi": "Chọn đúng môn học là một lựa chọn quan trọng cho tương lai của bạn.",
+        "image": "assets/images/choice.webp",
+        "alt": "Image for choice"
+      },
+      {
+        "english_word": "discuss",
+        "pronunciation": "/dɪˈskʌs/",
+        "vietnamese_meaning": "(v): thảo luận",
+        "example_sentence_en": "Let's discuss the project details in our next meeting.",
+        "example_sentence_vi": "Hãy thảo luận chi tiết dự án trong cuộc họp tiếp theo.",
+        "image": "assets/images/discuss.webp",
+        "alt": "Image for discuss"
+      },
+      {
+        "english_word": "ensure",
+        "pronunciation": "/ɪnˈʃʊə(r)/",
+        "vietnamese_meaning": "(v): đảm bảo",
+        "example_sentence_en": "Please ensure all homework is completed on time.",
+        "example_sentence_vi": "Hãy đảm bảo tất cả bài tập về nhà được hoàn thành đúng hạn.",
+        "image": "assets/images/ensure.webp",
+        "alt": "Image for ensure"
+      },
+      {
+        "english_word": "interview",
+        "pronunciation": "/ˈɪntəvjuː/",
+        "vietnamese_meaning": "(n): cuộc phỏng vấn",
+        "example_sentence_en": "The job interview went very well yesterday.",
+        "example_sentence_vi": "Cuộc phỏng vấn xin việc hôm qua diễn ra rất tốt.",
+        "image": "assets/images/interview.webp",
+        "alt": "Image for interview"
+      },
+      {
+        "english_word": "record",
+        "pronunciation": "/rɪˈkɔːd/",
+        "vietnamese_meaning": "(v): ghi âm",
+        "example_sentence_en": "The teacher will record the lesson for absent students.",
+        "example_sentence_vi": "Giáo viên sẽ ghi âm bài học cho những học sinh vắng mặt.",
+        "image": "assets/images/record.webp",
+        "alt": "Image for record"
+      },
+      {
+        "english_word": "tourist",
+        "pronunciation": "/ˈtʊərɪst/",
+        "vietnamese_meaning": "(n): khách du lịch",
+        "example_sentence_en": "Many tourists visit our city during the summer.",
+        "example_sentence_vi": "Nhiều khách du lịch đến thăm thành phố của chúng tôi vào mùa hè.",
+        "image": "assets/images/tourist.webp",
+        "alt": "Image for tourist"
+      }
+    ]
+  }
+]

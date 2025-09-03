@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GS6 Unit 1: School Vocabulary</title>
+    <title>GS6 Unit 4: My Neighbourhood</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
 </head>
 
 <body
-    class="bg-blue-50 bg-[url('https://cdn.photoroom.com/v2/image-cache?path=gs://background-7ef44.appspot.com/backgrounds_v3/nice/31_nice.jpg')] bg-cover bg-center min-h-screen flex items-center justify-center p-1 sm:p-2">
+    class="bg-blue-50 bg-[url('../assets/backgrounds/bg.webp')] bg-cover bg-center min-h-screen flex items-center justify-center p-1 sm:p-2">
 
     <div id="loading" class="loading">
         <div>
@@ -64,13 +64,12 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <button id="voice-btn" onclick="openVoicePopup()"
+            <button id="settings-btn" onclick="openSettingsPopup()"
                 class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 hover:bg-white/80"
-                title="Chọn giọng đọc">
+                title="Settings">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M11 5a4 4 0 0 1 8 0v6a4 4 0 0 1-8 0V5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19 11v1a7 7 0 1 1-14 0v-1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7zm7.03-2.11l-1.06-.18a6.02 6.02 0 0 0 0-2.42l1.06-.18a1 1 0 0 0 .78-1.28l-.25-.87a1 1 0 0 0-1.21-.68l-1.05.3a6.04 6.04 0 0 0-1.4-1.4l.3-1.05a1 1 0 0 0-.68-1.21l-.87-.25a1 1 0 0 0-1.28.78l-.18 1.06a6.02 6.02 0 0 0-2.42 0l-.18-1.06a1 1 0 0 0-1.28-.78l-.87.25a1 1 0 0 0-.68 1.21l.3 1.05a6.04 6.04 0 0 0-1.4 1.4l-1.05-.3a1 1 0 0 0-1.21.68l-.25.87a1 1 0 0 0 .78 1.28l1.06.18a6.02 6.02 0 0 0 0 2.42l-1.06.18a1 1 0 0 0-.78 1.28l.25.87a1 1 0 0 0 1.21.68l1.05-.3a6.04 6.04 0 0 0 1.4 1.4l-.3 1.05a1 1 0 0 0 .68 1.21l.87.25a1 1 0 0 0 1.28-.78l.18-1.06a6.02 6.02 0 0 0 2.42 0l.18 1.06a1 1 0 0 0 1.28.78l.87-.25a1 1 0 0 0 .68-1.21l-.3-1.05a6.04 6.04 0 0 0 1.4-1.4l1.05.3a1 1 0 0 0 1.21-.68l.25-.87a1 1 0 0 0-.78-1.28z" />
+                                    </svg>
             </button>
             <div id="slide-counter-countainer"
                 class="bg-white/60 rounded-full w-6 h-6 flex items-center justify-center shadow-lg font-bold text-indigo-600 text-xs"
@@ -109,7 +108,7 @@
                     <div class="bg-gradient-to-r from-blue-500 to-blue-300 text-xl md:text-2xl font-bold px-6 py-3 rounded-full mb-3 shadow-lg floating text-white">
                         GS6 - Unit 4 - My Neighbourhood
                     </div>
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="flex flex-col items-center justify-center gap-2">
                         <!--
                         <div class="mt-6 flex justify-center">
                             <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1000"
@@ -126,6 +125,15 @@
                                 </ul>
                             </div>
                         </div>
+                        
+                        <!-- Final Challenge Button -->
+                        <div class="flex justify-center">
+                            <button onclick="goToFinalChallenge()" 
+                                    class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-2 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 text-lg md:text-xl floating">
+                                🎯 Go to Final Challenge
+                            </button>
+                        </div>
+                    </div>
                     </div>
                 </div>
             `;
@@ -138,6 +146,15 @@
                 toggleOutline();
             }
         });
+
+        // Function to go to final challenge (comprehensive game slide)
+        function goToFinalChallenge() {
+            if (totalSlides > 0) {
+                showSlide(totalSlides - 1); // Go to the last slide (comprehensive game)
+            } else {
+                console.log('Slides not yet loaded');
+            }
+        }
     </script>
 </body>
 

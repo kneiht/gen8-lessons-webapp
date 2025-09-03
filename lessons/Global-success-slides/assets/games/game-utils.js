@@ -72,10 +72,10 @@ class GameUtils {
     /**
      * Create celebration popup
      */
-    static createCelebrationPopup(title, message, time, onClose = null) {
+    static createCelebrationPopup(title, message, time, onClose = null, icon = '🎉') {
         const content = `
             <div class="bg-white rounded-xl p-8 shadow-2xl text-center">
-                <div class="text-6xl mb-4">${this.getGameInfo().icon}</div>
+                <div class="text-6xl mb-4">🎉</div>
                 <h3 class="text-2xl font-bold text-green-600 mb-2">${title}</h3>
                 <p class="text-gray-600">${message}</p>
                 ${time ? `<p class="text-indigo-700 font-bold mt-2">⏱️ Time: ${time} seconds</p>` : ''}
@@ -224,7 +224,8 @@ class GameBase {
      * Show celebration popup
      */
     showCelebration(title, message, onClose = null) {
-        return GameUtils.createCelebrationPopup(title, message, this.timer, onClose);
+        const icon = this.getGameInfo ? this.getGameInfo().icon : '🎉';
+        return GameUtils.createCelebrationPopup(title, message, this.timer, onClose, icon);
     }
 
     /**

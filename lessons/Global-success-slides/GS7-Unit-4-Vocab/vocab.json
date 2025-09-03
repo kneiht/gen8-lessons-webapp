@@ -1,0 +1,522 @@
+[
+  {
+    "group": "Music",
+    "words": [
+      {
+        "english_word": "anthem",
+        "pronunciation": "/ˈænθəm/",
+        "vietnamese_meaning": "(n): bài quốc ca",
+        "example_sentence_en": "This is a anthem.",
+        "example_sentence_vi": "Đây là bài quốc ca.",
+        "image": "assets/images/anthem.webp",
+        "alt": "Image for anthem"
+      },
+      {
+        "english_word": "beat",
+        "pronunciation": "/biːt/",
+        "vietnamese_meaning": "(n): nhịp điệu",
+        "example_sentence_en": "This is a beat.",
+        "example_sentence_vi": "Đây là nhịp điệu.",
+        "image": "assets/images/beat.webp",
+        "alt": "Image for beat"
+      },
+      {
+        "english_word": "choir",
+        "pronunciation": "/ˈkwaɪə/",
+        "vietnamese_meaning": "(n): dàn hợp xướng",
+        "example_sentence_en": "This is a choir.",
+        "example_sentence_vi": "Đây là dàn hợp xướng.",
+        "image": "assets/images/choir.webp",
+        "alt": "Image for choir"
+      },
+      {
+        "english_word": "classical music",
+        "pronunciation": "/ˈklæsɪkəl ˈmjuːzɪk/",
+        "vietnamese_meaning": "(n): nhạc cổ điển",
+        "example_sentence_en": "This is a classical music.",
+        "example_sentence_vi": "Đây là nhạc cổ điển.",
+        "image": "assets/images/classical-music.webp",
+        "alt": "Image for classical music"
+      },
+      {
+        "english_word": "composer",
+        "pronunciation": "/kəmˈpəʊzə/",
+        "vietnamese_meaning": "(n): nhà soạn nhạc",
+        "example_sentence_en": "This is a composer.",
+        "example_sentence_vi": "Đây là nhà soạn nhạc.",
+        "image": "assets/images/composer.webp",
+        "alt": "Image for composer"
+      },
+      {
+        "english_word": "concert",
+        "pronunciation": "/ˈkɒnsət/",
+        "vietnamese_meaning": "(n): buổi hòa nhạc",
+        "example_sentence_en": "This is a concert.",
+        "example_sentence_vi": "Đây là buổi hòa nhạc.",
+        "image": "assets/images/concert.webp",
+        "alt": "Image for concert"
+      },
+      {
+        "english_word": "country music",
+        "pronunciation": "/ˈkʌntri mjuːzɪk/",
+        "vietnamese_meaning": "(n): nhạc đồng quê",
+        "example_sentence_en": "This is a country music.",
+        "example_sentence_vi": "Đây là nhạc đồng quê.",
+        "image": "assets/images/country-music.webp",
+        "alt": "Image for country music"
+      },
+      {
+        "english_word": "folk music",
+        "pronunciation": "/fəʊk ˈmjuːzɪk/",
+        "vietnamese_meaning": "(n): nhạc dân gian",
+        "example_sentence_en": "This is a folk music.",
+        "example_sentence_vi": "Đây là nhạc dân gian.",
+        "image": "assets/images/folk-music.webp",
+        "alt": "Image for folk music"
+      },
+      {
+        "english_word": "music",
+        "pronunciation": "/ˈmjuːzɪk/",
+        "vietnamese_meaning": "(n): âm nhạc",
+        "example_sentence_en": "I like music.",
+        "example_sentence_vi": "Tôi thích âm nhạc.",
+        "image": "assets/images/music.webp",
+        "alt": "Image for music"
+      },
+      {
+        "english_word": "musical instrument",
+        "pronunciation": "/ˈmjuːzɪkəl ˈɪnstrəmənt/",
+        "vietnamese_meaning": "(n): nhạc cụ",
+        "example_sentence_en": "This is a musical instrument.",
+        "example_sentence_vi": "Đây là nhạc cụ.",
+        "image": "assets/images/musical-instrument.webp",
+        "alt": "Image for musical instrument"
+      },
+      {
+        "english_word": "musician",
+        "pronunciation": "/mjuˈzɪʃn/",
+        "vietnamese_meaning": "(n): nhạc sĩ",
+        "example_sentence_en": "This is a musician.",
+        "example_sentence_vi": "Đây là nhạc sĩ.",
+        "image": "assets/images/musician.webp",
+        "alt": "Image for musician"
+      },
+      {
+        "english_word": "orchestra",
+        "pronunciation": "/ˈɔːkɪstrə/",
+        "vietnamese_meaning": "(n): dàn nhạc giao hưởng",
+        "example_sentence_en": "This is a orchestra.",
+        "example_sentence_vi": "Đây là dàn nhạc giao hưởng.",
+        "image": "assets/images/orchestra.webp",
+        "alt": "Image for orchestra"
+      },
+      {
+        "english_word": "piano",
+        "pronunciation": "/piˈænəʊ/",
+        "vietnamese_meaning": "(n): đàn piano",
+        "example_sentence_en": "This is a piano.",
+        "example_sentence_vi": "Đây là đàn piano.",
+        "image": "assets/images/piano.webp",
+        "alt": "Image for piano"
+      },
+      {
+        "english_word": "singing",
+        "pronunciation": "/ˈsɪŋɪŋ/",
+        "vietnamese_meaning": "(n): ca hát",
+        "example_sentence_en": "I like singing.",
+        "example_sentence_vi": "Tôi thích ca hát.",
+        "image": "assets/images/singing.webp",
+        "alt": "Image for singing"
+      },
+      {
+        "english_word": "compose",
+        "pronunciation": "/kəmˈpəʊz/",
+        "vietnamese_meaning": "(v): soạn, biên soạn",
+        "example_sentence_en": "I compose every day.",
+        "example_sentence_vi": "Tôi thường soạn.",
+        "image": "assets/images/compose.webp",
+        "alt": "Image for compose"
+      }
+    ]
+  },
+  {
+    "group": "Visual Arts",
+    "words": [
+      {
+        "english_word": "art collection",
+        "pronunciation": "/ɑːt kəˈlɛkʃən/",
+        "vietnamese_meaning": "(n): bộ sưu tập nghệ thuật",
+        "example_sentence_en": "This is a art collection.",
+        "example_sentence_vi": "Đây là bộ sưu tập nghệ thuật.",
+        "image": "assets/images/art-collection.webp",
+        "alt": "Image for art collection"
+      },
+      {
+        "english_word": "camera",
+        "pronunciation": "/ˈkæmərə/",
+        "vietnamese_meaning": "(n): máy ảnh",
+        "example_sentence_en": "This is a camera.",
+        "example_sentence_vi": "Đây là máy ảnh.",
+        "image": "assets/images/camera.webp",
+        "alt": "Image for camera"
+      },
+      {
+        "english_word": "drawing",
+        "pronunciation": "/ˈdrɔːɪŋ/",
+        "vietnamese_meaning": "(n): bản vẽ",
+        "example_sentence_en": "I like drawing.",
+        "example_sentence_vi": "Tôi thích bản vẽ.",
+        "image": "assets/images/drawing.webp",
+        "alt": "Image for drawing"
+      },
+      {
+        "english_word": "exhibition",
+        "pronunciation": "/ˌeksɪˈbɪʃn/",
+        "vietnamese_meaning": "(n): triển lãm",
+        "example_sentence_en": "This is a exhibition.",
+        "example_sentence_vi": "Đây là triển lãm.",
+        "image": "assets/images/exhibition.webp",
+        "alt": "Image for exhibition"
+      },
+      {
+        "english_word": "folk art",
+        "pronunciation": "/fəʊk ɑːt/",
+        "vietnamese_meaning": "(n): nghệ thuật dân gian",
+        "example_sentence_en": "This is a folk art.",
+        "example_sentence_vi": "Đây là nghệ thuật dân gian.",
+        "image": "assets/images/folk-art.webp",
+        "alt": "Image for folk art"
+      },
+      {
+        "english_word": "gallery",
+        "pronunciation": "/ˈɡæləri/",
+        "vietnamese_meaning": "(n): phòng triển lãm tranh",
+        "example_sentence_en": "This is a gallery.",
+        "example_sentence_vi": "Đây là phòng triển lãm tranh.",
+        "image": "assets/images/gallery.webp",
+        "alt": "Image for gallery"
+      },
+      {
+        "english_word": "landscape",
+        "pronunciation": "/ˈlændskeɪp/",
+        "vietnamese_meaning": "(n): phong cảnh (chủ đề tranh)",
+        "example_sentence_en": "This is a landscape.",
+        "example_sentence_vi": "Đây là phong cảnh (chủ đề tranh).",
+        "image": "assets/images/landscape.webp",
+        "alt": "Image for landscape"
+      },
+      {
+        "english_word": "modern art",
+        "pronunciation": "/ˈmɒdn ɑːt/",
+        "vietnamese_meaning": "(n): nghệ thuật hiện đại",
+        "example_sentence_en": "This is a modern art.",
+        "example_sentence_vi": "Đây là nghệ thuật hiện đại.",
+        "image": "assets/images/modern-art.webp",
+        "alt": "Image for modern art"
+      },
+      {
+        "english_word": "paintbrush",
+        "pronunciation": "/ˈpeɪntbrʌʃ/",
+        "vietnamese_meaning": "(n): cọ vẽ",
+        "example_sentence_en": "This is a paintbrush.",
+        "example_sentence_vi": "Đây là cọ vẽ.",
+        "image": "assets/images/paintbrush.webp",
+        "alt": "Image for paintbrush"
+      },
+      {
+        "english_word": "painting",
+        "pronunciation": "/ˈpeɪntɪŋ/",
+        "vietnamese_meaning": "(n): hội họa, bức tranh",
+        "example_sentence_en": "I like painting.",
+        "example_sentence_vi": "Tôi thích hội họa.",
+        "image": "assets/images/painting.webp",
+        "alt": "Image for painting"
+      },
+      {
+        "english_word": "photography",
+        "pronunciation": "/fəˈtɒɡrəfi/",
+        "vietnamese_meaning": "(n): nhiếp ảnh",
+        "example_sentence_en": "I like photography.",
+        "example_sentence_vi": "Tôi thích nhiếp ảnh.",
+        "image": "assets/images/photography.webp",
+        "alt": "Image for photography"
+      },
+      {
+        "english_word": "portrait",
+        "pronunciation": "/ˈpɔːtreɪt/",
+        "vietnamese_meaning": "(n): chân dung",
+        "example_sentence_en": "This is a portrait.",
+        "example_sentence_vi": "Đây là chân dung.",
+        "image": "assets/images/portrait.webp",
+        "alt": "Image for portrait"
+      },
+      {
+        "english_word": "sculpture",
+        "pronunciation": "/ˈskʌlptʃə/",
+        "vietnamese_meaning": "(n): điêu khắc, tác phẩm điêu khắc",
+        "example_sentence_en": "This is a sculpture.",
+        "example_sentence_vi": "Đây là điêu khắc.",
+        "image": "assets/images/sculpture.webp",
+        "alt": "Image for sculpture"
+      },
+      {
+        "english_word": "street painting",
+        "pronunciation": "/striːt ˈpeɪntɪŋ/",
+        "vietnamese_meaning": "(n): tranh đường phố",
+        "example_sentence_en": "This is a street painting.",
+        "example_sentence_vi": "Đây là tranh đường phố.",
+        "image": "assets/images/street-painting.webp",
+        "alt": "Image for street painting"
+      },
+      {
+        "english_word": "taking photos",
+        "pronunciation": "/ˈteɪkɪŋ ˈfəʊtəʊz/",
+        "vietnamese_meaning": "(n): chụp ảnh",
+        "example_sentence_en": "I like taking photos.",
+        "example_sentence_vi": "Tôi thích chụp ảnh.",
+        "image": "assets/images/taking-photos.webp",
+        "alt": "Image for taking photos"
+      },
+      {
+        "english_word": "work of art",
+        "pronunciation": "/wɜːk əv ɑːt/",
+        "vietnamese_meaning": "(n): tác phẩm nghệ thuật",
+        "example_sentence_en": "This is a work of art.",
+        "example_sentence_vi": "Đây là tác phẩm nghệ thuật.",
+        "image": "assets/images/work-of-art.webp",
+        "alt": "Image for work of art"
+      }
+    ]
+  },
+  {
+    "group": "Performing Arts",
+    "words": [
+      {
+        "english_word": "actor",
+        "pronunciation": "/ˈæktə/",
+        "vietnamese_meaning": "(n): nam diễn viên",
+        "example_sentence_en": "This is a actor.",
+        "example_sentence_vi": "Đây là nam diễn viên.",
+        "image": "assets/images/actor.webp",
+        "alt": "Image for actor"
+      },
+      {
+        "english_word": "actress",
+        "pronunciation": "/ˈæktrəs/",
+        "vietnamese_meaning": "(n): nữ diễn viên",
+        "example_sentence_en": "This is a actress.",
+        "example_sentence_vi": "Đây là nữ diễn viên.",
+        "image": "assets/images/actress.webp",
+        "alt": "Image for actress"
+      },
+      {
+        "english_word": "character",
+        "pronunciation": "/ˈkærəktə/",
+        "vietnamese_meaning": "(n): nhân vật (trong phim, tác phẩm văn học …)",
+        "example_sentence_en": "This is a character.",
+        "example_sentence_vi": "Đây là nhân vật (trong phim.",
+        "image": "assets/images/character.webp",
+        "alt": "Image for character"
+      },
+      {
+        "english_word": "control",
+        "pronunciation": "/kənˈtrəʊl/",
+        "vietnamese_meaning": "(v): điều khiển",
+        "example_sentence_en": "I control every day.",
+        "example_sentence_vi": "Tôi thường điều khiển.",
+        "image": "assets/images/control.webp",
+        "alt": "Image for control"
+      },
+      {
+        "english_word": "drama",
+        "pronunciation": "/ˈdrɑːmə/",
+        "vietnamese_meaning": "(n): kịch, tuồng",
+        "example_sentence_en": "This is a drama.",
+        "example_sentence_vi": "Đây là kịch.",
+        "image": "assets/images/drama.webp",
+        "alt": "Image for drama"
+      },
+      {
+        "english_word": "originate",
+        "pronunciation": "/əˈrɪdʒɪneɪt/",
+        "vietnamese_meaning": "(v): bắt nguồn, xuất phát từ",
+        "example_sentence_en": "I originate every day.",
+        "example_sentence_vi": "Tôi thường bắt nguồn.",
+        "image": "assets/images/originate.webp",
+        "alt": "Image for originate"
+      },
+      {
+        "english_word": "perform",
+        "pronunciation": "/pəˈfɔːm/",
+        "vietnamese_meaning": "(v): biểu diễn, trình diễn",
+        "example_sentence_en": "I perform every day.",
+        "example_sentence_vi": "Tôi thường biểu diễn.",
+        "image": "assets/images/perform.webp",
+        "alt": "Image for perform"
+      },
+      {
+        "english_word": "performance",
+        "pronunciation": "/pəˈfɔːməns/",
+        "vietnamese_meaning": "(n): buổi biểu diễn",
+        "example_sentence_en": "This is a performance.",
+        "example_sentence_vi": "Đây là buổi biểu diễn.",
+        "image": "assets/images/performance.webp",
+        "alt": "Image for performance"
+      },
+      {
+        "english_word": "puppet",
+        "pronunciation": "/ˈpʌpɪt/",
+        "vietnamese_meaning": "(n): con rối",
+        "example_sentence_en": "This is a puppet.",
+        "example_sentence_vi": "Đây là con rối.",
+        "image": "assets/images/puppet.webp",
+        "alt": "Image for puppet"
+      },
+      {
+        "english_word": "puppet theatre",
+        "pronunciation": "/ˈpʌpɪt ˈθɪətə/",
+        "vietnamese_meaning": "(n): nhà hát múa rối",
+        "example_sentence_en": "This is a puppet theatre.",
+        "example_sentence_vi": "Đây là nhà hát múa rối.",
+        "image": "assets/images/puppet-theatre.webp",
+        "alt": "Image for puppet theatre"
+      },
+      {
+        "english_word": "water puppet show",
+        "pronunciation": "/ˈwɔːtə ˈpʌpɪt ʃəʊ/",
+        "vietnamese_meaning": "(n): buổi biểu diễn múa rối nước",
+        "example_sentence_en": "This is a water puppet show.",
+        "example_sentence_vi": "Đây là một buổi biểu diễn múa rối nước.",
+        "image": "assets/images/water-puppet-show.webp",
+        "alt": "Image for water puppet show"
+      },
+      {
+        "english_word": "water puppetry",
+        "pronunciation": "/ˈwɔːtə ˈpʌpɪtri/",
+        "vietnamese_meaning": "(n): nghệ thuật múa rối nước",
+        "example_sentence_en": "This is a water puppetry.",
+        "example_sentence_vi": "Đây là nghệ thuật múa rối nước.",
+        "image": "assets/images/water-puppetry.webp",
+        "alt": "Image for water puppetry"
+      }
+    ]
+  },
+  {
+    "group": "Places",
+    "words": [
+      {
+        "english_word": "art gallery",
+        "pronunciation": "/ɑːt ˈɡæləri/",
+        "vietnamese_meaning": "(n): phòng trưng bày nghệ thuật",
+        "example_sentence_en": "This is a art gallery.",
+        "example_sentence_vi": "Đây là phòng trưng bày nghệ thuật.",
+        "image": "assets/images/art-gallery.webp",
+        "alt": "Image for art gallery"
+      },
+      {
+        "english_word": "concert hall",
+        "pronunciation": "/ˈkɒnsət hɔːl/",
+        "vietnamese_meaning": "(n): phòng hòa nhạc",
+        "example_sentence_en": "This is a concert hall.",
+        "example_sentence_vi": "Đây là phòng hòa nhạc.",
+        "image": "assets/images/concert-hall.webp",
+        "alt": "Image for concert hall"
+      },
+      {
+        "english_word": "festival",
+        "pronunciation": "/ˈfestɪvəl/",
+        "vietnamese_meaning": "(n): lễ hội",
+        "example_sentence_en": "This is a festival.",
+        "example_sentence_vi": "Đây là lễ hội.",
+        "image": "assets/images/festival.webp",
+        "alt": "Image for festival"
+      },
+      {
+        "english_word": "museum",
+        "pronunciation": "/mjuˈziːəm/",
+        "vietnamese_meaning": "(n): bảo tàng",
+        "example_sentence_en": "This is a museum.",
+        "example_sentence_vi": "Đây là bảo tàng.",
+        "image": "assets/images/museum.webp",
+        "alt": "Image for museum"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "art",
+        "pronunciation": "/ɑːt/",
+        "vietnamese_meaning": "(n): nghệ thuật (nói chung)",
+        "example_sentence_en": "I like art.",
+        "example_sentence_vi": "Tôi thích nghệ thuật (nói chung).",
+        "image": "assets/images/art.webp",
+        "alt": "Image for art"
+      },
+      {
+        "english_word": "artist",
+        "pronunciation": "/ˈɑːtɪst/",
+        "vietnamese_meaning": "(n): nghệ sĩ",
+        "example_sentence_en": "This is a artist.",
+        "example_sentence_vi": "Đây là nghệ sĩ.",
+        "image": "assets/images/artist.webp",
+        "alt": "Image for artist"
+      },
+      {
+        "english_word": "artistic",
+        "pronunciation": "/ɑːˈtɪstɪk/",
+        "vietnamese_meaning": "(adj): có tính nghệ thuật",
+        "example_sentence_en": "It is artistic.",
+        "example_sentence_vi": "Nó rất có tính nghệ thuật.",
+        "image": "assets/images/artistic.webp",
+        "alt": "Image for artistic"
+      },
+      {
+        "english_word": "compulsory",
+        "pronunciation": "/kəmˈpʌlsəri/",
+        "vietnamese_meaning": "(adj): bắt buộc",
+        "example_sentence_en": "It is compulsory.",
+        "example_sentence_vi": "Nó rất bắt buộc.",
+        "image": "assets/images/compulsory.webp",
+        "alt": "Image for compulsory"
+      },
+      {
+        "english_word": "creative",
+        "pronunciation": "/kriˈeɪtɪv/",
+        "vietnamese_meaning": "(adj): sáng tạo",
+        "example_sentence_en": "It is creative.",
+        "example_sentence_vi": "Nó rất sáng tạo.",
+        "image": "assets/images/creative.webp",
+        "alt": "Image for creative"
+      },
+      {
+        "english_word": "impressive",
+        "pronunciation": "/ɪmˈpresɪv/",
+        "vietnamese_meaning": "(adj): ấn tượng",
+        "example_sentence_en": "It is impressive.",
+        "example_sentence_vi": "Nó rất ấn tượng.",
+        "image": "assets/images/impressive.webp",
+        "alt": "Image for impressive"
+      },
+      {
+        "english_word": "optional",
+        "pronunciation": "/ˈɒpʃənl/",
+        "vietnamese_meaning": "(adj): không bắt buộc, tùy chọn",
+        "example_sentence_en": "It is optional.",
+        "example_sentence_vi": "Nó rất không bắt buộc.",
+        "image": "assets/images/optional.webp",
+        "alt": "Image for optional"
+      },
+      {
+        "english_word": "traditional art form",
+        "pronunciation": "/trəˈdɪʃənl ɑːt fɔːm/",
+        "vietnamese_meaning": "(n): loại hình nghệ thuật truyền thống",
+        "example_sentence_en": "This is a traditional art form.",
+        "example_sentence_vi": "Đây là loại hình nghệ thuật truyền thống.",
+        "image": "assets/images/traditional-art-form.webp",
+        "alt": "Image for traditional art form"
+      }
+    ]
+  }
+]

@@ -1,0 +1,378 @@
+[
+  {
+    "group": "School Facilities",
+    "words": [
+      {
+        "english_word": "activity studio",
+        "pronunciation": "/əkˈtɪvəti ˈstjuːdiəʊ/",
+        "vietnamese_meaning": "(n): phòng sinh hoạt",
+        "example_sentence_en": "This is a activity studio.",
+        "example_sentence_vi": "Đây là phòng sinh hoạt.",
+        "image": "assets/images/activity-studio.webp",
+        "alt": "Image for activity studio"
+      },
+      {
+        "english_word": "classroom",
+        "pronunciation": "/ˈklɑːsruːm/",
+        "vietnamese_meaning": "(n): lớp học",
+        "example_sentence_en": "This is a classroom.",
+        "example_sentence_vi": "Đây là lớp học.",
+        "image": "assets/images/classroom.webp",
+        "alt": "Image for classroom"
+      },
+      {
+        "english_word": "computer room",
+        "pronunciation": "/kəmˈpjuːtə ruːm/",
+        "vietnamese_meaning": "(n): phòng máy tính",
+        "example_sentence_en": "This is a computer room.",
+        "example_sentence_vi": "Đây là phòng máy tính.",
+        "image": "assets/images/computer-room.webp",
+        "alt": "Image for computer room"
+      },
+      {
+        "english_word": "English lab",
+        "pronunciation": "/ˈɪŋɡlɪʃ læb/",
+        "vietnamese_meaning": "(n): phòng thực hành tiếng Anh",
+        "example_sentence_en": "This is a English lab.",
+        "example_sentence_vi": "Đây là phòng thực hành tiếng Anh.",
+        "image": "assets/images/english-lab.webp",
+        "alt": "Image for English lab"
+      },
+      {
+        "english_word": "gym",
+        "pronunciation": "/dʒɪm/",
+        "vietnamese_meaning": "(n): phòng tập thể dục",
+        "example_sentence_en": "This is a gym.",
+        "example_sentence_vi": "Đây là phòng tập thể dục.",
+        "image": "assets/images/gym.webp",
+        "alt": "Image for gym"
+      },
+      {
+        "english_word": "library",
+        "pronunciation": "/ˈlaɪbrəri/",
+        "vietnamese_meaning": "(n): thư viện",
+        "example_sentence_en": "This is a library.",
+        "example_sentence_vi": "Đây là thư viện.",
+        "image": "assets/images/library.webp",
+        "alt": "Image for library"
+      },
+      {
+        "english_word": "playground",
+        "pronunciation": "/ˈpleɪɡraʊnd/",
+        "vietnamese_meaning": "(n): sân chơi",
+        "example_sentence_en": "This is a playground.",
+        "example_sentence_vi": "Đây là sân chơi.",
+        "image": "assets/images/playground.webp",
+        "alt": "Image for playground"
+      },
+      {
+        "english_word": "projector",
+        "pronunciation": "/prəˈdʒektə/",
+        "vietnamese_meaning": "(n): máy chiếu",
+        "example_sentence_en": "This is a projector.",
+        "example_sentence_vi": "Đây là máy chiếu.",
+        "image": "assets/images/projector.webp",
+        "alt": "Image for projector"
+      },
+      {
+        "english_word": "school garden",
+        "pronunciation": "/skuːl ˈɡɑːdn/",
+        "vietnamese_meaning": "(n): vườn trường",
+        "example_sentence_en": "This is a school garden.",
+        "example_sentence_vi": "Đây là vườn trường.",
+        "image": "assets/images/school-garden.webp",
+        "alt": "Image for school garden"
+      },
+      {
+        "english_word": "science laboratory",
+        "pronunciation": "/ˈsaɪəns ləˈbɒrətəri/",
+        "vietnamese_meaning": "(n): phòng thí nghiệm khoa học",
+        "example_sentence_en": "This is a science laboratory.",
+        "example_sentence_vi": "Đây là phòng thí nghiệm khoa học.",
+        "image": "assets/images/science-laboratory.webp",
+        "alt": "Image for science laboratory"
+      },
+      {
+        "english_word": "sports hall",
+        "pronunciation": "/spɔːts hɔːl/",
+        "vietnamese_meaning": "(n): nhà thi đấu thể thao",
+        "example_sentence_en": "This is a sports hall.",
+        "example_sentence_vi": "Đây là nhà thi đấu thể thao.",
+        "image": "assets/images/sports-hall.webp",
+        "alt": "Image for sports hall"
+      },
+      {
+        "english_word": "swimming pool",
+        "pronunciation": "/ˈswɪmɪŋ puːl/",
+        "vietnamese_meaning": "(n): bể bơi",
+        "example_sentence_en": "I like swimming pool.",
+        "example_sentence_vi": "Tôi thích bể bơi.",
+        "image": "assets/images/swimming-pool.webp",
+        "alt": "Image for swimming pool"
+      }
+    ]
+  },
+  {
+    "group": "School Activities",
+    "words": [
+      {
+        "english_word": "clean streets",
+        "pronunciation": "/kliːn striːts/",
+        "vietnamese_meaning": "(v. phrase): quét dọn đường phố",
+        "example_sentence_en": "I clean streets every day.",
+        "example_sentence_vi": "Tôi thường quét dọn đường phố.",
+        "image": "assets/images/clean-streets.webp",
+        "alt": "Image for clean streets"
+      },
+      {
+        "english_word": "grow vegetables",
+        "pronunciation": "/ɡrəʊ ˈvedʒtəblz/",
+        "vietnamese_meaning": "(v. phrase): trồng rau",
+        "example_sentence_en": "I grow vegetables every day.",
+        "example_sentence_vi": "Tôi thường trồng rau.",
+        "image": "assets/images/grow-vegetables.webp",
+        "alt": "Image for grow vegetables"
+      },
+      {
+        "english_word": "outdoor activities",
+        "pronunciation": "/ˌaʊtˈdɔːr ækˈtɪvətiz/",
+        "vietnamese_meaning": "(n): hoạt động ngoài trời",
+        "example_sentence_en": "These are outdoor activities.",
+        "example_sentence_vi": "Đây là hoạt động ngoài trời.",
+        "image": "assets/images/outdoor-activities.webp",
+        "alt": "Image for outdoor activities"
+      },
+      {
+        "english_word": "school trips",
+        "pronunciation": "/skuːl trɪps/",
+        "vietnamese_meaning": "(n): chuyến đi thực tế",
+        "example_sentence_en": "These are school trips.",
+        "example_sentence_vi": "Đây là chuyến đi thực tế.",
+        "image": "assets/images/school-trips.webp",
+        "alt": "Image for school trips"
+      }
+    ]
+  },
+  {
+    "group": "Academic Terms",
+    "words": [
+      {
+        "english_word": "entrance examination",
+        "pronunciation": "/ˈentrəns ɪɡˌzæmɪˈneɪʃn/",
+        "vietnamese_meaning": "(n): kỳ thi tuyển sinh",
+        "example_sentence_en": "This is a entrance examination.",
+        "example_sentence_vi": "Đây là kỳ thi tuyển sinh.",
+        "image": "assets/images/entrance-examination.webp",
+        "alt": "Image for entrance examination"
+      },
+      {
+        "english_word": "first-term",
+        "pronunciation": "/ˌfɜːst tɜːm/",
+        "vietnamese_meaning": "(n): học kì 1",
+        "example_sentence_en": "This is a first-term.",
+        "example_sentence_vi": "Đây là học kì 1.",
+        "image": "assets/images/first-term.webp",
+        "alt": "Image for first-term"
+      },
+      {
+        "english_word": "midterm",
+        "pronunciation": "/ˌmɪdˈtɜːm/",
+        "vietnamese_meaning": "(adj): giữa học kì",
+        "example_sentence_en": "It is midterm.",
+        "example_sentence_vi": "Nó rất giữa học kì.",
+        "image": "assets/images/midterm.webp",
+        "alt": "Image for midterm"
+      },
+      {
+        "english_word": "school timetable",
+        "pronunciation": "/skuːl ˈtaɪmteɪbl/",
+        "vietnamese_meaning": "(n): thời khóa biểu",
+        "example_sentence_en": "This is a school timetable.",
+        "example_sentence_vi": "Đây là thời khóa biểu.",
+        "image": "assets/images/school-timetable.webp",
+        "alt": "Image for school timetable"
+      }
+    ]
+  },
+  {
+    "group": "Describing Words",
+    "words": [
+      {
+        "english_word": "beautiful",
+        "pronunciation": "/ˈbjuːtɪfl/",
+        "vietnamese_meaning": "(adj): đẹp",
+        "example_sentence_en": "It is beautiful.",
+        "example_sentence_vi": "Nó rất đẹp.",
+        "image": "assets/images/beautiful.webp",
+        "alt": "Image for beautiful"
+      },
+      {
+        "english_word": "famous",
+        "pronunciation": "/ˈfeɪməs/",
+        "vietnamese_meaning": "(adj): nổi tiếng",
+        "example_sentence_en": "It is famous.",
+        "example_sentence_vi": "Nó rất nổi tiếng.",
+        "image": "assets/images/famous.webp",
+        "alt": "Image for famous"
+      },
+      {
+        "english_word": "gifted",
+        "pronunciation": "/ˈɡɪftɪd/",
+        "vietnamese_meaning": "(adj): có năng khiếu",
+        "example_sentence_en": "It is gifted.",
+        "example_sentence_vi": "Nó rất có năng khiếu.",
+        "image": "assets/images/gifted.webp",
+        "alt": "Image for gifted"
+      },
+      {
+        "english_word": "hard-working",
+        "pronunciation": "/ˌhɑːd ˈwɜːkɪŋ/",
+        "vietnamese_meaning": "(adj): chăm chỉ",
+        "example_sentence_en": "It is hard-working.",
+        "example_sentence_vi": "Nó rất chăm chỉ.",
+        "image": "assets/images/hard-working.webp",
+        "alt": "Image for hard-working"
+      },
+      {
+        "english_word": "intelligent",
+        "pronunciation": "/ɪnˈtelɪdʒənt/",
+        "vietnamese_meaning": "(adj): thông minh",
+        "example_sentence_en": "It is intelligent.",
+        "example_sentence_vi": "Nó rất thông minh.",
+        "image": "assets/images/intelligent.webp",
+        "alt": "Image for intelligent"
+      },
+      {
+        "english_word": "modern",
+        "pronunciation": "/ˈmɒdn/",
+        "vietnamese_meaning": "(adj): hiện đại",
+        "example_sentence_en": "It is modern.",
+        "example_sentence_vi": "Nó rất hiện đại.",
+        "image": "assets/images/modern.webp",
+        "alt": "Image for modern"
+      },
+      {
+        "english_word": "talented",
+        "pronunciation": "/ˈtæləntɪd/",
+        "vietnamese_meaning": "(adj): tài năng",
+        "example_sentence_en": "It is talented.",
+        "example_sentence_vi": "Nó rất tài năng.",
+        "image": "assets/images/talented.webp",
+        "alt": "Image for talented"
+      },
+      {
+        "english_word": "well-known",
+        "pronunciation": "/ˌwel ˈnəʊn/",
+        "vietnamese_meaning": "(adj): nổi tiếng",
+        "example_sentence_en": "It is well-known.",
+        "example_sentence_vi": "Nó rất nổi tiếng.",
+        "image": "assets/images/well-known.webp",
+        "alt": "Image for well-known"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "celebrate",
+        "pronunciation": "/ˈselɪbreɪt/",
+        "vietnamese_meaning": "(v): tổ chức, kỷ niệm",
+        "example_sentence_en": "I celebrate every day.",
+        "example_sentence_vi": "Tôi thường tổ chức.",
+        "image": "assets/images/celebrate.webp",
+        "alt": "Image for celebrate"
+      },
+      {
+        "english_word": "encourage",
+        "pronunciation": "/ɪnˈkʌrɪdʒ/",
+        "vietnamese_meaning": "(v): khuyến khích",
+        "example_sentence_en": "I encourage every day.",
+        "example_sentence_vi": "Tôi thường khuyến khích.",
+        "image": "assets/images/encourage.webp",
+        "alt": "Image for encourage"
+      },
+      {
+        "english_word": "equipment",
+        "pronunciation": "/ɪˈkwɪpmənt/",
+        "vietnamese_meaning": "(n): thiết bị",
+        "example_sentence_en": "I like equipment.",
+        "example_sentence_vi": "Tôi thích thiết bị.",
+        "image": "assets/images/equipment.webp",
+        "alt": "Image for equipment"
+      },
+      {
+        "english_word": "found",
+        "pronunciation": "/ˈfaʊndɪd/",
+        "vietnamese_meaning": "(v): thành lập",
+        "example_sentence_en": "I found every day.",
+        "example_sentence_vi": "Tôi thường thành lập.",
+        "image": "assets/images/found.webp",
+        "alt": "Image for found"
+      },
+      {
+        "english_word": "nowadays",
+        "pronunciation": "/ˈnaʊədeɪz/",
+        "vietnamese_meaning": "(adv): ngày nay",
+        "example_sentence_en": "These are nowadays.",
+        "example_sentence_vi": "Đây là ngày nay.",
+        "image": "assets/images/nowadays.webp",
+        "alt": "Image for nowadays"
+      },
+      {
+        "english_word": "paragraph",
+        "pronunciation": "/ˈpærəɡrɑːf/",
+        "vietnamese_meaning": "(n): đoạn văn",
+        "example_sentence_en": "This is a paragraph.",
+        "example_sentence_vi": "Đây là đoạn văn.",
+        "image": "assets/images/paragraph.webp",
+        "alt": "Image for paragraph"
+      },
+      {
+        "english_word": "private",
+        "pronunciation": "/ˈpraɪvət/",
+        "vietnamese_meaning": "(adj): riêng tư",
+        "example_sentence_en": "It is private.",
+        "example_sentence_vi": "Nó rất riêng tư.",
+        "image": "assets/images/private.webp",
+        "alt": "Image for private"
+      },
+      {
+        "english_word": "project",
+        "pronunciation": "/ˈprɒdʒekt/",
+        "vietnamese_meaning": "(n): dự án",
+        "example_sentence_en": "This is a project.",
+        "example_sentence_vi": "Đây là dự án.",
+        "image": "assets/images/project.webp",
+        "alt": "Image for project"
+      },
+      {
+        "english_word": "resources",
+        "pronunciation": "/rɪˈzɔːsɪz/",
+        "vietnamese_meaning": "(n): tài nguyên, nguồn lực",
+        "example_sentence_en": "These are resources.",
+        "example_sentence_vi": "Đây là tài nguyên.",
+        "image": "assets/images/resources.webp",
+        "alt": "Image for resources"
+      },
+      {
+        "english_word": "royal",
+        "pronunciation": "/ˈrɔɪəl/",
+        "vietnamese_meaning": "(adj): thuộc hoàng gia",
+        "example_sentence_en": "It is royal.",
+        "example_sentence_vi": "Nó rất thuộc hoàng gia.",
+        "image": "assets/images/royal.webp",
+        "alt": "Image for royal"
+      },
+      {
+        "english_word": "take part in",
+        "pronunciation": "/teɪk pɑːt ɪn/",
+        "vietnamese_meaning": "(v. phrase): tham gia vào",
+        "example_sentence_en": "I take part in every day.",
+        "example_sentence_vi": "Tôi thường tham gia vào.",
+        "image": "assets/images/take-part-in.webp",
+        "alt": "Image for take part in"
+      }
+    ]
+  }
+]

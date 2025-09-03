@@ -123,7 +123,7 @@ class PictureTypingEnGame extends GameBase {
                         <div class="text-lg text-gray-700 mb-3 text-center lg:text-left">
                             <span class="inline-block bg-indigo-100 text-indigo-700 font-semibold px-3 py-1 rounded-full">${question.vietnamese}</span>
                         </div>
-                        <div class="flex gap-2">
+                        <div class="flex flex-col gap-2">
                             <input id="answer-input-${this.gameId}" type="text" class="answer-input flex-1 border-2 border-gray-200 rounded-lg p-2 md:p-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Gõ từ tiếng Anh..." autocomplete="off" />
                             <button id="submit-answer-btn-${this.gameId}" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-base md:text-lg">Submit</button>
                         </div>

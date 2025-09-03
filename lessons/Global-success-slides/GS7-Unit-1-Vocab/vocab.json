@@ -1,0 +1,463 @@
+[
+  {
+    "group": "Hobby Activities",
+    "words": [
+      {
+        "english_word": "building dollhouses",
+        "pronunciation": "/ˈbɪldɪŋ ˈdɒlhaʊzɪz/",
+        "vietnamese_meaning": "(n. phrase): xây nhà búp bê",
+        "example_sentence_en": "I like building dollhouses.",
+        "example_sentence_vi": "Tôi thích xây nhà búp bê.",
+        "image": "assets/images/building-dollhouses.webp",
+        "alt": "Image for building dollhouses"
+      },
+      {
+        "english_word": "camping",
+        "pronunciation": "/ˈkæmpɪŋ/",
+        "vietnamese_meaning": "(n): cắm trại",
+        "example_sentence_en": "I like camping.",
+        "example_sentence_vi": "Tôi thích cắm trại.",
+        "image": "assets/images/camping.webp",
+        "alt": "Image for camping"
+      },
+      {
+        "english_word": "collecting coins",
+        "pronunciation": "/kəˈlektɪŋ kɔɪnz/",
+        "vietnamese_meaning": "(n. phrase): sưu tập tiền xu",
+        "example_sentence_en": "I like collecting coins.",
+        "example_sentence_vi": "Tôi thích sưu tập tiền xu.",
+        "image": "assets/images/collecting-coins.webp",
+        "alt": "Image for collecting coins"
+      },
+      {
+        "english_word": "collecting stamps",
+        "pronunciation": "/kəˈlektɪŋ stæmps/",
+        "vietnamese_meaning": "(n. phrase): sưu tập tem",
+        "example_sentence_en": "I like collecting stamps.",
+        "example_sentence_vi": "Tôi thích sưu tập tem.",
+        "image": "assets/images/collecting-stamps.webp",
+        "alt": "Image for collecting stamps"
+      },
+      {
+        "english_word": "collecting teddy bears",
+        "pronunciation": "/kəˈlektɪŋ ˈtɛdi beəz/",
+        "vietnamese_meaning": "(n. phrase): sưu tập gấu bông",
+        "example_sentence_en": "I like collecting teddy bears.",
+        "example_sentence_vi": "Tôi thích sưu tập gấu bông.",
+        "image": "assets/images/collecting-teddy-bears.webp",
+        "alt": "Image for collecting teddy bears"
+      },
+      {
+        "english_word": "cooking",
+        "pronunciation": "/ˈkʊkɪŋ/",
+        "vietnamese_meaning": "(n): nấu ăn",
+        "example_sentence_en": "I like cooking.",
+        "example_sentence_vi": "Tôi thích nấu ăn.",
+        "image": "assets/images/cooking.webp",
+        "alt": "Image for cooking"
+      },
+      {
+        "english_word": "drawing",
+        "pronunciation": "/ˈdrɔːɪŋ/",
+        "vietnamese_meaning": "(n): vẽ",
+        "example_sentence_en": "I like drawing.",
+        "example_sentence_vi": "Tôi thích vẽ.",
+        "image": "assets/images/drawing.webp",
+        "alt": "Image for drawing"
+      },
+      {
+        "english_word": "gardening",
+        "pronunciation": "/ˈɡɑːdnɪŋ/",
+        "vietnamese_meaning": "(n): làm vườn",
+        "example_sentence_en": "I like gardening.",
+        "example_sentence_vi": "Tôi thích làm vườn.",
+        "image": "assets/images/gardening.webp",
+        "alt": "Image for gardening"
+      },
+      {
+        "english_word": "horse riding",
+        "pronunciation": "/hɔːs ˈraɪdɪŋ/",
+        "vietnamese_meaning": "(n. phrase): cưỡi ngựa",
+        "example_sentence_en": "This is a horse riding.",
+        "example_sentence_vi": "Đây là cưỡi ngựa.",
+        "image": "assets/images/horse-riding.webp",
+        "alt": "Image for horse riding"
+      },
+      {
+        "english_word": "jogging",
+        "pronunciation": "/ˈdʒɒɡɪŋ/",
+        "vietnamese_meaning": "(n): chạy bộ",
+        "example_sentence_en": "I like jogging.",
+        "example_sentence_vi": "Tôi thích chạy bộ.",
+        "image": "assets/images/jogging.webp",
+        "alt": "Image for jogging"
+      },
+      {
+        "english_word": "judo",
+        "pronunciation": "/ˈdʒuːdəʊ/",
+        "vietnamese_meaning": "(n): võ judo",
+        "example_sentence_en": "This is a judo.",
+        "example_sentence_vi": "Đây là võ judo.",
+        "image": "assets/images/judo.webp",
+        "alt": "Image for judo"
+      },
+      {
+        "english_word": "making models",
+        "pronunciation": "/ˈmeɪkɪŋ ˈmɒdəlz/",
+        "vietnamese_meaning": "(n. phrase): làm mô hình",
+        "example_sentence_en": "I like making models.",
+        "example_sentence_vi": "Tôi thích làm mô hình.",
+        "image": "assets/images/making-models.webp",
+        "alt": "Image for making models"
+      },
+      {
+        "english_word": "painting",
+        "pronunciation": "/ˈpeɪntɪŋ/",
+        "vietnamese_meaning": "(n): vẽ tranh",
+        "example_sentence_en": "I like painting.",
+        "example_sentence_vi": "Tôi thích vẽ tranh.",
+        "image": "assets/images/painting.webp",
+        "alt": "Image for painting"
+      },
+      {
+        "english_word": "playing computer games",
+        "pronunciation": "/ˈpleɪɪŋ kəmˈpjuːtə ɡeɪmz/",
+        "vietnamese_meaning": "(n. phrase): chơi trò chơi điện tử",
+        "example_sentence_en": "I like playing computer games.",
+        "example_sentence_vi": "Tôi thích chơi trò chơi điện tử.",
+        "image": "assets/images/playing-computer-games.webp",
+        "alt": "Image for playing computer games"
+      },
+      {
+        "english_word": "playing the violin",
+        "pronunciation": "/ˈpleɪɪŋ ðə ˈvaɪəlɪn/",
+        "vietnamese_meaning": "(n. phrase): chơi đàn vi-ô-lông",
+        "example_sentence_en": "I like playing the violin.",
+        "example_sentence_vi": "Tôi thích chơi đàn vi-ô-lông.",
+        "image": "assets/images/playing-the-violin.webp",
+        "alt": "Image for playing the violin"
+      },
+      {
+        "english_word": "reading books",
+        "pronunciation": "/ˈriːdɪŋ bʊks/",
+        "vietnamese_meaning": "(n. phrase): đọc sách",
+        "example_sentence_en": "I like reading books.",
+        "example_sentence_vi": "Tôi thích đọc sách.",
+        "image": "assets/images/reading-books.webp",
+        "alt": "Image for reading books"
+      },
+      {
+        "english_word": "swimming",
+        "pronunciation": "/ˈswɪmɪŋ/",
+        "vietnamese_meaning": "(n): bơi lội",
+        "example_sentence_en": "I like swimming.",
+        "example_sentence_vi": "Tôi thích bơi lội.",
+        "image": "assets/images/swimming.webp",
+        "alt": "Image for swimming"
+      },
+      {
+        "english_word": "yoga",
+        "pronunciation": "/ˈjəʊɡə/",
+        "vietnamese_meaning": "(n): yoga",
+        "example_sentence_en": "This is a yoga.",
+        "example_sentence_vi": "Đây là yoga.",
+        "image": "assets/images/yoga.webp",
+        "alt": "Image for yoga"
+      }
+    ]
+  },
+  {
+    "group": "Group 3: Materials & Items",
+    "words": [
+      {
+        "english_word": "cardboard",
+        "pronunciation": "/ˈkɑːdbɔːd/",
+        "vietnamese_meaning": "(n): bìa cứng",
+        "example_sentence_en": "This is a cardboard.",
+        "example_sentence_vi": "Đây là bìa cứng.",
+        "image": "assets/images/cardboard.webp",
+        "alt": "Image for cardboard"
+      },
+      {
+        "english_word": "coin",
+        "pronunciation": "/kɔɪn/",
+        "vietnamese_meaning": "(n): đồng xu",
+        "example_sentence_en": "This is a coin.",
+        "example_sentence_vi": "Đây là đồng xu.",
+        "image": "assets/images/coin.webp",
+        "alt": "Image for coin"
+      },
+      {
+        "english_word": "doll",
+        "pronunciation": "/dɒl/",
+        "vietnamese_meaning": "(n): búp bê",
+        "example_sentence_en": "This is a doll.",
+        "example_sentence_vi": "Đây là búp bê.",
+        "image": "assets/images/doll.webp",
+        "alt": "Image for doll"
+      },
+      {
+        "english_word": "glue",
+        "pronunciation": "/ɡluː/",
+        "vietnamese_meaning": "(n): keo dán",
+        "example_sentence_en": "This is a glue.",
+        "example_sentence_vi": "Đây là keo dán.",
+        "image": "assets/images/glue.webp",
+        "alt": "Image for glue"
+      }
+    ]
+  },
+  {
+    "group": "Group 5: Hobby Actions",
+    "words": [
+      {
+        "english_word": "build",
+        "pronunciation": "/bɪld/",
+        "vietnamese_meaning": "(v): xây dựng",
+        "example_sentence_en": "I build every day.",
+        "example_sentence_vi": "Tôi thường xây dựng.",
+        "image": "assets/images/build.webp",
+        "alt": "Image for build"
+      },
+      {
+        "english_word": "collect",
+        "pronunciation": "/kəˈlekt/",
+        "vietnamese_meaning": "(v): sưu tập",
+        "example_sentence_en": "I collect every day.",
+        "example_sentence_vi": "Tôi thường sưu tập.",
+        "image": "assets/images/collect.webp",
+        "alt": "Image for collect"
+      },
+      {
+        "english_word": "grow",
+        "pronunciation": "/ɡrəʊ/",
+        "vietnamese_meaning": "(v): trồng, phát triển",
+        "example_sentence_en": "I grow every day.",
+        "example_sentence_vi": "Tôi thường trồng.",
+        "image": "assets/images/grow.webp",
+        "alt": "Image for grow"
+      },
+      {
+        "english_word": "join in",
+        "pronunciation": "/dʒɔɪn ɪn/",
+        "vietnamese_meaning": "(phr. v): tham gia",
+        "example_sentence_en": "This is a join in.",
+        "example_sentence_vi": "Đây là tham gia.",
+        "image": "assets/images/join-in.webp",
+        "alt": "Image for join in"
+      },
+      {
+        "english_word": "ride",
+        "pronunciation": "/raɪd/",
+        "vietnamese_meaning": "(v): cưỡi, chạy xe 2 bánh",
+        "example_sentence_en": "I ride a bike every day.",
+        "example_sentence_vi": "Tôi chạy xe đạp mỗi ngày.",
+        "image": "assets/images/ride.webp",
+        "alt": "Image for ride"
+      },
+      {
+        "english_word": "spend time",
+        "pronunciation": "/spend taɪm/",
+        "vietnamese_meaning": "(v. phrase): dành thời gian",
+        "example_sentence_en": "I spend time every day.",
+        "example_sentence_vi": "Tôi thường dành thời gian.",
+        "image": "assets/images/spend-time.webp",
+        "alt": "Image for spend time"
+      },
+      {
+        "english_word": "take on",
+        "pronunciation": "/teɪk ɒn/",
+        "vietnamese_meaning": "(phr. v): đảm nhận",
+        "example_sentence_en": "This is a take on.",
+        "example_sentence_vi": "Đây là đảm nhận.",
+        "image": "assets/images/take-on.webp",
+        "alt": "Image for take on"
+      },
+      {
+        "english_word": "water",
+        "pronunciation": "/ˈwɔːtə(r)/",
+        "vietnamese_meaning": "(v): tưới nước",
+        "example_sentence_en": "I water every day.",
+        "example_sentence_vi": "Tôi thường tưới nước.",
+        "image": "assets/images/water.webp",
+        "alt": "Image for water"
+      }
+    ]
+  },
+  {
+    "group": "Group 6: Others",
+    "words": [
+      {
+        "english_word": "belong to",
+        "pronunciation": "/bɪˈlɒŋ tuː/",
+        "vietnamese_meaning": "(v. phrase): thuộc về",
+        "example_sentence_en": "I belong to every day.",
+        "example_sentence_vi": "Tôi thường thuộc về.",
+        "image": "assets/images/belong-to.webp",
+        "alt": "Image for belong to"
+      },
+      {
+        "english_word": "benefit",
+        "pronunciation": "/ˈbenɪfɪt/",
+        "vietnamese_meaning": "(n): lợi ích",
+        "example_sentence_en": "This is a benefit.",
+        "example_sentence_vi": "Đây là lợi ích.",
+        "image": "assets/images/benefit.webp",
+        "alt": "Image for benefit"
+      },
+      {
+        "english_word": "bug",
+        "pronunciation": "/bʌɡ/",
+        "vietnamese_meaning": "(n): con bọ",
+        "example_sentence_en": "This is a bug.",
+        "example_sentence_vi": "Đây là con bọ.",
+        "image": "assets/images/bug.webp",
+        "alt": "Image for bug"
+      },
+      {
+        "english_word": "club",
+        "pronunciation": "/klʌb/",
+        "vietnamese_meaning": "(n): câu lạc bộ",
+        "example_sentence_en": "This is a club.",
+        "example_sentence_vi": "Đây là câu lạc bộ.",
+        "image": "assets/images/club.webp",
+        "alt": "Image for club"
+      },
+      {
+        "english_word": "creativity",
+        "pronunciation": "/ˌkriːeɪˈtɪvəti/",
+        "vietnamese_meaning": "(n): sự sáng tạo",
+        "example_sentence_en": "This is a creativity.",
+        "example_sentence_vi": "Đây là sự sáng tạo.",
+        "image": "assets/images/creativity.webp",
+        "alt": "Image for creativity"
+      },
+      {
+        "english_word": "develop",
+        "pronunciation": "/dɪˈveləp/",
+        "vietnamese_meaning": "(v): phát triển",
+        "example_sentence_en": "I develop every day.",
+        "example_sentence_vi": "Tôi thường phát triển.",
+        "image": "assets/images/develop.webp",
+        "alt": "Image for develop"
+      },
+      {
+        "english_word": "easy-to-do",
+        "pronunciation": "/ˈiːzi tə duː/",
+        "vietnamese_meaning": "(adj. phrase): dễ làm",
+        "example_sentence_en": "It is easy-to-do.",
+        "example_sentence_vi": "Nó rất dễ làm.",
+        "image": "assets/images/easy-to-do.webp",
+        "alt": "Image for easy-to-do"
+      },
+      {
+        "english_word": "free time",
+        "pronunciation": "/friː taɪm/",
+        "vietnamese_meaning": "(n. phrase): thời gian rảnh",
+        "example_sentence_en": "This is a free time.",
+        "example_sentence_vi": "Đây là thời gian rảnh.",
+        "image": "assets/images/free-time.webp",
+        "alt": "Image for free time"
+      },
+      {
+        "english_word": "furniture",
+        "pronunciation": "/ˈfɜːnɪtʃə(r)/",
+        "vietnamese_meaning": "(n): đồ nội thất",
+        "example_sentence_en": "I like furniture.",
+        "example_sentence_vi": "Tôi thích đồ nội thất.",
+        "image": "assets/images/furniture.webp",
+        "alt": "Image for furniture"
+      },
+      {
+        "english_word": "insect",
+        "pronunciation": "/ˈɪnsekt/",
+        "vietnamese_meaning": "(n): côn trùng",
+        "example_sentence_en": "This is a insect.",
+        "example_sentence_vi": "Đây là côn trùng.",
+        "image": "assets/images/insect.webp",
+        "alt": "Image for insect"
+      },
+      {
+        "english_word": "lesson",
+        "pronunciation": "/ˈlesn/",
+        "vietnamese_meaning": "(n): bài học",
+        "example_sentence_en": "This is a lesson.",
+        "example_sentence_vi": "Đây là bài học.",
+        "image": "assets/images/lesson.webp",
+        "alt": "Image for lesson"
+      },
+      {
+        "english_word": "maturity",
+        "pronunciation": "/məˈtʃʊərəti/",
+        "vietnamese_meaning": "(n): sự trưởng thành",
+        "example_sentence_en": "This is a maturity.",
+        "example_sentence_vi": "Đây là sự trưởng thành.",
+        "image": "assets/images/maturity.webp",
+        "alt": "Image for maturity"
+      },
+      {
+        "english_word": "outdoor",
+        "pronunciation": "/ˈaʊtdɔː(r)/",
+        "vietnamese_meaning": "(adj): ngoài trời",
+        "example_sentence_en": "It is outdoor.",
+        "example_sentence_vi": "Nó rất ngoài trời.",
+        "image": "assets/images/outdoor.webp",
+        "alt": "Image for outdoor"
+      },
+      {
+        "english_word": "patient",
+        "pronunciation": "/ˈpeɪʃnt/",
+        "vietnamese_meaning": "(adj): kiên nhẫn",
+        "example_sentence_en": "It is patient.",
+        "example_sentence_vi": "Nó rất kiên nhẫn.",
+        "image": "assets/images/patient.webp",
+        "alt": "Image for patient"
+      },
+      {
+        "english_word": "popular",
+        "pronunciation": "/ˈpɒpjələ(r)/",
+        "vietnamese_meaning": "(adj): phổ biến",
+        "example_sentence_en": "It is popular.",
+        "example_sentence_vi": "Nó rất phổ biến.",
+        "image": "assets/images/popular.webp",
+        "alt": "Image for popular"
+      },
+      {
+        "english_word": "reduce stress",
+        "pronunciation": "/rɪˈdjuːs stres/",
+        "vietnamese_meaning": "(v. phrase): giảm căng thẳng",
+        "example_sentence_en": "I reduce stress every day.",
+        "example_sentence_vi": "Tôi thường giảm căng thẳng.",
+        "image": "assets/images/reduce-stress.webp",
+        "alt": "Image for reduce stress"
+      },
+      {
+        "english_word": "responsibility",
+        "pronunciation": "/rɪˌspɒnsəˈbɪləti/",
+        "vietnamese_meaning": "(n): trách nhiệm",
+        "example_sentence_en": "This is a responsibility.",
+        "example_sentence_vi": "Đây là trách nhiệm.",
+        "image": "assets/images/responsibility.webp",
+        "alt": "Image for responsibility"
+      },
+      {
+        "english_word": "unusual",
+        "pronunciation": "/ʌnˈjuːʒuəl/",
+        "vietnamese_meaning": "(adj): khác thường",
+        "example_sentence_en": "It is unusual.",
+        "example_sentence_vi": "Nó rất khác thường.",
+        "image": "assets/images/unusual.webp",
+        "alt": "Image for unusual"
+      },
+      {
+        "english_word": "valuable",
+        "pronunciation": "/ˈvæljuəbl/",
+        "vietnamese_meaning": "(adj): có giá trị",
+        "example_sentence_en": "It is valuable.",
+        "example_sentence_vi": "Nó rất có giá trị.",
+        "image": "assets/images/valuable.webp",
+        "alt": "Image for valuable"
+      }
+    ]
+  }
+]

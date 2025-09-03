@@ -1,0 +1,563 @@
+[
+  {
+    "group": "Healthy Activities",
+    "words": [
+      {
+        "english_word": "boating",
+        "pronunciation": "/ˈbəʊtɪŋ/",
+        "vietnamese_meaning": "(n): chèo thuyền",
+        "example_sentence_en": "I like boating.",
+        "example_sentence_vi": "Tôi thích chèo thuyền.",
+        "image": "assets/images/boating.webp",
+        "alt": "Image for boating"
+      },
+      {
+        "english_word": "cycling",
+        "pronunciation": "/ˈsaɪklɪŋ/",
+        "vietnamese_meaning": "(n): đạp xe",
+        "example_sentence_en": "I like cycling.",
+        "example_sentence_vi": "Tôi thích đạp xe.",
+        "image": "assets/images/cycling.webp",
+        "alt": "Image for cycling"
+      },
+      {
+        "english_word": "exercise",
+        "pronunciation": "/ˈeksəsaɪz/",
+        "vietnamese_meaning": "(v): tập thể dục",
+        "example_sentence_en": "I exercise every day.",
+        "example_sentence_vi": "Tôi thường tập thể dục.",
+        "image": "assets/images/exercise.webp",
+        "alt": "Image for exercise"
+      },
+      {
+        "english_word": "outdoor activity",
+        "pronunciation": "/ˌaʊtˈdɔːr ækˈtɪvəti/",
+        "vietnamese_meaning": "(n): hoạt động ngoài trời",
+        "example_sentence_en": "This is a outdoor activity.",
+        "example_sentence_vi": "Đây là hoạt động ngoài trời.",
+        "image": "assets/images/outdoor-activity.webp",
+        "alt": "Image for outdoor activity"
+      },
+      {
+        "english_word": "running",
+        "pronunciation": "/ˈrʌnɪŋ/",
+        "vietnamese_meaning": "(n): chạy bộ",
+        "example_sentence_en": "I like running.",
+        "example_sentence_vi": "Tôi thích chạy bộ.",
+        "image": "assets/images/running.webp",
+        "alt": "Image for running"
+      },
+      {
+        "english_word": "walk",
+        "pronunciation": "/wɔːk/",
+        "vietnamese_meaning": "(v): đi bộ",
+        "example_sentence_en": "I walk every day.",
+        "example_sentence_vi": "Tôi thường đi bộ.",
+        "image": "assets/images/walk.webp",
+        "alt": "Image for walk"
+      }
+    ]
+  },
+  {
+    "group": "Health Problems",
+    "words": [
+      {
+        "english_word": "acne",
+        "pronunciation": "/ˈækni/",
+        "vietnamese_meaning": "(n): mụn trứng cá",
+        "example_sentence_en": "This is a acne.",
+        "example_sentence_vi": "Đây là mụn trứng cá.",
+        "image": "assets/images/acne.webp",
+        "alt": "Image for acne"
+      },
+      {
+        "english_word": "chapped lips",
+        "pronunciation": "/tʃæpt lɪps/",
+        "vietnamese_meaning": "(n): môi nứt nẻ",
+        "example_sentence_en": "These are chapped lips.",
+        "example_sentence_vi": "Đây là môi nứt nẻ.",
+        "image": "assets/images/chapped-lips.webp",
+        "alt": "Image for chapped lips"
+      },
+      {
+        "english_word": "chapped skin",
+        "pronunciation": "/tʃæpt skɪn/",
+        "vietnamese_meaning": "(n): da nứt nẻ",
+        "example_sentence_en": "This is a chapped skin.",
+        "example_sentence_vi": "Đây là da nứt nẻ.",
+        "image": "assets/images/chapped-skin.webp",
+        "alt": "Image for chapped skin"
+      },
+      {
+        "english_word": "disease",
+        "pronunciation": "/dɪˈziːz/",
+        "vietnamese_meaning": "(n): bệnh",
+        "example_sentence_en": "This is a disease.",
+        "example_sentence_vi": "Đây là bệnh.",
+        "image": "assets/images/disease.webp",
+        "alt": "Image for disease"
+      },
+      {
+        "english_word": "dry hair",
+        "pronunciation": "/ˌdraɪ ˈheə(r)/",
+        "vietnamese_meaning": "(n): tóc khô",
+        "example_sentence_en": "This is a dry hair.",
+        "example_sentence_vi": "Đây là tóc khô.",
+        "image": "assets/images/dry-hair.webp",
+        "alt": "Image for dry hair"
+      },
+      {
+        "english_word": "flu",
+        "pronunciation": "/fluː/",
+        "vietnamese_meaning": "(n): cúm",
+        "example_sentence_en": "This is a flu.",
+        "example_sentence_vi": "Đây là cúm.",
+        "image": "assets/images/flu.webp",
+        "alt": "Image for flu"
+      },
+      {
+        "english_word": "pimple",
+        "pronunciation": "/ˈpɪmpl/",
+        "vietnamese_meaning": "(n): mụn",
+        "example_sentence_en": "This is a pimple.",
+        "example_sentence_vi": "Đây là mụn.",
+        "image": "assets/images/pimple.webp",
+        "alt": "Image for pimple"
+      },
+      {
+        "english_word": "put on weight",
+        "pronunciation": "/ˌpʊt ɒn ˈweɪt/",
+        "vietnamese_meaning": "(v): tăng cân",
+        "example_sentence_en": "I put on weight every day.",
+        "example_sentence_vi": "Tôi thường tăng cân.",
+        "image": "assets/images/put-on-weight.webp",
+        "alt": "Image for put on weight"
+      },
+      {
+        "english_word": "red spot",
+        "pronunciation": "/ˌred ˈspɒt/",
+        "vietnamese_meaning": "(n): nốt đỏ",
+        "example_sentence_en": "This is a red spot.",
+        "example_sentence_vi": "Đây là nốt đỏ.",
+        "image": "assets/images/red-spot.webp",
+        "alt": "Image for red spot"
+      },
+      {
+        "english_word": "sunburn",
+        "pronunciation": "/ˈsʌnbɜːn/",
+        "vietnamese_meaning": "(n): cháy nắng",
+        "example_sentence_en": "This is a sunburn.",
+        "example_sentence_vi": "Đây là cháy nắng.",
+        "image": "assets/images/sunburn.webp",
+        "alt": "Image for sunburn"
+      },
+      {
+        "english_word": "tired eyes",
+        "pronunciation": "/ˌtaɪəd ˈaɪz/",
+        "vietnamese_meaning": "(n): mắt mệt mỏi",
+        "example_sentence_en": "These are tired eyes.",
+        "example_sentence_vi": "Đây là mắt mệt mỏi.",
+        "image": "assets/images/tired-eyes.webp",
+        "alt": "Image for tired eyes"
+      },
+      {
+        "english_word": "virus",
+        "pronunciation": "/ˈvaɪrəs/",
+        "vietnamese_meaning": "(n): vi-rút",
+        "example_sentence_en": "These are virus.",
+        "example_sentence_vi": "Đây là vi-rút.",
+        "image": "assets/images/virus.webp",
+        "alt": "Image for virus"
+      }
+    ]
+  },
+  {
+    "group": "Health Products and Care",
+    "words": [
+      {
+        "english_word": "eyedrops",
+        "pronunciation": "/ˈaɪdrɒps/",
+        "vietnamese_meaning": "(n): thuốc nhỏ mắt",
+        "example_sentence_en": "These are eyedrops.",
+        "example_sentence_vi": "Đây là thuốc nhỏ mắt.",
+        "image": "assets/images/eyedrops.webp",
+        "alt": "Image for eyedrops"
+      },
+      {
+        "english_word": "hat",
+        "pronunciation": "/hæt/",
+        "vietnamese_meaning": "(n): mũ",
+        "example_sentence_en": "This is a hat.",
+        "example_sentence_vi": "Đây là mũ.",
+        "image": "assets/images/hat.webp",
+        "alt": "Image for hat"
+      },
+      {
+        "english_word": "lip balm",
+        "pronunciation": "/ˈlɪp bɑːm/",
+        "vietnamese_meaning": "(n): son dưỡng môi",
+        "example_sentence_en": "This is a lip balm.",
+        "example_sentence_vi": "Đây là son dưỡng môi.",
+        "image": "assets/images/lip-balm.webp",
+        "alt": "Image for lip balm"
+      },
+      {
+        "english_word": "mask",
+        "pronunciation": "/mɑːsk/",
+        "vietnamese_meaning": "(n): khẩu trang",
+        "example_sentence_en": "This is a mask.",
+        "example_sentence_vi": "Đây là khẩu trang.",
+        "image": "assets/images/mask.webp",
+        "alt": "Image for mask"
+      },
+      {
+        "english_word": "soap",
+        "pronunciation": "/səʊp/",
+        "vietnamese_meaning": "(n): xà phòng",
+        "example_sentence_en": "This is a soap.",
+        "example_sentence_vi": "Đây là xà phòng.",
+        "image": "assets/images/soap.webp",
+        "alt": "Image for soap"
+      },
+      {
+        "english_word": "suncream",
+        "pronunciation": "/ˈsʌnkriːm/",
+        "vietnamese_meaning": "(n): kem chống nắng",
+        "example_sentence_en": "This is a suncream.",
+        "example_sentence_vi": "Đây là kem chống nắng.",
+        "image": "assets/images/suncream.webp",
+        "alt": "Image for suncream"
+      }
+    ]
+  },
+  {
+    "group": "Diet and Nutrition",
+    "words": [
+      {
+        "english_word": "breakfast",
+        "pronunciation": "/ˈbrekfəst/",
+        "vietnamese_meaning": "(n): bữa sáng",
+        "example_sentence_en": "This is a breakfast.",
+        "example_sentence_vi": "Đây là bữa sáng.",
+        "image": "assets/images/breakfast.webp",
+        "alt": "Image for breakfast"
+      },
+      {
+        "english_word": "cheesecake",
+        "pronunciation": "/ˈtʃiːzkeɪk/",
+        "vietnamese_meaning": "(n): bánh phô mai",
+        "example_sentence_en": "This is a cheesecake.",
+        "example_sentence_vi": "Đây là bánh phô mai.",
+        "image": "assets/images/cheesecake.webp",
+        "alt": "Image for cheesecake"
+      },
+      {
+        "english_word": "fast food",
+        "pronunciation": "/ˌfɑːst ˈfuːd/",
+        "vietnamese_meaning": "(n): đồ ăn nhanh",
+        "example_sentence_en": "This is a fast food.",
+        "example_sentence_vi": "Đây là đồ ăn nhanh.",
+        "image": "assets/images/fast-food.webp",
+        "alt": "Image for fast food"
+      },
+      {
+        "english_word": "fat",
+        "pronunciation": "/fæt/",
+        "vietnamese_meaning": "(n): mỡ",
+        "example_sentence_en": "This is a fat.",
+        "example_sentence_vi": "Đây là mỡ.",
+        "image": "assets/images/fat.webp",
+        "alt": "Image for fat"
+      },
+      {
+        "english_word": "fish",
+        "pronunciation": "/fɪʃ/",
+        "vietnamese_meaning": "(n): cá",
+        "example_sentence_en": "I like fish.",
+        "example_sentence_vi": "Tôi thích cá.",
+        "image": "assets/images/fish.webp",
+        "alt": "Image for fish"
+      },
+      {
+        "english_word": "fruit",
+        "pronunciation": "/fruːt/",
+        "vietnamese_meaning": "(n): trái cây",
+        "example_sentence_en": "I like fruit.",
+        "example_sentence_vi": "Tôi thích trái cây.",
+        "image": "assets/images/fruit.webp",
+        "alt": "Image for fruit"
+      },
+      {
+        "english_word": "green tea",
+        "pronunciation": "/ˌɡriːn ˈtiː/",
+        "vietnamese_meaning": "(n): trà xanh",
+        "example_sentence_en": "This is a green tea.",
+        "example_sentence_vi": "Đây là trà xanh.",
+        "image": "assets/images/green-tea.webp",
+        "alt": "Image for green tea"
+      },
+      {
+        "english_word": "lunch box",
+        "pronunciation": "/ˈlʌntʃ bɒks/",
+        "vietnamese_meaning": "(n): hộp cơm trưa",
+        "example_sentence_en": "This is a lunch box.",
+        "example_sentence_vi": "Đây là hộp cơm trưa.",
+        "image": "assets/images/lunch-box.webp",
+        "alt": "Image for lunch box"
+      },
+      {
+        "english_word": "soft drink",
+        "pronunciation": "/ˌsɒft ˈdrɪŋk/",
+        "vietnamese_meaning": "(n): nước ngọt",
+        "example_sentence_en": "This is a soft drink.",
+        "example_sentence_vi": "Đây là nước ngọt.",
+        "image": "assets/images/soft-drink.webp",
+        "alt": "Image for soft drink"
+      },
+      {
+        "english_word": "soybean",
+        "pronunciation": "/ˈsɔɪbiːn/",
+        "vietnamese_meaning": "(n): đậu nành",
+        "example_sentence_en": "This is a soybean.",
+        "example_sentence_vi": "Đây là đậu nành.",
+        "image": "assets/images/soybean.webp",
+        "alt": "Image for soybean"
+      },
+      {
+        "english_word": "sweetened food",
+        "pronunciation": "/ˈswiːtənd fuːd/",
+        "vietnamese_meaning": "(n): thực phẩm có đường",
+        "example_sentence_en": "This is a sweetened food.",
+        "example_sentence_vi": "Đây là thực phẩm có đường.",
+        "image": "assets/images/sweetened-food.webp",
+        "alt": "Image for sweetened food"
+      },
+      {
+        "english_word": "tofu",
+        "pronunciation": "/ˈtəʊfuː/",
+        "vietnamese_meaning": "(n): đậu phụ",
+        "example_sentence_en": "This is a tofu.",
+        "example_sentence_vi": "Đây là đậu phụ.",
+        "image": "assets/images/tofu.webp",
+        "alt": "Image for tofu"
+      },
+      {
+        "english_word": "vegetable",
+        "pronunciation": "/ˈvedʒtəbl/",
+        "vietnamese_meaning": "(n): rau củ",
+        "example_sentence_en": "This is a vegetable.",
+        "example_sentence_vi": "Đây là rau củ.",
+        "image": "assets/images/vegetable.webp",
+        "alt": "Image for vegetable"
+      },
+      {
+        "english_word": "vitamin",
+        "pronunciation": "/ˈvɪtəmɪn/",
+        "vietnamese_meaning": "(n): vitamin",
+        "example_sentence_en": "This is a vitamin.",
+        "example_sentence_vi": "Đây là vitamin.",
+        "image": "assets/images/vitamin.webp",
+        "alt": "Image for vitamin"
+      }
+    ]
+  },
+  {
+    "group": "Hygiene and Habits",
+    "words": [
+      {
+        "english_word": "avoid crowds",
+        "pronunciation": "/əˈvɔɪd kraʊdz/",
+        "vietnamese_meaning": "(v): tránh đám đông",
+        "example_sentence_en": "I avoid crowds every day.",
+        "example_sentence_vi": "Tôi thường tránh đám đông.",
+        "image": "assets/images/avoid-crowds.webp",
+        "alt": "Image for avoid crowds"
+      },
+      {
+        "english_word": "brush teeth",
+        "pronunciation": "/ˌbrʌʃ ˈtiːθ/",
+        "vietnamese_meaning": "(v): đánh răng",
+        "example_sentence_en": "I brush teeth every day.",
+        "example_sentence_vi": "Tôi thường đánh răng.",
+        "image": "assets/images/brush-teeth.webp",
+        "alt": "Image for brush teeth"
+      },
+      {
+        "english_word": "dirty",
+        "pronunciation": "/ˈdɜːti/",
+        "vietnamese_meaning": "(adj): bẩn",
+        "example_sentence_en": "It is dirty.",
+        "example_sentence_vi": "Nó rất bẩn.",
+        "image": "assets/images/dirty.webp",
+        "alt": "Image for dirty"
+      },
+      {
+        "english_word": "get enough sleep",
+        "pronunciation": "/ɡet ɪˌnʌf ˈsliːp/",
+        "vietnamese_meaning": "(v): ngủ đủ giấc",
+        "example_sentence_en": "I get enough sleep every day.",
+        "example_sentence_vi": "Tôi thường ngủ đủ giấc.",
+        "image": "assets/images/get-enough-sleep.webp",
+        "alt": "Image for get enough sleep"
+      },
+      {
+        "english_word": "keep (your) surroundings clean",
+        "pronunciation": "/kiːp səˈraʊndɪŋz kliːn/",
+        "vietnamese_meaning": "(v): giữ môi trường xung quanh sạch sẽ",
+        "example_sentence_en": "I keep (your) surroundings clean every day.",
+        "example_sentence_vi": "Tôi thường giữ môi trường xung quanh sạch sẽ.",
+        "image": "assets/images/keep-your-surroundings-clean.webp",
+        "alt": "Image for keep (your) surroundings clean"
+      },
+      {
+        "english_word": "keep clean",
+        "pronunciation": "/kiːp kliːn/",
+        "vietnamese_meaning": "(v): giữ sạch sẽ",
+        "example_sentence_en": "I keep clean every day.",
+        "example_sentence_vi": "Tôi thường giữ sạch sẽ.",
+        "image": "assets/images/keep-clean.webp",
+        "alt": "Image for keep clean"
+      },
+      {
+        "english_word": "tidy",
+        "pronunciation": "/ˈtaɪdi/",
+        "vietnamese_meaning": "(adj): gọn gàng",
+        "example_sentence_en": "It is tidy.",
+        "example_sentence_vi": "Nó rất gọn gàng.",
+        "image": "assets/images/tidy.webp",
+        "alt": "Image for tidy"
+      },
+      {
+        "english_word": "wash (your) face",
+        "pronunciation": "/wɒʃ feɪs/",
+        "vietnamese_meaning": "(v): rửa mặt",
+        "example_sentence_en": "I wash (your) face every day.",
+        "example_sentence_vi": "Tôi thường rửa mặt.",
+        "image": "assets/images/wash-your-face.webp",
+        "alt": "Image for wash (your) face"
+      },
+      {
+        "english_word": "wash (your) hands",
+        "pronunciation": "/wɒʃ hændz/",
+        "vietnamese_meaning": "(v): rửa tay",
+        "example_sentence_en": "I wash (your) hands every day.",
+        "example_sentence_vi": "Tôi thường rửa tay.",
+        "image": "assets/images/wash-your-hands.webp",
+        "alt": "Image for wash (your) hands"
+      },
+      {
+        "english_word": "wear a mask",
+        "pronunciation": "/ˌweə(r) ə ˈmɑːsk/",
+        "vietnamese_meaning": "(v): đeo khẩu trang",
+        "example_sentence_en": "I wear a mask every day.",
+        "example_sentence_vi": "Tôi thường đeo khẩu trang.",
+        "image": "assets/images/wear-a-mask.webp",
+        "alt": "Image for wear a mask"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "active",
+        "pronunciation": "/ˈæktɪv/",
+        "vietnamese_meaning": "(adj): năng động",
+        "example_sentence_en": "It is active.",
+        "example_sentence_vi": "Nó rất năng động.",
+        "image": "assets/images/active.webp",
+        "alt": "Image for active"
+      },
+      {
+        "english_word": "affect",
+        "pronunciation": "/əˈfekt/",
+        "vietnamese_meaning": "(v): ảnh hưởng, tác động",
+        "example_sentence_en": "I affect every day.",
+        "example_sentence_vi": "Tôi thường ảnh hưởng.",
+        "image": "assets/images/affect.webp",
+        "alt": "Image for affect"
+      },
+      {
+        "english_word": "dim light",
+        "pronunciation": "/ˌdɪm ˈlaɪt/",
+        "vietnamese_meaning": "(n): ánh sáng mờ",
+        "example_sentence_en": "This is a dim light.",
+        "example_sentence_vi": "Đây là ánh sáng mờ.",
+        "image": "assets/images/dim-light.webp",
+        "alt": "Image for dim light"
+      },
+      {
+        "english_word": "doctor",
+        "pronunciation": "/ˈdɒktə(r)/",
+        "vietnamese_meaning": "(n): bác sĩ",
+        "example_sentence_en": "This is a doctor.",
+        "example_sentence_vi": "Đây là bác sĩ.",
+        "image": "assets/images/doctor.webp",
+        "alt": "Image for doctor"
+      },
+      {
+        "english_word": "energy",
+        "pronunciation": "/ˈenədʒi/",
+        "vietnamese_meaning": "(n): năng lượng",
+        "example_sentence_en": "I like energy.",
+        "example_sentence_vi": "Tôi thích năng lượng.",
+        "image": "assets/images/energy.webp",
+        "alt": "Image for energy"
+      },
+      {
+        "english_word": "fit",
+        "pronunciation": "/fɪt/",
+        "vietnamese_meaning": "(adj): khỏe mạnh",
+        "example_sentence_en": "It is fit.",
+        "example_sentence_vi": "Nó rất khỏe mạnh.",
+        "image": "assets/images/fit.webp",
+        "alt": "Image for fit"
+      },
+      {
+        "english_word": "fresh air",
+        "pronunciation": "/ˌfreʃ ˈeə(r)/",
+        "vietnamese_meaning": "(n): không khí trong lành",
+        "example_sentence_en": "This is a fresh air.",
+        "example_sentence_vi": "Đây là không khí trong lành.",
+        "image": "assets/images/fresh-air.webp",
+        "alt": "Image for fresh air"
+      },
+      {
+        "english_word": "health tip",
+        "pronunciation": "/ˈhelθ tɪp/",
+        "vietnamese_meaning": "(n): lời khuyên sức khỏe",
+        "example_sentence_en": "This is a health tip.",
+        "example_sentence_vi": "Đây là lời khuyên sức khỏe.",
+        "image": "assets/images/health-tip.webp",
+        "alt": "Image for health tip"
+      },
+      {
+        "english_word": "pop spots",
+        "pronunciation": "/pɒp spɒts/",
+        "vietnamese_meaning": "(v): nặn mụn",
+        "example_sentence_en": "I pop spots every day.",
+        "example_sentence_vi": "Tôi thường nặn mụn.",
+        "image": "assets/images/pop-spots.webp",
+        "alt": "Image for pop spots"
+      },
+      {
+        "english_word": "protein",
+        "pronunciation": "/ˈprəʊtiːn/",
+        "vietnamese_meaning": "(n): protein",
+        "example_sentence_en": "This is a protein.",
+        "example_sentence_vi": "Đây là protein.",
+        "image": "assets/images/protein.webp",
+        "alt": "Image for protein"
+      },
+      {
+        "english_word": "skin condition",
+        "pronunciation": "/ˈskɪn kənˌdɪʃn/",
+        "vietnamese_meaning": "(n): tình trạng da",
+        "example_sentence_en": "This is a skin condition.",
+        "example_sentence_vi": "Đây là tình trạng da.",
+        "image": "assets/images/skin-condition.webp",
+        "alt": "Image for skin condition"
+      }
+    ]
+  }
+]

@@ -1,0 +1,852 @@
+[
+  {
+    "group": "Lifestyles and Daily Life",
+    "words": [
+      {
+        "english_word": "adopt",
+        "pronunciation": "/əˈdɒpt/",
+        "vietnamese_meaning": "(v): chấp nhận, áp dụng",
+        "example_sentence_en": "Many people adopt a healthy lifestyle in modern society.",
+        "example_sentence_vi": "Nhiều người chấp nhận lối sống khỏe mạnh trong xã hội hiện đại.",
+        "image": "assets/images/adopt.webp",
+        "alt": "Image for adopt"
+      },
+      {
+        "english_word": "balanced diet",
+        "pronunciation": "/ˈbælənst ˈdaɪət/",
+        "vietnamese_meaning": "(n): chế độ ăn cân bằng",
+        "example_sentence_en": "A balanced diet includes fruits, vegetables, and proteins.",
+        "example_sentence_vi": "Chế độ ăn cân bằng bao gồm trái cây, rau và protein.",
+        "image": "assets/images/balanced-diet.webp",
+        "alt": "Image for balanced diet"
+      },
+      {
+        "english_word": "common practice",
+        "pronunciation": "/ˈkɒmən ˈpræktɪs/",
+        "vietnamese_meaning": "(n): tập quán phổ biến",
+        "example_sentence_en": "Drinking tea is a common practice in many cultures.",
+        "example_sentence_vi": "Uống trà là tập quán phổ biến ở nhiều nền văn hóa.",
+        "image": "assets/images/common-practice.webp",
+        "alt": "Image for common practice"
+      },
+      {
+        "english_word": "habit",
+        "pronunciation": "/ˈhæbɪt/",
+        "vietnamese_meaning": "(n): thói quen",
+        "example_sentence_en": "Reading before bed is a good habit to develop.",
+        "example_sentence_vi": "Đọc sách trước khi đi ngủ là thói quen tốt cần phát triển.",
+        "image": "assets/images/habit.webp",
+        "alt": "Image for habit"
+      },
+      {
+        "english_word": "healthy",
+        "pronunciation": "/ˈhelθi/",
+        "vietnamese_meaning": "(adj): khỏe mạnh",
+        "example_sentence_en": "Exercise helps you stay healthy and strong.",
+        "example_sentence_vi": "Tập thể dục giúp bạn giữ sức khỏe và cường tráng.",
+        "image": "assets/images/healthy.webp",
+        "alt": "Image for healthy"
+      },
+      {
+        "english_word": "in the habit of",
+        "pronunciation": "/ɪn ðə ˈhæbɪt ɒv/",
+        "vietnamese_meaning": "(phrase): có thói quen",
+        "example_sentence_en": "She is in the habit of jogging every morning.",
+        "example_sentence_vi": "Cô ấy có thói quen chạy bộ mỗi sáng.",
+        "image": "assets/images/in-the-habit-of.webp",
+        "alt": "Image for in the habit of"
+      },
+      {
+        "english_word": "lifestyle",
+        "pronunciation": "/ˈlaɪfstaɪl/",
+        "vietnamese_meaning": "(n): lối sống",
+        "example_sentence_en": "His active lifestyle includes hiking and swimming.",
+        "example_sentence_vi": "Lối sống năng động của anh ấy bao gồm đi bộ đường dài và bơi lội.",
+        "image": "assets/images/lifestyle.webp",
+        "alt": "Image for lifestyle"
+      },
+      {
+        "english_word": "maintain",
+        "pronunciation": "/meɪnˈteɪn/",
+        "vietnamese_meaning": "(v): duy trì",
+        "example_sentence_en": "It's important to maintain a positive attitude.",
+        "example_sentence_vi": "Việc duy trì thái độ tích cực là rất quan trọng.",
+        "image": "assets/images/maintain.webp",
+        "alt": "Image for maintain"
+      },
+      {
+        "english_word": "practice",
+        "pronunciation": "/ˈpræktɪs/",
+        "vietnamese_meaning": "(n): thói quen, tập quán",
+        "example_sentence_en": "Meditation is an ancient practice for mental health.",
+        "example_sentence_vi": "Thiền định là tập quán cổ xưa cho sức khỏe tinh thần.",
+        "image": "assets/images/practice.webp",
+        "alt": "Image for practice"
+      },
+      {
+        "english_word": "traditional",
+        "pronunciation": "/trəˈdɪʃənəl/",
+        "vietnamese_meaning": "(adj): truyền thống",
+        "example_sentence_en": "We celebrate traditional festivals with our family.",
+        "example_sentence_vi": "Chúng tôi kỷ niệm các lễ hội truyền thống cùng gia đình.",
+        "image": "assets/images/traditional.webp",
+        "alt": "Image for traditional"
+      }
+    ]
+  },
+  {
+    "group": "Traditional Crafts and Culture",
+    "words": [
+      {
+        "english_word": "bamboo basket",
+        "pronunciation": "/bæmˈbuː ˈbɑːskɪt/",
+        "vietnamese_meaning": "(n): giỏ tre",
+        "example_sentence_en": "She carries vegetables in a bamboo basket from the market.",
+        "example_sentence_vi": "Cô ấy mang rau trong giỏ tre từ chợ về.",
+        "image": "assets/images/bamboo-basket.webp",
+        "alt": "Image for bamboo basket"
+      },
+      {
+        "english_word": "carving",
+        "pronunciation": "/ˈkɑːvɪŋ/",
+        "vietnamese_meaning": "(n): chạm khắc",
+        "example_sentence_en": "The wood carving shows traditional patterns and designs.",
+        "example_sentence_vi": "Tác phẩm chạm khắc gỗ thể hiện các họa tiết và thiết kế truyền thống.",
+        "image": "assets/images/carving.webp",
+        "alt": "Image for carving"
+      },
+      {
+        "english_word": "drumming",
+        "pronunciation": "/ˈdrʌmɪŋ/",
+        "vietnamese_meaning": "(n): đánh trống",
+        "example_sentence_en": "Traditional drumming is part of the cultural ceremony.",
+        "example_sentence_vi": "Đánh trống truyền thống là một phần của nghi lễ văn hóa.",
+        "image": "assets/images/drumming.webp",
+        "alt": "Image for drumming"
+      },
+      {
+        "english_word": "festival",
+        "pronunciation": "/ˈfestɪvəl/",
+        "vietnamese_meaning": "(n): lễ hội",
+        "example_sentence_en": "The spring festival brings people together to celebrate.",
+        "example_sentence_vi": "Lễ hội mùa xuân gắn kết mọi người lại để cùng nhau ăn mừng.",
+        "image": "assets/images/festival.webp",
+        "alt": "Image for festival"
+      },
+      {
+        "english_word": "folk song",
+        "pronunciation": "/fəʊk sɒŋ/",
+        "vietnamese_meaning": "(n): dân ca",
+        "example_sentence_en": "Children learn folk songs from their grandparents.",
+        "example_sentence_vi": "Trẻ em học dân ca từ ông bà của mình.",
+        "image": "assets/images/folk-song.webp",
+        "alt": "Image for folk song"
+      },
+      {
+        "english_word": "gallery",
+        "pronunciation": "/ˈɡæləri/",
+        "vietnamese_meaning": "(n): phòng trưng bày",
+        "example_sentence_en": "The art gallery displays paintings from local artists.",
+        "example_sentence_vi": "Phòng trưng bày nghệ thuật trưng bày các bức tranh của nghệ sĩ địa phương.",
+        "image": "assets/images/gallery.webp",
+        "alt": "Image for gallery"
+      },
+      {
+        "english_word": "making crafts",
+        "pronunciation": "/ˈmeɪkɪŋ krɑːfts/",
+        "vietnamese_meaning": "(phrase): làm thủ công",
+        "example_sentence_en": "Making crafts is a popular hobby among children.",
+        "example_sentence_vi": "Làm thủ công là sở thích phổ biến của trẻ em.",
+        "image": "assets/images/making-crafts.webp",
+        "alt": "Image for making crafts"
+      },
+      {
+        "english_word": "museum",
+        "pronunciation": "/mjuˈziːəm/",
+        "vietnamese_meaning": "(n): bảo tàng",
+        "example_sentence_en": "We visited the history museum to learn about ancient cultures.",
+        "example_sentence_vi": "Chúng tôi đến thăm bảo tàng lịch sử để tìm hiểu về các nền văn hóa cổ đại.",
+        "image": "assets/images/museum.webp",
+        "alt": "Image for museum"
+      },
+      {
+        "english_word": "native art",
+        "pronunciation": "/ˈneɪtɪv ɑːt/",
+        "vietnamese_meaning": "(n): nghệ thuật bản địa",
+        "example_sentence_en": "Native art reflects the culture and beliefs of indigenous people.",
+        "example_sentence_vi": "Nghệ thuật bản địa phản ánh văn hóa và tín ngưỡng của người bản địa.",
+        "image": "assets/images/native-art.webp",
+        "alt": "Image for native art"
+      },
+      {
+        "english_word": "performance",
+        "pronunciation": "/pəˈfɔːməns/",
+        "vietnamese_meaning": "(n): buổi biểu diễn",
+        "example_sentence_en": "The traditional dance performance was beautiful and moving.",
+        "example_sentence_vi": "Buổi biểu diễn múa truyền thống rất đẹp và cảm động.",
+        "image": "assets/images/performance.webp",
+        "alt": "Image for performance"
+      },
+      {
+        "english_word": "thread",
+        "pronunciation": "/θred/",
+        "vietnamese_meaning": "(n): sợi chỉ",
+        "example_sentence_en": "She uses colourful thread to embroider traditional patterns.",
+        "example_sentence_vi": "Cô ấy dùng sợi chỉ nhiều màu để thêu các họa tiết truyền thống.",
+        "image": "assets/images/thread.webp",
+        "alt": "Image for thread"
+      },
+      {
+        "english_word": "traditional music",
+        "pronunciation": "/trəˈdɪʃənəl ˈmjuːzɪk/",
+        "vietnamese_meaning": "(n): âm nhạc truyền thống",
+        "example_sentence_en": "Traditional music is played at cultural ceremonies.",
+        "example_sentence_vi": "Âm nhạc truyền thống được chơi trong các nghi lễ văn hóa.",
+        "image": "assets/images/traditional-music.webp",
+        "alt": "Image for traditional music"
+      },
+      {
+        "english_word": "tribal dance",
+        "pronunciation": "/ˈtraɪbəl dɑːns/",
+        "vietnamese_meaning": "(n): vũ điệu bộ lạc",
+        "example_sentence_en": "The tribal dance tells stories of ancient times.",
+        "example_sentence_vi": "Vũ điệu bộ lạc kể những câu chuyện về thời xa xưa.",
+        "image": "assets/images/tribal-dance.webp",
+        "alt": "Image for tribal dance"
+      },
+      {
+        "english_word": "weave",
+        "pronunciation": "/wiːv/",
+        "vietnamese_meaning": "(v): dệt",
+        "example_sentence_en": "Women weave beautiful patterns into traditional cloth.",
+        "example_sentence_vi": "Phụ nữ dệt những họa tiết đẹp vào vải truyền thống.",
+        "image": "assets/images/weave.webp",
+        "alt": "Image for weave"
+      }
+    ]
+  },
+  {
+    "group": "Food and Eating Habits",
+    "words": [
+      {
+        "english_word": "beef",
+        "pronunciation": "/biːf/",
+        "vietnamese_meaning": "(n): thịt bò",
+        "example_sentence_en": "Beef is a popular protein source in many countries.",
+        "example_sentence_vi": "Thịt bò là nguồn protein phổ biến ở nhiều quốc gia.",
+        "image": "assets/images/beef.webp",
+        "alt": "Image for beef"
+      },
+      {
+        "english_word": "breakfast",
+        "pronunciation": "/ˈbrekfəst/",
+        "vietnamese_meaning": "(n): bữa sáng",
+        "example_sentence_en": "A healthy breakfast gives you energy for the day.",
+        "example_sentence_vi": "Bữa sáng lành mạnh cung cấp năng lượng cho cả ngày.",
+        "image": "assets/images/breakfast.webp",
+        "alt": "Image for breakfast"
+      },
+      {
+        "english_word": "cuisine",
+        "pronunciation": "/kwɪˈziːn/",
+        "vietnamese_meaning": "(n): ẩm thực",
+        "example_sentence_en": "Vietnamese cuisine is famous for its fresh ingredients.",
+        "example_sentence_vi": "Ẩm thực Việt Nam nổi tiếng với những nguyên liệu tươi ngon.",
+        "image": "assets/images/cuisine.webp",
+        "alt": "Image for cuisine"
+      },
+      {
+        "english_word": "curry",
+        "pronunciation": "/ˈkʌri/",
+        "vietnamese_meaning": "(n): cà ri",
+        "example_sentence_en": "Indian curry is known for its rich spices and flavours.",
+        "example_sentence_vi": "Cà ri Ấn Độ nổi tiếng với gia vị và hương vị đậm đà.",
+        "image": "assets/images/curry.webp",
+        "alt": "Image for curry"
+      },
+      {
+        "english_word": "dim sum",
+        "pronunciation": "/dɪm sʌm/",
+        "vietnamese_meaning": "(n): các mon điểm tâm (theo kiểu Trung Quốc)",
+        "example_sentence_en": "We enjoy dim sum with family on Sunday mornings.",
+        "example_sentence_vi": "Chúng tôi thưởng thức điểm tâm với gia đình vào sáng Chủ nhật.",
+        "image": "assets/images/dim-sum.webp",
+        "alt": "Image for dim sum"
+      },
+      {
+        "english_word": "favourite food",
+        "pronunciation": "/ˈfeɪvərɪt fuːd/",
+        "vietnamese_meaning": "(n): món ăn yêu thích",
+        "example_sentence_en": "Pizza is my favourite food because it's delicious.",
+        "example_sentence_vi": "Pizza là món ăn yêu thích của tôi vì nó rất ngon.",
+        "image": "assets/images/favourite-food.webp",
+        "alt": "Image for favourite food"
+      },
+      {
+        "english_word": "fish and chips",
+        "pronunciation": "/fɪʃ ən tʃɪps/",
+        "vietnamese_meaning": "(n): cá và khoai tây chiên",
+        "example_sentence_en": "Fish and chips is a traditional British dish.",
+        "example_sentence_vi": "Cá và khoai tây chiên là món ăn truyền thống của Anh.",
+        "image": "assets/images/fish-and-chips.webp",
+        "alt": "Image for fish and chips"
+      },
+      {
+        "english_word": "goat",
+        "pronunciation": "/ɡəʊt/",
+        "vietnamese_meaning": "(n): thịt dê",
+        "example_sentence_en": "Goat meat is commonly eaten in many Asian countries.",
+        "example_sentence_vi": "Thịt dê được ăn phổ biến ở nhiều nước châu Á.",
+        "image": "assets/images/goat.webp",
+        "alt": "Image for goat"
+      },
+      {
+        "english_word": "kimchi",
+        "pronunciation": "/ˈkɪmtʃi/",
+        "vietnamese_meaning": "(n): kim chi",
+        "example_sentence_en": "Kimchi is a traditional Korean fermented vegetable dish.",
+        "example_sentence_vi": "Kim chi là món rau lên men truyền thống của Hàn Quốc.",
+        "image": "assets/images/kimchi.webp",
+        "alt": "Image for kimchi"
+      },
+      {
+        "english_word": "lamb",
+        "pronunciation": "/læm/",
+        "vietnamese_meaning": "(n): thịt cừu",
+        "example_sentence_en": "Roasted lamb is a popular dish during celebrations.",
+        "example_sentence_vi": "Thịt cừu nướng là món ăn phổ biến trong các lễ kỷ niệm.",
+        "image": "assets/images/lamb.webp",
+        "alt": "Image for lamb"
+      },
+      {
+        "english_word": "leisurely",
+        "pronunciation": "/ˈleʒəli/",
+        "vietnamese_meaning": "(adj): thong thả, nhàn nhã",
+        "example_sentence_en": "They enjoyed a leisurely dinner at the restaurant.",
+        "example_sentence_vi": "Họ thưởng thức bữa tối thong thả tại nhà hàng.",
+        "image": "assets/images/leisurely.webp",
+        "alt": "Image for leisurely"
+      },
+      {
+        "english_word": "pasta",
+        "pronunciation": "/ˈpæstə/",
+        "vietnamese_meaning": "(n): mì ống",
+        "example_sentence_en": "Italian pasta comes in many different shapes and sizes.",
+        "example_sentence_vi": "Mì ống Ý có nhiều hình dạng và kích cỡ khác nhau.",
+        "image": "assets/images/pasta.webp",
+        "alt": "Image for pasta"
+      },
+      {
+        "english_word": "pizza",
+        "pronunciation": "/ˈpiːtsə/",
+        "vietnamese_meaning": "(n): bánh pizza",
+        "example_sentence_en": "We ordered a large pizza with extra cheese for dinner.",
+        "example_sentence_vi": "Chúng tôi gọi một chiếc bánh pizza lớn với phô mai thêm cho bữa tối.",
+        "image": "assets/images/pizza.webp",
+        "alt": "Image for pizza"
+      },
+      {
+        "english_word": "restaurant",
+        "pronunciation": "/ˈrestərɒnt/",
+        "vietnamese_meaning": "(n): nhà hàng",
+        "example_sentence_en": "The restaurant serves authentic Vietnamese food.",
+        "example_sentence_vi": "Nhà hàng phục vụ món ăn Việt Nam đích thực.",
+        "image": "assets/images/restaurant.webp",
+        "alt": "Image for restaurant"
+      },
+      {
+        "english_word": "serve",
+        "pronunciation": "/sɜːv/",
+        "vietnamese_meaning": "(v): phục vụ",
+        "example_sentence_en": "The waiter will serve your meal in a few minutes.",
+        "example_sentence_vi": "Người phục vụ sẽ mang món ăn cho bạn trong vài phút nữa.",
+        "image": "assets/images/serve.webp",
+        "alt": "Image for serve"
+      },
+      {
+        "english_word": "spaghetti",
+        "pronunciation": "/spəˈɡeti/",
+        "vietnamese_meaning": "(n): mì spaghetti",
+        "example_sentence_en": "Spaghetti with tomato sauce is a simple but delicious meal.",
+        "example_sentence_vi": "Mì spaghetti với sốt cà chua là món ăn đơn giản nhưng ngon miệng.",
+        "image": "assets/images/spaghetti.webp",
+        "alt": "Image for spaghetti"
+      },
+      {
+        "english_word": "staple food",
+        "pronunciation": "/ˈsteɪpəl fuːd/",
+        "vietnamese_meaning": "(n): thức ăn chính",
+        "example_sentence_en": "Rice is the staple food in many Asian countries.",
+        "example_sentence_vi": "Cơm là thức ăn chính ở nhiều nước châu Á.",
+        "image": "assets/images/staple-food.webp",
+        "alt": "Image for staple food"
+      },
+      {
+        "english_word": "street food",
+        "pronunciation": "/striːt fuːd/",
+        "vietnamese_meaning": "(n): thức ăn đường phố",
+        "example_sentence_en": "Street food offers delicious and affordable local flavours.",
+        "example_sentence_vi": "Thức ăn đường phố mang đến hương vị địa phương ngon và rẻ.",
+        "image": "assets/images/street-food.webp",
+        "alt": "Image for street food"
+      },
+      {
+        "english_word": "sushi",
+        "pronunciation": "/ˈsuːʃi/",
+        "vietnamese_meaning": "(n): sushi",
+        "example_sentence_en": "Fresh sushi is made with high-quality fish and rice.",
+        "example_sentence_vi": "Sushi tươi được làm từ cá chất lượng cao và cơm.",
+        "image": "assets/images/sushi.webp",
+        "alt": "Image for sushi"
+      },
+      {
+        "english_word": "vegetarian food",
+        "pronunciation": "/ˌvedʒəˈteəriən fuːd/",
+        "vietnamese_meaning": "(n): thức ăn chay",
+        "example_sentence_en": "Vegetarian food is becoming more popular for health reasons.",
+        "example_sentence_vi": "Thức ăn chay đang trở nên phổ biến hơn vì lý do sức khỏe.",
+        "image": "assets/images/vegetarian-food.webp",
+        "alt": "Image for vegetarian food"
+      }
+    ]
+  },
+  {
+    "group": "Greetings and Communication",
+    "words": [
+      {
+        "english_word": "bowing",
+        "pronunciation": "/ˈbaʊɪŋ/",
+        "vietnamese_meaning": "(v): cúi chào",
+        "example_sentence_en": "Bowing is a respectful way to greet people in Japan.",
+        "example_sentence_vi": "Cúi chào là cách chào hỏi lịch sự với mọi người ở Nhật Bản.",
+        "image": "assets/images/bowing.webp",
+        "alt": "Image for bowing"
+      },
+      {
+        "english_word": "certainty",
+        "pronunciation": "/ˈsɜːtənti/",
+        "vietnamese_meaning": "(n): sự chắc chắn",
+        "example_sentence_en": "She spoke with certainty about her travel plans.",
+        "example_sentence_vi": "Cô ấy nói với sự chắc chắn về kế hoạch du lịch của mình.",
+        "image": "assets/images/certainty.webp",
+        "alt": "Image for certainty"
+      },
+      {
+        "english_word": "communicate",
+        "pronunciation": "/kəˈmjuːnɪkeɪt/",
+        "vietnamese_meaning": "(v): giao tiếp",
+        "example_sentence_en": "We use technology to communicate with people around the world.",
+        "example_sentence_vi": "Chúng ta sử dụng công nghệ để giao tiếp với mọi người trên khắp thế giới.",
+        "image": "assets/images/communicate.webp",
+        "alt": "Image for communicate"
+      },
+      {
+        "english_word": "express",
+        "pronunciation": "/ɪkˈspres/",
+        "vietnamese_meaning": "(v): thể hiện",
+        "example_sentence_en": "Art helps people express their feelings and emotions.",
+        "example_sentence_vi": "Nghệ thuật giúp mọi người thể hiện cảm xúc và tình cảm của họ.",
+        "image": "assets/images/express.webp",
+        "alt": "Image for express"
+      },
+      {
+        "english_word": "greet",
+        "pronunciation": "/ɡriːt/",
+        "vietnamese_meaning": "(v): chào hỏi",
+        "example_sentence_en": "It's polite to greet your neighbours when you see them.",
+        "example_sentence_vi": "Thật lịch sự khi chào hỏi hàng xóm khi bạn gặp họ.",
+        "image": "assets/images/greet.webp",
+        "alt": "Image for greet"
+      },
+      {
+        "english_word": "greeting",
+        "pronunciation": "/ˈɡriːtɪŋ/",
+        "vietnamese_meaning": "(n): lời chào",
+        "example_sentence_en": "A warm greeting makes people feel welcome and comfortable.",
+        "example_sentence_vi": "Lời chào ấm áp khiến mọi người cảm thấy được chào đón và thoải mái.",
+        "image": "assets/images/greeting.webp",
+        "alt": "Image for greeting"
+      },
+      {
+        "english_word": "handshaking",
+        "pronunciation": "/ˈhændʃeɪkɪŋ/",
+        "vietnamese_meaning": "(n): bắt tay",
+        "example_sentence_en": "Handshaking is a common greeting in Western cultures.",
+        "example_sentence_vi": "Bắt tay là cách chào hỏi phổ biến trong văn hóa phương Tây.",
+        "image": "assets/images/handshaking.webp",
+        "alt": "Image for handshaking"
+      },
+      {
+        "english_word": "hugging",
+        "pronunciation": "/ˈhʌɡɪŋ/",
+        "vietnamese_meaning": "(n): ôm",
+        "example_sentence_en": "Hugging shows affection between close friends and family.",
+        "example_sentence_vi": "Ôm thể hiện tình cảm giữa bạn bè thân thiết và gia đình.",
+        "image": "assets/images/hugging.webp",
+        "alt": "Image for hugging"
+      },
+      {
+        "english_word": "interact",
+        "pronunciation": "/ˌɪntərˈækt/",
+        "vietnamese_meaning": "(v): tương tác",
+        "example_sentence_en": "Children learn social skills when they interact with others.",
+        "example_sentence_vi": "Trẻ em học kỹ năng xã hội khi tương tác với người khác.",
+        "image": "assets/images/interact.webp",
+        "alt": "Image for interact"
+      },
+      {
+        "english_word": "surname",
+        "pronunciation": "/ˈsɜːneɪm/",
+        "vietnamese_meaning": "(n): họ",
+        "example_sentence_en": "Please write your first name and surname on the form.",
+        "example_sentence_vi": "Vui lòng viết tên và họ của bạn vào biểu mẫu.",
+        "image": "assets/images/surname.webp",
+        "alt": "Image for surname"
+      },
+      {
+        "english_word": "title",
+        "pronunciation": "/ˈtaɪtəl/",
+        "vietnamese_meaning": "(n): danh hiệu",
+        "example_sentence_en": "Mr. and Mrs. are common titles used before names.",
+        "example_sentence_vi": "Ông và bà là danh hiệu thông thường được dùng trước tên.",
+        "image": "assets/images/title.webp",
+        "alt": "Image for title"
+      }
+    ]
+  },
+  {
+    "group": "Technology and Modern Life",
+    "words": [
+      {
+        "english_word": "comfortable",
+        "pronunciation": "/ˈkʌmftəbəl/",
+        "vietnamese_meaning": "(adj): thoải mái",
+        "example_sentence_en": "The new sofa is very comfortable to sit on.",
+        "example_sentence_vi": "Chiếc ghế sofa mới rất thoải mái để ngồi.",
+        "image": "assets/images/comfortable.webp",
+        "alt": "Image for comfortable"
+      },
+      {
+        "english_word": "concentrate",
+        "pronunciation": "/ˈkɒnsəntreɪt/",
+        "vietnamese_meaning": "(v): tập trung",
+        "example_sentence_en": "Students need to concentrate during important exams.",
+        "example_sentence_vi": "Học sinh cần tập trung trong các kỳ thi quan trọng.",
+        "image": "assets/images/concentrate.webp",
+        "alt": "Image for concentrate"
+      },
+      {
+        "english_word": "convenient",
+        "pronunciation": "/kənˈviːniənt/",
+        "vietnamese_meaning": "(adj): tiện lợi",
+        "example_sentence_en": "Online shopping is very convenient for busy people.",
+        "example_sentence_vi": "Mua sắm trực tuyến rất tiện lợi cho những người bận rộn.",
+        "image": "assets/images/convenient.webp",
+        "alt": "Image for convenient"
+      },
+      {
+        "english_word": "equipment",
+        "pronunciation": "/ɪˈkwɪpmənt/",
+        "vietnamese_meaning": "(n): thiết bị",
+        "example_sentence_en": "The gym has modern exercise equipment for members.",
+        "example_sentence_vi": "Phòng tập có thiết bị tập luyện hiện đại cho hội viên.",
+        "image": "assets/images/equipment.webp",
+        "alt": "Image for equipment"
+      },
+      {
+        "english_word": "expensive",
+        "pronunciation": "/ɪkˈspensɪv/",
+        "vietnamese_meaning": "(adj): đắt tiền",
+        "example_sentence_en": "The latest smartphone model is quite expensive.",
+        "example_sentence_vi": "Mẫu điện thoại thông minh mới nhất khá đắt tiền.",
+        "image": "assets/images/expensive.webp",
+        "alt": "Image for expensive"
+      },
+      {
+        "english_word": "freedom",
+        "pronunciation": "/ˈfriːdəm/",
+        "vietnamese_meaning": "(n): tự do",
+        "example_sentence_en": "Technology gives us freedom to work from anywhere.",
+        "example_sentence_vi": "Công nghệ cho chúng ta tự do làm việc từ bất cứ đâu.",
+        "image": "assets/images/freedom.webp",
+        "alt": "Image for freedom"
+      },
+      {
+        "english_word": "harmful",
+        "pronunciation": "/ˈhɑːmfəl/",
+        "vietnamese_meaning": "(adj): có hại",
+        "example_sentence_en": "Too much screen time can be harmful to your eyes.",
+        "example_sentence_vi": "Nhìn màn hình quá nhiều có thể có hại cho mắt của bạn.",
+        "image": "assets/images/harmful.webp",
+        "alt": "Image for harmful"
+      },
+      {
+        "english_word": "impact",
+        "pronunciation": "/ˈɪmpækt/",
+        "vietnamese_meaning": "(n): tác động",
+        "example_sentence_en": "Social media has a big impact on young people's lives.",
+        "example_sentence_vi": "Mạng xã hội có tác động lớn đến cuộc sống của giới trẻ.",
+        "image": "assets/images/impact.webp",
+        "alt": "Image for impact"
+      },
+      {
+        "english_word": "independent",
+        "pronunciation": "/ˌɪndɪˈpendənt/",
+        "vietnamese_meaning": "(adj): độc lập",
+        "example_sentence_en": "Living alone helps young people become more independent.",
+        "example_sentence_vi": "Sống một mình giúp những người trẻ trở nên độc lập hơn.",
+        "image": "assets/images/independent.webp",
+        "alt": "Image for independent"
+      },
+      {
+        "english_word": "modern technology",
+        "pronunciation": "/ˈmɒdən tekˈnɒlədʒi/",
+        "vietnamese_meaning": "(n): công nghệ hiện đại",
+        "example_sentence_en": "Modern technology helps doctors treat patients more effectively.",
+        "example_sentence_vi": "Công nghệ hiện đại giúp các bác sĩ điều trị bệnh nhân hiệu quả hơn.",
+        "image": "assets/images/modern-technology.webp",
+        "alt": "Image for modern technology"
+      },
+      {
+        "english_word": "online learning",
+        "pronunciation": "/ˌɒnlaɪn ˈlɜːnɪŋ/",
+        "vietnamese_meaning": "(n): học trực tuyến",
+        "example_sentence_en": "Online learning became popular during the pandemic.",
+        "example_sentence_vi": "Học trực tuyến trở nên phổ biến trong thời kỳ đại dịch.",
+        "image": "assets/images/online-learning.webp",
+        "alt": "Image for online learning"
+      },
+      {
+        "english_word": "technology",
+        "pronunciation": "/tekˈnɒlədʒi/",
+        "vietnamese_meaning": "(n): công nghệ",
+        "example_sentence_en": "Technology has changed the way we communicate with each other.",
+        "example_sentence_vi": "Công nghệ đã thay đổi cách chúng ta giao tiếp với nhau.",
+        "image": "assets/images/technology.webp",
+        "alt": "Image for technology"
+      }
+    ]
+  },
+  {
+    "group": "Transportation",
+    "words": [
+      {
+        "english_word": "compete",
+        "pronunciation": "/kəmˈpiːt/",
+        "vietnamese_meaning": "(v): thi đấu",
+        "example_sentence_en": "Athletes compete in the Olympic Games every four years.",
+        "example_sentence_vi": "Các vận động viên thi đấu tại Thế vận hội Olympic bốn năm một lần.",
+        "image": "assets/images/compete.webp",
+        "alt": "Image for compete"
+      },
+      {
+        "english_word": "dogsled",
+        "pronunciation": "/ˈdɒɡsled/",
+        "vietnamese_meaning": "(n): xe trượt tuyết chó kéo",
+        "example_sentence_en": "The dogsled is a traditional form of transport in snowy regions.",
+        "example_sentence_vi": "Xe trượt tuyết chó kéo là phương tiện giao thông truyền thống ở các vùng có tuyết.",
+        "image": "assets/images/dogsled.webp",
+        "alt": "Image for dogsled"
+      },
+      {
+        "english_word": "musher",
+        "pronunciation": "/ˈmʌʃə/",
+        "vietnamese_meaning": "(n): người lái xe chó kéo",
+        "example_sentence_en": "The experienced musher guided his team through the snow.",
+        "example_sentence_vi": "Người lái xe chó kéo có kinh nghiệm dẫn đoàn của mình qua tuyết.",
+        "image": "assets/images/musher.webp",
+        "alt": "Image for musher"
+      },
+      {
+        "english_word": "mushing",
+        "pronunciation": "/ˈmʌʃɪŋ/",
+        "vietnamese_meaning": "(n): lái xe chó kéo",
+        "example_sentence_en": "Mushing is a popular winter sport in Alaska.",
+        "example_sentence_vi": "Lái xe chó kéo là môn thể thao mùa đông phổ biến ở Alaska.",
+        "image": "assets/images/mushing.webp",
+        "alt": "Image for mushing"
+      },
+      {
+        "english_word": "prize",
+        "pronunciation": "/ˈpraɪz/",
+        "vietnamese_meaning": "(n): giải thưởng",
+        "example_sentence_en": "The winner received a valuable prize for their performance.",
+        "example_sentence_vi": "Người chiến thắng nhận được giải thưởng giá trị cho thành tích của họ.",
+        "image": "assets/images/prize.webp",
+        "alt": "Image for prize"
+      },
+      {
+        "english_word": "race",
+        "pronunciation": "/reɪs/",
+        "vietnamese_meaning": "(n): cuộc đua",
+        "example_sentence_en": "The marathon race attracts runners from around the world.",
+        "example_sentence_vi": "Cuộc đua marathon thu hút các vận động viên từ khắp nơi trên thế giới.",
+        "image": "assets/images/race.webp",
+        "alt": "Image for race"
+      },
+      {
+        "english_word": "transport",
+        "pronunciation": "/ˈtrænspɔːt/",
+        "vietnamese_meaning": "(n): phương tiện giao thông",
+        "example_sentence_en": "Public transport is an eco-friendly way to travel in cities.",
+        "example_sentence_vi": "Phương tiện giao thông công cộng là cách di chuyển thân thiện với môi trường trong thành phố.",
+        "image": "assets/images/transport.webp",
+        "alt": "Image for transport"
+      }
+    ]
+  },
+  {
+    "group": "Places and Geography",
+    "words": [
+      {
+        "english_word": "Alaska",
+        "pronunciation": "/əˈlæskə/",
+        "vietnamese_meaning": "(n): bang Alaska",
+        "example_sentence_en": "Alaska is known for its beautiful wilderness and cold climate.",
+        "example_sentence_vi": "Alaska nổi tiếng với thiên nhiên hoang dã tuyệt đẹp và khí hậu lạnh giá.",
+        "image": "assets/images/alaska.webp",
+        "alt": "Image for Alaska"
+      },
+      {
+        "english_word": "ethnic group",
+        "pronunciation": "/ˈeθnɪk ɡruːp/",
+        "vietnamese_meaning": "(n): nhóm dân tộc",
+        "example_sentence_en": "Many ethnic groups contribute to the cultural diversity of the country.",
+        "example_sentence_vi": "Nhiều nhóm dân tộc góp phần tạo nên sự đa dạng văn hóa của đất nước.",
+        "image": "assets/images/ethnic-group.webp",
+        "alt": "Image for ethnic group"
+      },
+      {
+        "english_word": "native people",
+        "pronunciation": "/ˈneɪtɪv ˈpiːpəl/",
+        "vietnamese_meaning": "(n): người bản địa",
+        "example_sentence_en": "Native people have lived in this area for thousands of years.",
+        "example_sentence_vi": "Người bản địa đã sống trong khu vực này hàng ngàn năm.",
+        "image": "assets/images/native-people.webp",
+        "alt": "Image for native people"
+      },
+      {
+        "english_word": "population",
+        "pronunciation": "/ˌpɒpjuˈleɪʃən/",
+        "vietnamese_meaning": "(n): dân số",
+        "example_sentence_en": "The population of the city has grown rapidly in recent years.",
+        "example_sentence_vi": "Dân số thành phố đã tăng nhanh trong những năm gần đây.",
+        "image": "assets/images/population.webp",
+        "alt": "Image for population"
+      },
+      {
+        "english_word": "tribe",
+        "pronunciation": "/traɪb/",
+        "vietnamese_meaning": "(n): bộ lạc",
+        "example_sentence_en": "Each tribe has its own traditions and customs.",
+        "example_sentence_vi": "Mỗi bộ lạc có những truyền thống và phong tục riêng.",
+        "image": "assets/images/tribe.webp",
+        "alt": "Image for tribe"
+      },
+      {
+        "english_word": "village",
+        "pronunciation": "/ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng",
+        "example_sentence_en": "The small village is surrounded by beautiful mountains.",
+        "example_sentence_vi": "Ngôi làng nhỏ được bao quanh bởi những ngọn núi tuyệt đẹp.",
+        "image": "assets/images/village.webp",
+        "alt": "Image for village"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "culture",
+        "pronunciation": "/ˈkʌltʃə/",
+        "vietnamese_meaning": "(n): văn hóa",
+        "example_sentence_en": "Every country has its own unique culture and history.",
+        "example_sentence_vi": "Mỗi quốc gia đều có văn hóa và lịch sử độc đáo riêng.",
+        "image": "assets/images/culture.webp",
+        "alt": "Image for culture"
+      },
+      {
+        "english_word": "experience",
+        "pronunciation": "/ɪkˈspɪəriəns/",
+        "vietnamese_meaning": "(n, v): kinh nghiệm, trải nghiệm",
+        "example_sentence_en": "Travelling gives us valuable experience about different cultures.",
+        "example_sentence_vi": "Du lịch mang lại cho chúng ta kinh nghiệm quý báu về các nền văn hóa khác nhau.",
+        "image": "assets/images/experience.webp",
+        "alt": "Image for experience"
+      },
+      {
+        "english_word": "fascinating",
+        "pronunciation": "/ˈfæsɪneɪtɪŋ/",
+        "vietnamese_meaning": "(adj): hấp dẫn",
+        "example_sentence_en": "The documentary about wildlife was absolutely fascinating.",
+        "example_sentence_vi": "Bộ phim tài liệu về động vật hoang dã thực sự hấp dẫn.",
+        "image": "assets/images/fascinating.webp",
+        "alt": "Image for fascinating"
+      },
+      {
+        "english_word": "interesting",
+        "pronunciation": "/ˈɪntrəstɪŋ/",
+        "vietnamese_meaning": "(adj): thú vị",
+        "example_sentence_en": "Learning about different customs is very interesting.",
+        "example_sentence_vi": "Tìm hiểu về những phong tục khác nhau rất thú vị.",
+        "image": "assets/images/interesting.webp",
+        "alt": "Image for interesting"
+      },
+      {
+        "english_word": "particular",
+        "pronunciation": "/pəˈtɪkjələ/",
+        "vietnamese_meaning": "(adj): đặc biệt",
+        "example_sentence_en": "This particular recipe has been passed down through generations.",
+        "example_sentence_vi": "Công thức đặc biệt này đã được truyền qua nhiều thế hệ.",
+        "image": "assets/images/particular.webp",
+        "alt": "Image for particular"
+      },
+      {
+        "english_word": "revive",
+        "pronunciation": "/rɪˈvaɪv/",
+        "vietnamese_meaning": "(v): phục hồi",
+        "example_sentence_en": "The community is working to revive traditional arts and crafts.",
+        "example_sentence_vi": "Cộng đồng đang nỗ lực hồi sinh nghệ thuật và thủ công truyền thống.",
+        "image": "assets/images/revive.webp",
+        "alt": "Image for revive"
+      },
+      {
+        "english_word": "style",
+        "pronunciation": "/staɪl/",
+        "vietnamese_meaning": "(n): phong cách",
+        "example_sentence_en": "Each artist has their own unique style of painting.",
+        "example_sentence_vi": "Mỗi nghệ sĩ đều có phong cách vẽ tranh độc đáo riêng.",
+        "image": "assets/images/style.webp",
+        "alt": "Image for style"
+      },
+      {
+        "english_word": "traditions",
+        "pronunciation": "/trəˈdɪʃənz/",
+        "vietnamese_meaning": "(n): truyền thống",
+        "example_sentence_en": "Family traditions help connect different generations together.",
+        "example_sentence_vi": "Truyền thống gia đình giúp kết nối các thế hệ khác nhau với nhau.",
+        "image": "assets/images/traditions.webp",
+        "alt": "Image for traditions"
+      },
+      {
+        "english_word": "unique",
+        "pronunciation": "/juˈniːk/",
+        "vietnamese_meaning": "(adj): độc đáo",
+        "example_sentence_en": "Every culture has its own unique characteristics and features.",
+        "example_sentence_vi": "Mỗi nền văn hóa đều có những đặc điểm và nét riêng độc đáo.",
+        "image": "assets/images/unique.webp",
+        "alt": "Image for unique"
+      },
+      {
+        "english_word": "various",
+        "pronunciation": "/ˈveəriəs/",
+        "vietnamese_meaning": "(adj): đa dạng",
+        "example_sentence_en": "The museum displays various artifacts from ancient civilizations.",
+        "example_sentence_vi": "Bảo tàng trưng bày nhiều hiện vật đa dạng từ các nền văn minh cổ đại.",
+        "image": "assets/images/various.webp",
+        "alt": "Image for various"
+      }
+    ]
+  }
+]

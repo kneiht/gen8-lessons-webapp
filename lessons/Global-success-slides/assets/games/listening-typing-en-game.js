@@ -10,12 +10,13 @@ class ListeningTypingEnGame extends GameBase {
         this.gameQuestions = [];
         this.isAnswering = false;
         this.boundKeyHandler = null;
+        this.isPlayingAudio = false;
     }
 
     getGameInfo() {
         return {
             name: 'Listening Typing - English',
-            description: 'Nghe phát âm và gõ lại từ tiếng Anh',
+            description: 'Nghe phát âm từ và câu ví dụ, sau đó gõ lại từ tiếng Anh',
             icon: '🔊'
         };
     }
@@ -58,7 +59,8 @@ class ListeningTypingEnGame extends GameBase {
     createGameQuestions(words) {
         return GameUtils.shuffleArray(words.map(w => ({
             english: w.english_word,
-            pronunciation: w.pronunciation || ''
+            pronunciation: w.pronunciation || '',
+            example_sentence: w.example_sentence_en || ''
         })));
     }
 
@@ -67,7 +69,7 @@ class ListeningTypingEnGame extends GameBase {
             <div class="text-center bg-white rounded-xl shadow-lg p-8">
                 <div class="text-6xl mb-4">${this.getGameInfo().icon}</div>
                 <h3 class="text-2xl font-bold text-indigo-700 mb-4">Listening & Typing</h3>
-                <p class="text-gray-600 mb-6">Nghe phát âm và gõ lại từ tiếng Anh. Có ${this.words.length} câu.</p>
+                <p class="text-gray-600 mb-6">Nghe phát âm từ và câu ví dụ, sau đó gõ lại từ tiếng Anh. Có ${this.words.length} câu.</p>
                 <div class="text-sm text-gray-500">Click "▶️ Start Game" để bắt đầu!</div>
             </div>
         `;
@@ -95,7 +97,9 @@ class ListeningTypingEnGame extends GameBase {
                         <button id="play-audio-${this.gameId}" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg">▶️ Nghe</button>
                         <button id="slow-audio-${this.gameId}" class="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-semibold px-4 py-2 rounded-lg">🐢 Chậm</button>
                     </div>
-                    <div class="flex gap-2">
+                
+                    
+                    <div class="flex flex-col gap-2">
                         <input id="answer-input-${this.gameId}" type="text" class="answer-input flex-1 border-2 border-gray-200 rounded-lg p-2 md:p-3 text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Gõ từ tiếng Anh..." autocomplete="off" />
                         <button id="submit-answer-btn-${this.gameId}" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-base md:text-lg">Submit</button>
                     </div>
@@ -128,9 +132,6 @@ class ListeningTypingEnGame extends GameBase {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 if (!this.isAnswering) this.submitAnswer(slide); else this.nextQuestion(slide);
-            } else if (e.key === ' ') {
-                e.preventDefault();
-                this.playCurrentWord(1.0);
             }
         };
         document.addEventListener('keydown', this.boundKeyHandler);
@@ -157,7 +158,11 @@ class ListeningTypingEnGame extends GameBase {
         this.startTimer(slide);
         gameContainer.innerHTML = this.renderQuestion();
         const input = slide.querySelector(`#answer-input-${this.gameId}`);
-        setTimeout(() => { if (input) input.focus(); this.playCurrentWord(1.0); }, 150);
+        setTimeout(() => { 
+            if (input) input.focus(); 
+            // Tự động phát âm câu hỏi đầu tiên
+            this.playCurrentWord(1.0); 
+        }, 200);
     }
 
     restartGame(slide) {
@@ -190,7 +195,11 @@ class ListeningTypingEnGame extends GameBase {
         gameContainer.innerHTML = this.renderQuestion();
         this.isAnswering = false;
         const input = slide.querySelector(`#answer-input-${this.gameId}`);
-        setTimeout(() => { if (input) input.focus(); }, 50);
+        setTimeout(() => { 
+            if (input) input.focus(); 
+            // Tự động phát âm khi hiển thị câu hỏi mới
+            this.playCurrentWord(1.0);
+        }, 100);
     }
 
     submitAnswer(slide) {
@@ -243,19 +252,67 @@ class ListeningTypingEnGame extends GameBase {
         try {
             const q = this.gameQuestions[this.currentQuestionIndex];
             if (!q) return;
-            const text = q.english;
+            
+            // Kiểm tra nếu đang phát âm thì không phát âm mới
+            if (this.isPlayingAudio) {
+                return;
+            }
+            
+            // Dừng âm thanh đang phát trước khi phát âm mới
+            if (window.speechSynthesis && window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            
             if (window.speechSynthesis) {
-                const utter = new SpeechSynthesisUtterance(text);
-                utter.lang = 'en-US';
-                utter.rate = rate;
-                // Try to reuse chosen voice if set on the page
+                this.isPlayingAudio = true;
+                
+                // Đọc từ trước
+                const wordUtter = new SpeechSynthesisUtterance(q.english);
+                wordUtter.lang = 'en-US';
+                wordUtter.rate = rate;
+                
+                // Đọc câu sau (nếu có)
+                let sentenceUtter = null;
+                if (q.example_sentence) {
+                    sentenceUtter = new SpeechSynthesisUtterance(q.example_sentence);
+                    sentenceUtter.lang = 'en-US';
+                    sentenceUtter.rate = rate;
+                }
+                
+                // Chọn giọng đọc
                 const enName = localStorage.getItem('tts_en_voice') || '';
                 const voices = window.speechSynthesis.getVoices();
                 const pick = voices.find(v => v.name === enName) || voices.find(v => (v.lang || '').toLowerCase().startsWith('en'));
-                if (pick) utter.voice = pick;
-                window.speechSynthesis.speak(utter);
+                if (pick) {
+                    wordUtter.voice = pick;
+                    if (sentenceUtter) sentenceUtter.voice = pick;
+                }
+                
+                // Đọc từ trước
+                window.speechSynthesis.speak(wordUtter);
+                
+                // Sau khi đọc xong từ, đọc câu (nếu có)
+                if (sentenceUtter) {
+                    wordUtter.onend = () => {
+                        setTimeout(() => {
+                            window.speechSynthesis.speak(sentenceUtter);
+                        }, 500); // Đợi 0.5 giây trước khi đọc câu
+                    };
+                    
+                    // Reset trạng thái khi đọc xong câu
+                    sentenceUtter.onend = () => {
+                        this.isPlayingAudio = false;
+                    };
+                } else {
+                    // Reset trạng thái khi chỉ đọc từ
+                    wordUtter.onend = () => {
+                        this.isPlayingAudio = false;
+                    };
+                }
             }
-        } catch(e) { /* ignore */ }
+        } catch(e) { 
+            this.isPlayingAudio = false;
+        }
     }
 
     normalize(text) {
@@ -264,5 +321,6 @@ class ListeningTypingEnGame extends GameBase {
 }
 
 window.ListeningTypingEnGame = ListeningTypingEnGame;
+
 
 

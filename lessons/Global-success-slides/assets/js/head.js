@@ -219,7 +219,7 @@ function speakSentenceEn(text) { speakText(text, 'en-US'); }
 function speakSentenceVi(text) { speakText(text, 'vi-VN'); }
 
 // ===== Voice selector Popup =====
-function openVoicePopup() {
+function openSettingsPopup() {
     if (!window.speechSynthesis) return;
     const existing = document.getElementById('tts-voice-modal');
     if (existing) { existing.remove(); }
@@ -231,27 +231,45 @@ function openVoicePopup() {
     modal.style.cssText = 'background:white; border-radius:12px; padding:16px; width:90%; max-width:520px; box-shadow:0 10px 30px rgba(0,0,0,0.2);';
     modal.innerHTML = `
         <div class="text-center mb-3">
-            <h3 class="text-xl font-bold text-indigo-700">Chọn giọng đọc</h3>
+            <h3 class="text-xl font-bold text-indigo-700">Settings</h3>
             <p class="text-gray-600 text-sm">Chọn giọng cho tiếng Anh và tiếng Việt</p>
         </div>
         <div class="space-y-3">
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">English voice</label>
-                <select id="tts-en-select" class="w-full border rounded-md p-2 text-sm"></select>
+                <select id="tts-en-select" class="w-full border rounded-md p-1 text-sm"></select>
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Vietnamese voice</label>
-                <select id="tts-vi-select" class="w-full border rounded-md p-2 text-sm"></select>
+                <select id="tts-vi-select" class="w-full border rounded-md p-1 text-sm"></select>
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Tốc độ đọc: <span id="tts-rate-value" class="font-semibold">${selectedTtsRate.toFixed(2)}</span></label>
                 <input id="tts-rate" type="range" min="0.5" max="1.2" step="0.05" value="${selectedTtsRate}" class="w-full">
                 <div class="text-xs text-gray-500 mt-1">Chậm ←→ Nhanh</div>
             </div>
+            <hr class="my-4 border-gray-200">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Hình nền (Background)</label>
+                <div class="flex gap-2 mb-2 hidden">
+                    <button id="random-bg-btn" type="button" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-3 py-1 rounded-md text-sm transition-colors">
+                        🎲 Random Background
+                    </button>
+                    <button id="reset-bg" type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-3 py-1 rounded-md text-sm transition-colors">
+                        🔄 Reset
+                    </button>
+                </div>
+                <input id="background-url" type="url" placeholder="Nhập link hình ảnh..." class="w-full border rounded-md p-1 text-sm" value="${localStorage.getItem('background_url') || ''}">
+                <div class="text-xs text-gray-500 mt-1">Để trống để sử dụng hình nền ngẫu nhiên</div>
+                <div class="mt-2 flex gap-2">
+                    <button id="preview-bg" class="text-sm bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm">Xem trước</button>
+                    <button id="reset-bg" class="text-sm bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded-md text-sm">Đặt lại</button>
+                </div>
+            </div>
         </div>
         <div class="mt-4 flex justify-end gap-2">
-            <button id="tts-close" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-1.5 rounded-md">Đóng</button>
-            <button id="tts-save" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-1.5 rounded-md">Lưu</button>
+            <button id="tts-close" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-1 rounded-md">Đóng</button>
+            <button id="tts-save" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-1 rounded-md">Lưu</button>
         </div>
     `;
     overlay.appendChild(modal);
@@ -282,11 +300,78 @@ function openVoicePopup() {
     const rateInput = modal.querySelector('#tts-rate');
     const rateValue = modal.querySelector('#tts-rate-value');
     rateInput.addEventListener('input', () => { rateValue.textContent = parseFloat(rateInput.value).toFixed(2); });
+    
+    // Background functionality
+    const backgroundUrlInput = modal.querySelector('#background-url');
+    const previewBgBtn = modal.querySelector('#preview-bg');
+    const resetBgBtn = modal.querySelector('#reset-bg');
+    const randomBgBtn = modal.querySelector('#random-bg-btn');
+    
+    // Preview background
+    previewBgBtn.addEventListener('click', () => {
+        const url = backgroundUrlInput.value.trim();
+        if (url) {
+            document.body.style.backgroundImage = `url('${url}')`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+        }
+    });
+    
+    // Random background button
+    randomBgBtn.addEventListener('click', () => {
+        backgroundUrlInput.value = '';
+        localStorage.removeItem('background_url');
+        
+        // Apply new random local background
+        const randomBg = getRandomLocalBackground();
+        document.body.style.backgroundImage = `url('${randomBg}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        
+        // Remove any existing background classes
+        document.body.className = document.body.className.replace(/bg-\[url\([^)]+\)\]/g, '');
+    });
+    
+    // Reset background to random local background
+    resetBgBtn.addEventListener('click', () => {
+        backgroundUrlInput.value = '';
+        localStorage.removeItem('background_url');
+        
+        // Apply random local background
+        const randomBg = getRandomLocalBackground();
+        document.body.style.backgroundImage = `url('${randomBg}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        
+        // Remove any existing background classes
+        document.body.className = document.body.className.replace(/bg-\[url\([^)]+\)\]/g, '');
+    });
+    
     modal.querySelector('#tts-close').addEventListener('click', () => overlay.remove());
     modal.querySelector('#tts-save').addEventListener('click', () => {
         selectedEnVoiceName = enSelect.value;
         selectedViVoiceName = viSelect.value;
         selectedTtsRate = parseFloat(rateInput.value) || 0.95;
+        
+        // Save background URL
+        const backgroundUrl = backgroundUrlInput.value.trim();
+        if (backgroundUrl) {
+            localStorage.setItem('background_url', backgroundUrl);
+            document.body.style.backgroundImage = `url('${backgroundUrl}')`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+        } else {
+            localStorage.removeItem('background_url');
+            // Use random local background
+            const randomBg = getRandomLocalBackground();
+            document.body.style.backgroundImage = `url('${randomBg}')`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            
+            // Remove any existing background classes
+            document.body.className = document.body.className.replace(/bg-\[url\([^)]+\)\]/g, '');
+        }
+        
         localStorage.setItem('tts_en_voice', selectedEnVoiceName);
         localStorage.setItem('tts_vi_voice', selectedViVoiceName);
         localStorage.setItem('tts_rate', String(selectedTtsRate));
@@ -294,3 +379,34 @@ function openVoicePopup() {
     });
     overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
 }
+
+// Function to get random background from local backgrounds (1-22)
+function getRandomLocalBackground() {
+    const randomNumber = Math.floor(Math.random() * 22) + 1;
+    return `../assets/backgrounds/${randomNumber}.webp`;
+}
+
+// Function to load background from localStorage
+function loadBackgroundFromStorage() {
+    const savedBackgroundUrl = localStorage.getItem('background_url');
+    if (savedBackgroundUrl) {
+        // Clear any existing inline styles first
+        document.body.style.backgroundImage = '';
+        document.body.style.backgroundSize = '';
+        document.body.style.backgroundPosition = '';
+        
+        // Apply the saved background
+        document.body.style.backgroundImage = `url('${savedBackgroundUrl}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+    } else {
+        // If no custom background, use random local background
+        const randomBg = getRandomLocalBackground();
+        document.body.style.backgroundImage = `url('${randomBg}')`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+    }
+}
+
+// Load background when page loads
+document.addEventListener('DOMContentLoaded', loadBackgroundFromStorage);

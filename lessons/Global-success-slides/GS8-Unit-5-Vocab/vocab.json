@@ -1,0 +1,722 @@
+[
+  {
+    "group": "Festivals and Celebrations",
+    "words": [
+      {
+        "english_word": "birthday party",
+        "pronunciation": "/ˈbɜːθdeɪ ˈpɑːti/",
+        "vietnamese_meaning": "(n): tiệc sinh nhật",
+        "example_sentence_en": "We organized a surprise birthday party for my sister.",
+        "example_sentence_vi": "Chúng tôi tổ chức một bữa tiệc sinh nhật bất ngờ cho chị gái tôi.",
+        "image": "assets/images/birthday-party.webp",
+        "alt": "Image for birthday party"
+      },
+      {
+        "english_word": "celebration",
+        "pronunciation": "/ˌselɪˈbreɪʃən/",
+        "vietnamese_meaning": "(n): sự ăn mừng",
+        "example_sentence_en": "The celebration lasted all night with music and dancing.",
+        "example_sentence_vi": "Buổi ăn mừng kéo dài suốt đêm với âm nhạc và khiêu vũ.",
+        "image": "assets/images/celebration.webp",
+        "alt": "Image for celebration"
+      },
+      {
+        "english_word": "ceremony",
+        "pronunciation": "/ˈserɪməni/",
+        "vietnamese_meaning": "(n): nghi lễ",
+        "example_sentence_en": "The graduation ceremony was held in the school hall.",
+        "example_sentence_vi": "Lễ tốt nghiệp được tổ chức tại hội trường của trường.",
+        "image": "assets/images/ceremony.webp",
+        "alt": "Image for ceremony"
+      },
+      {
+        "english_word": "custom",
+        "pronunciation": "/ˈkʌstəm/",
+        "vietnamese_meaning": "(n): phong tục",
+        "example_sentence_en": "It's a local custom to bow when greeting elders.",
+        "example_sentence_vi": "Việc cúi chào khi gặp người lớn tuổi là một phong tục địa phương.",
+        "image": "assets/images/custom.webp",
+        "alt": "Image for custom"
+      },
+      {
+        "english_word": "family reunion",
+        "pronunciation": "/ˈfæməli riˈjuːnjən/",
+        "vietnamese_meaning": "(n): đoàn tụ gia đình",
+        "example_sentence_en": "Our family reunion happens every Tet holiday.",
+        "example_sentence_vi": "Cuộc đoàn tụ gia đình của chúng tôi diễn ra mỗi dịp Tết.",
+        "image": "assets/images/family-reunion.webp",
+        "alt": "Image for family reunion"
+      },
+      {
+        "english_word": "festival",
+        "pronunciation": "/ˈfestɪvəl/",
+        "vietnamese_meaning": "(n): lễ hội",
+        "example_sentence_en": "The Mid-Autumn Festival is celebrated by children with lanterns.",
+        "example_sentence_vi": "Lễ hội Trung Thu được trẻ em ăn mừng với đèn lồng.",
+        "image": "assets/images/festival.webp",
+        "alt": "Image for festival"
+      },
+      {
+        "english_word": "New Year",
+        "pronunciation": "/njuː jɪər/",
+        "vietnamese_meaning": "(n): năm mới",
+        "example_sentence_en": "We make resolutions and plans for the New Year.",
+        "example_sentence_vi": "Chúng tôi đưa ra những quyết tâm và kế hoạch cho năm mới.",
+        "image": "assets/images/new-year.webp",
+        "alt": "Image for New Year"
+      },
+      {
+        "english_word": "Ok Om Bok Festival",
+        "pronunciation": "/ɒk ɒm bɒk ˈfestɪvəl/",
+        "vietnamese_meaning": "(n): lễ hội Ok Om Bok",
+        "example_sentence_en": "The Ok Om Bok Festival is an important Khmer celebration.",
+        "example_sentence_vi": "Lễ hội Ok Om Bok là một lễ kỷ niệm quan trọng của người Khmer.",
+        "image": "assets/images/ok-om-bok-festival.webp",
+        "alt": "Image for Ok Om Bok Festival"
+      },
+      {
+        "english_word": "Tet",
+        "pronunciation": "/tet/",
+        "vietnamese_meaning": "(n): Tết",
+        "example_sentence_en": "Tet is the most important holiday in Vietnam.",
+        "example_sentence_vi": "Tết là ngày lễ quan trọng nhất ở Việt Nam.",
+        "image": "assets/images/tet.webp",
+        "alt": "Image for Tet"
+      },
+      {
+        "english_word": "tradition",
+        "pronunciation": "/trəˈdɪʃən/",
+        "vietnamese_meaning": "(n): truyền thống",
+        "example_sentence_en": "This tradition has been passed down for generations.",
+        "example_sentence_vi": "Truyền thống này đã được truyền qua nhiều thế hệ.",
+        "image": "assets/images/tradition.webp",
+        "alt": "Image for tradition"
+      },
+      {
+        "english_word": "village festival",
+        "pronunciation": "/ˈvɪlɪdʒ ˈfestɪvəl/",
+        "vietnamese_meaning": "(n): lễ hội làng",
+        "example_sentence_en": "The village festival brings all the community together.",
+        "example_sentence_vi": "Lễ hội làng tập hợp toàn bộ cộng đồng lại với nhau.",
+        "image": "assets/images/village-festival.webp",
+        "alt": "Image for village festival"
+      },
+      {
+        "english_word": "wedding ceremony",
+        "pronunciation": "/ˈwedɪŋ ˈserɪməni/",
+        "vietnamese_meaning": "(n): lễ cưới",
+        "example_sentence_en": "The wedding ceremony took place in a beautiful garden.",
+        "example_sentence_vi": "Lễ cưới diễn ra trong một khu vườn tuyệt đẹp.",
+        "image": "assets/images/wedding-ceremony.webp",
+        "alt": "Image for wedding ceremony"
+      }
+    ]
+  },
+  {
+    "group": "Traditional Objects and Items",
+    "words": [
+      {
+        "english_word": "bamboo pole",
+        "pronunciation": "/bæmˈbuː pəʊl/",
+        "vietnamese_meaning": "(n): cây nêu",
+        "example_sentence_en": "The bamboo pole is decorated and placed in front of the house during Tet.",
+        "example_sentence_vi": "Cây nêu được trang trí và đặt trước nhà trong dịp Tết.",
+        "image": "assets/images/bamboo-pole.webp",
+        "alt": "Image for bamboo pole"
+      },
+      {
+        "english_word": "blooming flower",
+        "pronunciation": "/ˈbluːmɪŋ ˈflaʊə/",
+        "vietnamese_meaning": "(n): hoa nở",
+        "example_sentence_en": "Blooming flowers make the house beautiful during spring festivals.",
+        "example_sentence_vi": "Những bông hoa nở làm cho ngôi nhà đẹp trong các lễ hội mùa xuân.",
+        "image": "assets/images/blooming-flower.webp",
+        "alt": "Image for blooming flower"
+      },
+      {
+        "english_word": "chopsticks",
+        "pronunciation": "/ˈtʃɒpstɪks/",
+        "vietnamese_meaning": "(n): đũa",
+        "example_sentence_en": "Vietnamese people traditionally eat with chopsticks.",
+        "example_sentence_vi": "Người Việt Nam theo truyền thống ăn bằng đũa.",
+        "image": "assets/images/chopsticks.webp",
+        "alt": "Image for chopsticks"
+      },
+      {
+        "english_word": "decorative item",
+        "pronunciation": "/ˈdekərətɪv ˈaɪtəm/",
+        "vietnamese_meaning": "(n): đồ trang trí",
+        "example_sentence_en": "The house was filled with colorful decorative items for the celebration.",
+        "example_sentence_vi": "Ngôi nhà tràn ngập những đồ trang trí đầy màu sắc cho buổi lễ.",
+        "image": "assets/images/decorative-item.webp",
+        "alt": "Image for decorative item"
+      },
+      {
+        "english_word": "kumquat tree",
+        "pronunciation": "/ˈkʌmkwɒt triː/",
+        "vietnamese_meaning": "(n): cây quất",
+        "example_sentence_en": "The kumquat tree symbolizes prosperity and good luck during Tet.",
+        "example_sentence_vi": "Cây quất tượng trưng cho sự thịnh vượng và may mắn trong dịp Tết.",
+        "image": "assets/images/kumquat-tree.webp",
+        "alt": "Image for kumquat tree"
+      },
+      {
+        "english_word": "lantern",
+        "pronunciation": "/ˈlæntən/",
+        "vietnamese_meaning": "(n): đèn lồng",
+        "example_sentence_en": "Children carry colorful lanterns during the Mid-Autumn Festival.",
+        "example_sentence_vi": "Trẻ em mang những chiếc đèn lồng đầy màu sắc trong lễ hội Trung Thu.",
+        "image": "assets/images/lantern.webp",
+        "alt": "Image for lantern"
+      },
+      {
+        "english_word": "lucky money",
+        "pronunciation": "/ˈlʌki ˈmʌni/",
+        "vietnamese_meaning": "(n): tiền lì xì",
+        "example_sentence_en": "Children receive lucky money in red envelopes during Tet.",
+        "example_sentence_vi": "Trẻ em nhận tiền lì xì trong phong bì đỏ trong dịp Tết.",
+        "image": "assets/images/lucky-money.webp",
+        "alt": "Image for lucky money"
+      },
+      {
+        "english_word": "offering",
+        "pronunciation": "/ˈɒfərɪŋz/",
+        "vietnamese_meaning": "(n): lễ vật, đồ cúng",
+        "example_sentence_en": "We prepare offerings to honor our ancestors during important ceremonies.",
+        "example_sentence_vi": "Chúng tôi chuẩn bị lễ vật để tôn vinh tổ tiên trong các nghi lễ quan trọng.",
+        "image": "assets/images/offering.webp",
+        "alt": "Image for offering"
+      },
+      {
+        "english_word": "ornamental tree",
+        "pronunciation": "/ˌɔːnəˈmentəl triː/",
+        "vietnamese_meaning": "(n): cây cảnh",
+        "example_sentence_en": "Ornamental trees are displayed in homes during Tet to bring good fortune.",
+        "example_sentence_vi": "Cây cảnh được trưng bày trong nhà trong dịp Tết để mang lại may mắn.",
+        "image": "assets/images/ornamental-tree.webp",
+        "alt": "Image for ornamental tree"
+      },
+      {
+        "english_word": "peach blossom",
+        "pronunciation": "/piːtʃ ˈblɒsəm/",
+        "vietnamese_meaning": "(n): hoa đào",
+        "example_sentence_en": "Peach blossoms are popular flowers for Tet decorations in Northern Vietnam.",
+        "example_sentence_vi": "Hoa đào là loài hoa phổ biến để trang trí Tết ở miền Bắc Việt Nam.",
+        "image": "assets/images/peach-blossom.webp",
+        "alt": "Image for peach blossom"
+      },
+      {
+        "english_word": "small bell",
+        "pronunciation": "/smɔːl bel/",
+        "vietnamese_meaning": "(n): chuông nhỏ",
+        "example_sentence_en": "The small bell on the bamboo pole makes a gentle sound in the wind.",
+        "example_sentence_vi": "Chiếc chuông nhỏ trên cây nêu tạo ra âm thanh nhẹ nhàng trong gió.",
+        "image": "assets/images/small-bell.webp",
+        "alt": "Image for small bell"
+      }
+    ]
+  },
+  {
+    "group": "Cultural Practices and Actions",
+    "words": [
+      {
+        "english_word": "admire",
+        "pronunciation": "/ədˈmaɪər/",
+        "vietnamese_meaning": "(v): ngưỡng mộ",
+        "example_sentence_en": "We admire the beautiful traditional costumes during the festival.",
+        "example_sentence_vi": "Chúng tôi ngưỡng mộ những trang phục truyền thống tuyệt đẹp trong lễ hội.",
+        "image": "assets/images/admire.webp",
+        "alt": "Image for admire"
+      },
+      {
+        "english_word": "break with tradition",
+        "pronunciation": "/breɪk wɪð trəˈdɪʃən/",
+        "vietnamese_meaning": "(v): phá vỡ truyền thống",
+        "example_sentence_en": "Some young people choose to break with tradition and create new customs.",
+        "example_sentence_vi": "Một số người trẻ chọn phá vỡ truyền thống và tạo ra những phong tục mới.",
+        "image": "assets/images/break-with-tradition.webp",
+        "alt": "Image for break with tradition"
+      },
+      {
+        "english_word": "chase away",
+        "pronunciation": "/tʃeɪs əˈweɪ/",
+        "vietnamese_meaning": "(v): xua đuổi",
+        "example_sentence_en": "Firecrackers are used to chase away evil spirits during New Year.",
+        "example_sentence_vi": "Pháo hoa được sử dụng để xua đuổi tà ma trong dịp năm mới.",
+        "image": "assets/images/chase-away.webp",
+        "alt": "Image for chase away"
+      },
+      {
+        "english_word": "decorate",
+        "pronunciation": "/ˈdekəreɪt/",
+        "vietnamese_meaning": "(v): trang trí",
+        "example_sentence_en": "Families decorate their homes with flowers and colorful banners for Tet.",
+        "example_sentence_vi": "Các gia đình trang trí nhà cửa bằng hoa và băng rôn đầy màu sắc cho Tết.",
+        "image": "assets/images/decorate.webp",
+        "alt": "Image for decorate"
+      },
+      {
+        "english_word": "gather",
+        "pronunciation": "/ˈɡæðər/",
+        "vietnamese_meaning": "(v): tập trung",
+        "example_sentence_en": "Extended families gather together during important festivals.",
+        "example_sentence_vi": "Các đại gia đình tập trung lại với nhau trong những lễ hội quan trọng.",
+        "image": "assets/images/gather.webp",
+        "alt": "Image for gather"
+      },
+      {
+        "english_word": "keep alive",
+        "pronunciation": "/kiːp əˈlaɪv/",
+        "vietnamese_meaning": "(v): giữ gìn",
+        "example_sentence_en": "It's important to keep alive our cultural traditions for future generations.",
+        "example_sentence_vi": "Việc giữ gìn các truyền thống văn hóa cho thế hệ tương lai là rất quan trọng.",
+        "image": "assets/images/keep-alive.webp",
+        "alt": "Image for keep alive"
+      },
+      {
+        "english_word": "maintain",
+        "pronunciation": "/meɪnˈteɪn/",
+        "vietnamese_meaning": "(v): duy trì",
+        "example_sentence_en": "The community works hard to maintain their ancestral customs.",
+        "example_sentence_vi": "Cộng đồng làm việc chăm chỉ để duy trì những phong tục tổ tiên.",
+        "image": "assets/images/maintain.webp",
+        "alt": "Image for maintain"
+      },
+      {
+        "english_word": "place",
+        "pronunciation": "/pleɪs/",
+        "vietnamese_meaning": "(v): đặt, để",
+        "example_sentence_en": "We place offerings on the altar to honor our ancestors.",
+        "example_sentence_vi": "Chúng tôi đặt lễ vật trên bàn thờ để tôn vinh tổ tiên.",
+        "image": "assets/images/place.webp",
+        "alt": "Image for place"
+      },
+      {
+        "english_word": "practise",
+        "pronunciation": "/ˈpræktɪs/",
+        "vietnamese_meaning": "(v): thực hành",
+        "example_sentence_en": "Many Vietnamese families still practise traditional customs during Tet.",
+        "example_sentence_vi": "Nhiều gia đình Việt Nam vẫn thực hành các phong tục truyền thống trong dịp Tết.",
+        "image": "assets/images/practise.webp",
+        "alt": "Image for practise"
+      },
+      {
+        "english_word": "pray",
+        "pronunciation": "/preɪ/",
+        "vietnamese_meaning": "(v): cầu nguyện",
+        "example_sentence_en": "People pray for health, happiness, and prosperity in the new year.",
+        "example_sentence_vi": "Mọi người cầu nguyện cho sức khỏe, hạnh phúc và thịnh vượng trong năm mới.",
+        "image": "assets/images/pray.webp",
+        "alt": "Image for pray"
+      },
+      {
+        "english_word": "strengthen",
+        "pronunciation": "/ˈstreŋθən/",
+        "vietnamese_meaning": "(v): củng cố",
+        "example_sentence_en": "Family gatherings help strengthen bonds between relatives.",
+        "example_sentence_vi": "Các buổi sum họp gia đình giúp củng cố mối quan hệ giữa các thành viên.",
+        "image": "assets/images/strengthen.webp",
+        "alt": "Image for strengthen"
+      },
+      {
+        "english_word": "traditionally",
+        "pronunciation": "/trəˈdɪʃənəli/",
+        "vietnamese_meaning": "(adv): theo truyền thống",
+        "example_sentence_en": "Traditionally, the eldest son inherits the family home.",
+        "example_sentence_vi": "Theo truyền thống, con trai cả thừa kế ngôi nhà gia đình.",
+        "image": "assets/images/traditionally.webp",
+        "alt": "Image for traditionally"
+      },
+      {
+        "english_word": "visit",
+        "pronunciation": "/ˈvɪzɪt/",
+        "vietnamese_meaning": "(v): thăm viếng",
+        "example_sentence_en": "During Tet, people visit relatives and friends to exchange good wishes.",
+        "example_sentence_vi": "Trong dịp Tết, mọi người thăm viếng họ hàng và bạn bè để chúc tốt lành.",
+        "image": "assets/images/visit.webp",
+        "alt": "Image for visit"
+      },
+      {
+        "english_word": "worship",
+        "pronunciation": "/ˈwɜːʃɪp/",
+        "vietnamese_meaning": "(v): thờ cúng",
+        "example_sentence_en": "Vietnamese people worship their ancestors and honor their memory.",
+        "example_sentence_vi": "Người Việt Nam thờ cúng tổ tiên và tôn vinh kỷ niệm của họ.",
+        "image": "assets/images/worship.webp",
+        "alt": "Image for worship"
+      },
+      {
+        "english_word": "worshipping",
+        "pronunciation": "/ˈwɜːʃɪpɪŋ/",
+        "vietnamese_meaning": "(n): sự thờ cúng",
+        "example_sentence_en": "The worshipping of ancestors is an important part of Vietnamese culture.",
+        "example_sentence_vi": "Việc thờ cúng tổ tiên là một phần quan trọng trong văn hóa Việt Nam.",
+        "image": "assets/images/worshipping.webp",
+        "alt": "Image for worshipping"
+      }
+    ]
+  },
+  {
+    "group": "People and Relationships",
+    "words": [
+      {
+        "english_word": "ancestor",
+        "pronunciation": "/ˈænsestə/",
+        "vietnamese_meaning": "(n): tổ tiên",
+        "example_sentence_en": "We honor our ancestors by maintaining family traditions.",
+        "example_sentence_vi": "Chúng tôi tôn vinh tổ tiên bằng cách duy trì truyền thống gia đình.",
+        "image": "assets/images/ancestor.webp",
+        "alt": "Image for ancestor"
+      },
+      {
+        "english_word": "contestant",
+        "pronunciation": "/kənˈtestənt/",
+        "vietnamese_meaning": "(n): thí sinh",
+        "example_sentence_en": "Each contestant showed great skill in the traditional dance competition.",
+        "example_sentence_vi": "Mỗi thí sinh đã thể hiện kỹ năng tuyệt vời trong cuộc thi múa truyền thống.",
+        "image": "assets/images/contestant.webp",
+        "alt": "Image for contestant"
+      },
+      {
+        "english_word": "elder",
+        "pronunciation": "/ˈeldə/",
+        "vietnamese_meaning": "(n): người lớn tuổi",
+        "example_sentence_en": "It's customary to show respect to elders in Vietnamese culture.",
+        "example_sentence_vi": "Theo phong tục thì phải tỏ lòng kính trọng với người lớn tuổi trong văn hóa Việt Nam.",
+        "image": "assets/images/elder.webp",
+        "alt": "Image for elder"
+      },
+      {
+        "english_word": "family member",
+        "pronunciation": "/ˈfæməli ˈmembə/",
+        "vietnamese_meaning": "(n): thành viên gia đình",
+        "example_sentence_en": "Every family member participates in preparing for Tet celebrations.",
+        "example_sentence_vi": "Mọi thành viên gia đình đều tham gia chuẩn bị cho lễ Tết.",
+        "image": "assets/images/family-member.webp",
+        "alt": "Image for family member"
+      },
+      {
+        "english_word": "festival goer",
+        "pronunciation": "/ˈfestɪvəl ˈɡəʊə/",
+        "vietnamese_meaning": "(n): người tham gia lễ hội",
+        "example_sentence_en": "Festival goers enjoyed the traditional music and dance performances.",
+        "example_sentence_vi": "Những người tham gia lễ hội thích thú với các tiết mục âm nhạc và múa truyền thống.",
+        "image": "assets/images/festival-goer.webp",
+        "alt": "Image for festival goer"
+      },
+      {
+        "english_word": "host",
+        "pronunciation": "/həʊst/",
+        "vietnamese_meaning": "(n): chủ nhà",
+        "example_sentence_en": "The host welcomed all guests warmly during the celebration.",
+        "example_sentence_vi": "Chủ nhà chào đón tất cả khách mời một cách nồng nhiệt trong buổi lễ.",
+        "image": "assets/images/host.webp",
+        "alt": "Image for host"
+      },
+      {
+        "english_word": "monk",
+        "pronunciation": "/mʌŋk/",
+        "vietnamese_meaning": "(n): nhà sư",
+        "example_sentence_en": "The monk blessed the family during the temple ceremony.",
+        "example_sentence_vi": "Nhà sư ban phước cho gia đình trong nghi lễ tại chùa.",
+        "image": "assets/images/monk.webp",
+        "alt": "Image for monk"
+      },
+      {
+        "english_word": "performer",
+        "pronunciation": "/pəˈfɔːmə/",
+        "vietnamese_meaning": "(n): người biểu diễn",
+        "example_sentence_en": "The traditional music performer captivated the audience with ancient melodies.",
+        "example_sentence_vi": "Người biểu diễn nhạc truyền thống đã quyến rũ khán giả bằng những giai điệu cổ.",
+        "image": "assets/images/performer.webp",
+        "alt": "Image for performer"
+      }
+    ]
+  },
+  {
+    "group": "Places",
+    "words": [
+      {
+        "english_word": "coastal village",
+        "pronunciation": "/ˈkəʊstəl ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng ven biển",
+        "example_sentence_en": "The coastal village celebrates its whale worship festival every year.",
+        "example_sentence_vi": "Làng ven biển tổ chức lễ hội thờ cúng cá voi hàng năm.",
+        "image": "assets/images/coastal-village.webp",
+        "alt": "Image for coastal village"
+      },
+      {
+        "english_word": "communal house",
+        "pronunciation": "/kəˈmjuːnəl haʊs/",
+        "vietnamese_meaning": "(n): đình làng, nhà rông",
+        "example_sentence_en": "The communal house is the center of village festivals and meetings.",
+        "example_sentence_vi": "Đình làng là trung tâm của các lễ hội và cuộc họp trong làng.",
+        "image": "assets/images/communal-house.webp",
+        "alt": "Image for communal house"
+      },
+      {
+        "english_word": "flower village",
+        "pronunciation": "/ˈflaʊər ˈvɪlɪdʒ/",
+        "vietnamese_meaning": "(n): làng hoa",
+        "example_sentence_en": "The flower village is famous for its beautiful blooms during Tet season.",
+        "example_sentence_vi": "Làng hoa nổi tiếng với những bông hoa tuyệt đẹp trong mùa Tết.",
+        "image": "assets/images/flower-village.webp",
+        "alt": "Image for flower village"
+      },
+      {
+        "english_word": "pagoda",
+        "pronunciation": "/pəˈɡəʊdə/",
+        "vietnamese_meaning": "(n): chùa",
+        "example_sentence_en": "People visit the pagoda to pray for peace and happiness.",
+        "example_sentence_vi": "Mọi người đến chùa để cầu nguyện cho sự bình an và hạnh phúc.",
+        "image": "assets/images/pagoda.webp",
+        "alt": "Image for pagoda"
+      },
+      {
+        "english_word": "riverside",
+        "pronunciation": "/ˈrɪvəsaɪd/",
+        "vietnamese_meaning": "(n): bờ sông",
+        "example_sentence_en": "The festival takes place by the riverside with boat races and music.",
+        "example_sentence_vi": "Lễ hội diễn ra bên bờ sông với đua thuyền và âm nhạc.",
+        "image": "assets/images/riverside.webp",
+        "alt": "Image for riverside"
+      },
+      {
+        "english_word": "temple",
+        "pronunciation": "/ˈtempəl/",
+        "vietnamese_meaning": "(n): chùa, đền",
+        "example_sentence_en": "The ancient temple attracts thousands of visitors during festival season.",
+        "example_sentence_vi": "Ngôi đền cổ thu hút hàng nghìn du khách trong mùa lễ hội.",
+        "image": "assets/images/temple.webp",
+        "alt": "Image for temple"
+      }
+    ]
+  },
+  {
+    "group": "Traditional Foods and Dishes",
+    "words": [
+      {
+        "english_word": "carp",
+        "pronunciation": "/kɑːp/",
+        "vietnamese_meaning": "(n): con cá chép",
+        "example_sentence_en": "Carp is often served during New Year celebrations for good luck.",
+        "example_sentence_vi": "Cá chép thường được phục vụ trong dịp năm mới để mang lại may mắn.",
+        "image": "assets/images/carp.webp",
+        "alt": "Image for carp"
+      },
+      {
+        "english_word": "steamed chicken",
+        "pronunciation": "/stiːmd ˈtʃɪkɪn/",
+        "vietnamese_meaning": "(n): gà luộc",
+        "example_sentence_en": "Steamed chicken is a traditional dish offered to ancestors during ceremonies.",
+        "example_sentence_vi": "Gà luộc là món ăn truyền thống cúng tổ tiên trong các nghi lễ.",
+        "image": "assets/images/steamed-chicken.webp",
+        "alt": "Image for steamed chicken"
+      },
+      {
+        "english_word": "traditional dish",
+        "pronunciation": "/trəˈdɪʃənəl ˈdɪʃ/",
+        "vietnamese_meaning": "(n): món ăn truyền thống",
+        "example_sentence_en": "Each region has its own special traditional dish for festivals.",
+        "example_sentence_vi": "Mỗi vùng có món ăn truyền thống đặc biệt riêng cho các lễ hội.",
+        "image": "assets/images/traditional-dish.webp",
+        "alt": "Image for traditional dish"
+      },
+      {
+        "english_word": "young rice",
+        "pronunciation": "/jʌŋ raɪs/",
+        "vietnamese_meaning": "(n): cốm",
+        "example_sentence_en": "Young rice is a popular autumn delicacy in Vietnam.",
+        "example_sentence_vi": "Cốm là một đặc sản mùa thu phổ biến ở Việt Nam.",
+        "image": "assets/images/young-rice.webp",
+        "alt": "Image for young rice"
+      }
+    ]
+  },
+  {
+    "group": "Cultural Skills and Activities",
+    "words": [
+      {
+        "english_word": "acrobatics",
+        "pronunciation": "/ˌækrəˈbætɪks/",
+        "vietnamese_meaning": "(n): nhào lộn",
+        "example_sentence_en": "The festival featured amazing acrobatics performances by skilled artists.",
+        "example_sentence_vi": "Lễ hội có các màn trình diễn nhào lộn tuyệt vời của những nghệ sĩ tài năng.",
+        "image": "assets/images/acrobatics.webp",
+        "alt": "Image for acrobatics"
+      },
+      {
+        "english_word": "boat race",
+        "pronunciation": "/bəʊt reɪs/",
+        "vietnamese_meaning": "(n): đua thuyền",
+        "example_sentence_en": "The boat race is the highlight of the riverside festival.",
+        "example_sentence_vi": "Cuộc đua thuyền là điểm nhấn của lễ hội bên bờ sông.",
+        "image": "assets/images/boat-race.webp",
+        "alt": "Image for boat race"
+      },
+      {
+        "english_word": "lion dance",
+        "pronunciation": "/ˈlaɪən dɑːns/",
+        "vietnamese_meaning": "(n): múa lân",
+        "example_sentence_en": "Lion dance performances bring good luck and joy to celebrations.",
+        "example_sentence_vi": "Các màn trình diễn múa lân mang lại may mắn và niềm vui cho lễ kỷ niệm.",
+        "image": "assets/images/lion-dance.webp",
+        "alt": "Image for lion dance"
+      },
+      {
+        "english_word": "martial arts",
+        "pronunciation": "/ˈmɑːʃəl ɑːts/",
+        "vietnamese_meaning": "(n): võ thuật",
+        "example_sentence_en": "Traditional martial arts demonstrations showcase Vietnamese cultural heritage.",
+        "example_sentence_vi": "Các màn biểu diễn võ thuật truyền thống thể hiện di sản văn hóa Việt Nam.",
+        "image": "assets/images/martial-arts.webp",
+        "alt": "Image for martial arts"
+      },
+      {
+        "english_word": "table manners",
+        "pronunciation": "/ˈteɪbəl ˈmænəz/",
+        "vietnamese_meaning": "(n): phép lịch sự trên bàn ăn",
+        "example_sentence_en": "Learning proper table manners is important in Vietnamese culture.",
+        "example_sentence_vi": "Học phép lịch sự trên bàn ăn là quan trọng trong văn hóa Việt Nam.",
+        "image": "assets/images/table-manners.webp",
+        "alt": "Image for table manners"
+      },
+      {
+        "english_word": "unicorn dance",
+        "pronunciation": "/ˈjuːnɪkɔːn dɑːns/",
+        "vietnamese_meaning": "(n): múa lân",
+        "example_sentence_en": "The unicorn dance is a traditional performance during Vietnamese festivals.",
+        "example_sentence_vi": "Múa lân là màn trình diễn truyền thống trong các lễ hội Việt Nam.",
+        "image": "assets/images/unicorn-dance.webp",
+        "alt": "Image for unicorn dance"
+      }
+    ]
+  },
+  {
+    "group": "Abstract Concepts",
+    "words": [
+      {
+        "english_word": "bad luck",
+        "pronunciation": "/bæd lʌk/",
+        "vietnamese_meaning": "(n): xui xẻo",
+        "example_sentence_en": "People believe certain actions during Tet can bring bad luck.",
+        "example_sentence_vi": "Mọi người tin rằng những hành động nhất định trong Tết có thể mang lại xui xẻo.",
+        "image": "assets/images/bad-luck.webp",
+        "alt": "Image for bad luck"
+      },
+      {
+        "english_word": "bad spirits",
+        "pronunciation": "/bæd ˈspɪrɪts/",
+        "vietnamese_meaning": "(n): tà ma",
+        "example_sentence_en": "Traditional ceremonies are performed to ward off bad spirits.",
+        "example_sentence_vi": "Các nghi lễ truyền thống được thực hiện để xua đuổi tà ma.",
+        "image": "assets/images/bad-spirits.webp",
+        "alt": "Image for bad spirits"
+      },
+      {
+        "english_word": "family bonds",
+        "pronunciation": "/ˈfæməli bɒndz/",
+        "vietnamese_meaning": "(n): tình cảm gia đình",
+        "example_sentence_en": "Festivals help strengthen family bonds through shared traditions.",
+        "example_sentence_vi": "Các lễ hội giúp củng cố tình cảm gia đình thông qua truyền thống chung.",
+        "image": "assets/images/family-bonds.webp",
+        "alt": "Image for family bonds"
+      },
+      {
+        "english_word": "good luck",
+        "pronunciation": "/ɡʊd lʌk/",
+        "vietnamese_meaning": "(n): may mắn",
+        "example_sentence_en": "Red color is believed to bring good luck in Vietnamese culture.",
+        "example_sentence_vi": "Màu đỏ được tin là mang lại may mắn trong văn hóa Việt Nam.",
+        "image": "assets/images/good-luck.webp",
+        "alt": "Image for good luck"
+      },
+      {
+        "english_word": "longevity",
+        "pronunciation": "/lɒnˈdʒevəti/",
+        "vietnamese_meaning": "(n): sự trường thọ",
+        "example_sentence_en": "Many traditional customs symbolize longevity and good health.",
+        "example_sentence_vi": "Nhiều phong tục truyền thống tượng trưng cho sự trường thọ và sức khỏe tốt.",
+        "image": "assets/images/longevity.webp",
+        "alt": "Image for longevity"
+      },
+      {
+        "english_word": "respect",
+        "pronunciation": "/rɪˈspekt/",
+        "vietnamese_meaning": "(n): sự tôn trọng",
+        "example_sentence_en": "Showing respect to elders is a fundamental value in Vietnamese society.",
+        "example_sentence_vi": "Thể hiện sự tôn trọng với người lớn tuổi là giá trị cơ bản trong xã hội Việt Nam.",
+        "image": "assets/images/respect.webp",
+        "alt": "Image for respect"
+      }
+    ]
+  },
+  {
+    "group": "Others",
+    "words": [
+      {
+        "english_word": "advice",
+        "pronunciation": "/ədˈvaɪs/",
+        "vietnamese_meaning": "(n): lời khuyên",
+        "example_sentence_en": "Elders often give valuable advice to younger family members during gatherings.",
+        "example_sentence_vi": "Người lớn tuổi thường đưa ra lời khuyên quý giá cho các thành viên trẻ trong gia đình trong các buổi sum họp.",
+        "image": "assets/images/advice.webp",
+        "alt": "Image for advice"
+      },
+      {
+        "english_word": "decoration",
+        "pronunciation": "/ˌdekəˈreɪʃən/",
+        "vietnamese_meaning": "(n): đồ trang trí",
+        "example_sentence_en": "Colorful decorations make the festival atmosphere more joyful.",
+        "example_sentence_vi": "Những đồ trang trí đầy màu sắc làm cho không khí lễ hội vui tươi hơn.",
+        "image": "assets/images/decoration.webp",
+        "alt": "Image for decoration"
+      },
+      {
+        "english_word": "drum",
+        "pronunciation": "/drʌm/",
+        "vietnamese_meaning": "(n): trống",
+        "example_sentence_en": "The drum beats create an exciting rhythm for traditional dances.",
+        "example_sentence_vi": "Tiếng trống tạo ra nhịp điệu thú vị cho các điệu múa truyền thống.",
+        "image": "assets/images/drum.webp",
+        "alt": "Image for drum"
+      },
+      {
+        "english_word": "flute",
+        "pronunciation": "/fluːt/",
+        "vietnamese_meaning": "(n): sáo",
+        "example_sentence_en": "The bamboo flute produces beautiful melodies in folk music performances.",
+        "example_sentence_vi": "Sáo tre tạo ra những giai điệu tuyệt đẹp trong các buổi biểu diễn nhạc dân gian.",
+        "image": "assets/images/flute.webp",
+        "alt": "Image for flute"
+      },
+      {
+        "english_word": "gift",
+        "pronunciation": "/ɡɪft/",
+        "vietnamese_meaning": "(n): quà tặng",
+        "example_sentence_en": "Exchanging gifts is a common tradition during special occasions.",
+        "example_sentence_vi": "Trao đổi quà tặng là một truyền thống phổ biến trong những dịp đặc biệt.",
+        "image": "assets/images/gift.webp",
+        "alt": "Image for gift"
+      },
+      {
+        "english_word": "Moon God",
+        "pronunciation": "/muːn ɡɒd/",
+        "vietnamese_meaning": "(n): thần Mặt Trăng",
+        "example_sentence_en": "The Moon God is honored during the Mid-Autumn Festival celebrations.",
+        "example_sentence_vi": "Thần Mặt Trăng được tôn vinh trong các lễ kỷ niệm Trung Thu.",
+        "image": "assets/images/moon-god.webp",
+        "alt": "Image for Moon God"
+      },
+      {
+        "english_word": "whale worship",
+        "pronunciation": "/weɪl ˈwɜːʃɪp/",
+        "vietnamese_meaning": "(n): thờ cúng cá voi",
+        "example_sentence_en": "Whale worship is an important tradition in Vietnamese coastal communities.",
+        "example_sentence_vi": "Thờ cúng cá voi là một truyền thống quan trọng trong các cộng đồng ven biển Việt Nam.",
+        "image": "assets/images/whale-worship.webp",
+        "alt": "Image for whale worship"
+      }
+    ]
+  }
+]
