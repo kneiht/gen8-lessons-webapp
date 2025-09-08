@@ -132,8 +132,8 @@
         "english_word": "playing the violin",
         "pronunciation": "/ˈpleɪɪŋ ðə ˈvaɪəlɪn/",
         "vietnamese_meaning": "(n. phrase): chơi đàn vi-ô-lông",
-        "example_sentence_en": "I like playing the violin.",
-        "example_sentence_vi": "Tôi thích chơi đàn vi-ô-lông.",
+        "example_sentence_en": "She has been playing the violin since she was five years old.",
+        "example_sentence_vi": "Cô ấy đã chơi đàn vi-ô-lông từ khi lên năm.",
         "image": "assets/images/playing-the-violin.webp",
         "alt": "Image for playing the violin"
       },
@@ -167,14 +167,14 @@
     ]
   },
   {
-    "group": "Group 3: Materials & Items",
+    "group": "Materials & Items",
     "words": [
       {
         "english_word": "cardboard",
         "pronunciation": "/ˈkɑːdbɔːd/",
         "vietnamese_meaning": "(n): bìa cứng",
-        "example_sentence_en": "This is a cardboard.",
-        "example_sentence_vi": "Đây là bìa cứng.",
+        "example_sentence_en": "We need cardboard to make the model airplane.",
+        "example_sentence_vi": "Chúng tôi cần bìa cứng để làm mô hình máy bay.",
         "image": "assets/images/cardboard.webp",
         "alt": "Image for cardboard"
       },
@@ -182,8 +182,8 @@
         "english_word": "coin",
         "pronunciation": "/kɔɪn/",
         "vietnamese_meaning": "(n): đồng xu",
-        "example_sentence_en": "This is a coin.",
-        "example_sentence_vi": "Đây là đồng xu.",
+        "example_sentence_en": "She found an old coin in her grandmother's jewelry box.",
+        "example_sentence_vi": "Cô ấy tìm thấy một đồng xu cũ trong hộp trang sức của bà.",
         "image": "assets/images/coin.webp",
         "alt": "Image for coin"
       },
@@ -191,8 +191,8 @@
         "english_word": "doll",
         "pronunciation": "/dɒl/",
         "vietnamese_meaning": "(n): búp bê",
-        "example_sentence_en": "This is a doll.",
-        "example_sentence_vi": "Đây là búp bê.",
+        "example_sentence_en": "The little girl takes her favorite doll everywhere she goes.",
+        "example_sentence_vi": "Bé gái mang theo búp bê yêu thích đi khắp mọi nơi.",
         "image": "assets/images/doll.webp",
         "alt": "Image for doll"
       },
@@ -200,22 +200,22 @@
         "english_word": "glue",
         "pronunciation": "/ɡluː/",
         "vietnamese_meaning": "(n): keo dán",
-        "example_sentence_en": "This is a glue.",
-        "example_sentence_vi": "Đây là keo dán.",
+        "example_sentence_en": "Don't forget to bring glue for the art project.",
+        "example_sentence_vi": "Đừng quên mang keo dán cho dự án nghệ thuật.",
         "image": "assets/images/glue.webp",
         "alt": "Image for glue"
       }
     ]
   },
   {
-    "group": "Group 5: Hobby Actions",
+    "group": "Hobby Actions",
     "words": [
       {
         "english_word": "build",
         "pronunciation": "/bɪld/",
         "vietnamese_meaning": "(v): xây dựng",
-        "example_sentence_en": "I build every day.",
-        "example_sentence_vi": "Tôi thường xây dựng.",
+        "example_sentence_en": "They build model ships as a weekend hobby.",
+        "example_sentence_vi": "Họ xây dựng mô hình tàu như một sở thích cuối tuần.",
         "image": "assets/images/build.webp",
         "alt": "Image for build"
       },
@@ -223,8 +223,8 @@
         "english_word": "collect",
         "pronunciation": "/kəˈlekt/",
         "vietnamese_meaning": "(v): sưu tập",
-        "example_sentence_en": "I collect every day.",
-        "example_sentence_vi": "Tôi thường sưu tập.",
+        "example_sentence_en": "My uncle likes to collect vintage postcards from around the world.",
+        "example_sentence_vi": "Chú tôi thích sưu tập những tấm bưu thiếp cổ từ khắp nơi trên thế giới.",
         "image": "assets/images/collect.webp",
         "alt": "Image for collect"
       },
@@ -232,8 +232,8 @@
         "english_word": "grow",
         "pronunciation": "/ɡrəʊ/",
         "vietnamese_meaning": "(v): trồng, phát triển",
-        "example_sentence_en": "I grow every day.",
-        "example_sentence_vi": "Tôi thường trồng.",
+        "example_sentence_en": "She loves to grow beautiful roses in her garden.",
+        "example_sentence_vi": "Cô ấy thích trồng những bông hồng đẹp trong khu vườn.",
         "image": "assets/images/grow.webp",
         "alt": "Image for grow"
       },
@@ -241,8 +241,8 @@
         "english_word": "join in",
         "pronunciation": "/dʒɔɪn ɪn/",
         "vietnamese_meaning": "(phr. v): tham gia",
-        "example_sentence_en": "This is a join in.",
-        "example_sentence_vi": "Đây là tham gia.",
+        "example_sentence_en": "Everyone can join in the community art project.",
+        "example_sentence_vi": "Mọi người đều có thể tham gia dự án nghệ thuật cộng đồng.",
         "image": "assets/images/join-in.webp",
         "alt": "Image for join in"
       },
@@ -259,8 +259,8 @@
         "english_word": "spend time",
         "pronunciation": "/spend taɪm/",
         "vietnamese_meaning": "(v. phrase): dành thời gian",
-        "example_sentence_en": "I spend time every day.",
-        "example_sentence_vi": "Tôi thường dành thời gian.",
+        "example_sentence_en": "I spend time with my family on weekends.",
+        "example_sentence_vi": "Tôi dành thời gian bên gia đình vào cuối tuần.",
         "image": "assets/images/spend-time.webp",
         "alt": "Image for spend time"
       },
@@ -268,8 +268,8 @@
         "english_word": "take on",
         "pronunciation": "/teɪk ɒn/",
         "vietnamese_meaning": "(phr. v): đảm nhận",
-        "example_sentence_en": "This is a take on.",
-        "example_sentence_vi": "Đây là đảm nhận.",
+        "example_sentence_en": "She decided to take on a new challenging hobby this year.",
+        "example_sentence_vi": "Cô ấy quyết định đảm nhận một sở thích thử thách mới trong năm nay.",
         "image": "assets/images/take-on.webp",
         "alt": "Image for take on"
       },
@@ -277,22 +277,22 @@
         "english_word": "water",
         "pronunciation": "/ˈwɔːtə(r)/",
         "vietnamese_meaning": "(v): tưới nước",
-        "example_sentence_en": "I water every day.",
-        "example_sentence_vi": "Tôi thường tưới nước.",
+        "example_sentence_en": "Remember to water the plants every morning.",
+        "example_sentence_vi": "Nhớ tưới nước cho cây mỗi sáng nhé.",
         "image": "assets/images/water.webp",
         "alt": "Image for water"
       }
     ]
   },
   {
-    "group": "Group 6: Others",
+    "group": "Others",
     "words": [
       {
         "english_word": "belong to",
         "pronunciation": "/bɪˈlɒŋ tuː/",
         "vietnamese_meaning": "(v. phrase): thuộc về",
-        "example_sentence_en": "I belong to every day.",
-        "example_sentence_vi": "Tôi thường thuộc về.",
+        "example_sentence_en": "This stamp collection belongs to my grandfather.",
+        "example_sentence_vi": "Bộ sưu tập tem này thuộc về ông tôi.",
         "image": "assets/images/belong-to.webp",
         "alt": "Image for belong to"
       },
@@ -300,8 +300,8 @@
         "english_word": "benefit",
         "pronunciation": "/ˈbenɪfɪt/",
         "vietnamese_meaning": "(n): lợi ích",
-        "example_sentence_en": "This is a benefit.",
-        "example_sentence_vi": "Đây là lợi ích.",
+        "example_sentence_en": "Regular exercise has many benefits for our health.",
+        "example_sentence_vi": "Tập thể dục thường xuyên có nhiều lợi ích cho sức khỏe.",
         "image": "assets/images/benefit.webp",
         "alt": "Image for benefit"
       },
@@ -309,8 +309,8 @@
         "english_word": "bug",
         "pronunciation": "/bʌɡ/",
         "vietnamese_meaning": "(n): con bọ",
-        "example_sentence_en": "This is a bug.",
-        "example_sentence_vi": "Đây là con bọ.",
+        "example_sentence_en": "She found a colorful bug in her garden today.",
+        "example_sentence_vi": "Cô ấy tìm thấy một con bọ đầy màu sắc trong vườn hôm nay.",
         "image": "assets/images/bug.webp",
         "alt": "Image for bug"
       },
@@ -318,8 +318,8 @@
         "english_word": "club",
         "pronunciation": "/klʌb/",
         "vietnamese_meaning": "(n): câu lạc bộ",
-        "example_sentence_en": "This is a club.",
-        "example_sentence_vi": "Đây là câu lạc bộ.",
+        "example_sentence_en": "He joined the photography club at school.",
+        "example_sentence_vi": "Anh ấy tham gia câu lạc bộ nhiếp ảnh ở trường.",
         "image": "assets/images/club.webp",
         "alt": "Image for club"
       },
@@ -327,8 +327,8 @@
         "english_word": "creativity",
         "pronunciation": "/ˌkriːeɪˈtɪvəti/",
         "vietnamese_meaning": "(n): sự sáng tạo",
-        "example_sentence_en": "This is a creativity.",
-        "example_sentence_vi": "Đây là sự sáng tạo.",
+        "example_sentence_en": "Art classes help develop children's creativity.",
+        "example_sentence_vi": "Các lớp học nghệ thuật giúp phát triển sự sáng tạo của trẻ em.",
         "image": "assets/images/creativity.webp",
         "alt": "Image for creativity"
       },
@@ -336,8 +336,8 @@
         "english_word": "develop",
         "pronunciation": "/dɪˈveləp/",
         "vietnamese_meaning": "(v): phát triển",
-        "example_sentence_en": "I develop every day.",
-        "example_sentence_vi": "Tôi thường phát triển.",
+        "example_sentence_en": "Hobbies help us develop new skills and interests.",
+        "example_sentence_vi": "Sở thích giúp chúng ta phát triển các kỹ năng và sở thích mới.",
         "image": "assets/images/develop.webp",
         "alt": "Image for develop"
       },
@@ -345,8 +345,8 @@
         "english_word": "easy-to-do",
         "pronunciation": "/ˈiːzi tə duː/",
         "vietnamese_meaning": "(adj. phrase): dễ làm",
-        "example_sentence_en": "It is easy-to-do.",
-        "example_sentence_vi": "Nó rất dễ làm.",
+        "example_sentence_en": "Paper folding is an easy-to-do hobby for beginners.",
+        "example_sentence_vi": "Gấp giấy là một sở thích dễ làm cho người mới bắt đầu.",
         "image": "assets/images/easy-to-do.webp",
         "alt": "Image for easy-to-do"
       },
@@ -354,8 +354,8 @@
         "english_word": "free time",
         "pronunciation": "/friː taɪm/",
         "vietnamese_meaning": "(n. phrase): thời gian rảnh",
-        "example_sentence_en": "This is a free time.",
-        "example_sentence_vi": "Đây là thời gian rảnh.",
+        "example_sentence_en": "I like to read novels in my free time.",
+        "example_sentence_vi": "Tôi thích đọc tiểu thuyết trong thời gian rảnh.",
         "image": "assets/images/free-time.webp",
         "alt": "Image for free time"
       },
@@ -363,8 +363,8 @@
         "english_word": "furniture",
         "pronunciation": "/ˈfɜːnɪtʃə(r)/",
         "vietnamese_meaning": "(n): đồ nội thất",
-        "example_sentence_en": "I like furniture.",
-        "example_sentence_vi": "Tôi thích đồ nội thất.",
+        "example_sentence_en": "She enjoys making miniature furniture for dollhouses.",
+        "example_sentence_vi": "Cô ấy thích làm đồ nội thất thu nhỏ cho nhà búp bê.",
         "image": "assets/images/furniture.webp",
         "alt": "Image for furniture"
       },
@@ -372,8 +372,8 @@
         "english_word": "insect",
         "pronunciation": "/ˈɪnsekt/",
         "vietnamese_meaning": "(n): côn trùng",
-        "example_sentence_en": "This is a insect.",
-        "example_sentence_vi": "Đây là côn trùng.",
+        "example_sentence_en": "The butterfly is a beautiful insect that many people love to watch.",
+        "example_sentence_vi": "Bướm là một loài côn trùng đẹp mà nhiều người thích ngắm.",
         "image": "assets/images/insect.webp",
         "alt": "Image for insect"
       },
@@ -381,8 +381,8 @@
         "english_word": "lesson",
         "pronunciation": "/ˈlesn/",
         "vietnamese_meaning": "(n): bài học",
-        "example_sentence_en": "This is a lesson.",
-        "example_sentence_vi": "Đây là bài học.",
+        "example_sentence_en": "Each hobby teaches us a valuable lesson about patience.",
+        "example_sentence_vi": "Mỗi sở thích dạy chúng ta một bài học quý giá về sự kiên nhẫn.",
         "image": "assets/images/lesson.webp",
         "alt": "Image for lesson"
       },
@@ -390,8 +390,8 @@
         "english_word": "maturity",
         "pronunciation": "/məˈtʃʊərəti/",
         "vietnamese_meaning": "(n): sự trưởng thành",
-        "example_sentence_en": "This is a maturity.",
-        "example_sentence_vi": "Đây là sự trưởng thành.",
+        "example_sentence_en": "Taking care of a garden shows maturity and responsibility.",
+        "example_sentence_vi": "Chăm sóc khu vườn thể hiện sự trưởng thành và trách nhiệm.",
         "image": "assets/images/maturity.webp",
         "alt": "Image for maturity"
       },
@@ -399,8 +399,8 @@
         "english_word": "outdoor",
         "pronunciation": "/ˈaʊtdɔː(r)/",
         "vietnamese_meaning": "(adj): ngoài trời",
-        "example_sentence_en": "It is outdoor.",
-        "example_sentence_vi": "Nó rất ngoài trời.",
+        "example_sentence_en": "Camping is a popular outdoor activity for families.",
+        "example_sentence_vi": "Cắm trại là một hoạt động ngoài trời phổ biến cho các gia đình.",
         "image": "assets/images/outdoor.webp",
         "alt": "Image for outdoor"
       },
@@ -408,8 +408,8 @@
         "english_word": "patient",
         "pronunciation": "/ˈpeɪʃnt/",
         "vietnamese_meaning": "(adj): kiên nhẫn",
-        "example_sentence_en": "It is patient.",
-        "example_sentence_vi": "Nó rất kiên nhẫn.",
+        "example_sentence_en": "You need to be patient when learning a new hobby.",
+        "example_sentence_vi": "Bạn cần kiên nhẫn khi học một sở thích mới.",
         "image": "assets/images/patient.webp",
         "alt": "Image for patient"
       },
@@ -417,8 +417,8 @@
         "english_word": "popular",
         "pronunciation": "/ˈpɒpjələ(r)/",
         "vietnamese_meaning": "(adj): phổ biến",
-        "example_sentence_en": "It is popular.",
-        "example_sentence_vi": "Nó rất phổ biến.",
+        "example_sentence_en": "Reading books is a popular hobby among teenagers.",
+        "example_sentence_vi": "Đọc sách là một sở thích phổ biến trong giới thanh thiếu niên.",
         "image": "assets/images/popular.webp",
         "alt": "Image for popular"
       },
@@ -426,8 +426,8 @@
         "english_word": "reduce stress",
         "pronunciation": "/rɪˈdjuːs stres/",
         "vietnamese_meaning": "(v. phrase): giảm căng thẳng",
-        "example_sentence_en": "I reduce stress every day.",
-        "example_sentence_vi": "Tôi thường giảm căng thẳng.",
+        "example_sentence_en": "Playing music helps reduce stress after work.",
+        "example_sentence_vi": "Chơi nhạc giúp giảm căng thẳng sau giờ làm việc.",
         "image": "assets/images/reduce-stress.webp",
         "alt": "Image for reduce stress"
       },
@@ -435,8 +435,8 @@
         "english_word": "responsibility",
         "pronunciation": "/rɪˌspɒnsəˈbɪləti/",
         "vietnamese_meaning": "(n): trách nhiệm",
-        "example_sentence_en": "This is a responsibility.",
-        "example_sentence_vi": "Đây là trách nhiệm.",
+        "example_sentence_en": "Taking care of pets teaches children about responsibility.",
+        "example_sentence_vi": "Chăm sóc thú cưng dạy trẻ em về trách nhiệm.",
         "image": "assets/images/responsibility.webp",
         "alt": "Image for responsibility"
       },
@@ -444,8 +444,8 @@
         "english_word": "unusual",
         "pronunciation": "/ʌnˈjuːʒuəl/",
         "vietnamese_meaning": "(adj): khác thường",
-        "example_sentence_en": "It is unusual.",
-        "example_sentence_vi": "Nó rất khác thường.",
+        "example_sentence_en": "Collecting bottle caps is an unusual but interesting hobby.",
+        "example_sentence_vi": "Sưu tập nắp chai là một sở thích khác thường nhưng thú vị.",
         "image": "assets/images/unusual.webp",
         "alt": "Image for unusual"
       },
@@ -453,8 +453,8 @@
         "english_word": "valuable",
         "pronunciation": "/ˈvæljuəbl/",
         "vietnamese_meaning": "(adj): có giá trị",
-        "example_sentence_en": "It is valuable.",
-        "example_sentence_vi": "Nó rất có giá trị.",
+        "example_sentence_en": "Old stamps can be very valuable to collectors.",
+        "example_sentence_vi": "Tem cũ có thể rất có giá trị đối với các nhà sưu tập.",
         "image": "assets/images/valuable.webp",
         "alt": "Image for valuable"
       }
