@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Pronunciation Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .question-card {
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .correct-answer {
+            background-color: #d1fae5;
+            border-left: 4px solid #10b981;
+        }
+        /* Ensure submit button never "bounces" */
+        #submitBtn {
+            transform: none !important;
+            transition: none !important;
+        }
+        #submitBtn:hover {
+            transform: none !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <header class="text-center mb-12" data-aos="fade-down">
+            <h1 class="text-4xl font-bold text-indigo-700 mb-2">English Pronunciation Test</h1>
+            <p class="text-lg text-gray-600">Practice your English pronunciation skills with these exercises</p>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <div class="grid gap-8">
+            <!-- Exercise 1 -->
+            <section class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                <div class="bg-indigo-600 px-6 py-4">
+                    <h2 class="text-xl font-semibold text-white">Exercise 1: Choose the word with different pronunciation</h2>
+                </div>
+                <div class="p-6 grid gap-6">
+                    <!-- Question 1 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">1. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) would /wʊd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) group /ɡruːp/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) could /kʊd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) should /ʃʊd/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: b) group /ɡruːp/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">2. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) book /bʊk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) bloom /bluːm/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) broom /bruːm/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) gloom /ɡluːm/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) book /bʊk/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">3. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) butcher /ˈbʊtʃər/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) woman /ˈwʊmən/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) cushion /ˈkʊʃən/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) june /dʒuːn/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) butcher /ˈbʊtʃər/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">4. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) full /fʊl/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) sugar /ˈʃʊɡər/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) blue /bluː/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) bull /bʊl/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: c) blue /bluː/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">5. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) book /bʊk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) look /lʊk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) food /fuːd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) cook /kʊk/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: c) food /fuːd/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">6. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) good /ɡʊd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) wood /wʊd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) school /skuːl/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) foot /fʊt/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: c) school /skuːl/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">7. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) bush /bʊʃ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) pudding /ˈpʊdɪŋ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) music /ˈmjuːzɪk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) pulpit /ˈpʊlpɪt/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: c) music /ˈmjuːzɪk/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">8. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) put /pʊt/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) true /truː/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) push /pʊʃ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) pull /pʊl/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: b) true /truː/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">9. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) found /faʊnd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) wound /wuːnd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) round /raʊnd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) sound /saʊnd/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: b) wound /wuːnd/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">10. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) shook /ʃʊk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) hook /hʊk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) took /tʊk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) tool /tuːl/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: d) tool /tuːl/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">11. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) rude /ruːd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) jump /dʒʌmp/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) study /ˈstʌdi/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) truck /trʌk/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) rude /ruːd/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">12. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) proof /pruːf/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) wood /wʊd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) bookshelf /ˈbʊkʃelf/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) cookbook /ˈkʊkbʊk/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) proof /pruːf/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">13. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_13" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) wool /wʊl/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_13" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) moon /muːn/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_13" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) room /ruːm/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_13" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) cool /kuːl/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) wool /wʊl/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">14. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_14" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) soon /suːn/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_14" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) noon /nuːn/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_14" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) spoon /spuːn/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_14" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) book /bʊk/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: d) book /bʊk/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">15. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_15" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) loose /luːs/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_15" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) book /bʊk/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_15" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) goose /ɡuːs/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q1_15" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) moose /muːs/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: b) book /bʊk/</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise 2 -->
+            <section class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                <div class="bg-indigo-600 px-6 py-4">
+                    <h2 class="text-xl font-semibold text-white">Exercise 2: Choose the word with different pronunciation</h2>
+                </div>
+                <div class="p-6 grid gap-6">
+                    <!-- Question 1 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">1. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) expensive /ɪkˈspɛnsɪv/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) delicious /dɪˈlɪʃəs/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) popular /ˈpɒpjʊlər/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) fantastic /fænˈtæstɪk/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) expensive /ɪkˈspɛnsɪv/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">2. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) knitting /ˈnɪtɪŋ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) cycling /ˈsaɪklɪŋ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) origami /ˌɒrɪˈɡɑːmi/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) cooking /ˈkʊkɪŋ/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) knitting /ˈnɪtɪŋ/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">3. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) bodyline /ˈbɒdilaɪn/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) exercise /ˈɛksəsaɪz/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) cinema /ˈsɪnəmə/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) remember /rɪˈmɛmbər/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) bodyline /ˈbɒdilaɪn/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">4. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) puzzle /ˈpʌzl/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) contest /ˈkɒntɛst/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) leisure /ˈliːʒər/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) recipe /ˈrɛsɪpi/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) puzzle /ˈpʌzl/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">5. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) museum /mjuːˈziːəm/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) holiday /ˈhɒlɪdeɪ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) champion /ˈtʃæmpiən/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) celebrate /ˈsɛlɪbreɪt/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) museum /mjuːˈziːəm/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">6. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) computer /kəmˈpjuːtər/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) costume /ˈkɒstjuːm/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) dollhouse /ˈdɒlhaʊs/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) comedy /ˈkɒmədi/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) computer /kəmˈpjuːtər/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">7. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) improve /ɪmˈpruːv/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) family /ˈfæmɪli/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) decide /dɪˈsaɪd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) prefer /prɪˈfɜːr/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) improve /ɪmˈpruːv/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">8. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) interesting /ˈɪntrəstɪŋ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) surprising /səˈpraɪzɪŋ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) relaxing /rɪˈlæksɪŋ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) exciting /ɪkˈsaɪtɪŋ/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) interesting /ˈɪntrəstɪŋ/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">9. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) badminton /ˈbædmɪntən/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) volleyball /ˈvɒlibɔːl/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) skateboard /ˈskeɪtbɔːrd/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) activity /ækˈtɪvɪti/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) badminton /ˈbædmɪntən/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">10. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) ingredient /ɪnˈɡriːdiənt/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) computer /kəmˈpjuːtər/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) snowboarding /ˈsnoʊbɔːrdɪŋ/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) creative /kriˈeɪtɪv/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) ingredient /ɪnˈɡriːdiənt/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">11. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) attract /əˈtrækt/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) difficult /ˈdɪfɪkəlt/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) result /rɪˈzʌlt/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_11" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) collect /kəˈlɛkt/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) attract /əˈtrækt/</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">12. Choose the word with different pronunciation:</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) ingredient /ɪnˈɡriːdiənt/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) interview /ˈɪntərvjuː/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) creative /kriˈeɪtɪv/</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q2_12" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) invite /ɪnˈvaɪt/</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) ingredient /ɪnˈɡriːdiənt/</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise 3 -->
+            <section class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                <div class="bg-indigo-600 px-6 py-4">
+                    <h2 class="text-xl font-semibold text-white">Exercise 3: Choose the correct answer</h2>
+                </div>
+                <div class="p-6 grid gap-6">
+                    <!-- Question 1 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">1. They're really ___ organizing parties for their friends.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) on</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) of</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) into</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_1" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) about</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: c) into</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">2. Tom is crazy ___ watching comedy movies every weekend.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) on</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) of</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) in</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_2" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) about</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: d) about</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">3. I dislike ___ emails because I prefer phone calls.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) sending</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) to send</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) sent</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_3" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) send</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) sending</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">4. Do you fancy ___ badminton this weekend?</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) to play</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) play</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) played</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_4" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) playing</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: d) playing</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">5. I'm fond ___ improving my physical health through sport.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) on</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) of</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) in</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_5" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) about</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: b) of</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">6. We prefer ___ with our neighbours to staying isolated.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) connected</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) connecting</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) connect</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_6" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) to connecting</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: b) connecting</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">7. She loves ___ a beautiful dress for the costume party.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) wearing / to wear</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) wore</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) wearing</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_7" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) wear</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) wearing / to wear</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">8. I enjoy ___ my computer skills to help others.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) to use</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) used</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) using</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_8" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) use</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: c) using</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">9. My brother detests ___ cruel to animals and always helps them.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) being</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) be</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) been</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_9" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) to be</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) being</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">10. She's keen ___ building a DIY kit for her projects.</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">a) on</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">b) about</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">c) in</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 rounded border border-gray-200 hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="q3_10" class="h-5 w-5 text-indigo-600">
+                                <span class="text-gray-700">d) of</span>
+                            </label>
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: a) on</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise 4 -->
+            <section class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+                <div class="bg-indigo-600 px-6 py-4">
+                    <h2 class="text-xl font-semibold text-white">Exercise 4: Rearrange the words to make meaningful sentences</h2>
+                </div>
+                <div class="p-6 grid gap-6">
+                    <!-- Question 1 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">1. DIY / in / fond / my / doing / I'm / of / projects / spare / time.</p>
+                        <div class="mt-4">
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Write your answer here...">
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: I'm fond of doing DIY projects in my spare time.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">2. for / enjoys / her / knitting / she / family / scarves.</p>
+                        <div class="mt-4">
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Write your answer here...">
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: She enjoys knitting scarves for her family.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">3. every / friends / crazy / about / is / Tom / weekend / with / his / playing / volleyball.</p>
+                        <div class="mt-4">
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Write your answer here...">
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: Tom is crazy about playing volleyball with his friends every weekend.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">4. when / detest / | / ingredients / preparing / cooking.</p>
+                        <div class="mt-4">
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Write your answer here...">
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: I detest cooking when preparing ingredients.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">5. get / keen / my / is / on / sister / to / some / visiting / the / new / park / fresh / air.</p>
+                        <div class="mt-4">
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Write your answer here...">
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: My sister is keen on visiting the new park to get some fresh air.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-card bg-white p-5 rounded-lg border border-gray-200">
+                        <p class="font-medium text-gray-800 mb-3">6. do / going / fancy / you / this / Sunday / skateboarding / ?</p>
+                        <div class="mt-4">
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Write your answer here...">
+                        </div>
+                        <div class="mt-3 hidden answer-feedback">
+                            <p class="text-green-600 font-medium">Correct answer: Do you fancy going skateboarding this Sunday?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-8">
+                <button id="submitBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Nộp bài
+                </button>
+                <div id="result" class="mt-4 text-lg font-semibold text-indigo-700 hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+        feather.replace();
+
+        // Add interactivity to show correct answers on selection
+        document.querySelectorAll('.question-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.type === 'radio') {
+                    const feedback = this.querySelector('.answer-feedback');
+                    if (feedback) feedback.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Submit logic
+        const answerKey = {
+            // Exercise 1
+            q1: 'b', q2: 'a', q1_3: 'a', q1_4: 'c', q1_5: 'c', q1_6: 'c', q1_7: 'c', q1_8: 'b', q1_9: 'b', q1_10: 'd', q1_11: 'a', q1_12: 'a', q1_13: 'a', q1_14: 'd', q1_15: 'b',
+            // Exercise 2
+            q2_1: 'a', q2_2: 'a', q2_3: 'a', q2_4: 'a', q2_5: 'a', q2_6: 'a', q2_7: 'a', q2_8: 'a', q2_9: 'a', q2_10: 'a', q2_11: 'a', q2_12: 'a',
+            // Exercise 3
+            q3_1: 'c', q3_2: 'd', q3_3: 'a', q3_4: 'd', q3_5: 'b', q3_6: 'b', q3_7: 'a', q3_8: 'c', q3_9: 'a', q3_10: 'a'
+        };
+
+        function getSelectedLetter(input) {
+            const label = input.closest('label');
+            if (!label) return null;
+            const text = label.querySelector('span')?.textContent?.trim() || '';
+            const match = text.match(/^([a-d])\)/i);
+            return match ? match[1].toLowerCase() : null;
+        }
+
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Reveal all feedback blocks
+            document.querySelectorAll('.answer-feedback').forEach(fb => fb.classList.remove('hidden'));
+
+            let score = 0;
+            let total = 0;
+
+            // Evaluate radio-based questions
+            Object.keys(answerKey).forEach(name => {
+                total += 1;
+                const checked = document.querySelector(`input[name="${name}"]:checked`);
+                if (checked) {
+                    const sel = getSelectedLetter(checked);
+                    if (sel === answerKey[name]) score += 1;
+                }
+            });
+
+            const resultEl = document.getElementById('result');
+            if (resultEl) {
+                resultEl.textContent = `Điểm của bạn: ${score} / ${total}`;
+                resultEl.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

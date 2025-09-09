@@ -998,6 +998,13 @@
       "description": "Trạng từ cách thức, tần suất, giới từ",
       "category": "tests"
     },
+    "tests/gs8 - unit 1 - test 1": {
+      "path": "tests/gs8 - unit 1 - test 1",
+      "title": "GS8 - Unit 1 -  Test review\\",
+      "author": "Ng\\uc0\\u7885 c Di\\u7879 p",
+      "description": "Không có mô tả.",
+      "category": "tests"
+    },
     "tests/pre-gs6-test-1-paper-11": {
       "path": "tests/pre-gs6-test-1-paper-11",
       "title": "Pre Gs6 Test 1 - Paper 11",
